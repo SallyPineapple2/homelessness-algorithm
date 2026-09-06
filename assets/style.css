@@ -842,7 +842,7 @@ table.results tbody tr:last-child td { border-bottom: 0; }
   counter-increment: q;
 }
 .qlist li::before {
-  content: "Q" counter(q);
+  content: counter(q, decimal-leading-zero);
   position: absolute;
   left: 0;
   top: 0.95rem;

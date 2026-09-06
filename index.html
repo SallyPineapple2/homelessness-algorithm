@@ -109,7 +109,6 @@
       </blockquote>
       <div class="prose">
         <p>
-          I want to further examine whether an AI&#8209;based substitute would resolve this problem.
           This project would evaluate the result for bias and accuracy against the actual
           vulnerability of these individuals.
         </p>
@@ -522,15 +521,16 @@
         <span class="kicker">Design note</span>
         <p>
           The profile set in section 05 was built to answer this last concern directly. Rather than
-          concentrating in the 11&ndash;12 range, the 32 profiles are stratified evenly across all
-          three triage bands, with eight profiles in each quarter of the 0&ndash;17 scale. Profiles
-          that share a total score are also given different domain compositions, which makes it
-          possible to check whether a model responds to <em>which</em> domain drives a score rather
-          than to the total alone.
+          concentrating in the 11&ndash;12 range, it covers every total from 0 to 17, and it
+          deliberately oversamples the two decision thresholds &mdash; the 3/4 boundary and the 7/8
+          boundary &mdash; where a one&#8209;point shift changes which intervention a person is
+          referred to. Profiles that share a total score are also given different domain
+          compositions, which makes it possible to check whether a model responds to <em>which</em>
+          domain drives a score rather than to the total alone.
         </p>
       </div>
 
-      <h3 class="subhead" style="margin-top:2.5rem">Open issues</h3>
+      <h3 class="subhead" style="margin-top:2.5rem">Limitations</h3>
       <ul class="qlist">
         <li>
           Since I do not have access to the actual ML models used, I would need to mimic its results

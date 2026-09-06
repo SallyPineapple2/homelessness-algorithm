@@ -45,7 +45,7 @@ Refinement report; OrgCode's December 2020 statement on VI-SPDAT.
    filterable table of every profile and its domain scores
 6. **Planned results** — the empty chart and paired t-test table the results will
    fill, with an optional example-values preview behind a toggle
-7. **Expected contribution and limitations**, and open issues
+7. **Expected contribution and limitations**
 
 ### The scoring instrument
 
