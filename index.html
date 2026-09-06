@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algorithmic Bias in Homeless Vulnerability Assessment</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Algorithmic Bias in Homeless Vulnerability Assessment</h1>
+  <p class="subtitle">VI&#8209;SPDAT vs. AI&#8209;Based Scoring in the Coordinated Entry System (CES)</p>
+</header>
+
+<main>
+
+  <section id="overview">
+    <h2>Research Question</h2>
+    <p class="research-question">
+      When analyzing the same synthetic client data, how does an AI&#8209;based (LLM) vulnerability
+      assessment perform &mdash; in terms of accuracy and demographic bias &mdash; compared with the
+      VI&#8209;SPDAT algorithm currently used to prioritize unhoused individuals for shelter and services?
+    </p>
+    <p class="hypothesis">
+      <strong>Hypothesis:</strong> the AI&#8209;based model will outperform VI&#8209;SPDAT in accuracy against
+      true vulnerability, but will still show a residual skew against people of color.
+    </p>
+  </section>
+
+  <section id="data-source">
+    <h2>Data Source</h2>
+    <p>
+      <strong>Primary source:</strong> the published VI&#8209;SPDAT interview methodology and scoring rubric
+      (OrgCode Consulting Inc., 2015), accessed via the Georgia Department of Community Affairs &mdash;
+      16 vulnerability indicators across 4 domains, scored 0&ndash;17. This project builds a synthetic
+      population (32 base profiles &times; 2 genders &times; 5 HUD race/ethnicity categories, each tested
+      with full and partial disclosure) and scores it with both VI&#8209;SPDAT and an LLM standing in for an
+      ML&#8209;based CES tool.
+    </p>
+    <p>
+      <strong>Supporting sources:</strong> C4 Innovations, <em>&ldquo;CES Racial Equity Analysis of
+      Assessment Data&rdquo;</em>; the Coordinated Entry System Triage Tool Research and Refinement report;
+      and published documentation from CoCs piloting ML&#8209;based CES replacements.
+    </p>
+  </section>
+
+  <section id="chart-section">
+    <h2>Mean Vulnerability Score by Race/Ethnicity</h2>
+    <p class="chart-note">
+      <strong>Illustrative placeholder &mdash; not yet real results.</strong> The bars below show the
+      structure of the planned comparison (VI&#8209;SPDAT score vs. simulated LLM score for each HUD
+      race/ethnicity category, averaged across the 32 base profiles). Values will be replaced once the
+      synthetic population has actually been scored by both models.
+    </p>
+    <div id="bias-chart"></div>
+    <p class="chart-caption">
+      X&#8209;axis: HUD race/ethnicity category. Y&#8209;axis: mean vulnerability score (0&ndash;17).
+      The comparison lets a reader check whether either model's average score shifts across race groups
+      when every profile is otherwise identical &mdash; a shift would indicate demographic bias.
+    </p>
+  </section>
+
+  <section id="table-section">
+    <h2>VI&#8209;SPDAT Vulnerability Indicators</h2>
+    <p>
+      The 16 indicators below (grouped into 4 domains) summarize the published VI&#8209;SPDAT scoring rubric
+      and form the basis for the synthetic profiles used in this study. Wording is paraphrased for this
+      dashboard; see the primary source for the exact interview text.
+    </p>
+    <div id="indicator-table"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>
+    Data sources: OrgCode Consulting Inc. (2015), via Georgia Department of Community Affairs &middot;
+    C4 Innovations, CES Racial Equity Analysis of Assessment Data
+  </p>
+  <p><a href="https://github.com/SallyPineapple2/homelessness-algorithm">View source on GitHub</a></p>
+</footer>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="assets/dashboard.js"></script>
+</body>
+</html>

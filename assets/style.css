@@ -1,0 +1,131 @@
+:root {
+  --ink: #1c1c1c;
+  --muted: #5a5a5a;
+  --line: #d8d8d8;
+  --bg: #fafafa;
+  --card: #ffffff;
+  --accent-a: #4c78a8;
+  --accent-b: #e45756;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.site-header {
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+}
+
+.site-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.4rem;
+}
+
+.research-question {
+  font-size: 1.05rem;
+}
+
+.hypothesis {
+  color: var(--muted);
+}
+
+.chart-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: #fff8e6;
+  border: 1px solid #f0dca0;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+}
+
+.chart-caption {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#bias-chart {
+  overflow-x: auto;
+}
+
+#bias-chart svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.axis text {
+  fill: var(--ink);
+  font-size: 0.75rem;
+}
+
+.axis path,
+.axis line {
+  stroke: var(--line);
+}
+
+.legend text {
+  font-size: 0.8rem;
+  fill: var(--ink);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  background: #f0f0f0;
+}
+
+.site-footer {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--accent-a);
+}

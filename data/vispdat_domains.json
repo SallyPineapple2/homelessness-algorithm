@@ -1,0 +1,18 @@
+[
+  { "domain": "History of Housing and Homelessness", "indicator": "Length of time homeless / number of episodes" },
+  { "domain": "History of Housing and Homelessness", "indicator": "Prior institutional stays (jail, hospital, treatment)" },
+  { "domain": "History of Housing and Homelessness", "indicator": "Legal issues affecting housing access" },
+  { "domain": "Risks", "indicator": "Risk of harm to self" },
+  { "domain": "Risks", "indicator": "Risk of harm from others / exploitation" },
+  { "domain": "Risks", "indicator": "Involvement in unsafe or risky activities for survival" },
+  { "domain": "Risks", "indicator": "Emergency service use (ER, ambulance, police)" },
+  { "domain": "Socialization and Daily Functioning", "indicator": "Coordination of medications / appointments" },
+  { "domain": "Socialization and Daily Functioning", "indicator": "Money management" },
+  { "domain": "Socialization and Daily Functioning", "indicator": "Meeting basic needs independently" },
+  { "domain": "Socialization and Daily Functioning", "indicator": "Social relationships and support network" },
+  { "domain": "Wellness", "indicator": "Substance use" },
+  { "domain": "Wellness", "indicator": "Mental health condition" },
+  { "domain": "Wellness", "indicator": "Physical health condition / disability" },
+  { "domain": "Wellness", "indicator": "Tri-morbidity (co-occurring conditions)" },
+  { "domain": "Wellness", "indicator": "Medication adherence" }
+]
