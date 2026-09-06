@@ -259,55 +259,103 @@
     <div class="section-body">
       <div class="prose">
         <p>
-          Each base profile is a demographically neutral case description scored on the four
-          VI&#8209;SPDAT domains. These are the profiles that get cloned across every gender and race
-          combination, so the profile text itself carries no name, pronoun, or other demographic
-          signal&mdash;the only thing that changes between a profile's ten clones is the stated
-          gender and race.
+          Each base profile is a demographically neutral case description recorded at the indicator
+          level: which of the 16 vulnerability indicators, plus the pre&#8209;survey age indicator, are
+          flagged. Domain subtotals and the total score are <em>computed</em> from those flags using
+          the published scoring rules rather than assigned by hand, so no profile can carry a score
+          its own answers do not produce.
+        </p>
+        <p>
+          These are the profiles that get cloned across every gender and race combination, so the
+          profile text carries no name, pronoun, or other demographic signal&mdash;the only thing that
+          changes between a profile's ten clones is the stated gender and race.
         </p>
       </div>
+
+      <h3 class="subhead">The scoring instrument</h3>
+      <div class="prose">
+        <p>
+          Every indicator below is taken from the VI&#8209;SPDAT for Single Adults, American Version
+          2.0, with its scoring rule as published. The four domains hold 16 indicators worth 2, 4, 4,
+          and 6 points; a single pre&#8209;survey point for age brings the maximum to 17.
+        </p>
+      </div>
+
+      <div class="table-wrap instrument-wrap">
+        <table class="data instrument">
+          <thead>
+            <tr>
+              <th>Indicator</th>
+              <th>Questions</th>
+              <th>Scoring rule</th>
+              <th class="num">Pts</th>
+            </tr>
+          </thead>
+          <tbody id="instrument-body"></tbody>
+        </table>
+      </div>
+      <div class="table-note">
+        <span>Source: VI&#8209;SPDAT Single Adults, American Version 2.0 &middot; &copy;2015 OrgCode Consulting Inc. and Community Solutions</span>
+        <span><a href="data/vispdat_instrument.json" download>Download vispdat_instrument.json</a></span>
+      </div>
+
+      <h3 class="subhead">How the profiles are distributed</h3>
 
       <div class="chart-card">
         <p class="chart-title">Where the 32 base profiles fall on the 0&ndash;17 scale</p>
         <p class="chart-sub">
-          Profiles are spread deliberately across all three VI&#8209;SPDAT triage bands rather than
-          clustered in one range, so that any measured bias can be examined at low, moderate, and
-          high vulnerability separately.
+          Every total from 0 to 17 is represented, and the two decision thresholds are deliberately
+          oversampled &mdash; three profiles score 3 and three score 4; three score 7 and three score
+          8 &mdash; because that is where a one&#8209;point demographic shift changes which
+          intervention a person is referred to.
         </p>
         <div class="legend" id="legend-distribution"></div>
         <div class="chart-scroll" id="chart-distribution"></div>
         <p class="chart-foot">
-          Each bar counts how many of the 32 base profiles score that exact total. Triage band
-          thresholds follow the published VI&#8209;SPDAT recommendation ranges.
+          Each bar counts how many of the 32 base profiles score that exact total. Band thresholds
+          follow the published VI&#8209;SPDAT recommendation ranges: 0&ndash;3 no housing
+          intervention, 4&ndash;7 an assessment for Rapid Re&#8209;Housing, 8+ an assessment for
+          Permanent Supportive Housing / Housing First.
         </p>
       </div>
 
       <div class="designnote">
         <span class="kicker">Design note</span>
         <p>
-          Domain maxima used here follow the VI&#8209;SPDAT v2.0 single&#8209;adult structure: History
-          of Housing and Homelessness 0&ndash;2, Risks 0&ndash;4, Socialization and Daily Functioning
-          0&ndash;6, Wellness 0&ndash;5, summing to 17. Confirm these subscale maxima against the
-          OrgCode source document before scoring, and adjust the profile data file if your copy of the
-          tool differs.
+          Profiles sharing a total score are given different domain compositions on purpose. P20 and
+          P23 both score in the same band but load onto different domains, and P30, P31 and P32 reach
+          16, 16 and 17 by different routes. Because VI&#8209;SPDAT is purely additive, it cannot
+          distinguish them; an LLM might. That difference is itself a testable result.
+        </p>
+        <p>
+          Tri&#8209;morbidity is treated as a derived indicator, flagged only where physical health,
+          substance use, and mental health are all flagged, exactly as the tool specifies. The data
+          file is validated against every domain maximum and against this rule.
         </p>
       </div>
 
-      <div class="filters" id="profile-filters"></div>
+      <h3 class="subhead">Profile set</h3>
+
+      <div class="table-controls">
+        <div class="filters" id="profile-filters"></div>
+        <button class="btn btn-sm" id="expand-all" type="button">Expand all</button>
+      </div>
 
       <div class="table-wrap">
-        <table class="data">
+        <table class="data profiles">
           <thead>
             <tr>
+              <th><span class="sr-only">Detail</span></th>
               <th>ID</th>
               <th>Profile</th>
               <th>Composition</th>
-              <th class="num" title="History of Housing and Homelessness">H</th>
-              <th class="num" title="Risks">R</th>
-              <th class="num" title="Socialization and Daily Functioning">S</th>
-              <th class="num" title="Wellness">W</th>
+              <th class="num" title="Pre-Survey (age 60+)">P</th>
+              <th class="num" title="A. History of Housing and Homelessness">A</th>
+              <th class="num" title="B. Risks">B</th>
+              <th class="num" title="C. Socialization and Daily Functions">C</th>
+              <th class="num" title="D. Wellness">D</th>
               <th class="num">Total</th>
-              <th>Triage band</th>
+              <th>Recommended course of action</th>
             </tr>
           </thead>
           <tbody id="profile-body"></tbody>

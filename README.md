@@ -47,22 +47,46 @@ Refinement report; OrgCode's December 2020 statement on VI-SPDAT.
    fill, with an optional example-values preview behind a toggle
 7. **Expected contribution and limitations**, and open issues
 
+### The scoring instrument
+
+`data/vispdat_instrument.json` encodes the VI-SPDAT for Single Adults, American
+Version 2.0 (©2015 OrgCode Consulting Inc. and Community Solutions): every
+indicator, the questions it draws on, and its scoring rule as published.
+
+| Domain | Max |
+|---|---|
+| Pre-Survey (age 60+) | 1 |
+| A. History of Housing and Homelessness | 2 |
+| B. Risks | 4 |
+| C. Socialization and Daily Functions | 4 |
+| D. Wellness | 6 |
+| **Total** | **17** |
+
+That is 16 vulnerability indicators across the four domains, plus one
+pre-survey point for age. Tri-morbidity is a *derived* indicator: it scores only
+where physical health, substance use, and mental health all score.
+
 ### The base profiles
 
-`data/base_profiles.json` holds 32 demographically neutral case descriptions,
-each scored on the four VI-SPDAT domains (History 0–2, Risks 0–4, Socialization
-0–6, Wellness 0–5, summing to 17). They are deliberately stratified across the
-full 0–17 range — eight per quarter of the scale — so bias can be examined at
-low, moderate, and high vulnerability rather than only in one cluster. Profiles
-sharing a total score are given different domain compositions, which makes it
-possible to test whether a model reacts to *which* domain drives a score.
+`data/base_profiles.json` holds 32 demographically neutral case descriptions
+recorded at the indicator level — which indicators are flagged, not what the
+score is. Domain subtotals and totals are computed from those flags using the
+rules above, so a profile cannot carry a score its own answers do not produce.
+
+Design choices:
+
+- **Full coverage.** Every total from 0 to 17 is represented.
+- **Thresholds oversampled.** Three profiles score 3 and three score 4 (the
+  Rapid Re-Housing boundary); three score 7 and three score 8 (the Permanent
+  Supportive Housing boundary). A one-point demographic shift there changes
+  which intervention a person is referred to.
+- **Composition varied.** Profiles sharing a total load onto different domains,
+  so the models can be tested on composition as well as magnitude. VI-SPDAT is
+  purely additive and cannot distinguish them; an LLM might.
 
 Because each profile is cloned across 2 genders × 5 HUD race categories and
 tested under both full disclosure and underdisclosure, the design produces 640
 profile instances and 1,280 scores across both models.
-
-> Domain maxima follow the VI-SPDAT v2.0 single-adult structure. Confirm them
-> against the OrgCode source document before scoring.
 
 ## Setup / GitHub Pages
 

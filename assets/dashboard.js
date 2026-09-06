@@ -1,33 +1,47 @@
 /* ============================================================
    Dashboard charts & tables
+
+   Scores are computed from indicator flags using the published
+   VI-SPDAT (Single Adults, American Version 2.0) scoring rules,
+   never asserted in the data.
+
    Mark specs: bars <=24px thick, 4px rounded data-end square at the
    baseline, 2px surface gap between adjacent bars, hairline solid
    gridlines, legend always present for >=2 series, hover tooltips.
    ============================================================ */
 
-const DOMAINS = [
-  { key: "history",  short: "H", name: "History of Housing and Homelessness", max: 2, cls: "d1", varName: "--series-1" },
-  { key: "risks",    short: "R", name: "Risks",                               max: 4, cls: "d2", varName: "--series-2" },
-  { key: "social",   short: "S", name: "Socialization and Daily Functioning", max: 6, cls: "d3", varName: "--series-3" },
-  { key: "wellness", short: "W", name: "Wellness",                            max: 5, cls: "d4", varName: "--series-4" }
-];
-
-const BANDS = [
-  { id: 1, name: "No housing intervention", range: "0–3",  varName: "--band-1", test: (t) => t <= 3 },
-  { id: 2, name: "Rapid Re-Housing",        range: "4–7",  varName: "--band-2", test: (t) => t >= 4 && t <= 7 },
-  { id: 3, name: "Permanent Supportive Housing", range: "8–17", varName: "--band-3", test: (t) => t >= 8 }
-];
+const DOMAIN_COLOR = {
+  pre: "--ink-muted",
+  a: "--series-1",
+  b: "--series-2",
+  c: "--series-3",
+  d: "--series-4"
+};
 
 const MODELS = [
   { key: "vispdat", name: "VI-SPDAT", varName: "--series-1" },
-  { key: "llm",     name: "AI-based model (LLM)", varName: "--series-2" }
+  { key: "llm", name: "AI-based model (LLM)", varName: "--series-2" }
 ];
 
 const css = (name) =>
   getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-const totalOf = (p) => DOMAINS.reduce((sum, d) => sum + p[d.key], 0);
-const bandOf = (total) => BANDS.find((b) => b.test(total));
+let INSTRUMENT = null;
+let BANDS = [];
+let DOMAINS = [];
+let INDICATOR_BY_ID = new Map();
+
+function scoreOf(profile) {
+  return profile.indicators.length;
+}
+
+function domainScore(profile, domainKey) {
+  return profile.indicators.filter(
+    (id) => INDICATOR_BY_ID.get(id) && INDICATOR_BY_ID.get(id).domain === domainKey
+  ).length;
+}
+
+const bandOf = (total) => BANDS.find((b) => total >= b.min && total <= b.max);
 
 /* ---------- tooltip ---------- */
 
@@ -65,8 +79,8 @@ function barPath(x, y, w, h, r) {
           L${x + w},${y + h} Z`;
 }
 
-const MAX_BAR = 24;   // never fill the slot
-const GAP = 2;        // surface gap between adjacent bars
+const MAX_BAR = 24;
+const GAP = 2;
 const RADIUS = 4;
 
 function makeSvg(container, width, height) {
@@ -137,11 +151,11 @@ function renderLegend(container, items) {
 
 function renderDistribution(profiles) {
   const container = "#chart-distribution";
-  const counts = d3.rollup(profiles, (v) => v.length, (p) => totalOf(p));
+  const counts = d3.rollup(profiles, (v) => v.length, (p) => scoreOf(p));
   const scores = d3.range(0, 18);
   const data = scores.map((s) => ({ score: s, count: counts.get(s) || 0 }));
 
-  const margin = { top: 12, right: 16, bottom: 52, left: 40 };
+  const margin = { top: 28, right: 16, bottom: 52, left: 40 };
   const outerW = Math.max(560, Math.min(920, document.querySelector(container).clientWidth || 720));
   const width = outerW - margin.left - margin.right;
   const height = 240;
@@ -156,6 +170,20 @@ function renderDistribution(profiles) {
 
   drawGrid(g, y, width, ticks);
   drawYTicks(g, y, ticks);
+
+  // Threshold markers where a one-point shift changes the recommendation.
+  [3.5, 7.5].forEach((cut) => {
+    const cx = x(Math.floor(cut)) + x.bandwidth();
+    g.append("line")
+      .attr("class", "threshold")
+      .attr("x1", cx).attr("x2", cx)
+      .attr("y1", -14).attr("y2", height);
+    g.append("text")
+      .attr("class", "threshold-label")
+      .attr("x", cx + 5)
+      .attr("y", -18)
+      .text(cut === 3.5 ? "Rapid Re-Housing threshold" : "PSH threshold");
+  });
 
   const barW = Math.min(MAX_BAR, x.bandwidth() - GAP);
   const offset = (x.bandwidth() - barW) / 2;
@@ -210,7 +238,7 @@ function renderDistribution(profiles) {
 
   renderLegend(
     "#legend-distribution",
-    BANDS.map((b) => ({ name: `${b.name} (${b.range})`, color: css(b.varName) }))
+    BANDS.map((b) => ({ name: `${b.name} (${b.min}–${b.max})`, color: css(b.varName) }))
   );
 }
 
@@ -247,7 +275,6 @@ function renderBlankTemplate() {
   const barW = Math.min(MAX_BAR, x1.bandwidth() - GAP);
   const offset = (x1.bandwidth() - barW) / 2;
 
-  // Dashed placeholder outlines where the bars will go.
   races.forEach((race) => {
     const group = g.append("g").attr("transform", `translate(${x0(race)},0)`);
     MODELS.forEach((m) => {
@@ -282,7 +309,6 @@ function renderBlankTemplate() {
     .attr("x1", 0).attr("x2", width)
     .attr("y1", height).attr("y2", height);
 
-  // x labels (multi-line)
   races.forEach((race) => {
     const cx = x0(race) + x0.bandwidth() / 2;
     const label = g.append("text").attr("class", "tick-text").attr("text-anchor", "middle");
@@ -386,24 +412,107 @@ function renderDemo(rows) {
 }
 
 /* ============================================================
-   4. Base profile table
+   4. Instrument reference table
+   ============================================================ */
+
+function renderInstrument() {
+  const tbody = d3.select("#instrument-body");
+  tbody.selectAll("*").remove();
+
+  DOMAINS.forEach((domain) => {
+    const head = tbody.append("tr").attr("class", "domain-row");
+    const cell = head.append("th").attr("colspan", 4).attr("scope", "rowgroup");
+    cell
+      .append("span")
+      .attr("class", "domain-chip")
+      .style("background", css(DOMAIN_COLOR[domain.key]));
+    cell.append("span").attr("class", "domain-name")
+      .text(domain.letter === "—" ? domain.name : `${domain.letter}. ${domain.name}`);
+    cell.append("span").attr("class", "domain-max").text(`max ${domain.max}`);
+
+    domain.indicators.forEach((ind) => {
+      const tr = tbody.append("tr");
+      tr.append("td").attr("class", "ind-name").text(ind.name);
+      tr.append("td").attr("class", "ind-q").text(ind.questions);
+      tr.append("td").attr("class", "ind-rule").text(ind.rule);
+      tr.append("td").attr("class", "num").text("1");
+    });
+  });
+}
+
+/* ============================================================
+   5. Base profile table
    ============================================================ */
 
 let activeBand = "all";
+const expanded = new Set();
+
+function indicatorDetail(profile) {
+  const wrap = document.createElement("div");
+  wrap.className = "ind-detail";
+
+  DOMAINS.forEach((domain) => {
+    const block = document.createElement("div");
+    block.className = "ind-block";
+
+    const head = document.createElement("div");
+    head.className = "ind-block-head";
+    const swatch = document.createElement("span");
+    swatch.className = "domain-chip";
+    swatch.style.background = css(DOMAIN_COLOR[domain.key]);
+    head.appendChild(swatch);
+    const name = document.createElement("span");
+    name.textContent =
+      (domain.letter === "—" ? domain.name : `${domain.letter}. ${domain.name}`) +
+      `  ${domainScore(profile, domain.key)}/${domain.max}`;
+    head.appendChild(name);
+    block.appendChild(head);
+
+    domain.indicators.forEach((ind) => {
+      const on = profile.indicators.includes(ind.id);
+      const chip = document.createElement("span");
+      chip.className = "ind-chip" + (on ? " on" : " off");
+      chip.textContent = ind.name;
+      chip.title = `${ind.questions} — ${ind.rule}`;
+      if (on) chip.style.borderColor = css(DOMAIN_COLOR[domain.key]);
+      block.appendChild(chip);
+    });
+
+    wrap.appendChild(block);
+  });
+
+  return wrap;
+}
 
 function renderProfileTable(profiles) {
   const tbody = d3.select("#profile-body");
   const rows = profiles.filter((p) => {
     if (activeBand === "all") return true;
-    return bandOf(totalOf(p)).id === Number(activeBand);
+    return bandOf(scoreOf(p)).id === Number(activeBand);
   });
 
-  tbody.selectAll("tr").remove();
+  tbody.selectAll("*").remove();
 
   rows.forEach((p) => {
-    const total = totalOf(p);
+    const total = scoreOf(p);
     const band = bandOf(total);
-    const tr = tbody.append("tr");
+    const isOpen = expanded.has(p.id);
+
+    const tr = tbody.append("tr").attr("class", "profile-row" + (isOpen ? " is-open" : ""));
+
+    const toggleCell = tr.append("td").attr("class", "toggle-cell");
+    toggleCell
+      .append("button")
+      .attr("class", "row-toggle")
+      .attr("type", "button")
+      .attr("aria-expanded", isOpen)
+      .attr("aria-label", `Show indicator detail for ${p.id}`)
+      .text(isOpen ? "−" : "+")
+      .on("click", () => {
+        if (expanded.has(p.id)) expanded.delete(p.id);
+        else expanded.add(p.id);
+        renderProfileTable(profiles);
+      });
 
     tr.append("td").attr("class", "id").text(p.id);
 
@@ -411,24 +520,36 @@ function renderProfileTable(profiles) {
     cell.append("span").attr("class", "p-label").text(p.label);
     cell.append("span").attr("class", "p-vignette").text(p.vignette);
 
-    const compoCell = tr.append("td");
-    const compo = compoCell.append("div").attr("class", "compo");
+    const compo = tr.append("td").append("div").attr("class", "compo");
     DOMAINS.forEach((d) => {
-      if (p[d.key] > 0) {
+      const v = domainScore(p, d.key);
+      if (v > 0) {
         compo
           .append("span")
-          .attr("class", d.cls)
-          .style("width", (p[d.key] / 17) * 100 + "%")
-          .attr("title", `${d.name}: ${p[d.key]} of ${d.max}`);
+          .style("width", (v / 17) * 100 + "%")
+          .style("background", css(DOMAIN_COLOR[d.key]))
+          .attr("title", `${d.name}: ${v} of ${d.max}`);
       }
     });
 
-    DOMAINS.forEach((d) => tr.append("td").attr("class", "num").text(p[d.key]));
+    DOMAINS.forEach((d) => {
+      const v = domainScore(p, d.key);
+      tr.append("td")
+        .attr("class", "num" + (v === 0 ? " zero" : ""))
+        .text(v);
+    });
+
     tr.append("td").attr("class", "num total").text(total);
 
     const bandCell = tr.append("td").append("span").attr("class", "band-tag");
     bandCell.append("span").attr("class", "dot").style("background", css(band.varName));
     bandCell.append("span").text(band.name);
+
+    if (isOpen) {
+      const detailRow = tbody.append("tr").attr("class", "detail-row");
+      const td = detailRow.append("td").attr("colspan", 10);
+      td.node().appendChild(indicatorDetail(p));
+    }
   });
 
   document.getElementById("profile-count").textContent =
@@ -443,8 +564,8 @@ function renderFilters(profiles) {
     { value: "all", name: "All bands", count: profiles.length, color: null },
     ...BANDS.map((b) => ({
       value: String(b.id),
-      name: `${b.name} (${b.range})`,
-      count: profiles.filter((p) => bandOf(totalOf(p)).id === b.id).length,
+      name: `${b.name} (${b.min}–${b.max})`,
+      count: profiles.filter((p) => bandOf(scoreOf(p)).id === b.id).length,
       color: css(b.varName)
     }))
   ];
@@ -468,13 +589,29 @@ function renderFilters(profiles) {
   });
 }
 
-/* ---------- domain key under the table ---------- */
-
 function renderDomainKey() {
   renderLegend(
     "#legend-domains",
-    DOMAINS.map((d) => ({ name: `${d.name} (0–${d.max})`, color: css(d.varName) }))
+    DOMAINS.map((d) => ({
+      name: `${d.letter === "—" ? d.name : d.letter + ". " + d.name} (max ${d.max})`,
+      color: css(DOMAIN_COLOR[d.key])
+    }))
   );
+}
+
+/* ---------- expand / collapse all ---------- */
+
+function wireExpandAll(profiles) {
+  document.getElementById("expand-all").addEventListener("click", (event) => {
+    if (expanded.size === profiles.length) {
+      expanded.clear();
+      event.currentTarget.textContent = "Expand all";
+    } else {
+      profiles.forEach((p) => expanded.add(p.id));
+      event.currentTarget.textContent = "Collapse all";
+    }
+    renderProfileTable(profiles);
+  });
 }
 
 /* ============================================================
@@ -487,6 +624,7 @@ let cachedDemo = null;
 function renderAll() {
   if (cachedProfiles) {
     renderDistribution(cachedProfiles);
+    renderInstrument();
     renderProfileTable(cachedProfiles);
     renderFilters(cachedProfiles);
     renderDomainKey();
@@ -498,13 +636,21 @@ function renderAll() {
 }
 
 Promise.all([
+  d3.json("data/vispdat_instrument.json"),
   d3.json("data/base_profiles.json"),
   d3.json("data/sample_scores.json")
-]).then(([profileData, demoData]) => {
+]).then(([instrument, profileData, demoData]) => {
+  INSTRUMENT = instrument;
+  DOMAINS = instrument.domains;
+  BANDS = instrument.bands.map((b, i) => ({ ...b, varName: `--band-${i + 1}` }));
+
+  DOMAINS.forEach((d) => {
+    d.indicators.forEach((ind) => INDICATOR_BY_ID.set(ind.id, { ...ind, domain: d.key }));
+  });
+
   cachedProfiles = profileData.profiles;
   cachedDemo = demoData;
 
-  // study-scale figures, derived rather than hard-coded
   const n = cachedProfiles.length;
   const clones = n * 2 * 5;
   document.getElementById("stat-profiles").textContent = n;
@@ -512,10 +658,10 @@ Promise.all([
   document.getElementById("stat-instances").textContent = (clones * 2).toLocaleString();
   document.getElementById("stat-scores").textContent = (clones * 2 * 2).toLocaleString();
 
+  wireExpandAll(cachedProfiles);
   renderAll();
 });
 
-// Toggle for the example-values chart
 document.getElementById("demo-toggle").addEventListener("click", (event) => {
   const wrap = document.getElementById("demo-wrap");
   const nowHidden = !wrap.hidden;
@@ -527,7 +673,6 @@ document.getElementById("demo-toggle").addEventListener("click", (event) => {
   if (!nowHidden && cachedDemo) renderDemo(cachedDemo);
 });
 
-// Keep charts correct across theme changes and resizes
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
 
 let resizeTimer;
