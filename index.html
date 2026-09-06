@@ -4,81 +4,531 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Algorithmic Bias in Homeless Vulnerability Assessment</title>
+<meta name="description" content="A research dashboard comparing AI-based vulnerability scoring with the VI-SPDAT algorithm used in the Coordinated Entry System.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="site-header">
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-mark">VI&#8209;SPDAT&nbsp;&amp;&nbsp;AI Bias Study</span>
+    <nav>
+      <a href="#question">Question</a>
+      <a href="#background">Background</a>
+      <a href="#data">Data</a>
+      <a href="#method">Method</a>
+      <a href="#profiles">Base profiles</a>
+      <a href="#results">Planned results</a>
+      <a href="#limitations">Limitations</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <p class="eyebrow">Individual research project &middot; Research dashboard</p>
   <h1>Algorithmic Bias in Homeless Vulnerability Assessment</h1>
-  <p class="subtitle">VI&#8209;SPDAT vs. AI&#8209;Based Scoring in the Coordinated Entry System (CES)</p>
+  <p class="hero-sub">
+    Comparing the VI&#8209;SPDAT scoring algorithm with an AI&#8209;based substitute on an identical
+    synthetic population, to test whether either one shifts a person's vulnerability score
+    by race or gender.
+  </p>
+  <hr class="hero-rule">
+  <div class="hero-meta">
+    <span><strong>Status</strong> &nbsp;Design complete, data collection pending</span>
+    <span><strong>Instrument</strong> &nbsp;VI&#8209;SPDAT (OrgCode, 2015)</span>
+    <span><strong>Analysis</strong> &nbsp;Paired t&#8209;test, &alpha;&nbsp;=&nbsp;0.05</span>
+  </div>
 </header>
 
 <main>
 
-  <section id="overview">
-    <h2>Research Question</h2>
-    <p class="research-question">
-      When analyzing the same synthetic client data, how does an AI&#8209;based (LLM) vulnerability
-      assessment perform &mdash; in terms of accuracy and demographic bias &mdash; compared with the
-      VI&#8209;SPDAT algorithm currently used to prioritize unhoused individuals for shelter and services?
-    </p>
-    <p class="hypothesis">
-      <strong>Hypothesis:</strong> the AI&#8209;based model will outperform VI&#8209;SPDAT in accuracy against
-      true vulnerability, but will still show a residual skew against people of color.
-    </p>
+  <!-- ============ 01 RESEARCH QUESTION ============ -->
+  <section class="section" id="question">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2>Research question</h2>
+    </div>
+    <div class="section-body">
+      <blockquote class="pullquote">
+        When analyzing the same set of client data, how do AI&#8209;based models perform compared
+        with VI&#8209;SPDAT?
+      </blockquote>
+      <div class="prose">
+        <p>
+          Therefore, I want to further examine whether an AI&#8209;based substitute would resolve the
+          problem: When analyzing the same set of client data, how do AI&#8209;based models perform
+          compared with VI&#8209;SPDAT? This project would evaluate the result for bias and accuracy
+          against the actual vulnerability of these individuals.
+        </p>
+      </div>
+      <div class="hypothesis">
+        <span class="kicker">Hypothesis</span>
+        <p>
+          My hypothesis is that the AI&#8209;based model would outperform VI&#8209;SPDAT in terms of
+          accuracy, but still remain slightly skewed against people of color.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="data-source">
-    <h2>Data Source</h2>
-    <p>
-      <strong>Primary source:</strong> the published VI&#8209;SPDAT interview methodology and scoring rubric
-      (OrgCode Consulting Inc., 2015), accessed via the Georgia Department of Community Affairs &mdash;
-      16 vulnerability indicators across 4 domains, scored 0&ndash;17. This project builds a synthetic
-      population (32 base profiles &times; 2 genders &times; 5 HUD race/ethnicity categories, each tested
-      with full and partial disclosure) and scores it with both VI&#8209;SPDAT and an LLM standing in for an
-      ML&#8209;based CES tool.
-    </p>
-    <p>
-      <strong>Supporting sources:</strong> C4 Innovations, <em>&ldquo;CES Racial Equity Analysis of
-      Assessment Data&rdquo;</em>; the Coordinated Entry System Triage Tool Research and Refinement report;
-      and published documentation from CoCs piloting ML&#8209;based CES replacements.
-    </p>
+  <!-- ============ 02 BACKGROUND ============ -->
+  <section class="section" id="background">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Background</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          I want to study the underlying bias within the algorithms used for the Coordinated Entry
+          System (CES), which assesses and prioritizes the most vulnerable unhoused individuals for
+          shelters, need&#8209;based assistance, and funding. Trained staff evaluates the severity of
+          the situations of unhoused individuals with questions from a standardized screening tool,
+          such as the Vulnerability Index&ndash;Service Prioritization Decision Assistance Tool
+          (VI&#8209;SPDAT), which is frequently selected on the CoC level in the United States.
+          According to the Coordinated Entry System Triage Tool Research and Refinement, more than
+          one out of four CoCs report using a VI&#8209;SPDAT. After in&#8209;person assessments, the
+          VI&#8209;SPDAT algorithm outputs a criticality score based on the subject's answers. Lastly,
+          the participants are ranked based on their score for organizational support.
+        </p>
+        <p>
+          Even though the system intended to fairly address vulnerable homeless populations, several
+          studies, such as &ldquo;CES Racial Equity Analysis of Assessment Data&rdquo; by C4
+          Innovations, a national research organization, have reported that the VI&#8209;SPDAT system
+          has been persistently biased against people of color. For instance, a Black man may rank
+          under a white man in the homeless priority system even if he needed more help than him,
+          because of the intrinsic bias in VI&#8209;SPDAT, a human&#8209;created algorithm. This
+          partiality may leave some of the most vulnerable people without any assistance,
+          misallocating scarce, important resources to less vulnerable groups. In December of 2020,
+          VI&#8209;SPDAT's creator, OrgCode, issued an announcement that addressed the algorithm's
+          racial and sexual inaccuracies, and even encouraged users to substitute VI&#8209;SPDAT with
+          newer, less biased systems. Currently, a few CoCs are transitioning into a machine learning
+          (ML)&#8209;based system as a replacement for VI&#8209;SPDAT. However, there is not prevalent
+          research explaining that ML based algorithms would increase the fairness of the overall
+          system.
+        </p>
+        <p>
+          This research would connect well to the overarching group theme as it assesses the bias of
+          human&#8209;made technology and an AI&#8209;based replacement on a similar data sample, which
+          heavily impacts the resource distribution for homeless populations. This means that it
+          relates directly to the inequality that marginalized communities face as a result of
+          inaccurate technology.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="chart-section">
-    <h2>Mean Vulnerability Score by Race/Ethnicity</h2>
-    <p class="chart-note">
-      <strong>Illustrative placeholder &mdash; not yet real results.</strong> The bars below show the
-      structure of the planned comparison (VI&#8209;SPDAT score vs. simulated LLM score for each HUD
-      race/ethnicity category, averaged across the 32 base profiles). Values will be replaced once the
-      synthetic population has actually been scored by both models.
-    </p>
-    <div id="bias-chart"></div>
-    <p class="chart-caption">
-      X&#8209;axis: HUD race/ethnicity category. Y&#8209;axis: mean vulnerability score (0&ndash;17).
-      The comparison lets a reader check whether either model's average score shifts across race groups
-      when every profile is otherwise identical &mdash; a shift would indicate demographic bias.
-    </p>
+  <!-- ============ 03 DATA SOURCE ============ -->
+  <section class="section" id="data">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Data source</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          Though real&#8209;life VI&#8209;SPDAT data and tests are protected by privacy laws, OrgCode
+          published the exact interview methodology and scoring VI&#8209;SPDAT uses, which remains
+          publicly available through CoCs which adopted the tool. I would later use this to test the
+          VI&#8209;SPDAT algorithm against my own synthetic population.
+        </p>
+      </div>
+
+      <dl class="record">
+        <div class="record-row">
+          <dt>Source</dt>
+          <dd>OrgCode Consulting Inc., accessed through Georgia Department of Community Affairs</dd>
+        </div>
+        <div class="record-row">
+          <dt>Year</dt>
+          <dd>2015</dd>
+        </div>
+        <div class="record-row">
+          <dt>Unit of analysis</dt>
+          <dd>Each unhoused participant's profile/data</dd>
+        </div>
+        <div class="record-row">
+          <dt>Major variables</dt>
+          <dd>16 vulnerability indicators/subscales (split into 4 domains), scored 0&ndash;17</dd>
+        </div>
+        <div class="record-row">
+          <dt>Access status</dt>
+          <dd>Public</dd>
+        </div>
+      </dl>
+
+      <div class="prose" style="margin-top:1.75rem">
+        <p>
+          Other than the VI&#8209;SPDAT methodology, I would use a variety of credible research on
+          VI&#8209;SPDAT, such as C4 Innovation's racial equity analysis, and existing work on AI in
+          homeless assessment to build a knowledge foundation for my experiment.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="table-section">
-    <h2>VI&#8209;SPDAT Vulnerability Indicators</h2>
-    <p>
-      The 16 indicators below (grouped into 4 domains) summarize the published VI&#8209;SPDAT scoring rubric
-      and form the basis for the synthetic profiles used in this study. Wording is paraphrased for this
-      dashboard; see the primary source for the exact interview text.
-    </p>
-    <div id="indicator-table"></div>
+  <!-- ============ 04 METHOD ============ -->
+  <section class="section" id="method">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2>Method</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          To answer my research question, I would construct a synthetic population and test both the
+          published VI&#8209;SPDAT model and an AI&#8209;based LLM on it, prompting both models to find
+          the vulnerability for each of the individuals. For the synthetic population, I would create
+          around 32 base profiles based on the 16 vulnerability indicators of the VI&#8209;SPDAT model
+          to diversify the synthetic population. Then, I would clone these profiles across two
+          different genders and five different races according to the U.S. Department of Housing and
+          Urban Development (HUD)'s race and ethnicity categories.
+        </p>
+      </div>
+
+      <div class="catgrid">
+        <div>
+          <h3>Genders</h3>
+          <ul class="catlist">
+            <li>Male</li>
+            <li>Female</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Races</h3>
+          <ul class="catlist">
+            <li>American Indian, Alaska Native, or Indigenous</li>
+            <li>Asian or Asian American</li>
+            <li>Black, African American, or African</li>
+            <li>Hispanic/Latino/e/a</li>
+            <li>White</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prose" style="margin-top:1.75rem">
+        <p>
+          Since some individuals withhold their answers to certain questions due to fear of being
+          judged, I would test each profile twice&mdash;once with the individual truthfully answering
+          all questions, and another with them refusing to answer or underdisclosing occasionally. If
+          this proves significant, I would cite research about how race and gender may contribute to
+          the withholding of information.
+        </p>
+        <p>
+          After each model outputs a vulnerability score, I would examine if the score changed across
+          each base profile. If no bias is present, the score for one base profile should stay the
+          same no matter the person's gender or race. Lastly, I would use a paired t&#8209;test to
+          assess if the difference reached the critical value at the 0.05 level (95%). If it did, I
+          would be able to conclude that the model is biased.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value" id="stat-profiles">—</div>
+          <div class="stat-label">Base profiles</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-clones">—</div>
+          <div class="stat-label">Demographic clones<br>(2 genders &times; 5 races)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-instances">—</div>
+          <div class="stat-label">Profile instances<br>(full &amp; partial disclosure)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-scores">—</div>
+          <div class="stat-label">Vulnerability scores<br>(across both models)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 BASE PROFILES ============ -->
+  <section class="section" id="profiles">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>The 32 base profiles</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          Each base profile is a demographically neutral case description scored on the four
+          VI&#8209;SPDAT domains. These are the profiles that get cloned across every gender and race
+          combination, so the profile text itself carries no name, pronoun, or other demographic
+          signal&mdash;the only thing that changes between a profile's ten clones is the stated
+          gender and race.
+        </p>
+      </div>
+
+      <div class="chart-card">
+        <p class="chart-title">Where the 32 base profiles fall on the 0&ndash;17 scale</p>
+        <p class="chart-sub">
+          Profiles are spread deliberately across all three VI&#8209;SPDAT triage bands rather than
+          clustered in one range, so that any measured bias can be examined at low, moderate, and
+          high vulnerability separately.
+        </p>
+        <div class="legend" id="legend-distribution"></div>
+        <div class="chart-scroll" id="chart-distribution"></div>
+        <p class="chart-foot">
+          Each bar counts how many of the 32 base profiles score that exact total. Triage band
+          thresholds follow the published VI&#8209;SPDAT recommendation ranges.
+        </p>
+      </div>
+
+      <div class="designnote">
+        <span class="kicker">Design note</span>
+        <p>
+          Domain maxima used here follow the VI&#8209;SPDAT v2.0 single&#8209;adult structure: History
+          of Housing and Homelessness 0&ndash;2, Risks 0&ndash;4, Socialization and Daily Functioning
+          0&ndash;6, Wellness 0&ndash;5, summing to 17. Confirm these subscale maxima against the
+          OrgCode source document before scoring, and adjust the profile data file if your copy of the
+          tool differs.
+        </p>
+      </div>
+
+      <div class="filters" id="profile-filters"></div>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Profile</th>
+              <th>Composition</th>
+              <th class="num" title="History of Housing and Homelessness">H</th>
+              <th class="num" title="Risks">R</th>
+              <th class="num" title="Socialization and Daily Functioning">S</th>
+              <th class="num" title="Wellness">W</th>
+              <th class="num">Total</th>
+              <th>Triage band</th>
+            </tr>
+          </thead>
+          <tbody id="profile-body"></tbody>
+        </table>
+      </div>
+
+      <div class="table-note">
+        <span id="profile-count"></span>
+        <span><a href="data/base_profiles.json" download>Download base_profiles.json</a></span>
+      </div>
+
+      <div class="legend" id="legend-domains" style="margin-top:1rem"></div>
+    </div>
+  </section>
+
+  <!-- ============ 06 PLANNED RESULTS ============ -->
+  <section class="section" id="results">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2>Planned results</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          Nothing has been scored yet. The chart and table below are the empty shapes the results will
+          take, so the comparison is fixed in advance rather than chosen after seeing the numbers.
+        </p>
+      </div>
+
+      <div class="chart-card">
+        <p class="chart-title">Mean vulnerability score by race and ethnicity</p>
+        <p class="chart-sub">
+          For each HUD race and ethnicity category, the mean score both models assign across all 32
+          base profiles. If neither model is biased, every bar in this chart should sit at the same
+          height, because the underlying profiles are identical.
+        </p>
+        <div class="legend" id="legend-blank"></div>
+        <div class="chart-scroll" id="chart-blank"></div>
+        <p class="chart-foot">
+          Placeholder outlines mark where each bar will be drawn; the dash above each one stands in
+          for a value that has not been collected. The same chart will be repeated for gender and for
+          the full&#8209;disclosure versus underdisclosure condition.
+        </p>
+      </div>
+
+      <div class="chart-card">
+        <p class="chart-title">Paired t&#8209;test results</p>
+        <p class="chart-sub">
+          Each row pairs the 32 base profiles against themselves under two demographic labels, so
+          every pair differs only by the stated race or gender. Degrees of freedom are fixed by the
+          design at 31.
+        </p>
+        <div style="overflow-x:auto">
+          <table class="results">
+            <thead>
+              <tr class="group">
+                <th></th>
+                <th></th>
+                <th class="grp sep" colspan="3">VI&#8209;SPDAT</th>
+                <th class="grp sep" colspan="3">AI&#8209;based model (LLM)</th>
+              </tr>
+              <tr>
+                <th>Comparison</th>
+                <th class="num">df</th>
+                <th class="sep" style="text-align:center">Mean diff.</th>
+                <th style="text-align:center">t</th>
+                <th style="text-align:center">p</th>
+                <th class="sep" style="text-align:center">Mean diff.</th>
+                <th style="text-align:center">t</th>
+                <th style="text-align:center">p</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="cmp">American Indian, Alaska Native, or Indigenous vs. White</td>
+                <td class="set">31</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+              </tr>
+              <tr>
+                <td class="cmp">Asian or Asian American vs. White</td>
+                <td class="set">31</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+              </tr>
+              <tr>
+                <td class="cmp">Black, African American, or African vs. White</td>
+                <td class="set">31</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+              </tr>
+              <tr>
+                <td class="cmp">Hispanic/Latino/e/a vs. White</td>
+                <td class="set">31</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+              </tr>
+              <tr>
+                <td class="cmp">Female vs. Male</td>
+                <td class="set">31</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+              </tr>
+              <tr>
+                <td class="cmp">Underdisclosure vs. full disclosure</td>
+                <td class="set">31</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="chart-foot">
+          A difference is treated as evidence of bias when it reaches the critical value at the 0.05
+          level (95%).
+        </p>
+      </div>
+
+      <div class="toggle-row">
+        <button class="btn" id="demo-toggle" type="button" aria-expanded="false" aria-controls="demo-wrap">
+          Show version with example values
+        </button>
+        <span class="toggle-hint">Fabricated numbers, kept only to preview how a filled&#8209;in chart reads.</span>
+      </div>
+
+      <div id="demo-wrap" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Example values only &mdash; not study results</p>
+          <p class="chart-sub">
+            Every number in this chart is invented. It exists to show what the chart above will look
+            like once real model output is available, and it should not be cited or read as a finding.
+          </p>
+          <div class="legend" id="legend-demo"></div>
+          <div class="chart-scroll" id="chart-demo"></div>
+          <p class="chart-foot">
+            Source of values: none. This is placeholder scaffolding from the first version of the
+            dashboard.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 LIMITATIONS ============ -->
+  <section class="section" id="limitations">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <h2>Expected contribution and limitations</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          I expect this study to improve our understanding on the limitations and strengths of AI in
+          terms of fairly scoring vulnerable and marginalized individuals to be used as a tool to
+          reduce demographic bias. A limitation in my study is that the tested population is
+          synthetic, meaning that it may have less variation than an actual population. I am not
+          certain if this systematic distribution of conditions and traits would alter the results.
+          For instance, demographic bias in real life tests may cluster around scores 3&ndash;4 out of
+          17, while my synthetic base profiles mostly score 11&ndash;12.
+        </p>
+      </div>
+
+      <div class="designnote">
+        <span class="kicker">Design note</span>
+        <p>
+          The profile set in section 05 was built to answer this last concern directly. Rather than
+          concentrating in the 11&ndash;12 range, the 32 profiles are stratified evenly across all
+          three triage bands, with eight profiles in each quarter of the 0&ndash;17 scale. Profiles
+          that share a total score are also given different domain compositions, which makes it
+          possible to check whether a model responds to <em>which</em> domain drives a score rather
+          than to the total alone.
+        </p>
+      </div>
+
+      <h3 style="font-family:var(--font-ui);font-size:0.72rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--ink-muted);margin:2.5rem 0 0;font-weight:600">
+        Open issues
+      </h3>
+      <ul class="qlist">
+        <li>
+          Since I do not have access to the actual ML models used, I would need to mimic its results
+          by using a LLM. Would the result of this study be able to be interpolated in ML models? In
+          the end, I would still like to analyze if the ML models would mitigate or retain demographic
+          bias.
+        </li>
+        <li>
+          Would ~32 base profiles be varied enough to accurately make generalizations about racial or
+          sexual bias?
+        </li>
+        <li>
+          Would the LLM adapt to the clones of the base profiles and just give me the same scores
+          across races and gender? Would it identify that race and gender is not a relevant factor in
+          this operation?
+        </li>
+      </ul>
+    </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>
-    Data sources: OrgCode Consulting Inc. (2015), via Georgia Department of Community Affairs &middot;
-    C4 Innovations, CES Racial Equity Analysis of Assessment Data
-  </p>
-  <p><a href="https://github.com/SallyPineapple2/homelessness-algorithm">View source on GitHub</a></p>
+  <div class="footer-inner">
+    <div>
+      <h3>Primary source</h3>
+      <p>
+        OrgCode Consulting Inc. (2015), VI&#8209;SPDAT interview methodology and scoring, accessed
+        through the Georgia Department of Community Affairs. Public.
+      </p>
+    </div>
+    <div>
+      <h3>Supporting research</h3>
+      <ul>
+        <li>C4 Innovations, &ldquo;CES Racial Equity Analysis of Assessment Data&rdquo;</li>
+        <li>Coordinated Entry System Triage Tool Research and Refinement</li>
+        <li>OrgCode statement on VI&#8209;SPDAT, December 2020</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Repository</h3>
+      <ul>
+        <li><a href="https://github.com/SallyPineapple2/homelessness-algorithm">github.com/SallyPineapple2/homelessness-algorithm</a></li>
+        <li><a href="data/base_profiles.json">base_profiles.json</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
