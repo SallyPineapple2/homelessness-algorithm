@@ -598,7 +598,7 @@ td.total { font-weight: 600; }
   color: var(--ink-muted);
   line-height: 1.5;
   display: block;
-  max-width: 46ch;
+  max-width: 40ch;
 }
 
 /* composition bar (stacked, 2px surface gaps) */
@@ -716,10 +716,55 @@ tr.detail-row td {
   padding: 0 0.75rem 0.9rem 2.4rem;
 }
 
+.person-detail { padding: 0.9rem 0 1rem; }
+
+.design-role {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0 0.85rem;
+}
+
+.attr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.85rem 1.6rem;
+}
+.attr-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.attr-value {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
 .ind-detail {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
   gap: 0.9rem 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.p-age {
+  display: block;
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.2rem;
 }
 
 .ind-block-head {

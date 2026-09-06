@@ -447,6 +447,45 @@ function renderInstrument() {
 let activeBand = "all";
 const expanded = new Set();
 
+const ATTRIBUTES = [
+  { key: "background", label: "Background" },
+  { key: "finances", label: "Financial situation" },
+  { key: "ties", label: "Family and social ties" },
+  { key: "demeanor", label: "Demeanor in the interview" }
+];
+
+function personDetail(profile) {
+  const wrap = document.createElement("div");
+  wrap.className = "person-detail";
+
+  if (profile.design_role) {
+    const role = document.createElement("p");
+    role.className = "design-role";
+    role.textContent = profile.design_role;
+    wrap.appendChild(role);
+  }
+
+  const grid = document.createElement("div");
+  grid.className = "attr-grid";
+  ATTRIBUTES.forEach((attr) => {
+    if (!profile[attr.key]) return;
+    const block = document.createElement("div");
+    block.className = "attr";
+    const head = document.createElement("div");
+    head.className = "attr-label";
+    head.textContent = attr.label;
+    const body = document.createElement("div");
+    body.className = "attr-value";
+    body.textContent = profile[attr.key];
+    block.appendChild(head);
+    block.appendChild(body);
+    grid.appendChild(block);
+  });
+  wrap.appendChild(grid);
+
+  return wrap;
+}
+
 function indicatorDetail(profile) {
   const wrap = document.createElement("div");
   wrap.className = "ind-detail";
@@ -518,6 +557,7 @@ function renderProfileTable(profiles) {
 
     const cell = tr.append("td");
     cell.append("span").attr("class", "p-label").text(p.label);
+    cell.append("span").attr("class", "p-age").text(`Age ${p.age}`);
     cell.append("span").attr("class", "p-vignette").text(p.vignette);
 
     const compo = tr.append("td").append("div").attr("class", "compo");
@@ -547,7 +587,8 @@ function renderProfileTable(profiles) {
 
     if (isOpen) {
       const detailRow = tbody.append("tr").attr("class", "detail-row");
-      const td = detailRow.append("td").attr("colspan", 10);
+      const td = detailRow.append("td").attr("colspan", 11);
+      td.node().appendChild(personDetail(p));
       td.node().appendChild(indicatorDetail(p));
     }
   });
