@@ -88,6 +88,39 @@ Because each profile is cloned across 2 genders × 5 HUD race categories and
 tested under both full disclosure and underdisclosure, the design produces 640
 profile instances and 1,280 scores across both models.
 
+Each profile also carries eight narrative fields — work and education, the path
+into homelessness, finances, family and social ties, a typical day, what they
+want next, service history, and interview demeanor. The depth is methodological:
+in a thin profile the stated race and gender are the only features separating one
+clone from another, which makes the manipulation obvious to a language model.
+Every field is held identical across a profile's ten clones, and all ten are
+screened for gendered, racial, national, and religious wording.
+
+### Run schedule
+
+`scripts/make_schedule.py` builds `data/run_schedule.json`: 20 sessions of 32
+instances each. Two constraints hold at once —
+
+- **No session contains two clones of the same base profile**, so a model cannot
+  notice it is re-scoring one case with the demographics swapped.
+- **Every base profile is still seen under all 20 conditions exactly once.**
+
+Together these give a cyclic Latin square: base profile *i* in session *s* takes
+condition *(i + s) mod 20*. Presentation order is then shuffled within each
+session so position cannot be confounded with condition.
+
+```bash
+python scripts/make_schedule.py
+```
+
+The generator runs from a fixed seed and verifies the schedule before writing it,
+asserting that no session repeats a profile, that positions run 1–32 without
+gaps, and that every profile covers all 20 conditions. It refuses to write a
+schedule that breaks the design.
+
+Start each session in a fresh context with no memory of previous sessions, score
+in the order given, and run the whole schedule separately for each model.
+
 ## Setup / GitHub Pages
 
 1. Repo settings → **Pages** → Source: **Deploy from a branch**

@@ -662,6 +662,44 @@ tr.domain-row .domain-max {
   flex: none;
 }
 
+/* ---------- run schedule ---------- */
+
+.session-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.session-chip {
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 30px;
+  padding: 0.25rem 0.4rem;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.session-chip:hover { border-color: var(--ink-muted); color: var(--ink); }
+.session-chip[aria-pressed="true"] {
+  border-color: var(--series-1);
+  background: var(--series-1);
+  color: #fff;
+  font-weight: 600;
+}
+.session-chip:focus-visible { outline: 2px solid var(--series-1); outline-offset: 2px; }
+
+.session-wrap { max-height: 420px; }
+
+table.schedule td { font-size: 0.82rem; white-space: nowrap; }
+table.schedule td.pos { color: var(--ink-muted); width: 1%; }
+td.disclosure { color: var(--ink-2); }
+td.disclosure.partial { color: var(--ink); font-weight: 500; }
+
 /* ---------- table controls ---------- */
 
 .table-controls {

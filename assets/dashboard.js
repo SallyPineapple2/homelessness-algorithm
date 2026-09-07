@@ -441,6 +441,51 @@ function renderInstrument() {
 }
 
 /* ============================================================
+   4b. Run schedule — randomized order, clones kept apart
+   ============================================================ */
+
+let SCHEDULE = null;
+let activeSession = 1;
+
+function renderSessionPicker() {
+  const wrap = d3.select("#session-picker");
+  wrap.selectAll("*").remove();
+
+  SCHEDULE.sessions.forEach((sess) => {
+    wrap
+      .append("button")
+      .attr("class", "session-chip")
+      .attr("type", "button")
+      .attr("aria-pressed", sess.session === activeSession)
+      .text(sess.session)
+      .on("click", () => {
+        activeSession = sess.session;
+        renderSessionPicker();
+        renderSchedule();
+      });
+  });
+}
+
+function renderSchedule() {
+  const sess = SCHEDULE.sessions.find((s) => s.session === activeSession);
+  document.getElementById("session-num").textContent = activeSession;
+
+  const tbody = d3.select("#schedule-body");
+  tbody.selectAll("*").remove();
+
+  sess.items.forEach((item) => {
+    const tr = tbody.append("tr");
+    tr.append("td").attr("class", "num pos").text(item.position);
+    tr.append("td").attr("class", "id").text(item.profile);
+    tr.append("td").text(item.gender);
+    tr.append("td").text(item.race);
+    tr.append("td")
+      .attr("class", item.disclosure === "Underdisclosure" ? "disclosure partial" : "disclosure")
+      .text(item.disclosure);
+  });
+}
+
+/* ============================================================
    5. Base profile table
    ============================================================ */
 
@@ -683,8 +728,9 @@ function renderAll() {
 Promise.all([
   d3.json("data/vispdat_instrument.json"),
   d3.json("data/base_profiles.json"),
+  d3.json("data/run_schedule.json"),
   d3.json("data/sample_scores.json")
-]).then(([instrument, profileData, demoData]) => {
+]).then(([instrument, profileData, schedule, demoData]) => {
   INSTRUMENT = instrument;
   DOMAINS = instrument.domains;
   BANDS = instrument.bands.map((b, i) => ({ ...b, varName: `--band-${i + 1}` }));
@@ -695,6 +741,7 @@ Promise.all([
 
   cachedProfiles = profileData.profiles;
   cachedDemo = demoData;
+  SCHEDULE = schedule;
 
   const n = cachedProfiles.length;
   const clones = n * 2 * 5;
@@ -704,6 +751,8 @@ Promise.all([
   document.getElementById("stat-scores").textContent = (clones * 2 * 2).toLocaleString();
 
   wireExpandAll(cachedProfiles);
+  renderSessionPicker();
+  renderSchedule();
   renderAll();
 });
 

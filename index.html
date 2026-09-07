@@ -246,6 +246,67 @@
           <div class="stat-label">Vulnerability scores<br>(across both models)</div>
         </div>
       </div>
+
+      <h3 class="subhead">Run protocol</h3>
+      <div class="prose">
+        <p>
+          Scoring 640 instances in sequence would let a model notice that it is re-reading the same
+          case with the demographics swapped. The run is therefore split into 20 sessions, each
+          started in a fresh context, and built so that no two clones of the same base profile are
+          ever scored together.
+        </p>
+      </div>
+
+      <div class="designnote">
+        <span class="kicker">Design note &mdash; how the schedule is built</span>
+        <p>
+          Two constraints have to hold at once: no session may contain two clones of one base
+          profile, and every base profile must still be seen under all 20 conditions. Together these
+          give a cyclic Latin square. Base profile <em>i</em> in session <em>s</em> takes condition
+          <em>(i&nbsp;+&nbsp;s)&nbsp;mod&nbsp;20</em>, so each profile appears exactly once per
+          session and cycles through every condition across the 20 sessions. Presentation order is
+          then shuffled inside each session, so position in the run cannot be confounded with
+          condition.
+        </p>
+        <p>
+          The schedule is generated from a fixed seed and verified before it is written: the
+          generator asserts that no session repeats a profile, that positions run 1&ndash;32 with no
+          gaps, and that every profile covers all 20 conditions exactly once. It will refuse to
+          write a schedule that breaks the design.
+        </p>
+      </div>
+
+      <div class="chart-card">
+        <p class="chart-title">Running order &mdash; session <span id="session-num">1</span> of 20</p>
+        <p class="chart-sub">
+          The order each instance is presented in, for the selected session. Every base profile
+          appears exactly once, under a different demographic condition from its other clones.
+        </p>
+        <div class="session-picker" id="session-picker"></div>
+        <div class="table-wrap session-wrap">
+          <table class="data schedule">
+            <thead>
+              <tr>
+                <th class="num">#</th>
+                <th>Base profile</th>
+                <th>Gender</th>
+                <th>Race and ethnicity</th>
+                <th>Disclosure</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-body"></tbody>
+          </table>
+        </div>
+        <p class="chart-foot">
+          Start each session in a fresh context with no memory of any previous session, and score in
+          the order shown. Run the whole schedule separately for each model.
+        </p>
+      </div>
+
+      <div class="table-note">
+        <span>20 sessions &times; 32 instances = 640 per model &middot; generated from seed 20260906</span>
+        <span><a href="data/run_schedule.json" download>Download run_schedule.json</a></span>
+      </div>
     </div>
   </section>
 
