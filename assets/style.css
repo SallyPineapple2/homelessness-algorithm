@@ -998,3 +998,64 @@ table.results tbody tr:last-child td { border-bottom: 0; }
 .tooltip .tt-dot { width: 9px; height: 9px; border-radius: 2px; flex: none; }
 
 [hidden] { display: none !important; }
+
+/* ---------- result callout ---------- */
+
+.finding {
+  border: 1px solid var(--rule-strong);
+  border-left: 3px solid var(--series-1);
+  border-radius: 3px;
+  background: var(--surface);
+  padding: 1.1rem 1.35rem;
+  margin: 1.75rem 0 0;
+  max-width: var(--prose);
+}
+.finding .kicker {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--series-1);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.finding p {
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: var(--ink-2);
+  margin: 0 0 0.75rem;
+}
+.finding p:last-child { margin-bottom: 0; }
+.finding strong { color: var(--ink); font-weight: 600; }
+
+/* filled result cells */
+table.results td.filled {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+table.results td.filled.sig { font-weight: 600; }
+
+.stamp {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.bar-value {
+  font-size: 11px;
+  fill: var(--ink-2);
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  text-anchor: middle;
+}
+
+.level-line {
+  stroke: var(--ink-muted);
+  stroke-width: 1;
+  stroke-dasharray: 2 3;
+  opacity: 0.7;
+}

@@ -462,6 +462,39 @@
       <h2>Planned results</h2>
     </div>
     <div class="section-body">
+      <div class="prose">
+        <p>
+          The VI&#8209;SPDAT arm has been run. All 640 instances were scored with the published
+          additive algorithm; the AI arm has not been run yet, and its columns below are still empty.
+        </p>
+      </div>
+
+      <div class="finding">
+        <span class="kicker">Result &mdash; VI&#8209;SPDAT arm</span>
+        <p>
+          <strong>VI&#8209;SPDAT produced identical scores across every race and gender.</strong>
+          Mean score was 6.406 for all five HUD race categories and for both genders; every paired
+          t&#8209;test on race and gender returned a mean difference of exactly 0.000. This is not a
+          null result to be explained away &mdash; it follows from the algorithm's structure. Race is
+          not an input to any VI&#8209;SPDAT scoring rule, and the only gender&#8209;dependent item in
+          version 2.0 is the pregnancy question, which no base profile sets.
+        </p>
+        <p>
+          <strong>The documented racial bias in VI&#8209;SPDAT therefore cannot live in the
+          arithmetic.</strong> It has to enter through the interview: which questions get asked, how
+          answers are interpreted and recorded, and who feels safe disclosing what. That makes the
+          disclosure condition the more revealing half of this arm.
+        </p>
+        <p>
+          <strong>Withholding stigmatized information cost 1.94 points on average</strong>
+          (t&nbsp;=&nbsp;&minus;22.47, p&nbsp;&lt;&nbsp;0.001) &mdash; and moved
+          <strong>100 of 320</strong> profile-and-demographic combinations into a lower triage band,
+          changing the intervention they would be referred to. If disclosure varies by race or
+          gender in real interviews, that is a mechanism large enough to produce the disparities
+          reported in the literature without a single biased line of arithmetic.
+        </p>
+      </div>
+
       <div class="chart-card">
         <p class="chart-title">Mean vulnerability score by race and ethnicity</p>
         <p class="chart-sub">
@@ -472,18 +505,20 @@
         <div class="legend" id="legend-blank"></div>
         <div class="chart-scroll" id="chart-blank"></div>
         <p class="chart-foot">
-          Placeholder outlines mark where each bar will be drawn; the dash above each one stands in
-          for a value that has not been collected. The same chart will be repeated for gender and for
-          the full&#8209;disclosure versus underdisclosure condition.
+          VI&#8209;SPDAT bars are measured across all 640 instances and sit at exactly the same
+          height, as the algorithm's structure requires. Dashed outlines mark the AI arm, which has
+          not been run. The same chart will be repeated for gender and for the full&#8209;disclosure
+          versus underdisclosure condition.
         </p>
       </div>
 
       <div class="chart-card">
         <p class="chart-title">Paired t&#8209;test results</p>
         <p class="chart-sub">
-          Each row pairs the 32 base profiles against themselves under two demographic labels, so
-          every pair differs only by the stated race or gender. Degrees of freedom are fixed by the
-          design at 31.
+          Each row pairs base profiles against themselves under two conditions, so every pair
+          differs only by the stated race, gender, or disclosure. VI&#8209;SPDAT columns are filled
+          from the completed run; the AI columns are still empty.
+          <span id="vispdat-stamp" class="stamp"></span>
         </p>
         <div style="overflow-x:auto">
           <table class="results">
@@ -506,40 +541,40 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr data-comparison="American Indian, Alaska Native, or Indigenous vs. White">
                 <td class="cmp">American Indian, Alaska Native, or Indigenous vs. White</td>
-                <td class="set">31</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="set">&mdash;</td>
+                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
                 <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
               </tr>
-              <tr>
+              <tr data-comparison="Asian or Asian American vs. White">
                 <td class="cmp">Asian or Asian American vs. White</td>
-                <td class="set">31</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="set">&mdash;</td>
+                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
                 <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
               </tr>
-              <tr>
+              <tr data-comparison="Black, African American, or African vs. White">
                 <td class="cmp">Black, African American, or African vs. White</td>
-                <td class="set">31</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="set">&mdash;</td>
+                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
                 <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
               </tr>
-              <tr>
+              <tr data-comparison="Hispanic/Latino/e/a vs. White">
                 <td class="cmp">Hispanic/Latino/e/a vs. White</td>
-                <td class="set">31</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="set">&mdash;</td>
+                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
                 <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
               </tr>
-              <tr>
+              <tr data-comparison="Female vs. Male">
                 <td class="cmp">Female vs. Male</td>
-                <td class="set">31</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="set">&mdash;</td>
+                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
                 <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
               </tr>
-              <tr>
+              <tr data-comparison="Underdisclosure vs. full disclosure">
                 <td class="cmp">Underdisclosure vs. full disclosure</td>
-                <td class="set">31</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
+                <td class="set">&mdash;</td>
+                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
                 <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
               </tr>
             </tbody>
@@ -547,7 +582,8 @@
         </div>
         <p class="chart-foot">
           A difference is treated as evidence of bias when it reaches the critical value at the 0.05
-          level (95%).
+          level (95%). Where every pair is identical the t&#8209;statistic is undefined rather than
+          zero, shown as <em>n/a</em>.
         </p>
       </div>
 

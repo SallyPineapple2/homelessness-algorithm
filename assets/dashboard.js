@@ -275,34 +275,67 @@ function renderBlankTemplate() {
   const barW = Math.min(MAX_BAR, x1.bandwidth() - GAP);
   const offset = (x1.bandwidth() - barW) / 2;
 
+  // Real VI-SPDAT means where they exist; dashed placeholders for the LLM arm.
+  const vispdatMeans = RESULTS ? RESULTS.means_by_race : null;
+
   races.forEach((race) => {
     const group = g.append("g").attr("transform", `translate(${x0(race)},0)`);
+    const plain = race.replace(/\n/g, " ");
+
     MODELS.forEach((m) => {
       const bx = x1(m.key) + offset;
-      group
-        .append("rect")
-        .attr("class", "blank-bar")
-        .attr("x", bx)
-        .attr("y", y(11))
-        .attr("width", barW)
-        .attr("height", height - y(11))
-        .attr("rx", RADIUS)
-        .attr("stroke", css(m.varName))
-        .attr("stroke-opacity", 0.75);
-      group
-        .append("text")
-        .attr("class", "blank-mark")
-        .attr("x", bx + barW / 2)
-        .attr("y", y(11) - 7)
-        .text("—");
+      const value = m.key === "vispdat" && vispdatMeans ? vispdatMeans[plain] : null;
+
+      if (value != null) {
+        group
+          .append("path")
+          .attr("d", barPath(bx, y(value), barW, height - y(value), RADIUS))
+          .attr("fill", css(m.varName))
+          .style("cursor", "pointer")
+          .on("mouseenter", (event) =>
+            showTip(
+              event,
+              `<span class="tt-title">${plain}</span>
+               <span class="tt-row"><span class="tt-dot" style="background:${css(m.varName)}"></span>
+               ${m.name}: ${value.toFixed(3)}</span>`
+            )
+          )
+          .on("mousemove", moveTip)
+          .on("mouseleave", hideTip);
+        group
+          .append("text")
+          .attr("class", "bar-value")
+          .attr("x", bx + barW / 2)
+          .attr("y", y(value) - 7)
+          .text(value.toFixed(2));
+      } else {
+        group
+          .append("rect")
+          .attr("class", "blank-bar")
+          .attr("x", bx)
+          .attr("y", y(11))
+          .attr("width", barW)
+          .attr("height", height - y(11))
+          .attr("rx", RADIUS)
+          .attr("stroke", css(m.varName))
+          .attr("stroke-opacity", 0.75);
+        group
+          .append("text")
+          .attr("class", "blank-mark")
+          .attr("x", bx + barW / 2)
+          .attr("y", y(11) - 7)
+          .text("—");
+      }
     });
   });
 
-  g.append("text")
-    .attr("class", "awaiting")
-    .attr("x", width / 2)
-    .attr("y", y(15))
-    .text("Awaiting model output");
+  if (vispdatMeans) {
+    const level = y(vispdatMeans[races[0].replace(/\n/g, " ")]);
+    g.append("line")
+      .attr("class", "level-line")
+      .attr("x1", 0).attr("x2", width)
+      .attr("y1", level).attr("y2", level);
+  }
 
   g.append("line")
     .attr("class", "baseline")
@@ -445,7 +478,39 @@ function renderInstrument() {
    ============================================================ */
 
 let SCHEDULE = null;
+let RESULTS = null;
 let activeSession = 1;
+
+/* ---------- VI-SPDAT results: fill the paired t-test table ---------- */
+
+function renderResultsTable() {
+  if (!RESULTS) return;
+  const byName = new Map(RESULTS.tests.map((t) => [t.comparison, t]));
+
+  document.querySelectorAll("tr[data-comparison]").forEach((row) => {
+    const test = byName.get(row.dataset.comparison);
+    if (!test) return;
+    const fmt = (v, digits) =>
+      v === null || v === undefined ? "—" : Number(v).toFixed(digits);
+
+    row.querySelector('[data-cell="diff"]').textContent = fmt(test.mean_diff, 3);
+    row.querySelector('[data-cell="t"]').textContent =
+      test.t === null ? "n/a" : fmt(test.t, 2);
+    row.querySelector('[data-cell="p"]').textContent =
+      test.p < 0.001 ? "<0.001" : fmt(test.p, 3);
+
+    row.querySelectorAll("[data-cell]").forEach((cell) => {
+      cell.classList.remove("blank");
+      cell.classList.add("filled");
+      if (test.significant) cell.classList.add("sig");
+    });
+  });
+
+  const stamp = document.getElementById("vispdat-stamp");
+  if (stamp) {
+    stamp.textContent = `${RESULTS.instances_scored} instances scored`;
+  }
+}
 
 function renderSessionPicker() {
   const wrap = d3.select("#session-picker");
@@ -729,8 +794,9 @@ Promise.all([
   d3.json("data/vispdat_instrument.json"),
   d3.json("data/base_profiles.json"),
   d3.json("data/run_schedule.json"),
+  d3.json("data/vispdat_results.json"),
   d3.json("data/sample_scores.json")
-]).then(([instrument, profileData, schedule, demoData]) => {
+]).then(([instrument, profileData, schedule, vispdatResults, demoData]) => {
   INSTRUMENT = instrument;
   DOMAINS = instrument.domains;
   BANDS = instrument.bands.map((b, i) => ({ ...b, varName: `--band-${i + 1}` }));
@@ -742,6 +808,7 @@ Promise.all([
   cachedProfiles = profileData.profiles;
   cachedDemo = demoData;
   SCHEDULE = schedule;
+  RESULTS = vispdatResults;
 
   const n = cachedProfiles.length;
   const clones = n * 2 * 5;
@@ -753,6 +820,7 @@ Promise.all([
   wireExpandAll(cachedProfiles);
   renderSessionPicker();
   renderSchedule();
+  renderResultsTable();
   renderAll();
 });
 

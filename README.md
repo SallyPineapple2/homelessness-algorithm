@@ -121,6 +121,42 @@ schedule that breaks the design.
 Start each session in a fresh context with no memory of previous sessions, score
 in the order given, and run the whole schedule separately for each model.
 
+## Results so far
+
+### VI-SPDAT arm — complete
+
+`scripts/score_vispdat.py` scores all 640 instances with the published additive
+algorithm and runs the paired t-tests.
+
+```bash
+python scripts/score_vispdat.py
+```
+
+| Comparison | Mean diff | t | p |
+|---|---|---|---|
+| Am. Indian / AK Native / Indigenous vs. White | 0.000 | n/a | 1.000 |
+| Asian or Asian American vs. White | 0.000 | n/a | 1.000 |
+| Black, African American, or African vs. White | 0.000 | n/a | 1.000 |
+| Hispanic/Latino/e/a vs. White | 0.000 | n/a | 1.000 |
+| Female vs. Male | 0.000 | n/a | 1.000 |
+| **Underdisclosure vs. full disclosure** | **−1.938** | **−22.47** | **<0.001** |
+
+Mean score was 6.406 for every race category and both genders. This follows from
+the algorithm's structure: race is not an input to any VI-SPDAT scoring rule, and
+the only gender-dependent item in v2.0 is the pregnancy question, which no base
+profile sets. Where every pair is identical the t-statistic is undefined rather
+than zero, reported as `n/a`.
+
+**The implication:** the racial bias documented in VI-SPDAT cannot originate in
+the arithmetic. It has to enter through the interview — which questions are
+asked, how answers are recorded, and who feels safe disclosing what.
+
+Withholding stigmatized information cost 1.94 points on average and moved
+**100 of 320** profile-and-demographic combinations into a lower triage band,
+changing the intervention they would be referred to.
+
+### AI arm — not yet run
+
 ## Setup / GitHub Pages
 
 1. Repo settings → **Pages** → Source: **Deploy from a branch**
