@@ -448,9 +448,13 @@ let activeBand = "all";
 const expanded = new Set();
 
 const ATTRIBUTES = [
-  { key: "background", label: "Background" },
+  { key: "background", label: "Work and education" },
+  { key: "path", label: "Path into homelessness" },
   { key: "finances", label: "Financial situation" },
   { key: "ties", label: "Family and social ties" },
+  { key: "routine", label: "A typical day" },
+  { key: "goals", label: "What they want next" },
+  { key: "services", label: "Service history" },
   { key: "demeanor", label: "Demeanor in the interview" }
 ];
 

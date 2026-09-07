@@ -269,6 +269,30 @@
           profile text carries no name, pronoun, or other demographic signal&mdash;the only thing that
           changes between a profile's ten clones is the stated gender and race.
         </p>
+        <p>
+          Each profile also carries a work history, a financial picture, a path into homelessness, a
+          daily routine, a service record, and a description of how the person presents in the
+          interview. Expand any row below to read them.
+        </p>
+      </div>
+
+      <div class="designnote">
+        <span class="kicker">Design note &mdash; why the profiles are this detailed</span>
+        <p>
+          The depth is methodological rather than decorative. In a thin profile, the stated race and
+          gender are the only features distinguishing one clone from another, which makes the
+          manipulation obvious to a language model and invites it either to refuse the comparison or
+          to overcorrect for it. That is the risk raised in the limitations below: that the model
+          notices what is being tested and returns identical scores by design rather than by fairness.
+        </p>
+        <p>
+          Surrounded by eight fields of unrelated detail, the demographic line becomes one item among
+          many rather than the obvious variable. Every added detail is held <em>identical</em> across
+          all ten clones of a profile, so it cannot produce a demographic difference on its own, and
+          each field is screened for gendered, racial, national, and religious wording &mdash; a
+          detail that carried its own demographic signal would reintroduce exactly the confound the
+          detail is meant to mask.
+        </p>
       </div>
 
       <h3 class="subhead">The scoring instrument</h3>
