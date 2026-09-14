@@ -216,7 +216,7 @@ function tableFrom(selector, headers, rows) {
   const table = d3.select(selector);
   table.selectAll("*").remove();
   const head = table.append("thead").append("tr");
-  headers.forEach((h, i) => head.append("th").attr("class", i === 0 ? null : "model-col").html(h));
+  headers.forEach((h, i) => head.append("th").attr("scope", "col").attr("class", i === 0 ? null : "model-col").html(h));
   const tbody = table.append("tbody");
   rows.forEach((r) => {
     const tr = tbody.append("tr").attr("class", r.className || null);
@@ -1183,7 +1183,7 @@ function renderDownloads() {
   const table = d3.select("#downloads-table");
   table.selectAll("*").remove();
   const head = table.append("thead").append("tr");
-  ["File", "Contents", "Download"].forEach((h) => head.append("th").text(h));
+  ["File", "Contents", "Download"].forEach((h) => head.append("th").attr("scope", "col").text(h));
   const tbody = table.append("tbody");
   rows.forEach(([name, href, desc]) => {
     const tr = tbody.append("tr");

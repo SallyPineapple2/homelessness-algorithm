@@ -80,12 +80,18 @@ const RADIUS = 4;
 
 function makeSvg(container, width, height) {
   d3.select(container).selectAll("svg").remove();
+  // Name each chart for screen readers after its card title; the numbers are in the tables.
+  const node = d3.select(container).node();
+  const card = node && node.closest(".chart-card");
+  const title = card && card.querySelector(".chart-title");
   return d3
     .select(container)
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .attr("viewBox", `0 0 ${width} ${height}`);
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("role", "img")
+    .attr("aria-label", title ? `Chart: ${title.textContent.trim()}` : "Chart");
 }
 
 function drawGrid(g, y, width, ticks) {
@@ -643,3 +649,42 @@ window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(renderAll, 180);
 });
+
+/* ---------- collapsible sections, jump links, back to top ---------- */
+
+// Charts inside a closed section are drawn at a fallback width; redraw on open.
+document.querySelectorAll("details.subsection, details.fold").forEach((d) =>
+  d.addEventListener("toggle", () => {
+    if (d.open) renderAll();
+  })
+);
+
+// A link to anything inside a closed section opens that section first.
+function openTarget(hash) {
+  if (!hash || hash === "#") return;
+  const el = document.getElementById(decodeURIComponent(hash.slice(1)));
+  const fold = el && el.closest("details");
+  if (fold && !fold.open) fold.open = true;
+}
+document.addEventListener("click", (event) => {
+  const link = event.target.closest('a[href^="#"]');
+  if (link) openTarget(link.getAttribute("href"));
+});
+window.addEventListener("hashchange", () => openTarget(location.hash));
+openTarget(location.hash);
+
+const toggleAll = document.getElementById("toggle-all");
+if (toggleAll) {
+  toggleAll.addEventListener("click", () => {
+    const folds = [...document.querySelectorAll("#results details.subsection")];
+    const open = folds.some((d) => !d.open);
+    folds.forEach((d) => (d.open = open));
+    toggleAll.textContent = open ? "Collapse all" : "Expand all";
+    toggleAll.setAttribute("aria-expanded", String(open));
+  });
+}
+
+const toTop = document.getElementById("to-top");
+if (toTop) {
+  window.addEventListener("scroll", () => (toTop.hidden = window.scrollY < 900), { passive: true });
+}

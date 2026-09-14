@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<a class="skip-link" href="#results">Skip to results</a>
 
 <div class="topbar">
   <div class="topbar-inner">
@@ -259,6 +260,9 @@
         </div>
       </div>
 
+      <details class="fold" id="fold-protocol">
+        <summary>Run protocol, session schedule, and AI protocol</summary>
+        <div class="fold-body">
       <h3 class="subhead">Run protocol</h3>
       <div class="prose">
         <p>
@@ -375,6 +379,8 @@
         <span>Every reply is kept exactly as pasted</span>
         <span><a href="paste/prompts/session-01/part-1.txt">Read session 1, part 1</a> &middot; <a href="paste/prompts/session-01/part-2.txt">part 2</a></span>
       </div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -433,6 +439,9 @@
         </p>
       </div>
 
+      <details class="fold" id="fold-instrument">
+        <summary>The scoring instrument: 16 indicators and their rules</summary>
+        <div class="fold-body">
       <h3 class="subhead">The scoring instrument</h3>
       <div class="prose">
         <p>
@@ -460,6 +469,8 @@
         <span><a href="data/vispdat_instrument.json" download>Download vispdat_instrument.json</a></span>
       </div>
 
+        </div>
+      </details>
       <h3 class="subhead">How the profiles are distributed</h3>
 
       <div class="chart-card">
@@ -495,6 +506,9 @@
         </p>
       </div>
 
+      <details class="fold" id="fold-profiles">
+        <summary>Profile set: all 32 base profiles</summary>
+        <div class="fold-body">
       <h3 class="subhead">Profile set</h3>
 
       <div class="table-controls">
@@ -529,6 +543,8 @@
       </div>
 
       <div class="legend" id="legend-domains" style="margin-top:1rem"></div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -556,6 +572,7 @@
           <div class="filters" id="model-chips"></div>
         </div>
         <span class="table-note-inline" id="ai-status-line"></span>
+        <button class="btn btn-sm" id="toggle-all" type="button" aria-expanded="false">Expand all</button>
       </div>
 
       <!-- 6.1 SUMMARY -->
@@ -592,8 +609,8 @@
       </div>
 
       <!-- 6.3 BIAS TESTS -->
-      <div class="subsection" id="r-bias">
-        <div class="subsection-head"><span class="subsection-num">6.3</span><h3>Bias tests</h3></div>
+      <details class="subsection" id="r-bias">
+        <summary class="subsection-head"><span class="subsection-num">6.3</span><h3>Bias tests</h3></summary>
         <div class="chart-card">
           <p class="chart-title">Mean score by <span id="means-factor">race and ethnicity</span></p>
           <div class="chip-row" id="factor-tabs"></div>
@@ -615,11 +632,11 @@
           <p class="chart-title">Mean paired difference, every tool</p>
           <div class="results-scroll"><table class="results compact" id="bias-matrix"></table></div>
         </div>
-      </div>
+      </details>
 
       <!-- 6.4 INTERSECTIONS -->
-      <div class="subsection" id="r-intersections">
-        <div class="subsection-head"><span class="subsection-num">6.4</span><h3>Intersections &mdash; <span id="heat-model">VI&#8209;SPDAT</span></h3></div>
+      <details class="subsection" id="r-intersections">
+        <summary class="subsection-head"><span class="subsection-num">6.4</span><h3>Intersections &mdash; <span id="heat-model">VI&#8209;SPDAT</span></h3></summary>
         <div class="two-col">
           <div class="chart-card">
             <p class="chart-title">Race &times; gender</p>
@@ -637,11 +654,11 @@
           <p class="chart-title">Interaction tests</p>
           <div class="results-scroll"><table class="results compact" id="interaction-table"></table></div>
         </div>
-      </div>
+      </details>
 
       <!-- 6.5 ACCURACY -->
-      <div class="subsection" id="r-accuracy">
-        <div class="subsection-head"><span class="subsection-num">6.5</span><h3>Accuracy against true vulnerability</h3></div>
+      <details class="subsection" id="r-accuracy">
+        <summary class="subsection-head"><span class="subsection-num">6.5</span><h3>Accuracy against true vulnerability</h3></summary>
         <div class="chart-card">
           <p class="chart-title">Accuracy summary</p>
           <div class="results-scroll"><table class="results compact" id="accuracy-table"></table></div>
@@ -661,11 +678,11 @@
           <div class="legend" id="legend-profiles"></div>
           <div class="chart-scroll" id="chart-profiles"></div>
         </div>
-      </div>
+      </details>
 
       <!-- 6.6 TRIAGE -->
-      <div class="subsection" id="r-triage">
-        <div class="subsection-head"><span class="subsection-num">6.6</span><h3>Triage and ranking</h3></div>
+      <details class="subsection" id="r-triage">
+        <summary class="subsection-head"><span class="subsection-num">6.6</span><h3>Triage and ranking</h3></summary>
         <div class="chart-card">
           <p class="chart-title">Share referred to Permanent Supportive Housing (score 8+)</p>
           <div class="chip-row" id="triage-factor-tabs"></div>
@@ -681,11 +698,11 @@
           <p class="chart-title">Ranking quality</p>
           <div class="results-scroll"><table class="results compact" id="ranking-table"></table></div>
         </div>
-      </div>
+      </details>
 
       <!-- 6.7 DATA INTEGRITY -->
-      <div class="subsection" id="r-integrity">
-        <div class="subsection-head"><span class="subsection-num">6.7</span><h3>Data integrity &mdash; <span id="label-model">AI model</span></h3></div>
+      <details class="subsection" id="r-integrity">
+        <summary class="subsection-head"><span class="subsection-num">6.7</span><h3>Data integrity &mdash; <span id="label-model">AI model</span></h3></summary>
         <div class="chart-card">
           <p class="chart-title">Answers checked against the case they are labeled with</p>
           <div class="chip-row" id="label-views"></div>
@@ -693,13 +710,13 @@
           <div class="chart-scroll" id="chart-labels"></div>
           <p class="chart-foot" id="labels-foot"></p>
         </div>
-      </div>
+      </details>
 
       <!-- 6.8 DOWNLOADS -->
-      <div class="subsection" id="r-data">
-        <div class="subsection-head"><span class="subsection-num">6.8</span><h3>Downloads</h3></div>
+      <details class="subsection" id="r-data">
+        <summary class="subsection-head"><span class="subsection-num">6.8</span><h3>Downloads</h3></summary>
         <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
-      </div>
+      </details>
     </div>
   </section>
 
@@ -798,6 +815,8 @@
     </div>
   </div>
 </footer>
+
+<a href="#" id="to-top" class="to-top" hidden>&uarr; Top</a>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="assets/vendor/topojson-client.min.js"></script>
