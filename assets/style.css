@@ -1426,3 +1426,131 @@ table.results tr.is-active td { background: var(--surface-sunk); }
   font-weight: 600;
   margin: 0 0 0.6rem;
 }
+
+
+/* ============================================================
+   Dashboard shell: sidebar, sticky header, one view at a time
+   ============================================================ */
+
+.app { display: grid; grid-template-columns: 236px minmax(0, 1fr); min-height: 100vh; }
+/* grid items default to their content's width; let the menu scroll instead of widening the page */
+.app > * { min-width: 0; }
+.view .chart-card + .chart-card { margin-top: 1.25rem; }
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.25rem 0.85rem;
+  background: var(--surface);
+  border-right: 1px solid var(--rule);
+}
+.brand {
+  display: block;
+  padding: 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand small {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.side-nav { display: flex; flex-direction: column; gap: 1.1rem; }
+.nav-group { display: flex; flex-direction: column; gap: 2px; }
+.nav-label {
+  padding: 0 0.6rem 0.3rem;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.side-nav a {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.86rem;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.side-nav a:hover { background: var(--surface-sunk); color: var(--ink); }
+.side-nav a[aria-current="page"] { background: var(--series-1); color: #fff; font-weight: 600; }
+.side-foot { margin-top: auto; padding: 0 0.6rem; font-size: 0.7rem; line-height: 1.5; color: var(--ink-muted); }
+
+.app-main { display: flex; flex-direction: column; min-width: 0; }
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1.5rem;
+  padding: 0.85rem 1.75rem;
+  background: color-mix(in srgb, var(--plane) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.app-title { margin: 0; font-family: var(--font-display); font-size: 1.45rem; font-weight: 500; letter-spacing: -0.01em; }
+.app-sub { margin: 0.1rem 0 0; font-size: 0.74rem; color: var(--ink-muted); }
+.model-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; }
+.model-switch .filters { margin-bottom: 0; }
+
+main#main { max-width: 1320px; width: 100%; margin: 0; padding: 1.4rem 1.75rem 3rem; }
+.site-footer { margin-top: auto; }
+
+.view > :first-child { margin-top: 0; }
+.view .chart-card:first-child { margin-top: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 0 1.25rem; align-items: start; }
+.kpis + .chart-card { margin-top: 1.25rem; }
+
+/* sections moved into views: no long-page chrome */
+.view .section { border-top: 0; margin-top: 0; padding-top: 0; }
+.view .section + .section { border-top: 1px solid var(--rule); margin-top: 2.5rem; padding-top: 2.5rem; }
+.view .section-head { grid-template-columns: 1fr; margin-bottom: 1rem; }
+.view .section-num, .view .subsection-num { display: none; }
+.view .section-body { padding-left: 0; }
+.view .subsection:first-child { margin-top: 0; }
+.view .subsection { margin-top: 2.5rem; }
+
+.about-intro { max-width: var(--prose); margin-bottom: 2.5rem; }
+.about-title { margin: 0 0 0.6rem; font-family: var(--font-display); font-size: 1.9rem; font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; }
+.about-sub { margin: 0 0 1rem; font-family: var(--font-display); font-size: 1.1rem; line-height: 1.5; color: var(--ink-2); }
+
+@media (max-width: 900px) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .sidebar {
+    max-width: 100vw;
+    z-index: 50;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.55rem 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .brand { white-space: nowrap; font-size: 0.95rem; }
+  .brand small, .nav-label, .side-foot { display: none; }
+  .side-nav, .nav-group { flex-direction: row; gap: 0.2rem; }
+  .side-nav a { white-space: nowrap; }
+  .app-header { position: static; padding: 0.75rem 1rem; }
+  main#main { padding: 1rem 1rem 2.5rem; }
+  .grid-2 { grid-template-columns: 1fr; }
+}

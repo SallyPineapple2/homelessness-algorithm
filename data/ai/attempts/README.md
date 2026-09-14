@@ -9,3 +9,4 @@ bias analysis; it documents what each app returned before a session was redone.
 
 Each attempt holds `replies/` (exactly as pasted), `raw/` (the imported records, including
 the case-label counts), and `case_labels.csv` (every answer beside the case it was labeled with).
+| `gemini/two-part-pilot/` | Gemini's first two sessions (2026-09-13), sent through the API as two messages in one chat, like the ChatGPT pastes. The run then switched to one unsplit message per session so all 20 fit the free tier's daily request limit, and these two sessions were redone that way. |

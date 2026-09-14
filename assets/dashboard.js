@@ -640,6 +640,7 @@ Promise.all([
   renderSchedule();
   renderModelsRoster(modelRoster.models, aiResults.models);
   renderAll();
+  route();
 });
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
@@ -650,39 +651,47 @@ window.addEventListener("resize", () => {
   resizeTimer = setTimeout(renderAll, 180);
 });
 
-/* ---------- collapsible sections, jump links, back to top ---------- */
+/* ---------- dashboard views ---------- */
 
-// Charts inside a closed section are drawn at a fallback width; redraw on open.
-document.querySelectorAll("details.subsection, details.fold").forEach((d) =>
+const VIEWS = [...document.querySelectorAll(".view")].map((v) => v.dataset.view);
+let currentView = null;
+
+function showView(name) {
+  if (!VIEWS.includes(name)) name = VIEWS[0];
+  document.querySelectorAll(".view").forEach((v) => (v.hidden = v.dataset.view !== name));
+  document.querySelectorAll("[data-view-link]").forEach((a) => {
+    if (a.dataset.viewLink === name) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
+  });
+  const link = document.querySelector(`[data-view-link="${name}"]`);
+  document.getElementById("view-title").textContent = link ? link.textContent : "";
+  document.title = `${link ? link.textContent + " · " : ""}Algorithmic Bias in Homeless Vulnerability Assessment`;
+  if (name !== currentView) window.scrollTo(0, 0);
+  currentView = name;
+  // charts in a hidden view were drawn at a fallback width; redraw at the real one
+  if (cachedProfiles) renderAll();
+}
+
+// "#bias" opens a view; a link to anything inside a view opens that view and scrolls to it.
+function route() {
+  const id = decodeURIComponent((location.hash || "").slice(1));
+  if (VIEWS.includes(id)) return showView(id);
+  const el = id && document.getElementById(id);
+  const view = el && el.closest(".view");
+  if (!view) return showView(VIEWS[0]);
+  showView(view.dataset.view);
+  const fold = el.closest("details");
+  if (fold) fold.open = true;
+  el.scrollIntoView({ block: "start" });
+}
+window.addEventListener("hashchange", route);
+route();
+
+document.querySelectorAll("details.fold").forEach((d) =>
   d.addEventListener("toggle", () => {
     if (d.open) renderAll();
   })
 );
-
-// A link to anything inside a closed section opens that section first.
-function openTarget(hash) {
-  if (!hash || hash === "#") return;
-  const el = document.getElementById(decodeURIComponent(hash.slice(1)));
-  const fold = el && el.closest("details");
-  if (fold && !fold.open) fold.open = true;
-}
-document.addEventListener("click", (event) => {
-  const link = event.target.closest('a[href^="#"]');
-  if (link) openTarget(link.getAttribute("href"));
-});
-window.addEventListener("hashchange", () => openTarget(location.hash));
-openTarget(location.hash);
-
-const toggleAll = document.getElementById("toggle-all");
-if (toggleAll) {
-  toggleAll.addEventListener("click", () => {
-    const folds = [...document.querySelectorAll("#results details.subsection")];
-    const open = folds.some((d) => !d.open);
-    folds.forEach((d) => (d.open = open));
-    toggleAll.textContent = open ? "Collapse all" : "Expand all";
-    toggleAll.setAttribute("aria-expanded", String(open));
-  });
-}
 
 const toTop = document.getElementById("to-top");
 if (toTop) {

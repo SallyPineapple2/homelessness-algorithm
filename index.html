@@ -11,168 +11,190 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<a class="skip-link" href="#results">Skip to results</a>
-
-<div class="topbar">
-  <div class="topbar-inner">
-    <span class="topbar-mark">VI&#8209;SPDAT&nbsp;&amp;&nbsp;AI Bias Study</span>
-    <nav>
-      <a href="#background">Background</a>
-      <a href="#question">Question</a>
-      <a href="#data">Data</a>
-      <a href="#method">Method</a>
-      <a href="#profiles">Base profiles</a>
-      <a href="#results">Results</a>
-      <a href="#limitations">Limitations</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#overview">VI&#8209;SPDAT &amp; AI<small>Bias study dashboard</small></a>
+    <nav class="side-nav" aria-label="Dashboard views">
+      <div class="nav-group">
+        <span class="nav-label">Results</span>
+        <a href="#overview" data-view-link="overview">Overview</a>
+        <a href="#bias" data-view-link="bias">Bias</a>
+        <a href="#accuracy" data-view-link="accuracy">Accuracy</a>
+        <a href="#triage" data-view-link="triage">Triage</a>
+        <a href="#quality" data-view-link="quality">Data quality</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Study</span>
+        <a href="#design" data-view-link="design">Study design</a>
+        <a href="#profiles" data-view-link="profiles">Base profiles</a>
+        <a href="#about" data-view-link="about">About</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Files</span>
+        <a href="#downloads" data-view-link="downloads">Downloads</a>
+      </div>
     </nav>
-  </div>
-</div>
+    <div class="side-foot">Paired t&#8209;tests, &alpha; = 0.05, Holm&#8209;adjusted.<br>Synthetic population: 32 profiles, 1,600 clones.</div>
+  </aside>
 
-<header class="hero">
-  <p class="eyebrow">Individual research project &middot; Research dashboard</p>
-  <h1>Algorithmic Bias in Homeless Vulnerability Assessment</h1>
-  <p class="hero-sub">
-    Comparing the VI&#8209;SPDAT scoring algorithm with an AI&#8209;based substitute on an identical
-    synthetic population, to test whether either one shifts a person's vulnerability score
-    by race, gender, or location.
-  </p>
-  <hr class="hero-rule">
-  <div class="hero-meta">
-    <span><strong>Status</strong> &nbsp;VI&#8209;SPDAT arm complete &middot; AI arm <span id="hero-ai-status">pending</span></span>
-    <span><strong>Instrument</strong> &nbsp;VI&#8209;SPDAT (OrgCode, 2015)</span>
-    <span><strong>Analysis</strong> &nbsp;Paired t&#8209;test, &alpha;&nbsp;=&nbsp;0.05</span>
-  </div>
-</header>
-
-<main>
-
-  <!-- ============ 01 BACKGROUND ============ -->
-  <section class="section" id="background">
-    <div class="section-head">
-      <span class="section-num">01</span>
-      <h2>Background and why it matters</h2>
-    </div>
-    <div class="section-body">
-      <div class="prose">
-        <p>
-          I want to study the underlying bias within the algorithms used for the Coordinated Entry
-          System (CES), which assesses and prioritizes the most vulnerable unhoused individuals for
-          shelters, need&#8209;based assistance, and funding. Trained staff evaluates the severity of
-          the situations of unhoused individuals with questions from a standardized screening tool,
-          such as the Vulnerability Index&ndash;Service Prioritization Decision Assistance Tool
-          (VI&#8209;SPDAT), which is frequently selected on the CoC level in the United States.
-          According to the Coordinated Entry System Triage Tool Research and Refinement, more than
-          one out of four CoCs report using a VI&#8209;SPDAT. After in&#8209;person assessments, the
-          VI&#8209;SPDAT algorithm outputs a criticality score based on the subject's answers. Lastly,
-          the participants are ranked based on their score for organizational support.
-        </p>
+  <div class="app-main">
+    <header class="app-header">
+      <div>
+        <h1 class="app-title" id="view-title">Overview</h1>
+        <p class="app-sub">Algorithmic Bias in Homeless Vulnerability Assessment</p>
       </div>
-
-      <h3 class="subhead">Why this is a problem</h3>
-      <div class="prose">
-        <p>
-          Even though the system intended to fairly address vulnerable homeless populations, several
-          studies, such as &ldquo;CES Racial Equity Analysis of Assessment Data&rdquo; by C4
-          Innovations, a national research organization, have reported that the VI&#8209;SPDAT system
-          has been persistently biased against people of color. For instance, a Black man may rank
-          under a white man in the homeless priority system even if he needed more help than him,
-          because of the intrinsic bias in VI&#8209;SPDAT, a human&#8209;created algorithm. This
-          partiality may leave some of the most vulnerable people without any assistance,
-          misallocating scarce, important resources to less vulnerable groups. In December of 2020,
-          VI&#8209;SPDAT's creator, OrgCode, issued an announcement that addressed the algorithm's
-          racial and sexual inaccuracies, and even encouraged users to substitute VI&#8209;SPDAT with
-          newer, less biased systems. Currently, a few CoCs are transitioning into a machine learning
-          (ML)&#8209;based system as a replacement for VI&#8209;SPDAT. However, there is not prevalent
-          research explaining that ML based algorithms would increase the fairness of the overall
-          system.
-        </p>
-        <p>
-          This research would connect well to the overarching group theme as it assesses the bias of
-          human&#8209;made technology and an AI&#8209;based replacement on a similar data sample, which
-          heavily impacts the resource distribution for homeless populations. This means that it
-          relates directly to the inequality that marginalized communities face as a result of
-          inaccurate technology.
-        </p>
+      <div class="model-switch" role="group" aria-label="AI model">
+        <span class="control-label">AI model</span>
+        <div class="filters" id="model-chips"></div>
+        <span class="table-note-inline" id="ai-status-line"></span>
       </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- ============ 02 RESEARCH QUESTION ============ -->
-  <section class="section" id="question">
-    <div class="section-head">
-      <span class="section-num">02</span>
-      <h2>Research question</h2>
-    </div>
-    <div class="section-body">
-      <blockquote class="pullquote">
-        When analyzing the same set of client data, how do AI&#8209;based models perform compared
-        with VI&#8209;SPDAT?
-      </blockquote>
-      <div class="prose">
-        <p>
-          This project would evaluate the result for bias and accuracy against the actual
-          vulnerability of these individuals.
-        </p>
-      </div>
-      <div class="hypothesis">
-        <span class="kicker">Hypothesis</span>
-        <p>
-          My hypothesis is that the AI&#8209;based model would outperform VI&#8209;SPDAT in terms of
-          accuracy, but still remain slightly skewed against people of color.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 03 DATA SOURCE ============ -->
-  <section class="section" id="data">
-    <div class="section-head">
-      <span class="section-num">03</span>
-      <h2>Data source</h2>
-    </div>
-    <div class="section-body">
-      <div class="prose">
-        <p>
-          Though real&#8209;life VI&#8209;SPDAT data and tests are protected by privacy laws, OrgCode
-          published the exact interview methodology and scoring VI&#8209;SPDAT uses, which remains
-          publicly available through CoCs which adopted the tool. I would later use this to test the
-          VI&#8209;SPDAT algorithm against my own synthetic population.
-        </p>
-      </div>
-
-      <dl class="record">
-        <div class="record-row">
-          <dt>Source</dt>
-          <dd>OrgCode Consulting Inc., accessed through Georgia Department of Community Affairs</dd>
+    <main id="main">
+      <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
+        <div class="kpis" id="kpis"></div>
+<div class="chart-card">
+          <p class="chart-title">Key results</p>
+          <p class="chart-sub">Same 640 instances for every tool. Bold: significant after Holm adjustment (&alpha; = 0.05).</p>
+          <div class="results-scroll"><table class="results compact" id="summary-table"></table></div>
         </div>
-        <div class="record-row">
-          <dt>Year</dt>
-          <dd>2015</dd>
+<div class="chart-card">
+          <p class="chart-title"><span id="map-model">VI&#8209;SPDAT</span> &mdash; <span id="map-metric-desc"></span></p>
+          <div class="chip-row" id="map-metrics"></div>
+          <div class="map-layout">
+            <div>
+              <div id="map" class="map"></div>
+              <div class="legend grad-legend-wrap" id="legend-map"></div>
+            </div>
+            <div class="results-scroll"><table class="results compact" id="map-table"></table></div>
+          </div>
+          <p class="chart-foot">Points on the 0&ndash;17 scale, 95% CI, Holm&#8209;adjusted p. Ring = significant.</p>
         </div>
-        <div class="record-row">
-          <dt>Unit of analysis</dt>
-          <dd>Each unhoused participant's profile/data</dd>
+<div class="chart-card">
+          <p class="chart-title">City effect by tool</p>
+          <p class="chart-sub">Score in each city minus the same profiles' score in the other four cities.</p>
+          <div class="results-scroll"><table class="results compact" id="city-table"></table></div>
         </div>
-        <div class="record-row">
-          <dt>Major variables</dt>
-          <dd>16 vulnerability indicators/subscales (split into 4 domains), scored 0&ndash;17</dd>
-        </div>
-        <div class="record-row">
-          <dt>Access status</dt>
-          <dd>Public</dd>
-        </div>
-      </dl>
+      </section>
 
-      <div class="prose" style="margin-top:1.75rem">
-        <p>
-          Other than the VI&#8209;SPDAT methodology, I would use a variety of credible research on
-          VI&#8209;SPDAT, such as C4 Innovation's racial equity analysis, and existing work on AI in
-          homeless assessment to build a knowledge foundation for my experiment.
-        </p>
+      <section class="view" id="view-bias" data-view="bias" aria-label="Bias" hidden>
+      <!-- 6.3 BIAS TESTS -->
+      <div class="subsection" id="r-bias">
+        <div class="subsection-head"><span class="subsection-num">6.3</span><h3>Bias tests</h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Mean score by <span id="means-factor">race and ethnicity</span></p>
+          <div class="chip-row" id="factor-tabs"></div>
+          <div class="legend" id="legend-means"></div>
+          <div class="chart-scroll" id="chart-means"></div>
+          <p class="chart-foot" id="means-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Paired differences, 95% confidence intervals</p>
+          <div class="legend" id="legend-forest"></div>
+          <div class="chart-scroll" id="chart-forest"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Paired t&#8209;tests &mdash; VI&#8209;SPDAT and <span id="tests-model-name">the AI model</span></p>
+          <div class="results-scroll"><table class="results compact" id="tests-table"></table></div>
+          <p class="chart-foot">d<sub>z</sub> = Cohen's effect size. Bold = significant after Holm. &dagger; = p &lt; 0.05 unadjusted only.</p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Mean paired difference, every tool</p>
+          <div class="results-scroll"><table class="results compact" id="bias-matrix"></table></div>
+        </div>
       </div>
-    </div>
-  </section>
 
+      <!-- 6.4 INTERSECTIONS -->
+      <div class="subsection" id="r-intersections">
+        <div class="subsection-head"><span class="subsection-num">6.4</span><h3>Intersections &mdash; <span id="heat-model">VI&#8209;SPDAT</span></h3></div>
+        <div class="two-col">
+          <div class="chart-card">
+            <p class="chart-title">Race &times; gender</p>
+            <p class="chart-sub">Points above/below each profile's own average.</p>
+            <div class="chart-scroll" id="heat-race-gender"></div>
+          </div>
+          <div class="chart-card">
+            <p class="chart-title">Race &times; disclosure</p>
+            <p class="chart-sub">Points above/below each profile's own average.</p>
+            <div class="chart-scroll" id="heat-race-disclosure"></div>
+          </div>
+        </div>
+        <div class="legend grad-legend-wrap" id="legend-heat"></div>
+        <div class="chart-card">
+          <p class="chart-title">Interaction tests</p>
+          <div class="results-scroll"><table class="results compact" id="interaction-table"></table></div>
+        </div>
+      </div>
+
+      </section>
+
+      <section class="view" id="view-accuracy" data-view="accuracy" aria-label="Accuracy" hidden>
+      <!-- 6.5 ACCURACY -->
+      <div class="subsection" id="r-accuracy">
+        <div class="subsection-head"><span class="subsection-num">6.5</span><h3>Accuracy against true vulnerability</h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Accuracy summary</p>
+          <div class="results-scroll"><table class="results compact" id="accuracy-table"></table></div>
+          <p class="chart-foot">MAE = mean absolute error (points). Mean error: + overrates. PSH missed = eligible but placed lower.</p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Accuracy by group</p>
+          <div class="results-scroll"><table class="results compact" id="accuracy-group-table"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Assigned score vs. true score</p>
+          <div class="legend" id="legend-calibration"></div>
+          <div class="chart-scroll" id="chart-calibration"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Each base profile across its versions</p>
+          <div class="legend" id="legend-profiles"></div>
+          <div class="chart-scroll" id="chart-profiles"></div>
+        </div>
+      </div>
+
+      </section>
+
+      <section class="view" id="view-triage" data-view="triage" aria-label="Triage" hidden>
+      <!-- 6.6 TRIAGE -->
+      <div class="subsection" id="r-triage">
+        <div class="subsection-head"><span class="subsection-num">6.6</span><h3>Triage and ranking</h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Share referred to Permanent Supportive Housing (score 8+)</p>
+          <div class="chip-row" id="triage-factor-tabs"></div>
+          <div class="legend" id="legend-triage"></div>
+          <div class="chart-scroll" id="chart-triage"></div>
+          <p class="chart-foot" id="triage-note"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Triage outcomes by group</p>
+          <div class="results-scroll"><table class="results compact" id="triage-table"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Ranking quality</p>
+          <div class="results-scroll"><table class="results compact" id="ranking-table"></table></div>
+        </div>
+      </div>
+
+      </section>
+
+      <section class="view" id="view-quality" data-view="quality" aria-label="Data quality" hidden>
+      <!-- 6.7 DATA INTEGRITY -->
+      <div class="subsection" id="r-integrity">
+        <div class="subsection-head"><span class="subsection-num">6.7</span><h3>Data integrity &mdash; <span id="label-model">AI model</span></h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Answers checked against the case they are labeled with</p>
+          <div class="chip-row" id="label-views"></div>
+          <div class="legend" id="legend-labels"></div>
+          <div class="chart-scroll" id="chart-labels"></div>
+          <p class="chart-foot" id="labels-foot"></p>
+        </div>
+      </div>
+
+      </section>
+
+      <section class="view" id="view-design" data-view="design" aria-label="Study design" hidden>
   <!-- ============ 04 METHOD ============ -->
   <section class="section" id="method">
     <div class="section-head">
@@ -384,6 +406,9 @@
     </div>
   </section>
 
+      </section>
+
+      <section class="view" id="view-profiles" data-view="profiles" aria-label="Base profiles" hidden>
   <!-- ============ 05 BASE PROFILES ============ -->
   <section class="section" id="profiles">
     <div class="section-head">
@@ -548,175 +573,142 @@
     </div>
   </section>
 
-  <!-- ============ 06 RESULTS ============ -->
-  <section class="section" id="results">
+      </section>
+
+      <section class="view" id="view-about" data-view="about" aria-label="About" hidden>
+        <div class="about-intro">
+          <h2 class="about-title">Algorithmic Bias in Homeless Vulnerability Assessment</h2>
+          <p class="about-sub">Comparing the VI&#8209;SPDAT scoring algorithm with an AI&#8209;based substitute on an identical synthetic population, to test whether either one shifts a person's vulnerability score by race, gender, or location.</p>
+          <div class="hero-meta">
+    <span><strong>Status</strong> &nbsp;VI&#8209;SPDAT arm complete &middot; AI arm <span id="hero-ai-status">pending</span></span>
+    <span><strong>Instrument</strong> &nbsp;VI&#8209;SPDAT (OrgCode, 2015)</span>
+    <span><strong>Analysis</strong> &nbsp;Paired t&#8209;test, &alpha;&nbsp;=&nbsp;0.05</span>
+  </div>
+        </div>
+  <!-- ============ 01 BACKGROUND ============ -->
+  <section class="section" id="background">
     <div class="section-head">
-      <span class="section-num">06</span>
-      <h2>Results</h2>
+      <span class="section-num">01</span>
+      <h2>Background and why it matters</h2>
     </div>
     <div class="section-body">
-      <nav class="results-nav" aria-label="Results sections">
-        <a href="#r-summary"><span>6.1</span> Summary</a>
-        <a href="#r-map"><span>6.2</span> Map</a>
-        <a href="#r-bias"><span>6.3</span> Bias tests</a>
-        <a href="#r-intersections"><span>6.4</span> Intersections</a>
-        <a href="#r-accuracy"><span>6.5</span> Accuracy</a>
-        <a href="#r-triage"><span>6.6</span> Triage</a>
-        <a href="#r-integrity"><span>6.7</span> Data integrity</a>
-        <a href="#r-data"><span>6.8</span> Downloads</a>
-      </nav>
-
-      <div class="results-controls model-bar">
-        <div class="control-group" role="group" aria-label="AI model">
-          <span class="control-label">AI model shown</span>
-          <div class="filters" id="model-chips"></div>
-        </div>
-        <span class="table-note-inline" id="ai-status-line"></span>
-        <button class="btn btn-sm" id="toggle-all" type="button" aria-expanded="false">Expand all</button>
+      <div class="prose">
+        <p>
+          I want to study the underlying bias within the algorithms used for the Coordinated Entry
+          System (CES), which assesses and prioritizes the most vulnerable unhoused individuals for
+          shelters, need&#8209;based assistance, and funding. Trained staff evaluates the severity of
+          the situations of unhoused individuals with questions from a standardized screening tool,
+          such as the Vulnerability Index&ndash;Service Prioritization Decision Assistance Tool
+          (VI&#8209;SPDAT), which is frequently selected on the CoC level in the United States.
+          According to the Coordinated Entry System Triage Tool Research and Refinement, more than
+          one out of four CoCs report using a VI&#8209;SPDAT. After in&#8209;person assessments, the
+          VI&#8209;SPDAT algorithm outputs a criticality score based on the subject's answers. Lastly,
+          the participants are ranked based on their score for organizational support.
+        </p>
       </div>
 
-      <!-- 6.1 SUMMARY -->
-      <div class="subsection" id="r-summary">
-        <div class="subsection-head"><span class="subsection-num">6.1</span><h3>Summary</h3></div>
-        <div class="kpis" id="kpis"></div>
-        <div class="chart-card">
-          <p class="chart-title">Key results</p>
-          <p class="chart-sub">Same 640 instances for every tool. Bold: significant after Holm adjustment (&alpha; = 0.05).</p>
-          <div class="results-scroll"><table class="results compact" id="summary-table"></table></div>
-        </div>
+      <h3 class="subhead">Why this is a problem</h3>
+      <div class="prose">
+        <p>
+          Even though the system intended to fairly address vulnerable homeless populations, several
+          studies, such as &ldquo;CES Racial Equity Analysis of Assessment Data&rdquo; by C4
+          Innovations, a national research organization, have reported that the VI&#8209;SPDAT system
+          has been persistently biased against people of color. For instance, a Black man may rank
+          under a white man in the homeless priority system even if he needed more help than him,
+          because of the intrinsic bias in VI&#8209;SPDAT, a human&#8209;created algorithm. This
+          partiality may leave some of the most vulnerable people without any assistance,
+          misallocating scarce, important resources to less vulnerable groups. In December of 2020,
+          VI&#8209;SPDAT's creator, OrgCode, issued an announcement that addressed the algorithm's
+          racial and sexual inaccuracies, and even encouraged users to substitute VI&#8209;SPDAT with
+          newer, less biased systems. Currently, a few CoCs are transitioning into a machine learning
+          (ML)&#8209;based system as a replacement for VI&#8209;SPDAT. However, there is not prevalent
+          research explaining that ML based algorithms would increase the fairness of the overall
+          system.
+        </p>
+        <p>
+          This research would connect well to the overarching group theme as it assesses the bias of
+          human&#8209;made technology and an AI&#8209;based replacement on a similar data sample, which
+          heavily impacts the resource distribution for homeless populations. This means that it
+          relates directly to the inequality that marginalized communities face as a result of
+          inaccurate technology.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 RESEARCH QUESTION ============ -->
+  <section class="section" id="question">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2>Research question</h2>
+    </div>
+    <div class="section-body">
+      <blockquote class="pullquote">
+        When analyzing the same set of client data, how do AI&#8209;based models perform compared
+        with VI&#8209;SPDAT?
+      </blockquote>
+      <div class="prose">
+        <p>
+          This project would evaluate the result for bias and accuracy against the actual
+          vulnerability of these individuals.
+        </p>
+      </div>
+      <div class="hypothesis">
+        <span class="kicker">Hypothesis</span>
+        <p>
+          My hypothesis is that the AI&#8209;based model would outperform VI&#8209;SPDAT in terms of
+          accuracy, but still remain slightly skewed against people of color.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 DATA SOURCE ============ -->
+  <section class="section" id="data">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2>Data source</h2>
+    </div>
+    <div class="section-body">
+      <div class="prose">
+        <p>
+          Though real&#8209;life VI&#8209;SPDAT data and tests are protected by privacy laws, OrgCode
+          published the exact interview methodology and scoring VI&#8209;SPDAT uses, which remains
+          publicly available through CoCs which adopted the tool. I would later use this to test the
+          VI&#8209;SPDAT algorithm against my own synthetic population.
+        </p>
       </div>
 
-      <!-- 6.2 MAP -->
-      <div class="subsection" id="r-map">
-        <div class="subsection-head"><span class="subsection-num">6.2</span><h3>Map: city effects</h3></div>
-        <div class="chart-card">
-          <p class="chart-title"><span id="map-model">VI&#8209;SPDAT</span> &mdash; <span id="map-metric-desc"></span></p>
-          <div class="chip-row" id="map-metrics"></div>
-          <div class="map-layout">
-            <div>
-              <div id="map" class="map"></div>
-              <div class="legend grad-legend-wrap" id="legend-map"></div>
-            </div>
-            <div class="results-scroll"><table class="results compact" id="map-table"></table></div>
-          </div>
-          <p class="chart-foot">Points on the 0&ndash;17 scale, 95% CI, Holm&#8209;adjusted p. Ring = significant.</p>
+      <dl class="record">
+        <div class="record-row">
+          <dt>Source</dt>
+          <dd>OrgCode Consulting Inc., accessed through Georgia Department of Community Affairs</dd>
         </div>
-        <div class="chart-card">
-          <p class="chart-title">City effect by tool</p>
-          <p class="chart-sub">Score in each city minus the same profiles' score in the other four cities.</p>
-          <div class="results-scroll"><table class="results compact" id="city-table"></table></div>
+        <div class="record-row">
+          <dt>Year</dt>
+          <dd>2015</dd>
         </div>
+        <div class="record-row">
+          <dt>Unit of analysis</dt>
+          <dd>Each unhoused participant's profile/data</dd>
+        </div>
+        <div class="record-row">
+          <dt>Major variables</dt>
+          <dd>16 vulnerability indicators/subscales (split into 4 domains), scored 0&ndash;17</dd>
+        </div>
+        <div class="record-row">
+          <dt>Access status</dt>
+          <dd>Public</dd>
+        </div>
+      </dl>
+
+      <div class="prose" style="margin-top:1.75rem">
+        <p>
+          Other than the VI&#8209;SPDAT methodology, I would use a variety of credible research on
+          VI&#8209;SPDAT, such as C4 Innovation's racial equity analysis, and existing work on AI in
+          homeless assessment to build a knowledge foundation for my experiment.
+        </p>
       </div>
-
-      <!-- 6.3 BIAS TESTS -->
-      <details class="subsection" id="r-bias">
-        <summary class="subsection-head"><span class="subsection-num">6.3</span><h3>Bias tests</h3></summary>
-        <div class="chart-card">
-          <p class="chart-title">Mean score by <span id="means-factor">race and ethnicity</span></p>
-          <div class="chip-row" id="factor-tabs"></div>
-          <div class="legend" id="legend-means"></div>
-          <div class="chart-scroll" id="chart-means"></div>
-          <p class="chart-foot" id="means-foot"></p>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Paired differences, 95% confidence intervals</p>
-          <div class="legend" id="legend-forest"></div>
-          <div class="chart-scroll" id="chart-forest"></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Paired t&#8209;tests &mdash; VI&#8209;SPDAT and <span id="tests-model-name">the AI model</span></p>
-          <div class="results-scroll"><table class="results compact" id="tests-table"></table></div>
-          <p class="chart-foot">d<sub>z</sub> = Cohen's effect size. Bold = significant after Holm. &dagger; = p &lt; 0.05 unadjusted only.</p>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Mean paired difference, every tool</p>
-          <div class="results-scroll"><table class="results compact" id="bias-matrix"></table></div>
-        </div>
-      </details>
-
-      <!-- 6.4 INTERSECTIONS -->
-      <details class="subsection" id="r-intersections">
-        <summary class="subsection-head"><span class="subsection-num">6.4</span><h3>Intersections &mdash; <span id="heat-model">VI&#8209;SPDAT</span></h3></summary>
-        <div class="two-col">
-          <div class="chart-card">
-            <p class="chart-title">Race &times; gender</p>
-            <p class="chart-sub">Points above/below each profile's own average.</p>
-            <div class="chart-scroll" id="heat-race-gender"></div>
-          </div>
-          <div class="chart-card">
-            <p class="chart-title">Race &times; disclosure</p>
-            <p class="chart-sub">Points above/below each profile's own average.</p>
-            <div class="chart-scroll" id="heat-race-disclosure"></div>
-          </div>
-        </div>
-        <div class="legend grad-legend-wrap" id="legend-heat"></div>
-        <div class="chart-card">
-          <p class="chart-title">Interaction tests</p>
-          <div class="results-scroll"><table class="results compact" id="interaction-table"></table></div>
-        </div>
-      </details>
-
-      <!-- 6.5 ACCURACY -->
-      <details class="subsection" id="r-accuracy">
-        <summary class="subsection-head"><span class="subsection-num">6.5</span><h3>Accuracy against true vulnerability</h3></summary>
-        <div class="chart-card">
-          <p class="chart-title">Accuracy summary</p>
-          <div class="results-scroll"><table class="results compact" id="accuracy-table"></table></div>
-          <p class="chart-foot">MAE = mean absolute error (points). Mean error: + overrates. PSH missed = eligible but placed lower.</p>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Accuracy by group</p>
-          <div class="results-scroll"><table class="results compact" id="accuracy-group-table"></table></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Assigned score vs. true score</p>
-          <div class="legend" id="legend-calibration"></div>
-          <div class="chart-scroll" id="chart-calibration"></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Each base profile across its versions</p>
-          <div class="legend" id="legend-profiles"></div>
-          <div class="chart-scroll" id="chart-profiles"></div>
-        </div>
-      </details>
-
-      <!-- 6.6 TRIAGE -->
-      <details class="subsection" id="r-triage">
-        <summary class="subsection-head"><span class="subsection-num">6.6</span><h3>Triage and ranking</h3></summary>
-        <div class="chart-card">
-          <p class="chart-title">Share referred to Permanent Supportive Housing (score 8+)</p>
-          <div class="chip-row" id="triage-factor-tabs"></div>
-          <div class="legend" id="legend-triage"></div>
-          <div class="chart-scroll" id="chart-triage"></div>
-          <p class="chart-foot" id="triage-note"></p>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Triage outcomes by group</p>
-          <div class="results-scroll"><table class="results compact" id="triage-table"></table></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Ranking quality</p>
-          <div class="results-scroll"><table class="results compact" id="ranking-table"></table></div>
-        </div>
-      </details>
-
-      <!-- 6.7 DATA INTEGRITY -->
-      <details class="subsection" id="r-integrity">
-        <summary class="subsection-head"><span class="subsection-num">6.7</span><h3>Data integrity &mdash; <span id="label-model">AI model</span></h3></summary>
-        <div class="chart-card">
-          <p class="chart-title">Answers checked against the case they are labeled with</p>
-          <div class="chip-row" id="label-views"></div>
-          <div class="legend" id="legend-labels"></div>
-          <div class="chart-scroll" id="chart-labels"></div>
-          <p class="chart-foot" id="labels-foot"></p>
-        </div>
-      </details>
-
-      <!-- 6.8 DOWNLOADS -->
-      <details class="subsection" id="r-data">
-        <summary class="subsection-head"><span class="subsection-num">6.8</span><h3>Downloads</h3></summary>
-        <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
-      </details>
     </div>
   </section>
 
@@ -787,7 +779,17 @@
     </div>
   </section>
 
-</main>
+      </section>
+
+      <section class="view" id="view-downloads" data-view="downloads" aria-label="Downloads" hidden>
+      <!-- 6.8 DOWNLOADS -->
+      <div class="subsection" id="r-data">
+        <div class="subsection-head"><span class="subsection-num">6.8</span><h3>Downloads</h3></div>
+        <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
+      </div>
+      </section>
+
+    </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -815,6 +817,8 @@
     </div>
   </div>
 </footer>
+  </div>
+</div>
 
 <a href="#" id="to-top" class="to-top" hidden>&uarr; Top</a>
 
