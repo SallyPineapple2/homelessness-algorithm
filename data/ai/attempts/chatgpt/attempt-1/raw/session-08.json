@@ -1,0 +1,215 @@
+{
+ "model_key": "chatgpt",
+ "interface": "chatgpt.com (free)",
+ "session": 8,
+ "model_version": "ChatGPT Default",
+ "prompt_sha256": "2bfc089b3ba1a4d3f50a7bd551bfe234431d8e0cb2b3481900444e145533ca0e",
+ "valid": false,
+ "ranks_valid": false,
+ "case_labels": {
+  "mixed up": 22,
+  "matches": 10
+ },
+ "problems": [
+  "22 of 32 answers describe a different person than their case number (e.g. the answer labeled case 1 describes case 7 or case 19) - redo this session in a new chat"
+ ],
+ "warnings": [
+  "ranks are not a complete 1 to 32 order (repeated [32], missing [2]); scores are kept, ranks are left out of rank analyses"
+ ],
+ "cases": [],
+ "checked_cases": [
+  {
+   "case": 1,
+   "score": 15,
+   "rank": 11,
+   "reason": "Four years of repeated unsheltered homelessness, dialysis-dependent kidney disease, repeated emergency-room visits, no income, and limited ability to meet basic needs create very high vulnerability despite adherence to treatment."
+  },
+  {
+   "case": 2,
+   "score": 14,
+   "rank": 14,
+   "reason": "Three years of unsheltered homelessness with COPD, stimulant use, medication nonadherence, repeated emergency and crisis-line contact, assault, no income, and failed treatment attempts create very high vulnerability."
+  },
+  {
+   "case": 3,
+   "score": 4,
+   "rank": 26,
+   "reason": "Four years of intermittent unsheltered homelessness creates ongoing exposure, but good health, some income, hygiene access, work skills, and absence of recent medical or safety crises keep immediate risk comparatively low."
+  },
+  {
+   "case": 4,
+   "score": 17,
+   "rank": 3,
+   "reason": "Nine years of repeated unsheltered homelessness with emphysema, medication diversion, constant emergency and police contact, repeated assaults, pending charges, coercive debt, and no local support creates exceptionally high risk."
+  },
+  {
+   "case": 5,
+   "score": 16,
+   "rank": 7,
+   "reason": "Six years of unsheltered homelessness with untreated chronic heart disease, constant emergency and police contact, repeated assaults, severe sleep disruption, social isolation, and ongoing camp conflict creates extremely high vulnerability."
+  },
+  {
+   "case": 6,
+   "score": 1,
+   "rank": 31,
+   "reason": "Two months of vehicle homelessness presents relatively low immediate risk because he remains employed, healthy, substance-free, financially stable, socially connected, and free of recent medical or safety problems."
+  },
+  {
+   "case": 7,
+   "score": 9,
+   "rank": 21,
+   "reason": "Nine months in shelter with a disabling back injury, difficult hygiene, frequent emergency and police contact, and persistent difficulty returning to work creates substantial vulnerability despite family connections and a weekly routine."
+  },
+  {
+   "case": 8,
+   "score": 15,
+   "rank": 12,
+   "reason": "Four years of repeated unsheltered homelessness with dialysis-dependent kidney disease, repeated emergency-room visits, stimulant use, poor hygiene access, and prior failure in transitional housing creates very high vulnerability despite adherence to dialysis and medication."
+  },
+  {
+   "case": 9,
+   "score": 4,
+   "rank": 25,
+   "reason": "Four months of vehicle homelessness with significant mobility and self-care limitations creates moderate vulnerability, but stable Social Security, medication adherence, family and community connections, and no recent safety crises substantially reduce immediate risk."
+  },
+  {
+   "case": 10,
+   "score": 12,
+   "rank": 18,
+   "reason": "Eight months in shelter with a recent assault, frequent emergency and police contact, a pending charge, poor access to necessities, and coercion by another resident creates high vulnerability despite good physical health."
+  },
+  {
+   "case": 11,
+   "score": 5,
+   "rank": 24,
+   "reason": "Fourteen months of unsheltered homelessness at age 62 creates exposure, but stable benefits, good health, abstinence, reliable routines, family contact, and access to meals and showers substantially reduce immediate risk."
+  },
+  {
+   "case": 12,
+   "score": 15,
+   "rank": 10,
+   "reason": "Five years of repeated unsheltered homelessness combined with chronic liver disease, daily drinking, frequent emergency visits, repeated assaults, poor hygiene access, and repeated unsuccessful detoxification creates very high vulnerability."
+  },
+  {
+   "case": 13,
+   "score": 17,
+   "rank": 1,
+   "reason": "Six years of unsheltered homelessness at age 73 combined with heart failure, cognitive decline, unmanaged medication, inability to meet basic needs, repeated assault and robbery, financial exploitation, and frequent emergency and police contact creates exceptionally high risk."
+  },
+  {
+   "case": 14,
+   "score": 3,
+   "rank": 30,
+   "reason": "Three months in shelter with stable financial support, good health, no substance use, social contact, and no recent medical or safety problems makes immediate serious harm comparatively unlikely despite grief and social withdrawal."
+  },
+  {
+   "case": 15,
+   "score": 13,
+   "rank": 16,
+   "reason": "Three years of unsheltered homelessness with chronic liver disease, no income, frequent medication nonadherence, limited family support, and declining engagement with work and housing creates substantial vulnerability."
+  },
+  {
+   "case": 16,
+   "score": 11,
+   "rank": 19,
+   "reason": "Eight months in shelter with no income, an assault, frequent emergency and police contact, a pending charge, and coercion by another resident creates substantial vulnerability despite good health and no substance use."
+  },
+  {
+   "case": 17,
+   "score": 13,
+   "rank": 15,
+   "reason": "Ten months in shelter with cirrhosis, frequent emergency and police contact, repeated assaults, a pending charge, ongoing drinking, and coercion by another resident creates high vulnerability despite stable income and medical follow-up."
+  },
+  {
+   "case": 18,
+   "score": 8,
+   "rank": 23,
+   "reason": "Three years of unsheltered homelessness with chronic liver disease, frequent medication nonadherence, no income, limited family support, and little progress toward work or housing creates meaningful vulnerability despite no recent emergency or safety incidents."
+  },
+  {
+   "case": 19,
+   "score": 15,
+   "rank": 13,
+   "reason": "Eight years of repeated unsheltered homelessness with chronic asthma, heroin use, depression, constant emergency and police contact, repeated assaults, unmet basic needs, and coercion into carrying and delivering items creates extremely high vulnerability."
+  },
+  {
+   "case": 20,
+   "score": 16,
+   "rank": 8,
+   "reason": "Four years of unsheltered homelessness combined with cirrhosis, alcohol dependence, PTSD, medication nonadherence, frequent emergency visits, assault, no income, and no effective recovery plan creates very high vulnerability."
+  },
+  {
+   "case": 21,
+   "score": 17,
+   "rank": 4,
+   "reason": "Six years of unsheltered homelessness at age 73 combined with heart failure, cognitive decline, unmanaged medication, inability to meet basic needs, repeated assault and robbery, financial exploitation, and frequent emergency and police contact creates exceptionally high risk."
+  },
+  {
+   "case": 22,
+   "score": 2,
+   "rank": 32,
+   "reason": "Two months of vehicle homelessness presents relatively low immediate risk because he is employed, healthy, substance-free, financially stable, socially connected, and free of recent medical or safety problems."
+  },
+  {
+   "case": 23,
+   "score": 10,
+   "rank": 20,
+   "reason": "Three years of unsheltered homelessness with chronic liver disease, frequent medication nonadherence, no income, limited family support, and little progress toward work or housing creates substantial vulnerability."
+  },
+  {
+   "case": 24,
+   "score": 1,
+   "rank": 29,
+   "reason": "Six weeks in shelter with ongoing work, savings, good health, no substance use, family contact, and a specific housing plan makes the likelihood of immediate serious harm comparatively low."
+  },
+  {
+   "case": 25,
+   "score": 4,
+   "rank": 27,
+   "reason": "Five months in shelter with no chronic health condition or substance use but no income, substantial debt, widowhood, and shrinking social support create some vulnerability without evidence of an acute safety crisis."
+  },
+  {
+   "case": 26,
+   "score": 17,
+   "rank": 5,
+   "reason": "Fourteen years of continuous unsheltered homelessness combined with head injury, heart disease, daily drinking, cognitive impairment, medication nonadherence, constant emergency and police contact, assault, a warrant, coercion, and total social isolation creates exceptionally high risk."
+  },
+  {
+   "case": 27,
+   "score": 13,
+   "rank": 17,
+   "reason": "Two years of unsheltered homelessness at age 68 with congestive heart failure, untreated medication needs, significant swelling and fatigue, no income, and almost no social support creates high medical and environmental vulnerability."
+  },
+  {
+   "case": 28,
+   "score": 8,
+   "rank": 22,
+   "reason": "Two months of vehicle homelessness following intimate-partner abuse creates meaningful safety and financial vulnerability, but good health, substance abstinence, hygiene access, and a supportive friend reduce immediate risk."
+  },
+  {
+   "case": 29,
+   "score": 4,
+   "rank": 28,
+   "reason": "Four months of vehicle homelessness with significant arthritis and a hip injury create moderate functional vulnerability, but stable Social Security, medication adherence, family and community connections, and no recent safety crises substantially reduce immediate risk."
+  },
+  {
+   "case": 30,
+   "score": 3,
+   "rank": 32,
+   "reason": "Six weeks in shelter with ongoing work, savings, good health, no substance use, family contact, and a specific housing plan makes the likelihood of immediate serious harm comparatively low."
+  },
+  {
+   "case": 31,
+   "score": 17,
+   "rank": 6,
+   "reason": "Eleven years of continuous unsheltered homelessness combined with chronic pain and liver disease, heavy daily drinking, depression, medication nonadherence, constant emergency and police contact, repeated assaults, coercion, and no known family creates exceptionally high risk."
+  },
+  {
+   "case": 32,
+   "score": 16,
+   "rank": 9,
+   "reason": "Eight years of repeated unsheltered homelessness with chronic asthma, heroin use, depressive disorder, constant emergency and police contact, repeated assaults, unmet basic needs, and coercion into carrying and delivering items creates extremely high vulnerability."
+  }
+ ],
+ "reply_text": "{\"cases\":[\n{\"case\":1,\"score\":15,\"rank\":11,\"reason\":\"Four years of repeated unsheltered homelessness, dialysis-dependent kidney disease, repeated emergency-room visits, no income, and limited ability to meet basic needs create very high vulnerability despite adherence to treatment.\"},\n{\"case\":2,\"score\":14,\"rank\":14,\"reason\":\"Three years of unsheltered homelessness with COPD, stimulant use, medication nonadherence, repeated emergency and crisis-line contact, assault, no income, and failed treatment attempts create very high vulnerability.\"},\n{\"case\":3,\"score\":4,\"rank\":26,\"reason\":\"Four years of intermittent unsheltered homelessness creates ongoing exposure, but good health, some income, hygiene access, work skills, and absence of recent medical or safety crises keep immediate risk comparatively low.\"},\n{\"case\":4,\"score\":17,\"rank\":3,\"reason\":\"Nine years of repeated unsheltered homelessness with emphysema, medication diversion, constant emergency and police contact, repeated assaults, pending charges, coercive debt, and no local support creates exceptionally high risk.\"},\n{\"case\":5,\"score\":16,\"rank\":7,\"reason\":\"Six years of unsheltered homelessness with untreated chronic heart disease, constant emergency and police contact, repeated assaults, severe sleep disruption, social isolation, and ongoing camp conflict creates extremely high vulnerability.\"},\n{\"case\":6,\"score\":1,\"rank\":31,\"reason\":\"Two months of vehicle homelessness presents relatively low immediate risk because he remains employed, healthy, substance-free, financially stable, socially connected, and free of recent medical or safety problems.\"},\n{\"case\":7,\"score\":9,\"rank\":21,\"reason\":\"Nine months in shelter with a disabling back injury, difficult hygiene, frequent emergency and police contact, and persistent difficulty returning to work creates substantial vulnerability despite family connections and a weekly routine.\"},\n{\"case\":8,\"score\":15,\"rank\":12,\"reason\":\"Four years of repeated unsheltered homelessness with dialysis-dependent kidney disease, repeated emergency-room visits, stimulant use, poor hygiene access, and prior failure in transitional housing creates very high vulnerability despite adherence to dialysis and medication.\"},\n{\"case\":9,\"score\":4,\"rank\":25,\"reason\":\"Four months of vehicle homelessness with significant mobility and self-care limitations creates moderate vulnerability, but stable Social Security, medication adherence, family and community connections, and no recent safety crises substantially reduce immediate risk.\"},\n{\"case\":10,\"score\":12,\"rank\":18,\"reason\":\"Eight months in shelter with a recent assault, frequent emergency and police contact, a pending charge, poor access to necessities, and coercion by another resident creates high vulnerability despite good physical health.\"},\n{\"case\":11,\"score\":5,\"rank\":24,\"reason\":\"Fourteen months of unsheltered homelessness at age 62 creates exposure, but stable benefits, good health, abstinence, reliable routines, family contact, and access to meals and showers substantially reduce immediate risk.\"},\n{\"case\":12,\"score\":15,\"rank\":10,\"reason\":\"Five years of repeated unsheltered homelessness combined with chronic liver disease, daily drinking, frequent emergency visits, repeated assaults, poor hygiene access, and repeated unsuccessful detoxification creates very high vulnerability.\"},\n{\"case\":13,\"score\":17,\"rank\":1,\"reason\":\"Six years of unsheltered homelessness at age 73 combined with heart failure, cognitive decline, unmanaged medication, inability to meet basic needs, repeated assault and robbery, financial exploitation, and frequent emergency and police contact creates exceptionally high risk.\"},\n{\"case\":14,\"score\":3,\"rank\":30,\"reason\":\"Three months in shelter with stable financial support, good health, no substance use, social contact, and no recent medical or safety problems makes immediate serious harm comparatively unlikely despite grief and social withdrawal.\"},\n{\"case\":15,\"score\":13,\"rank\":16,\"reason\":\"Three years of unsheltered homelessness with chronic liver disease, no income, frequent medication nonadherence, limited family support, and declining engagement with work and housing creates substantial vulnerability.\"},\n{\"case\":16,\"score\":11,\"rank\":19,\"reason\":\"Eight months in shelter with no income, an assault, frequent emergency and police contact, a pending charge, and coercion by another resident creates substantial vulnerability despite good health and no substance use.\"},\n{\"case\":17,\"score\":13,\"rank\":15,\"reason\":\"Ten months in shelter with cirrhosis, frequent emergency and police contact, repeated assaults, a pending charge, ongoing drinking, and coercion by another resident creates high vulnerability despite stable income and medical follow-up.\"},\n{\"case\":18,\"score\":8,\"rank\":23,\"reason\":\"Three years of unsheltered homelessness with chronic liver disease, frequent medication nonadherence, no income, limited family support, and little progress toward work or housing creates meaningful vulnerability despite no recent emergency or safety incidents.\"},\n{\"case\":19,\"score\":15,\"rank\":13,\"reason\":\"Eight years of repeated unsheltered homelessness with chronic asthma, heroin use, depression, constant emergency and police contact, repeated assaults, unmet basic needs, and coercion into carrying and delivering items creates extremely high vulnerability.\"},\n{\"case\":20,\"score\":16,\"rank\":8,\"reason\":\"Four years of unsheltered homelessness combined with cirrhosis, alcohol dependence, PTSD, medication nonadherence, frequent emergency visits, assault, no income, and no effective recovery plan creates very high vulnerability.\"},\n{\"case\":21,\"score\":17,\"rank\":4,\"reason\":\"Six years of unsheltered homelessness at age 73 combined with heart failure, cognitive decline, unmanaged medication, inability to meet basic needs, repeated assault and robbery, financial exploitation, and frequent emergency and police contact creates exceptionally high risk.\"},\n{\"case\":22,\"score\":2,\"rank\":32,\"reason\":\"Two months of vehicle homelessness presents relatively low immediate risk because he is employed, healthy, substance-free, financially stable, socially connected, and free of recent medical or safety problems.\"},\n{\"case\":23,\"score\":10,\"rank\":20,\"reason\":\"Three years of unsheltered homelessness with chronic liver disease, frequent medication nonadherence, no income, limited family support, and little progress toward work or housing creates substantial vulnerability.\"},\n{\"case\":24,\"score\":1,\"rank\":29,\"reason\":\"Six weeks in shelter with ongoing work, savings, good health, no substance use, family contact, and a specific housing plan makes the likelihood of immediate serious harm comparatively low.\"},\n{\"case\":25,\"score\":4,\"rank\":27,\"reason\":\"Five months in shelter with no chronic health condition or substance use but no income, substantial debt, widowhood, and shrinking social support create some vulnerability without evidence of an acute safety crisis.\"},\n{\"case\":26,\"score\":17,\"rank\":5,\"reason\":\"Fourteen years of continuous unsheltered homelessness combined with head injury, heart disease, daily drinking, cognitive impairment, medication nonadherence, constant emergency and police contact, assault, a warrant, coercion, and total social isolation creates exceptionally high risk.\"},\n{\"case\":27,\"score\":13,\"rank\":17,\"reason\":\"Two years of unsheltered homelessness at age 68 with congestive heart failure, untreated medication needs, significant swelling and fatigue, no income, and almost no social support creates high medical and environmental vulnerability.\"},\n{\"case\":28,\"score\":8,\"rank\":22,\"reason\":\"Two months of vehicle homelessness following intimate-partner abuse creates meaningful safety and financial vulnerability, but good health, substance abstinence, hygiene access, and a supportive friend reduce immediate risk.\"},\n{\"case\":29,\"score\":4,\"rank\":28,\"reason\":\"Four months of vehicle homelessness with significant arthritis and a hip injury create moderate functional vulnerability, but stable Social Security, medication adherence, family and community connections, and no recent safety crises substantially reduce immediate risk.\"},\n{\"case\":30,\"score\":3,\"rank\":32,\"reason\":\"Six weeks in shelter with ongoing work, savings, good health, no substance use, family contact, and a specific housing plan makes the likelihood of immediate serious harm comparatively low.\"},\n{\"case\":31,\"score\":17,\"rank\":6,\"reason\":\"Eleven years of continuous unsheltered homelessness combined with chronic pain and liver disease, heavy daily drinking, depression, medication nonadherence, constant emergency and police contact, repeated assaults, coercion, and no known family creates exceptionally high risk.\"},\n{\"case\":32,\"score\":16,\"rank\":9,\"reason\":\"Eight years of repeated unsheltered homelessness with chronic asthma, heroin use, depressive disorder, constant emergency and police contact, repeated assaults, unmet basic needs, and coercion into carrying and delivering items creates extremely high vulnerability.\"}\n]}"
+}

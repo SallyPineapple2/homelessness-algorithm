@@ -18,11 +18,6 @@ const DOMAIN_COLOR = {
   d: "--series-4"
 };
 
-const MODELS = [
-  { key: "vispdat", name: "VI-SPDAT", varName: "--series-1" },
-  { key: "llm", name: "AI-based model (LLM)", varName: "--series-2" }
-];
-
 const css = (name) =>
   getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
@@ -243,208 +238,6 @@ function renderDistribution(profiles) {
 }
 
 /* ============================================================
-   2. Blank template chart - planned results, no data yet
-   ============================================================ */
-
-function renderBlankTemplate() {
-  const container = "#chart-blank";
-  const races = [
-    "American Indian, Alaska Native,\nor Indigenous",
-    "Asian or Asian American",
-    "Black, African American,\nor African",
-    "Hispanic/Latino/e/a",
-    "White"
-  ];
-
-  const margin = { top: 12, right: 16, bottom: 74, left: 44 };
-  const outerW = Math.max(560, Math.min(920, document.querySelector(container).clientWidth || 720));
-  const width = outerW - margin.left - margin.right;
-  const height = 260;
-
-  const svg = makeSvg(container, outerW, height + margin.top + margin.bottom);
-  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-
-  const x0 = d3.scaleBand().domain(races).range([0, width]).paddingInner(0.3);
-  const x1 = d3.scaleBand().domain(MODELS.map((m) => m.key)).range([0, x0.bandwidth()]).paddingInner(0);
-  const y = d3.scaleLinear().domain([0, 17]).range([height, 0]);
-  const ticks = [0, 4, 8, 12, 17];
-
-  drawGrid(g, y, width, ticks);
-  drawYTicks(g, y, ticks);
-
-  const barW = Math.min(MAX_BAR, x1.bandwidth() - GAP);
-  const offset = (x1.bandwidth() - barW) / 2;
-
-  // Real VI-SPDAT means where they exist; dashed placeholders for the LLM arm.
-  const vispdatMeans = RESULTS ? RESULTS.means_by_race : null;
-
-  races.forEach((race) => {
-    const group = g.append("g").attr("transform", `translate(${x0(race)},0)`);
-    const plain = race.replace(/\n/g, " ");
-
-    MODELS.forEach((m) => {
-      const bx = x1(m.key) + offset;
-      const value = m.key === "vispdat" && vispdatMeans ? vispdatMeans[plain] : null;
-
-      if (value != null) {
-        group
-          .append("path")
-          .attr("d", barPath(bx, y(value), barW, height - y(value), RADIUS))
-          .attr("fill", css(m.varName))
-          .style("cursor", "pointer")
-          .on("mouseenter", (event) =>
-            showTip(
-              event,
-              `<span class="tt-title">${plain}</span>
-               <span class="tt-row"><span class="tt-dot" style="background:${css(m.varName)}"></span>
-               ${m.name}: ${value.toFixed(3)}</span>`
-            )
-          )
-          .on("mousemove", moveTip)
-          .on("mouseleave", hideTip);
-        group
-          .append("text")
-          .attr("class", "bar-value")
-          .attr("x", bx + barW / 2)
-          .attr("y", y(value) - 7)
-          .text(value.toFixed(2));
-      } else {
-        group
-          .append("rect")
-          .attr("class", "blank-bar")
-          .attr("x", bx)
-          .attr("y", y(11))
-          .attr("width", barW)
-          .attr("height", height - y(11))
-          .attr("rx", RADIUS)
-          .attr("stroke", css(m.varName))
-          .attr("stroke-opacity", 0.75);
-        group
-          .append("text")
-          .attr("class", "blank-mark")
-          .attr("x", bx + barW / 2)
-          .attr("y", y(11) - 7)
-          .text("—");
-      }
-    });
-  });
-
-  if (vispdatMeans) {
-    const level = y(vispdatMeans[races[0].replace(/\n/g, " ")]);
-    g.append("line")
-      .attr("class", "level-line")
-      .attr("x1", 0).attr("x2", width)
-      .attr("y1", level).attr("y2", level);
-  }
-
-  g.append("line")
-    .attr("class", "baseline")
-    .attr("x1", 0).attr("x2", width)
-    .attr("y1", height).attr("y2", height);
-
-  races.forEach((race) => {
-    const cx = x0(race) + x0.bandwidth() / 2;
-    const label = g.append("text").attr("class", "tick-text").attr("text-anchor", "middle");
-    race.split("\n").forEach((line, i) => {
-      label.append("tspan").attr("x", cx).attr("y", height + 18 + i * 13).text(line);
-    });
-  });
-
-  g.append("text")
-    .attr("class", "axis-title")
-    .attr("x", width / 2)
-    .attr("y", height + 64)
-    .attr("text-anchor", "middle")
-    .text("HUD race and ethnicity category");
-
-  g.append("text")
-    .attr("class", "axis-title")
-    .attr("transform", "rotate(-90)")
-    .attr("x", -height / 2)
-    .attr("y", -30)
-    .attr("text-anchor", "middle")
-    .text("Mean vulnerability score (0–17)");
-
-  renderLegend("#legend-blank", [
-    ...MODELS.map((m) => ({ name: m.name, color: css(m.varName) })),
-    { name: "Value not yet collected", blank: true }
-  ]);
-}
-
-/* ============================================================
-   3. Example-values chart - hidden by default, toggleable
-   ============================================================ */
-
-function renderDemo(rows) {
-  const container = "#chart-demo";
-  const margin = { top: 12, right: 16, bottom: 62, left: 44 };
-  const el = document.querySelector(container);
-  const outerW = Math.max(560, Math.min(920, el.clientWidth || 720));
-  const width = outerW - margin.left - margin.right;
-  const height = 240;
-
-  const svg = makeSvg(container, outerW, height + margin.top + margin.bottom);
-  const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
-
-  const groups = rows.map((d) => d.race);
-  const x0 = d3.scaleBand().domain(groups).range([0, width]).paddingInner(0.3);
-  const x1 = d3.scaleBand().domain(MODELS.map((m) => m.key)).range([0, x0.bandwidth()]).paddingInner(0);
-  const y = d3.scaleLinear().domain([0, 17]).range([height, 0]);
-  const ticks = [0, 4, 8, 12, 17];
-
-  drawGrid(g, y, width, ticks);
-  drawYTicks(g, y, ticks);
-
-  const barW = Math.min(MAX_BAR, x1.bandwidth() - GAP);
-  const offset = (x1.bandwidth() - barW) / 2;
-
-  rows.forEach((row) => {
-    const group = g.append("g").attr("transform", `translate(${x0(row.race)},0)`);
-    MODELS.forEach((m) => {
-      const value = row[m.key];
-      group
-        .append("path")
-        .attr("d", barPath(x1(m.key) + offset, y(value), barW, height - y(value), RADIUS))
-        .attr("fill", css(m.varName))
-        .style("cursor", "pointer")
-        .on("mouseenter", (event) =>
-          showTip(
-            event,
-            `<span class="tt-title">${row.race}</span>
-             <span class="tt-row"><span class="tt-dot" style="background:${css(m.varName)}"></span>
-             ${m.name}: ${value.toFixed(1)}</span>`
-          )
-        )
-        .on("mousemove", moveTip)
-        .on("mouseleave", hideTip);
-    });
-  });
-
-  g.append("line")
-    .attr("class", "baseline")
-    .attr("x1", 0).attr("x2", width)
-    .attr("y1", height).attr("y2", height);
-
-  groups.forEach((race) => {
-    const cx = x0(race) + x0.bandwidth() / 2;
-    const label = g.append("text").attr("class", "tick-text").attr("text-anchor", "middle");
-    wrapLabel(race, 18).forEach((line, i) => {
-      label.append("tspan").attr("x", cx).attr("y", height + 18 + i * 13).text(line);
-    });
-  });
-
-  g.append("text")
-    .attr("class", "axis-title")
-    .attr("transform", "rotate(-90)")
-    .attr("x", -height / 2)
-    .attr("y", -30)
-    .attr("text-anchor", "middle")
-    .text("Mean vulnerability score (0–17)");
-
-  renderLegend("#legend-demo", MODELS.map((m) => ({ name: m.name, color: css(m.varName) })));
-}
-
-/* ============================================================
    4. Instrument reference table
    ============================================================ */
 
@@ -481,59 +274,31 @@ let SCHEDULE = null;
 let RESULTS = null;
 let activeSession = 1;
 
-/* ---------- VI-SPDAT results: fill the paired t-test table ---------- */
-
-function renderResultsTable() {
-  if (!RESULTS) return;
-  const byName = new Map(RESULTS.tests.map((t) => [t.comparison, t]));
-
-  document.querySelectorAll("tr[data-comparison]").forEach((row) => {
-    const test = byName.get(row.dataset.comparison);
-    if (!test) return;
-    const fmt = (v, digits) =>
-      v === null || v === undefined ? "—" : Number(v).toFixed(digits);
-
-    row.querySelector('[data-cell="diff"]').textContent = fmt(test.mean_diff, 3);
-    row.querySelector('[data-cell="t"]').textContent =
-      test.t === null ? "n/a" : fmt(test.t, 2);
-    row.querySelector('[data-cell="p"]').textContent =
-      test.p < 0.001 ? "<0.001" : fmt(test.p, 3);
-
-    row.querySelectorAll("[data-cell]").forEach((cell) => {
-      cell.classList.remove("blank");
-      cell.classList.add("filled");
-      if (test.significant) cell.classList.add("sig");
-    });
-  });
-
-  const stamp = document.getElementById("vispdat-stamp");
-  if (stamp) {
-    stamp.textContent = `${RESULTS.instances_scored} instances scored`;
-  }
-}
-
 function renderSessionPicker() {
-  const wrap = d3.select("#session-picker");
-  wrap.selectAll("*").remove();
-
+  const select = document.getElementById("session-select");
+  select.innerHTML = "";
   SCHEDULE.sessions.forEach((sess) => {
-    wrap
-      .append("button")
-      .attr("class", "session-chip")
-      .attr("type", "button")
-      .attr("aria-pressed", sess.session === activeSession)
-      .text(sess.session)
-      .on("click", () => {
-        activeSession = sess.session;
-        renderSessionPicker();
-        renderSchedule();
-      });
+    const opt = document.createElement("option");
+    opt.value = sess.session;
+    opt.textContent = `Session ${sess.session}`;
+    select.appendChild(opt);
   });
+  document.getElementById("session-total").textContent = SCHEDULE.sessions.length;
+
+  const go = (n) => {
+    const total = SCHEDULE.sessions.length;
+    activeSession = ((n - 1 + total) % total) + 1;
+    renderSchedule();
+  };
+  select.addEventListener("change", () => go(Number(select.value)));
+  document.getElementById("session-prev").addEventListener("click", () => go(activeSession - 1));
+  document.getElementById("session-next").addEventListener("click", () => go(activeSession + 1));
 }
 
 function renderSchedule() {
   const sess = SCHEDULE.sessions.find((s) => s.session === activeSession);
   document.getElementById("session-num").textContent = activeSession;
+  document.getElementById("session-select").value = activeSession;
 
   const tbody = d3.select("#schedule-body");
   tbody.selectAll("*").remove();
@@ -544,9 +309,34 @@ function renderSchedule() {
     tr.append("td").attr("class", "id").text(item.profile);
     tr.append("td").text(item.gender);
     tr.append("td").text(item.race);
+    tr.append("td").text(item.location);
     tr.append("td")
       .attr("class", item.disclosure === "Underdisclosure" ? "disclosure partial" : "disclosure")
       .text(item.disclosure);
+  });
+}
+
+/* ---------- AI model roster ---------- */
+
+function renderModelsRoster(roster, summaries) {
+  const byKey = new Map(summaries.map((s) => [s.key, s]));
+  const tbody = d3.select("#models-body");
+  tbody.selectAll("*").remove();
+
+  roster.forEach((m) => {
+    const s = byKey.get(m.key);
+    const status = s ? s.status : "not run";
+    const tr = tbody.append("tr");
+    const versions = s && s.model_versions ? Object.keys(s.model_versions) : [];
+    tr.append("td").attr("class", "p-label").text(m.label);
+    tr.append("td").text(m.family);
+    tr.append("td").text(m.interface);
+    tr.append("td").append("span").attr("class", "mono").text(versions.length ? versions.join(", ") : "—");
+    tr.append("td").attr("class", "num").text(s ? `${s.sessions_valid} / ${s.sessions_total}` : "—");
+    tr.append("td")
+      .append("span")
+      .attr("class", `status-tag ${status.replace(" ", "-")}`)
+      .text(status.charAt(0).toUpperCase() + status.slice(1));
   });
 }
 
@@ -560,13 +350,36 @@ const expanded = new Set();
 const ATTRIBUTES = [
   { key: "background", label: "Work and education" },
   { key: "path", label: "Path into homelessness" },
-  { key: "finances", label: "Financial situation" },
+  { key: "housing", label: "Current housing" },
+  { key: "finances", label: "Finances" },
+  { key: "health", label: "Health" },
+  { key: "safety", label: "Safety" },
   { key: "ties", label: "Family and social ties" },
   { key: "routine", label: "A typical day" },
-  { key: "goals", label: "What they want next" },
+  { key: "goals", label: "Goals" },
   { key: "services", label: "Service history" },
-  { key: "demeanor", label: "Demeanor in the interview" }
+  { key: "demeanor", label: "Presentation in the interview" }
 ];
+
+function attrGrid(fields) {
+  const grid = document.createElement("div");
+  grid.className = "attr-grid";
+  ATTRIBUTES.forEach((attr) => {
+    if (!fields[attr.key]) return;
+    const block = document.createElement("div");
+    block.className = "attr";
+    const head = document.createElement("div");
+    head.className = "attr-label";
+    head.textContent = attr.label;
+    const body = document.createElement("div");
+    body.className = "attr-value";
+    body.textContent = fields[attr.key];
+    block.appendChild(head);
+    block.appendChild(body);
+    grid.appendChild(block);
+  });
+  return grid;
+}
 
 function personDetail(profile) {
   const wrap = document.createElement("div");
@@ -579,23 +392,18 @@ function personDetail(profile) {
     wrap.appendChild(role);
   }
 
-  const grid = document.createElement("div");
-  grid.className = "attr-grid";
-  ATTRIBUTES.forEach((attr) => {
-    if (!profile[attr.key]) return;
-    const block = document.createElement("div");
-    block.className = "attr";
-    const head = document.createElement("div");
-    head.className = "attr-label";
-    head.textContent = attr.label;
-    const body = document.createElement("div");
-    body.className = "attr-value";
-    body.textContent = profile[attr.key];
-    block.appendChild(head);
-    block.appendChild(body);
-    grid.appendChild(block);
-  });
-  wrap.appendChild(grid);
+  wrap.appendChild(attrGrid(profile.narrative));
+
+  if (profile.underdisclosure) {
+    const override = document.createElement("div");
+    override.className = "override";
+    const head = document.createElement("p");
+    head.className = "override-head";
+    head.textContent = "On record under underdisclosure \u2014 these fields replace the ones above";
+    override.appendChild(head);
+    override.appendChild(attrGrid(profile.underdisclosure));
+    wrap.appendChild(override);
+  }
 
   return wrap;
 }
@@ -774,7 +582,6 @@ function wireExpandAll(profiles) {
    ============================================================ */
 
 let cachedProfiles = null;
-let cachedDemo = null;
 
 function renderAll() {
   if (cachedProfiles) {
@@ -784,19 +591,17 @@ function renderAll() {
     renderFilters(cachedProfiles);
     renderDomainKey();
   }
-  renderBlankTemplate();
-  if (cachedDemo && !document.getElementById("demo-wrap").hidden) {
-    renderDemo(cachedDemo);
-  }
+  if (typeof renderResults === "function") renderResults();
 }
 
 Promise.all([
   d3.json("data/vispdat_instrument.json"),
   d3.json("data/base_profiles.json"),
-  d3.json("data/run_schedule.json"),
+  d3.json("data/ai/paste_schedule.json"),
   d3.json("data/vispdat_results.json"),
-  d3.json("data/sample_scores.json")
-]).then(([instrument, profileData, schedule, vispdatResults, demoData]) => {
+  d3.json("data/ai/models.json"),
+  d3.json("data/ai_results.json")
+]).then(([instrument, profileData, schedule, vispdatResults, modelRoster, aiResults]) => {
   INSTRUMENT = instrument;
   DOMAINS = instrument.domains;
   BANDS = instrument.bands.map((b, i) => ({ ...b, varName: `--band-${i + 1}` }));
@@ -806,33 +611,29 @@ Promise.all([
   });
 
   cachedProfiles = profileData.profiles;
-  cachedDemo = demoData;
   SCHEDULE = schedule;
   RESULTS = vispdatResults;
+  AI = aiResults;
 
+  // VI-SPDAT scores every instance of the full design; each AI app reads the paste schedule
   const n = cachedProfiles.length;
-  const clones = n * 2 * 5;
+  const instances = vispdatResults.instances_scored;
+  // entries with a "source" are second analyses of an app's replies, not extra scores
+  const apps = modelRoster.models.filter((m) => !m.source);
+  const aiModels = apps.length;
+  const scores = instances + schedule.instances_total * aiModels;
   document.getElementById("stat-profiles").textContent = n;
-  document.getElementById("stat-clones").textContent = clones.toLocaleString();
-  document.getElementById("stat-instances").textContent = (clones * 2).toLocaleString();
-  document.getElementById("stat-scores").textContent = (clones * 2 * 2).toLocaleString();
+  document.getElementById("stat-clones").textContent = (instances / 2).toLocaleString();
+  document.getElementById("stat-instances").textContent = instances.toLocaleString();
+  document.getElementById("stat-scores").textContent = scores.toLocaleString();
+  document.getElementById("stat-models").textContent =
+    aiModels === 1 ? `VI-SPDAT and ${apps[0].label}` : `VI-SPDAT and ${aiModels} AI models`;
 
   wireExpandAll(cachedProfiles);
   renderSessionPicker();
   renderSchedule();
-  renderResultsTable();
+  renderModelsRoster(modelRoster.models, aiResults.models);
   renderAll();
-});
-
-document.getElementById("demo-toggle").addEventListener("click", (event) => {
-  const wrap = document.getElementById("demo-wrap");
-  const nowHidden = !wrap.hidden;
-  wrap.hidden = nowHidden;
-  event.currentTarget.textContent = nowHidden
-    ? "Show version with example values"
-    : "Hide version with example values";
-  event.currentTarget.setAttribute("aria-expanded", String(!nowHidden));
-  if (!nowHidden && cachedDemo) renderDemo(cachedDemo);
 });
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);

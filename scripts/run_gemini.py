@@ -1,0 +1,173 @@
+"""
+Run the Gemini sessions through Google's API, the same way they are pasted by hand.
+
+For each session it opens a new chat, sends part 1, then sends part 2 in the same
+chat - exactly the steps in paste/README.md - and writes the final reply into
+paste/replies/gemini/session-NN.txt with a "Model:" line. From there the normal
+pipeline takes over: scripts/import_replies.py validates it and runs the
+case-label check, and scripts/analyze_ai.py analyzes it.
+
+No response format is enforced and sampling is left at the model's defaults, to
+match the chat apps. A session whose reply file already holds a valid reply is
+skipped, so the script can be stopped and restarted. A session that fails the
+checks (for example, answers labeled with the wrong case) is retried in a fresh
+chat, up to --attempts times; every failed reply is archived first under
+data/ai/attempts/gemini/.
+
+The key is read from GEMINI_API_KEY in the environment or the git-ignored .env file.
+
+Run:  python scripts/run_gemini.py --sessions 1        (one session, to test)
+      python scripts/run_gemini.py                     (all remaining sessions)
+"""
+
+import argparse
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+PROMPTS = ROOT / "paste" / "prompts"
+REPLIES = ROOT / "paste" / "replies" / "gemini"
+RAW = ROOT / "data" / "ai" / "raw" / "gemini"
+ATTEMPTS = ROOT / "data" / "ai" / "attempts" / "gemini"
+SCHEDULE = ROOT / "data" / "ai" / "paste_schedule.json"
+
+MODEL = "gemini-3.8-flash"
+
+
+def load_key():
+    env = ROOT / ".env"
+    if env.exists():
+        for line in env.read_text(encoding="utf-8").splitlines():
+            if line.strip().startswith("GEMINI_API_KEY="):
+                os.environ.setdefault("GEMINI_API_KEY", line.split("=", 1)[1].strip())
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        sys.exit("GEMINI_API_KEY is not set in .env")
+    return key
+
+
+def log(message):
+    print(message, flush=True)
+
+
+class DailyQuotaReached(Exception):
+    """The free tier's requests-per-day limit for this model is used up."""
+
+
+def send(chat, text, tries=10):
+    """Send one message, waiting out per-minute limits, overload, and timeouts."""
+    for attempt in range(1, tries + 1):
+        try:
+            return chat.send_message(text)
+        except Exception as exc:  # noqa: BLE001 - the SDK raises several error types
+            message = str(exc)
+            if "429" in message or "RESOURCE_EXHAUSTED" in message:
+                quota = re.findall(r"quotaId'?\"?:\s*['\"]([^'\"]+)", message)
+                retry = re.findall(r"retryDelay'?\"?:\s*['\"](\d+)", message)
+                if any("PerDay" in q for q in quota):
+                    raise DailyQuotaReached(", ".join(quota)) from exc
+                if attempt == tries:
+                    raise
+                wait = int(retry[0]) + 5 if retry else min(120, 15 * attempt)
+                log(f"    rate limited ({', '.join(quota) or 'no quota id'}); waiting {wait}s")
+                time.sleep(wait)
+                continue
+            retryable = any(code in message.upper() for code in (
+                "500", "503", "UNAVAILABLE", "DEADLINE", "TIMEOUT", "TIMED OUT"))
+            if not retryable or attempt == tries:
+                raise
+            wait = min(120, 15 * attempt)
+            log(f"    waiting {wait}s after: {message[:90]}")
+            time.sleep(wait)
+
+
+def run_session(client, session_no):
+    folder = PROMPTS / f"session-{session_no:02d}"
+    parts = [p.read_text(encoding="utf-8") for p in sorted(folder.glob("part-*.txt"))]
+    chat = client.chats.create(model=MODEL)
+    replies = []
+    for text in parts:
+        response = send(chat, text)
+        replies.append(response)
+    final = replies[-1]
+    version = getattr(final, "model_version", None) or MODEL
+    return version, (final.text or "").strip(), [(r.text or "").strip()[:60] for r in replies[:-1]]
+
+
+def import_status(session_no):
+    """Run the normal importer and read back this session's verdict."""
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "import_replies.py")], check=True,
+                   capture_output=True, text=True)
+    rec = json.loads((RAW / f"session-{session_no:02d}.json").read_text(encoding="utf-8"))
+    return rec
+
+
+def archive_failed(session_no, reply_path):
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    dest = ATTEMPTS / f"failed-{stamp}"
+    (dest / "replies").mkdir(parents=True, exist_ok=True)
+    (dest / "raw").mkdir(parents=True, exist_ok=True)
+    shutil.copy(reply_path, dest / "replies" / reply_path.name)
+    raw = RAW / f"session-{session_no:02d}.json"
+    if raw.exists():
+        shutil.copy(raw, dest / "raw" / raw.name)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--sessions", help="e.g. 1 or 1-5,8 (default: all)")
+    ap.add_argument("--attempts", type=int, default=3, help="fresh-chat tries per session")
+    args = ap.parse_args()
+
+    from google import genai
+    from google.genai import types
+
+    # A request that hangs is abandoned after 3 minutes and retried.
+    client = genai.Client(api_key=load_key(), http_options=types.HttpOptions(timeout=180_000))
+    total = json.loads(SCHEDULE.read_text(encoding="utf-8"))["sessions_count"]
+    wanted = list(range(1, total + 1))
+    if args.sessions:
+        wanted = []
+        for chunk in args.sessions.split(","):
+            a, _, b = chunk.partition("-")
+            wanted.extend(range(int(a), int(b or a) + 1))
+
+    REPLIES.mkdir(parents=True, exist_ok=True)
+    for n in wanted:
+        reply_path = REPLIES / f"session-{n:02d}.txt"
+        raw = RAW / f"session-{n:02d}.json"
+        if raw.exists() and json.loads(raw.read_text(encoding="utf-8")).get("valid"):
+            log(f"session {n:02d}: already valid, skipped")
+            continue
+        for attempt in range(1, args.attempts + 1):
+            started = time.time()
+            log(f"session {n:02d}: attempt {attempt} started")
+            try:
+                version, text, interim = run_session(client, n)
+            except DailyQuotaReached as exc:
+                log(f"DAILY QUOTA REACHED ({exc}). Stopping at session {n:02d}; run the same command again after "
+                    "the quota resets (midnight Pacific time) and it resumes from here.")
+                return
+            reply_path.write_text(f"Model: {version} (Gemini API)\n{text}\n", encoding="utf-8")
+            rec = import_status(n)
+            took = time.time() - started
+            if rec["valid"]:
+                labels = rec.get("case_labels") or {}
+                log(f"session {n:02d}: ok in {took:.0f}s (part-1 reply: {interim[0]!r}; "
+                    f"labels {labels}; warnings: {len(rec['warnings'])})")
+                break
+            log(f"session {n:02d}: attempt {attempt} failed in {took:.0f}s - {'; '.join(rec['problems'])[:200]}")
+            archive_failed(n, reply_path)
+        else:
+            log(f"session {n:02d}: still failing after {args.attempts} attempts; left for review")
+
+
+if __name__ == "__main__":
+    main()

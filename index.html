@@ -21,7 +21,7 @@
       <a href="#data">Data</a>
       <a href="#method">Method</a>
       <a href="#profiles">Base profiles</a>
-      <a href="#results">Planned results</a>
+      <a href="#results">Results</a>
       <a href="#limitations">Limitations</a>
     </nav>
   </div>
@@ -33,11 +33,11 @@
   <p class="hero-sub">
     Comparing the VI&#8209;SPDAT scoring algorithm with an AI&#8209;based substitute on an identical
     synthetic population, to test whether either one shifts a person's vulnerability score
-    by race or gender.
+    by race, gender, or location.
   </p>
   <hr class="hero-rule">
   <div class="hero-meta">
-    <span><strong>Status</strong> &nbsp;Design complete, data collection pending</span>
+    <span><strong>Status</strong> &nbsp;VI&#8209;SPDAT arm complete &middot; AI arm <span id="hero-ai-status">pending</span></span>
     <span><strong>Instrument</strong> &nbsp;VI&#8209;SPDAT (OrgCode, 2015)</span>
     <span><strong>Analysis</strong> &nbsp;Paired t&#8209;test, &alpha;&nbsp;=&nbsp;0.05</span>
   </div>
@@ -186,8 +186,10 @@
           the vulnerability for each of the individuals. For the synthetic population, I would create
           around 32 base profiles based on the 16 vulnerability indicators of the VI&#8209;SPDAT model
           to diversify the synthetic population. Then, I would clone these profiles across two
-          different genders and five different races according to the U.S. Department of Housing and
-          Urban Development (HUD)'s race and ethnicity categories.
+          different genders, five different races according to the U.S. Department of Housing and
+          Urban Development (HUD)'s race and ethnicity categories, and five U.S. cities, so that every
+          base profile appears in 50 demographic versions that differ only in the stated gender,
+          race, and location.
         </p>
       </div>
 
@@ -207,6 +209,16 @@
             <li>Black, African American, or African</li>
             <li>Hispanic/Latino/e/a</li>
             <li>White</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Locations</h3>
+          <ul class="catlist">
+            <li>Los Angeles, California <span class="cat-note">West</span></li>
+            <li>Cincinnati, Ohio <span class="cat-note">Midwest</span></li>
+            <li>Chicago, Illinois <span class="cat-note">Midwest</span></li>
+            <li>Atlanta, Georgia <span class="cat-note">South</span></li>
+            <li>New York City, New York <span class="cat-note">Northeast</span></li>
           </ul>
         </div>
       </div>
@@ -235,7 +247,7 @@
         </div>
         <div class="stat">
           <div class="stat-value" id="stat-clones">—</div>
-          <div class="stat-label">Demographic clones<br>(2 genders &times; 5 races)</div>
+          <div class="stat-label">Demographic clones<br>(2 genders &times; 5 races &times; 5 locations)</div>
         </div>
         <div class="stat">
           <div class="stat-value" id="stat-instances">—</div>
@@ -243,46 +255,53 @@
         </div>
         <div class="stat">
           <div class="stat-value" id="stat-scores">—</div>
-          <div class="stat-label">Vulnerability scores<br>(across both models)</div>
+          <div class="stat-label">Vulnerability scores<br>(<span id="stat-models">—</span>)</div>
         </div>
       </div>
 
       <h3 class="subhead">Run protocol</h3>
       <div class="prose">
         <p>
-          Scoring 640 instances in sequence would let a model notice that it is re-reading the same
-          case with the demographics swapped. The run is therefore split into 20 sessions, each
-          started in a fresh context, and built so that no two clones of the same base profile are
-          ever scored together.
+          VI&#8209;SPDAT is scored on the full design: all 1,600 clones under both disclosure
+          conditions, 3,200 instances. Each AI model is tested by pasting cases into its free chat
+          app, so it reads a smaller, balanced design of 640 instances split into 20 sessions of 32.
+          Each session starts in a new chat, and no session contains two clones of the same base
+          profile, so a model never sees the same case twice with the demographics swapped.
         </p>
       </div>
 
       <div class="designnote">
         <span class="kicker">Design note &mdash; how the schedule is built</span>
         <p>
-          Two constraints have to hold at once: no session may contain two clones of one base
-          profile, and every base profile must still be seen under all 20 conditions. Together these
-          give a cyclic Latin square. Base profile <em>i</em> in session <em>s</em> takes condition
-          <em>(i&nbsp;+&nbsp;s)&nbsp;mod&nbsp;20</em>, so each profile appears exactly once per
-          session and cycles through every condition across the 20 sessions. Presentation order is
-          then shuffled inside each session, so position in the run cannot be confounded with
-          condition.
+          Within each base profile, the 20 conditions fully cross gender, race, and disclosure
+          (2&nbsp;&times;&nbsp;5&nbsp;&times;&nbsp;2), so every race&#8209;versus&#8209;White,
+          female&#8209;versus&#8209;male, and disclosure comparison pairs a profile with itself. Cities
+          are assigned so each appears four times per profile, balanced across gender and
+          disclosure. The one thing this smaller design cannot measure is whether a race effect
+          differs from city to city.
         </p>
         <p>
-          The schedule is generated from a fixed seed and verified before it is written: the
-          generator asserts that no session repeats a profile, that positions run 1&ndash;32 with no
-          gaps, and that every profile covers all 20 conditions exactly once. It will refuse to
-          write a schedule that breaks the design.
+          The conditions are laid out as a cyclic Latin square: base profile <em>i</em> in session
+          <em>s</em> takes condition <em>(i&nbsp;+&nbsp;s)&nbsp;mod&nbsp;20</em>, so each profile
+          appears once per session and meets every one of its conditions once across the run.
+          Presentation order is shuffled inside each session. The schedule is generated from a fixed
+          seed and verified before it is written; the generator refuses to write one that breaks the
+          design.
         </p>
       </div>
 
       <div class="chart-card">
-        <p class="chart-title">Running order &mdash; session <span id="session-num">1</span> of 20</p>
+        <p class="chart-title">Running order &mdash; session <span id="session-num">1</span> of <span id="session-total">100</span></p>
         <p class="chart-sub">
           The order each instance is presented in, for the selected session. Every base profile
           appears exactly once, under a different demographic condition from its other clones.
         </p>
-        <div class="session-picker" id="session-picker"></div>
+        <div class="session-stepper">
+          <button class="btn btn-sm" id="session-prev" type="button" aria-label="Previous session">&larr;</button>
+          <label class="sr-only" for="session-select">Session</label>
+          <select id="session-select" class="select"></select>
+          <button class="btn btn-sm" id="session-next" type="button" aria-label="Next session">&rarr;</button>
+        </div>
         <div class="table-wrap session-wrap">
           <table class="data schedule">
             <thead>
@@ -291,6 +310,7 @@
                 <th>Base profile</th>
                 <th>Gender</th>
                 <th>Race and ethnicity</th>
+                <th>Location</th>
                 <th>Disclosure</th>
               </tr>
             </thead>
@@ -298,14 +318,62 @@
           </table>
         </div>
         <p class="chart-foot">
-          Start each session in a fresh context with no memory of any previous session, and score in
-          the order shown. Run the whole schedule separately for each model.
+          Each session is pasted into a new chat in every app, with the cases in the order shown. It is
+          sent as two messages, because free chat apps cap message length; the model scores only after
+          it has all 32 cases.
         </p>
       </div>
 
       <div class="table-note">
-        <span>20 sessions &times; 32 instances = 640 per model &middot; generated from seed 20260906</span>
-        <span><a href="data/run_schedule.json" download>Download run_schedule.json</a></span>
+        <span>20 sessions &times; 32 instances = 640 per AI model &middot; generated from seed 20260913</span>
+        <span><a href="data/ai/paste_schedule.json" download>Download paste_schedule.json</a></span>
+      </div>
+
+      <h3 class="subhead">Blind AI protocol</h3>
+      <div class="prose">
+        <p>
+          Each session is pasted into a new chat in the free version of ChatGPT (chatgpt.com), so the
+          model has no memory of an earlier session. Every reply is analyzed exactly as returned. A
+          model is <strong>never shown the VI&#8209;SPDAT questions</strong>, indicators, domains,
+          scoring rules, or triage bands, and is never told what the study measures. It sees only the
+          32 case summaries &mdash; each a demographic line followed by the narrative on record &mdash;
+          labeled by position (&ldquo;Case 7&rdquo;), never by profile or clone ID. For every case it
+          returns a vulnerability score from 0 to 17, a rank from 1 (most vulnerable) to 32, and a
+          one&#8209;sentence reason.
+        </p>
+      </div>
+
+      <div class="designnote">
+        <span class="kicker">Design note &mdash; what counts as the right answer</span>
+        <p>
+          A model's accuracy is measured against each base profile's <em>true</em> vulnerability: the
+          number of VI&#8209;SPDAT indicators the person actually has, whether or not they disclosed
+          them. Under full disclosure VI&#8209;SPDAT matches this exactly by construction; under
+          underdisclosure it cannot, and neither can a model reading the same record. Every pasted
+          reply is checked before analysis: every case scored once, every score in range, and ranks a
+          complete 1&ndash;32 ordering. The model version each app reports is recorded for every
+          session.
+        </p>
+      </div>
+
+      <div class="table-wrap models-wrap">
+        <table class="data models">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Company</th>
+              <th>App</th>
+              <th>Version used</th>
+              <th class="num">Sessions</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="models-body"></tbody>
+        </table>
+      </div>
+      <div class="table-note">
+        <span>Every reply is kept exactly as pasted</span>
+        <span><a href="paste/prompts/session-01/part-1.txt">Read session 1, part 1</a> &middot; <a href="paste/prompts/session-01/part-2.txt">part 2</a></span>
       </div>
     </div>
   </section>
@@ -326,14 +394,17 @@
           its own answers do not produce.
         </p>
         <p>
-          These are the profiles that get cloned across every gender and race combination, so the
-          profile text carries no name, pronoun, or other demographic signal&mdash;the only thing that
-          changes between a profile's ten clones is the stated gender and race.
+          These are the profiles that get cloned across every gender, race, and location combination,
+          so the profile text carries no name, pronoun, place, or other demographic signal&mdash;the
+          only thing that changes between a profile's 50 clones is the stated gender, race, and
+          location.
         </p>
         <p>
-          Each profile also carries a work history, a financial picture, a path into homelessness, a
-          daily routine, a service record, and a description of how the person presents in the
-          interview. Expand any row below to read them.
+          Each profile carries eleven narrative fields: work history, the path into homelessness,
+          current housing, finances, health, safety, family ties, a typical day, goals, service
+          history, and how the person presents in the interview. Every flagged indicator is described
+          in plain language in those fields, so a reader who never sees the VI&#8209;SPDAT questions
+          still has what is needed to judge vulnerability. Expand any row below to read them.
         </p>
       </div>
 
@@ -347,12 +418,18 @@
           notices what is being tested and returns identical scores by design rather than by fairness.
         </p>
         <p>
-          Surrounded by eight fields of unrelated detail, the demographic line becomes one item among
+          Surrounded by eleven fields of unrelated detail, the demographic line becomes one item among
           many rather than the obvious variable. Every added detail is held <em>identical</em> across
-          all ten clones of a profile, so it cannot produce a demographic difference on its own, and
-          each field is screened for gendered, racial, national, and religious wording &mdash; a
-          detail that carried its own demographic signal would reintroduce exactly the confound the
-          detail is meant to mask.
+          all 50 clones of a profile, so it cannot produce a demographic difference on its own. A
+          validator screens every field for gendered, racial, national, and religious wording, for
+          British spellings, and for any city or climate detail that would clash with one of the five
+          locations.
+        </p>
+        <p>
+          Where a profile withholds information under underdisclosure, the fields that would reveal
+          it have replacement text: what an assessor would have on record if the person never
+          mentioned it. The validator checks that no trace of a withheld indicator survives in that
+          text. Expanded rows show the replacement fields beneath the full narrative.
         </p>
       </div>
 
@@ -455,159 +532,315 @@
     </div>
   </section>
 
-  <!-- ============ 06 PLANNED RESULTS ============ -->
+  <!-- ============ 06 RESULTS ============ -->
   <section class="section" id="results">
     <div class="section-head">
       <span class="section-num">06</span>
-      <h2>Planned results</h2>
+      <h2>Results</h2>
     </div>
     <div class="section-body">
       <div class="prose">
         <p>
-          The VI&#8209;SPDAT arm has been run. All 640 instances were scored with the published
-          additive algorithm; the AI arm has not been run yet, and its columns below are still empty.
+          VI&#8209;SPDAT scores all 3,200 instances. Each AI model reads a balanced 640 of them, and every
+          comparison below sets VI&#8209;SPDAT beside the AI model on those same 640 cases.
+          <span id="ai-status-line"></span>
         </p>
       </div>
 
-      <div class="finding">
-        <span class="kicker">Result &mdash; VI&#8209;SPDAT arm</span>
-        <p>
-          <strong>VI&#8209;SPDAT produced identical scores across every race and gender.</strong>
-          Mean score was 6.406 for all five HUD race categories and for both genders; every paired
-          t&#8209;test on race and gender returned a mean difference of exactly 0.000. This is not a
-          null result to be explained away &mdash; it follows from the algorithm's structure. Race is
-          not an input to any VI&#8209;SPDAT scoring rule, and the only gender&#8209;dependent item in
-          version 2.0 is the pregnancy question, which no base profile sets.
-        </p>
-        <p>
-          <strong>The documented racial bias in VI&#8209;SPDAT therefore cannot live in the
-          arithmetic.</strong> It has to enter through the interview: which questions get asked, how
-          answers are interpreted and recorded, and who feels safe disclosing what. That makes the
-          disclosure condition the more revealing half of this arm.
-        </p>
-        <p>
-          <strong>Withholding stigmatized information cost 1.94 points on average</strong>
-          (t&nbsp;=&nbsp;&minus;22.47, p&nbsp;&lt;&nbsp;0.001) &mdash; and moved
-          <strong>100 of 320</strong> profile-and-demographic combinations into a lower triage band,
-          changing the intervention they would be referred to. If disclosure varies by race or
-          gender in real interviews, that is a mechanism large enough to produce the disparities
-          reported in the literature without a single biased line of arithmetic.
-        </p>
-      </div>
+      <nav class="results-nav" aria-label="Results sections">
+        <a href="#r-overview"><span>6.1</span> Overview</a>
+        <a href="#r-integrity"><span>6.2</span> Data integrity</a>
+        <a href="#r-accuracy"><span>6.3</span> Accuracy</a>
+        <a href="#r-bias"><span>6.4</span> Demographic bias</a>
+        <a href="#r-intersections"><span>6.5</span> Intersections</a>
+        <a href="#r-geography"><span>6.6</span> Geography</a>
+        <a href="#r-triage"><span>6.7</span> Triage and ranking</a>
+        <a href="#r-data"><span>6.8</span> Data</a>
+      </nav>
 
-      <div class="chart-card">
-        <p class="chart-title">Mean vulnerability score by race and ethnicity</p>
-        <p class="chart-sub">
-          For each HUD race and ethnicity category, the mean score both models assign across all 32
-          base profiles. If neither model is biased, every bar in this chart should sit at the same
-          height, because the underlying profiles are identical.
-        </p>
-        <div class="legend" id="legend-blank"></div>
-        <div class="chart-scroll" id="chart-blank"></div>
-        <p class="chart-foot">
-          VI&#8209;SPDAT bars are measured across all 640 instances and sit at exactly the same
-          height, as the algorithm's structure requires. Dashed outlines mark the AI arm, which has
-          not been run. The same chart will be repeated for gender and for the full&#8209;disclosure
-          versus underdisclosure condition.
-        </p>
-      </div>
-
-      <div class="chart-card">
-        <p class="chart-title">Paired t&#8209;test results</p>
-        <p class="chart-sub">
-          Each row pairs base profiles against themselves under two conditions, so every pair
-          differs only by the stated race, gender, or disclosure. VI&#8209;SPDAT columns are filled
-          from the completed run; the AI columns are still empty.
-          <span id="vispdat-stamp" class="stamp"></span>
-        </p>
-        <div style="overflow-x:auto">
-          <table class="results">
-            <thead>
-              <tr class="group">
-                <th></th>
-                <th></th>
-                <th class="grp sep" colspan="3">VI&#8209;SPDAT</th>
-                <th class="grp sep" colspan="3">AI&#8209;based model (LLM)</th>
-              </tr>
-              <tr>
-                <th>Comparison</th>
-                <th class="num">df</th>
-                <th class="sep" style="text-align:center">Mean diff.</th>
-                <th style="text-align:center">t</th>
-                <th style="text-align:center">p</th>
-                <th class="sep" style="text-align:center">Mean diff.</th>
-                <th style="text-align:center">t</th>
-                <th style="text-align:center">p</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-comparison="American Indian, Alaska Native, or Indigenous vs. White">
-                <td class="cmp">American Indian, Alaska Native, or Indigenous vs. White</td>
-                <td class="set">&mdash;</td>
-                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
-              </tr>
-              <tr data-comparison="Asian or Asian American vs. White">
-                <td class="cmp">Asian or Asian American vs. White</td>
-                <td class="set">&mdash;</td>
-                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
-              </tr>
-              <tr data-comparison="Black, African American, or African vs. White">
-                <td class="cmp">Black, African American, or African vs. White</td>
-                <td class="set">&mdash;</td>
-                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
-              </tr>
-              <tr data-comparison="Hispanic/Latino/e/a vs. White">
-                <td class="cmp">Hispanic/Latino/e/a vs. White</td>
-                <td class="set">&mdash;</td>
-                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
-              </tr>
-              <tr data-comparison="Female vs. Male">
-                <td class="cmp">Female vs. Male</td>
-                <td class="set">&mdash;</td>
-                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
-              </tr>
-              <tr data-comparison="Underdisclosure vs. full disclosure">
-                <td class="cmp">Underdisclosure vs. full disclosure</td>
-                <td class="set">&mdash;</td>
-                <td class="blank sep" data-cell="diff">—</td><td class="blank" data-cell="t">—</td><td class="blank" data-cell="p">—</td>
-                <td class="blank sep">—</td><td class="blank">—</td><td class="blank">—</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="results-controls model-bar">
+        <div class="control-group" role="group" aria-label="AI model">
+          <span class="control-label">AI model shown</span>
+          <div class="filters" id="model-chips"></div>
         </div>
-        <p class="chart-foot">
-          A difference is treated as evidence of bias when it reaches the critical value at the 0.05
-          level (95%). Where every pair is identical the t&#8209;statistic is undefined rather than
-          zero, shown as <em>n/a</em>.
-        </p>
       </div>
 
-      <div class="toggle-row">
-        <button class="btn" id="demo-toggle" type="button" aria-expanded="false" aria-controls="demo-wrap">
-          Show version with example values
-        </button>
-        <span class="toggle-hint">Fabricated numbers, kept only to preview how a filled&#8209;in chart reads.</span>
+      <!-- 6.1 OVERVIEW -->
+      <div class="subsection" id="r-overview">
+        <div class="subsection-head"><span class="subsection-num">6.1</span><h3>Overview</h3></div>
+        <div class="kpis" id="kpis"></div>
+
+        <div class="finding" id="ai-finding" hidden>
+          <span class="kicker" id="ai-finding-kicker">Result &mdash; AI model</span>
+          <div id="ai-finding-body"></div>
+        </div>
+
+        <div class="finding">
+          <span class="kicker">Result &mdash; VI&#8209;SPDAT arm (all 3,200 instances)</span>
+          <p>
+            <strong>VI&#8209;SPDAT produced identical scores across every race, gender, and location.</strong>
+            Mean score was 6.406 for all five HUD race categories, both genders, and all five cities;
+            every paired t&#8209;test on those factors returned a mean difference of exactly 0.000. This
+            follows from the algorithm's structure: race and location are not inputs to any
+            VI&#8209;SPDAT scoring rule, and the only gender&#8209;dependent item in version 2.0 is the
+            pregnancy question, which no base profile sets.
+          </p>
+          <p>
+            <strong>The documented racial bias in VI&#8209;SPDAT therefore cannot live in the
+            arithmetic.</strong> It has to enter through the interview: which questions get asked, how
+            answers are recorded, and who feels safe disclosing what.
+          </p>
+          <p>
+            <strong>Withholding stigmatized information cost 1.94 points on average</strong>
+            (t&nbsp;=&nbsp;&minus;50.31, p&nbsp;&lt;&nbsp;0.001), moved <strong>500 of 1,600</strong>
+            clone combinations into a lower triage band, and dropped an underdisclosed case
+            <strong>178 places</strong> on average when ranked against people who disclosed everything.
+          </p>
+        </div>
       </div>
 
-      <div id="demo-wrap" hidden>
+      <!-- 6.2 DATA INTEGRITY -->
+      <div class="subsection" id="r-integrity">
+        <div class="subsection-head"><span class="subsection-num">6.2</span><h3>Data integrity</h3></div>
+        <div class="prose">
+          <p>
+            Each AI answer gives a case number, a score, and a reason. Before any analysis, every
+            reason is checked against the case it is labeled with, using facts the reason states
+            &mdash; how long the person has been homeless and their age &mdash; which are never
+            withheld and almost always identify one person in a session. An answer whose facts fit a
+            different case was written about someone else, so its score would be credited to the
+            wrong race, gender, and city. Answers are never edited or moved. Every reply is analyzed
+            exactly as the model returned it, mislabeled answers included; this check reports how
+            many there are so the results can be read with that in mind. A second analysis,
+            <em>ChatGPT, re&#8209;attached</em>, keeps answers whose facts fit their own case, moves each
+            mislabeled answer whose facts fit exactly one other case, and drops the rest, including
+            any two answers that land on the same case. Switch between the two with the model buttons
+            above.
+          </p>
+        </div>
         <div class="chart-card">
-          <p class="chart-title">Example values only &mdash; not study results</p>
-          <p class="chart-sub">
-            Every number in this chart is invented. It exists to show what the chart above will look
-            like once real model output is available, and it should not be cited or read as a finding.
-          </p>
-          <div class="legend" id="legend-demo"></div>
-          <div class="chart-scroll" id="chart-demo"></div>
-          <p class="chart-foot">
-            Source of values: none. This is placeholder scaffolding from the first version of the
-            dashboard.
+          <p class="chart-title">Does each answer describe the case it is labeled with? &mdash; <span id="label-model">AI model</span></p>
+          <p class="chart-sub">Every answer in every session, checked against the facts of the case it was labeled with.</p>
+          <div class="chip-row" id="label-views"></div>
+          <div class="legend" id="legend-labels"></div>
+          <div class="chart-scroll" id="chart-labels"></div>
+          <p class="chart-foot" id="labels-foot"></p>
+        </div>
+      </div>
+
+      <!-- 6.3 ACCURACY -->
+      <div class="subsection" id="r-accuracy">
+        <div class="subsection-head"><span class="subsection-num">6.3</span><h3>Accuracy against true vulnerability</h3></div>
+        <div class="prose">
+          <p>
+            True vulnerability is each base profile's full&#8209;disclosure indicator total: what the
+            person actually has, whether or not they disclosed it. It is the same for all of a
+            profile's demographic versions.
           </p>
         </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Assigned score against true vulnerability</p>
+          <p class="chart-sub">
+            Mean score at each true score. A perfectly calibrated tool sits on the diagonal; points
+            above it overrate vulnerability and points below it underrate it. Hover for values.
+          </p>
+          <div class="legend" id="legend-calibration"></div>
+          <div class="chart-scroll" id="chart-calibration"></div>
+          <p class="chart-foot">
+            VI&#8209;SPDAT with full disclosure matches the truth by construction. Its underdisclosure
+            line shows the cost of withheld answers; the AI model reads the same withheld records.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Consistency: every base profile across its demographic versions</p>
+          <p class="chart-sub">
+            Each row is one base profile. The line spans the lowest to highest score the AI model gave
+            that person across all versions; an unbiased, consistent model would give each profile
+            nearly the same score regardless of race, gender, or city.
+          </p>
+          <div class="legend" id="legend-profiles"></div>
+          <div class="chart-scroll" id="chart-profiles"></div>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Accuracy summary</p>
+          <p class="chart-sub">Error against true vulnerability for every model, on the same instances.</p>
+          <div class="results-scroll"><table class="results compact" id="accuracy-table"></table></div>
+          <p class="chart-foot">
+            MAE: mean absolute error in points (0 is perfect). Mean error is signed; positive means the
+            tool overrates vulnerability. Correct band: share of scores in the same triage band as the
+            true total (0&ndash;3, 4&ndash;7, 8+). Over&#8209; and under&#8209;triage: share placed in a
+            higher or lower band than the truth. PSH&#8209;eligible missed: share of people whose true
+            score qualifies for Permanent Supportive Housing who were placed below it.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Accuracy by group</p>
+          <p class="chart-sub">
+            Whether the size of the error depends on the race, gender, or city stated in the case.
+          </p>
+          <div class="results-scroll"><table class="results" id="accuracy-group-table"></table></div>
+        </div>
+      </div>
+
+      <!-- 6.4 DEMOGRAPHIC BIAS -->
+      <div class="subsection" id="r-bias">
+        <div class="subsection-head"><span class="subsection-num">6.4</span><h3>Demographic bias</h3></div>
+
+        <div class="chart-card">
+          <p class="chart-title">Mean vulnerability score by <span id="means-factor">race and ethnicity</span></p>
+          <p class="chart-sub">
+            If a tool is unbiased, its bars sit at the same height in every group, because the
+            underlying profiles are identical. The dashed line marks the true mean vulnerability.
+          </p>
+          <div class="chip-row" id="factor-tabs"></div>
+          <div class="legend" id="legend-means"></div>
+          <div class="chart-scroll" id="chart-means"></div>
+          <p class="chart-foot" id="means-foot"></p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Paired differences with 95% confidence intervals</p>
+          <p class="chart-sub">
+            Each race, gender, and disclosure row pairs a base profile with itself, differing only in
+            that condition; each city row pairs a profile's mean in that city with its mean in the
+            other four. An interval that crosses zero is consistent with no difference.
+          </p>
+          <div class="legend" id="legend-forest"></div>
+          <div class="chart-scroll" id="chart-forest"></div>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Paired t&#8209;tests &mdash; VI&#8209;SPDAT and <span id="tests-model-name">the AI model</span></p>
+          <p class="chart-sub">Both tools on the same 640 instances.</p>
+          <div class="results-scroll"><table class="results" id="tests-table"></table></div>
+          <p class="chart-foot">
+            d<sub>z</sub>: Cohen's effect size for paired data (mean difference &divide; SD of the
+            differences; 0.2 is conventionally small). p (Holm): p&#8209;value adjusted with the
+            Holm&ndash;Bonferroni method across the ten race, gender, and city tests. Bold: significant
+            after adjustment (&alpha; = 0.05). &dagger;: p &lt; 0.05 before adjustment only. n/a: every
+            pair identical, so the t&#8209;statistic is undefined.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Bias across every model</p>
+          <p class="chart-sub">
+            Mean paired difference for each comparison, one column per model, so a pattern that holds
+            across providers is visible at a glance. Bold marks a difference significant after Holm
+            adjustment; &dagger; marks p &lt; 0.05 before adjustment only.
+          </p>
+          <div class="results-scroll"><table class="results" id="bias-matrix"></table></div>
+        </div>
+      </div>
+
+      <!-- 6.5 INTERSECTIONS -->
+      <div class="subsection" id="r-intersections">
+        <div class="subsection-head"><span class="subsection-num">6.5</span><h3>Intersections</h3></div>
+        <div class="prose">
+          <p>
+            Race is crossed with gender and with disclosure inside every base profile, so these
+            combinations can be compared like with like. Each cell is the mean of a score minus that
+            profile's own average score, which removes differences in how vulnerable the profiles
+            are: 0 means the combination is scored exactly as that person usually is.
+            <span class="muted-inline">Showing <strong id="heat-model">VI&#8209;SPDAT</strong>.</span>
+          </p>
+        </div>
+        <div class="two-col">
+          <div class="chart-card">
+            <p class="chart-title">Race &times; gender</p>
+            <p class="chart-sub">Points above or below the profile's average.</p>
+            <div class="chart-scroll" id="heat-race-gender"></div>
+          </div>
+          <div class="chart-card">
+            <p class="chart-title">Race &times; disclosure</p>
+            <p class="chart-sub">Includes the overall disclosure effect; compare rows to see whether withholding costs some groups more.</p>
+            <div class="chart-scroll" id="heat-race-disclosure"></div>
+          </div>
+        </div>
+        <div class="legend grad-legend-wrap" id="legend-heat"></div>
+        <div class="chart-card">
+          <p class="chart-title">Exploratory interaction tests</p>
+          <p class="chart-sub">
+            Race gaps within each gender, and whether the underdisclosure penalty differs by race or
+            gender. Holm&#8209;adjusted within this family; treat as hypothesis&#8209;generating.
+          </p>
+          <div class="results-scroll"><table class="results" id="interaction-table"></table></div>
+        </div>
+      </div>
+
+      <!-- 6.6 GEOGRAPHY -->
+      <div class="subsection" id="r-geography">
+        <div class="subsection-head"><span class="subsection-num">6.6</span><h3>Geography</h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Does the city named in a case change the score? &mdash; <span id="map-model">VI&#8209;SPDAT</span></p>
+          <p class="chart-sub" id="map-metric-desc"></p>
+          <div class="chip-row" id="map-metrics"></div>
+          <div class="map-layout">
+            <div>
+              <div id="map" class="map"></div>
+              <div class="legend grad-legend-wrap" id="legend-map"></div>
+            </div>
+            <div class="results-scroll"><table class="results compact" id="map-table"></table></div>
+          </div>
+          <p class="chart-foot">
+            Points on the 0&ndash;17 scale, with paired t&#8209;tests (n pairs). As returned, pairs are
+            base profiles seen in all of their conditions; in the re&#8209;attached version, where no
+            profile keeps every condition, each profile is compared within its disclosure condition
+            using the answers it has. A ring marks a difference significant after Holm adjustment across the
+            five cities. Each case states its city but reads identically in all five, so this measures
+            the effect of the city label alone. Whether a race effect differs by city cannot be
+            estimated in the AI design.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6.7 TRIAGE AND RANKING -->
+      <div class="subsection" id="r-triage">
+        <div class="subsection-head"><span class="subsection-num">6.7</span><h3>Triage and ranking implications</h3></div>
+        <div class="prose">
+          <p>
+            A score matters because it decides the intervention a person is referred to and where they
+            sit on the priority list. These results translate score differences into those outcomes.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Share referred to Permanent Supportive Housing (score 8+)</p>
+          <p class="chart-sub">
+            The dashed line is the share whose true vulnerability qualifies. Bars above it over&#8209;refer
+            to the scarcest resource; unequal bars across groups mean unequal access for identical need.
+          </p>
+          <div class="chip-row" id="triage-factor-tabs"></div>
+          <div class="legend" id="legend-triage"></div>
+          <div class="chart-scroll" id="chart-triage"></div>
+          <p class="chart-foot" id="triage-note"></p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Triage outcomes by group</p>
+          <p class="chart-sub">Referral shares, missed eligibility, and average position on a single priority list.</p>
+          <div class="results-scroll"><table class="results compact" id="triage-table"></table></div>
+          <p class="chart-foot">
+            Priority position: rank on one list of all 640 instances ordered by score, 1 = highest
+            priority, ties sharing a rank; lower is prioritized sooner.
+          </p>
+        </div>
+
+        <div class="chart-card">
+          <p class="chart-title">Ranking quality</p>
+          <p class="chart-sub">How well each tool orders the people in a session, and whether the AI model's own ranks agree with its own scores.</p>
+          <div class="results-scroll"><table class="results" id="ranking-table"></table></div>
+        </div>
+      </div>
+
+      <!-- 6.8 DATA -->
+      <div class="subsection" id="r-data">
+        <div class="subsection-head"><span class="subsection-num">6.8</span><h3>Data and materials</h3></div>
+        <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
       </div>
     </div>
   </section>
@@ -659,6 +892,22 @@
           races and gender. It may identify that race and gender do not have an impact in homeless
           severity.
         </li>
+        <li>
+          Location is stated rather than lived. Each clone names a city, but its narrative is written
+          to read plausibly in all five, so the study measures how a model responds to the city label,
+          not to local conditions such as rents or climate.
+        </li>
+        <li>
+          The AI models are tested through their free chat apps, which do not let me fix the exact
+          model version or settings, and an app may switch versions partway through. The version each
+          app reports is recorded for every session. Each session is scored once, so run&#8209;to&#8209;run
+          variation within a model is not measured.
+        </li>
+        <li>
+          To keep the pasting manageable, each AI model reads 640 of the 3,200 instances. The design
+          still tests race, gender, location, and disclosure each on their own, but it cannot show
+          whether a race effect differs from one city to another.
+        </li>
       </ul>
     </div>
   </section>
@@ -693,6 +942,8 @@
 </footer>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
 <script src="assets/dashboard.js"></script>
+<script src="assets/results.js"></script>
 </body>
 </html>

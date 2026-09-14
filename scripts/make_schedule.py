@@ -1,19 +1,23 @@
 """
 Build the randomized run schedule for the VI-SPDAT / LLM comparison.
 
+Each base profile is cloned across 2 genders x 5 HUD race categories x 5 US
+locations, and every clone is scored under full disclosure and
+underdisclosure: 100 conditions per base profile.
+
 Design constraints:
   1. No two clones of the same base profile may appear in one session, so a
      model cannot notice that it is re-scoring the same case with the
      demographics swapped.
   2. Presentation order is randomized within every session, so position in
      the run cannot be confounded with condition.
-  3. Every base profile must still be seen under all 20 demographic
-     conditions exactly once.
+  3. Every base profile must still be seen under all 100 conditions exactly
+     once.
 
-Constraints 1 and 3 together give a cyclic Latin square: 20 sessions of 32
-instances. Base profile i in session s takes condition (i + s) mod 20, so
+Constraints 1 and 3 together give a cyclic Latin square: 100 sessions of 32
+instances. Base profile i in session s takes condition (i + s) mod 100, so
 each profile appears exactly once per session and cycles through every
-condition across the 20 sessions. Order is then shuffled inside each session.
+condition across the 100 sessions. Order is then shuffled inside each session.
 
 Run:  python scripts/make_schedule.py
 Writes: data/run_schedule.json
@@ -23,7 +27,7 @@ import json
 import random
 from pathlib import Path
 
-SEED = 20260906  # fixed so the schedule is reproducible
+SEED = 20260913  # fixed so the schedule is reproducible
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = ROOT / "data" / "base_profiles.json"
@@ -39,21 +43,31 @@ RACES = [
     "White",
 ]
 
+# One city in each of the four US Census regions, plus a second in the Midwest.
+LOCATIONS = [
+    "Los Angeles, California",   # West
+    "Cincinnati, Ohio",          # Midwest
+    "Chicago, Illinois",         # Midwest
+    "Atlanta, Georgia",          # South
+    "New York City, New York",   # Northeast
+]
+
 DISCLOSURE = ["Full disclosure", "Underdisclosure"]
 
 
 def build_conditions():
-    """The 20 demographic x disclosure conditions, in a fixed order."""
+    """The 100 demographic x location x disclosure conditions, in a fixed order."""
     return [
-        {"gender": g, "race": r, "disclosure": d}
+        {"gender": g, "race": r, "location": loc, "disclosure": d}
         for g in GENDERS
         for r in RACES
+        for loc in LOCATIONS
         for d in DISCLOSURE
     ]
 
 
 def build_schedule(profile_ids, conditions, rng):
-    n_sessions = len(conditions)  # 20
+    n_sessions = len(conditions)
     sessions = []
 
     for s in range(n_sessions):
@@ -88,7 +102,7 @@ def verify(sessions, profile_ids, conditions):
         for sess in sessions:
             for it in sess["items"]:
                 if it["profile"] == pid:
-                    seen.append((it["gender"], it["race"], it["disclosure"]))
+                    seen.append((it["gender"], it["race"], it["location"], it["disclosure"]))
         assert len(seen) == n_cond, f"{pid} has {len(seen)} instances, expected {n_cond}"
         assert len(set(seen)) == n_cond, f"{pid} does not cover every condition once"
 
@@ -109,23 +123,25 @@ def main():
         "note": (
             "Randomized run schedule. Each session holds one instance of every base "
             "profile, so no two clones of the same profile are ever scored in the same "
-            "session. Presentation order is shuffled within each session. Across the 20 "
-            "sessions every base profile is seen under all 20 conditions exactly once."
+            "session. Presentation order is shuffled within each session. Across the "
+            f"{len(sessions)} sessions every base profile is seen under all {len(conditions)} "
+            "conditions (gender x race x location x disclosure) exactly once."
         ),
         "protocol": (
-            "Start each session in a fresh context with no memory of any previous "
-            "session, and score the items in the order given. Run the schedule "
-            "separately for each model."
+            "The full design: every clone under both disclosure conditions. VI-SPDAT is "
+            "scored over all of it. The AI arm uses the smaller paste schedule in "
+            "data/ai/paste_schedule.json."
         ),
         "seed": SEED,
         "sessions_count": len(sessions),
         "items_per_session": len(profile_ids),
         "instances_total": total,
+        "locations": LOCATIONS,
         "conditions": conditions,
         "sessions": sessions,
     }
 
-    OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    OUT.write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{len(sessions)} sessions x {len(profile_ids)} items = {total} instances")
     print(f"wrote {OUT.relative_to(ROOT)}")
 

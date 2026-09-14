@@ -1,0 +1,213 @@
+{
+ "model_key": "chatgpt",
+ "interface": "chatgpt.com (free)",
+ "session": 14,
+ "model_version": "ChatGPT Default",
+ "prompt_sha256": "b54d5cbb08c1c62488ccabba4a6f96461b2293f83d21a63594014371bd49f908",
+ "valid": false,
+ "ranks_valid": false,
+ "case_labels": {
+  "mixed up": 26,
+  "matches": 6
+ },
+ "problems": [
+  "26 of 32 answers describe a different person than their case number (e.g. the answer labeled case 1 describes case 5 or case 19) - redo this session in a new chat"
+ ],
+ "warnings": [],
+ "cases": [],
+ "checked_cases": [
+  {
+   "case": 1,
+   "score": 14,
+   "rank": 14,
+   "reason": "Four years outdoors with cirrhosis, routine medication nonadherence, frequent emergency visits, assault, no income, and no meaningful recovery plan create very high vulnerability."
+  },
+  {
+   "case": 2,
+   "score": 17,
+   "rank": 3,
+   "reason": "Six years outdoors at age 73 with heart failure, cognitive decline, unmanaged medication, inability to meet basic needs, repeated emergency and police contact, assault and robbery, legal problems, and financial exploitation create exceptionally high risk."
+  },
+  {
+   "case": 3,
+   "score": 15,
+   "rank": 13,
+   "reason": "Three years outdoors with COPD, stimulant use, medication diversion, repeated emergency and crisis contact, assault, and no reliable hygiene access create very high vulnerability."
+  },
+  {
+   "case": 4,
+   "score": 15,
+   "rank": 12,
+   "reason": "Four years outdoors with cirrhosis, alcohol dependence, PTSD, medication nonadherence, frequent emergency visits, assault, no income, and no effective recovery plan create very high vulnerability."
+  },
+  {
+   "case": 5,
+   "score": 1,
+   "rank": 32,
+   "reason": "Two months sleeping in a car with steady employment, good health, family contact, no debt, and no recent medical or safety problems indicates very low immediate vulnerability."
+  },
+  {
+   "case": 6,
+   "score": 1,
+   "rank": 31,
+   "reason": "Six weeks in shelter with ongoing work, savings, good health, family contact, and no recent medical or safety problems makes immediate serious harm comparatively unlikely."
+  },
+  {
+   "case": 7,
+   "score": 12,
+   "rank": 16,
+   "reason": "Seven months in shelter with an untreated respiratory condition, six emergency-room visits for breathing problems, an assault, and persistent avoidance of common areas create high vulnerability."
+  },
+  {
+   "case": 8,
+   "score": 16,
+   "rank": 6,
+   "reason": "Eight years outdoors with chronic asthma, heroin use, depression, constant emergency and police contact, repeated assaults, a pending charge, unmet basic needs, and coercion create extremely high vulnerability."
+  },
+  {
+   "case": 9,
+   "score": 17,
+   "rank": 2,
+   "reason": "Fourteen years continuously outdoors with head injury, heart disease, cognitive impairment, medication nonadherence, constant emergency and police contact, assault, a warrant, and coercive exploitation create exceptionally high risk."
+  },
+  {
+   "case": 10,
+   "score": 8,
+   "rank": 22,
+   "reason": "Nine months in shelter with chronic back pain, frequent emergency and police contact, impaired hygiene, limited income, and repeated failure to achieve the stated work plan create moderate-to-high vulnerability."
+  },
+  {
+   "case": 11,
+   "score": 6,
+   "rank": 25,
+   "reason": "Five months in shelter with repeated emergency contacts, significant debt, social isolation, and reduced motivation create moderate vulnerability without an acute safety or medical crisis."
+  },
+  {
+   "case": 12,
+   "score": 2,
+   "rank": 29,
+   "reason": "Seven months sleeping in a car with good health, no substance use, family support, access to showers, and no recent medical or safety crisis indicates relatively low immediate vulnerability."
+  },
+  {
+   "case": 13,
+   "score": 15,
+   "rank": 11,
+   "reason": "Five years outdoors with chronic liver disease, daily alcohol use, frequent emergency visits, repeated assaults, poor hygiene access, and repeated unsuccessful detoxification create very high vulnerability."
+  },
+  {
+   "case": 14,
+   "score": 17,
+   "rank": 4,
+   "reason": "Nine years outdoors with emphysema, alcohol and stimulant use, bipolar disorder, medication diversion, constant emergency and police contact, repeated assaults, coercion, and no local support create exceptionally high vulnerability."
+  },
+  {
+   "case": 15,
+   "score": 13,
+   "rank": 15,
+   "reason": "Eleven months in a vehicle with chronic lung disease, alcohol-related housing instability, frequent emergency and police contact, assault, and unsafe exchanges for shelter create high vulnerability."
+  },
+  {
+   "case": 16,
+   "score": 11,
+   "rank": 17,
+   "reason": "Eight months in shelter with an assault, frequent emergency and police contact, poor sleep, a pending charge, and coercion by another resident create substantial vulnerability despite good physical health."
+  },
+  {
+   "case": 17,
+   "score": 15,
+   "rank": 9,
+   "reason": "Seven years outdoors with chronic pain, frequent emergency and police contact, repeated assault, no income, and no family support create very high vulnerability."
+  },
+  {
+   "case": 18,
+   "score": 16,
+   "rank": 5,
+   "reason": "Two years outdoors with an untreated heart condition, recurring chest pain, six emergency-room visits in six months, no current prescriptions, and functional limitation create extremely high medical vulnerability."
+  },
+  {
+   "case": 19,
+   "score": 15,
+   "rank": 7,
+   "reason": "Four years outdoors with dialysis-dependent kidney disease, repeated emergency visits, stimulant use, assault, no income, and limited ability to meet daily needs create very high vulnerability despite adherence to dialysis."
+  },
+  {
+   "case": 20,
+   "score": 8,
+   "rank": 23,
+   "reason": "Six months in shelter with advanced age, arthritis requiring help with bathing and dressing, loss of control over Social Security, limited family support, and dependence on volunteers create meaningful vulnerability despite medical adherence and no recent crisis."
+  },
+  {
+   "case": 21,
+   "score": 9,
+   "rank": 20,
+   "reason": "Three years outdoors with chronic liver disease, frequently missed medication, no income, and limited family support create substantial vulnerability despite no recent emergency, violence, or substance use."
+  },
+  {
+   "case": 22,
+   "score": 5,
+   "rank": 26,
+   "reason": "Four months sleeping in a vehicle with advanced arthritis and functional limitations create some vulnerability, though reliable income, treatment adherence, social support, and no recent safety problems reduce immediate risk."
+  },
+  {
+   "case": 23,
+   "score": 4,
+   "rank": 27,
+   "reason": "Five months in shelter with no chronic health condition or safety crisis but no income, substantial debt, widowhood, and reduced social support create moderate but comparatively low immediate vulnerability."
+  },
+  {
+   "case": 24,
+   "score": 15,
+   "rank": 8,
+   "reason": "Five years outdoors with chronic liver disease, daily drinking, frequent emergency visits, repeated assaults, poor hygiene access, and repeated unsuccessful detoxification create very high vulnerability."
+  },
+  {
+   "case": 25,
+   "score": 1,
+   "rank": 30,
+   "reason": "Two months sleeping in a car while steadily employed, medically healthy, financially stable, connected to children, and free of recent safety problems indicates very low immediate vulnerability."
+  },
+  {
+   "case": 26,
+   "score": 4,
+   "rank": 28,
+   "reason": "Fourteen months outdoors creates ongoing exposure, but good health, reliable pension income, independence, regular meals and hygiene, family contact, and no recent safety incidents substantially reduce immediate risk."
+  },
+  {
+   "case": 27,
+   "score": 17,
+   "rank": 1,
+   "reason": "Fourteen years continuously outdoors with head injury, heart disease, cognitive impairment, daily drinking, medication nonadherence, constant emergency and police contact, assault, a warrant, and coercion into holding drugs create exceptionally high risk."
+  },
+  {
+   "case": 28,
+   "score": 9,
+   "rank": 21,
+   "reason": "Two months sleeping in a car after fleeing an abusive partner create meaningful safety and financial vulnerability, particularly because the person fears being located despite currently reporting no threats or medical crisis."
+  },
+  {
+   "case": 29,
+   "score": 7,
+   "rank": 24,
+   "reason": "Two months in shelter with a chronic heart condition, recently interrupted medication, shortness of breath, and functional limitations create moderate vulnerability despite nursing support and family assistance."
+  },
+  {
+   "case": 30,
+   "score": 10,
+   "rank": 19,
+   "reason": "Six months in shelter with advanced age, arthritis requiring help with daily living, interrupted Social Security, limited family support, and dependence on volunteers create substantial vulnerability despite no recent medical or safety crisis."
+  },
+  {
+   "case": 31,
+   "score": 15,
+   "rank": 10,
+   "reason": "Eleven years continuously outdoors with chronic liver disease, depression, medication nonadherence, constant emergency and police contact, repeated assault, legal problems, and no effective support create very high vulnerability."
+  },
+  {
+   "case": 32,
+   "score": 11,
+   "rank": 18,
+   "reason": "Eleven months in a vehicle with chronic lung disease, frequent emergency and police contact, assault, and unstable housing arrangements create high vulnerability despite some social connections and health-service access."
+  }
+ ],
+ "reply_text": "{\"cases\": [\n{\"case\": 1, \"score\": 14, \"rank\": 14, \"reason\": \"Four years outdoors with cirrhosis, routine medication nonadherence, frequent emergency visits, assault, no income, and no meaningful recovery plan create very high vulnerability.\"},\n{\"case\": 2, \"score\": 17, \"rank\": 3, \"reason\": \"Six years outdoors at age 73 with heart failure, cognitive decline, unmanaged medication, inability to meet basic needs, repeated emergency and police contact, assault and robbery, legal problems, and financial exploitation create exceptionally high risk.\"},\n{\"case\": 3, \"score\": 15, \"rank\": 13, \"reason\": \"Three years outdoors with COPD, stimulant use, medication diversion, repeated emergency and crisis contact, assault, and no reliable hygiene access create very high vulnerability.\"},\n{\"case\": 4, \"score\": 15, \"rank\": 12, \"reason\": \"Four years outdoors with cirrhosis, alcohol dependence, PTSD, medication nonadherence, frequent emergency visits, assault, no income, and no effective recovery plan create very high vulnerability.\"},\n{\"case\": 5, \"score\": 1, \"rank\": 32, \"reason\": \"Two months sleeping in a car with steady employment, good health, family contact, no debt, and no recent medical or safety problems indicates very low immediate vulnerability.\"},\n{\"case\": 6, \"score\": 1, \"rank\": 31, \"reason\": \"Six weeks in shelter with ongoing work, savings, good health, family contact, and no recent medical or safety problems makes immediate serious harm comparatively unlikely.\"},\n{\"case\": 7, \"score\": 12, \"rank\": 16, \"reason\": \"Seven months in shelter with an untreated respiratory condition, six emergency-room visits for breathing problems, an assault, and persistent avoidance of common areas create high vulnerability.\"},\n{\"case\": 8, \"score\": 16, \"rank\": 6, \"reason\": \"Eight years outdoors with chronic asthma, heroin use, depression, constant emergency and police contact, repeated assaults, a pending charge, unmet basic needs, and coercion create extremely high vulnerability.\"},\n{\"case\": 9, \"score\": 17, \"rank\": 2, \"reason\": \"Fourteen years continuously outdoors with head injury, heart disease, cognitive impairment, medication nonadherence, constant emergency and police contact, assault, a warrant, and coercive exploitation create exceptionally high risk.\"},\n{\"case\": 10, \"score\": 8, \"rank\": 22, \"reason\": \"Nine months in shelter with chronic back pain, frequent emergency and police contact, impaired hygiene, limited income, and repeated failure to achieve the stated work plan create moderate-to-high vulnerability.\"},\n{\"case\": 11, \"score\": 6, \"rank\": 25, \"reason\": \"Five months in shelter with repeated emergency contacts, significant debt, social isolation, and reduced motivation create moderate vulnerability without an acute safety or medical crisis.\"},\n{\"case\": 12, \"score\": 2, \"rank\": 29, \"reason\": \"Seven months sleeping in a car with good health, no substance use, family support, access to showers, and no recent medical or safety crisis indicates relatively low immediate vulnerability.\"},\n{\"case\": 13, \"score\": 15, \"rank\": 11, \"reason\": \"Five years outdoors with chronic liver disease, daily alcohol use, frequent emergency visits, repeated assaults, poor hygiene access, and repeated unsuccessful detoxification create very high vulnerability.\"},\n{\"case\": 14, \"score\": 17, \"rank\": 4, \"reason\": \"Nine years outdoors with emphysema, alcohol and stimulant use, bipolar disorder, medication diversion, constant emergency and police contact, repeated assaults, coercion, and no local support create exceptionally high vulnerability.\"},\n{\"case\": 15, \"score\": 13, \"rank\": 15, \"reason\": \"Eleven months in a vehicle with chronic lung disease, alcohol-related housing instability, frequent emergency and police contact, assault, and unsafe exchanges for shelter create high vulnerability.\"},\n{\"case\": 16, \"score\": 11, \"rank\": 17, \"reason\": \"Eight months in shelter with an assault, frequent emergency and police contact, poor sleep, a pending charge, and coercion by another resident create substantial vulnerability despite good physical health.\"},\n{\"case\": 17, \"score\": 15, \"rank\": 9, \"reason\": \"Seven years outdoors with chronic pain, frequent emergency and police contact, repeated assault, no income, and no family support create very high vulnerability.\"},\n{\"case\": 18, \"score\": 16, \"rank\": 5, \"reason\": \"Two years outdoors with an untreated heart condition, recurring chest pain, six emergency-room visits in six months, no current prescriptions, and functional limitation create extremely high medical vulnerability.\"},\n{\"case\": 19, \"score\": 15, \"rank\": 7, \"reason\": \"Four years outdoors with dialysis-dependent kidney disease, repeated emergency visits, stimulant use, assault, no income, and limited ability to meet daily needs create very high vulnerability despite adherence to dialysis.\"},\n{\"case\": 20, \"score\": 8, \"rank\": 23, \"reason\": \"Six months in shelter with advanced age, arthritis requiring help with bathing and dressing, loss of control over Social Security, limited family support, and dependence on volunteers create meaningful vulnerability despite medical adherence and no recent crisis.\"},\n{\"case\": 21, \"score\": 9, \"rank\": 20, \"reason\": \"Three years outdoors with chronic liver disease, frequently missed medication, no income, and limited family support create substantial vulnerability despite no recent emergency, violence, or substance use.\"},\n{\"case\": 22, \"score\": 5, \"rank\": 26, \"reason\": \"Four months sleeping in a vehicle with advanced arthritis and functional limitations create some vulnerability, though reliable income, treatment adherence, social support, and no recent safety problems reduce immediate risk.\"},\n{\"case\": 23, \"score\": 4, \"rank\": 27, \"reason\": \"Five months in shelter with no chronic health condition or safety crisis but no income, substantial debt, widowhood, and reduced social support create moderate but comparatively low immediate vulnerability.\"},\n{\"case\": 24, \"score\": 15, \"rank\": 8, \"reason\": \"Five years outdoors with chronic liver disease, daily drinking, frequent emergency visits, repeated assaults, poor hygiene access, and repeated unsuccessful detoxification create very high vulnerability.\"},\n{\"case\": 25, \"score\": 1, \"rank\": 30, \"reason\": \"Two months sleeping in a car while steadily employed, medically healthy, financially stable, connected to children, and free of recent safety problems indicates very low immediate vulnerability.\"},\n{\"case\": 26, \"score\": 4, \"rank\": 28, \"reason\": \"Fourteen months outdoors creates ongoing exposure, but good health, reliable pension income, independence, regular meals and hygiene, family contact, and no recent safety incidents substantially reduce immediate risk.\"},\n{\"case\": 27, \"score\": 17, \"rank\": 1, \"reason\": \"Fourteen years continuously outdoors with head injury, heart disease, cognitive impairment, daily drinking, medication nonadherence, constant emergency and police contact, assault, a warrant, and coercion into holding drugs create exceptionally high risk.\"},\n{\"case\": 28, \"score\": 9, \"rank\": 21, \"reason\": \"Two months sleeping in a car after fleeing an abusive partner create meaningful safety and financial vulnerability, particularly because the person fears being located despite currently reporting no threats or medical crisis.\"},\n{\"case\": 29, \"score\": 7, \"rank\": 24, \"reason\": \"Two months in shelter with a chronic heart condition, recently interrupted medication, shortness of breath, and functional limitations create moderate vulnerability despite nursing support and family assistance.\"},\n{\"case\": 30, \"score\": 10, \"rank\": 19, \"reason\": \"Six months in shelter with advanced age, arthritis requiring help with daily living, interrupted Social Security, limited family support, and dependence on volunteers create substantial vulnerability despite no recent medical or safety crisis.\"},\n{\"case\": 31, \"score\": 15, \"rank\": 10, \"reason\": \"Eleven years continuously outdoors with chronic liver disease, depression, medication nonadherence, constant emergency and police contact, repeated assault, legal problems, and no effective support create very high vulnerability.\"},\n{\"case\": 32, \"score\": 11, \"rank\": 18, \"reason\": \"Eleven months in a vehicle with chronic lung disease, frequent emergency and police contact, assault, and unstable housing arrangements create high vulnerability despite some social connections and health-service access.\"}\n]}"
+}

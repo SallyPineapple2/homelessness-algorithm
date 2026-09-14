@@ -1,0 +1,71 @@
+{
+  "instrument": "VI-SPDAT — Vulnerability Index & Service Prioritization Decision Assistance Tool",
+  "population": "Single Adults",
+  "version": "American Version 2.0",
+  "copyright": "©2015 OrgCode Consulting Inc. and Community Solutions. All rights reserved.",
+  "note": "16 vulnerability indicators across four domains (2 + 4 + 4 + 6), plus one pre-survey point for age, summing to a maximum of 17. Scoring rules are quoted from the published tool.",
+  "bands": [
+    { "id": 1, "min": 0, "max": 3, "name": "No housing intervention", "action": "No housing intervention at this time" },
+    { "id": 2, "min": 4, "max": 7, "name": "Rapid Re-Housing", "action": "An assessment for Rapid Re-Housing" },
+    { "id": 3, "min": 8, "max": 17, "name": "Permanent Supportive Housing", "action": "An assessment for Permanent Supportive Housing / Housing First" }
+  ],
+  "domains": [
+    {
+      "key": "pre",
+      "letter": "—",
+      "name": "Pre-Survey",
+      "max": 1,
+      "indicators": [
+        { "id": "pre_age", "name": "Age", "questions": "Basic Information", "rule": "If the person is 60 years of age or older, then score 1." }
+      ]
+    },
+    {
+      "key": "a",
+      "letter": "A",
+      "name": "History of Housing and Homelessness",
+      "max": 2,
+      "indicators": [
+        { "id": "a1_sleep", "name": "Housing status", "questions": "Q1", "rule": "If the person answers anything other than \"shelter\", \"transitional housing\", or \"safe haven\", then score 1." },
+        { "id": "a2_duration", "name": "Duration and episodes", "questions": "Q2–3", "rule": "If the person has experienced 1 or more consecutive years of homelessness, and/or 4+ episodes of homelessness, then score 1." }
+      ]
+    },
+    {
+      "key": "b",
+      "letter": "B",
+      "name": "Risks",
+      "max": 4,
+      "indicators": [
+        { "id": "b1_emergency", "name": "Emergency Service Use", "questions": "Q4a–f", "rule": "If the total number of interactions equals 4 or more, then score 1 for emergency service use." },
+        { "id": "b2_harm", "name": "Risk of Harm", "questions": "Q5–6", "rule": "If \"yes\" to any of the above, then score 1 for risk of harm." },
+        { "id": "b3_legal", "name": "Legal Issues", "questions": "Q7", "rule": "If \"yes,\" then score 1 for legal issues." },
+        { "id": "b4_exploitation", "name": "Risk of Exploitation", "questions": "Q8–9", "rule": "If \"yes\" to any of the above, then score 1 for risk of exploitation." }
+      ]
+    },
+    {
+      "key": "c",
+      "letter": "C",
+      "name": "Socialization and Daily Functions",
+      "max": 4,
+      "indicators": [
+        { "id": "c1_money", "name": "Money Management", "questions": "Q10–11", "rule": "If \"yes\" to question 10 or \"no\" to question 11, then score 1 for money management." },
+        { "id": "c2_activity", "name": "Meaningful Daily Activity", "questions": "Q12", "rule": "If \"no,\" then score 1 for meaningful daily activity." },
+        { "id": "c3_selfcare", "name": "Self-Care", "questions": "Q13", "rule": "If \"no,\" then score 1 for self-care." },
+        { "id": "c4_relationships", "name": "Social Relationships", "questions": "Q14", "rule": "If \"yes,\" then score 1 for social relationships." }
+      ]
+    },
+    {
+      "key": "d",
+      "letter": "D",
+      "name": "Wellness",
+      "max": 6,
+      "indicators": [
+        { "id": "d1_physical", "name": "Physical Health", "questions": "Q15–20", "rule": "If \"yes\" to any of the above, then score 1 for physical health." },
+        { "id": "d2_substance", "name": "Substance Use", "questions": "Q21–22", "rule": "If \"yes\" to any of the above, then score 1 for substance use." },
+        { "id": "d3_mental", "name": "Mental Health", "questions": "Q23–24", "rule": "If \"yes\" to any of the above, then score 1 for mental health." },
+        { "id": "d4_trimorbidity", "name": "Tri-Morbidity", "questions": "Derived", "derived": true, "rule": "If the respondent scored 1 for physical health and 1 for substance use and 1 for mental health, score 1 for tri-morbidity." },
+        { "id": "d5_medications", "name": "Medications", "questions": "Q25–26", "rule": "If \"yes\" to any of the above, score 1 for medications." },
+        { "id": "d6_trauma", "name": "Abuse and Trauma", "questions": "Q27", "rule": "If \"yes\", score 1 for abuse and trauma." }
+      ]
+    }
+  ]
+}

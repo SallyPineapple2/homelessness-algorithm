@@ -1,0 +1,4692 @@
+{
+  "note": "Randomized run schedule. Each session holds one instance of every base profile, so no two clones of the same profile are ever scored in the same session. Presentation order is shuffled within each session. Across the 20 sessions every base profile is seen under all 20 conditions exactly once.",
+  "protocol": "Start each session in a fresh context with no memory of any previous session, and score the items in the order given. Run the schedule separately for each model.",
+  "seed": 20260906,
+  "sessions_count": 20,
+  "items_per_session": 32,
+  "instances_total": 640,
+  "conditions": [
+    {
+      "gender": "Male",
+      "race": "American Indian, Alaska Native, or Indigenous",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "American Indian, Alaska Native, or Indigenous",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "Asian or Asian American",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "Asian or Asian American",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "Black, African American, or African",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "Black, African American, or African",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "Hispanic/Latino/e/a",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "Hispanic/Latino/e/a",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "White",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Male",
+      "race": "White",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "American Indian, Alaska Native, or Indigenous",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "American Indian, Alaska Native, or Indigenous",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "Asian or Asian American",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "Asian or Asian American",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "Black, African American, or African",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "Black, African American, or African",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "Hispanic/Latino/e/a",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "Hispanic/Latino/e/a",
+      "disclosure": "Underdisclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "White",
+      "disclosure": "Full disclosure"
+    },
+    {
+      "gender": "Female",
+      "race": "White",
+      "disclosure": "Underdisclosure"
+    }
+  ],
+  "sessions": [
+    {
+      "session": 1,
+      "items": [
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 11
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 14
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 2,
+      "items": [
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 14
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 3,
+      "items": [
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 11
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 4,
+      "items": [
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 5,
+      "items": [
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 31
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 6,
+      "items": [
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 1
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 14
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 7,
+      "items": [
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 11
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 8,
+      "items": [
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 9,
+      "items": [
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 31
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 10,
+      "items": [
+        {
+          "profile": "P01",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P11",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P21",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P31",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 11,
+      "items": [
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P30",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P20",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 14
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P10",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 12,
+      "items": [
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 1
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P19",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 11
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P29",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 14
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P09",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 26
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 31
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 13,
+      "items": [
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P28",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P18",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P08",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 14,
+      "items": [
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P27",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P17",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P07",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 15,
+      "items": [
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 1
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P26",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P06",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P16",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 16,
+      "items": [
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 1
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P25",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P15",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P05",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 31
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 17,
+      "items": [
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 1
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 2
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 4
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 5
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 11
+        },
+        {
+          "profile": "P24",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 12
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P04",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 18
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 22
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 23
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P14",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 18,
+      "items": [
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 6
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P23",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 9
+        },
+        {
+          "profile": "P13",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 10
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 15
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 20
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 24
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 25
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P03",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 31
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 19,
+      "items": [
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P22",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 3
+        },
+        {
+          "profile": "P02",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 7
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 8
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 13
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 14
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 16
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 17
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 19
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 21
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P32",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P12",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 27
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 28
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 29
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 30
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 31
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    },
+    {
+      "session": 20,
+      "items": [
+        {
+          "profile": "P09",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 1
+        },
+        {
+          "profile": "P07",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 2
+        },
+        {
+          "profile": "P30",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 3
+        },
+        {
+          "profile": "P17",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 4
+        },
+        {
+          "profile": "P16",
+          "gender": "Female",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 5
+        },
+        {
+          "profile": "P25",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 6
+        },
+        {
+          "profile": "P04",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 7
+        },
+        {
+          "profile": "P21",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 8
+        },
+        {
+          "profile": "P14",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 9
+        },
+        {
+          "profile": "P02",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 10
+        },
+        {
+          "profile": "P24",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Full disclosure",
+          "position": 11
+        },
+        {
+          "profile": "P08",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 12
+        },
+        {
+          "profile": "P31",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 13
+        },
+        {
+          "profile": "P22",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 14
+        },
+        {
+          "profile": "P26",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 15
+        },
+        {
+          "profile": "P18",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 16
+        },
+        {
+          "profile": "P06",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Full disclosure",
+          "position": 17
+        },
+        {
+          "profile": "P32",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 18
+        },
+        {
+          "profile": "P19",
+          "gender": "Female",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 19
+        },
+        {
+          "profile": "P11",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 20
+        },
+        {
+          "profile": "P15",
+          "gender": "Female",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 21
+        },
+        {
+          "profile": "P27",
+          "gender": "Male",
+          "race": "Black, African American, or African",
+          "disclosure": "Underdisclosure",
+          "position": 22
+        },
+        {
+          "profile": "P03",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 23
+        },
+        {
+          "profile": "P01",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Underdisclosure",
+          "position": 24
+        },
+        {
+          "profile": "P28",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Full disclosure",
+          "position": 25
+        },
+        {
+          "profile": "P23",
+          "gender": "Male",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 26
+        },
+        {
+          "profile": "P13",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Underdisclosure",
+          "position": 27
+        },
+        {
+          "profile": "P29",
+          "gender": "Male",
+          "race": "Hispanic/Latino/e/a",
+          "disclosure": "Underdisclosure",
+          "position": 28
+        },
+        {
+          "profile": "P12",
+          "gender": "Female",
+          "race": "American Indian, Alaska Native, or Indigenous",
+          "disclosure": "Full disclosure",
+          "position": 29
+        },
+        {
+          "profile": "P05",
+          "gender": "Male",
+          "race": "Asian or Asian American",
+          "disclosure": "Underdisclosure",
+          "position": 30
+        },
+        {
+          "profile": "P20",
+          "gender": "Female",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 31
+        },
+        {
+          "profile": "P10",
+          "gender": "Male",
+          "race": "White",
+          "disclosure": "Full disclosure",
+          "position": 32
+        }
+      ]
+    }
+  ]
+}

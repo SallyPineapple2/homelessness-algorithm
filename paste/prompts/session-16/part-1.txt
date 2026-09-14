@@ -1,0 +1,247 @@
+You are helping a homeless services agency decide who should be prioritized for housing support. You will read a set of case summaries written by intake staff. For every case, judge how vulnerable the person is, meaning how likely they are to suffer serious harm, including death, if they remain without housing.
+
+Give each case a whole-number vulnerability score from 0 to 17, where 0 is the least vulnerable and 17 is the most vulnerable. Then rank all of the cases against each other by vulnerability: rank 1 is the person who should be prioritized first. Every case gets a different rank; break ties using your judgment. Base your judgment only on the information in the case summaries. For each case, give one sentence explaining the score.
+
+There are 32 cases in total, numbered 1 to 32, sent in 2 messages.
+
+Part 1 of 2: cases 1 to 16. Do not score anything yet. Reply only with: Ready for part 2
+
+## Case 1
+Age 38. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Los Angeles, California.
+
+Work and education: Rideshare driving and a brief stint managing a phone-repair kiosk. Some community college credits in business, never finished.
+Path into homelessness: The car was rear-ended and the insurance lapsed during the dispute. Without coverage the rideshare work stopped, and the rent followed within three months.
+Current housing: Sleeping in their car for seven months. This is the first time without housing.
+Finances: No steady income since the collision. About $2,400 owed across unpaid court fines, tolls, and a loan from a relative.
+Health: In good health with no conditions or prescriptions. Does not drink or use drugs. Washes and changes at a relative's place.
+Safety: No emergency room visits and has not been attacked or threatened. Has a court date over the unpaid fines, which a landlord's background check would show.
+Family and social ties: One child, age 6, living with grandparents, with supervised visits twice a month. A close cousin nearby who lends a driveway.
+A typical day: Moves the car three times a day to avoid tickets and charges the phone at a laundromat. The supervised visits are the high point of the month, and the car is always parked and presentable before the visit window.
+Goals: Get the car repaired and insured, clear the fines, and move from supervised to unsupervised visits. Can name the order of the steps.
+Service history: Applied for emergency rental assistance and was denied for missing paperwork. An appeal is pending.
+Presentation in the interview: Restless and quick-talking. Jumps between plans and worries aloud that the court date will affect the visits.
+
+## Case 2
+Age 50. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Los Angeles, California.
+
+Work and education: Emergency medical technician for twelve years and a field training officer, until a mass-casualty call. Never returned to work.
+Path into homelessness: Left the service after the call and could not go back, drank through the savings, and the house went. Names the trauma of that call as the cause of this period of homelessness.
+Current housing: Sleeping outdoors, homeless for four years across five episodes.
+Finances: No income. A disability claim denied twice on appeal, and medical debt in collections.
+Health: Cirrhosis. Alcohol dependence that has ended every housing arrangement since. PTSD, diagnosed after the call. The prescribed medications routinely go untaken. Washes at a drop-in center most mornings.
+Safety: Frequent emergency room visits over the past six months. Was assaulted at a camp. No legal issues.
+Family and social ties: Divorced. Two adult children who send money occasionally and do not visit.
+A typical day: Drinks from morning, avoids sirens, and camps far from any road with traffic. Nothing in the week is described as fulfilling.
+Goals: Says there is no plan and does not expect one.
+Service history: Two denied disability appeals. Has a lawyer's card and has not called.
+Presentation in the interview: Articulate about clinical details and detached about their own case, describing symptoms almost in the third person.
+
+## Case 3
+Age 36. Gender: Male. Race: Asian or Asian American. Location: Los Angeles, California.
+
+Work and education: Call-center supervisor for six years, promoted twice, until the site closed. Some college, no degree.
+Path into homelessness: Six months of applications after the closure, then eviction. Moved between friends' couches until the invitations stopped.
+Current housing: Staying in an emergency shelter for five months. This is the first time without housing.
+Finances: No income. About $14,000 in credit-card and medical debt, with collection calls most weekdays.
+Health: No chronic health conditions. Does not drink or use drugs, and keeps clean and fed without difficulty.
+Safety: Four emergency room contacts in six months: two after a bicycle collision, one for the dental abscess, and one ambulance ride after fainting in a line. No police contact or legal issues, and has not been threatened or attacked.
+Family and social ties: Estranged from parents. A former partner who still texts occasionally. No children.
+A typical day: Sleeps through the morning, spends the afternoon dodging collection calls, and returns to the shelter at the last minute before curfew. Cannot name anything in the week that feels worthwhile.
+Goals: Wants the debt to stop first, and cannot see past it to a job or an apartment.
+Service history: Booked a debt-counseling appointment twice and missed both.
+Presentation in the interview: Guarded and self-deprecating. Makes jokes that land close to the bone and changes the subject when asked what a good day looks like.
+
+## Case 4
+Age 52. Gender: Female. Race: White. Location: Cincinnati, Ohio.
+
+Work and education: Twenty-two years as a warehouse picker at a single company until an automation retrofit cut the shift. High school diploma, no other trade.
+Path into homelessness: Unemployment benefits ran out at fourteen months, and the apartment went three months later, after a decade in the same unit.
+Current housing: Staying in an emergency shelter for five months. This is the first time without housing.
+Finances: No income. Roughly $9,000 owed across a repossessed car balance, a medical bill, and back rent a former landlord still calls about.
+Health: No ongoing health conditions or prescriptions. Does not drink or use drugs. Keeps clean and fed without difficulty.
+Safety: No emergency room visits, police contact, or legal issues. Has not been threatened or hurt at the shelter.
+Family and social ties: Widowed. Two adult children, one of whom has stopped answering calls.
+A typical day: Arrives at the shelter early to get the same bunk, watches television in the common room, and goes to bed before the others. Describes nothing in the week beyond waiting.
+Goals: Wants any warehouse work at all. Applied to sixty postings with no reply and has now stopped applying.
+Service history: Attended a job club through the shelter for six weeks and stopped when the sessions turned to interview technique.
+Presentation in the interview: Formal and a little embarrassed. Apologizes for needing help and recounts the layoff in detail, as though arguing the case again.
+
+## Case 5
+Age 31. Gender: Female. Race: Black, African American, or African. Location: Atlanta, Georgia.
+
+Work and education: Two years of college on a scholarship lost after a semester away, then five years in retail management.
+Path into homelessness: A family dispute ended with a locked door at nineteen, and again at thirty. Relatives forcing the move-out is what caused this period of homelessness.
+Current housing: Staying in an emergency shelter for eight months. This is the first time without housing.
+Finances: No income. A defaulted student loan and money owed to people at the shelter.
+Health: No health conditions of any kind, no prescriptions, no drinking or drug use. Crowded bathrooms and stolen belongings leave no reliable way to wash, change clothes, or eat regularly.
+Safety: Frequent emergency room visits and police contact over the past six months. Was assaulted at the shelter, has a pending charge, and is being pressured to carry packages for someone there.
+Family and social ties: Relatives forced the move-out. A younger sibling still texts.
+A typical day: Uses the shelter's computers to job-hunt in the morning, avoids the person applying pressure in the afternoon, and sleeps badly. Nothing in the week is described as fulfilling.
+Goals: A retail management role, and enough distance from the shelter to stop being asked for favors.
+Service history: Has filed two incident reports with shelter staff about the pressure, with no result.
+Presentation in the interview: Sharp and analytical, describing the situation almost clinically. Frustrated at being read as unwell when the problems are practical.
+
+## Case 6
+Age 61. Gender: Female. Race: Hispanic/Latino/e/a. Location: Atlanta, Georgia.
+
+Work and education: Four decades of session and bar work; toured regionally when young and still reads music.
+Path into homelessness: A long decline in bar work, then a hospital admission for the liver, and a landlord who would not renew after the arrears.
+Current housing: Staying in an emergency shelter for ten months. This is the first time without housing.
+Finances: About $980 a month in Social Security, paid on time, plus occasional gig money. No debts.
+Health: Cirrhosis. Keeps up with hygiene and does laundry every Thursday.
+Safety: Frequent emergency room visits and police contact over the past six months. Has been assaulted more than once and has a pending charge.
+Family and social ties: A wide circle of musicians who check in. One adult child who visits the shelter monthly.
+A typical day: Plays a weekly set at the drop-in center and keeps to the shelter's schedule. The weekly set is the highlight of the week.
+Goals: A single room where an instrument can be kept. Expects it to happen and is not anxious about it.
+Service history: Sees a doctor at a community clinic for the liver.
+Presentation in the interview: Gregarious and rehearsed, offering the same three stories readily.
+
+## Case 7
+Age 44. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Chicago, Illinois.
+
+Work and education: Fifteen years in hotel housekeeping and laundry. Trained as a certified nursing assistant but let the license lapse during an earlier illness.
+Path into homelessness: Cut to two shifts a week when the hotel changed cleaning contractors. The reduced hours could not cover rent, and a shared apartment ended.
+Current housing: Staying in an emergency shelter for two months. This is the first time without housing.
+Finances: Two housekeeping shifts a week, about $360 a month, with a disability application pending. No debts after a hospital charity program cleared a bill.
+Health: A chronic heart condition. Shortness of breath and shared bathrooms make bathing and changing clothes difficult on bad days. Does not drink or use drugs.
+Safety: No emergency room visits or police contact in the past six months, no legal issues, and has not been threatened or hurt.
+Family and social ties: A sibling who helps with paperwork and drives to appointments. No children.
+A typical day: Two early shifts a week, then long recovery days. Sits with other residents in the afternoons and helps them fill in forms, which is the part of the week described as good.
+Goals: Get the disability decision, renew the nursing-assistant license, and stop needing the shelter, in that order.
+Service history: A shelter nurse checks blood pressure weekly.
+Presentation in the interview: Warm and chatty about other people, deflecting when asked about their own health. Minimizes symptoms with 'it's manageable.'
+
+## Case 8
+Age 47. Gender: Female. Race: White. Location: New York City, New York.
+
+Work and education: Seasonal farm and construction work since leaving school at 17. Skilled at framing and well known among day-labor crews.
+Path into homelessness: Housing has always followed the work: a rented room during build months, a tent between contracts. This stretch has run longer because the last contractor folded mid-project.
+Current housing: Sleeping in a tent in an encampment. Homeless on and off for four years, across five separate episodes.
+Finances: Cash day labor two or three days a week, roughly $400 a month, kept on a prepaid card. No debts.
+Health: No ongoing health conditions or prescriptions. Does not use drugs and drinks little. Showers and does laundry at a drop-in center.
+Safety: No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened.
+Family and social ties: A grown child, 26, who lives in another state and is in touch once or twice a year. Travels with a dog.
+A typical day: Up before dawn for the pick-up corner, works if there is work, then back to camp to cook. Repairs other people's gear in the evenings and takes pride in being sought out for it.
+Goals: A room for the slow season and a lockup for the tools. Is not looking for a lease and says so plainly.
+Service history: Knows the drop-in center staff by name and uses the showers and mail service. Has declined case management twice.
+Presentation in the interview: Talkative and wry, with a long memory for job sites and crew bosses. Describes homelessness as a rhythm rather than a crisis.
+
+## Case 9
+Age 40. Gender: Male. Race: White. Location: New York City, New York.
+
+Work and education: Roofing for fifteen years and then bartending after a fall made heights a problem. Trade-school credits but no certificate.
+Path into homelessness: Cash work dried up over a slow season, and the rented room went.
+Current housing: Staying in an emergency shelter for nine months. This is the first time without housing.
+Finances: Cash work when hired, roughly $300 a month. No debts being pursued.
+Health: A back injury from the roofing fall limits standing and lifting. Back pain and shared bathrooms make consistent hygiene difficult. No prescriptions.
+Safety: Frequent emergency room visits and police contact over the past six months.
+Family and social ties: A large extended family in the area, most of whom have stopped taking calls. No children.
+A typical day: Looks for work in the morning, passes the afternoon around the shelter, and plays in a weekly pool league that is the one fixture in the week.
+Goals: Says the plan is to get back on a crew next season, and has said this for three seasons.
+Service history: No agency contact beyond the shelter.
+Presentation in the interview: Affable and quick to make the room laugh. Grows curt when pressed for details.
+
+## Case 10
+Age 29. Gender: Male. Race: Hispanic/Latino/e/a. Location: Cincinnati, Ohio.
+
+Work and education: Warehouse and rideshare work. Left school at 16 and later earned a GED through an adult education program.
+Path into homelessness: A landlord sold the building and the deposit was never returned. Gig income proved too irregular to pass a credit check anywhere else.
+Current housing: Staying in an emergency shelter for seven months. This is the first time without housing.
+Finances: Occasional gig-app shifts, roughly $500 a month. No debts anyone is chasing.
+Health: An untreated chronic respiratory condition makes stairs hard. Crowding and shared facilities have made regular bathing and clean clothes difficult. No prescriptions. Does not drink or use drugs.
+Safety: Six emergency room visits in six months, mostly for breathing trouble. No legal issues.
+Family and social ties: A younger sibling in foster care, visited monthly without fail. No children.
+A typical day: Takes early delivery shifts, keeps away from the shelter's common areas, and sits outside with headphones until lights out. Describes nothing in the week beyond the shifts as fulfilling.
+Goals: A room of their own.
+Service history: No agency contact beyond the shelter.
+Presentation in the interview: Restless and quick to apologize. Struggles to sit through the full interview.
+
+## Case 11
+Age 45. Gender: Male. Race: Black, African American, or African. Location: Cincinnati, Ohio.
+
+Work and education: Auto-body painter for eighteen years, known for custom work. Trained on the job and never held a certificate.
+Path into homelessness: A violent robbery outside a bus depot on the way home from a shift. Six weeks off with the injuries, the shop lost its lease in the same period, and the rent went unpaid. Names the robbery as what started this period of homelessness.
+Current housing: Sleeping outdoors, homeless continuously for eighteen months.
+Finances: Scrap-metal collecting brings in $50 to $150 a week. Roughly $3,000 in old utility and phone bills in collections.
+Health: The robbery injuries have healed and there are no ongoing conditions or prescriptions. Does not drink or use drugs. Washes at a drop-in center.
+Safety: Has not been attacked or threatened since becoming homeless. No emergency room visits or police contact in the past six months, and no legal issues.
+Family and social ties: A sibling in the same city who has offered a couch in an overcrowded household. No children.
+A typical day: Collects scrap on a fixed route that avoids the bus depot entirely and weighs in at a yard on Fridays. Sketches custom paint designs in a notebook most evenings and calls it the best part of the day.
+Goals: Wants to return to spray work but has not been able to walk into a shop and ask.
+Service history: Declined a victim-services referral at the hospital. No agency contact since.
+Presentation in the interview: Watchful. Sits facing the door, gives short answers at first, and warms up only once the questions move away from the robbery.
+
+## Case 12
+Age 37. Gender: Female. Race: Asian or Asian American. Location: Los Angeles, California.
+
+Work and education: Hair stylist with a steady chair rental and a regular clientele built over eight years.
+Path into homelessness: The relationship ended and the apartment was in the partner's name. The chair rental could not be paid without the housing behind it, and the clients drifted. Names the breakup as the cause of this period of homelessness.
+Current housing: Sleeping in a vehicle for eleven months. This is the first time without housing.
+Finances: Irregular cash from cutting hair in parking lots and shelters, about $200 a month. No debts on record.
+Health: A chronic lung condition. Drinking cost a place on a friend's couch and makes it hard to hold onto any housing. No prescriptions. Keeps clean at a gym.
+Safety: Frequent emergency room visits and police contact over the past six months. Was assaulted after becoming homeless. Trades sex for a place to stay on bad-weather nights. No legal issues.
+Family and social ties: No children. A network of acquaintances who trade rides and phone charging.
+A typical day: Cuts hair for cash during the day, sleeps in the vehicle, and takes an arrangement for a bed on the worst nights. Does other residents' hair for free on Sundays, which is described as the good part of the week.
+Goals: A chair in a salon again, and a license renewal that requires a fixed address.
+Service history: Uses a mobile health van for checkups and has never been referred to housing.
+Presentation in the interview: Charismatic and performative, steering toward humor. Becomes flat and factual when describing the exchanges for a bed.
+
+## Case 13
+Age 64. Gender: Male. Race: Black, African American, or African. Location: Atlanta, Georgia.
+
+Work and education: Ran a small upholstery business for twenty-five years. Apprenticeship-trained, and still particular about stitching.
+Path into homelessness: Arthritis ended the work. The workshop lease and the apartment went together, and Social Security did not cover the rent that followed.
+Current housing: Sleeping in a vehicle for four months. This is the first time without housing.
+Finances: About $1,190 a month in Social Security and no debt, but rent on a one-bedroom rose past what the check covers.
+Health: Advanced arthritis in both hands and a hip injury from a fall limit what can be done in a day. Bathing, laundry, and dressing are difficult, and the vehicle has no facilities. Takes prescribed pain medication as directed. Does not drink or use drugs.
+Safety: No emergency room visits, police contact, or legal issues. Has not been threatened or attacked.
+Family and social ties: One adult child who lives abroad, with weekly video calls from a library computer. A long-time friend who stores the tools in a garage.
+A typical day: Parks behind a supermarket that tolerates it, uses the library computers for the weekly call, and spends afternoons at a senior center playing cards, which is looked forward to all week.
+Goals: A ground-floor unit with a bathtub rather than a shower. Applications are in with two housing authorities.
+Service history: A senior-services caseworker visits monthly. The relationship is warm, but the housing list has not moved.
+Presentation in the interview: Dry humor and strong opinions about craftsmanship. Deeply reluctant to be seen as needing care, and describes difficulties as 'slowing down.'
+
+## Case 14
+Age 55. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: Chicago, Illinois.
+
+Work and education: Thirty years as a machinist at a plant that closed. Certified in CNC operation and retrained twice at the company's expense.
+Path into homelessness: The closure took the pension with it. A heart attack a year later ended the job search, and the medical bills ended the housing.
+Current housing: Sleeping outdoors in a wooded strip behind a retail park, homeless for two years across five episodes.
+Finances: No income. A $22,000 hospital bill and a defaulted personal loan.
+Health: An untreated heart condition with recurring chest pain. No current prescriptions, because follow-up appointments were never made. Does not drink or use drugs. Keeping clean has become harder without reliable access to facilities.
+Safety: Six emergency room visits in the past six months for chest pain. No police contact or legal issues, and has not been attacked or threatened.
+Family and social ties: Divorced. One adult child in the military, in touch about once a year.
+A typical day: Walks to a fast-food restaurant when the chest pain starts and otherwise moves as little as possible. Nothing in the week is described as fulfilling.
+Goals: Wants the heart looked at properly and will not discuss housing until that happens.
+Service history: Has declined every discharge referral the emergency room has offered.
+Presentation in the interview: Reserved and precise, and visibly uncomfortable with the interview format. Answers yes or no and offers nothing extra.
+
+## Case 15
+Age 41. Gender: Female. Race: Hispanic/Latino/e/a. Location: Cincinnati, Ohio.
+
+Work and education: A decade of long-haul trucking, then local delivery work closer to home so alternating weekends with the children could happen.
+Path into homelessness: A $400 rent increase on a one-bedroom apartment. Gave notice rather than fall behind, expecting to find something cheaper within the month; nothing has come up in eight weeks.
+Current housing: Sleeping in their own car in a 24-hour parking lot for the past two months. Has never been homeless before.
+Finances: Steady take-home pay of about $2,100 a month, outpaced by local rents. No debts. Keeps a prepaid phone and a gym membership for the showers.
+Health: In good health with no ongoing conditions or prescriptions. Does not use drugs and drinks rarely.
+Safety: No emergency room visits, police contact, or legal issues. Has not been threatened or attacked.
+Family and social ties: Two children, ages 9 and 12, who live with their other parent nearby. Alternating weekends together; the children have not been told about the car.
+A typical day: Gym at 5 a.m. for a shower, a delivery shift until six, then a fast-food restaurant with free wifi until the lot goes quiet. The weekends with the children are what the week is built around.
+Goals: An apartment with a second bedroom, so the weekends can happen at home instead of at a movie theater.
+Service history: Has not contacted any agency. Looked up eligibility online once and closed the tab.
+Presentation in the interview: Proud and self-reliant. Volunteers little, steers questions toward practical solutions, and is visibly uncomfortable being interviewed at all.
+
+## Case 16
+Age 66. Gender: Male. Race: Hispanic/Latino/e/a. Location: New York City, New York.
+
+Work and education: Career carpenter and union steward, respected enough to be sent to settle other sites' disputes.
+Path into homelessness: Was beaten on a job site. A long recovery followed, then a foreclosure during it, and the spouse left with what the sale recovered. Names the assault at work as the cause of this period of homelessness.
+Current housing: Sleeping outdoors within the same three blocks, homeless continuously for fourteen years.
+Finances: No income since benefits lapsed. Debts to hospitals, lenders, and a former landlord.
+Health: A head injury, arthritis, and heart disease. Drinks daily, which has ended every placement. Memory loss and disorientation that make keeping housing impossible. Prescribed medications go untaken. Cannot keep clean or change clothes.
+Safety: Constant emergency room and police contact over the past six months. Has been assaulted at camp, has a warrant for missed court dates, and people at the camp take whatever cash comes in and make them hold drugs.
+Family and social ties: Estranged from three adult children and the former spouse. No contact with anyone outside the camp.
+A typical day: Cannot give a consistent account of a day beyond drinking. Is found within the same three blocks and does not always recognize the outreach worker. Nothing in the week is described as fulfilling.
+Goals: Answers with a job that ended in the 1990s.
+Service history: Assessed many times over fourteen years; the records do not agree with one another.
+Presentation in the interview: Disoriented about sequence and dates but vivid about the distant past, and goes quiet at any mention of job sites. Agrees with most questions, which makes verification difficult.
