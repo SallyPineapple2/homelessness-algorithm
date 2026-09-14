@@ -539,23 +539,15 @@
       <h2>Results</h2>
     </div>
     <div class="section-body">
-      <div class="prose">
-        <p>
-          VI&#8209;SPDAT scores all 3,200 instances. Each AI model reads a balanced 640 of them, and every
-          comparison below sets VI&#8209;SPDAT beside the AI model on those same 640 cases.
-          <span id="ai-status-line"></span>
-        </p>
-      </div>
-
       <nav class="results-nav" aria-label="Results sections">
-        <a href="#r-overview"><span>6.1</span> Overview</a>
-        <a href="#r-integrity"><span>6.2</span> Data integrity</a>
-        <a href="#r-accuracy"><span>6.3</span> Accuracy</a>
-        <a href="#r-bias"><span>6.4</span> Demographic bias</a>
-        <a href="#r-intersections"><span>6.5</span> Intersections</a>
-        <a href="#r-geography"><span>6.6</span> Geography</a>
-        <a href="#r-triage"><span>6.7</span> Triage and ranking</a>
-        <a href="#r-data"><span>6.8</span> Data</a>
+        <a href="#r-summary"><span>6.1</span> Summary</a>
+        <a href="#r-map"><span>6.2</span> Map</a>
+        <a href="#r-bias"><span>6.3</span> Bias tests</a>
+        <a href="#r-intersections"><span>6.4</span> Intersections</a>
+        <a href="#r-accuracy"><span>6.5</span> Accuracy</a>
+        <a href="#r-triage"><span>6.6</span> Triage</a>
+        <a href="#r-integrity"><span>6.7</span> Data integrity</a>
+        <a href="#r-data"><span>6.8</span> Downloads</a>
       </nav>
 
       <div class="results-controls model-bar">
@@ -563,221 +555,25 @@
           <span class="control-label">AI model shown</span>
           <div class="filters" id="model-chips"></div>
         </div>
+        <span class="table-note-inline" id="ai-status-line"></span>
       </div>
 
-      <!-- 6.1 OVERVIEW -->
-      <div class="subsection" id="r-overview">
-        <div class="subsection-head"><span class="subsection-num">6.1</span><h3>Overview</h3></div>
+      <!-- 6.1 SUMMARY -->
+      <div class="subsection" id="r-summary">
+        <div class="subsection-head"><span class="subsection-num">6.1</span><h3>Summary</h3></div>
         <div class="kpis" id="kpis"></div>
-
-        <div class="finding" id="ai-finding" hidden>
-          <span class="kicker" id="ai-finding-kicker">Result &mdash; AI model</span>
-          <div id="ai-finding-body"></div>
-        </div>
-
-        <div class="finding">
-          <span class="kicker">Result &mdash; VI&#8209;SPDAT arm (all 3,200 instances)</span>
-          <p>
-            <strong>VI&#8209;SPDAT produced identical scores across every race, gender, and location.</strong>
-            Mean score was 6.406 for all five HUD race categories, both genders, and all five cities;
-            every paired t&#8209;test on those factors returned a mean difference of exactly 0.000. This
-            follows from the algorithm's structure: race and location are not inputs to any
-            VI&#8209;SPDAT scoring rule, and the only gender&#8209;dependent item in version 2.0 is the
-            pregnancy question, which no base profile sets.
-          </p>
-          <p>
-            <strong>The documented racial bias in VI&#8209;SPDAT therefore cannot live in the
-            arithmetic.</strong> It has to enter through the interview: which questions get asked, how
-            answers are recorded, and who feels safe disclosing what.
-          </p>
-          <p>
-            <strong>Withholding stigmatized information cost 1.94 points on average</strong>
-            (t&nbsp;=&nbsp;&minus;50.31, p&nbsp;&lt;&nbsp;0.001), moved <strong>500 of 1,600</strong>
-            clone combinations into a lower triage band, and dropped an underdisclosed case
-            <strong>178 places</strong> on average when ranked against people who disclosed everything.
-          </p>
+        <div class="chart-card">
+          <p class="chart-title">Key results</p>
+          <p class="chart-sub">Same 640 instances for every tool. Bold: significant after Holm adjustment (&alpha; = 0.05).</p>
+          <div class="results-scroll"><table class="results compact" id="summary-table"></table></div>
         </div>
       </div>
 
-      <!-- 6.2 DATA INTEGRITY -->
-      <div class="subsection" id="r-integrity">
-        <div class="subsection-head"><span class="subsection-num">6.2</span><h3>Data integrity</h3></div>
-        <div class="prose">
-          <p>
-            Each AI answer gives a case number, a score, and a reason. Before any analysis, every
-            reason is checked against the case it is labeled with, using facts the reason states
-            &mdash; how long the person has been homeless and their age &mdash; which are never
-            withheld and almost always identify one person in a session. An answer whose facts fit a
-            different case was written about someone else, so its score would be credited to the
-            wrong race, gender, and city. Answers are never edited or moved. Every reply is analyzed
-            exactly as the model returned it, mislabeled answers included; this check reports how
-            many there are so the results can be read with that in mind. A second analysis,
-            <em>ChatGPT, re&#8209;attached</em>, keeps answers whose facts fit their own case, moves each
-            mislabeled answer whose facts fit exactly one other case, and drops the rest, including
-            any two answers that land on the same case. Switch between the two with the model buttons
-            above.
-          </p>
-        </div>
+      <!-- 6.2 MAP -->
+      <div class="subsection" id="r-map">
+        <div class="subsection-head"><span class="subsection-num">6.2</span><h3>Map: city effects</h3></div>
         <div class="chart-card">
-          <p class="chart-title">Does each answer describe the case it is labeled with? &mdash; <span id="label-model">AI model</span></p>
-          <p class="chart-sub">Every answer in every session, checked against the facts of the case it was labeled with.</p>
-          <div class="chip-row" id="label-views"></div>
-          <div class="legend" id="legend-labels"></div>
-          <div class="chart-scroll" id="chart-labels"></div>
-          <p class="chart-foot" id="labels-foot"></p>
-        </div>
-      </div>
-
-      <!-- 6.3 ACCURACY -->
-      <div class="subsection" id="r-accuracy">
-        <div class="subsection-head"><span class="subsection-num">6.3</span><h3>Accuracy against true vulnerability</h3></div>
-        <div class="prose">
-          <p>
-            True vulnerability is each base profile's full&#8209;disclosure indicator total: what the
-            person actually has, whether or not they disclosed it. It is the same for all of a
-            profile's demographic versions.
-          </p>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Assigned score against true vulnerability</p>
-          <p class="chart-sub">
-            Mean score at each true score. A perfectly calibrated tool sits on the diagonal; points
-            above it overrate vulnerability and points below it underrate it. Hover for values.
-          </p>
-          <div class="legend" id="legend-calibration"></div>
-          <div class="chart-scroll" id="chart-calibration"></div>
-          <p class="chart-foot">
-            VI&#8209;SPDAT with full disclosure matches the truth by construction. Its underdisclosure
-            line shows the cost of withheld answers; the AI model reads the same withheld records.
-          </p>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Consistency: every base profile across its demographic versions</p>
-          <p class="chart-sub">
-            Each row is one base profile. The line spans the lowest to highest score the AI model gave
-            that person across all versions; an unbiased, consistent model would give each profile
-            nearly the same score regardless of race, gender, or city.
-          </p>
-          <div class="legend" id="legend-profiles"></div>
-          <div class="chart-scroll" id="chart-profiles"></div>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Accuracy summary</p>
-          <p class="chart-sub">Error against true vulnerability for every model, on the same instances.</p>
-          <div class="results-scroll"><table class="results compact" id="accuracy-table"></table></div>
-          <p class="chart-foot">
-            MAE: mean absolute error in points (0 is perfect). Mean error is signed; positive means the
-            tool overrates vulnerability. Correct band: share of scores in the same triage band as the
-            true total (0&ndash;3, 4&ndash;7, 8+). Over&#8209; and under&#8209;triage: share placed in a
-            higher or lower band than the truth. PSH&#8209;eligible missed: share of people whose true
-            score qualifies for Permanent Supportive Housing who were placed below it.
-          </p>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Accuracy by group</p>
-          <p class="chart-sub">
-            Whether the size of the error depends on the race, gender, or city stated in the case.
-          </p>
-          <div class="results-scroll"><table class="results" id="accuracy-group-table"></table></div>
-        </div>
-      </div>
-
-      <!-- 6.4 DEMOGRAPHIC BIAS -->
-      <div class="subsection" id="r-bias">
-        <div class="subsection-head"><span class="subsection-num">6.4</span><h3>Demographic bias</h3></div>
-
-        <div class="chart-card">
-          <p class="chart-title">Mean vulnerability score by <span id="means-factor">race and ethnicity</span></p>
-          <p class="chart-sub">
-            If a tool is unbiased, its bars sit at the same height in every group, because the
-            underlying profiles are identical. The dashed line marks the true mean vulnerability.
-          </p>
-          <div class="chip-row" id="factor-tabs"></div>
-          <div class="legend" id="legend-means"></div>
-          <div class="chart-scroll" id="chart-means"></div>
-          <p class="chart-foot" id="means-foot"></p>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Paired differences with 95% confidence intervals</p>
-          <p class="chart-sub">
-            Each race, gender, and disclosure row pairs a base profile with itself, differing only in
-            that condition; each city row pairs a profile's mean in that city with its mean in the
-            other four. An interval that crosses zero is consistent with no difference.
-          </p>
-          <div class="legend" id="legend-forest"></div>
-          <div class="chart-scroll" id="chart-forest"></div>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Paired t&#8209;tests &mdash; VI&#8209;SPDAT and <span id="tests-model-name">the AI model</span></p>
-          <p class="chart-sub">Both tools on the same 640 instances.</p>
-          <div class="results-scroll"><table class="results" id="tests-table"></table></div>
-          <p class="chart-foot">
-            d<sub>z</sub>: Cohen's effect size for paired data (mean difference &divide; SD of the
-            differences; 0.2 is conventionally small). p (Holm): p&#8209;value adjusted with the
-            Holm&ndash;Bonferroni method across the ten race, gender, and city tests. Bold: significant
-            after adjustment (&alpha; = 0.05). &dagger;: p &lt; 0.05 before adjustment only. n/a: every
-            pair identical, so the t&#8209;statistic is undefined.
-          </p>
-        </div>
-
-        <div class="chart-card">
-          <p class="chart-title">Bias across every model</p>
-          <p class="chart-sub">
-            Mean paired difference for each comparison, one column per model, so a pattern that holds
-            across providers is visible at a glance. Bold marks a difference significant after Holm
-            adjustment; &dagger; marks p &lt; 0.05 before adjustment only.
-          </p>
-          <div class="results-scroll"><table class="results" id="bias-matrix"></table></div>
-        </div>
-      </div>
-
-      <!-- 6.5 INTERSECTIONS -->
-      <div class="subsection" id="r-intersections">
-        <div class="subsection-head"><span class="subsection-num">6.5</span><h3>Intersections</h3></div>
-        <div class="prose">
-          <p>
-            Race is crossed with gender and with disclosure inside every base profile, so these
-            combinations can be compared like with like. Each cell is the mean of a score minus that
-            profile's own average score, which removes differences in how vulnerable the profiles
-            are: 0 means the combination is scored exactly as that person usually is.
-            <span class="muted-inline">Showing <strong id="heat-model">VI&#8209;SPDAT</strong>.</span>
-          </p>
-        </div>
-        <div class="two-col">
-          <div class="chart-card">
-            <p class="chart-title">Race &times; gender</p>
-            <p class="chart-sub">Points above or below the profile's average.</p>
-            <div class="chart-scroll" id="heat-race-gender"></div>
-          </div>
-          <div class="chart-card">
-            <p class="chart-title">Race &times; disclosure</p>
-            <p class="chart-sub">Includes the overall disclosure effect; compare rows to see whether withholding costs some groups more.</p>
-            <div class="chart-scroll" id="heat-race-disclosure"></div>
-          </div>
-        </div>
-        <div class="legend grad-legend-wrap" id="legend-heat"></div>
-        <div class="chart-card">
-          <p class="chart-title">Exploratory interaction tests</p>
-          <p class="chart-sub">
-            Race gaps within each gender, and whether the underdisclosure penalty differs by race or
-            gender. Holm&#8209;adjusted within this family; treat as hypothesis&#8209;generating.
-          </p>
-          <div class="results-scroll"><table class="results" id="interaction-table"></table></div>
-        </div>
-      </div>
-
-      <!-- 6.6 GEOGRAPHY -->
-      <div class="subsection" id="r-geography">
-        <div class="subsection-head"><span class="subsection-num">6.6</span><h3>Geography</h3></div>
-        <div class="chart-card">
-          <p class="chart-title">Does the city named in a case change the score? &mdash; <span id="map-model">VI&#8209;SPDAT</span></p>
-          <p class="chart-sub" id="map-metric-desc"></p>
+          <p class="chart-title"><span id="map-model">VI&#8209;SPDAT</span> &mdash; <span id="map-metric-desc"></span></p>
           <div class="chip-row" id="map-metrics"></div>
           <div class="map-layout">
             <div>
@@ -786,60 +582,122 @@
             </div>
             <div class="results-scroll"><table class="results compact" id="map-table"></table></div>
           </div>
-          <p class="chart-foot">
-            Points on the 0&ndash;17 scale, with paired t&#8209;tests (n pairs). As returned, pairs are
-            base profiles seen in all of their conditions; in the re&#8209;attached version, where no
-            profile keeps every condition, each profile is compared within its disclosure condition
-            using the answers it has. A ring marks a difference significant after Holm adjustment across the
-            five cities. Each case states its city but reads identically in all five, so this measures
-            the effect of the city label alone. Whether a race effect differs by city cannot be
-            estimated in the AI design.
-          </p>
+          <p class="chart-foot">Points on the 0&ndash;17 scale, 95% CI, Holm&#8209;adjusted p. Ring = significant.</p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">City effect by tool</p>
+          <p class="chart-sub">Score in each city minus the same profiles' score in the other four cities.</p>
+          <div class="results-scroll"><table class="results compact" id="city-table"></table></div>
         </div>
       </div>
 
-      <!-- 6.7 TRIAGE AND RANKING -->
-      <div class="subsection" id="r-triage">
-        <div class="subsection-head"><span class="subsection-num">6.7</span><h3>Triage and ranking implications</h3></div>
-        <div class="prose">
-          <p>
-            A score matters because it decides the intervention a person is referred to and where they
-            sit on the priority list. These results translate score differences into those outcomes.
-          </p>
+      <!-- 6.3 BIAS TESTS -->
+      <div class="subsection" id="r-bias">
+        <div class="subsection-head"><span class="subsection-num">6.3</span><h3>Bias tests</h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Mean score by <span id="means-factor">race and ethnicity</span></p>
+          <div class="chip-row" id="factor-tabs"></div>
+          <div class="legend" id="legend-means"></div>
+          <div class="chart-scroll" id="chart-means"></div>
+          <p class="chart-foot" id="means-foot"></p>
         </div>
+        <div class="chart-card">
+          <p class="chart-title">Paired differences, 95% confidence intervals</p>
+          <div class="legend" id="legend-forest"></div>
+          <div class="chart-scroll" id="chart-forest"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Paired t&#8209;tests &mdash; VI&#8209;SPDAT and <span id="tests-model-name">the AI model</span></p>
+          <div class="results-scroll"><table class="results compact" id="tests-table"></table></div>
+          <p class="chart-foot">d<sub>z</sub> = Cohen's effect size. Bold = significant after Holm. &dagger; = p &lt; 0.05 unadjusted only.</p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Mean paired difference, every tool</p>
+          <div class="results-scroll"><table class="results compact" id="bias-matrix"></table></div>
+        </div>
+      </div>
 
+      <!-- 6.4 INTERSECTIONS -->
+      <div class="subsection" id="r-intersections">
+        <div class="subsection-head"><span class="subsection-num">6.4</span><h3>Intersections &mdash; <span id="heat-model">VI&#8209;SPDAT</span></h3></div>
+        <div class="two-col">
+          <div class="chart-card">
+            <p class="chart-title">Race &times; gender</p>
+            <p class="chart-sub">Points above/below each profile's own average.</p>
+            <div class="chart-scroll" id="heat-race-gender"></div>
+          </div>
+          <div class="chart-card">
+            <p class="chart-title">Race &times; disclosure</p>
+            <p class="chart-sub">Points above/below each profile's own average.</p>
+            <div class="chart-scroll" id="heat-race-disclosure"></div>
+          </div>
+        </div>
+        <div class="legend grad-legend-wrap" id="legend-heat"></div>
+        <div class="chart-card">
+          <p class="chart-title">Interaction tests</p>
+          <div class="results-scroll"><table class="results compact" id="interaction-table"></table></div>
+        </div>
+      </div>
+
+      <!-- 6.5 ACCURACY -->
+      <div class="subsection" id="r-accuracy">
+        <div class="subsection-head"><span class="subsection-num">6.5</span><h3>Accuracy against true vulnerability</h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Accuracy summary</p>
+          <div class="results-scroll"><table class="results compact" id="accuracy-table"></table></div>
+          <p class="chart-foot">MAE = mean absolute error (points). Mean error: + overrates. PSH missed = eligible but placed lower.</p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Accuracy by group</p>
+          <div class="results-scroll"><table class="results compact" id="accuracy-group-table"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Assigned score vs. true score</p>
+          <div class="legend" id="legend-calibration"></div>
+          <div class="chart-scroll" id="chart-calibration"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Each base profile across its versions</p>
+          <div class="legend" id="legend-profiles"></div>
+          <div class="chart-scroll" id="chart-profiles"></div>
+        </div>
+      </div>
+
+      <!-- 6.6 TRIAGE -->
+      <div class="subsection" id="r-triage">
+        <div class="subsection-head"><span class="subsection-num">6.6</span><h3>Triage and ranking</h3></div>
         <div class="chart-card">
           <p class="chart-title">Share referred to Permanent Supportive Housing (score 8+)</p>
-          <p class="chart-sub">
-            The dashed line is the share whose true vulnerability qualifies. Bars above it over&#8209;refer
-            to the scarcest resource; unequal bars across groups mean unequal access for identical need.
-          </p>
           <div class="chip-row" id="triage-factor-tabs"></div>
           <div class="legend" id="legend-triage"></div>
           <div class="chart-scroll" id="chart-triage"></div>
           <p class="chart-foot" id="triage-note"></p>
         </div>
-
         <div class="chart-card">
           <p class="chart-title">Triage outcomes by group</p>
-          <p class="chart-sub">Referral shares, missed eligibility, and average position on a single priority list.</p>
           <div class="results-scroll"><table class="results compact" id="triage-table"></table></div>
-          <p class="chart-foot">
-            Priority position: rank on one list of all 640 instances ordered by score, 1 = highest
-            priority, ties sharing a rank; lower is prioritized sooner.
-          </p>
         </div>
-
         <div class="chart-card">
           <p class="chart-title">Ranking quality</p>
-          <p class="chart-sub">How well each tool orders the people in a session, and whether the AI model's own ranks agree with its own scores.</p>
-          <div class="results-scroll"><table class="results" id="ranking-table"></table></div>
+          <div class="results-scroll"><table class="results compact" id="ranking-table"></table></div>
         </div>
       </div>
 
-      <!-- 6.8 DATA -->
+      <!-- 6.7 DATA INTEGRITY -->
+      <div class="subsection" id="r-integrity">
+        <div class="subsection-head"><span class="subsection-num">6.7</span><h3>Data integrity &mdash; <span id="label-model">AI model</span></h3></div>
+        <div class="chart-card">
+          <p class="chart-title">Answers checked against the case they are labeled with</p>
+          <div class="chip-row" id="label-views"></div>
+          <div class="legend" id="legend-labels"></div>
+          <div class="chart-scroll" id="chart-labels"></div>
+          <p class="chart-foot" id="labels-foot"></p>
+        </div>
+      </div>
+
+      <!-- 6.8 DOWNLOADS -->
       <div class="subsection" id="r-data">
-        <div class="subsection-head"><span class="subsection-num">6.8</span><h3>Data and materials</h3></div>
+        <div class="subsection-head"><span class="subsection-num">6.8</span><h3>Downloads</h3></div>
         <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
       </div>
     </div>

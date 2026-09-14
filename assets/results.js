@@ -71,15 +71,15 @@ const CITY_LABEL = {
 const MAP_METRICS = [
   {
     value: "effect", label: "City effect",
-    description: "Mean score when a case names this city, minus the same profiles' mean in the other four cities."
+    description: "city minus the other four cities"
   },
   {
     value: "gender_gap", label: "Gender gap in city",
-    description: "Female minus male, among cases that name this city."
+    description: "female minus male, within city"
   },
   {
     value: "disclosure_penalty", label: "Underdisclosure penalty in city",
-    description: "Underdisclosure minus full disclosure, among cases that name this city."
+    description: "underdisclosure minus full, within city"
   }
 ];
 
@@ -327,31 +327,31 @@ function renderKpis() {
       label: "Mean absolute error",
       main: m ? fmt(m.accuracy.all.mae, 2) : "—",
       ref: `VI‑SPDAT ${fmt(V.accuracy.all.mae, 2)}`,
-      note: "Points from true vulnerability on the 0–17 scale. Lower is better."
+      note: "Points from true score (0–17)."
     },
     {
       label: "Correct triage band",
       main: m ? fmtPct(m.accuracy.all.band_agreement) : "—",
       ref: `VI‑SPDAT ${fmtPct(V.accuracy.all.band_agreement)}`,
-      note: "Share of cases placed in the same band as their true score."
+      note: "Same band as true score."
     },
     {
       label: "Bias tests significant",
       main: m ? `${demo(m.tests).filter((t) => t.significant_holm).length} of ${demo(m.tests).length}` : "—",
       ref: `VI‑SPDAT ${demo(V.tests).filter((t) => t.significant_holm).length} of ${demo(V.tests).length}`,
-      note: "Race, gender, and city comparisons after Holm adjustment (α = 0.05)."
+      note: "Race, gender, city · Holm α = 0.05."
     },
     {
       label: "Underdisclosure penalty",
       main: m ? fmtSigned(disclosure(m.tests).mean_diff, 2) : "—",
       ref: `VI‑SPDAT ${fmtSigned(disclosure(V.tests).mean_diff, 2)}`,
-      note: "Change in score when stigmatized details are withheld."
+      note: "Points, withheld vs. full."
     },
     {
       label: "Answers on the wrong case",
       main: lc && lc.current.answers_checked ? fmtPct(lc.current.share_mixed) : "—",
       ref: first && first.answers_checked ? `first attempt ${fmtPct(first.share_mixed)}` : "",
-      note: "Answers whose reason describes a different person than their case number."
+      note: "Reason fits a different case."
     }
   ];
 
@@ -367,79 +367,72 @@ function renderKpis() {
   });
 }
 
-function renderAiFinding() {
-  const m = arm();
-  const finding = document.getElementById("ai-finding");
-  const body = d3.select("#ai-finding-body");
-  body.selectAll("*").remove();
-  finding.hidden = !m;
-  if (!m) return;
-
-  const V = AI.vispdat;
-  document.getElementById("ai-finding-kicker").textContent =
-    `Result — ${m.label} (${m.instances_scored.toLocaleString()} instances, ${m.sessions_valid} of ${m.sessions_total} sessions)`;
-
-  const add = (lead, text) => {
-    const p = body.append("p");
-    if (lead) p.append("strong").text(lead + " ");
-    p.append("span").text(text);
+function renderSummaryTable() {
+  const cols = [{ label: "VI‑SPDAT", d: AI.vispdat, ref: true }].concat(
+    AI.models.map((m) => ({ label: m.label, d: hasData(m) ? m : null, m }))
+  );
+  const pick = (d, fam) => d.tests.filter((t) => t.family === fam && t.mean_diff !== null);
+  const sigCount = (d, fam) => {
+    const ts = pick(d, fam);
+    return ts.length ? `${ts.filter((t) => t.significant_holm).length} of ${ts.length}` : "—";
+  };
+  const largest = (d, fam, name) => {
+    const ts = pick(d, fam);
+    if (!ts.length) return "—";
+    const t = ts.slice().sort((a, b) => Math.abs(b.mean_diff) - Math.abs(a.mean_diff))[0];
+    return Math.abs(t.mean_diff) === 0 ? "0.00" : sigCell(t, `${fmtSigned(t.mean_diff, 2)} (${name(t)})`);
+  };
+  const raceName = (t) => SHORT_RACE[t.comparison.split(" vs.")[0]] || t.comparison;
+  const cityName = (t) => t.comparison.split(",")[0];
+  const one = (d, fam) => {
+    const t = pick(d, fam)[0];
+    return t ? sigCell(t, `${fmtSigned(t.mean_diff, 2)} (p ${fmtP(t.p)})`) : "—";
+  };
+  const sd = (d) => {
+    const s = d.profiles.map((p) => p.sd).filter((v) => v !== null);
+    return s.length ? fmt(d3.mean(s), 2) : "—";
+  };
+  const wrongCase = (d, c) => {
+    if (c.ref) return "n/a";
+    if (c.m.reattachment) return `${c.m.reattachment.moved} moved, ${c.m.reattachment.dropped} dropped`;
+    const lc = c.m.label_check && c.m.label_check.current;
+    return lc && lc.answers_checked ? `${fmtPct1(lc.share_mixed)} (kept as returned)` : "—";
   };
 
-  if (m.status !== "complete") {
-    add("Preliminary.", `Based on ${m.sessions_valid} of ${m.sessions_total} sessions; the remaining sessions have not been run, so the comparisons below have fewer pairs than the design provides.`);
-  }
-  const lc = m.label_check && m.label_check.current;
-  if (m.reattachment) {
-    const r = m.reattachment;
-    const reasons = Object.entries(r.dropped_reasons).map(([k, v]) => `${v} ${k}`).join(", ");
-    add(
-      "Re-attached version.",
-      `In the ${m.sessions_with_label_mixups.length} sessions with mislabeled answers, each of the ${r.answers_in_mixed_sessions} answers was checked against its stated facts (how long homeless, age): answers whose facts fit their own case stayed (${r.kept}), answers whose facts fit exactly one other case were moved there (${r.moved}), and the rest were dropped (${r.dropped}: ${reasons}). When two answers landed on the same case, both were dropped. Scores and reasons are unchanged. ${m.instances_scored} of ${AI.instances_per_model} instances remain, so paired tests have fewer pairs than the as-returned analysis, and rank measures use only the sessions that needed no re-attachment.`
-    );
-  } else if (m.sessions_with_label_mixups && m.sessions_with_label_mixups.length && lc && lc.answers_checked) {
-    add(
-      "Read with caution: answers analyzed as returned.",
-      `${fmtPct(lc.share_mixed)} of ${m.label}'s answers (${lc.totals["mixed up"]} of ${lc.answers_checked}, in ${m.sessions_with_label_mixups.length} sessions) describe a different person than the case number they carry. Every answer is analyzed exactly as returned, so those scores are credited to the wrong race, gender, and city. That dilutes real demographic differences toward zero and adds noise to accuracy, so a non-significant bias test here is weak evidence that no bias exists.`
-    );
-  }
+  const rows = [
+    ["Instances", (d) => d.instances_scored.toLocaleString()],
+    ["Mean absolute error (points)", (d) => fmt(d.accuracy.all.mae, 2)],
+    ["Mean error (+ overrates)", (d) => fmtSigned(d.accuracy.all.mean_error, 2)],
+    ["Correlation with true score (r)", (d) => fmt(d.accuracy.all.pearson_r, 2)],
+    ["Correct triage band", (d) => fmtPct(d.accuracy.all.band_agreement)],
+    ["Over‑triage / under‑triage", (d) => `${fmtPct(d.accuracy.all.over_triage)} / ${fmtPct(d.accuracy.all.under_triage)}`],
+    [`Referred to PSH (truly eligible ${fmtPct(AI.vispdat.triage.truth_shares.psh)})`, (d) => fmtPct(d3.mean(d.triage.by_disclosure, (g) => g.share_psh))],
+    ["PSH‑eligible missed", (d) => fmtPct(d.accuracy.all.psh_missed)],
+    ["Race vs. White: largest gap (points)", (d) => largest(d, "race", raceName)],
+    ["Race tests significant", (d) => sigCount(d, "race")],
+    ["Female vs. male (points)", (d) => one(d, "gender")],
+    ["City: largest effect (points)", (d) => largest(d, "location", cityName)],
+    ["City tests significant", (d) => sigCount(d, "location")],
+    ["Underdisclosure vs. full (points)", (d) => one(d, "disclosure")],
+    ["Same profile, SD across versions", sd],
+    ["Mislabeled answers", wrongCase]
+  ];
+  tableFrom("#summary-table", ["Measure"].concat(cols.map((c) => c.label)),
+    rows.map(([name, fn]) => ({ cells: [name].concat(cols.map((c) => (c.d ? fn(c.d, c) : "—"))) })));
+}
 
-  const acc = m.accuracy.all;
-  add(
-    `${m.label} ${acc.mean_error >= 0 ? "overrated" : "underrated"} vulnerability by ${fmt(Math.abs(acc.mean_error), 2)} points on average.`,
-    `Its mean absolute error against true vulnerability was ${fmt(acc.mae, 2)} points (VI‑SPDAT on the same cases: ${fmt(V.accuracy.all.mae, 2)}), and ${fmtPct(acc.band_agreement)} of its scores fell in the correct triage band (VI‑SPDAT: ${fmtPct(V.accuracy.all.band_agreement)}). ${fmtPct(acc.over_triage)} were placed in a higher band than the truth and ${fmtPct(acc.under_triage)} in a lower one.`
+function renderCityTable() {
+  const cols = [{ label: "VI‑SPDAT", d: AI.vispdat }].concat(
+    AI.models.map((m) => ({ label: m.label, d: hasData(m) ? m : null }))
   );
-
-  const demo = m.tests.filter((t) => DEMOGRAPHIC_FAMILIES.includes(t.family) && t.mean_diff !== null);
-  const sig = demo.filter((t) => t.significant_holm);
-  const largest = demo.slice().sort((a, b) => Math.abs(b.mean_diff) - Math.abs(a.mean_diff))[0];
-  if (sig.length) {
-    add(
-      "Demographic differences were detected.",
-      sig.map((t) => `${t.comparison}: ${fmtSigned(t.mean_diff, 2)} points (95% CI ${fmtCI(t)}, Holm p = ${fmtP(t.p_holm)})`).join("; ") + "."
-    );
-  } else if (largest) {
-    add(
-      "No race, gender, or city difference was significant after adjustment.",
-      `The largest was ${largest.comparison} at ${fmtSigned(largest.mean_diff, 2)} points (95% CI ${fmtCI(largest)}, unadjusted p = ${fmtP(largest.p)}). An interval that spans zero means the data cannot distinguish that difference from none.`
-    );
-  }
-
-  const disc = m.tests.find((t) => t.family === "disclosure");
-  const vdisc = V.tests.find((t) => t.family === "disclosure");
-  if (disc && disc.mean_diff !== null) {
-    add(
-      `Withholding stigmatized details changed ${m.label}'s scores by ${fmtSigned(disc.mean_diff, 2)} points`,
-      `(95% CI ${fmtCI(disc)}, p = ${fmtP(disc.p)}), compared with ${fmtSigned(vdisc.mean_diff, 2)} for VI‑SPDAT.`
-    );
-  }
-
-  const sds = m.profiles.map((p) => p.sd).filter((v) => v !== null);
-  if (sds.length) {
-    add(
-      "Consistency.",
-      `The same person's score varied by an average standard deviation of ${fmt(d3.mean(sds), 2)} points across their demographic versions; VI‑SPDAT's varies only with disclosure.`
-    );
-  }
+  tableFrom("#city-table", ["City"].concat(cols.map((c) => c.label)),
+    AI.locations.map((loc) => ({
+      cells: [loc].concat(cols.map((c) => {
+        if (!c.d) return "—";
+        const t = c.d.locations.find((x) => x.location === loc).effect;
+        return t.mean_diff === null ? "—" : sigCell(t, `${fmtSigned(t.mean_diff, 2)} ${fmtCI(t)}`);
+      }))
+    })));
 }
 
 /* ============================================================
@@ -533,13 +526,8 @@ function renderLabelCheck() {
   } else {
     const t = data.totals;
     foot.textContent =
-      `${data.answers_checked.toLocaleString()} answers checked: ${t.matches} match their case, ${t["mixed up"]} (${fmtPct1(data.share_mixed)}) describe a different case, ` +
-      `and ${t["can't tell"]} state no duration or age. ${data.sessions_with_mixups} of ${data.sessions.length} sessions contain at least one mislabeled answer` +
-      (labelView !== "current"
-        ? "; this archived attempt is shown for the record."
-        : model.sessions_with_label_mixups && model.sessions_with_label_mixups.length
-          ? ". All answers are analyzed exactly as returned, including the mislabeled ones."
-          : "; those sessions are excluded from the analysis.");
+      `Checked ${data.answers_checked}: match ${t.matches} · different case ${t["mixed up"]} (${fmtPct1(data.share_mixed)}) · ` +
+      `can't tell ${t["can't tell"]} · sessions affected ${data.sessions_with_mixups} of ${data.sessions.length}`;
   }
 }
 
@@ -787,9 +775,8 @@ function renderMeans() {
     { kind: "line", name: `True mean vulnerability (${V.true_mean.toFixed(2)})`, color: css("--ink-2"), dash: "5 3" }
   ]);
 
-  document.getElementById("means-foot").textContent = m
-    ? `Both use the same ${AI.instances_per_model.toLocaleString()} instances; ${m.label} bars come from ${m.sessions_valid} of ${m.sessions_total} sessions (${m.instances_scored.toLocaleString()} instances).`
-    : `Both use the same ${AI.instances_per_model.toLocaleString()} instances. ${modelName()} has no results yet; dashed outlines mark where its bars will appear.`;
+  document.getElementById("means-foot").textContent =
+    `n: VI‑SPDAT ${V.instances_scored} · ${modelName()} ${m ? m.instances_scored : 0}`;
 }
 
 function renderForest() {
@@ -1125,9 +1112,8 @@ function renderTriage() {
   const note = document.getElementById("triage-note");
   if (m) {
     const sig = m.triage.psh_tests.filter((t) => DEMOGRAPHIC_FAMILIES.includes(t.family) && t.significant_holm);
-    note.textContent = sig.length
-      ? `Significant differences in PSH referral after Holm adjustment: ${sig.map((t) => `${t.comparison} (${fmtSigned(t.mean_diff * 100, 1)} percentage points)`).join("; ")}.`
-      : `No race, gender, or city group differed significantly in PSH referral after Holm adjustment (paired tests on each profile's referral). VI‑SPDAT refers ${fmtPct1(V.triage.by_disclosure[0].share_psh)} with full disclosure and ${fmtPct1(V.triage.by_disclosure[1].share_psh)} with underdisclosure.`;
+    note.textContent = `Significant group differences in PSH referral (Holm): ${
+      sig.length ? sig.map((t) => `${t.comparison} ${fmtSigned(t.mean_diff * 100, 1)} pts`).join("; ") : "none"}`;
   } else {
     note.textContent = `${modelName()} has no results yet.`;
   }
@@ -1214,9 +1200,8 @@ function renderDownloads() {
 function renderStatus() {
   const run = AI.models.filter(hasData);
   const complete = AI.models.filter((m) => m.status === "complete");
-  document.getElementById("ai-status-line").textContent = run.length
-    ? `AI results so far: ${run.map((m) => `${m.label} ${m.sessions_valid} of ${m.sessions_total} sessions`).join(", ")}.`
-    : "No AI model results have been imported yet.";
+  const line = document.getElementById("ai-status-line");
+  if (line) line.textContent = run.map((m) => `${m.label}: n = ${m.instances_scored}`).join(" · ");
   const hero = document.getElementById("hero-ai-status");
   if (hero) hero.textContent = run.length ? `${complete.length} of ${AI.models.length} models complete` : "pending";
 }
@@ -1246,7 +1231,8 @@ function renderResults() {
 
   renderStatus();
   renderKpis();
-  renderAiFinding();
+  renderSummaryTable();
+  renderCityTable();
   renderLabelCheck();
   renderCalibration();
   renderProfiles();

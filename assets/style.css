@@ -1240,6 +1240,7 @@ table.results td.cmp .sub { display: block; font-size: 0.74rem; color: var(--ink
 }
 
 .chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.table-note-inline { font-size: 0.76rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
 .muted-inline { color: var(--ink-muted); }
 
 .two-col {
