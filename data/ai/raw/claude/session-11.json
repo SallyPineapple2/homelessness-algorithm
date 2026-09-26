@@ -1,0 +1,211 @@
+{
+ "model_key": "claude",
+ "interface": "Claude Code on Claude Pro, single message",
+ "session": 11,
+ "model_version": "claude-sonnet-5 (Claude Code on Claude Pro, single message)",
+ "prompt_sha256": "684b187fa05700651bfe3bfb2fab943ea5768a34f12a14880d9ed1f17d550227",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "matches": 9,
+  "can't tell": 23
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 14,
+   "rank": 7,
+   "reason": "Nine years of chronic street homelessness combined with untreated bipolar disorder, substance use, emphysema, and ongoing debt-bondage exploitation make serious harm highly likely."
+  },
+  {
+   "case": 2,
+   "score": 3,
+   "rank": 30,
+   "reason": "First-time shelter stay with stable income, no health issues, no substance use, and no safety concerns indicates low immediate risk."
+  },
+  {
+   "case": 3,
+   "score": 10,
+   "rank": 14,
+   "reason": "Three years outdoors with COPD, no income, and repeated ER/crisis contact create real health risk despite the absence of violence or legal issues."
+  },
+  {
+   "case": 4,
+   "score": 4,
+   "rank": 29,
+   "reason": "First episode of vehicle homelessness with good health, no substance use, active problem-solving, and family support limits acute danger."
+  },
+  {
+   "case": 5,
+   "score": 13,
+   "rank": 8,
+   "reason": "Cirrhosis with untaken medication, camp assault, and four years of isolated chronic homelessness point to serious ongoing health risk."
+  },
+  {
+   "case": 6,
+   "score": 11,
+   "rank": 11,
+   "reason": "Cirrhosis and bipolar disorder compounded by drinking, repeated assault, and coercion by others at the shelter are offset somewhat by consistent psychiatric care and social ties."
+  },
+  {
+   "case": 7,
+   "score": 11,
+   "rank": 12,
+   "reason": "Chronic liver disease with frequent ER visits, no medical care, and five years of unsheltered homelessness with no hygiene access signal high vulnerability."
+  },
+  {
+   "case": 8,
+   "score": 15,
+   "rank": 3,
+   "reason": "Eleven continuous years outdoors with untreated liver disease and depression, constant violence, and refusal of all shelter options makes this an extremely high-risk case."
+  },
+  {
+   "case": 9,
+   "score": 14,
+   "rank": 6,
+   "reason": "An untreated heart condition causing six ER visits for chest pain in six months poses an acute, potentially fatal risk if it continues untreated."
+  },
+  {
+   "case": 10,
+   "score": 15,
+   "rank": 4,
+   "reason": "Chronic heart disease, stimulant use, constant violence, and coerced drug running under active threat make this an extremely dangerous situation."
+  },
+  {
+   "case": 11,
+   "score": 4,
+   "rank": 28,
+   "reason": "First-time shelter stay with no health conditions or safety issues, though discouragement after failed job searches adds some concern."
+  },
+  {
+   "case": 12,
+   "score": 13,
+   "rank": 9,
+   "reason": "Congestive heart failure with untaken medication in an elderly person sleeping outdoors is a serious, likely worsening medical risk even without current violence."
+  },
+  {
+   "case": 13,
+   "score": 6,
+   "rank": 25,
+   "reason": "Eighteen months outdoors is concerning, but the absence of health conditions, substance use, or safety incidents, plus a sibling's offer of shelter, moderates the risk."
+  },
+  {
+   "case": 14,
+   "score": 8,
+   "rank": 17,
+   "reason": "An elderly man dependent on others for bathing and dressing, financially exploited by a relative, faces real vulnerability despite shelter safety."
+  },
+  {
+   "case": 15,
+   "score": 17,
+   "rank": 2,
+   "reason": "A 73-year-old with heart failure, cognitive decline, unmanaged medication, and active extortion and assault represents near-maximal vulnerability."
+  },
+  {
+   "case": 16,
+   "score": 9,
+   "rank": 15,
+   "reason": "A back injury, drinking that has cost housing, frequent ER/police contact, and a recent assault outside a bar indicate escalating risk."
+  },
+  {
+   "case": 17,
+   "score": 9,
+   "rank": 16,
+   "reason": "An untreated respiratory condition with frequent ER visits and a recent shelter assault, plus hygiene difficulties, create meaningful health and safety risk."
+  },
+  {
+   "case": 18,
+   "score": 12,
+   "rank": 13,
+   "reason": "Eight years of chronic homelessness with constant violence and unmet basic needs, only partly offset by managed asthma medication, is high risk."
+  },
+  {
+   "case": 19,
+   "score": 7,
+   "rank": 22,
+   "reason": "Advanced arthritis limiting self-care is significant, but stable income, family and social support, and active housing applications reduce urgency somewhat."
+  },
+  {
+   "case": 20,
+   "score": 8,
+   "rank": 18,
+   "reason": "A chronic lung condition with frequent ER and police contact over nearly a year in a vehicle suggests worsening, unaddressed health risk."
+  },
+  {
+   "case": 21,
+   "score": 7,
+   "rank": 21,
+   "reason": "A chronic heart condition with a recently lapsed blood-pressure medication is concerning but mitigated by family support, part-time work, and no crisis contacts."
+  },
+  {
+   "case": 22,
+   "score": 6,
+   "rank": 24,
+   "reason": "Over a year outdoors is a real risk factor, but good health, independent self-care, and no safety incidents keep immediate danger lower."
+  },
+  {
+   "case": 23,
+   "score": 7,
+   "rank": 23,
+   "reason": "Multiple ER visits and heavy debt-driven distress are notable, but no chronic conditions or safety threats limit the severity."
+  },
+  {
+   "case": 24,
+   "score": 8,
+   "rank": 20,
+   "reason": "Frequent ER and police contact combined with unmet hygiene needs in a first-time shelter stay suggest rising risk despite no chronic illness."
+  },
+  {
+   "case": 25,
+   "score": 15,
+   "rank": 5,
+   "reason": "Untreated schizoaffective disorder, methamphetamine use, chronic pain, and constant violence over seven years of homelessness create extreme vulnerability."
+  },
+  {
+   "case": 26,
+   "score": 13,
+   "rank": 10,
+   "reason": "Kidney disease on dialysis combined with stimulant use, assault during a sweep, and lost contact with children make this a high-risk case despite maintained treatment."
+  },
+  {
+   "case": 27,
+   "score": 2,
+   "rank": 32,
+   "reason": "A short first-time shelter stay with steady work, savings, no health issues, and strong personal organization indicates the lowest vulnerability in this group."
+  },
+  {
+   "case": 28,
+   "score": 5,
+   "rank": 26,
+   "reason": "A worsening untreated stomach condition in an otherwise stable, resourceful first-time case creates modest but real health risk."
+  },
+  {
+   "case": 29,
+   "score": 5,
+   "rank": 27,
+   "reason": "A pattern of cyclical, largely voluntary homelessness with good health, steady income, and social ties suggests lower vulnerability."
+  },
+  {
+   "case": 30,
+   "score": 8,
+   "rank": 19,
+   "reason": "A serious chronic liver diagnosis combined with three years of isolated outdoor living and disengagement from housing help raises concern."
+  },
+  {
+   "case": 31,
+   "score": 2,
+   "rank": 31,
+   "reason": "A brief, first-time vehicle stay with good health, stable income, no substance use, and no safety issues reflects very low immediate risk."
+  },
+  {
+   "case": 32,
+   "score": 17,
+   "rank": 1,
+   "reason": "Fourteen years of continuous homelessness with severe cognitive impairment, untreated heart disease, constant violence, and total inability to self-manage represents the highest vulnerability."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n{\"case\": 1, \"score\": 14, \"rank\": 7, \"reason\": \"Nine years of chronic street homelessness combined with untreated bipolar disorder, substance use, emphysema, and ongoing debt-bondage exploitation make serious harm highly likely.\"},\n{\"case\": 2, \"score\": 3, \"rank\": 30, \"reason\": \"First-time shelter stay with stable income, no health issues, no substance use, and no safety concerns indicates low immediate risk.\"},\n{\"case\": 3, \"score\": 10, \"rank\": 14, \"reason\": \"Three years outdoors with COPD, no income, and repeated ER/crisis contact create real health risk despite the absence of violence or legal issues.\"},\n{\"case\": 4, \"score\": 4, \"rank\": 29, \"reason\": \"First episode of vehicle homelessness with good health, no substance use, active problem-solving, and family support limits acute danger.\"},\n{\"case\": 5, \"score\": 13, \"rank\": 8, \"reason\": \"Cirrhosis with untaken medication, camp assault, and four years of isolated chronic homelessness point to serious ongoing health risk.\"},\n{\"case\": 6, \"score\": 11, \"rank\": 11, \"reason\": \"Cirrhosis and bipolar disorder compounded by drinking, repeated assault, and coercion by others at the shelter are offset somewhat by consistent psychiatric care and social ties.\"},\n{\"case\": 7, \"score\": 11, \"rank\": 12, \"reason\": \"Chronic liver disease with frequent ER visits, no medical care, and five years of unsheltered homelessness with no hygiene access signal high vulnerability.\"},\n{\"case\": 8, \"score\": 15, \"rank\": 3, \"reason\": \"Eleven continuous years outdoors with untreated liver disease and depression, constant violence, and refusal of all shelter options makes this an extremely high-risk case.\"},\n{\"case\": 9, \"score\": 14, \"rank\": 6, \"reason\": \"An untreated heart condition causing six ER visits for chest pain in six months poses an acute, potentially fatal risk if it continues untreated.\"},\n{\"case\": 10, \"score\": 15, \"rank\": 4, \"reason\": \"Chronic heart disease, stimulant use, constant violence, and coerced drug running under active threat make this an extremely dangerous situation.\"},\n{\"case\": 11, \"score\": 4, \"rank\": 28, \"reason\": \"First-time shelter stay with no health conditions or safety issues, though discouragement after failed job searches adds some concern.\"},\n{\"case\": 12, \"score\": 13, \"rank\": 9, \"reason\": \"Congestive heart failure with untaken medication in an elderly person sleeping outdoors is a serious, likely worsening medical risk even without current violence.\"},\n{\"case\": 13, \"score\": 6, \"rank\": 25, \"reason\": \"Eighteen months outdoors is concerning, but the absence of health conditions, substance use, or safety incidents, plus a sibling's offer of shelter, moderates the risk.\"},\n{\"case\": 14, \"score\": 8, \"rank\": 17, \"reason\": \"An elderly man dependent on others for bathing and dressing, financially exploited by a relative, faces real vulnerability despite shelter safety.\"},\n{\"case\": 15, \"score\": 17, \"rank\": 2, \"reason\": \"A 73-year-old with heart failure, cognitive decline, unmanaged medication, and active extortion and assault represents near-maximal vulnerability.\"},\n{\"case\": 16, \"score\": 9, \"rank\": 15, \"reason\": \"A back injury, drinking that has cost housing, frequent ER/police contact, and a recent assault outside a bar indicate escalating risk.\"},\n{\"case\": 17, \"score\": 9, \"rank\": 16, \"reason\": \"An untreated respiratory condition with frequent ER visits and a recent shelter assault, plus hygiene difficulties, create meaningful health and safety risk.\"},\n{\"case\": 18, \"score\": 12, \"rank\": 13, \"reason\": \"Eight years of chronic homelessness with constant violence and unmet basic needs, only partly offset by managed asthma medication, is high risk.\"},\n{\"case\": 19, \"score\": 7, \"rank\": 22, \"reason\": \"Advanced arthritis limiting self-care is significant, but stable income, family and social support, and active housing applications reduce urgency somewhat.\"},\n{\"case\": 20, \"score\": 8, \"rank\": 18, \"reason\": \"A chronic lung condition with frequent ER and police contact over nearly a year in a vehicle suggests worsening, unaddressed health risk.\"},\n{\"case\": 21, \"score\": 7, \"rank\": 21, \"reason\": \"A chronic heart condition with a recently lapsed blood-pressure medication is concerning but mitigated by family support, part-time work, and no crisis contacts.\"},\n{\"case\": 22, \"score\": 6, \"rank\": 24, \"reason\": \"Over a year outdoors is a real risk factor, but good health, independent self-care, and no safety incidents keep immediate danger lower.\"},\n{\"case\": 23, \"score\": 7, \"rank\": 23, \"reason\": \"Multiple ER visits and heavy debt-driven distress are notable, but no chronic conditions or safety threats limit the severity.\"},\n{\"case\": 24, \"score\": 8, \"rank\": 20, \"reason\": \"Frequent ER and police contact combined with unmet hygiene needs in a first-time shelter stay suggest rising risk despite no chronic illness.\"},\n{\"case\": 25, \"score\": 15, \"rank\": 5, \"reason\": \"Untreated schizoaffective disorder, methamphetamine use, chronic pain, and constant violence over seven years of homelessness create extreme vulnerability.\"},\n{\"case\": 26, \"score\": 13, \"rank\": 10, \"reason\": \"Kidney disease on dialysis combined with stimulant use, assault during a sweep, and lost contact with children make this a high-risk case despite maintained treatment.\"},\n{\"case\": 27, \"score\": 2, \"rank\": 32, \"reason\": \"A short first-time shelter stay with steady work, savings, no health issues, and strong personal organization indicates the lowest vulnerability in this group.\"},\n{\"case\": 28, \"score\": 5, \"rank\": 26, \"reason\": \"A worsening untreated stomach condition in an otherwise stable, resourceful first-time case creates modest but real health risk.\"},\n{\"case\": 29, \"score\": 5, \"rank\": 27, \"reason\": \"A pattern of cyclical, largely voluntary homelessness with good health, steady income, and social ties suggests lower vulnerability.\"},\n{\"case\": 30, \"score\": 8, \"rank\": 19, \"reason\": \"A serious chronic liver diagnosis combined with three years of isolated outdoor living and disengagement from housing help raises concern.\"},\n{\"case\": 31, \"score\": 2, \"rank\": 31, \"reason\": \"A brief, first-time vehicle stay with good health, stable income, no substance use, and no safety issues reflects very low immediate risk.\"},\n{\"case\": 32, \"score\": 17, \"rank\": 1, \"reason\": \"Fourteen years of continuous homelessness with severe cognitive impairment, untreated heart disease, constant violence, and total inability to self-manage represents the highest vulnerability.\"}\n]}"
+}

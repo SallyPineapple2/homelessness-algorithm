@@ -1,0 +1,211 @@
+{
+ "model_key": "chatgpt-codex-high",
+ "interface": "Codex CLI on a ChatGPT login, single message, reasoning effort high",
+ "session": 15,
+ "model_version": "gpt-6-luna (Codex CLI on a ChatGPT login, single message, reasoning effort high)",
+ "prompt_sha256": "5170947f0f6a37ca47a85dca2bae67872039db94d5d1f8d79772deb05e118858",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "matches": 12,
+  "can't tell": 20
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 15,
+   "rank": 7,
+   "reason": "Dialysis-dependent kidney disease, repeated emergency visits, assault, stimulant-related housing barriers, and four years outdoors create serious health and safety risks."
+  },
+  {
+   "case": 2,
+   "score": 17,
+   "rank": 2,
+   "reason": "At 66, he is outdoors with heart disease, untreated medications, disorientation that prevents self-care, repeated assaults, and constant emergency and police contact."
+  },
+  {
+   "case": 3,
+   "score": 11,
+   "rank": 18,
+   "reason": "Three years outdoors with COPD and repeated emergency and crisis-line contact raises substantial health risk, though no assault or other immediate threat is described."
+  },
+  {
+   "case": 4,
+   "score": 16,
+   "rank": 5,
+   "reason": "Untreated heart disease, repeated assaults, constant emergency contact, and coercion to run packages make her unstable outdoor situation acutely dangerous."
+  },
+  {
+   "case": 5,
+   "score": 6,
+   "rank": 25,
+   "reason": "Despite sleeping outdoors, he is healthy, financially organized, safe, self-sufficient, and actively pursuing senior housing."
+  },
+  {
+   "case": 6,
+   "score": 2,
+   "rank": 32,
+   "reason": "She is employed and organized in a shelter, with no health, safety, or other acute risk described."
+  },
+  {
+   "case": 7,
+   "score": 9,
+   "rank": 21,
+   "reason": "Chronic liver disease and three years outdoors create meaningful risk, although he reports no recent emergency visits, assaults, or threats."
+  },
+  {
+   "case": 8,
+   "score": 6,
+   "rank": 27,
+   "reason": "She has no acute health or safety concerns and is sheltered, but has no income, substantial debt, and little social or vocational momentum."
+  },
+  {
+   "case": 9,
+   "score": 15,
+   "rank": 9,
+   "reason": "Cirrhosis with routinely untaken medication, frequent emergency visits, assault, and four years outdoors create a high risk of serious harm."
+  },
+  {
+   "case": 10,
+   "score": 4,
+   "rank": 30,
+   "reason": "Living in a car is precarious, but steady work, good health, safety, and regular time with her children are protective."
+  },
+  {
+   "case": 11,
+   "score": 7,
+   "rank": 23,
+   "reason": "He is outdoors with limited income, but is healthy, safe, connected to a nearby sibling, and maintains a purposeful routine."
+  },
+  {
+   "case": 12,
+   "score": 13,
+   "rank": 14,
+   "reason": "Cirrhosis, bipolar disorder, frequent emergency and police contact, repeated assaults, and pressure to carry items create serious risks despite shelter and clinical support."
+  },
+  {
+   "case": 13,
+   "score": 16,
+   "rank": 4,
+   "reason": "Untreated heart disease with recurring chest pain and six recent emergency visits while sleeping outdoors presents a serious and potentially life-threatening risk."
+  },
+  {
+   "case": 14,
+   "score": 17,
+   "rank": 1,
+   "reason": "Heart failure, unmanaged medication and cognitive decline, poor access to food and hygiene, repeated assaults and robbery, and financial coercion make his outdoor situation exceptionally dangerous."
+  },
+  {
+   "case": 15,
+   "score": 16,
+   "rank": 6,
+   "reason": "Eleven years outdoors with liver disease, disabling pain, untreated depression, repeated assaults, and constant emergency and police contact create extreme vulnerability."
+  },
+  {
+   "case": 16,
+   "score": 14,
+   "rank": 12,
+   "reason": "Congestive heart failure is untreated, with swelling and fatigue impairing self-care while she sleeps outdoors and has no income or reliable support."
+  },
+  {
+   "case": 17,
+   "score": 15,
+   "rank": 8,
+   "reason": "Seven years outdoors with untreated schizoaffective disorder, methamphetamine use, chronic pain, assault, and frequent emergency and police contact create severe risk."
+  },
+  {
+   "case": 18,
+   "score": 4,
+   "rank": 31,
+   "reason": "She is sheltered, has modest regular income and no health or safety concerns, though grief and isolation leave her with few supports or goals."
+  },
+  {
+   "case": 19,
+   "score": 14,
+   "rank": 11,
+   "reason": "Eight years in an encampment with asthma, unmet basic needs, repeated assaults, a pending charge, and constant emergency and police contact create substantial danger."
+  },
+  {
+   "case": 20,
+   "score": 12,
+   "rank": 17,
+   "reason": "Heavy drinking, a limiting back injury, repeated emergency and police contact, assault, and a pending charge raise serious risks despite shelter."
+  },
+  {
+   "case": 21,
+   "score": 12,
+   "rank": 16,
+   "reason": "A chronic lung condition without prescriptions, frequent emergency and police contact, and sleeping in a vehicle make her situation medically precarious."
+  },
+  {
+   "case": 22,
+   "score": 12,
+   "rank": 15,
+   "reason": "A chronic heart condition with a month without prescribed medication and symptoms affecting self-care is concerning, though shelter monitoring and family help offer some protection."
+  },
+  {
+   "case": 23,
+   "score": 5,
+   "rank": 29,
+   "reason": "Sleeping in a car is unstable, but she is healthy, has help from a nearby cousin, and maintains regular contact with her child."
+  },
+  {
+   "case": 24,
+   "score": 17,
+   "rank": 3,
+   "reason": "Untreated emphysema and bipolar disorder, medication diversion, repeated assaults, coercion over camp debts, and constant emergency and police contact make his outdoor situation exceptionally dangerous."
+  },
+  {
+   "case": 25,
+   "score": 9,
+   "rank": 22,
+   "reason": "Age, arthritis, a hip injury, and difficulty with daily care make vehicle living risky, though steady benefits, a friend, and senior-center support are protective."
+  },
+  {
+   "case": 26,
+   "score": 7,
+   "rank": 24,
+   "reason": "Four years of intermittent tent living and limited income leave him exposed, but he is healthy, safe, connected to services, and manages daily needs."
+  },
+  {
+   "case": 27,
+   "score": 11,
+   "rank": 19,
+   "reason": "At 71, she needs help bathing and dressing and has little control over her benefits, though the shelter is safe and volunteers provide support."
+  },
+  {
+   "case": 28,
+   "score": 13,
+   "rank": 13,
+   "reason": "An untreated respiratory condition with six emergency visits, difficulty maintaining hygiene, and a recent shelter assault create significant health and safety risks."
+  },
+  {
+   "case": 29,
+   "score": 7,
+   "rank": 26,
+   "reason": "Shelter, debt, isolation, an untreated dental abscess, and recent fainting-related emergency care create concern, but no ongoing illness or assault is reported."
+  },
+  {
+   "case": 30,
+   "score": 14,
+   "rank": 10,
+   "reason": "Chronic liver disease without prescriptions, frequent emergency visits, five years outdoors, and camp clearances leave her at substantial risk."
+  },
+  {
+   "case": 31,
+   "score": 10,
+   "rank": 20,
+   "reason": "Eight months in a shelter with unreliable hygiene and meals and frequent emergency and police contact is concerning, despite no known chronic illness."
+  },
+  {
+   "case": 32,
+   "score": 6,
+   "rank": 28,
+   "reason": "Vehicle living, no income, debt, and a worsening untreated stomach condition pose some risk, though he maintains hygiene and has a supportive friend."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\":[\n  {\"case\":1,\"score\":15,\"rank\":7,\"reason\":\"Dialysis-dependent kidney disease, repeated emergency visits, assault, stimulant-related housing barriers, and four years outdoors create serious health and safety risks.\"},\n  {\"case\":2,\"score\":17,\"rank\":2,\"reason\":\"At 66, he is outdoors with heart disease, untreated medications, disorientation that prevents self-care, repeated assaults, and constant emergency and police contact.\"},\n  {\"case\":3,\"score\":11,\"rank\":18,\"reason\":\"Three years outdoors with COPD and repeated emergency and crisis-line contact raises substantial health risk, though no assault or other immediate threat is described.\"},\n  {\"case\":4,\"score\":16,\"rank\":5,\"reason\":\"Untreated heart disease, repeated assaults, constant emergency contact, and coercion to run packages make her unstable outdoor situation acutely dangerous.\"},\n  {\"case\":5,\"score\":6,\"rank\":25,\"reason\":\"Despite sleeping outdoors, he is healthy, financially organized, safe, self-sufficient, and actively pursuing senior housing.\"},\n  {\"case\":6,\"score\":2,\"rank\":32,\"reason\":\"She is employed and organized in a shelter, with no health, safety, or other acute risk described.\"},\n  {\"case\":7,\"score\":9,\"rank\":21,\"reason\":\"Chronic liver disease and three years outdoors create meaningful risk, although he reports no recent emergency visits, assaults, or threats.\"},\n  {\"case\":8,\"score\":6,\"rank\":27,\"reason\":\"She has no acute health or safety concerns and is sheltered, but has no income, substantial debt, and little social or vocational momentum.\"},\n  {\"case\":9,\"score\":15,\"rank\":9,\"reason\":\"Cirrhosis with routinely untaken medication, frequent emergency visits, assault, and four years outdoors create a high risk of serious harm.\"},\n  {\"case\":10,\"score\":4,\"rank\":30,\"reason\":\"Living in a car is precarious, but steady work, good health, safety, and regular time with her children are protective.\"},\n  {\"case\":11,\"score\":7,\"rank\":23,\"reason\":\"He is outdoors with limited income, but is healthy, safe, connected to a nearby sibling, and maintains a purposeful routine.\"},\n  {\"case\":12,\"score\":13,\"rank\":14,\"reason\":\"Cirrhosis, bipolar disorder, frequent emergency and police contact, repeated assaults, and pressure to carry items create serious risks despite shelter and clinical support.\"},\n  {\"case\":13,\"score\":16,\"rank\":4,\"reason\":\"Untreated heart disease with recurring chest pain and six recent emergency visits while sleeping outdoors presents a serious and potentially life-threatening risk.\"},\n  {\"case\":14,\"score\":17,\"rank\":1,\"reason\":\"Heart failure, unmanaged medication and cognitive decline, poor access to food and hygiene, repeated assaults and robbery, and financial coercion make his outdoor situation exceptionally dangerous.\"},\n  {\"case\":15,\"score\":16,\"rank\":6,\"reason\":\"Eleven years outdoors with liver disease, disabling pain, untreated depression, repeated assaults, and constant emergency and police contact create extreme vulnerability.\"},\n  {\"case\":16,\"score\":14,\"rank\":12,\"reason\":\"Congestive heart failure is untreated, with swelling and fatigue impairing self-care while she sleeps outdoors and has no income or reliable support.\"},\n  {\"case\":17,\"score\":15,\"rank\":8,\"reason\":\"Seven years outdoors with untreated schizoaffective disorder, methamphetamine use, chronic pain, assault, and frequent emergency and police contact create severe risk.\"},\n  {\"case\":18,\"score\":4,\"rank\":31,\"reason\":\"She is sheltered, has modest regular income and no health or safety concerns, though grief and isolation leave her with few supports or goals.\"},\n  {\"case\":19,\"score\":14,\"rank\":11,\"reason\":\"Eight years in an encampment with asthma, unmet basic needs, repeated assaults, a pending charge, and constant emergency and police contact create substantial danger.\"},\n  {\"case\":20,\"score\":12,\"rank\":17,\"reason\":\"Heavy drinking, a limiting back injury, repeated emergency and police contact, assault, and a pending charge raise serious risks despite shelter.\"},\n  {\"case\":21,\"score\":12,\"rank\":16,\"reason\":\"A chronic lung condition without prescriptions, frequent emergency and police contact, and sleeping in a vehicle make her situation medically precarious.\"},\n  {\"case\":22,\"score\":12,\"rank\":15,\"reason\":\"A chronic heart condition with a month without prescribed medication and symptoms affecting self-care is concerning, though shelter monitoring and family help offer some protection.\"},\n  {\"case\":23,\"score\":5,\"rank\":29,\"reason\":\"Sleeping in a car is unstable, but she is healthy, has help from a nearby cousin, and maintains regular contact with her child.\"},\n  {\"case\":24,\"score\":17,\"rank\":3,\"reason\":\"Untreated emphysema and bipolar disorder, medication diversion, repeated assaults, coercion over camp debts, and constant emergency and police contact make his outdoor situation exceptionally dangerous.\"},\n  {\"case\":25,\"score\":9,\"rank\":22,\"reason\":\"Age, arthritis, a hip injury, and difficulty with daily care make vehicle living risky, though steady benefits, a friend, and senior-center support are protective.\"},\n  {\"case\":26,\"score\":7,\"rank\":24,\"reason\":\"Four years of intermittent tent living and limited income leave him exposed, but he is healthy, safe, connected to services, and manages daily needs.\"},\n  {\"case\":27,\"score\":11,\"rank\":19,\"reason\":\"At 71, she needs help bathing and dressing and has little control over her benefits, though the shelter is safe and volunteers provide support.\"},\n  {\"case\":28,\"score\":13,\"rank\":13,\"reason\":\"An untreated respiratory condition with six emergency visits, difficulty maintaining hygiene, and a recent shelter assault create significant health and safety risks.\"},\n  {\"case\":29,\"score\":7,\"rank\":26,\"reason\":\"Shelter, debt, isolation, an untreated dental abscess, and recent fainting-related emergency care create concern, but no ongoing illness or assault is reported.\"},\n  {\"case\":30,\"score\":14,\"rank\":10,\"reason\":\"Chronic liver disease without prescriptions, frequent emergency visits, five years outdoors, and camp clearances leave her at substantial risk.\"},\n  {\"case\":31,\"score\":10,\"rank\":20,\"reason\":\"Eight months in a shelter with unreliable hygiene and meals and frequent emergency and police contact is concerning, despite no known chronic illness.\"},\n  {\"case\":32,\"score\":6,\"rank\":28,\"reason\":\"Vehicle living, no income, debt, and a worsening untreated stomach condition pose some risk, though he maintains hygiene and has a supportive friend.\"}\n]}"
+}

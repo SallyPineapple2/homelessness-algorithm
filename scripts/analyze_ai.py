@@ -352,6 +352,16 @@ def triage(rows):
         "truth_shares": {name: r4(truth.count(i) / len(truth)) for i, name in ((1, "none"), (2, "rrh"), (3, "psh"))},
         "psh_tests": [t for t in design_tests(rows, "psh") if t["family"] in ("race", "gender", "location", "disclosure")],
     }
+    # who is flagged for Permanent Supportive Housing, against who truly qualifies
+    hits = sum(1 for r, t in zip(rows, truth) if r["psh"] and t == 3)
+    flagged = sum(r["psh"] for r in rows)
+    truly = truth.count(3)
+    out["psh_flagging"] = {
+        "n": len(rows), "flagged": flagged, "truly": truly, "hits": hits,
+        "false_alarms": flagged - hits, "missed": truly - hits,
+        "flagged_share": r4(flagged / len(rows)), "truly_share": r4(truly / len(rows)),
+        "precision": r4(hits / flagged) if flagged else None, "recall": r4(hits / truly) if truly else None,
+    }
     ordered = sorted(r["score"] for r in rows)
     for field, levels in (("race", RACES), ("gender", GENDERS), ("location", LOCATIONS), ("disclosure", DISCLOSURE)):
         groups = []

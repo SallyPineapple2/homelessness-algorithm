@@ -1,0 +1,211 @@
+{
+ "model_key": "claude",
+ "interface": "Claude Code on Claude Pro, single message",
+ "session": 17,
+ "model_version": "claude-sonnet-5 (Claude Code on Claude Pro, single message)",
+ "prompt_sha256": "3d5df856789a4a3a3331bf3ab13fec068e0b9ab51cf1ca4db89f56011fce5f5e",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "matches": 7,
+  "can't tell": 25
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 14,
+   "rank": 5,
+   "reason": "Active methamphetamine use and untreated schizoaffective disorder combine with chronic pain, repeated assaults, and seven years of homelessness with no follow-up care."
+  },
+  {
+   "case": 2,
+   "score": 16,
+   "rank": 2,
+   "reason": "Fourteen years of continuous street homelessness with cognitive decline, untreated heart disease, and repeated assaults leave this 66-year-old unable to even navigate services."
+  },
+  {
+   "case": 3,
+   "score": 9,
+   "rank": 18,
+   "reason": "An untreated respiratory condition and a shelter assault are serious, but shelter housing, family contact, and clear goals reduce overall risk."
+  },
+  {
+   "case": 4,
+   "score": 10,
+   "rank": 14,
+   "reason": "COPD with no income and repeated crisis contact over three years of homelessness, with little family support, poses substantial ongoing risk."
+  },
+  {
+   "case": 5,
+   "score": 3,
+   "rank": 29,
+   "reason": "Stable income, good health, and no safety incidents make this a housing-instability case rather than a high-vulnerability one."
+  },
+  {
+   "case": 6,
+   "score": 10,
+   "rank": 16,
+   "reason": "Alcohol use, a back injury, a pending charge, and a recent assault create real risk despite being in shelter."
+  },
+  {
+   "case": 7,
+   "score": 11,
+   "rank": 11,
+   "reason": "Recurring chest pain with six ER visits in six months signals an untreated cardiac condition that could turn fatal at any time."
+  },
+  {
+   "case": 8,
+   "score": 15,
+   "rank": 4,
+   "reason": "Chronic heart disease combined with coerced drug-running under threat of violence and constant assault makes this an acute, life-threatening situation."
+  },
+  {
+   "case": 9,
+   "score": 12,
+   "rank": 10,
+   "reason": "Dialysis-dependent kidney disease plus stimulant use and an assault during a sweep create high medical and physical danger despite adherence to treatment."
+  },
+  {
+   "case": 10,
+   "score": 13,
+   "rank": 7,
+   "reason": "Eight years of homelessness with constant violence, police contact, and no reliable hygiene or meals despite managed asthma indicate severe cumulative risk."
+  },
+  {
+   "case": 11,
+   "score": 14,
+   "rank": 6,
+   "reason": "Eleven years of continuous homelessness with untreated depression, liver disease, and repeated assaults reflect entrenched, severe vulnerability."
+  },
+  {
+   "case": 12,
+   "score": 13,
+   "rank": 8,
+   "reason": "Untreated congestive heart failure after a benefits lapse, with visible physical decline and no support, poses grave cardiac risk despite a calmer environment."
+  },
+  {
+   "case": 13,
+   "score": 1,
+   "rank": 32,
+   "reason": "Stable part-time work, savings, no health issues, and a clear plan make this the lowest-risk case in the group."
+  },
+  {
+   "case": 14,
+   "score": 4,
+   "rank": 27,
+   "reason": "Financially independent, healthy, and resourceful, with only housing cost as the core problem."
+  },
+  {
+   "case": 15,
+   "score": 2,
+   "rank": 31,
+   "reason": "Good health, family support, and active steps toward resolving the car and insurance issue indicate low immediate risk."
+  },
+  {
+   "case": 16,
+   "score": 6,
+   "rank": 23,
+   "reason": "Arthritis limits function, but medications are taken as prescribed and an engaged caseworker and family provide support."
+  },
+  {
+   "case": 17,
+   "score": 9,
+   "rank": 17,
+   "reason": "A chronic lung condition with frequent ER and police contact while living in a vehicle signals escalating instability."
+  },
+  {
+   "case": 18,
+   "score": 16,
+   "rank": 3,
+   "reason": "Untreated bipolar disorder, substance use, coerced camp labor, and constant violence over nine years of homelessness represent extreme danger."
+  },
+  {
+   "case": 19,
+   "score": 12,
+   "rank": 9,
+   "reason": "Cirrhosis with medications routinely untaken, frequent ER use, and an assault, compounded by twice-denied disability claims, indicate serious unmanaged risk."
+  },
+  {
+   "case": 20,
+   "score": 5,
+   "rank": 26,
+   "reason": "No health conditions and no safety incidents, with shelter stability, make this primarily an economic and employment problem."
+  },
+  {
+   "case": 21,
+   "score": 11,
+   "rank": 12,
+   "reason": "Cirrhosis, untreated drinking and bipolar symptoms, and coercion by another resident create real danger despite maintained hygiene and psychiatric care."
+  },
+  {
+   "case": 22,
+   "score": 6,
+   "rank": 24,
+   "reason": "A worsening but untreated stomach condition is concerning, though the person is otherwise stable, safe, and resourceful."
+  },
+  {
+   "case": 23,
+   "score": 5,
+   "rank": 25,
+   "reason": "No health conditions or safety incidents, with a family fallback option, suggest moderate rather than severe risk despite prolonged outdoor homelessness."
+  },
+  {
+   "case": 24,
+   "score": 8,
+   "rank": 19,
+   "reason": "A serious untreated liver diagnosis and three years of unsheltered homelessness are concerning, tempered by the absence of violence or substance use."
+  },
+  {
+   "case": 25,
+   "score": 10,
+   "rank": 15,
+   "reason": "At 71 and dependent on others for bathing and dressing, ongoing financial exploitation by a relative leaves this person acutely at risk despite shelter safety."
+  },
+  {
+   "case": 26,
+   "score": 7,
+   "rank": 21,
+   "reason": "Frequent emergency room and police contact despite no underlying health condition suggests unspecified but real danger in an otherwise capable person."
+  },
+  {
+   "case": 27,
+   "score": 7,
+   "rank": 22,
+   "reason": "Crushing debt and an untreated dental infection with several ER contacts add real but moderate risk on top of shelter stability."
+  },
+  {
+   "case": 28,
+   "score": 11,
+   "rank": 13,
+   "reason": "Untreated chronic liver disease, no reliable hygiene, and repeated encampment sweeps over five years reflect serious unmanaged risk."
+  },
+  {
+   "case": 29,
+   "score": 17,
+   "rank": 1,
+   "reason": "A 73-year-old with heart failure and cognitive decline who is nightly robbed and exploited, with medications unmanaged, faces the most severe and immediate danger in this group."
+  },
+  {
+   "case": 30,
+   "score": 3,
+   "rank": 30,
+   "reason": "Good health, steady cash work, and deliberate choice of lifestyle indicate low vulnerability despite housing instability."
+  },
+  {
+   "case": 31,
+   "score": 4,
+   "rank": 28,
+   "reason": "Financially stable and healthy, though isolated and grieving, with no acute physical or safety risk."
+  },
+  {
+   "case": 32,
+   "score": 8,
+   "rank": 20,
+   "reason": "A symptomatic heart condition off medication is serious, but active nursing follow-up and family support are working to resolve it."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n{\"case\": 1, \"score\": 14, \"rank\": 5, \"reason\": \"Active methamphetamine use and untreated schizoaffective disorder combine with chronic pain, repeated assaults, and seven years of homelessness with no follow-up care.\"},\n{\"case\": 2, \"score\": 16, \"rank\": 2, \"reason\": \"Fourteen years of continuous street homelessness with cognitive decline, untreated heart disease, and repeated assaults leave this 66-year-old unable to even navigate services.\"},\n{\"case\": 3, \"score\": 9, \"rank\": 18, \"reason\": \"An untreated respiratory condition and a shelter assault are serious, but shelter housing, family contact, and clear goals reduce overall risk.\"},\n{\"case\": 4, \"score\": 10, \"rank\": 14, \"reason\": \"COPD with no income and repeated crisis contact over three years of homelessness, with little family support, poses substantial ongoing risk.\"},\n{\"case\": 5, \"score\": 3, \"rank\": 29, \"reason\": \"Stable income, good health, and no safety incidents make this a housing-instability case rather than a high-vulnerability one.\"},\n{\"case\": 6, \"score\": 10, \"rank\": 16, \"reason\": \"Alcohol use, a back injury, a pending charge, and a recent assault create real risk despite being in shelter.\"},\n{\"case\": 7, \"score\": 11, \"rank\": 11, \"reason\": \"Recurring chest pain with six ER visits in six months signals an untreated cardiac condition that could turn fatal at any time.\"},\n{\"case\": 8, \"score\": 15, \"rank\": 4, \"reason\": \"Chronic heart disease combined with coerced drug-running under threat of violence and constant assault makes this an acute, life-threatening situation.\"},\n{\"case\": 9, \"score\": 12, \"rank\": 10, \"reason\": \"Dialysis-dependent kidney disease plus stimulant use and an assault during a sweep create high medical and physical danger despite adherence to treatment.\"},\n{\"case\": 10, \"score\": 13, \"rank\": 7, \"reason\": \"Eight years of homelessness with constant violence, police contact, and no reliable hygiene or meals despite managed asthma indicate severe cumulative risk.\"},\n{\"case\": 11, \"score\": 14, \"rank\": 6, \"reason\": \"Eleven years of continuous homelessness with untreated depression, liver disease, and repeated assaults reflect entrenched, severe vulnerability.\"},\n{\"case\": 12, \"score\": 13, \"rank\": 8, \"reason\": \"Untreated congestive heart failure after a benefits lapse, with visible physical decline and no support, poses grave cardiac risk despite a calmer environment.\"},\n{\"case\": 13, \"score\": 1, \"rank\": 32, \"reason\": \"Stable part-time work, savings, no health issues, and a clear plan make this the lowest-risk case in the group.\"},\n{\"case\": 14, \"score\": 4, \"rank\": 27, \"reason\": \"Financially independent, healthy, and resourceful, with only housing cost as the core problem.\"},\n{\"case\": 15, \"score\": 2, \"rank\": 31, \"reason\": \"Good health, family support, and active steps toward resolving the car and insurance issue indicate low immediate risk.\"},\n{\"case\": 16, \"score\": 6, \"rank\": 23, \"reason\": \"Arthritis limits function, but medications are taken as prescribed and an engaged caseworker and family provide support.\"},\n{\"case\": 17, \"score\": 9, \"rank\": 17, \"reason\": \"A chronic lung condition with frequent ER and police contact while living in a vehicle signals escalating instability.\"},\n{\"case\": 18, \"score\": 16, \"rank\": 3, \"reason\": \"Untreated bipolar disorder, substance use, coerced camp labor, and constant violence over nine years of homelessness represent extreme danger.\"},\n{\"case\": 19, \"score\": 12, \"rank\": 9, \"reason\": \"Cirrhosis with medications routinely untaken, frequent ER use, and an assault, compounded by twice-denied disability claims, indicate serious unmanaged risk.\"},\n{\"case\": 20, \"score\": 5, \"rank\": 26, \"reason\": \"No health conditions and no safety incidents, with shelter stability, make this primarily an economic and employment problem.\"},\n{\"case\": 21, \"score\": 11, \"rank\": 12, \"reason\": \"Cirrhosis, untreated drinking and bipolar symptoms, and coercion by another resident create real danger despite maintained hygiene and psychiatric care.\"},\n{\"case\": 22, \"score\": 6, \"rank\": 24, \"reason\": \"A worsening but untreated stomach condition is concerning, though the person is otherwise stable, safe, and resourceful.\"},\n{\"case\": 23, \"score\": 5, \"rank\": 25, \"reason\": \"No health conditions or safety incidents, with a family fallback option, suggest moderate rather than severe risk despite prolonged outdoor homelessness.\"},\n{\"case\": 24, \"score\": 8, \"rank\": 19, \"reason\": \"A serious untreated liver diagnosis and three years of unsheltered homelessness are concerning, tempered by the absence of violence or substance use.\"},\n{\"case\": 25, \"score\": 10, \"rank\": 15, \"reason\": \"At 71 and dependent on others for bathing and dressing, ongoing financial exploitation by a relative leaves this person acutely at risk despite shelter safety.\"},\n{\"case\": 26, \"score\": 7, \"rank\": 21, \"reason\": \"Frequent emergency room and police contact despite no underlying health condition suggests unspecified but real danger in an otherwise capable person.\"},\n{\"case\": 27, \"score\": 7, \"rank\": 22, \"reason\": \"Crushing debt and an untreated dental infection with several ER contacts add real but moderate risk on top of shelter stability.\"},\n{\"case\": 28, \"score\": 11, \"rank\": 13, \"reason\": \"Untreated chronic liver disease, no reliable hygiene, and repeated encampment sweeps over five years reflect serious unmanaged risk.\"},\n{\"case\": 29, \"score\": 17, \"rank\": 1, \"reason\": \"A 73-year-old with heart failure and cognitive decline who is nightly robbed and exploited, with medications unmanaged, faces the most severe and immediate danger in this group.\"},\n{\"case\": 30, \"score\": 3, \"rank\": 30, \"reason\": \"Good health, steady cash work, and deliberate choice of lifestyle indicate low vulnerability despite housing instability.\"},\n{\"case\": 31, \"score\": 4, \"rank\": 28, \"reason\": \"Financially stable and healthy, though isolated and grieving, with no acute physical or safety risk.\"},\n{\"case\": 32, \"score\": 8, \"rank\": 20, \"reason\": \"A symptomatic heart condition off medication is serious, but active nursing follow-up and family support are working to resolve it.\"}\n]}"
+}

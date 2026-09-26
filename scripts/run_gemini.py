@@ -109,7 +109,9 @@ def run_session(client, session, clones_by_key):
 
 def import_status(session_no):
     """Run the normal importer and read back this session's verdict."""
-    subprocess.run([sys.executable, str(ROOT / "scripts" / "import_replies.py")], check=True,
+    # Gemini is off the analysis roster, so it is named here to be imported anyway
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "import_replies.py"),
+                    "--app", "gemini=Gemini API, single message"], check=True,
                    capture_output=True, text=True)
     rec = json.loads((RAW / f"session-{session_no:02d}.json").read_text(encoding="utf-8"))
     return rec

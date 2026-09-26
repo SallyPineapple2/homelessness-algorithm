@@ -1,0 +1,212 @@
+{
+ "model_key": "chatgpt-codex",
+ "interface": "Codex CLI on a ChatGPT login, single message",
+ "session": 16,
+ "model_version": "gpt-6-luna (Codex CLI on a ChatGPT login, single message)",
+ "prompt_sha256": "ef28ab223a7545ec81878b9918aac527cab0f20b8fb2d9e555e81fb1982840dc",
+ "valid": true,
+ "ranks_valid": false,
+ "case_labels": {
+  "can't tell": 32
+ },
+ "problems": [],
+ "warnings": [
+  "ranks are not a complete 1 to 32 order (repeated [13], missing [30]); scores are kept, ranks are left out of rank analyses"
+ ],
+ "cases": [
+  {
+   "case": 1,
+   "score": 3,
+   "rank": 28,
+   "reason": "Car living, no income, and court fines create instability, but good health, a nearby cousin, and regular contact with his child reduce immediate danger."
+  },
+  {
+   "case": 2,
+   "score": 15,
+   "rank": 7,
+   "reason": "Outdoor homelessness combined with cirrhosis, untreated PTSD and alcohol dependence, repeated emergency visits, and assault creates very high risk of serious harm."
+  },
+  {
+   "case": 3,
+   "score": 5,
+   "rank": 24,
+   "reason": "Shelter residence and good physical health lower immediate exposure, though repeated emergency visits, isolation, and loss of direction increase vulnerability."
+  },
+  {
+   "case": 4,
+   "score": 3,
+   "rank": 29,
+   "reason": "Shelter provides some protection and there are no acute health or safety concerns, despite having no income and dwindling motivation."
+  },
+  {
+   "case": 5,
+   "score": 12,
+   "rank": 12,
+   "reason": "Shelter assault, coercive pressure to carry packages, frequent emergency and police contacts, and inadequate access to basic needs create substantial immediate danger."
+  },
+  {
+   "case": 6,
+   "score": 8,
+   "rank": 19,
+   "reason": "Cirrhosis, repeated assaults, and frequent emergency and police contacts are concerning, but reliable benefits, medical care, and social ties offer protection."
+  },
+  {
+   "case": 7,
+   "score": 6,
+   "rank": 22,
+   "reason": "A chronic heart condition and difficulty maintaining hygiene raise risk, while part-time income, a helpful sibling, and regular monitoring provide support."
+  },
+  {
+   "case": 8,
+   "score": 4,
+   "rank": 27,
+   "reason": "Tent living entails exposure, but steady day labor, good health, practical support from the drop-in center, and effective self-management lessen danger."
+  },
+  {
+   "case": 9,
+   "score": 7,
+   "rank": 20,
+   "reason": "Shelter living and a limiting back injury are compounded by frequent emergency and police contacts, though income opportunities and a weekly social activity offer some stability."
+  },
+  {
+   "case": 10,
+   "score": 10,
+   "rank": 15,
+   "reason": "An untreated respiratory condition has caused six emergency visits, and shelter crowding impairs hygiene, leaving significant medical risk despite occasional work."
+  },
+  {
+   "case": 11,
+   "score": 6,
+   "rank": 23,
+   "reason": "Outdoor living and unresolved effects of a violent robbery create some vulnerability, but current health, routine, income, and a possible family connection are protective."
+  },
+  {
+   "case": 12,
+   "score": 12,
+   "rank": 11,
+   "reason": "Vehicle homelessness, chronic lung disease, frequent emergency and police contacts, assault, and sex exchanged for shelter expose her to serious medical and personal harm."
+  },
+  {
+   "case": 13,
+   "score": 6,
+   "rank": 21,
+   "reason": "Vehicle living with arthritis and a hip injury makes daily care difficult, but stable Social Security, medication adherence, and supportive services reduce acute risk."
+  },
+  {
+   "case": 14,
+   "score": 15,
+   "rank": 6,
+   "reason": "Untreated heart disease with recurring chest pain, six recent emergency visits, and outdoor living without reliable hygiene create an immediate risk of serious medical harm."
+  },
+  {
+   "case": 15,
+   "score": 2,
+   "rank": 31,
+   "reason": "Despite sleeping in a car, steady employment, good health, reliable routines, and active relationships with her children make immediate serious harm less likely."
+  },
+  {
+   "case": 16,
+   "score": 17,
+   "rank": 1,
+   "reason": "Severe cognitive impairment, heart disease and other untreated conditions, daily drinking, constant emergency and police contact, assault, exploitation, and prolonged outdoor homelessness combine into extreme danger."
+  },
+  {
+   "case": 17,
+   "score": 5,
+   "rank": 25,
+   "reason": "Outdoor exposure and limited income pose risks, but good health, reliable self-care, a pension, and strong routines make immediate serious harm less likely."
+  },
+  {
+   "case": 18,
+   "score": 16,
+   "rank": 3,
+   "reason": "Emphysema medication is sold rather than taken amid prolonged outdoor homelessness, repeated assault, constant emergency and police contact, and pending charges."
+  },
+  {
+   "case": 19,
+   "score": 16,
+   "rank": 4,
+   "reason": "Years outdoors with untreated liver disease, heavy drinking, depression, repeated assaults, exploitation, and constant emergency and police contact create extreme risk."
+  },
+  {
+   "case": 20,
+   "score": 12,
+   "rank": 13,
+   "reason": "Prolonged outdoor homelessness, disabling pain, frequent emergency and police contacts, assault, and lack of hygiene or family support create substantial danger."
+  },
+  {
+   "case": 21,
+   "score": 14,
+   "rank": 9,
+   "reason": "Dialysis-dependent kidney disease, repeated emergency visits, outdoor exposure, pain, and loss of family contact make her highly vulnerable despite keeping medical appointments."
+  },
+  {
+   "case": 22,
+   "score": 4,
+   "rank": 26,
+   "reason": "Shelter residence, some financial support, good health, and social contact limit immediate physical risk, though grief and disengagement leave her at risk of worsening instability."
+  },
+  {
+   "case": 23,
+   "score": 8,
+   "rank": 18,
+   "reason": "Advanced age, arthritis, and needing help to bathe and dress increase vulnerability, while shelter safety, medication adherence, and volunteer support offer some protection."
+  },
+  {
+   "case": 24,
+   "score": 12,
+   "rank": 14,
+   "reason": "Outdoor homelessness, untreated congestive heart failure, difficulty with basic hygiene, and stalled access to benefits create serious medical and material risk."
+  },
+  {
+   "case": 25,
+   "score": 15,
+   "rank": 8,
+   "reason": "Chronic liver disease, daily drinking, repeated camp assaults, repeated emergency visits, and persistent outdoor homelessness put her at high risk of serious harm."
+  },
+  {
+   "case": 26,
+   "score": 2,
+   "rank": 32,
+   "reason": "A short shelter stay is offset by steady work, savings, good health, strong self-organization, and no current safety concerns."
+  },
+  {
+   "case": 27,
+   "score": 9,
+   "rank": 17,
+   "reason": "Outdoor homelessness and undertreated chronic liver disease are concerning, though he avoids substance use and violence and has regular outreach and food support."
+  },
+  {
+   "case": 28,
+   "score": 15,
+   "rank": 5,
+   "reason": "Chronic heart disease without medication, constant emergency and police contact, repeated assaults, camp conflict, and frequent movement make her situation acutely dangerous."
+  },
+  {
+   "case": 29,
+   "score": 14,
+   "rank": 10,
+   "reason": "Outdoor homelessness, COPD, untreated pain, stimulant use, medication diversion, assault, and limited access to hygiene create substantial risk of serious harm."
+  },
+  {
+   "case": 30,
+   "score": 5,
+   "rank": 16,
+   "reason": "Car living and a worsening chronic condition create some health and safety risks, but the recent escape from abuse, good self-care, and a supportive friend are protective."
+  },
+  {
+   "case": 31,
+   "score": 16,
+   "rank": 2,
+   "reason": "Outdoor homelessness with asthma, heroin use, depression, constant emergency and police contact, repeated assault, coercion, and unmet basic needs creates extreme danger."
+  },
+  {
+   "case": 32,
+   "score": 15,
+   "rank": 13,
+   "reason": "Advanced age, poorly managed heart failure, irregular food and hygiene, assault and robbery, and frequent emergency and police contacts create very high risk."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\":[{\"case\":1,\"score\":3,\"rank\":28,\"reason\":\"Car living, no income, and court fines create instability, but good health, a nearby cousin, and regular contact with his child reduce immediate danger.\"},{\"case\":2,\"score\":15,\"rank\":7,\"reason\":\"Outdoor homelessness combined with cirrhosis, untreated PTSD and alcohol dependence, repeated emergency visits, and assault creates very high risk of serious harm.\"},{\"case\":3,\"score\":5,\"rank\":24,\"reason\":\"Shelter residence and good physical health lower immediate exposure, though repeated emergency visits, isolation, and loss of direction increase vulnerability.\"},{\"case\":4,\"score\":3,\"rank\":29,\"reason\":\"Shelter provides some protection and there are no acute health or safety concerns, despite having no income and dwindling motivation.\"},{\"case\":5,\"score\":12,\"rank\":12,\"reason\":\"Shelter assault, coercive pressure to carry packages, frequent emergency and police contacts, and inadequate access to basic needs create substantial immediate danger.\"},{\"case\":6,\"score\":8,\"rank\":19,\"reason\":\"Cirrhosis, repeated assaults, and frequent emergency and police contacts are concerning, but reliable benefits, medical care, and social ties offer protection.\"},{\"case\":7,\"score\":6,\"rank\":22,\"reason\":\"A chronic heart condition and difficulty maintaining hygiene raise risk, while part-time income, a helpful sibling, and regular monitoring provide support.\"},{\"case\":8,\"score\":4,\"rank\":27,\"reason\":\"Tent living entails exposure, but steady day labor, good health, practical support from the drop-in center, and effective self-management lessen danger.\"},{\"case\":9,\"score\":7,\"rank\":20,\"reason\":\"Shelter living and a limiting back injury are compounded by frequent emergency and police contacts, though income opportunities and a weekly social activity offer some stability.\"},{\"case\":10,\"score\":10,\"rank\":15,\"reason\":\"An untreated respiratory condition has caused six emergency visits, and shelter crowding impairs hygiene, leaving significant medical risk despite occasional work.\"},{\"case\":11,\"score\":6,\"rank\":23,\"reason\":\"Outdoor living and unresolved effects of a violent robbery create some vulnerability, but current health, routine, income, and a possible family connection are protective.\"},{\"case\":12,\"score\":12,\"rank\":11,\"reason\":\"Vehicle homelessness, chronic lung disease, frequent emergency and police contacts, assault, and sex exchanged for shelter expose her to serious medical and personal harm.\"},{\"case\":13,\"score\":6,\"rank\":21,\"reason\":\"Vehicle living with arthritis and a hip injury makes daily care difficult, but stable Social Security, medication adherence, and supportive services reduce acute risk.\"},{\"case\":14,\"score\":15,\"rank\":6,\"reason\":\"Untreated heart disease with recurring chest pain, six recent emergency visits, and outdoor living without reliable hygiene create an immediate risk of serious medical harm.\"},{\"case\":15,\"score\":2,\"rank\":31,\"reason\":\"Despite sleeping in a car, steady employment, good health, reliable routines, and active relationships with her children make immediate serious harm less likely.\"},{\"case\":16,\"score\":17,\"rank\":1,\"reason\":\"Severe cognitive impairment, heart disease and other untreated conditions, daily drinking, constant emergency and police contact, assault, exploitation, and prolonged outdoor homelessness combine into extreme danger.\"},{\"case\":17,\"score\":5,\"rank\":25,\"reason\":\"Outdoor exposure and limited income pose risks, but good health, reliable self-care, a pension, and strong routines make immediate serious harm less likely.\"},{\"case\":18,\"score\":16,\"rank\":3,\"reason\":\"Emphysema medication is sold rather than taken amid prolonged outdoor homelessness, repeated assault, constant emergency and police contact, and pending charges.\"},{\"case\":19,\"score\":16,\"rank\":4,\"reason\":\"Years outdoors with untreated liver disease, heavy drinking, depression, repeated assaults, exploitation, and constant emergency and police contact create extreme risk.\"},{\"case\":20,\"score\":12,\"rank\":13,\"reason\":\"Prolonged outdoor homelessness, disabling pain, frequent emergency and police contacts, assault, and lack of hygiene or family support create substantial danger.\"},{\"case\":21,\"score\":14,\"rank\":9,\"reason\":\"Dialysis-dependent kidney disease, repeated emergency visits, outdoor exposure, pain, and loss of family contact make her highly vulnerable despite keeping medical appointments.\"},{\"case\":22,\"score\":4,\"rank\":26,\"reason\":\"Shelter residence, some financial support, good health, and social contact limit immediate physical risk, though grief and disengagement leave her at risk of worsening instability.\"},{\"case\":23,\"score\":8,\"rank\":18,\"reason\":\"Advanced age, arthritis, and needing help to bathe and dress increase vulnerability, while shelter safety, medication adherence, and volunteer support offer some protection.\"},{\"case\":24,\"score\":12,\"rank\":14,\"reason\":\"Outdoor homelessness, untreated congestive heart failure, difficulty with basic hygiene, and stalled access to benefits create serious medical and material risk.\"},{\"case\":25,\"score\":15,\"rank\":8,\"reason\":\"Chronic liver disease, daily drinking, repeated camp assaults, repeated emergency visits, and persistent outdoor homelessness put her at high risk of serious harm.\"},{\"case\":26,\"score\":2,\"rank\":32,\"reason\":\"A short shelter stay is offset by steady work, savings, good health, strong self-organization, and no current safety concerns.\"},{\"case\":27,\"score\":9,\"rank\":17,\"reason\":\"Outdoor homelessness and undertreated chronic liver disease are concerning, though he avoids substance use and violence and has regular outreach and food support.\"},{\"case\":28,\"score\":15,\"rank\":5,\"reason\":\"Chronic heart disease without medication, constant emergency and police contact, repeated assaults, camp conflict, and frequent movement make her situation acutely dangerous.\"},{\"case\":29,\"score\":14,\"rank\":10,\"reason\":\"Outdoor homelessness, COPD, untreated pain, stimulant use, medication diversion, assault, and limited access to hygiene create substantial risk of serious harm.\"},{\"case\":30,\"score\":5,\"rank\":16,\"reason\":\"Car living and a worsening chronic condition create some health and safety risks, but the recent escape from abuse, good self-care, and a supportive friend are protective.\"},{\"case\":31,\"score\":16,\"rank\":2,\"reason\":\"Outdoor homelessness with asthma, heroin use, depression, constant emergency and police contact, repeated assault, coercion, and unmet basic needs creates extreme danger.\"},{\"case\":32,\"score\":15,\"rank\":13,\"reason\":\"Advanced age, poorly managed heart failure, irregular food and hygiene, assault and robbery, and frequent emergency and police contacts create very high risk.\"}]}</|fim_suffix|"
+}

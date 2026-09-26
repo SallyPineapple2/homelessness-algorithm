@@ -633,7 +633,7 @@ Promise.all([
   document.getElementById("stat-instances").textContent = instances.toLocaleString();
   document.getElementById("stat-scores").textContent = scores.toLocaleString();
   document.getElementById("stat-models").textContent =
-    aiModels === 1 ? `VI-SPDAT and ${apps[0].label}` : `VI-SPDAT and ${aiModels} AI models`;
+    aiModels === 1 ? `VI‑SPDAT and ${apps[0].label}` : `VI‑SPDAT and ${aiModels} AI runs`;
 
   wireExpandAll(cachedProfiles);
   renderSessionPicker();
@@ -665,6 +665,8 @@ function showView(name) {
   });
   const link = document.querySelector(`[data-view-link="${name}"]`);
   document.getElementById("view-title").textContent = link ? link.textContent : "";
+  const sub = document.getElementById("view-sub");
+  if (sub && link && link.dataset.sub) sub.textContent = link.dataset.sub;
   document.title = `${link ? link.textContent + " · " : ""}Algorithmic Bias in Homeless Vulnerability Assessment`;
   if (name !== currentView) window.scrollTo(0, 0);
   currentView = name;

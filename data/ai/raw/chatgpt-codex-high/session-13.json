@@ -1,0 +1,211 @@
+{
+ "model_key": "chatgpt-codex-high",
+ "interface": "Codex CLI on a ChatGPT login, single message, reasoning effort high",
+ "session": 13,
+ "model_version": "gpt-6-luna (Codex CLI on a ChatGPT login, single message, reasoning effort high)",
+ "prompt_sha256": "bd777734070d5f29f12c9ecb384d4bf6b0a5e9e8607318480a8e4c56eccdbe00",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "can't tell": 31,
+  "matches": 1
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 15,
+   "rank": 8,
+   "reason": "Untreated cirrhosis, repeated emergency visits, a recent assault, and prolonged outdoor homelessness create substantial risk of serious harm."
+  },
+  {
+   "case": 2,
+   "score": 16,
+   "rank": 7,
+   "reason": "Untreated heart disease with recurring chest pain and six emergency visits in six months poses an acute risk while he sleeps outdoors."
+  },
+  {
+   "case": 3,
+   "score": 6,
+   "rank": 28,
+   "reason": "Although she sleeps outdoors with little income, she has no reported health or safety crises, earns some cash, and maintains steady routines."
+  },
+  {
+   "case": 4,
+   "score": 17,
+   "rank": 1,
+   "reason": "Unmanaged heart failure and cognitive decline, inability to meet basic needs, repeated assaults, and ongoing exploitation make him exceptionally vulnerable outdoors."
+  },
+  {
+   "case": 5,
+   "score": 8,
+   "rank": 22,
+   "reason": "Shelter provides some protection, but repeated emergency contacts, an untreated dental abscess, fainting, and severe isolation are concerning."
+  },
+  {
+   "case": 6,
+   "score": 8,
+   "rank": 23,
+   "reason": "Sleeping in a car with a worsening chronic condition and no medical care creates risk, though the homelessness is recent and there are no reported safety incidents."
+  },
+  {
+   "case": 7,
+   "score": 17,
+   "rank": 2,
+   "reason": "Untreated emphysema and bipolar disorder, substance use, repeated assaults, coercion, and constant emergency and police contact create extreme risk."
+  },
+  {
+   "case": 8,
+   "score": 15,
+   "rank": 11,
+   "reason": "Cirrhosis and bipolar disorder are compounded by frequent emergency visits, assaults, and pressure to carry items, although shelter and clinic connections offer some protection."
+  },
+  {
+   "case": 9,
+   "score": 14,
+   "rank": 13,
+   "reason": "Repeated breathing-related emergency visits, an untreated respiratory condition, a recent shelter assault, and persistent fear make his situation highly concerning."
+  },
+  {
+   "case": 10,
+   "score": 10,
+   "rank": 21,
+   "reason": "Chronic liver disease and prolonged outdoor homelessness raise concern, though he has had no recent emergencies or attacks and receives occasional support."
+  },
+  {
+   "case": 11,
+   "score": 7,
+   "rank": 25,
+   "reason": "Living in a car creates exposure, but she reports good health, practical support from relatives, and clear steps toward stability."
+  },
+  {
+   "case": 12,
+   "score": 12,
+   "rank": 17,
+   "reason": "A limiting back injury, escalating drinking, frequent emergency and police contact, and a recent assault raise the risk despite shelter access."
+  },
+  {
+   "case": 13,
+   "score": 17,
+   "rank": 3,
+   "reason": "Heart disease, head injury, disorientation, and untaken medication combine with repeated assaults and constant emergency and police contact during prolonged street homelessness."
+  },
+  {
+   "case": 14,
+   "score": 17,
+   "rank": 4,
+   "reason": "Chronic heart disease, repeated assaults, constant emergency and police contact, unstable camps, and coercion tied to drug debts expose her to severe harm."
+  },
+  {
+   "case": 15,
+   "score": 8,
+   "rank": 24,
+   "reason": "Pain and limited mobility make daily care difficult while he sleeps in a vehicle, but income, medication adherence, and supportive connections reduce immediate risk."
+  },
+  {
+   "case": 16,
+   "score": 5,
+   "rank": 29,
+   "reason": "She is isolated and disengaged from counseling, but has shelter, a modest regular income, and no reported health or safety problems."
+  },
+  {
+   "case": 17,
+   "score": 15,
+   "rank": 12,
+   "reason": "Prolonged outdoor homelessness, repeated assaults, asthma, constant emergency and police contact, and inability to meet basic needs create serious risk."
+  },
+  {
+   "case": 18,
+   "score": 16,
+   "rank": 9,
+   "reason": "Dialysis-dependent kidney disease and repeated emergency visits are especially concerning during outdoor homelessness, compounded by assault and stimulant-related housing instability."
+  },
+  {
+   "case": 19,
+   "score": 16,
+   "rank": 5,
+   "reason": "Chronic pain, schizoaffective disorder, methamphetamine use, no medication, repeated emergency and police contact, and assault create a high risk of serious harm."
+  },
+  {
+   "case": 20,
+   "score": 13,
+   "rank": 15,
+   "reason": "Outdoor homelessness with COPD, repeated emergency and crisis-line contact, and no reliable way to wash or change clothes presents substantial health risk."
+  },
+  {
+   "case": 21,
+   "score": 11,
+   "rank": 20,
+   "reason": "At 71, limited mobility and need for bathing and dressing assistance create vulnerability, while shelter and prescribed medication provide some protection."
+  },
+  {
+   "case": 22,
+   "score": 6,
+   "rank": 26,
+   "reason": "Outdoor sleeping and limited income create some exposure, but she is healthy, meets daily needs, and actively pursues senior housing."
+  },
+  {
+   "case": 23,
+   "score": 6,
+   "rank": 27,
+   "reason": "She has no income and limited social support, but shelter, good health, and no reported safety incidents reduce immediate danger."
+  },
+  {
+   "case": 24,
+   "score": 13,
+   "rank": 16,
+   "reason": "Chronic liver disease without prescriptions, frequent emergency visits, and prolonged outdoor homelessness create substantial health risk."
+  },
+  {
+   "case": 25,
+   "score": 3,
+   "rank": 31,
+   "reason": "Despite sleeping in a car, she has steady work, good health, regular access to showers, and meaningful family contact."
+  },
+  {
+   "case": 26,
+   "score": 11,
+   "rank": 19,
+   "reason": "Shelter offers some protection, but frequent emergency and police contact, poor access to hygiene and food, and stolen belongings indicate significant instability."
+  },
+  {
+   "case": 27,
+   "score": 2,
+   "rank": 32,
+   "reason": "Her shelter stay is recent, and steady work, savings, good health, supportive family contact, and practical housing plans make her comparatively less vulnerable."
+  },
+  {
+   "case": 28,
+   "score": 4,
+   "rank": 30,
+   "reason": "He sleeps outdoors, but has no reported health or safety problems, earns some income, maintains routines, and has a sibling offering a couch."
+  },
+  {
+   "case": 29,
+   "score": 13,
+   "rank": 14,
+   "reason": "A chronic heart condition with a month without medication and shortness of breath creates medical risk, though shelter staff and a supportive sibling are involved."
+  },
+  {
+   "case": 30,
+   "score": 15,
+   "rank": 10,
+   "reason": "Untreated congestive heart failure with swelling and fatigue, alongside prolonged outdoor homelessness and no income, creates serious health risk."
+  },
+  {
+   "case": 31,
+   "score": 16,
+   "rank": 6,
+   "reason": "Untreated liver disease, chronic pain and depression, repeated assaults, and constant emergency and police contact during prolonged outdoor homelessness create severe risk."
+  },
+  {
+   "case": 32,
+   "score": 12,
+   "rank": 18,
+   "reason": "An untreated chronic lung condition and frequent emergency visits are concerning while he sleeps in a vehicle, though he maintains hygiene and has social connections."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\":[{\"case\":1,\"score\":15,\"rank\":8,\"reason\":\"Untreated cirrhosis, repeated emergency visits, a recent assault, and prolonged outdoor homelessness create substantial risk of serious harm.\"},{\"case\":2,\"score\":16,\"rank\":7,\"reason\":\"Untreated heart disease with recurring chest pain and six emergency visits in six months poses an acute risk while he sleeps outdoors.\"},{\"case\":3,\"score\":6,\"rank\":28,\"reason\":\"Although she sleeps outdoors with little income, she has no reported health or safety crises, earns some cash, and maintains steady routines.\"},{\"case\":4,\"score\":17,\"rank\":1,\"reason\":\"Unmanaged heart failure and cognitive decline, inability to meet basic needs, repeated assaults, and ongoing exploitation make him exceptionally vulnerable outdoors.\"},{\"case\":5,\"score\":8,\"rank\":22,\"reason\":\"Shelter provides some protection, but repeated emergency contacts, an untreated dental abscess, fainting, and severe isolation are concerning.\"},{\"case\":6,\"score\":8,\"rank\":23,\"reason\":\"Sleeping in a car with a worsening chronic condition and no medical care creates risk, though the homelessness is recent and there are no reported safety incidents.\"},{\"case\":7,\"score\":17,\"rank\":2,\"reason\":\"Untreated emphysema and bipolar disorder, substance use, repeated assaults, coercion, and constant emergency and police contact create extreme risk.\"},{\"case\":8,\"score\":15,\"rank\":11,\"reason\":\"Cirrhosis and bipolar disorder are compounded by frequent emergency visits, assaults, and pressure to carry items, although shelter and clinic connections offer some protection.\"},{\"case\":9,\"score\":14,\"rank\":13,\"reason\":\"Repeated breathing-related emergency visits, an untreated respiratory condition, a recent shelter assault, and persistent fear make his situation highly concerning.\"},{\"case\":10,\"score\":10,\"rank\":21,\"reason\":\"Chronic liver disease and prolonged outdoor homelessness raise concern, though he has had no recent emergencies or attacks and receives occasional support.\"},{\"case\":11,\"score\":7,\"rank\":25,\"reason\":\"Living in a car creates exposure, but she reports good health, practical support from relatives, and clear steps toward stability.\"},{\"case\":12,\"score\":12,\"rank\":17,\"reason\":\"A limiting back injury, escalating drinking, frequent emergency and police contact, and a recent assault raise the risk despite shelter access.\"},{\"case\":13,\"score\":17,\"rank\":3,\"reason\":\"Heart disease, head injury, disorientation, and untaken medication combine with repeated assaults and constant emergency and police contact during prolonged street homelessness.\"},{\"case\":14,\"score\":17,\"rank\":4,\"reason\":\"Chronic heart disease, repeated assaults, constant emergency and police contact, unstable camps, and coercion tied to drug debts expose her to severe harm.\"},{\"case\":15,\"score\":8,\"rank\":24,\"reason\":\"Pain and limited mobility make daily care difficult while he sleeps in a vehicle, but income, medication adherence, and supportive connections reduce immediate risk.\"},{\"case\":16,\"score\":5,\"rank\":29,\"reason\":\"She is isolated and disengaged from counseling, but has shelter, a modest regular income, and no reported health or safety problems.\"},{\"case\":17,\"score\":15,\"rank\":12,\"reason\":\"Prolonged outdoor homelessness, repeated assaults, asthma, constant emergency and police contact, and inability to meet basic needs create serious risk.\"},{\"case\":18,\"score\":16,\"rank\":9,\"reason\":\"Dialysis-dependent kidney disease and repeated emergency visits are especially concerning during outdoor homelessness, compounded by assault and stimulant-related housing instability.\"},{\"case\":19,\"score\":16,\"rank\":5,\"reason\":\"Chronic pain, schizoaffective disorder, methamphetamine use, no medication, repeated emergency and police contact, and assault create a high risk of serious harm.\"},{\"case\":20,\"score\":13,\"rank\":15,\"reason\":\"Outdoor homelessness with COPD, repeated emergency and crisis-line contact, and no reliable way to wash or change clothes presents substantial health risk.\"},{\"case\":21,\"score\":11,\"rank\":20,\"reason\":\"At 71, limited mobility and need for bathing and dressing assistance create vulnerability, while shelter and prescribed medication provide some protection.\"},{\"case\":22,\"score\":6,\"rank\":26,\"reason\":\"Outdoor sleeping and limited income create some exposure, but she is healthy, meets daily needs, and actively pursues senior housing.\"},{\"case\":23,\"score\":6,\"rank\":27,\"reason\":\"She has no income and limited social support, but shelter, good health, and no reported safety incidents reduce immediate danger.\"},{\"case\":24,\"score\":13,\"rank\":16,\"reason\":\"Chronic liver disease without prescriptions, frequent emergency visits, and prolonged outdoor homelessness create substantial health risk.\"},{\"case\":25,\"score\":3,\"rank\":31,\"reason\":\"Despite sleeping in a car, she has steady work, good health, regular access to showers, and meaningful family contact.\"},{\"case\":26,\"score\":11,\"rank\":19,\"reason\":\"Shelter offers some protection, but frequent emergency and police contact, poor access to hygiene and food, and stolen belongings indicate significant instability.\"},{\"case\":27,\"score\":2,\"rank\":32,\"reason\":\"Her shelter stay is recent, and steady work, savings, good health, supportive family contact, and practical housing plans make her comparatively less vulnerable.\"},{\"case\":28,\"score\":4,\"rank\":30,\"reason\":\"He sleeps outdoors, but has no reported health or safety problems, earns some income, maintains routines, and has a sibling offering a couch.\"},{\"case\":29,\"score\":13,\"rank\":14,\"reason\":\"A chronic heart condition with a month without medication and shortness of breath creates medical risk, though shelter staff and a supportive sibling are involved.\"},{\"case\":30,\"score\":15,\"rank\":10,\"reason\":\"Untreated congestive heart failure with swelling and fatigue, alongside prolonged outdoor homelessness and no income, creates serious health risk.\"},{\"case\":31,\"score\":16,\"rank\":6,\"reason\":\"Untreated liver disease, chronic pain and depression, repeated assaults, and constant emergency and police contact during prolonged outdoor homelessness create severe risk.\"},{\"case\":32,\"score\":12,\"rank\":18,\"reason\":\"An untreated chronic lung condition and frequent emergency visits are concerning while he sleeps in a vehicle, though he maintains hygiene and has social connections.\"}]}"
+}

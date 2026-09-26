@@ -1554,3 +1554,123 @@ main#main { max-width: 1320px; width: 100%; margin: 0; padding: 1.4rem 1.75rem 3
   main#main { padding: 1rem 1rem 2.5rem; }
   .grid-2 { grid-template-columns: 1fr; }
 }
+
+/* Group headings inside results tables */
+table.results tr.group-row td {
+  background: var(--surface-sunk);
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   Overview: intro, findings, small-multiple maps
+   ============================================================ */
+
+.intro-band {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--series-1);
+  border-radius: 10px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.75rem;
+}
+.intro-lede {
+  margin: 0;
+  max-width: 78ch;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.block-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.45rem;
+  margin: 0 0 0.9rem;
+}
+.findings {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+@media (max-width: 1180px) { .findings { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .findings { grid-template-columns: 1fr; } }
+.fcard {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.fcard-kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.fcard-stat {
+  margin: 0;
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.fcard-note {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+.fcard-body {
+  margin: auto 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 0.75rem 0 0.25rem;
+}
+@media (max-width: 680px) { .map-grid, .map-grid.is-compact { grid-template-columns: 1fr; } }
+.map-panel {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem 0.5rem;
+  background: var(--plane);
+}
+.map-panel-head { display: flex; flex-direction: column; gap: 0.1rem; margin-bottom: 0.35rem; }
+.map-panel-title { font-weight: 600; font-size: 0.92rem; color: var(--ink); }
+.map-panel-sub { font-size: 0.76rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.map-small .state { stroke-width: 0.9; }
+.map-small .city-num { font-size: 26px; }
+.map-small .city-label { font-size: 30px; stroke-width: 8px; }
+.map-small .city-dot { stroke-width: 4; }
+.map-small .city-sig { stroke-width: 4; }
+.map-small .city-dot { stroke: var(--rule-strong); stroke-width: 2; }
+.two-col > .chart-card + .chart-card { margin-top: 0; }
+.two-col { align-items: start; }
+
+/* narrow screens: the header's model switch and status line wrap instead of widening the page */
+.app-main { min-width: 0; }
+.model-switch .filters { flex-wrap: wrap; }
+@media (max-width: 900px) {
+  .app-header { position: static; padding: 0.85rem 1rem; }
+  main#main { padding: 1.1rem 1rem 2.5rem; }
+  .table-note-inline { flex-basis: 100%; }
+  .findings, .map-grid { min-width: 0; }
+}
+
+.hypothesis.is-result { border-left: 3px solid var(--ink); margin-top: 0.85rem; }

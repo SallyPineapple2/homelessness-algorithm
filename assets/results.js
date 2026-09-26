@@ -386,7 +386,7 @@ function renderSummaryTable() {
   const cityName = (t) => t.comparison.split(",")[0];
   const one = (d, fam) => {
     const t = pick(d, fam)[0];
-    return t ? sigCell(t, `${fmtSigned(t.mean_diff, 2)} (p ${fmtP(t.p)})`) : "—";
+    return t ? sigCell(t, `${fmtSigned(t.mean_diff, 2)} (Holm p ${fmtP(t.p_holm)})`) : "—";
   };
   const sd = (d) => {
     const s = d.profiles.map((p) => p.sd).filter((v) => v !== null);
@@ -396,40 +396,74 @@ function renderSummaryTable() {
     if (c.ref) return "n/a";
     if (c.m.reattachment) return `${c.m.reattachment.moved} moved, ${c.m.reattachment.dropped} dropped`;
     const lc = c.m.label_check && c.m.label_check.current;
-    return lc && lc.answers_checked ? `${fmtPct1(lc.share_mixed)} (kept as returned)` : "—";
+    return lc && lc.answers_checked ? fmtPct1(lc.share_mixed) : "—";
   };
 
-  const rows = [
-    ["Instances", (d) => d.instances_scored.toLocaleString()],
-    ["Mean absolute error (points)", (d) => fmt(d.accuracy.all.mae, 2)],
-    ["Mean error (+ overrates)", (d) => fmtSigned(d.accuracy.all.mean_error, 2)],
-    ["Correlation with true score (r)", (d) => fmt(d.accuracy.all.pearson_r, 2)],
-    ["Correct triage band", (d) => fmtPct(d.accuracy.all.band_agreement)],
-    ["Over‑triage / under‑triage", (d) => `${fmtPct(d.accuracy.all.over_triage)} / ${fmtPct(d.accuracy.all.under_triage)}`],
-    [`Referred to PSH (truly eligible ${fmtPct(AI.vispdat.triage.truth_shares.psh)})`, (d) => fmtPct(d3.mean(d.triage.by_disclosure, (g) => g.share_psh))],
-    ["PSH‑eligible missed", (d) => fmtPct(d.accuracy.all.psh_missed)],
-    ["Race vs. White: largest gap (points)", (d) => largest(d, "race", raceName)],
-    ["Race tests significant", (d) => sigCount(d, "race")],
-    ["Female vs. male (points)", (d) => one(d, "gender")],
-    ["City: largest effect (points)", (d) => largest(d, "location", cityName)],
-    ["City tests significant", (d) => sigCount(d, "location")],
-    ["Underdisclosure vs. full (points)", (d) => one(d, "disclosure")],
-    ["Same profile, SD across versions", sd],
-    ["Mislabeled answers", wrongCase]
+  const flag = (d) => d.triage.psh_flagging;
+  const groups = [
+    ["Accuracy against true vulnerability", [
+      ["Mean absolute error (points)", (d) => fmt(d.accuracy.all.mae, 2)],
+      ["Mean error (+ overrates)", (d) => fmtSigned(d.accuracy.all.mean_error, 2)],
+      ["Correlation with true score (r)", (d) => fmt(d.accuracy.all.pearson_r, 2)],
+      ["Correct triage band", (d) => fmtPct(d.accuracy.all.band_agreement)],
+      ["Over‑triage / under‑triage", (d) => `${fmtPct(d.accuracy.all.over_triage)} / ${fmtPct(d.accuracy.all.under_triage)}`]
+    ]],
+    [`Who gets flagged high‑need (PSH, score 8+; truly ${fmtPct(flag(AI.vispdat).truly_share)})`, [
+      ["Flagged high‑need", (d) => `${fmtPct(flag(d).flagged_share)} (${flag(d).flagged})`],
+      ["Of those flagged, truly high‑need", (d) => fmtPct(flag(d).precision)],
+      ["Truly high‑need, caught", (d) => `${fmtPct(flag(d).recall)} (${flag(d).hits} of ${flag(d).truly})`],
+      ["Flagged but not truly high‑need", (d) => String(flag(d).false_alarms)],
+      ["Truly high‑need, missed", (d) => String(flag(d).missed)]
+    ]],
+    ["Bias (paired tests, Holm‑adjusted)", [
+      ["Race vs. White: largest gap (points)", (d) => largest(d, "race", raceName)],
+      ["Race tests significant", (d) => sigCount(d, "race")],
+      ["Female vs. male (points)", (d) => one(d, "gender")],
+      ["City: largest effect (points)", (d) => largest(d, "location", cityName)],
+      ["City tests significant", (d) => sigCount(d, "location")],
+      ["Underdisclosure vs. full (points)", (d) => one(d, "disclosure")]
+    ]],
+    ["Consistency and data quality", [
+      ["Instances", (d) => d.instances_scored.toLocaleString()],
+      ["Same profile, SD across versions", sd],
+      ["Answers describing a different case", wrongCase]
+    ]]
   ];
-  tableFrom("#summary-table", ["Measure"].concat(cols.map((c) => c.label)),
-    rows.map(([name, fn]) => ({ cells: [name].concat(cols.map((c) => (c.d ? fn(c.d, c) : "—"))) })));
+  const rows = [];
+  groups.forEach(([title, items]) => {
+    rows.push({ className: "group-row", cells: [{ html: `<strong>${title}</strong>` }].concat(cols.map(() => "")) });
+    items.forEach(([name, fn]) => rows.push({ cells: [name].concat(cols.map((c) => (c.d ? fn(c.d, c) : "—"))) }));
+  });
+  tableFrom("#summary-table", ["Measure"].concat(cols.map((c) => c.label)), rows);
 }
 
-function renderCityTable() {
+function renderFlaggingTable() {
   const cols = [{ label: "VI‑SPDAT", d: AI.vispdat }].concat(
     AI.models.map((m) => ({ label: m.label, d: hasData(m) ? m : null }))
   );
+  const f = (d) => d.triage.psh_flagging;
+  const lines = [
+    ["Truly high‑need", (d) => `${fmtPct1(f(d).truly_share)} (${f(d).truly})`],
+    ["Flagged high‑need", (d) => `${fmtPct1(f(d).flagged_share)} (${f(d).flagged})`],
+    ["Flagged and truly high‑need", (d) => String(f(d).hits)],
+    ["Flagged but not truly high‑need", (d) => String(f(d).false_alarms)],
+    ["Truly high‑need but not flagged", (d) => String(f(d).missed)],
+    ["Of those flagged, share truly high‑need", (d) => fmtPct1(f(d).precision)],
+    ["Of the truly high‑need, share flagged", (d) => fmtPct1(f(d).recall)]
+  ];
+  tableFrom("#flagging-table", [""].concat(cols.map((c) => c.label)),
+    lines.map(([name, fn]) => ({ cells: [name].concat(cols.map((c) => (c.d ? fn(c.d) : "—"))) })));
+}
+
+function renderCityTable() {
+  const metric = MAP_METRICS.find((x) => x.value === mapMetric);
+  const head = document.getElementById("city-table-title");
+  if (head) head.textContent = `${metric.label} by city, every tool`;
+  const cols = toolsWithData();
   tableFrom("#city-table", ["City"].concat(cols.map((c) => c.label)),
     AI.locations.map((loc) => ({
       cells: [loc].concat(cols.map((c) => {
-        if (!c.d) return "—";
-        const t = c.d.locations.find((x) => x.location === loc).effect;
+        const t = c.d.locations.find((x) => x.location === loc)[mapMetric];
         return t.mean_diff === null ? "—" : sigCell(t, `${fmtSigned(t.mean_diff, 2)} ${fmtCI(t)}`);
       }))
     })));
@@ -988,80 +1022,87 @@ function cityTip(city, label) {
     <span class="tt-row">Profiles in all conditions: ${city.profiles_complete}</span>`;
 }
 
+/* One small US map per tool, on one shared diverging scale, so cities compare across tools. */
+function toolsWithData() {
+  return [{ key: "vispdat", label: "VI‑SPDAT", d: AI.vispdat }].concat(
+    AI.models.filter(hasData).map((m) => ({ key: m.key, label: m.label, d: m }))
+  );
+}
+
+function mapGrid(containerSel, legendSel, metricKey, { compact = false } = {}) {
+  const tools = toolsWithData();
+  const metric = MAP_METRICS.find((x) => x.value === metricKey);
+  const values = tools.flatMap((t) => t.d.locations.map((c) => Math.abs(c[metricKey].mean_diff || 0)));
+  const lim = Math.max(1, Math.ceil((d3.max(values) || 0) * 2) / 2);
+  const color = diverging(lim);
+  gradientLegend(legendSel, lim, "lower", "higher");
+
+  const wrap = d3.select(containerSel);
+  wrap.selectAll("*").remove();
+  wrap.attr("class", `map-grid${compact ? " is-compact" : ""}`);
+  const panels = tools.map((t) => {
+    const panel = wrap.append("figure").attr("class", "map-panel");
+    const cap = panel.append("figcaption").attr("class", "map-panel-head");
+    cap.append("span").attr("class", "map-panel-title").text(t.label);
+    const sig = t.d.locations.filter((c) => c[metricKey].significant_holm).length;
+    const vals = t.d.locations.map((c) => c[metricKey].mean_diff).filter((v) => v !== null && v !== undefined);
+    const range = !vals.length ? "—"
+      : d3.min(vals) === d3.max(vals) ? `${fmtSigned(vals[0], 2)} in every city`
+      : `${fmtSigned(d3.min(vals), 2)} to ${fmtSigned(d3.max(vals), 2)}`;
+    cap.append("span").attr("class", "map-panel-sub").text(`${range} · ${sig} of 5 cities significant`);
+    return { t, host: panel.append("div").attr("class", "map map-small") };
+  });
+
+  loadUsMap().then((us) => {
+    const states = topojson.feature(us, us.objects.states).features;
+    const nation = topojson.mesh(us, us.objects.nation);
+    const path = d3.geoPath();
+    const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
+    panels.forEach(({ t, host }) => {
+      host.selectAll("*").remove();
+      const svg = host.append("svg").attr("viewBox", "10 40 1000 560").attr("role", "img")
+        .attr("aria-label", `${t.label}: ${metric.label.toLowerCase()} in each of the five study cities. Values are listed in the table below.`);
+      svg.append("g").selectAll("path").data(states).join("path").attr("class", "state").attr("d", path);
+      svg.append("path").datum(nation).attr("class", "nation").attr("d", path);
+      t.d.locations.forEach((c) => {
+        const pt = projection(CITY_COORDS[c.location]);
+        if (!pt) return;
+        const s = c[metricKey];
+        const v = s.mean_diff;
+        const fill = v === null || v === undefined ? css("--surface") : color(v);
+        const node = svg.append("g").attr("class", "city").attr("data-city", c.location)
+          .attr("transform", `translate(${pt[0]},${pt[1]})`).attr("tabindex", 0);
+        if (s.significant_holm) node.append("circle").attr("r", 40).attr("class", "city-sig");
+        node.append("circle").attr("r", 32).attr("class", "city-dot").attr("fill", fill);
+        node.append("text").attr("class", "city-num").attr("text-anchor", "middle").attr("dy", "0.36em")
+          .attr("fill", v === null || v === undefined ? css("--ink-muted") : inkOn(fill)).text(fmtSigned(v, 1));
+        if (!compact) {
+          const L = CITY_LABEL[c.location];
+          node.append("text").attr("class", "city-label").attr("x", L.dx * 1.35).attr("y", L.dy * 1.2)
+            .attr("text-anchor", L.anchor).text(c.location.split(",")[0]);
+        }
+        const tip = () => cityTip(c, t.label);
+        node.on("mouseenter", (event) => showTip(event, tip())).on("mousemove", moveTip).on("mouseleave", hideTip)
+          .on("focus", function () {
+            const r = this.getBoundingClientRect();
+            showTip({ clientX: r.right, clientY: r.top }, tip());
+          })
+          .on("blur", hideTip);
+      });
+    });
+  });
+}
+
 function renderMap() {
   chipGroup("#map-metrics", MAP_METRICS, mapMetric, (v) => {
     mapMetric = v;
     renderMap();
+    renderCityTable();
   });
-  const m = arm();
-  const source = m || AI.vispdat;
-  const label = m ? m.label : "VI‑SPDAT";
   const metric = MAP_METRICS.find((x) => x.value === mapMetric);
-  document.getElementById("map-model").textContent = m ? m.label : "VI‑SPDAT (no AI model results yet)";
-  document.getElementById("map-metric-desc").textContent = metric.description;
-
-  const cities = source.locations;
-  const maxAbs = d3.max(cities, (c) => Math.abs(c[mapMetric].mean_diff || 0)) || 0;
-  const lim = Math.max(1, Math.ceil(maxAbs * 2) / 2);
-  const color = diverging(lim);
-  gradientLegend("#legend-map", lim, "lower", "higher");
-
-  tableFrom("#map-table",
-    ["City", metric.label, "95% CI", "p (Holm)", "n"],
-    cities.map((c) => {
-      const t = c[mapMetric];
-      return {
-        cells: [
-          c.location.split(",")[0],
-          sigCell(t, fmtSigned(t.mean_diff, 2)),
-          fmtCI(t),
-          { text: fmtP(t.p_holm), cls: t.significant_holm ? "sig" : "" },
-          String(t.n)
-        ]
-      };
-    })
-  );
-  d3.selectAll("#map-table tbody tr").each(function (_, i) {
-    const loc = cities[i].location;
-    d3.select(this)
-      .on("mouseenter", () => d3.selectAll(`#map .city`).classed("is-dim", function () { return this.dataset.city !== loc; }))
-      .on("mouseleave", () => d3.selectAll(`#map .city`).classed("is-dim", false));
-  });
-
-  loadUsMap().then((us) => {
-    const el = document.getElementById("map");
-    d3.select(el).selectAll("*").remove();
-    const svg = d3.select(el).append("svg").attr("viewBox", "0 0 975 610").attr("role", "img")
-      .attr("aria-label", `Map of the five study cities colored by ${metric.label.toLowerCase()} for ${label}. Values are listed in the table beside the map.`);
-    const path = d3.geoPath();
-    svg.append("g").selectAll("path").data(topojson.feature(us, us.objects.states).features).join("path")
-      .attr("class", "state").attr("d", path);
-    svg.append("path").datum(topojson.mesh(us, us.objects.nation)).attr("class", "nation").attr("d", path);
-
-    const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
-    cities.forEach((c) => {
-      const pt = projection(CITY_COORDS[c.location]);
-      if (!pt) return;
-      const t = c[mapMetric];
-      const v = t.mean_diff;
-      const fill = v === null || v === undefined ? css("--surface") : color(v);
-      const node = svg.append("g").attr("class", "city").attr("data-city", c.location)
-        .attr("transform", `translate(${pt[0]},${pt[1]})`).attr("tabindex", 0);
-      if (t.significant_holm) node.append("circle").attr("r", 29).attr("class", "city-sig");
-      node.append("circle").attr("r", 22).attr("class", "city-dot").attr("fill", fill);
-      node.append("text").attr("class", "city-num").attr("text-anchor", "middle").attr("dy", "0.35em")
-        .attr("fill", v === null || v === undefined ? css("--ink-muted") : inkOn(fill)).text(fmtSigned(v, 1));
-      const L = CITY_LABEL[c.location];
-      node.append("text").attr("class", "city-label").attr("x", L.dx).attr("y", L.dy).attr("text-anchor", L.anchor)
-        .text(c.location.split(",")[0]);
-      node.on("mouseenter", (event) => showTip(event, cityTip(c, label))).on("mousemove", moveTip).on("mouseleave", hideTip)
-        .on("focus", function () {
-          const r = this.getBoundingClientRect();
-          showTip({ clientX: r.right, clientY: r.top }, cityTip(c, label));
-        })
-        .on("blur", hideTip);
-    });
-  });
+  document.getElementById("map-metric-desc").textContent = `${metric.label} — ${metric.description}`;
+  mapGrid("#map", "#legend-map", mapMetric);
+  mapGrid("#overview-map", "#legend-overview-map", "disclosure_penalty", { compact: true });
 }
 
 /* ============================================================
@@ -1120,7 +1161,7 @@ function renderTriage() {
 
   const rows = [];
   [["race", AI.races, "Race"], ["gender", AI.genders, "Gender"], ["location", AI.locations, "City"], ["disclosure", ["Full disclosure", "Underdisclosure"], "Disclosure"]].forEach(([field, levels, title]) => {
-    rows.push({ className: "group-row", cells: [{ html: `<strong>${title}</strong>` }, "", "", "", "", "", ""] });
+    rows.push({ className: "group-row", cells: [{ html: `<strong>${title}</strong>` }, "", "", "", "", ""] });
     levels.forEach((lvl) => {
       const vr = V.triage[`by_${field}`].find((r) => r[field] === lvl);
       const mr = m ? m.triage[`by_${field}`].find((r) => r[field] === lvl) : null;
@@ -1129,7 +1170,6 @@ function renderTriage() {
           lvl,
           fmtPct1(vr.share_psh),
           mr ? fmtPct1(mr.share_psh) : "—",
-          mr ? fmtPct1(mr.share_none) : "—",
           fmtPct1(vr.psh_missed),
           mr ? fmtPct1(mr.psh_missed) : "—",
           mr ? fmt(mr.mean_priority_position, 0) : "—"
@@ -1138,7 +1178,7 @@ function renderTriage() {
     });
   });
   tableFrom("#triage-table",
-    ["Group", "VI‑SPDAT: PSH", `${modelName()}: PSH`, `${modelName()}: no intervention`, "VI‑SPDAT: eligible missed", `${modelName()}: eligible missed`, `${modelName()}: mean priority position`],
+    ["Group", "VI‑SPDAT: PSH", `${modelName()}: PSH`, "VI‑SPDAT: eligible missed", `${modelName()}: eligible missed`, `${modelName()}: mean priority position`],
     rows);
 }
 
@@ -1164,19 +1204,19 @@ function renderRanking() {
 
 function renderDownloads() {
   const rows = [
-    ["VI‑SPDAT results, all 3,200 instances", "data/vispdat_results.csv", "Score, band, rank, withheld indicators, and reason for every instance."],
-    ["AI arm summary", "data/ai_results.json", "Every statistic on this page, for VI‑SPDAT and each AI model."],
-    ["Base profiles", "data/base_profiles.json", "The 32 profiles: indicator flags, narratives, and underdisclosure text."],
-    ["Demographic clones", "data/clones.json", "All 1,600 clones with the narrative on record under each condition."],
-    ["Paste schedule", "data/ai/paste_schedule.json", "The 20 sessions each AI model read, in order."],
-    ["Exact prompt, session 1", "paste/prompts/session-01/part-1.txt", "Part 1 of the text given to every AI model (part 2 in the same folder)."]
+    ["VI‑SPDAT results, all 3,200 instances", "data/vispdat_results.csv", "Score, band, rank, and withheld indicators for every instance."],
+    ["Results summary", "data/ai_results.json", "Every statistic on this dashboard, for VI‑SPDAT and each AI run."],
+    ["Base profiles", "data/base_profiles.json", "Indicator flags, narratives, and underdisclosure text."],
+    ["Demographic clones", "data/clones.json", "All 1,600 clones with the record under each condition."],
+    ["Session schedule", "data/ai/paste_schedule.json", "The 20 sessions every AI run scored, in order."],
+    ["Session 1 prompt", "paste/prompts/session-01/part-1.txt", "First half of the prompt; the second half is in the same folder. Sent as one message."]
   ];
   AI.models.forEach((m) => {
-    if (hasData(m)) rows.push([`${m.label} scores, ranks, and reasons`, `data/ai/results/${m.key}.csv`, `Every analyzed instance from ${m.label}.`]);
+    if (hasData(m)) rows.push([`${m.label} scores, ranks, and reasons`, `data/ai/results/${m.key}.csv`, `Score, rank, and reason for every ${m.label} instance.`]);
     if (m.reattachment) {
       rows.push([`${m.label}: re-attachment decisions`, `data/ai/checks/${m.key}_decisions.csv`, "Every answer in a mislabeled session, the case it was attached to, and why."]);
     } else if (m.label_check && m.label_check.current.answers_checked) {
-      rows.push([`${m.label} case-label check`, `data/ai/checks/${m.key}_case_labels.csv`, "Every answer beside the case it was labeled with, and the verdict."]);
+      rows.push([`${m.label} case-label check`, `data/ai/checks/${m.key}_case_labels.csv`, "Case-label verdict for every answer."]);
     }
   });
 
@@ -1201,9 +1241,77 @@ function renderStatus() {
   const run = AI.models.filter(hasData);
   const complete = AI.models.filter((m) => m.status === "complete");
   const line = document.getElementById("ai-status-line");
-  if (line) line.textContent = run.map((m) => `${m.label}: n = ${m.instances_scored}`).join(" · ");
+  if (line) {
+    const ns = [...new Set(run.map((m) => m.instances_scored))];
+    line.textContent = ns.length === 1 ? `n = ${ns[0]} per run` : run.map((m) => `${m.label}: n = ${m.instances_scored}`).join(" · ");
+  }
   const hero = document.getElementById("hero-ai-status");
-  if (hero) hero.textContent = run.length ? `${complete.length} of ${AI.models.length} models complete` : "pending";
+  if (hero) hero.textContent = run.length ? `${complete.length} of ${AI.models.length} complete; Gemini in progress` : "pending";
+}
+
+/* ============================================================
+   Overview — plain-language findings, computed from the results
+   ============================================================ */
+
+function renderFindings() {
+  const el = d3.select("#findings");
+  if (el.empty()) return;
+  el.selectAll("*").remove();
+  const V = AI.vispdat;
+  const models = AI.models.filter(hasData);
+  if (!models.length) return;
+  const pct = (x) => `${Math.round(x * 100)}%`;
+  const span = (xs, f) => {
+    const lo = d3.min(xs), hi = d3.max(xs);
+    return f(lo) === f(hi) ? f(lo) : `${f(lo)}–${f(hi)}`;
+  };
+  const flagShares = models.map((m) => m.triage.psh_flagging.flagged_share);
+  const truly = V.triage.psh_flagging.truly_share;
+  const test = (d, fam) => d.tests.filter((t) => t.family === fam && t.mean_diff !== null);
+  const penalty = (d) => test(d, "disclosure")[0];
+  const aiPen = models.map((m) => penalty(m).mean_diff);
+  const sigDemo = models.flatMap((m) => ["race", "gender", "location"].flatMap((fam) =>
+    test(m, fam).filter((t) => t.significant_holm).map((t) => ({ m, t }))));
+  const raceSig = sigDemo.filter((x) => x.t.family === "race").length;
+  const citySig = sigDemo.filter((x) => x.t.family === "location").length;
+  const vf = V.triage.psh_flagging;
+  const aiMissed = models.map((m) => m.triage.psh_flagging.missed);
+
+  const cards = [
+    {
+      kicker: "Triage",
+      stat: `${span(flagShares, pct)}`,
+      statNote: `of cases flagged high‑need by the AI runs; ${pct(truly)} truly are`,
+      body: `VI‑SPDAT flags ${pct(vf.flagged_share)}. The AI runs flag ${span(models.map((m) => m.triage.psh_flagging.recall), pct)} of truly high‑need cases, but ${span(models.map((m) => 1 - m.triage.psh_flagging.precision), pct)} of their flags are false positives.`
+    },
+    {
+      kicker: "Missed need",
+      stat: `${vf.missed} of ${vf.truly}`,
+      statNote: "truly high‑need cases missed by VI‑SPDAT",
+      body: `All are underdisclosure cases. The AI runs miss ${span(aiMissed, String)} of the same ${vf.truly}.`
+    },
+    {
+      kicker: "Underdisclosure",
+      stat: `${fmtSigned(penalty(V).mean_diff, 1)} pts`,
+      statNote: `VI‑SPDAT underdisclosure penalty; AI runs ${fmtSigned(d3.max(aiPen), 1)} to ${fmtSigned(d3.min(aiPen), 1)}`,
+      body: "Every run scores the same profile lower when information is withheld, in every city. The AI penalty is about half the VI‑SPDAT's."
+    },
+    {
+      kicker: "Demographic bias",
+      stat: `${raceSig + citySig} of ${models.length * 9}`,
+      statNote: "race and city tests significant across the AI runs",
+      body: sigDemo.filter((x) => x.t.family === "gender").length
+        ? `One gender effect: ${sigDemo.filter((x) => x.t.family === "gender").map((x) => `${x.m.label} scores women ${fmtSigned(x.t.mean_diff, 2)} points higher (Holm p ${fmtP(x.t.p_holm)})`).join("; ")}. It does not replicate in the other runs.`
+        : "No race, gender, or city effect in any AI run after Holm adjustment."
+    }
+  ];
+  cards.forEach((c) => {
+    const card = el.append("article").attr("class", "fcard");
+    card.append("p").attr("class", "fcard-kicker").text(c.kicker);
+    card.append("p").attr("class", "fcard-stat").text(c.stat);
+    card.append("p").attr("class", "fcard-note").text(c.statNote);
+    card.append("p").attr("class", "fcard-body").text(c.body);
+  });
 }
 
 function renderResults() {
@@ -1231,8 +1339,10 @@ function renderResults() {
 
   renderStatus();
   renderKpis();
+  renderFindings();
   renderSummaryTable();
   renderCityTable();
+  renderFlaggingTable();
   renderLabelCheck();
   renderCalibration();
   renderProfiles();

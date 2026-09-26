@@ -1,0 +1,7 @@
+{
+ "note": "The AI arm. ChatGPT is used through its free chat app: every session in data/ai/paste_schedule.json is pasted into a new chat. 'key' names the reply folder under paste/replies/ and data/ai/raw/. The model version is read from the 'Model:' line of each reply file. An entry with a 'source' is not a separate app: it is a second analysis of that app's replies. 'ChatGPT, re-attached' keeps answers whose stated facts fit their own case, moves each mislabeled answer whose facts fit exactly one other case, and drops the rest and any answers that collide on the same case (scripts/check_case_labels.py, reattach). Claude and Gemini are not part of the current analysis; Gemini's two API sessions are kept in paste/replies/gemini/ and data/ai/raw/gemini/ but not analyzed.",
+ "models": [
+  {"key": "chatgpt", "label": "ChatGPT", "family": "OpenAI", "interface": "chatgpt.com (free), as returned"},
+  {"key": "chatgpt-reattached", "label": "ChatGPT, re-attached", "family": "OpenAI", "interface": "Same replies, mislabeled answers re-attached", "source": "chatgpt", "transform": "reattach"}
+ ]
+}
