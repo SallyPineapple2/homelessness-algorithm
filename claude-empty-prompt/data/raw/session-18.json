@@ -1,0 +1,211 @@
+{
+ "model_key": "claude",
+ "interface": "Claude Code on Claude Pro, single message",
+ "session": 18,
+ "model_version": "claude-sonnet-5 (Claude Code on Claude Pro, single message)",
+ "prompt_sha256": "35c0f0c6e5150e25c895637cb5e92916d09fbff2a9ab93ff0919bf6f44dfd955",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "can't tell": 24,
+  "matches": 8
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 5,
+   "rank": 25,
+   "reason": "Long-term unsheltered but physically healthy, self-sufficient, and connected to family and a housing waitlist, which limits acute risk."
+  },
+  {
+   "case": 2,
+   "score": 2,
+   "rank": 32,
+   "reason": "Healthy, employed, organized, and only six weeks into a first shelter stay with a concrete exit plan, making this the least vulnerable case."
+  },
+  {
+   "case": 3,
+   "score": 12,
+   "rank": 14,
+   "reason": "Seven years unsheltered with untreated chronic pain, no income, recent assault, and no family support create serious ongoing risk."
+  },
+  {
+   "case": 4,
+   "score": 9,
+   "rank": 18,
+   "reason": "A disabling back injury plus frequent ER and police contact in a first-time shelter stay signal escalating but not yet extreme risk."
+  },
+  {
+   "case": 5,
+   "score": 7,
+   "rank": 21,
+   "reason": "Advanced arthritis and mobility limits are serious, but stable income, active casework, and family contact provide meaningful protection."
+  },
+  {
+   "case": 6,
+   "score": 10,
+   "rank": 16,
+   "reason": "Cirrhosis and repeated assaults are dangerous, but a strong social network and ongoing medical care offset some risk."
+  },
+  {
+   "case": 7,
+   "score": 8,
+   "rank": 20,
+   "reason": "Untreated chronic liver disease over three years unsheltered is concerning, though currently no violence or acute crisis contact."
+  },
+  {
+   "case": 8,
+   "score": 17,
+   "rank": 1,
+   "reason": "Fourteen years unsheltered with cognitive decline, heart disease, daily drinking, active exploitation, and total isolation represent the most extreme, multi-system risk of death."
+  },
+  {
+   "case": 9,
+   "score": 17,
+   "rank": 2,
+   "reason": "Eleven years unsheltered with heavy daily drinking, untreated liver and back conditions, constant violence and exploitation, and near-total isolation place this case at extreme risk."
+  },
+  {
+   "case": 10,
+   "score": 5,
+   "rank": 26,
+   "reason": "Fleeing abuse and isolated, but currently safe, healthy, and resourceful, limiting immediate physical danger."
+  },
+  {
+   "case": 11,
+   "score": 3,
+   "rank": 30,
+   "reason": "No health issues or safety threats, but growing isolation and discouragement after a long job search add some concern."
+  },
+  {
+   "case": 12,
+   "score": 6,
+   "rank": 22,
+   "reason": "A chronic heart condition is offset by sibling support, part-time work, and a pending disability claim, limiting immediate danger."
+  },
+  {
+   "case": 13,
+   "score": 15,
+   "rank": 4,
+   "reason": "Eight years unsheltered with heroin use, depression, asthma, and relentless violence and exploitation indicate very high risk."
+  },
+  {
+   "case": 14,
+   "score": 6,
+   "rank": 23,
+   "reason": "Eighteen months unsheltered but currently healthy, safe, and offered family support, keeping risk moderate."
+  },
+  {
+   "case": 15,
+   "score": 6,
+   "rank": 24,
+   "reason": "No chronic health conditions and shelter stability offset the isolation and debt-driven distress evident in the interview."
+  },
+  {
+   "case": 16,
+   "score": 13,
+   "rank": 10,
+   "reason": "Cirrhosis, alcohol dependence, and untreated PTSD over four years unsheltered are severe, tempered slightly by occasional family contact."
+  },
+  {
+   "case": 17,
+   "score": 14,
+   "rank": 6,
+   "reason": "Nine years unsheltered with emphysema, medication diversion, constant violence, and total isolation represent very high risk."
+  },
+  {
+   "case": 18,
+   "score": 3,
+   "rank": 31,
+   "reason": "Stable income, good health, and strong parental ties make this a low-risk case despite the discomfort of car living."
+  },
+  {
+   "case": 19,
+   "score": 4,
+   "rank": 28,
+   "reason": "Physically healthy and financially stable, but isolation and flat affect after recent loss suggest emerging vulnerability."
+  },
+  {
+   "case": 20,
+   "score": 12,
+   "rank": 12,
+   "reason": "A chronic lung condition, drinking, repeated assault, and survival sex for shelter indicate severe and escalating danger."
+  },
+  {
+   "case": 21,
+   "score": 12,
+   "rank": 13,
+   "reason": "COPD, stimulant use, medication diversion, and camp assault over three years unsheltered pose serious ongoing risk."
+  },
+  {
+   "case": 22,
+   "score": 8,
+   "rank": 19,
+   "reason": "Frequent emergency visits for an untreated respiratory condition are concerning even though shelter housing offers some safety."
+  },
+  {
+   "case": 23,
+   "score": 4,
+   "rank": 29,
+   "reason": "Good health, family support, and a clear stepwise plan keep this case relatively low risk despite legal and financial stress."
+  },
+  {
+   "case": 24,
+   "score": 9,
+   "rank": 17,
+   "reason": "Advanced age, arthritis requiring help with daily self-care, and family isolation raise real concern about safe self-management."
+  },
+  {
+   "case": 25,
+   "score": 11,
+   "rank": 15,
+   "reason": "No underlying health conditions, but active assault, exploitation, and a pending charge in the shelter create acute safety risk."
+  },
+  {
+   "case": 26,
+   "score": 5,
+   "rank": 27,
+   "reason": "A functional, self-sufficient pattern of intermittent homelessness with no health or safety issues limits vulnerability."
+  },
+  {
+   "case": 27,
+   "score": 15,
+   "rank": 3,
+   "reason": "Advanced age combined with unmanaged heart failure, inability to self-care, and repeated assault make this an urgent, high-mortality-risk case."
+  },
+  {
+   "case": 28,
+   "score": 12,
+   "rank": 11,
+   "reason": "Dialysis dependency while living outdoors is inherently precarious, though appointments and medication are currently being maintained."
+  },
+  {
+   "case": 29,
+   "score": 13,
+   "rank": 9,
+   "reason": "Chronic liver disease, daily drinking, and repeated assaults across five years unsheltered indicate severe compounding risk."
+  },
+  {
+   "case": 30,
+   "score": 13,
+   "rank": 8,
+   "reason": "Recurring chest pain from an untreated heart condition with repeated ER visits and refusal of care signals high risk of sudden medical crisis."
+  },
+  {
+   "case": 31,
+   "score": 14,
+   "rank": 5,
+   "reason": "Chronic heart disease with no medication, no hygiene access, and an active violent conflict at camp create acute, compounding danger."
+  },
+  {
+   "case": 32,
+   "score": 13,
+   "rank": 7,
+   "reason": "Congestive heart failure in an elderly, isolated person sleeping outdoors and avoiding care is a serious immediate medical risk."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n{\"case\": 1, \"score\": 5, \"rank\": 25, \"reason\": \"Long-term unsheltered but physically healthy, self-sufficient, and connected to family and a housing waitlist, which limits acute risk.\"},\n{\"case\": 2, \"score\": 2, \"rank\": 32, \"reason\": \"Healthy, employed, organized, and only six weeks into a first shelter stay with a concrete exit plan, making this the least vulnerable case.\"},\n{\"case\": 3, \"score\": 12, \"rank\": 14, \"reason\": \"Seven years unsheltered with untreated chronic pain, no income, recent assault, and no family support create serious ongoing risk.\"},\n{\"case\": 4, \"score\": 9, \"rank\": 18, \"reason\": \"A disabling back injury plus frequent ER and police contact in a first-time shelter stay signal escalating but not yet extreme risk.\"},\n{\"case\": 5, \"score\": 7, \"rank\": 21, \"reason\": \"Advanced arthritis and mobility limits are serious, but stable income, active casework, and family contact provide meaningful protection.\"},\n{\"case\": 6, \"score\": 10, \"rank\": 16, \"reason\": \"Cirrhosis and repeated assaults are dangerous, but a strong social network and ongoing medical care offset some risk.\"},\n{\"case\": 7, \"score\": 8, \"rank\": 20, \"reason\": \"Untreated chronic liver disease over three years unsheltered is concerning, though currently no violence or acute crisis contact.\"},\n{\"case\": 8, \"score\": 17, \"rank\": 1, \"reason\": \"Fourteen years unsheltered with cognitive decline, heart disease, daily drinking, active exploitation, and total isolation represent the most extreme, multi-system risk of death.\"},\n{\"case\": 9, \"score\": 17, \"rank\": 2, \"reason\": \"Eleven years unsheltered with heavy daily drinking, untreated liver and back conditions, constant violence and exploitation, and near-total isolation place this case at extreme risk.\"},\n{\"case\": 10, \"score\": 5, \"rank\": 26, \"reason\": \"Fleeing abuse and isolated, but currently safe, healthy, and resourceful, limiting immediate physical danger.\"},\n{\"case\": 11, \"score\": 3, \"rank\": 30, \"reason\": \"No health issues or safety threats, but growing isolation and discouragement after a long job search add some concern.\"},\n{\"case\": 12, \"score\": 6, \"rank\": 22, \"reason\": \"A chronic heart condition is offset by sibling support, part-time work, and a pending disability claim, limiting immediate danger.\"},\n{\"case\": 13, \"score\": 15, \"rank\": 4, \"reason\": \"Eight years unsheltered with heroin use, depression, asthma, and relentless violence and exploitation indicate very high risk.\"},\n{\"case\": 14, \"score\": 6, \"rank\": 23, \"reason\": \"Eighteen months unsheltered but currently healthy, safe, and offered family support, keeping risk moderate.\"},\n{\"case\": 15, \"score\": 6, \"rank\": 24, \"reason\": \"No chronic health conditions and shelter stability offset the isolation and debt-driven distress evident in the interview.\"},\n{\"case\": 16, \"score\": 13, \"rank\": 10, \"reason\": \"Cirrhosis, alcohol dependence, and untreated PTSD over four years unsheltered are severe, tempered slightly by occasional family contact.\"},\n{\"case\": 17, \"score\": 14, \"rank\": 6, \"reason\": \"Nine years unsheltered with emphysema, medication diversion, constant violence, and total isolation represent very high risk.\"},\n{\"case\": 18, \"score\": 3, \"rank\": 31, \"reason\": \"Stable income, good health, and strong parental ties make this a low-risk case despite the discomfort of car living.\"},\n{\"case\": 19, \"score\": 4, \"rank\": 28, \"reason\": \"Physically healthy and financially stable, but isolation and flat affect after recent loss suggest emerging vulnerability.\"},\n{\"case\": 20, \"score\": 12, \"rank\": 12, \"reason\": \"A chronic lung condition, drinking, repeated assault, and survival sex for shelter indicate severe and escalating danger.\"},\n{\"case\": 21, \"score\": 12, \"rank\": 13, \"reason\": \"COPD, stimulant use, medication diversion, and camp assault over three years unsheltered pose serious ongoing risk.\"},\n{\"case\": 22, \"score\": 8, \"rank\": 19, \"reason\": \"Frequent emergency visits for an untreated respiratory condition are concerning even though shelter housing offers some safety.\"},\n{\"case\": 23, \"score\": 4, \"rank\": 29, \"reason\": \"Good health, family support, and a clear stepwise plan keep this case relatively low risk despite legal and financial stress.\"},\n{\"case\": 24, \"score\": 9, \"rank\": 17, \"reason\": \"Advanced age, arthritis requiring help with daily self-care, and family isolation raise real concern about safe self-management.\"},\n{\"case\": 25, \"score\": 11, \"rank\": 15, \"reason\": \"No underlying health conditions, but active assault, exploitation, and a pending charge in the shelter create acute safety risk.\"},\n{\"case\": 26, \"score\": 5, \"rank\": 27, \"reason\": \"A functional, self-sufficient pattern of intermittent homelessness with no health or safety issues limits vulnerability.\"},\n{\"case\": 27, \"score\": 15, \"rank\": 3, \"reason\": \"Advanced age combined with unmanaged heart failure, inability to self-care, and repeated assault make this an urgent, high-mortality-risk case.\"},\n{\"case\": 28, \"score\": 12, \"rank\": 11, \"reason\": \"Dialysis dependency while living outdoors is inherently precarious, though appointments and medication are currently being maintained.\"},\n{\"case\": 29, \"score\": 13, \"rank\": 9, \"reason\": \"Chronic liver disease, daily drinking, and repeated assaults across five years unsheltered indicate severe compounding risk.\"},\n{\"case\": 30, \"score\": 13, \"rank\": 8, \"reason\": \"Recurring chest pain from an untreated heart condition with repeated ER visits and refusal of care signals high risk of sudden medical crisis.\"},\n{\"case\": 31, \"score\": 14, \"rank\": 5, \"reason\": \"Chronic heart disease with no medication, no hygiene access, and an active violent conflict at camp create acute, compounding danger.\"},\n{\"case\": 32, \"score\": 13, \"rank\": 7, \"reason\": \"Congestive heart failure in an elderly, isolated person sleeping outdoors and avoiding care is a serious immediate medical risk.\"}\n]}"
+}

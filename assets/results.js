@@ -59,13 +59,13 @@ const CITY_COORDS = {
   "New York City, New York": [-74.006, 40.7128]
 };
 
-// Label offsets keep the two Midwest cities from colliding.
-const CITY_LABEL = {
-  "Los Angeles, California": { dx: 30, dy: 7, anchor: "start" },
-  "Cincinnati, Ohio": { dx: 30, dy: 22, anchor: "start" },
-  "Chicago, Illinois": { dx: -30, dy: -10, anchor: "end" },
-  "Atlanta, Georgia": { dx: 30, dy: 12, anchor: "start" },
-  "New York City, New York": { dx: 0, dy: -36, anchor: "middle" }
+// Callout offsets from each city's exact position; they keep the Midwest pair and the coast apart.
+const CITY_CALLOUT = {
+  "Los Angeles, California": { dx: 24, dy: 74, anchor: "start", short: "Los Angeles" },
+  "Cincinnati, Ohio": { dx: 30, dy: 66, anchor: "start", short: "Cincinnati" },
+  "Chicago, Illinois": { dx: -30, dy: -66, anchor: "end", short: "Chicago" },
+  "Atlanta, Georgia": { dx: -30, dy: 70, anchor: "end", short: "Atlanta" },
+  "New York City, New York": { dx: -10, dy: -84, anchor: "middle", short: "New York" }
 };
 
 const MAP_METRICS = [
@@ -1029,7 +1029,7 @@ function toolsWithData() {
   );
 }
 
-function mapGrid(containerSel, legendSel, metricKey, { compact = false } = {}) {
+function mapGrid(containerSel, legendSel, metricKey) {
   const tools = toolsWithData();
   const metric = MAP_METRICS.find((x) => x.value === metricKey);
   const values = tools.flatMap((t) => t.d.locations.map((c) => Math.abs(c[metricKey].mean_diff || 0)));
@@ -1039,7 +1039,7 @@ function mapGrid(containerSel, legendSel, metricKey, { compact = false } = {}) {
 
   const wrap = d3.select(containerSel);
   wrap.selectAll("*").remove();
-  wrap.attr("class", `map-grid${compact ? " is-compact" : ""}`);
+  wrap.attr("class", "map-grid");
   const panels = tools.map((t) => {
     const panel = wrap.append("figure").attr("class", "map-panel");
     const cap = panel.append("figcaption").attr("class", "map-panel-head");
@@ -1049,40 +1049,54 @@ function mapGrid(containerSel, legendSel, metricKey, { compact = false } = {}) {
     const range = !vals.length ? "—"
       : d3.min(vals) === d3.max(vals) ? `${fmtSigned(vals[0], 2)} in every city`
       : `${fmtSigned(d3.min(vals), 2)} to ${fmtSigned(d3.max(vals), 2)}`;
-    cap.append("span").attr("class", "map-panel-sub").text(`${range} · ${sig} of 5 cities significant`);
+    cap.append("span").attr("class", "map-panel-sub").text(`${range} · ${sig} of 5 significant`);
     return { t, host: panel.append("div").attr("class", "map map-small") };
   });
 
   loadUsMap().then((us) => {
-    const states = topojson.feature(us, us.objects.states).features;
-    const nation = topojson.mesh(us, us.objects.nation);
+    // contiguous states only: the five study cities are all in the lower 48
+    const states = topojson.feature(us, us.objects.states).features.filter((f) => !["02", "15"].includes(String(f.id)));
+    const lower48 = topojson.merge(us, us.objects.states.geometries.filter((g) => !["02", "15"].includes(String(g.id))));
     const path = d3.geoPath();
+    // the basemap is pre-projected with this exact Albers USA projection
     const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
+    const [[x0, y0], [x1, y1]] = path.bounds(lower48);
+    const pad = 16;
+    const box = [x0 - pad, y0 - pad, x1 - x0 + 2 * pad, y1 - y0 + 2 * pad];
+
     panels.forEach(({ t, host }) => {
       host.selectAll("*").remove();
-      const svg = host.append("svg").attr("viewBox", "10 40 1000 560").attr("role", "img")
-        .attr("aria-label", `${t.label}: ${metric.label.toLowerCase()} in each of the five study cities. Values are listed in the table below.`);
+      const svg = host.append("svg").attr("viewBox", box.join(" ")).attr("role", "img")
+        .attr("aria-label", `${t.label}: ${metric.label.toLowerCase()} in each study city. Values are listed in the table below.`);
       svg.append("g").selectAll("path").data(states).join("path").attr("class", "state").attr("d", path);
-      svg.append("path").datum(nation).attr("class", "nation").attr("d", path);
+      svg.append("path").datum(lower48).attr("class", "nation").attr("d", path);
+
       t.d.locations.forEach((c) => {
         const pt = projection(CITY_COORDS[c.location]);
         if (!pt) return;
         const s = c[metricKey];
         const v = s.mean_diff;
-        const fill = v === null || v === undefined ? css("--surface") : color(v);
-        const node = svg.append("g").attr("class", "city").attr("data-city", c.location)
-          .attr("transform", `translate(${pt[0]},${pt[1]})`).attr("tabindex", 0);
-        if (s.significant_holm) node.append("circle").attr("r", 40).attr("class", "city-sig");
-        node.append("circle").attr("r", 32).attr("class", "city-dot").attr("fill", fill);
-        node.append("text").attr("class", "city-num").attr("text-anchor", "middle").attr("dy", "0.36em")
-          .attr("fill", v === null || v === undefined ? css("--ink-muted") : inkOn(fill)).text(fmtSigned(v, 1));
-        if (!compact) {
-          const L = CITY_LABEL[c.location];
-          node.append("text").attr("class", "city-label").attr("x", L.dx * 1.35).attr("y", L.dy * 1.2)
-            .attr("text-anchor", L.anchor).text(c.location.split(",")[0]);
-        }
+        const has = v !== null && v !== undefined;
+        const fill = has ? color(v) : css("--surface");
+        const L = CITY_CALLOUT[c.location];
+        const g = svg.append("g").attr("class", "city" + (s.significant_holm ? " is-sig" : "")).attr("data-city", c.location).attr("tabindex", 0);
+        const bx = pt[0] + L.dx, by = pt[1] + L.dy;
+        const w = 158, h = 74;
+        const left = L.anchor === "end" ? bx - w : L.anchor === "middle" ? bx - w / 2 : bx;
+        // leader from the exact city location to the callout
+        const ex = Math.max(left, Math.min(pt[0], left + w));
+        const ey = Math.max(by - h / 2, Math.min(pt[1], by + h / 2));
+        g.append("line").attr("class", "city-leader").attr("x1", pt[0]).attr("y1", pt[1]).attr("x2", ex).attr("y2", ey);
+        g.append("circle").attr("class", "city-pin").attr("cx", pt[0]).attr("cy", pt[1]).attr("r", 6);
+        g.append("rect").attr("class", "city-box").attr("x", left).attr("y", by - h / 2).attr("width", w).attr("height", h)
+          .attr("rx", 8).attr("fill", fill);
+        const ink = has ? inkOn(fill) : css("--ink-muted");
+        g.append("text").attr("class", "city-name").attr("x", left + w / 2).attr("y", by - 9).attr("text-anchor", "middle")
+          .attr("fill", ink).text(L.short);
+        g.append("text").attr("class", "city-val").attr("x", left + w / 2).attr("y", by + 25).attr("text-anchor", "middle")
+          .attr("fill", ink).text(has ? fmtSigned(v, 2) : "—");
         const tip = () => cityTip(c, t.label);
-        node.on("mouseenter", (event) => showTip(event, tip())).on("mousemove", moveTip).on("mouseleave", hideTip)
+        g.on("mouseenter", (event) => showTip(event, tip())).on("mousemove", moveTip).on("mouseleave", hideTip)
           .on("focus", function () {
             const r = this.getBoundingClientRect();
             showTip({ clientX: r.right, clientY: r.top }, tip());
@@ -1102,7 +1116,7 @@ function renderMap() {
   const metric = MAP_METRICS.find((x) => x.value === mapMetric);
   document.getElementById("map-metric-desc").textContent = `${metric.label} — ${metric.description}`;
   mapGrid("#map", "#legend-map", mapMetric);
-  mapGrid("#overview-map", "#legend-overview-map", "disclosure_penalty", { compact: true });
+  mapGrid("#overview-map", "#legend-overview-map", "disclosure_penalty");
 }
 
 /* ============================================================
@@ -1209,7 +1223,7 @@ function renderDownloads() {
     ["Base profiles", "data/base_profiles.json", "Indicator flags, narratives, and underdisclosure text."],
     ["Demographic clones", "data/clones.json", "All 1,600 clones with the record under each condition."],
     ["Session schedule", "data/ai/paste_schedule.json", "The 20 sessions every AI run scored, in order."],
-    ["Session 1 prompt", "paste/prompts/session-01/part-1.txt", "First half of the prompt; the second half is in the same folder. Sent as one message."]
+    ["Session 1 prompt", "paste/prompts/session-01/single-message.txt", "The exact message every AI run received for session 1."]
   ];
   AI.models.forEach((m) => {
     if (hasData(m)) rows.push([`${m.label} scores, ranks, and reasons`, `data/ai/results/${m.key}.csv`, `Score, rank, and reason for every ${m.label} instance.`]);
@@ -1246,7 +1260,256 @@ function renderStatus() {
     line.textContent = ns.length === 1 ? `n = ${ns[0]} per run` : run.map((m) => `${m.label}: n = ${m.instances_scored}`).join(" · ");
   }
   const hero = document.getElementById("hero-ai-status");
-  if (hero) hero.textContent = run.length ? `${complete.length} of ${AI.models.length} complete; Gemini in progress` : "pending";
+  if (hero) hero.textContent = run.length ? `${complete.length} of ${AI.models.length} complete` : "pending";
+}
+
+/* ============================================================
+   Model comparison — which AI run is least biased on each measure
+   ============================================================ */
+
+// |effect| interval: how far from zero the effect could plausibly be
+function absInterval(t) {
+  if (t.ci_low === null || t.ci_low === undefined) return [Math.abs(t.mean_diff), Math.abs(t.mean_diff)];
+  if (t.ci_low > 0) return [t.ci_low, t.ci_high];
+  if (t.ci_high < 0) return [-t.ci_high, -t.ci_low];
+  return [0, Math.max(-t.ci_low, t.ci_high)];
+}
+
+const shortGroup = (c) => {
+  const g = c.replace(/ vs\. White.*$/, "").replace(/, (male|female) cases only$/, "")
+    .replace("Underdisclosure penalty: ", "")
+    .replace(/ vs\. other locations$/, "").replace(/, [A-Z][a-z]+( [A-Z][a-z]+)?$/, "");
+  return SHORT_RACE[g] || g;
+};
+
+const BIAS_MEASURES = [
+  { key: "race", label: "Race: largest gap vs. White", pick: (m) => m.tests.filter((t) => t.family === "race"), named: true },
+  { key: "gender", label: "Gender: female vs. male", pick: (m) => m.tests.filter((t) => t.family === "gender") },
+  { key: "city", label: "City: largest city effect", pick: (m) => m.tests.filter((t) => t.family === "location"), named: true },
+  { key: "disclosure", label: "Underdisclosure penalty", pick: (m) => m.tests.filter((t) => t.family === "disclosure") },
+  { key: "rxg", label: "Race gap within one gender (largest)", pick: (m) => m.interaction_tests.filter((t) => t.family === "race_within_gender"), named: true, withGender: true },
+  { key: "pxr", label: "Penalty difference by race (largest)", pick: (m) => m.interaction_tests.filter((t) => t.family === "penalty_by_race"), named: true },
+  { key: "pxg", label: "Penalty difference, female vs. male", pick: (m) => m.interaction_tests.filter((t) => t.family === "penalty_by_gender") }
+];
+
+function worstTest(tests) {
+  const ok = tests.filter((t) => t.mean_diff !== null && t.mean_diff !== undefined);
+  return ok.length ? ok.slice().sort((a, b) => Math.abs(b.mean_diff) - Math.abs(a.mean_diff))[0] : null;
+}
+
+function compareBias() {
+  const runs = AI.models.filter(hasData);
+  return BIAS_MEASURES.map((ms) => {
+    const cells = runs.map((m) => ({ m, t: worstTest(ms.pick(m)) }));
+    const ranked = cells.filter((c) => c.t).sort((a, b) => Math.abs(a.t.mean_diff) - Math.abs(b.t.mean_diff));
+    const best = ranked[0];
+    const reliable = best && ranked.slice(1).every((c) => absInterval(best.t)[1] < absInterval(c.t)[0]);
+    return { ms, cells, best, reliable };
+  });
+}
+
+function renderComparison() {
+  if (d3.select("#compare-bias").empty()) return;
+  const runs = AI.models.filter(hasData);
+  const rows = compareBias();
+
+  // headline
+  const wins = d3.rollup(rows.filter((r) => r.best), (v) => v.length, (r) => r.best.m.label);
+  const leader = [...wins.entries()].sort((a, b) => b[1] - a[1])[0];
+  const reliableRows = rows.filter((r) => r.reliable);
+  const summary = d3.select("#compare-summary");
+  summary.selectAll("*").remove();
+  summary.append("p").attr("class", "compare-lede").html(
+    `<strong>${leader[0]}</strong> is closest to zero on ${leader[1]} of ${rows.length} bias measures. ` +
+    (reliableRows.length
+      ? `Only ${reliableRows.length === 1 ? "one lead is" : `${reliableRows.length} leads are`} statistically reliable (95% intervals that do not overlap): ${reliableRows.map((r) => `${r.ms.label.toLowerCase()} (${r.best.m.label})`).join("; ")}.`
+      : "No lead is statistically reliable: on every measure the runs' 95% intervals overlap.") +
+    " VI&#8209;SPDAT is shown for reference; it cannot respond to stated race, gender, or city.");
+
+  // scorecard table
+  const headers = ["Measure", "VI‑SPDAT"].concat(runs.map((m) => m.label), ["Closest to zero", "Reliable?"]);
+  const body = rows.map((r) => {
+    const vt = worstTest(r.ms.pick(AI.vispdat));
+    const cell = (t) => {
+      if (!t) return "—";
+      const who = r.ms.named ? ` <span class="cmp-group">${shortGroup(t.comparison)}${r.ms.withGender ? (/male cases only$/.test(t.comparison) ? (/female/.test(t.comparison) ? ", women" : ", men") : "") : ""}</span>` : "";
+      const v = `${fmtSigned(t.mean_diff, 2)} <span class="cmp-ci">${fmtCI(t)}</span>${who}`;
+      return { html: t.significant_holm ? `<strong>${v}</strong>` : v };
+    };
+    return {
+      cells: [r.ms.label, vt ? `${fmtSigned(vt.mean_diff, 2)}` : "—"]
+        .concat(r.cells.map((c) => {
+          const out = cell(c.t);
+          if (r.best && c.m === r.best.m && out.html) out.cls = "cmp-best";
+          return out;
+        }))
+        .concat([r.best ? r.best.m.label : "—", r.reliable ? "Yes" : "No — intervals overlap"])
+    };
+  });
+  tableFrom("#compare-bias", headers, body);
+
+  // interval plot: one panel per measure, one row per run
+  const el = d3.select("#compare-plot");
+  el.selectAll("*").remove();
+  const W = widthOf("#compare-plot", 560, 980);
+  const labelW = 190, rowH = 22, gap = 30, headH = 22;
+  const panelH = headH + runs.length * rowH;
+  const H = rows.length * (panelH + gap) + 30;
+  const lim = Math.max(1, Math.ceil(d3.max(rows.flatMap((r) => r.cells.filter((c) => c.t).map((c) => Math.max(Math.abs(c.t.ci_low ?? 0), Math.abs(c.t.ci_high ?? 0))))) * 2) / 2);
+  const x = d3.scaleLinear().domain([-lim, lim]).range([labelW, W - 16]);
+  const svg = el.append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", "100%").attr("role", "img")
+    .attr("aria-label", "Effect and 95% confidence interval for each AI run on each bias measure. Values are in the table above.");
+  const ticks = x.ticks(8);
+  svg.append("g").selectAll("line").data(ticks).join("line").attr("class", "grid-line")
+    .attr("x1", (d) => x(d)).attr("x2", (d) => x(d)).attr("y1", 0).attr("y2", H - 26);
+  svg.append("line").attr("class", "zero-line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", 0).attr("y2", H - 26);
+  svg.append("g").selectAll("text").data(ticks).join("text").attr("class", "tick-text").attr("x", (d) => x(d)).attr("y", H - 8)
+    .attr("text-anchor", "middle").text((d) => fmtSigned(d, 1));
+  rows.forEach((r, i) => {
+    const y0 = i * (panelH + gap);
+    svg.append("text").attr("class", "cmp-panel-title").attr("x", 0).attr("y", y0 + 14).text(r.ms.label);
+    r.cells.forEach((c, j) => {
+      const y = y0 + headH + j * rowH + rowH / 2;
+      const isBest = r.best && c.m === r.best.m;
+      svg.append("text").attr("class", "cmp-run" + (isBest ? " is-best" : "")).attr("x", labelW - 10).attr("y", y).attr("dy", "0.35em")
+        .attr("text-anchor", "end").text(c.m.label);
+      if (!c.t) return;
+      const g = svg.append("g").attr("class", "cmp-mark" + (isBest ? " is-best" : ""));
+      g.append("line").attr("x1", x(c.t.ci_low)).attr("x2", x(c.t.ci_high)).attr("y1", y).attr("y2", y);
+      g.append("circle").attr("cx", x(c.t.mean_diff)).attr("cy", y).attr("r", 5.5)
+        .attr("class", c.t.significant_holm ? "is-sig" : "");
+      g.append("rect").attr("x", labelW).attr("y", y - rowH / 2).attr("width", W - labelW).attr("height", rowH).attr("fill", "transparent")
+        .on("mouseenter", (event) => showTip(event, `<span class="tt-title">${c.m.label} · ${r.ms.label}</span>
+          <span class="tt-row">${c.t.comparison}</span>
+          <span class="tt-row">${fmtSigned(c.t.mean_diff, 2)} ${fmtCI(c.t)} · Holm p ${fmtP(c.t.p_holm)}</span>`))
+        .on("mousemove", moveTip).on("mouseleave", hideTip);
+    });
+  });
+
+  // accuracy and triage, for context
+  const acc = [
+    ["Mean absolute error (points)", (m) => m.accuracy.all.mae, "low", (v) => fmt(v, 2)],
+    ["Score vs. truth, rank correlation (ρ)", (m) => m.ranking.score_truth_rho, "high", (v) => fmt(v, 3)],
+    ["Correct triage band", (m) => m.accuracy.all.band_agreement, "high", fmtPct],
+    ["Truly high‑need cases missed", (m) => m.triage.psh_flagging.missed, "low", String],
+    ["Flagged high‑need but not", (m) => m.triage.psh_flagging.false_alarms, "low", String],
+    ["Sessions with a complete 1–32 ranking", (m) => m.ranking.sessions_with_valid_ranks, "high", (v) => `${v} of 20`]
+  ];
+  tableFrom("#compare-accuracy", ["Measure", "VI‑SPDAT"].concat(runs.map((m) => m.label), ["Best AI run"]),
+    acc.map(([name, get, dir, f]) => {
+      const vals = runs.map(get);
+      const bestV = dir === "low" ? d3.min(vals) : d3.max(vals);
+      const bestRuns = runs.filter((m, k) => vals[k] === bestV).map((m) => m.label);
+      let vref;
+      try { vref = get(AI.vispdat); } catch (e) { vref = null; }
+      return {
+        cells: [name, vref === null || vref === undefined ? "n/a" : f(vref)]
+          .concat(vals.map((v) => (v === bestV ? { text: f(v), cls: "cmp-best" } : f(v))))
+          .concat([bestRuns.join(", ")])
+      };
+    }));
+}
+
+/* ============================================================
+   Overview — key results as small charts, one per measure
+   ============================================================ */
+
+// Each tool keeps one categorical slot everywhere on this panel (fixed order, never cycled).
+const TOOL_SLOTS = ["--series-1", "--series-2", "--series-3", "--series-4", "--series-5"];
+
+function renderKeyCharts() {
+  const host = d3.select("#key-charts");
+  if (host.empty()) return;
+  host.selectAll("*").remove();
+  const tools = toolsWithData().map((t, i) => ({ ...t, color: css(TOOL_SLOTS[i]) }));
+  const test = (d, fam) => d.tests.filter((t) => t.family === fam && t.mean_diff !== null);
+  const worst = (d, fam) => worstTest(test(d, fam));
+  const truth = AI.vispdat.triage.psh_flagging.truly_share;
+
+  const groups = [
+    { title: "Accuracy against true vulnerability", panels: [
+      { kind: "bar", title: "Mean absolute error", sub: "Points off the true score; lower is better", get: (d) => d.accuracy.all.mae, fmt: (v) => fmt(v, 2), best: "low" },
+      { kind: "bar", title: "Correct triage band", sub: "Same band as the true score; higher is better", get: (d) => d.accuracy.all.band_agreement, fmt: fmtPct, max: 1, best: "high" },
+      { kind: "bar", title: "Correlation with true score", sub: "Pearson r; higher is better", get: (d) => d.accuracy.all.pearson_r, fmt: (v) => fmt(v, 2), max: 1, best: "high" }
+    ]},
+    { title: "Who gets flagged high‑need", panels: [
+      { kind: "bar", title: "Flagged high‑need", sub: `Share placed in the PSH band; dashed line = truly high‑need (${fmtPct(truth)})`, get: (d) => d.triage.psh_flagging.flagged_share, fmt: fmtPct, max: 1, ref: truth },
+      { kind: "bar", title: "Truly high‑need, missed", sub: "Of 280 truly high‑need cases; lower is better", get: (d) => d.triage.psh_flagging.missed, fmt: String, best: "low" },
+      { kind: "bar", title: "Flagged but not truly high‑need", sub: "False positives, of 360; lower is better", get: (d) => d.triage.psh_flagging.false_alarms, fmt: String, best: "low" }
+    ]},
+    { title: "Bias (paired differences, 95% CI)", panels: [
+      { kind: "ci", title: "Underdisclosure penalty", sub: "Underdisclosure minus full disclosure, points", get: (d) => test(d, "disclosure")[0] },
+      { kind: "ci", title: "Female vs. male", sub: "Points; 0 = no gender difference", get: (d) => test(d, "gender")[0] },
+      { kind: "ci", title: "Largest race gap vs. White", sub: "Points; the group with the largest gap", get: (d) => worst(d, "race"), named: true }
+    ]}
+  ];
+
+  groups.forEach((g) => {
+    host.append("h3").attr("class", "kc-group").text(g.title);
+    const grid = host.append("div").attr("class", "kc-grid");
+    g.panels.forEach((pn) => {
+      const card = grid.append("figure").attr("class", "kc-panel");
+      const cap = card.append("figcaption");
+      cap.append("span").attr("class", "kc-title").text(pn.title);
+      cap.append("span").attr("class", "kc-sub").text(pn.sub);
+      const W = 340, labelW = 132, rowH = 30, top = 6, bottom = pn.kind === "ci" ? 24 : 6;
+      const H = top + tools.length * rowH + bottom;
+      const svg = card.append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("width", "100%").attr("role", "img")
+        .attr("aria-label", `${pn.title}: ` + tools.map((t) => {
+          const v = pn.kind === "ci" ? (pn.get(t.d) || {}).mean_diff : pn.get(t.d);
+          return `${t.label} ${v === null || v === undefined ? "no value" : (pn.fmt || ((x) => fmtSigned(x, 2)))(v)}`;
+        }).join("; "));
+      const valueW = pn.kind === "ci" ? 0 : 46;
+      const vals = tools.map((t) => (pn.kind === "ci" ? pn.get(t.d) : pn.get(t.d)));
+      if (pn.kind === "bar") {
+        const hi = pn.max || d3.max(vals) * 1.05 || 1;
+        const x = d3.scaleLinear().domain([0, hi]).range([labelW, W - valueW]);
+        const bestV = pn.best === "low" ? d3.min(vals.slice(1)) : pn.best === "high" ? d3.max(vals.slice(1)) : null;
+        if (pn.ref !== undefined) {
+          svg.append("line").attr("class", "kc-ref").attr("x1", x(pn.ref)).attr("x2", x(pn.ref)).attr("y1", top - 2).attr("y2", H - bottom + 2);
+        }
+        tools.forEach((t, i) => {
+          const v = vals[i];
+          const y = top + i * rowH;
+          svg.append("text").attr("class", "kc-label").attr("x", labelW - 8).attr("y", y + rowH / 2).attr("dy", "0.35em")
+            .attr("text-anchor", "end").text(t.label);
+          svg.append("rect").attr("x", x(0)).attr("y", y + 7).attr("width", Math.max(x(v) - x(0), 1)).attr("height", rowH - 14)
+            .attr("rx", 3).attr("fill", t.color);
+          svg.append("text").attr("class", "kc-value" + (i > 0 && v === bestV ? " is-best" : "")).attr("x", x(v) + 6)
+            .attr("y", y + rowH / 2).attr("dy", "0.35em").text(pn.fmt(v));
+        });
+        svg.append("line").attr("class", "kc-axis").attr("x1", x(0)).attr("x2", x(0)).attr("y1", top).attr("y2", H - bottom);
+      } else {
+        const ext = d3.max(vals.filter(Boolean).flatMap((t) => [Math.abs(t.ci_low), Math.abs(t.ci_high)]));
+        const lim = Math.max(0.5, Math.ceil(ext * 2) / 2);
+        const x = d3.scaleLinear().domain([-lim, lim]).range([labelW, W - 10]);
+        x.ticks(4).forEach((tk) => {
+          svg.append("line").attr("class", "grid-line").attr("x1", x(tk)).attr("x2", x(tk)).attr("y1", top).attr("y2", H - bottom);
+          svg.append("text").attr("class", "tick-text").attr("x", x(tk)).attr("y", H - 6).attr("text-anchor", "middle").text(fmtSigned(tk, 1));
+        });
+        svg.append("line").attr("class", "zero-line").attr("x1", x(0)).attr("x2", x(0)).attr("y1", top).attr("y2", H - bottom);
+        tools.forEach((t, i) => {
+          const tt = vals[i];
+          const y = top + i * rowH + rowH / 2;
+          svg.append("text").attr("class", "kc-label").attr("x", labelW - 8).attr("y", y).attr("dy", "0.35em")
+            .attr("text-anchor", "end").text(t.label);
+          if (!tt) return;
+          svg.append("line").attr("x1", x(tt.ci_low)).attr("x2", x(tt.ci_high)).attr("y1", y).attr("y2", y)
+            .attr("stroke", t.color).attr("stroke-width", 2.5);
+          svg.append("circle").attr("cx", x(tt.mean_diff)).attr("cy", y).attr("r", 5.5)
+            .attr("fill", tt.significant_holm ? t.color : css("--surface")).attr("stroke", t.color).attr("stroke-width", 2.5);
+          svg.append("rect").attr("x", 0).attr("y", y - rowH / 2).attr("width", W).attr("height", rowH).attr("fill", "transparent")
+            .on("mouseenter", (event) => showTip(event, `<span class="tt-title">${t.label} · ${pn.title}</span>
+              <span class="tt-row">${pn.named ? tt.comparison + ": " : ""}${fmtSigned(tt.mean_diff, 2)} ${fmtCI(tt)}</span>
+              <span class="tt-row">Holm p ${fmtP(tt.p_holm)}${tt.significant_holm ? " · significant" : ""}</span>`))
+            .on("mousemove", moveTip).on("mouseleave", hideTip);
+        });
+      }
+    });
+  });
+
+  markLegend("#legend-key-charts", tools.map((t) => ({ name: t.label, color: t.color }))
+    .concat([{ kind: "text", name: "Bias panels: filled dot = significant after Holm adjustment; open = not significant." }]));
 }
 
 /* ============================================================
@@ -1340,6 +1603,8 @@ function renderResults() {
   renderStatus();
   renderKpis();
   renderFindings();
+  renderKeyCharts();
+  renderComparison();
   renderSummaryTable();
   renderCityTable();
   renderFlaggingTable();

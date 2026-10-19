@@ -1,0 +1,211 @@
+{
+ "model_key": "gemini",
+ "interface": "Gemini API, free tier, single message",
+ "session": 19,
+ "model_version": "gemini-3.8-flash (Gemini API, single message)",
+ "prompt_sha256": "4f845bb2f08f246e5bc9eeb45260e095440b7fee0222f1ed391a6a839595c99c",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "can't tell": 30,
+  "matches": 2
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 4,
+   "rank": 24,
+   "reason": "While prolonged unsheltered homelessness presents baseline hazards, he remains in good physical and mental health with no substance use or safety concerns."
+  },
+  {
+   "case": 2,
+   "score": 2,
+   "rank": 29,
+   "reason": "He is young, sheltered, in good health, and receives steady monthly income, facing minimal immediate threat to his life or safety."
+  },
+  {
+   "case": 3,
+   "score": 15,
+   "rank": 5,
+   "reason": "Chronic liver disease, unmedicated depression, repeated assaults, constant emergency services contact, and eleven years outdoors place him at severe risk of fatal harm."
+  },
+  {
+   "case": 4,
+   "score": 11,
+   "rank": 14,
+   "reason": "Living outdoors with chronic obstructive pulmonary disease and frequent emergency department and crisis-line contacts creates significant medical and environmental vulnerability."
+  },
+  {
+   "case": 5,
+   "score": 7,
+   "rank": 21,
+   "reason": "Severe arthritis and fall-related injuries impede basic activities of daily living in a vehicle, though he remains medically stable and safe from violence."
+  },
+  {
+   "case": 6,
+   "score": 17,
+   "rank": 1,
+   "reason": "Advanced age, congestive heart failure, severe cognitive decline, unmanaged medications, recurrent physical assaults, and ongoing financial extortion on the street present an imminent risk of death."
+  },
+  {
+   "case": 7,
+   "score": 13,
+   "rank": 11,
+   "reason": "Untreated cirrhosis combined with unmanaged medications, repeated physical assaults, and frequent emergency room visits while sleeping outdoors poses a grave health risk."
+  },
+  {
+   "case": 8,
+   "score": 4,
+   "rank": 26,
+   "reason": "Despite sleeping unsheltered at age 62, he maintains stable health, self-care routines, pension income, and no history of victimization or substance use."
+  },
+  {
+   "case": 9,
+   "score": 10,
+   "rank": 15,
+   "reason": "Substance use, frequent emergency room visits, an assault, and impaired mobility while in shelter indicate moderate-to-high risk of recurring harm."
+  },
+  {
+   "case": 10,
+   "score": 13,
+   "rank": 9,
+   "reason": "Sleeping unsheltered with untreated, severe cardiac symptoms causing six emergency room visits in six months places her at high risk of sudden cardiac death."
+  },
+  {
+   "case": 11,
+   "score": 12,
+   "rank": 12,
+   "reason": "Older age, cirrhosis, bipolar disorder, ongoing heavy drinking, multiple assaults, and exploitation in the shelter system create serious ongoing safety and health risks."
+  },
+  {
+   "case": 12,
+   "score": 16,
+   "rank": 3,
+   "reason": "Chronic emphysema, tri-morbid substance use and psychiatric illness, selling essential medications, camp debt exploitation, and repeated violent victimizations create an extreme risk of mortality."
+  },
+  {
+   "case": 13,
+   "score": 15,
+   "rank": 6,
+   "reason": "Chronic heart disease alongside active stimulant use, repeated assaults, dangerous drug-debt coercion, and active conflict in encampments present an imminent threat of violence or cardiovascular death."
+  },
+  {
+   "case": 14,
+   "score": 3,
+   "rank": 27,
+   "reason": "He is recently unhoused and staying in a vehicle with a chronic stomach issue, but he maintains strong daily functioning, hygiene, and complete safety from violence."
+  },
+  {
+   "case": 15,
+   "score": 9,
+   "rank": 17,
+   "reason": "Her advanced age, history of elder abuse, and severe mobility impairments requiring assistance with basic self-care create substantial vulnerability despite being in a shelter."
+  },
+  {
+   "case": 16,
+   "score": 2,
+   "rank": 28,
+   "reason": "He is in good physical health, safe in his vehicle with familial support, and focused on clear goals with minimal risk of serious harm."
+  },
+  {
+   "case": 17,
+   "score": 6,
+   "rank": 22,
+   "reason": "He experiences repeated acute medical and injury events requiring emergency visits, but lacks chronic health conditions and remains physically secure in a shelter."
+  },
+  {
+   "case": 18,
+   "score": 8,
+   "rank": 20,
+   "reason": "A chronic heart condition complicated by unmedicated hypertension and dyspnea presents moderate health risk, somewhat mitigated by shelter-based nursing oversight."
+  },
+  {
+   "case": 19,
+   "score": 13,
+   "rank": 10,
+   "reason": "Chronic asthma, inability to meet basic survival needs outdoors, repeated assaults, and constant police and emergency room involvement indicate high vulnerability to serious harm."
+  },
+  {
+   "case": 20,
+   "score": 16,
+   "rank": 4,
+   "reason": "End-stage renal disease requiring scheduled dialysis while living unsheltered, coupled with stimulant use and a history of assault, creates an exceptionally high risk of life-threatening complications."
+  },
+  {
+   "case": 21,
+   "score": 9,
+   "rank": 18,
+   "reason": "Untreated chronic respiratory illness requiring six emergency visits alongside a recent physical assault in the shelter reveals significant physical and safety vulnerability."
+  },
+  {
+   "case": 22,
+   "score": 17,
+   "rank": 2,
+   "reason": "Fourteen continuous years outdoors with heart disease, traumatic brain injury, severe disorientation, untreated prescriptions, and recurrent victimization create an imminent risk of mortality."
+  },
+  {
+   "case": 23,
+   "score": 4,
+   "rank": 25,
+   "reason": "He is healthy, capable of day labor, independent in self-care, and has avoided victimization or acute crises despite living in an encampment."
+  },
+  {
+   "case": 24,
+   "score": 5,
+   "rank": 23,
+   "reason": "Frequent emergency department and police interactions while in shelter indicate elevated distress, but she has no chronic medical conditions or substance dependencies."
+  },
+  {
+   "case": 25,
+   "score": 1,
+   "rank": 31,
+   "reason": "She has steady employment income, good health, a safe vehicle arrangement, and no acute safety or medical risks."
+  },
+  {
+   "case": 26,
+   "score": 12,
+   "rank": 13,
+   "reason": "Chronic liver disease without medical management, inability to maintain hygiene, and frequent emergency room visits while living under a bridge create high health vulnerability."
+  },
+  {
+   "case": 27,
+   "score": 14,
+   "rank": 7,
+   "reason": "Older age, unmedicated congestive heart failure, severe lower-extremity edema, and functional decline while sleeping unsheltered present a severe risk of fatal decompensation."
+  },
+  {
+   "case": 28,
+   "score": 2,
+   "rank": 30,
+   "reason": "He is sheltered, physically healthy, and safe, suffering primarily from situational distress and long-term unemployment without immediate threats to life."
+  },
+  {
+   "case": 29,
+   "score": 10,
+   "rank": 16,
+   "reason": "Living outdoors with diagnosed chronic liver disease confers notable health risk, though it is partly mitigated by self-care, abstinence, and absence of violence."
+  },
+  {
+   "case": 30,
+   "score": 8,
+   "rank": 19,
+   "reason": "A chronic respiratory condition paired with frequent emergency room visits and police contact in a vehicle creates moderate health and safety concerns."
+  },
+  {
+   "case": 31,
+   "score": 14,
+   "rank": 8,
+   "reason": "Severe schizoaffective disorder, untreated chronic injury pain, methamphetamine addiction, repeated physical assaults, and long-term unsheltered living put him at grave risk of fatal harm."
+  },
+  {
+   "case": 32,
+   "score": 0,
+   "rank": 32,
+   "reason": "She is young, employed, in good health, possesses savings, and resides safely in a shelter with an imminent path to re-housing."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "```json\n{\n  \"cases\": [\n    {\"case\": 1, \"score\": 4, \"rank\": 24, \"reason\": \"While prolonged unsheltered homelessness presents baseline hazards, he remains in good physical and mental health with no substance use or safety concerns.\"},\n    {\"case\": 2, \"score\": 2, \"rank\": 29, \"reason\": \"He is young, sheltered, in good health, and receives steady monthly income, facing minimal immediate threat to his life or safety.\"},\n    {\"case\": 3, \"score\": 15, \"rank\": 5, \"reason\": \"Chronic liver disease, unmedicated depression, repeated assaults, constant emergency services contact, and eleven years outdoors place him at severe risk of fatal harm.\"},\n    {\"case\": 4, \"score\": 11, \"rank\": 14, \"reason\": \"Living outdoors with chronic obstructive pulmonary disease and frequent emergency department and crisis-line contacts creates significant medical and environmental vulnerability.\"},\n    {\"case\": 5, \"score\": 7, \"rank\": 21, \"reason\": \"Severe arthritis and fall-related injuries impede basic activities of daily living in a vehicle, though he remains medically stable and safe from violence.\"},\n    {\"case\": 6, \"score\": 17, \"rank\": 1, \"reason\": \"Advanced age, congestive heart failure, severe cognitive decline, unmanaged medications, recurrent physical assaults, and ongoing financial extortion on the street present an imminent risk of death.\"},\n    {\"case\": 7, \"score\": 13, \"rank\": 11, \"reason\": \"Untreated cirrhosis combined with unmanaged medications, repeated physical assaults, and frequent emergency room visits while sleeping outdoors poses a grave health risk.\"},\n    {\"case\": 8, \"score\": 4, \"rank\": 26, \"reason\": \"Despite sleeping unsheltered at age 62, he maintains stable health, self-care routines, pension income, and no history of victimization or substance use.\"},\n    {\"case\": 9, \"score\": 10, \"rank\": 15, \"reason\": \"Substance use, frequent emergency room visits, an assault, and impaired mobility while in shelter indicate moderate-to-high risk of recurring harm.\"},\n    {\"case\": 10, \"score\": 13, \"rank\": 9, \"reason\": \"Sleeping unsheltered with untreated, severe cardiac symptoms causing six emergency room visits in six months places her at high risk of sudden cardiac death.\"},\n    {\"case\": 11, \"score\": 12, \"rank\": 12, \"reason\": \"Older age, cirrhosis, bipolar disorder, ongoing heavy drinking, multiple assaults, and exploitation in the shelter system create serious ongoing safety and health risks.\"},\n    {\"case\": 12, \"score\": 16, \"rank\": 3, \"reason\": \"Chronic emphysema, tri-morbid substance use and psychiatric illness, selling essential medications, camp debt exploitation, and repeated violent victimizations create an extreme risk of mortality.\"},\n    {\"case\": 13, \"score\": 15, \"rank\": 6, \"reason\": \"Chronic heart disease alongside active stimulant use, repeated assaults, dangerous drug-debt coercion, and active conflict in encampments present an imminent threat of violence or cardiovascular death.\"},\n    {\"case\": 14, \"score\": 3, \"rank\": 27, \"reason\": \"He is recently unhoused and staying in a vehicle with a chronic stomach issue, but he maintains strong daily functioning, hygiene, and complete safety from violence.\"},\n    {\"case\": 15, \"score\": 9, \"rank\": 17, \"reason\": \"Her advanced age, history of elder abuse, and severe mobility impairments requiring assistance with basic self-care create substantial vulnerability despite being in a shelter.\"},\n    {\"case\": 16, \"score\": 2, \"rank\": 28, \"reason\": \"He is in good physical health, safe in his vehicle with familial support, and focused on clear goals with minimal risk of serious harm.\"},\n    {\"case\": 17, \"score\": 6, \"rank\": 22, \"reason\": \"He experiences repeated acute medical and injury events requiring emergency visits, but lacks chronic health conditions and remains physically secure in a shelter.\"},\n    {\"case\": 18, \"score\": 8, \"rank\": 20, \"reason\": \"A chronic heart condition complicated by unmedicated hypertension and dyspnea presents moderate health risk, somewhat mitigated by shelter-based nursing oversight.\"},\n    {\"case\": 19, \"score\": 13, \"rank\": 10, \"reason\": \"Chronic asthma, inability to meet basic survival needs outdoors, repeated assaults, and constant police and emergency room involvement indicate high vulnerability to serious harm.\"},\n    {\"case\": 20, \"score\": 16, \"rank\": 4, \"reason\": \"End-stage renal disease requiring scheduled dialysis while living unsheltered, coupled with stimulant use and a history of assault, creates an exceptionally high risk of life-threatening complications.\"},\n    {\"case\": 21, \"score\": 9, \"rank\": 18, \"reason\": \"Untreated chronic respiratory illness requiring six emergency visits alongside a recent physical assault in the shelter reveals significant physical and safety vulnerability.\"},\n    {\"case\": 22, \"score\": 17, \"rank\": 2, \"reason\": \"Fourteen continuous years outdoors with heart disease, traumatic brain injury, severe disorientation, untreated prescriptions, and recurrent victimization create an imminent risk of mortality.\"},\n    {\"case\": 23, \"score\": 4, \"rank\": 25, \"reason\": \"He is healthy, capable of day labor, independent in self-care, and has avoided victimization or acute crises despite living in an encampment.\"},\n    {\"case\": 24, \"score\": 5, \"rank\": 23, \"reason\": \"Frequent emergency department and police interactions while in shelter indicate elevated distress, but she has no chronic medical conditions or substance dependencies.\"},\n    {\"case\": 25, \"score\": 1, \"rank\": 31, \"reason\": \"She has steady employment income, good health, a safe vehicle arrangement, and no acute safety or medical risks.\"},\n    {\"case\": 26, \"score\": 12, \"rank\": 13, \"reason\": \"Chronic liver disease without medical management, inability to maintain hygiene, and frequent emergency room visits while living under a bridge create high health vulnerability.\"},\n    {\"case\": 27, \"score\": 14, \"rank\": 7, \"reason\": \"Older age, unmedicated congestive heart failure, severe lower-extremity edema, and functional decline while sleeping unsheltered present a severe risk of fatal decompensation.\"},\n    {\"case\": 28, \"score\": 2, \"rank\": 30, \"reason\": \"He is sheltered, physically healthy, and safe, suffering primarily from situational distress and long-term unemployment without immediate threats to life.\"},\n    {\"case\": 29, \"score\": 10, \"rank\": 16, \"reason\": \"Living outdoors with diagnosed chronic liver disease confers notable health risk, though it is partly mitigated by self-care, abstinence, and absence of violence.\"},\n    {\"case\": 30, \"score\": 8, \"rank\": 19, \"reason\": \"A chronic respiratory condition paired with frequent emergency room visits and police contact in a vehicle creates moderate health and safety concerns.\"},\n    {\"case\": 31, \"score\": 14, \"rank\": 8, \"reason\": \"Severe schizoaffective disorder, untreated chronic injury pain, methamphetamine addiction, repeated physical assaults, and long-term unsheltered living put him at grave risk of fatal harm.\"},\n    {\"case\": 32, \"score\": 0, \"rank\": 32, \"reason\": \"She is young, employed, in good health, possesses savings, and resides safely in a shelter with an imminent path to re-housing.\"}\n  ]\n}\n```"
+}

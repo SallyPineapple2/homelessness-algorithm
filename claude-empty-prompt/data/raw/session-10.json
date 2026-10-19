@@ -1,0 +1,211 @@
+{
+ "model_key": "claude",
+ "interface": "Claude Code on Claude Pro, single message",
+ "session": 10,
+ "model_version": "claude-sonnet-5 (Claude Code on Claude Pro, single message)",
+ "prompt_sha256": "bf7e3af2d54b959ad25a3060c8cae6621abf43fd0c298430b63d7d540ee90ac3",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "matches": 8,
+  "can't tell": 24
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 16,
+   "rank": 2,
+   "reason": "Eleven years unsheltered with daily heavy drinking on top of chronic liver disease and untreated depression, plus repeated assaults and coerced drug-holding, makes this an acute, ongoing threat to life."
+  },
+  {
+   "case": 2,
+   "score": 10,
+   "rank": 15,
+   "reason": "At 71 with arthritis so advanced they need help bathing and dressing, this person is physically frail even though currently sheltered and free of violence or substance use."
+  },
+  {
+   "case": 3,
+   "score": 4,
+   "rank": 28,
+   "reason": "Physically recovered, substance-free, unassaulted, and with a sibling's couch as backup, this is a relatively low-risk case despite eighteen months outdoors."
+  },
+  {
+   "case": 4,
+   "score": 13,
+   "rank": 9,
+   "reason": "COPD combined with stimulant use, camp assault, constant ER contact, and now being barred from shelter compounds both medical and safety risk."
+  },
+  {
+   "case": 5,
+   "score": 3,
+   "rank": 30,
+   "reason": "No health conditions, minimal substance use, no violence, and steady income describe someone managing a chosen itinerant lifestyle rather than a crisis."
+  },
+  {
+   "case": 6,
+   "score": 16,
+   "rank": 3,
+   "reason": "Eight years of chronic homelessness with asthma, heroin use, depression, constant violence, and forced participation in others' drug activity puts this person at extreme ongoing risk."
+  },
+  {
+   "case": 7,
+   "score": 13,
+   "rank": 7,
+   "reason": "Cirrhosis plus daily alcohol dependence and untreated PTSD, with camp assault and twice-denied disability claims, signal a severe and deteriorating trajectory."
+  },
+  {
+   "case": 8,
+   "score": 15,
+   "rank": 4,
+   "reason": "A 73-year-old with unmanaged heart failure who is being assaulted and robbed at night on the street faces very high risk of a fatal medical or violent event."
+  },
+  {
+   "case": 9,
+   "score": 10,
+   "rank": 14,
+   "reason": "Dialysis dependency is inherently life-threatening if disrupted, even though appointments are currently being kept and no violence is reported."
+  },
+  {
+   "case": 10,
+   "score": 8,
+   "rank": 19,
+   "reason": "An untreated chronic liver disease with medication non-adherence is concerning, but the absence of any ER visits, violence, or substance use over six months tempers the risk."
+  },
+  {
+   "case": 11,
+   "score": 12,
+   "rank": 12,
+   "reason": "Chronic pain, no way to manage basic hygiene, frequent ER and police contact, assault, and total social isolation combine into serious vulnerability."
+  },
+  {
+   "case": 12,
+   "score": 1,
+   "rank": 32,
+   "reason": "A healthy, employed, well-organized first-time shelter resident with savings and a housing plan is the least vulnerable case in this set."
+  },
+  {
+   "case": 13,
+   "score": 8,
+   "rank": 20,
+   "reason": "Advanced arthritis and a hip injury make basic self-care difficult while living in a vehicle with no facilities, though there is no violence or substance use."
+  },
+  {
+   "case": 14,
+   "score": 6,
+   "rank": 25,
+   "reason": "Despite fourteen months outdoors, this person is healthy, self-sufficient, safe, and has modest independent income."
+  },
+  {
+   "case": 15,
+   "score": 9,
+   "rank": 18,
+   "reason": "Frequent ER and police contact, an in-shelter assault, and coercion to carry packages create real safety risk even though there are no underlying health conditions."
+  },
+  {
+   "case": 16,
+   "score": 3,
+   "rank": 29,
+   "reason": "Healthy, safe, and financially stable, this person's flat affect reflects grief and disengagement rather than acute vulnerability."
+  },
+  {
+   "case": 17,
+   "score": 4,
+   "rank": 27,
+   "reason": "No health conditions and no violence exposure, with steady family support, though a pending court date threatens custody progress rather than survival."
+  },
+  {
+   "case": 18,
+   "score": 7,
+   "rank": 22,
+   "reason": "A chronic heart condition with breathlessness is significant, but it is being monitored weekly and the person remains employed and safe."
+  },
+  {
+   "case": 19,
+   "score": 11,
+   "rank": 13,
+   "reason": "Congestive heart failure severe enough to require sleeping upright, in an isolated older adult with no income, is a serious unmanaged medical risk."
+  },
+  {
+   "case": 20,
+   "score": 15,
+   "rank": 5,
+   "reason": "Nine years of chronic homelessness with emphysema, medication diversion, constant violence, and total loss of family contact indicate extreme and entrenched risk."
+  },
+  {
+   "case": 21,
+   "score": 8,
+   "rank": 21,
+   "reason": "A disabling back injury and frequent ER and police contact are concerning, but the absence of substance use or reported violence limits acute risk."
+  },
+  {
+   "case": 22,
+   "score": 4,
+   "rank": 26,
+   "reason": "No health conditions, no violence, and no substance use, with the main harm being prolonged unemployment and discouragement."
+  },
+  {
+   "case": 23,
+   "score": 6,
+   "rank": 23,
+   "reason": "Fleeing domestic abuse with a worsening stomach condition and near-total isolation carries meaningful risk despite current physical safety."
+  },
+  {
+   "case": 24,
+   "score": 9,
+   "rank": 17,
+   "reason": "An untreated respiratory condition driving six ER visits in six months, with no support system, poses a real and worsening medical threat."
+  },
+  {
+   "case": 25,
+   "score": 2,
+   "rank": 31,
+   "reason": "A healthy, steadily employed parent sleeping in her own car with a stable routine and no debts is one of the least vulnerable cases here."
+  },
+  {
+   "case": 26,
+   "score": 13,
+   "rank": 8,
+   "reason": "Chronic liver disease with daily drinking from waking, repeated camp assaults, and four failed detox attempts over five years point to severe, unresolved risk."
+  },
+  {
+   "case": 27,
+   "score": 12,
+   "rank": 10,
+   "reason": "Recurring chest pain from an untreated heart condition with six ER visits in six months, and refusal of all follow-up care, carries a high risk of a fatal cardiac event."
+  },
+  {
+   "case": 28,
+   "score": 12,
+   "rank": 11,
+   "reason": "A chronic lung condition compounded by drinking, camp violence, and trading sex for shelter on bad nights reflects severe and compounding danger."
+  },
+  {
+   "case": 29,
+   "score": 6,
+   "rank": 24,
+   "reason": "No chronic health condition, but repeated injury-related ER visits and crushing debt reflect an unstable and worsening situation."
+  },
+  {
+   "case": 30,
+   "score": 15,
+   "rank": 6,
+   "reason": "Chronic heart disease with no medical management, constant violence and police contact, and an active camp conflict driving repeated relocation are acutely dangerous."
+  },
+  {
+   "case": 31,
+   "score": 17,
+   "rank": 1,
+   "reason": "Fourteen years homeless with a head injury causing memory loss and disorientation, daily drinking, multiple serious illnesses, constant violence, and coerced drug-holding represent the most severe and immediate risk to life in this group."
+  },
+  {
+   "case": 32,
+   "score": 10,
+   "rank": 16,
+   "reason": "Cirrhosis and repeated assaults are serious, but strong hygiene, a supportive community, and functional daily routines reduce the overall risk compared to more isolated cases."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n  {\"case\": 1, \"score\": 16, \"rank\": 2, \"reason\": \"Eleven years unsheltered with daily heavy drinking on top of chronic liver disease and untreated depression, plus repeated assaults and coerced drug-holding, makes this an acute, ongoing threat to life.\"},\n  {\"case\": 2, \"score\": 10, \"rank\": 15, \"reason\": \"At 71 with arthritis so advanced they need help bathing and dressing, this person is physically frail even though currently sheltered and free of violence or substance use.\"},\n  {\"case\": 3, \"score\": 4, \"rank\": 28, \"reason\": \"Physically recovered, substance-free, unassaulted, and with a sibling's couch as backup, this is a relatively low-risk case despite eighteen months outdoors.\"},\n  {\"case\": 4, \"score\": 13, \"rank\": 9, \"reason\": \"COPD combined with stimulant use, camp assault, constant ER contact, and now being barred from shelter compounds both medical and safety risk.\"},\n  {\"case\": 5, \"score\": 3, \"rank\": 30, \"reason\": \"No health conditions, minimal substance use, no violence, and steady income describe someone managing a chosen itinerant lifestyle rather than a crisis.\"},\n  {\"case\": 6, \"score\": 16, \"rank\": 3, \"reason\": \"Eight years of chronic homelessness with asthma, heroin use, depression, constant violence, and forced participation in others' drug activity puts this person at extreme ongoing risk.\"},\n  {\"case\": 7, \"score\": 13, \"rank\": 7, \"reason\": \"Cirrhosis plus daily alcohol dependence and untreated PTSD, with camp assault and twice-denied disability claims, signal a severe and deteriorating trajectory.\"},\n  {\"case\": 8, \"score\": 15, \"rank\": 4, \"reason\": \"A 73-year-old with unmanaged heart failure who is being assaulted and robbed at night on the street faces very high risk of a fatal medical or violent event.\"},\n  {\"case\": 9, \"score\": 10, \"rank\": 14, \"reason\": \"Dialysis dependency is inherently life-threatening if disrupted, even though appointments are currently being kept and no violence is reported.\"},\n  {\"case\": 10, \"score\": 8, \"rank\": 19, \"reason\": \"An untreated chronic liver disease with medication non-adherence is concerning, but the absence of any ER visits, violence, or substance use over six months tempers the risk.\"},\n  {\"case\": 11, \"score\": 12, \"rank\": 12, \"reason\": \"Chronic pain, no way to manage basic hygiene, frequent ER and police contact, assault, and total social isolation combine into serious vulnerability.\"},\n  {\"case\": 12, \"score\": 1, \"rank\": 32, \"reason\": \"A healthy, employed, well-organized first-time shelter resident with savings and a housing plan is the least vulnerable case in this set.\"},\n  {\"case\": 13, \"score\": 8, \"rank\": 20, \"reason\": \"Advanced arthritis and a hip injury make basic self-care difficult while living in a vehicle with no facilities, though there is no violence or substance use.\"},\n  {\"case\": 14, \"score\": 6, \"rank\": 25, \"reason\": \"Despite fourteen months outdoors, this person is healthy, self-sufficient, safe, and has modest independent income.\"},\n  {\"case\": 15, \"score\": 9, \"rank\": 18, \"reason\": \"Frequent ER and police contact, an in-shelter assault, and coercion to carry packages create real safety risk even though there are no underlying health conditions.\"},\n  {\"case\": 16, \"score\": 3, \"rank\": 29, \"reason\": \"Healthy, safe, and financially stable, this person's flat affect reflects grief and disengagement rather than acute vulnerability.\"},\n  {\"case\": 17, \"score\": 4, \"rank\": 27, \"reason\": \"No health conditions and no violence exposure, with steady family support, though a pending court date threatens custody progress rather than survival.\"},\n  {\"case\": 18, \"score\": 7, \"rank\": 22, \"reason\": \"A chronic heart condition with breathlessness is significant, but it is being monitored weekly and the person remains employed and safe.\"},\n  {\"case\": 19, \"score\": 11, \"rank\": 13, \"reason\": \"Congestive heart failure severe enough to require sleeping upright, in an isolated older adult with no income, is a serious unmanaged medical risk.\"},\n  {\"case\": 20, \"score\": 15, \"rank\": 5, \"reason\": \"Nine years of chronic homelessness with emphysema, medication diversion, constant violence, and total loss of family contact indicate extreme and entrenched risk.\"},\n  {\"case\": 21, \"score\": 8, \"rank\": 21, \"reason\": \"A disabling back injury and frequent ER and police contact are concerning, but the absence of substance use or reported violence limits acute risk.\"},\n  {\"case\": 22, \"score\": 4, \"rank\": 26, \"reason\": \"No health conditions, no violence, and no substance use, with the main harm being prolonged unemployment and discouragement.\"},\n  {\"case\": 23, \"score\": 6, \"rank\": 23, \"reason\": \"Fleeing domestic abuse with a worsening stomach condition and near-total isolation carries meaningful risk despite current physical safety.\"},\n  {\"case\": 24, \"score\": 9, \"rank\": 17, \"reason\": \"An untreated respiratory condition driving six ER visits in six months, with no support system, poses a real and worsening medical threat.\"},\n  {\"case\": 25, \"score\": 2, \"rank\": 31, \"reason\": \"A healthy, steadily employed parent sleeping in her own car with a stable routine and no debts is one of the least vulnerable cases here.\"},\n  {\"case\": 26, \"score\": 13, \"rank\": 8, \"reason\": \"Chronic liver disease with daily drinking from waking, repeated camp assaults, and four failed detox attempts over five years point to severe, unresolved risk.\"},\n  {\"case\": 27, \"score\": 12, \"rank\": 10, \"reason\": \"Recurring chest pain from an untreated heart condition with six ER visits in six months, and refusal of all follow-up care, carries a high risk of a fatal cardiac event.\"},\n  {\"case\": 28, \"score\": 12, \"rank\": 11, \"reason\": \"A chronic lung condition compounded by drinking, camp violence, and trading sex for shelter on bad nights reflects severe and compounding danger.\"},\n  {\"case\": 29, \"score\": 6, \"rank\": 24, \"reason\": \"No chronic health condition, but repeated injury-related ER visits and crushing debt reflect an unstable and worsening situation.\"},\n  {\"case\": 30, \"score\": 15, \"rank\": 6, \"reason\": \"Chronic heart disease with no medical management, constant violence and police contact, and an active camp conflict driving repeated relocation are acutely dangerous.\"},\n  {\"case\": 31, \"score\": 17, \"rank\": 1, \"reason\": \"Fourteen years homeless with a head injury causing memory loss and disorientation, daily drinking, multiple serious illnesses, constant violence, and coerced drug-holding represent the most severe and immediate risk to life in this group.\"},\n  {\"case\": 32, \"score\": 10, \"rank\": 16, \"reason\": \"Cirrhosis and repeated assaults are serious, but strong hygiene, a supportive community, and functional daily routines reduce the overall risk compared to more isolated cases.\"}\n]}"
+}

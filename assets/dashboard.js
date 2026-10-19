@@ -333,7 +333,8 @@ function renderModelsRoster(roster, summaries) {
     const s = byKey.get(m.key);
     const status = s ? s.status : "not run";
     const tr = tbody.append("tr");
-    const versions = s && s.model_versions ? Object.keys(s.model_versions) : [];
+    // "gpt-6-luna (Codex CLI on ...)" -> "gpt-6-luna": the interface has its own column
+    const versions = s && s.model_versions ? [...new Set(Object.keys(s.model_versions).map((v) => v.replace(/\s*\(.*\)\s*$/, "")))] : [];
     tr.append("td").attr("class", "p-label").text(m.label);
     tr.append("td").text(m.family);
     tr.append("td").text(m.interface);

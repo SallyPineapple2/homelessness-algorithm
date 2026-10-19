@@ -1,0 +1,197 @@
+Model: gemini-3.8-flash (Gemini API, single message)
+{
+  "cases": [
+    {
+      "case": 1,
+      "score": 14,
+      "rank": 7,
+      "reason": "Severely vulnerable due to untreated schizoaffective disorder, chronic pain, active methamphetamine use, and repeated physical assaults while unsheltered for seven years."
+    },
+    {
+      "case": 2,
+      "score": 17,
+      "rank": 2,
+      "reason": "Extremely vulnerable due to advanced age, severe cognitive disorientation, heart disease, a head injury, inability to maintain hygiene, and fourteen years of continuous unsheltered homelessness with frequent assaults."
+    },
+    {
+      "case": 3,
+      "score": 9,
+      "rank": 16,
+      "reason": "Vulnerable due to an untreated chronic respiratory condition requiring frequent emergency care and a recent physical assault within the shelter."
+    },
+    {
+      "case": 4,
+      "score": 10,
+      "rank": 15,
+      "reason": "Vulnerable due to chronic obstructive pulmonary disease, prolonged unsheltered living, and frequent emergency room and crisis-line contacts."
+    },
+    {
+      "case": 5,
+      "score": 0,
+      "rank": 32,
+      "reason": "Least vulnerable with steady income, reliable vehicle shelter, good health, and no safety or substance concerns."
+    },
+    {
+      "case": 6,
+      "score": 8,
+      "rank": 18,
+      "reason": "Moderately vulnerable due to substance use, physical limitations from a back injury, and a history of physical assault outside the shelter."
+    },
+    {
+      "case": 7,
+      "score": 13,
+      "rank": 9,
+      "reason": "Highly vulnerable due to an untreated heart condition with recurring chest pain resulting in six emergency room visits while living unsheltered."
+    },
+    {
+      "case": 8,
+      "score": 15,
+      "rank": 5,
+      "reason": "Critical vulnerability driven by unmanaged heart disease, repeated severe assaults, active stimulant use, and ongoing coercive exploitation and debt bondage while unsheltered."
+    },
+    {
+      "case": 9,
+      "score": 16,
+      "rank": 3,
+      "reason": "Critically vulnerable due to life-threatening chronic kidney disease requiring regular dialysis while living in an encampment alongside active substance use and past assaults."
+    },
+    {
+      "case": 10,
+      "score": 11,
+      "rank": 13,
+      "reason": "Significant vulnerability stemming from eight years unsheltered, chronic asthma, unmet daily basic needs, and repeated assaults."
+    },
+    {
+      "case": 11,
+      "score": 14,
+      "rank": 8,
+      "reason": "High vulnerability resulting from eleven continuous years unsheltered, unmedicated chronic liver disease, severe depression, and recurrent physical assaults."
+    },
+    {
+      "case": 12,
+      "score": 15,
+      "rank": 6,
+      "reason": "High vulnerability due to advanced age, unmedicated congestive heart failure with severe edema, and two years unsheltered with severe limitations in basic self-care."
+    },
+    {
+      "case": 13,
+      "score": 1,
+      "rank": 31,
+      "reason": "Very low vulnerability given stable employment, savings, excellent health, independent daily functioning, and recent shelter entry."
+    },
+    {
+      "case": 14,
+      "score": 5,
+      "rank": 24,
+      "reason": "Low to moderate vulnerability because, despite living unsheltered at age 62, he has stable pension income, good physical health, and strong self-care routines."
+    },
+    {
+      "case": 15,
+      "score": 2,
+      "rank": 29,
+      "reason": "Low vulnerability due to good health, safe living conditions in a vehicle, strong family connections, and no substance use or safety risks."
+    },
+    {
+      "case": 16,
+      "score": 7,
+      "rank": 21,
+      "reason": "Moderate vulnerability due to older age, advanced arthritis, and difficulty with daily self-care tasks while living in a vehicle."
+    },
+    {
+      "case": 17,
+      "score": 8,
+      "rank": 19,
+      "reason": "Moderate vulnerability due to an unmedicated chronic lung condition and frequent emergency department and police encounters while living in a vehicle."
+    },
+    {
+      "case": 18,
+      "score": 16,
+      "rank": 4,
+      "reason": "Extremely vulnerable due to emphysema, severe co-occurring substance addiction and bipolar disorder, medication diversion, debt-related exploitation, and repeated violent assaults over nine years unsheltered."
+    },
+    {
+      "case": 19,
+      "score": 13,
+      "rank": 10,
+      "reason": "High vulnerability driven by unmedicated cirrhosis, frequent emergency room visits, and a history of assault while living unsheltered for four years."
+    },
+    {
+      "case": 20,
+      "score": 3,
+      "rank": 27,
+      "reason": "Low vulnerability due to good health, independent functioning, absence of substance use, and safe emergency shelter accommodations."
+    },
+    {
+      "case": 21,
+      "score": 12,
+      "rank": 12,
+      "reason": "Substantial vulnerability due to cirrhosis, active alcohol dependence, bipolar disorder, repeated assaults, and peer exploitation in the shelter."
+    },
+    {
+      "case": 22,
+      "score": 2,
+      "rank": 30,
+      "reason": "Low vulnerability with no substance use, good functional health, safe vehicle shelter, and absence of victimization or legal issues."
+    },
+    {
+      "case": 23,
+      "score": 4,
+      "rank": 25,
+      "reason": "Low vulnerability due to good health, steady scrap income, lack of safety issues, and independent daily self-care despite being unsheltered."
+    },
+    {
+      "case": 24,
+      "score": 7,
+      "rank": 20,
+      "reason": "Moderate vulnerability due to untreated chronic liver disease and three years unsheltered, tempered by stable daily functioning and lack of acute safety threats."
+    },
+    {
+      "case": 25,
+      "score": 11,
+      "rank": 14,
+      "reason": "High vulnerability due to advanced age, functional dependence requiring assistance for bathing and dressing, and ongoing financial elder abuse."
+    },
+    {
+      "case": 26,
+      "score": 6,
+      "rank": 22,
+      "reason": "Moderate vulnerability resulting from frequent police and emergency contacts and severe daily hygiene barriers despite good physical health."
+    },
+    {
+      "case": 27,
+      "score": 5,
+      "rank": 23,
+      "reason": "Low-moderate vulnerability driven by repeated emergency room visits for injuries and untreated infection, though sheltered and without chronic disease."
+    },
+    {
+      "case": 28,
+      "score": 12,
+      "rank": 11,
+      "reason": "High vulnerability due to unmedicated chronic liver disease, frequent emergency room visits, and chronic outdoor homelessness under an unstable bridge camp."
+    },
+    {
+      "case": 29,
+      "score": 17,
+      "rank": 1,
+      "reason": "Most vulnerable due to advanced age, heart failure, cognitive decline, inability to perform basic self-care, unmedicated conditions, active financial extortion, and violent victimization while unsheltered."
+    },
+    {
+      "case": 30,
+      "score": 4,
+      "rank": 26,
+      "reason": "Low vulnerability due to good physical health, steady informal income, absence of substance misuse, and successful adaptation to encampment life."
+    },
+    {
+      "case": 31,
+      "score": 3,
+      "rank": 28,
+      "reason": "Low vulnerability with good physical health, stable emergency shelter, regular inheritance income, and no acute safety risks."
+    },
+    {
+      "case": 32,
+      "score": 9,
+      "rank": 17,
+      "reason": "Moderate vulnerability due to an unmedicated chronic heart condition causing shortness of breath and impairing basic self-care activities."
+    }
+  ]
+}

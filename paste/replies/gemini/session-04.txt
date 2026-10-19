@@ -1,0 +1,197 @@
+Model: gemini-3.8-flash (Gemini API, single message)
+{
+  "cases": [
+    {
+      "case": 1,
+      "score": 17,
+      "rank": 1,
+      "reason": "Her advanced age, severe cardiovascular disease, cognitive impairment, daily heavy drinking, long-term unsheltered status, and ongoing physical assault and exploitation place her at extreme risk of death."
+    },
+    {
+      "case": 2,
+      "score": 3,
+      "rank": 26,
+      "reason": "She is newly homeless, living in a vehicle while fleeing domestic abuse, but maintains good physical health, independent functioning, and no substance use or emergency contacts."
+    },
+    {
+      "case": 3,
+      "score": 5,
+      "rank": 22,
+      "reason": "Her advanced arthritis and hip injury create functional daily living impairments while living in a vehicle, though she is medically stable and receives regular income."
+    },
+    {
+      "case": 4,
+      "score": 15,
+      "rank": 5,
+      "reason": "She has experienced nine years unsheltered with unmanaged emphysema due to selling her medication, frequent emergency contacts, and ongoing severe physical assaults."
+    },
+    {
+      "case": 5,
+      "score": 6,
+      "rank": 21,
+      "reason": "He has a chronic heart condition causing shortness of breath and functional difficulty, but is safely sheltered with family support and no safety or substance risks."
+    },
+    {
+      "case": 6,
+      "score": 2,
+      "rank": 28,
+      "reason": "He is in good physical health without substance use or safety concerns and is sheltered while attempting to regain employment."
+    },
+    {
+      "case": 7,
+      "score": 14,
+      "rank": 7,
+      "reason": "His unmanaged chronic heart disease is compounded by long-term unsheltered living, constant emergency service encounters, and severe recurrent assaults linked to camp conflicts."
+    },
+    {
+      "case": 8,
+      "score": 8,
+      "rank": 16,
+      "reason": "Her elderly age and inability to bathe or dress independently make her frail, though she is currently in a safe emergency shelter environment."
+    },
+    {
+      "case": 9,
+      "score": 1,
+      "rank": 30,
+      "reason": "He is a young, healthy individual staying in a shelter with modest regular income and no substance use, safety, or medical vulnerabilities."
+    },
+    {
+      "case": 10,
+      "score": 7,
+      "rank": 18,
+      "reason": "She has an unmanaged chronic liver condition while sleeping outdoors, though she does not use substances and has avoided acute safety incidents or emergency room visits."
+    },
+    {
+      "case": 11,
+      "score": 16,
+      "rank": 3,
+      "reason": "Eleven years of continuous unsheltered homelessness combined with liver disease, severe daily alcoholism, untreated depression, physical abuse, and camp exploitation create imminent mortality risk."
+    },
+    {
+      "case": 12,
+      "score": 14,
+      "rank": 6,
+      "reason": "Managing end-stage renal disease requiring dialysis while living outdoors in an encampment presents an extraordinarily high risk of life-threatening infection and acute deterioration."
+    },
+    {
+      "case": 13,
+      "score": 11,
+      "rank": 12,
+      "reason": "At age 68, living unsheltered with congestive heart failure and severe swelling that requires him to sleep sitting up places him in serious, deteriorating medical danger."
+    },
+    {
+      "case": 14,
+      "score": 10,
+      "rank": 14,
+      "reason": "He suffers from end-stage liver disease and faces recurrent physical assaults and emergency hospital visits, though he currently has indoor shelter."
+    },
+    {
+      "case": 15,
+      "score": 10,
+      "rank": 13,
+      "reason": "His lung condition and heavy drinking are aggravated by trading sex for survival shelter, alongside frequent emergency room visits and recent physical assault."
+    },
+    {
+      "case": 16,
+      "score": 9,
+      "rank": 15,
+      "reason": "Seven years of unsheltered homelessness with debilitating chronic pain, impaired self-care, frequent emergency encounters, and recent victimization make him highly vulnerable."
+    },
+    {
+      "case": 17,
+      "score": 12,
+      "rank": 11,
+      "reason": "He has chronic obstructive pulmonary disease, sells his prescription medications to support an active stimulant addiction, and experiences frequent assaults and crisis services while unsheltered."
+    },
+    {
+      "case": 18,
+      "score": 7,
+      "rank": 19,
+      "reason": "Despite being physically healthy, he is subjected to ongoing violent assaults, criminal coercion, and frequent emergency visits inside the shelter."
+    },
+    {
+      "case": 19,
+      "score": 1,
+      "rank": 31,
+      "reason": "He has steady employment income, reliable vehicle shelter, excellent physical health, and no substance use or safety risks."
+    },
+    {
+      "case": 20,
+      "score": 3,
+      "rank": 25,
+      "reason": "She is safely accommodated in an emergency shelter with no chronic medical or substance conditions, though she has high debt and several minor acute emergency room visits."
+    },
+    {
+      "case": 21,
+      "score": 4,
+      "rank": 23,
+      "reason": "While she lives outdoors following past assault trauma, she is currently in good physical health, maintains daily income, and experiences no recent safety incidents."
+    },
+    {
+      "case": 22,
+      "score": 0,
+      "rank": 32,
+      "reason": "He is newly and temporarily sheltered with active employment, personal savings, excellent physical health, and clear independent housing plans."
+    },
+    {
+      "case": 23,
+      "score": 13,
+      "rank": 9,
+      "reason": "She has an untreated, severe cardiac condition causing recurring chest pain and six recent emergency room visits while living outdoors with deteriorating self-care."
+    },
+    {
+      "case": 24,
+      "score": 13,
+      "rank": 8,
+      "reason": "Five years unsheltered with end-stage liver disease, severe daily alcoholism, repeated assaults, and multiple emergency admissions indicate profound mortality risk."
+    },
+    {
+      "case": 25,
+      "score": 4,
+      "rank": 24,
+      "reason": "Although older and unsheltered, she is in good health, manages her activities independently, receives steady income, and has no acute safety concerns."
+    },
+    {
+      "case": 26,
+      "score": 12,
+      "rank": 10,
+      "reason": "Living unsheltered with cirrhosis, chronic alcoholism, untreated post-traumatic stress disorder, and frequent emergency visits from assaults poses severe life-threatening hazards."
+    },
+    {
+      "case": 27,
+      "score": 2,
+      "rank": 27,
+      "reason": "He maintains steady seasonal income, good physical health, and personal safety while experiencing familiar episodic encampment stays."
+    },
+    {
+      "case": 28,
+      "score": 6,
+      "rank": 20,
+      "reason": "She experiences chronic impairment from a prior injury, hygiene difficulties, and frequent emergency and police contacts, but resides in a shelter."
+    },
+    {
+      "case": 29,
+      "score": 17,
+      "rank": 2,
+      "reason": "At age 73, living unsheltered with untreated heart failure, inability to maintain hygiene or food intake, and repeated robberies and assaults, she is at imminent risk of death."
+    },
+    {
+      "case": 30,
+      "score": 16,
+      "rank": 4,
+      "reason": "Eight years of unsheltered homelessness combined with active heroin addiction, asthma, severe depression, ongoing physical assaults, and camp trafficking coercion present extreme danger."
+    },
+    {
+      "case": 31,
+      "score": 8,
+      "rank": 17,
+      "reason": "She has an untreated chronic respiratory illness that has caused six emergency room visits within six months, though she is stably placed in an emergency shelter."
+    },
+    {
+      "case": 32,
+      "score": 1,
+      "rank": 29,
+      "reason": "He is in good health, safely sheltered in his vehicle, maintains positive familial contact, and is actively working on clear legal and financial goals."
+    }
+  ]
+}

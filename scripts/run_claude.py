@@ -4,7 +4,10 @@ Run the Claude sessions through Claude Code on a Claude Pro login, one fresh pro
 There is no free Claude API, so each session is sent with `claude -p` (headless Claude Code),
 stripped down to a plain model call:
 
-  --system-prompt ""          Claude Code's own coding-assistant prompt is replaced with nothing
+  --system-prompt "You are a helpful assistant."
+                              Claude Code's own coding-assistant prompt is replaced with the same
+                              single line ChatGPT gets (Codex refuses an empty one), so both
+                              models receive identical instructions
   --tools ""                  no tools, so the model can only read the message and answer
   --no-session-persistence    the chat is not saved, so no later session can resume it
   --setting-sources ""        user, project, and local settings are not loaded
@@ -46,7 +49,8 @@ BLANK = Path(tempfile.gettempdir()) / "blank"
 
 MODEL = "claude-sonnet-5"
 INTERFACE = "Claude Code on Claude Pro, single message"
-FLAGS = ["-p", "--model", MODEL, "--system-prompt", "", "--tools", "", "--no-session-persistence",
+SYSTEM_PROMPT = "You are a helpful assistant."  # identical to scripts/run_chatgpt.py
+FLAGS = ["-p", "--model", MODEL, "--system-prompt", SYSTEM_PROMPT, "--tools", "", "--no-session-persistence",
          "--setting-sources", "", "--strict-mcp-config", "--disable-slash-commands",
          "--output-format", "json"]
 LIMIT_WORDS = ("usage limit", "limit reached", "rate limit", "5-hour limit", "weekly limit")

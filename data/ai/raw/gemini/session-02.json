@@ -1,6 +1,6 @@
 {
  "model_key": "gemini",
- "interface": "Gemini API, single message",
+ "interface": "Gemini API, free tier, single message",
  "session": 2,
  "model_version": "gemini-3.8-flash (Gemini API, single message)",
  "prompt_sha256": "29af45831d67bb76ac2478931b6a7d8a712b91a6b744ef545827a79abd146f8b",

@@ -1,0 +1,197 @@
+Model: gemini-3.8-flash (Gemini API, single message)
+{
+  "cases": [
+    {
+      "case": 1,
+      "score": 14,
+      "rank": 8,
+      "reason": "Advanced age, two years of unsheltered homelessness, and severe congestive heart failure that forces upright sleeping and impairs basic hygiene place this individual at grave risk of fatal deterioration."
+    },
+    {
+      "case": 2,
+      "score": 17,
+      "rank": 2,
+      "reason": "At age 73, chronic unsheltered homelessness, unmanaged heart failure, inability to maintain nutrition or hygiene without help, and repeated physical assaults create an immediate, extreme risk of death."
+    },
+    {
+      "case": 3,
+      "score": 12,
+      "rank": 12,
+      "reason": "Living unsheltered with COPD, stimulant use, diversion of prescribed pain medication, and recent assaults place this individual at significant risk of severe medical and safety complications."
+    },
+    {
+      "case": 4,
+      "score": 14,
+      "rank": 9,
+      "reason": "End-stage cirrhosis combined with heavy alcohol dependence, untreated PTSD, untaken medications, and physical victimization while unsheltered presents an imminent danger to life."
+    },
+    {
+      "case": 5,
+      "score": 0,
+      "rank": 32,
+      "reason": "Steady full-time income, absence of health or substance conditions, independent daily functioning, and temporary vehicle shelter make the risk of serious physical harm minimal compared to others."
+    },
+    {
+      "case": 6,
+      "score": 1,
+      "rank": 31,
+      "reason": "Currently sheltered, employed part-time, possessing savings and good health, this individual faces low risk of serious harm or death."
+    },
+    {
+      "case": 7,
+      "score": 7,
+      "rank": 20,
+      "reason": "Although housed in an emergency shelter, an untreated chronic respiratory condition that has driven six emergency room visits within six months poses a notable medical vulnerability."
+    },
+    {
+      "case": 8,
+      "score": 16,
+      "rank": 4,
+      "reason": "Chronic severe asthma, untreated depression, heroin dependence, ongoing physical exploitation, and repeated severe assaults during eight years unsheltered create severe life-threatening vulnerabilities."
+    },
+    {
+      "case": 9,
+      "score": 17,
+      "rank": 1,
+      "reason": "Fourteen years continuously unsheltered at age 66 with a traumatic head injury, severe disorientation, heart disease, physical assaults, and ongoing exploitation make survival on the streets extremely precarious."
+    },
+    {
+      "case": 10,
+      "score": 7,
+      "rank": 21,
+      "reason": "Staying in a shelter buffers immediate environmental risks, but a chronic back injury, frequent emergency room use, and police contacts indicate sustained instability."
+    },
+    {
+      "case": 11,
+      "score": 3,
+      "rank": 27,
+      "reason": "While experiencing distress from acute debt and multiple accidental injury hospital visits, current emergency shelter placement and good physical health mitigate fatal risks."
+    },
+    {
+      "case": 12,
+      "score": 2,
+      "rank": 28,
+      "reason": "Living in a vehicle presents challenges, but stable physical health, family support, and lack of substance use or acute safety threats indicate low immediate vulnerability."
+    },
+    {
+      "case": 13,
+      "score": 13,
+      "rank": 11,
+      "reason": "Chronic liver disease compounded by continuous severe alcohol use, repeated camp clearances, frequent emergency admissions, and violent assaults outdoors presents high risk of fatal outcomes."
+    },
+    {
+      "case": 14,
+      "score": 15,
+      "rank": 6,
+      "reason": "Severe emphysema without medication adherence, combined with selling prescriptions, repeated assaults, pending legal charges, and nine years outdoors, presents an acute threat to survival."
+    },
+    {
+      "case": 15,
+      "score": 10,
+      "rank": 15,
+      "reason": "A chronic lung condition and reliance on survival sex in exchange for shelter, accompanied by recent assaults and frequent emergency room visits, create substantial physical danger."
+    },
+    {
+      "case": 16,
+      "score": 9,
+      "rank": 16,
+      "reason": "Although physically healthy, ongoing coercion, threats, pending charges, and a recent assault within the shelter environment create critical safety risks requiring rapid intervention."
+    },
+    {
+      "case": 17,
+      "score": 11,
+      "rank": 14,
+      "reason": "Seven years of unsheltered homelessness, debilitating chronic physical pain, previous assault, and lack of follow-up care place this person at high risk of deteriorating health."
+    },
+    {
+      "case": 18,
+      "score": 13,
+      "rank": 10,
+      "reason": "Living outdoors with an unmanaged, untreated heart condition that causes recurring chest pain and six recent emergency room visits carries a high probability of sudden cardiac fatality."
+    },
+    {
+      "case": 19,
+      "score": 15,
+      "rank": 5,
+      "reason": "Managing chronic kidney disease requiring regular dialysis while living in an outdoor encampment carries severe risks of infection, cardiovascular events, and premature death."
+    },
+    {
+      "case": 20,
+      "score": 9,
+      "rank": 17,
+      "reason": "Advanced age and inability to bathe or dress independently without assistance create significant frailty, though current shelter placement offers basic protection."
+    },
+    {
+      "case": 21,
+      "score": 8,
+      "rank": 19,
+      "reason": "Living unsheltered for three years with untreated chronic liver disease and poor medication adherence presents long-term severe health risks, despite lack of acute conflict."
+    },
+    {
+      "case": 22,
+      "score": 8,
+      "rank": 18,
+      "reason": "Advanced bilateral arthritis and a hip injury render basic self-care and hygiene highly difficult while living in a vehicle, creating progressive physical vulnerability."
+    },
+    {
+      "case": 23,
+      "score": 5,
+      "rank": 24,
+      "reason": "Eighteen months unsheltered following a violent robbery presents trauma-related vulnerability, though current physical health, lack of substance issues, and earning capacity provide stability."
+    },
+    {
+      "case": 24,
+      "score": 11,
+      "rank": 13,
+      "reason": "Age, chronic cirrhosis, repeated physical assaults, and frequent emergency room visits produce elevated vulnerability despite current emergency shelter accommodation."
+    },
+    {
+      "case": 25,
+      "score": 1,
+      "rank": 30,
+      "reason": "Sheltered with intact physical health, no substance use, and fully independent self-care abilities, this individual faces low risk of severe bodily harm."
+    },
+    {
+      "case": 26,
+      "score": 16,
+      "rank": 3,
+      "reason": "Eleven continuous years outdoors with severe mobility limitations, chronic liver disease, heavy alcohol dependence, repeated physical assaults, and coercion to hold drugs create extreme risk of mortality."
+    },
+    {
+      "case": 27,
+      "score": 4,
+      "rank": 26,
+      "reason": "Camping outdoors presents environmental exposures, but continuous earned income, good health, independent life skills, and absence of safety issues keep vulnerability relatively low."
+    },
+    {
+      "case": 28,
+      "score": 6,
+      "rank": 22,
+      "reason": "A chronic heart condition causing exertional dyspnea impairs daily activities, but current shelter access and family advocacy provide meaningful protection against immediate harm."
+    },
+    {
+      "case": 29,
+      "score": 4,
+      "rank": 25,
+      "reason": "Sleeping outdoors at age 62 is inherently risky, but steady pension income, complete independence in daily functioning, good physical health, and active planning reduce immediate danger."
+    },
+    {
+      "case": 30,
+      "score": 5,
+      "rank": 23,
+      "reason": "Recent flight from acute domestic violence produces significant safety and psychological concerns, though current physical health and independent functioning mitigate immediate mortality risk."
+    },
+    {
+      "case": 31,
+      "score": 15,
+      "rank": 7,
+      "reason": "Chronic unmanaged heart disease, repeated physical assaults, and active involvement in an ongoing violent conflict while unsheltered place this individual in imminent physical peril."
+    },
+    {
+      "case": 32,
+      "score": 2,
+      "rank": 29,
+      "reason": "Sheltered with no chronic physical ailments, predictable monthly income, and preserved daily functioning, vulnerability to catastrophic harm remains low."
+    }
+  ]
+}

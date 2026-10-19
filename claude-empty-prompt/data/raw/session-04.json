@@ -1,0 +1,211 @@
+{
+ "model_key": "claude",
+ "interface": "Claude Code on Claude Pro, single message",
+ "session": 4,
+ "model_version": "claude-sonnet-5 (Claude Code on Claude Pro, single message)",
+ "prompt_sha256": "945bc4e89d690e8e93752fe168d047661bebd9faa48aba85a88970058a23b5aa",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "matches": 10,
+  "can't tell": 22
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 16,
+   "rank": 2,
+   "reason": "Fourteen years continuously homeless with a head injury causing disorientation and memory loss, daily drinking, untreated heart disease and arthritis, active exploitation and assault at camp, and a warrant, with no support system to intervene."
+  },
+  {
+   "case": 2,
+   "score": 4,
+   "rank": 26,
+   "reason": "A recent, sole DV-related episode with no health conditions, no substance use, no violence since leaving, and maintained personal routines, though isolation and fear add some risk."
+  },
+  {
+   "case": 3,
+   "score": 5,
+   "rank": 24,
+   "reason": "Advanced arthritis and a hip injury impair self-care in a vehicle, but stable income, no substance use, and active caseworker engagement moderate the risk."
+  },
+  {
+   "case": 4,
+   "score": 14,
+   "rank": 7,
+   "reason": "Nine years homeless with untreated emphysema, constant ER/police contact, repeated assaults, pending charges, and total estrangement from family."
+  },
+  {
+   "case": 5,
+   "score": 6,
+   "rank": 21,
+   "reason": "A chronic heart condition with active symptoms in a first-time shelter stay, softened by sibling support and no violence or substance use."
+  },
+  {
+   "case": 6,
+   "score": 3,
+   "rank": 28,
+   "reason": "No health conditions or safety incidents, but isolation and having given up on job applications suggest emerging psychological vulnerability."
+  },
+  {
+   "case": 7,
+   "score": 14,
+   "rank": 5,
+   "reason": "Six years homeless with untreated chronic heart disease, no way to wash, constant ER/police contact, repeated assaults, and no family or stable support."
+  },
+  {
+   "case": 8,
+   "score": 8,
+   "rank": 19,
+   "reason": "A 71-year-old needing help to bathe and dress with arthritis and a financial crisis from disrupted Social Security, though no violence or substance use."
+  },
+  {
+   "case": 9,
+   "score": 3,
+   "rank": 29,
+   "reason": "Stable income and no health or safety issues in a first homelessness episode, tempered only by grief and social withdrawal."
+  },
+  {
+   "case": 10,
+   "score": 8,
+   "rank": 20,
+   "reason": "An untreated chronic liver disease with unmanaged medication in a three-year outdoor stay, but no recent violence and some peer support."
+  },
+  {
+   "case": 11,
+   "score": 16,
+   "rank": 3,
+   "reason": "Eleven years continuously homeless with heavy daily drinking, untreated depression and liver disease, constant assault and exploitation, and refusal of shelter over losing a support animal."
+  },
+  {
+   "case": 12,
+   "score": 10,
+   "rank": 13,
+   "reason": "Kidney failure requiring dialysis is life-threatening if disrupted by homelessness, compounded by repeated ER visits and loss of contact with children."
+  },
+  {
+   "case": 13,
+   "score": 10,
+   "rank": 14,
+   "reason": "Congestive heart failure with significant swelling and fatigue in an elderly, isolated man, though recent crisis contacts are absent."
+  },
+  {
+   "case": 14,
+   "score": 10,
+   "rank": 16,
+   "reason": "Cirrhosis with frequent ER/police contact and assault, but strong social support and maintained hygiene lower the immediate risk."
+  },
+  {
+   "case": 15,
+   "score": 12,
+   "rank": 11,
+   "reason": "A chronic lung condition combined with alcohol use, frequent ER/police contact, assault, and survival sex for shelter on bad nights."
+  },
+  {
+   "case": 16,
+   "score": 12,
+   "rank": 12,
+   "reason": "Seven years homeless with untreated chronic pain, frequent ER/police contact, assault, total isolation, and inability to articulate any goals."
+  },
+  {
+   "case": 17,
+   "score": 12,
+   "rank": 10,
+   "reason": "COPD combined with stimulant use, repeated ER and crisis-line contact, assault at camp, and being barred from shelter."
+  },
+  {
+   "case": 18,
+   "score": 10,
+   "rank": 15,
+   "reason": "No underlying health issues, but active coercion into carrying packages alongside assault and pending charges creates acute safety risk."
+  },
+  {
+   "case": 19,
+   "score": 2,
+   "rank": 31,
+   "reason": "A brief, stable episode with steady income, good health, and consistent contact with children, facing an affordability problem rather than crisis."
+  },
+  {
+   "case": 20,
+   "score": 6,
+   "rank": 22,
+   "reason": "No chronic conditions but a fainting episode among several ER visits and heavy debt stress in an isolated situation."
+  },
+  {
+   "case": 21,
+   "score": 6,
+   "rank": 23,
+   "reason": "Robbery-related injuries have healed and no ongoing health issues exist, with independent functioning and a family fallback option."
+  },
+  {
+   "case": 22,
+   "score": 2,
+   "rank": 32,
+   "reason": "A short, first-time shelter stay with steady work, savings, a concrete housing plan, and no health, safety, or substance concerns."
+  },
+  {
+   "case": 23,
+   "score": 13,
+   "rank": 8,
+   "reason": "An untreated heart condition causing six ER visits for chest pain in six months, with declined follow-up care and social isolation, poses serious mortality risk."
+  },
+  {
+   "case": 24,
+   "score": 13,
+   "rank": 9,
+   "reason": "Five years homeless with daily drinking from waking, chronic liver disease, frequent ER visits, repeated assaults, and four failed detox attempts."
+  },
+  {
+   "case": 25,
+   "score": 5,
+   "rank": 25,
+   "reason": "Over a year sleeping outdoors but in good health, self-sufficient, with no substance use and consistent family contact."
+  },
+  {
+   "case": 26,
+   "score": 14,
+   "rank": 6,
+   "reason": "Cirrhosis, alcohol dependence, and untreated PTSD combine with frequent ER visits, assault, and twice-denied disability claims."
+  },
+  {
+   "case": 27,
+   "score": 4,
+   "rank": 27,
+   "reason": "A functional, self-chosen seasonal homelessness pattern with no health conditions, minimal substance use, and an active support network."
+  },
+  {
+   "case": 28,
+   "score": 9,
+   "rank": 18,
+   "reason": "A disabling back injury limiting hygiene and function, with frequent ER/police contact and family estrangement, though maintaining routine."
+  },
+  {
+   "case": 29,
+   "score": 16,
+   "rank": 1,
+   "reason": "A 73-year-old with unmanaged heart failure, inability to eat or stay clean, repeated assault and robbery, a pending court date, and near-total isolation."
+  },
+  {
+   "case": 30,
+   "score": 15,
+   "rank": 4,
+   "reason": "Eight years homeless with heroin use, untreated depression, chronic asthma, constant assault, coerced participation in camp trafficking, and no stable placements ever held."
+  },
+  {
+   "case": 31,
+   "score": 9,
+   "rank": 17,
+   "reason": "An untreated chronic respiratory condition causing six ER visits for breathing trouble in six months, despite maintained family contact."
+  },
+  {
+   "case": 32,
+   "score": 3,
+   "rank": 30,
+   "reason": "A stable first-time episode with good health, no substance use, family support, and a clear step-by-step recovery plan."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n  {\"case\": 1, \"score\": 16, \"rank\": 2, \"reason\": \"Fourteen years continuously homeless with a head injury causing disorientation and memory loss, daily drinking, untreated heart disease and arthritis, active exploitation and assault at camp, and a warrant, with no support system to intervene.\"},\n  {\"case\": 2, \"score\": 4, \"rank\": 26, \"reason\": \"A recent, sole DV-related episode with no health conditions, no substance use, no violence since leaving, and maintained personal routines, though isolation and fear add some risk.\"},\n  {\"case\": 3, \"score\": 5, \"rank\": 24, \"reason\": \"Advanced arthritis and a hip injury impair self-care in a vehicle, but stable income, no substance use, and active caseworker engagement moderate the risk.\"},\n  {\"case\": 4, \"score\": 14, \"rank\": 7, \"reason\": \"Nine years homeless with untreated emphysema, constant ER/police contact, repeated assaults, pending charges, and total estrangement from family.\"},\n  {\"case\": 5, \"score\": 6, \"rank\": 21, \"reason\": \"A chronic heart condition with active symptoms in a first-time shelter stay, softened by sibling support and no violence or substance use.\"},\n  {\"case\": 6, \"score\": 3, \"rank\": 28, \"reason\": \"No health conditions or safety incidents, but isolation and having given up on job applications suggest emerging psychological vulnerability.\"},\n  {\"case\": 7, \"score\": 14, \"rank\": 5, \"reason\": \"Six years homeless with untreated chronic heart disease, no way to wash, constant ER/police contact, repeated assaults, and no family or stable support.\"},\n  {\"case\": 8, \"score\": 8, \"rank\": 19, \"reason\": \"A 71-year-old needing help to bathe and dress with arthritis and a financial crisis from disrupted Social Security, though no violence or substance use.\"},\n  {\"case\": 9, \"score\": 3, \"rank\": 29, \"reason\": \"Stable income and no health or safety issues in a first homelessness episode, tempered only by grief and social withdrawal.\"},\n  {\"case\": 10, \"score\": 8, \"rank\": 20, \"reason\": \"An untreated chronic liver disease with unmanaged medication in a three-year outdoor stay, but no recent violence and some peer support.\"},\n  {\"case\": 11, \"score\": 16, \"rank\": 3, \"reason\": \"Eleven years continuously homeless with heavy daily drinking, untreated depression and liver disease, constant assault and exploitation, and refusal of shelter over losing a support animal.\"},\n  {\"case\": 12, \"score\": 10, \"rank\": 13, \"reason\": \"Kidney failure requiring dialysis is life-threatening if disrupted by homelessness, compounded by repeated ER visits and loss of contact with children.\"},\n  {\"case\": 13, \"score\": 10, \"rank\": 14, \"reason\": \"Congestive heart failure with significant swelling and fatigue in an elderly, isolated man, though recent crisis contacts are absent.\"},\n  {\"case\": 14, \"score\": 10, \"rank\": 16, \"reason\": \"Cirrhosis with frequent ER/police contact and assault, but strong social support and maintained hygiene lower the immediate risk.\"},\n  {\"case\": 15, \"score\": 12, \"rank\": 11, \"reason\": \"A chronic lung condition combined with alcohol use, frequent ER/police contact, assault, and survival sex for shelter on bad nights.\"},\n  {\"case\": 16, \"score\": 12, \"rank\": 12, \"reason\": \"Seven years homeless with untreated chronic pain, frequent ER/police contact, assault, total isolation, and inability to articulate any goals.\"},\n  {\"case\": 17, \"score\": 12, \"rank\": 10, \"reason\": \"COPD combined with stimulant use, repeated ER and crisis-line contact, assault at camp, and being barred from shelter.\"},\n  {\"case\": 18, \"score\": 10, \"rank\": 15, \"reason\": \"No underlying health issues, but active coercion into carrying packages alongside assault and pending charges creates acute safety risk.\"},\n  {\"case\": 19, \"score\": 2, \"rank\": 31, \"reason\": \"A brief, stable episode with steady income, good health, and consistent contact with children, facing an affordability problem rather than crisis.\"},\n  {\"case\": 20, \"score\": 6, \"rank\": 22, \"reason\": \"No chronic conditions but a fainting episode among several ER visits and heavy debt stress in an isolated situation.\"},\n  {\"case\": 21, \"score\": 6, \"rank\": 23, \"reason\": \"Robbery-related injuries have healed and no ongoing health issues exist, with independent functioning and a family fallback option.\"},\n  {\"case\": 22, \"score\": 2, \"rank\": 32, \"reason\": \"A short, first-time shelter stay with steady work, savings, a concrete housing plan, and no health, safety, or substance concerns.\"},\n  {\"case\": 23, \"score\": 13, \"rank\": 8, \"reason\": \"An untreated heart condition causing six ER visits for chest pain in six months, with declined follow-up care and social isolation, poses serious mortality risk.\"},\n  {\"case\": 24, \"score\": 13, \"rank\": 9, \"reason\": \"Five years homeless with daily drinking from waking, chronic liver disease, frequent ER visits, repeated assaults, and four failed detox attempts.\"},\n  {\"case\": 25, \"score\": 5, \"rank\": 25, \"reason\": \"Over a year sleeping outdoors but in good health, self-sufficient, with no substance use and consistent family contact.\"},\n  {\"case\": 26, \"score\": 14, \"rank\": 6, \"reason\": \"Cirrhosis, alcohol dependence, and untreated PTSD combine with frequent ER visits, assault, and twice-denied disability claims.\"},\n  {\"case\": 27, \"score\": 4, \"rank\": 27, \"reason\": \"A functional, self-chosen seasonal homelessness pattern with no health conditions, minimal substance use, and an active support network.\"},\n  {\"case\": 28, \"score\": 9, \"rank\": 18, \"reason\": \"A disabling back injury limiting hygiene and function, with frequent ER/police contact and family estrangement, though maintaining routine.\"},\n  {\"case\": 29, \"score\": 16, \"rank\": 1, \"reason\": \"A 73-year-old with unmanaged heart failure, inability to eat or stay clean, repeated assault and robbery, a pending court date, and near-total isolation.\"},\n  {\"case\": 30, \"score\": 15, \"rank\": 4, \"reason\": \"Eight years homeless with heroin use, untreated depression, chronic asthma, constant assault, coerced participation in camp trafficking, and no stable placements ever held.\"},\n  {\"case\": 31, \"score\": 9, \"rank\": 17, \"reason\": \"An untreated chronic respiratory condition causing six ER visits for breathing trouble in six months, despite maintained family contact.\"},\n  {\"case\": 32, \"score\": 3, \"rank\": 30, \"reason\": \"A stable first-time episode with good health, no substance use, family support, and a clear step-by-step recovery plan.\"}\n]}"
+}

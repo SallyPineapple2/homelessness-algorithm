@@ -1,0 +1,197 @@
+Model: gemini-3.8-flash (Gemini API, single message)
+{
+  "cases": [
+    {
+      "case": 1,
+      "score": 5,
+      "rank": 24,
+      "reason": "She is safely sheltered in her car with no acute medical crisis, though she faces isolation and ongoing safety concerns fleeing domestic abuse."
+    },
+    {
+      "case": 2,
+      "score": 3,
+      "rank": 27,
+      "reason": "She is physically healthy and sheltered in a vehicle with strong family support, presenting minimal risk of immediate serious harm."
+    },
+    {
+      "case": 3,
+      "score": 7,
+      "rank": 20,
+      "reason": "Her advanced age, arthritis, and mobility impairments create significant vulnerability while residing in an inaccessible vehicle, despite stable income and social connections."
+    },
+    {
+      "case": 4,
+      "score": 10,
+      "rank": 15,
+      "reason": "Chronic unsheltered homelessness, past physical assault, chronic pain, and frequent emergency room visits place her at substantial risk of harm."
+    },
+    {
+      "case": 5,
+      "score": 12,
+      "rank": 11,
+      "reason": "Living unsheltered outdoors with an untreated heart condition causing recurring chest pain and multiple emergency room visits creates severe, life-threatening vulnerability."
+    },
+    {
+      "case": 6,
+      "score": 12,
+      "rank": 10,
+      "reason": "At age 68, living unsheltered with congestive heart failure and severe swelling that forces him to sleep upright creates an extreme risk of health collapse and death."
+    },
+    {
+      "case": 7,
+      "score": 2,
+      "rank": 29,
+      "reason": "She is in good health, earns steady labor income, maintains daily living skills, and has experienced no violence or acute medical needs."
+    },
+    {
+      "case": 8,
+      "score": 15,
+      "rank": 5,
+      "reason": "Nine years unsheltered with severe emphysema, untreated illness from selling prescribed medication, repeated physical assaults, and constant emergency room contact indicate extreme mortality risk."
+    },
+    {
+      "case": 9,
+      "score": 12,
+      "rank": 12,
+      "reason": "She suffers from COPD while living unsheltered, sells prescribed pain medication, uses stimulants, and has experienced recent assaults and frequent crisis contacts."
+    },
+    {
+      "case": 10,
+      "score": 13,
+      "rank": 8,
+      "reason": "She suffers from unmedicated chronic heart disease while living unsheltered, facing constant emergency room use, repeated physical assaults, and dangerous camp conflicts."
+    },
+    {
+      "case": 11,
+      "score": 4,
+      "rank": 26,
+      "reason": "Although she sleeps outdoors at age 62, she possesses stable pension income, excellent health, no substance use, and strong self-care routines that mitigate risk."
+    },
+    {
+      "case": 12,
+      "score": 13,
+      "rank": 9,
+      "reason": "Long-term unsheltered homelessness combined with end-stage risks of chronic liver disease, severe daily alcohol dependence, repeated assaults, and frequent emergency visits creates severe vulnerability."
+    },
+    {
+      "case": 13,
+      "score": 16,
+      "rank": 2,
+      "reason": "At 73 years old, living unsheltered with heart failure, unmanaged medications, inability to maintain self-care, and frequent assaults and robberies creates an immediate risk of death."
+    },
+    {
+      "case": 14,
+      "score": 3,
+      "rank": 28,
+      "reason": "He is young, physically healthy, sheltered, and receives steady monthly inheritance income, presenting low immediate risk despite grief-related apathy."
+    },
+    {
+      "case": 15,
+      "score": 8,
+      "rank": 18,
+      "reason": "He lives outdoors with an untreated chronic liver disease and unmanaged medications, but avoids emergency care, substance misuse, and violent victimisation."
+    },
+    {
+      "case": 16,
+      "score": 7,
+      "rank": 19,
+      "reason": "She is sheltered but experiences acute vulnerability from an untreated chronic respiratory condition resulting in six emergency room visits over six months."
+    },
+    {
+      "case": 17,
+      "score": 9,
+      "rank": 16,
+      "reason": "He faces immediate safety and legal dangers within the shelter due to active exploitation, physical assault, and pressure from criminals, alongside frequent emergency room contact."
+    },
+    {
+      "case": 18,
+      "score": 10,
+      "rank": 14,
+      "reason": "Older age combined with cirrhosis, frequent emergency room visits, and repeated physical assaults creates substantial vulnerability despite staying in a shelter."
+    },
+    {
+      "case": 19,
+      "score": 14,
+      "rank": 6,
+      "reason": "Living unsheltered outdoors while dependent on life-sustaining dialysis for chronic kidney disease presents an exceptionally high risk of infection, missed treatments, and death."
+    },
+    {
+      "case": 20,
+      "score": 14,
+      "rank": 7,
+      "reason": "Sleeping outdoors with cirrhosis, severe alcohol dependence, unmanaged PTSD, physical assaults, and frequent emergency room visits poses severe mortality risk."
+    },
+    {
+      "case": 21,
+      "score": 11,
+      "rank": 13,
+      "reason": "Trading sex for lodging, alcohol misuse, an untreated lung condition, past assault, and frequent emergency room and police contacts expose him to severe physical danger and exploitation."
+    },
+    {
+      "case": 22,
+      "score": 5,
+      "rank": 23,
+      "reason": "She is safely sheltered without chronic illness or substance use, though multiple recent emergency room visits and severe debt-related distress indicate moderate vulnerability."
+    },
+    {
+      "case": 23,
+      "score": 17,
+      "rank": 1,
+      "reason": "At age 66, fourteen years unsheltered with a traumatic head injury, severe disorientation, heart disease, alcohol dependence, ongoing assaults, and criminal exploitation represents the highest risk of imminent death."
+    },
+    {
+      "case": 24,
+      "score": 0,
+      "rank": 32,
+      "reason": "He is employed, has savings, possesses good health, stays in a shelter, and has clear, viable plans to secure independent housing shortly."
+    },
+    {
+      "case": 25,
+      "score": 2,
+      "rank": 30,
+      "reason": "She is sheltered, in good health, has no history of substance use, and can perform all daily living activities independently without safety threats."
+    },
+    {
+      "case": 26,
+      "score": 4,
+      "rank": 25,
+      "reason": "She has been outdoors for eighteen months following a past assault but currently manages her health, earns cash, and experiences no recent safety incidents."
+    },
+    {
+      "case": 27,
+      "score": 1,
+      "rank": 31,
+      "reason": "He possesses steady delivery income, excellent health, maintains self-care, and has safe access to vehicles and community facilities without health or safety threats."
+    },
+    {
+      "case": 28,
+      "score": 6,
+      "rank": 22,
+      "reason": "A disabling back injury and frequent emergency room and police visits increase his vulnerability, though he is currently sheltered."
+    },
+    {
+      "case": 29,
+      "score": 6,
+      "rank": 21,
+      "reason": "Her chronic heart condition and breathing difficulties hinder daily activities, but her shelter placement, pending disability, and family support provide stability."
+    },
+    {
+      "case": 30,
+      "score": 8,
+      "rank": 17,
+      "reason": "At age 71, he cannot independently bathe or dress due to debilitating arthritis and has zero incoming financial support, placing him at high functional risk despite being sheltered."
+    },
+    {
+      "case": 31,
+      "score": 16,
+      "rank": 3,
+      "reason": "Eleven years unsheltered with severe alcohol dependence, chronic liver disease, unmanaged depression, repeated violent assaults, and criminal coercion place her at acute risk of death."
+    },
+    {
+      "case": 32,
+      "score": 15,
+      "rank": 4,
+      "reason": "Active heroin addiction, chronic asthma, severe depression, repeated assaults, constant emergency room contact, and active exploitation by camp members create extreme vulnerability."
+    }
+  ]
+}

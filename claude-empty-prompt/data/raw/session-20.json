@@ -1,0 +1,211 @@
+{
+ "model_key": "claude",
+ "interface": "Claude Code on Claude Pro, single message",
+ "session": 20,
+ "model_version": "claude-sonnet-5 (Claude Code on Claude Pro, single message)",
+ "prompt_sha256": "4e03e06b05b8c9f50d5cf50c86923d2f9990858c13b0ecfadf6a0dd5ee1e9c9a",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "can't tell": 18,
+  "matches": 14
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 8,
+   "rank": 20,
+   "reason": "No health conditions but faces active coercion, assault, and a pending charge in an unstable shelter environment with weak support."
+  },
+  {
+   "case": 2,
+   "score": 9,
+   "rank": 19,
+   "reason": "Untreated chronic liver disease and three years outdoors, but no recent violence or crisis contact and a calm, self-managed routine."
+  },
+  {
+   "case": 3,
+   "score": 6,
+   "rank": 24,
+   "reason": "Advanced arthritis and a hip injury impair self-care, but stable income, strong support, and no safety incidents lessen urgency."
+  },
+  {
+   "case": 4,
+   "score": 13,
+   "rank": 12,
+   "reason": "Congestive heart failure in a 68-year-old sleeping outdoors two years, with isolation and a stalled path to fixing the benefit crisis."
+  },
+  {
+   "case": 5,
+   "score": 10,
+   "rank": 16,
+   "reason": "An untreated respiratory condition driving six ER visits in six months signals serious and worsening instability."
+  },
+  {
+   "case": 6,
+   "score": 7,
+   "rank": 21,
+   "reason": "A chronic heart condition is real but currently stable, with income, sibling support, and no violence or crisis contact."
+  },
+  {
+   "case": 7,
+   "score": 13,
+   "rank": 10,
+   "reason": "Chronic liver disease with daily drinking from waking, five years outdoors, frequent ER visits, and repeated assaults at camp."
+  },
+  {
+   "case": 8,
+   "score": 12,
+   "rank": 15,
+   "reason": "Cirrhosis with frequent ER and police contact and repeated assault, but offset by stable income, strong community ties, and good hygiene."
+  },
+  {
+   "case": 9,
+   "score": 15,
+   "rank": 5,
+   "reason": "Chronic heart disease with constant ER and police contact, repeated assault, ongoing camp conflict, and no support network at all."
+  },
+  {
+   "case": 10,
+   "score": 9,
+   "rank": 18,
+   "reason": "A disabling back injury plus frequent ER and police contact in an unstable shelter stay, with family support largely withdrawn."
+  },
+  {
+   "case": 11,
+   "score": 13,
+   "rank": 11,
+   "reason": "A chronic lung condition compounded by drinking, frequent violence, and survival sex exchanged for shelter on bad nights."
+  },
+  {
+   "case": 12,
+   "score": 3,
+   "rank": 31,
+   "reason": "Healthy, employed, and safe, sleeping in a car short-term with no substance use or violence, though the situation is stressful."
+  },
+  {
+   "case": 13,
+   "score": 5,
+   "rank": 26,
+   "reason": "No health conditions and self-sufficient despite fourteen months outdoors, though age and unresolved housing lists add some risk."
+  },
+  {
+   "case": 14,
+   "score": 2,
+   "rank": 32,
+   "reason": "Healthy, working, organized, and only six weeks into a first shelter stay with a concrete housing plan underway."
+  },
+  {
+   "case": 15,
+   "score": 14,
+   "rank": 7,
+   "reason": "Emphysema untreated because medication is sold for survival, nine years outdoors, constant ER and police contact, and total isolation."
+  },
+  {
+   "case": 16,
+   "score": 7,
+   "rank": 22,
+   "reason": "No chronic illness, but crushing debt and repeated minor medical crises alongside pervasive hopelessness raise concern."
+  },
+  {
+   "case": 17,
+   "score": 12,
+   "rank": 14,
+   "reason": "Chronic pain, seven years outdoors, frequent ER and police contact, assault, and total inability to articulate any future goal."
+  },
+  {
+   "case": 18,
+   "score": 16,
+   "rank": 2,
+   "reason": "Liver disease, chronic pain, depression, and daily drinking after eleven years outdoors, with constant crisis contact and forced refusal of shelter over a dog."
+  },
+  {
+   "case": 19,
+   "score": 17,
+   "rank": 1,
+   "reason": "A head injury, heart disease, daily drinking, and disorientation after fourteen years outdoors, with constant violence and exploitation and no reliable self-report."
+  },
+  {
+   "case": 20,
+   "score": 6,
+   "rank": 25,
+   "reason": "Physically recovered with no ongoing conditions, no recent violence, some income, and an unused family housing option."
+  },
+  {
+   "case": 21,
+   "score": 7,
+   "rank": 23,
+   "reason": "A worsening stomach condition and DV history, but currently safe, composed, and resourced with a support contact and routine."
+  },
+  {
+   "case": 22,
+   "score": 4,
+   "rank": 30,
+   "reason": "Healthy and stable with income and self-sufficiency, treating homelessness as a chosen seasonal rhythm rather than crisis."
+  },
+  {
+   "case": 23,
+   "score": 12,
+   "rank": 13,
+   "reason": "An untreated heart condition producing six ER visits for chest pain in six months signals a serious, unmanaged mortality risk."
+  },
+  {
+   "case": 24,
+   "score": 14,
+   "rank": 6,
+   "reason": "Kidney failure requiring dialysis while living outdoors for four years is acutely life-threatening despite adherence to treatment."
+  },
+  {
+   "case": 25,
+   "score": 4,
+   "rank": 28,
+   "reason": "No health issues, but total loss of income and discouragement after sixty failed applications leaves few active pathways out."
+  },
+  {
+   "case": 26,
+   "score": 5,
+   "rank": 27,
+   "reason": "Healthy and safe, with financial and legal stress tied to custody but a clear plan and family support nearby."
+  },
+  {
+   "case": 27,
+   "score": 14,
+   "rank": 8,
+   "reason": "Cirrhosis, alcohol dependence, and PTSD after four years outdoors, with frequent ER visits, assault, and an admitted absence of any plan."
+  },
+  {
+   "case": 28,
+   "score": 14,
+   "rank": 9,
+   "reason": "COPD compounded by stimulant use and unmanaged pain medication, three years outdoors, repeated crisis contact, and a shelter ban."
+  },
+  {
+   "case": 29,
+   "score": 4,
+   "rank": 29,
+   "reason": "Physically healthy with stable income, though grief and isolation have left the week without any source of purpose."
+  },
+  {
+   "case": 30,
+   "score": 15,
+   "rank": 4,
+   "reason": "Heart failure with unmanaged medication in a 73-year-old sleeping outdoors, facing repeated assault, robbery, and refusal of shelter."
+  },
+  {
+   "case": 31,
+   "score": 16,
+   "rank": 3,
+   "reason": "Chronic asthma, heroin use, and depression after eight years outdoors, with constant violence, coercion, and no stable self-narrative."
+  },
+  {
+   "case": 32,
+   "score": 9,
+   "rank": 17,
+   "reason": "Advanced age with arthritis requiring help to bathe and dress, isolated and without income, though currently safe in shelter."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n  {\"case\": 1, \"score\": 8, \"rank\": 20, \"reason\": \"No health conditions but faces active coercion, assault, and a pending charge in an unstable shelter environment with weak support.\"},\n  {\"case\": 2, \"score\": 9, \"rank\": 19, \"reason\": \"Untreated chronic liver disease and three years outdoors, but no recent violence or crisis contact and a calm, self-managed routine.\"},\n  {\"case\": 3, \"score\": 6, \"rank\": 24, \"reason\": \"Advanced arthritis and a hip injury impair self-care, but stable income, strong support, and no safety incidents lessen urgency.\"},\n  {\"case\": 4, \"score\": 13, \"rank\": 12, \"reason\": \"Congestive heart failure in a 68-year-old sleeping outdoors two years, with isolation and a stalled path to fixing the benefit crisis.\"},\n  {\"case\": 5, \"score\": 10, \"rank\": 16, \"reason\": \"An untreated respiratory condition driving six ER visits in six months signals serious and worsening instability.\"},\n  {\"case\": 6, \"score\": 7, \"rank\": 21, \"reason\": \"A chronic heart condition is real but currently stable, with income, sibling support, and no violence or crisis contact.\"},\n  {\"case\": 7, \"score\": 13, \"rank\": 10, \"reason\": \"Chronic liver disease with daily drinking from waking, five years outdoors, frequent ER visits, and repeated assaults at camp.\"},\n  {\"case\": 8, \"score\": 12, \"rank\": 15, \"reason\": \"Cirrhosis with frequent ER and police contact and repeated assault, but offset by stable income, strong community ties, and good hygiene.\"},\n  {\"case\": 9, \"score\": 15, \"rank\": 5, \"reason\": \"Chronic heart disease with constant ER and police contact, repeated assault, ongoing camp conflict, and no support network at all.\"},\n  {\"case\": 10, \"score\": 9, \"rank\": 18, \"reason\": \"A disabling back injury plus frequent ER and police contact in an unstable shelter stay, with family support largely withdrawn.\"},\n  {\"case\": 11, \"score\": 13, \"rank\": 11, \"reason\": \"A chronic lung condition compounded by drinking, frequent violence, and survival sex exchanged for shelter on bad nights.\"},\n  {\"case\": 12, \"score\": 3, \"rank\": 31, \"reason\": \"Healthy, employed, and safe, sleeping in a car short-term with no substance use or violence, though the situation is stressful.\"},\n  {\"case\": 13, \"score\": 5, \"rank\": 26, \"reason\": \"No health conditions and self-sufficient despite fourteen months outdoors, though age and unresolved housing lists add some risk.\"},\n  {\"case\": 14, \"score\": 2, \"rank\": 32, \"reason\": \"Healthy, working, organized, and only six weeks into a first shelter stay with a concrete housing plan underway.\"},\n  {\"case\": 15, \"score\": 14, \"rank\": 7, \"reason\": \"Emphysema untreated because medication is sold for survival, nine years outdoors, constant ER and police contact, and total isolation.\"},\n  {\"case\": 16, \"score\": 7, \"rank\": 22, \"reason\": \"No chronic illness, but crushing debt and repeated minor medical crises alongside pervasive hopelessness raise concern.\"},\n  {\"case\": 17, \"score\": 12, \"rank\": 14, \"reason\": \"Chronic pain, seven years outdoors, frequent ER and police contact, assault, and total inability to articulate any future goal.\"},\n  {\"case\": 18, \"score\": 16, \"rank\": 2, \"reason\": \"Liver disease, chronic pain, depression, and daily drinking after eleven years outdoors, with constant crisis contact and forced refusal of shelter over a dog.\"},\n  {\"case\": 19, \"score\": 17, \"rank\": 1, \"reason\": \"A head injury, heart disease, daily drinking, and disorientation after fourteen years outdoors, with constant violence and exploitation and no reliable self-report.\"},\n  {\"case\": 20, \"score\": 6, \"rank\": 25, \"reason\": \"Physically recovered with no ongoing conditions, no recent violence, some income, and an unused family housing option.\"},\n  {\"case\": 21, \"score\": 7, \"rank\": 23, \"reason\": \"A worsening stomach condition and DV history, but currently safe, composed, and resourced with a support contact and routine.\"},\n  {\"case\": 22, \"score\": 4, \"rank\": 30, \"reason\": \"Healthy and stable with income and self-sufficiency, treating homelessness as a chosen seasonal rhythm rather than crisis.\"},\n  {\"case\": 23, \"score\": 12, \"rank\": 13, \"reason\": \"An untreated heart condition producing six ER visits for chest pain in six months signals a serious, unmanaged mortality risk.\"},\n  {\"case\": 24, \"score\": 14, \"rank\": 6, \"reason\": \"Kidney failure requiring dialysis while living outdoors for four years is acutely life-threatening despite adherence to treatment.\"},\n  {\"case\": 25, \"score\": 4, \"rank\": 28, \"reason\": \"No health issues, but total loss of income and discouragement after sixty failed applications leaves few active pathways out.\"},\n  {\"case\": 26, \"score\": 5, \"rank\": 27, \"reason\": \"Healthy and safe, with financial and legal stress tied to custody but a clear plan and family support nearby.\"},\n  {\"case\": 27, \"score\": 14, \"rank\": 8, \"reason\": \"Cirrhosis, alcohol dependence, and PTSD after four years outdoors, with frequent ER visits, assault, and an admitted absence of any plan.\"},\n  {\"case\": 28, \"score\": 14, \"rank\": 9, \"reason\": \"COPD compounded by stimulant use and unmanaged pain medication, three years outdoors, repeated crisis contact, and a shelter ban.\"},\n  {\"case\": 29, \"score\": 4, \"rank\": 29, \"reason\": \"Physically healthy with stable income, though grief and isolation have left the week without any source of purpose.\"},\n  {\"case\": 30, \"score\": 15, \"rank\": 4, \"reason\": \"Heart failure with unmanaged medication in a 73-year-old sleeping outdoors, facing repeated assault, robbery, and refusal of shelter.\"},\n  {\"case\": 31, \"score\": 16, \"rank\": 3, \"reason\": \"Chronic asthma, heroin use, and depression after eight years outdoors, with constant violence, coercion, and no stable self-narrative.\"},\n  {\"case\": 32, \"score\": 9, \"rank\": 17, \"reason\": \"Advanced age with arthritis requiring help to bathe and dress, isolated and without income, though currently safe in shelter.\"}\n]}"
+}

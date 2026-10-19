@@ -1,0 +1,211 @@
+{
+ "model_key": "gemini",
+ "interface": "Gemini API, free tier, single message",
+ "session": 5,
+ "model_version": "gemini-3.8-flash (Gemini API, single message)",
+ "prompt_sha256": "a861a33343f599d743861be2697e83eae017f73071c23778d80c6f85de520686",
+ "valid": true,
+ "ranks_valid": true,
+ "case_labels": {
+  "can't tell": 29,
+  "matches": 3
+ },
+ "problems": [],
+ "warnings": [],
+ "cases": [
+  {
+   "case": 1,
+   "score": 10,
+   "rank": 14,
+   "reason": "He is unsheltered with untreated chronic liver disease, frequent emergency department visits, and an inability to maintain basic hygiene."
+  },
+  {
+   "case": 2,
+   "score": 17,
+   "rank": 2,
+   "reason": "She is an elderly woman chronically unsheltered for fourteen years with heart disease, head trauma, severe cognitive impairment, and ongoing victimization."
+  },
+  {
+   "case": 3,
+   "score": 16,
+   "rank": 3,
+   "reason": "She faces severe danger from emphysema, untreated bipolar disorder, heavy substance use, repeated physical assaults, and active criminal exploitation."
+  },
+  {
+   "case": 4,
+   "score": 6,
+   "rank": 20,
+   "reason": "She experiences functional impairment from severe arthritis while living in a vehicle, but she remains medically stable and safe from violence."
+  },
+  {
+   "case": 5,
+   "score": 13,
+   "rank": 9,
+   "reason": "She has untreated schizoaffective disorder, active methamphetamine use, a history of assault, and prolonged unsheltered homelessness."
+  },
+  {
+   "case": 6,
+   "score": 8,
+   "rank": 17,
+   "reason": "She has a chronic heart condition with unmedicated hypertension causing dyspnea, though she is currently in a stable shelter environment."
+  },
+  {
+   "case": 7,
+   "score": 2,
+   "rank": 30,
+   "reason": "He is a healthy young adult living temporarily in his car with strong family support and no safety or medical vulnerabilities."
+  },
+  {
+   "case": 8,
+   "score": 14,
+   "rank": 7,
+   "reason": "He is an unsheltered senior with untreated congestive heart failure who must sleep sitting up due to severe edema."
+  },
+  {
+   "case": 9,
+   "score": 4,
+   "rank": 25,
+   "reason": "Although she is an older adult sleeping outdoors, she is in good physical health, manages daily needs independently, and faces no safety issues."
+  },
+  {
+   "case": 10,
+   "score": 2,
+   "rank": 29,
+   "reason": "He is young, physically healthy, sheltered, and receiving modest income, with grief being his primary barrier."
+  },
+  {
+   "case": 11,
+   "score": 11,
+   "rank": 12,
+   "reason": "He is unsheltered with unmanaged cirrhosis, frequent emergency department visits, and a history of camp assault."
+  },
+  {
+   "case": 12,
+   "score": 10,
+   "rank": 15,
+   "reason": "He is unsheltered with chronic obstructive pulmonary disease, repeated emergency room and crisis-line contacts, and poor hygiene access."
+  },
+  {
+   "case": 13,
+   "score": 5,
+   "rank": 23,
+   "reason": "She is physically healthy and sheltered, but multiple recent emergency room visits indicate heightened acute distress."
+  },
+  {
+   "case": 14,
+   "score": 14,
+   "rank": 8,
+   "reason": "She sleeps outdoors with an untreated heart condition and recurrent chest pain that has caused six emergency room visits in six months."
+  },
+  {
+   "case": 15,
+   "score": 6,
+   "rank": 22,
+   "reason": "He is physically healthy but suffers frequent emergency room and police contacts and struggles to meet basic needs in the shelter."
+  },
+  {
+   "case": 16,
+   "score": 3,
+   "rank": 27,
+   "reason": "He is physically healthy, earns income through day labor, and manages daily life capably despite living in a tent."
+  },
+  {
+   "case": 17,
+   "score": 6,
+   "rank": 21,
+   "reason": "She lives unsheltered with chronic liver disease but is physically independent and has no recent history of emergency care or violence."
+  },
+  {
+   "case": 18,
+   "score": 4,
+   "rank": 26,
+   "reason": "She is newly homeless living in her car with a chronic stomach condition, but maintains good hygiene and personal safety."
+  },
+  {
+   "case": 19,
+   "score": 13,
+   "rank": 10,
+   "reason": "She is chronically unsheltered with severe asthma, constant emergency room visits, and repeated physical assaults in the encampment."
+  },
+  {
+   "case": 20,
+   "score": 17,
+   "rank": 1,
+   "reason": "She is a 73-year-old unsheltered woman suffering from heart failure, cognitive decline, active financial extortion, and physical violence."
+  },
+  {
+   "case": 21,
+   "score": 4,
+   "rank": 24,
+   "reason": "She is unsheltered but physically healthy, generates regular income, and has encountered no safety or medical crises."
+  },
+  {
+   "case": 22,
+   "score": 1,
+   "rank": 31,
+   "reason": "He is young, healthy, employed, sheltered, and actively saving toward an apartment with minimal vulnerability."
+  },
+  {
+   "case": 23,
+   "score": 15,
+   "rank": 6,
+   "reason": "He faces extreme medical vulnerability from dialysis-dependent kidney disease combined with active drug use and unsheltered living where he was recently assaulted."
+  },
+  {
+   "case": 24,
+   "score": 8,
+   "rank": 18,
+   "reason": "She has a debilitating back injury, alcohol dependency, frequent emergency contacts, and a recent physical assault."
+  },
+  {
+   "case": 25,
+   "score": 15,
+   "rank": 5,
+   "reason": "He lives unsheltered with chronic heart disease, active drug use, repeated assaults, and coercion into drug running under threat."
+  },
+  {
+   "case": 26,
+   "score": 12,
+   "rank": 11,
+   "reason": "He suffers from cirrhosis and bipolar disorder while facing active coercion, frequent emergency room visits, and physical assaults."
+  },
+  {
+   "case": 27,
+   "score": 2,
+   "rank": 28,
+   "reason": "He is sheltered, physically healthy, and safe, experiencing homelessness primarily due to long-term unemployment."
+  },
+  {
+   "case": 28,
+   "score": 11,
+   "rank": 13,
+   "reason": "He is an elderly victim of elder financial exploitation who cannot dress or bathe independently due to severe arthritis."
+  },
+  {
+   "case": 29,
+   "score": 1,
+   "rank": 32,
+   "reason": "He is employed with stable earnings, in good health, and safely sheltered in his car with no risk factors for serious harm."
+  },
+  {
+   "case": 30,
+   "score": 16,
+   "rank": 4,
+   "reason": "She has survived eleven years unsheltered with untreated liver disease, severe depression, constant emergency contacts, and repeated assaults."
+  },
+  {
+   "case": 31,
+   "score": 7,
+   "rank": 19,
+   "reason": "He has a chronic lung condition and frequent emergency department and police encounters while living in a vehicle."
+  },
+  {
+   "case": 32,
+   "score": 9,
+   "rank": 16,
+   "reason": "She has an untreated respiratory condition requiring six emergency room visits and was recently assaulted inside her shelter."
+  }
+ ],
+ "checked_cases": [],
+ "reply_text": "{\"cases\": [\n  {\"case\": 1, \"score\": 10, \"rank\": 14, \"reason\": \"He is unsheltered with untreated chronic liver disease, frequent emergency department visits, and an inability to maintain basic hygiene.\"},\n  {\"case\": 2, \"score\": 17, \"rank\": 2, \"reason\": \"She is an elderly woman chronically unsheltered for fourteen years with heart disease, head trauma, severe cognitive impairment, and ongoing victimization.\"},\n  {\"case\": 3, \"score\": 16, \"rank\": 3, \"reason\": \"She faces severe danger from emphysema, untreated bipolar disorder, heavy substance use, repeated physical assaults, and active criminal exploitation.\"},\n  {\"case\": 4, \"score\": 6, \"rank\": 20, \"reason\": \"She experiences functional impairment from severe arthritis while living in a vehicle, but she remains medically stable and safe from violence.\"},\n  {\"case\": 5, \"score\": 13, \"rank\": 9, \"reason\": \"She has untreated schizoaffective disorder, active methamphetamine use, a history of assault, and prolonged unsheltered homelessness.\"},\n  {\"case\": 6, \"score\": 8, \"rank\": 17, \"reason\": \"She has a chronic heart condition with unmedicated hypertension causing dyspnea, though she is currently in a stable shelter environment.\"},\n  {\"case\": 7, \"score\": 2, \"rank\": 30, \"reason\": \"He is a healthy young adult living temporarily in his car with strong family support and no safety or medical vulnerabilities.\"},\n  {\"case\": 8, \"score\": 14, \"rank\": 7, \"reason\": \"He is an unsheltered senior with untreated congestive heart failure who must sleep sitting up due to severe edema.\"},\n  {\"case\": 9, \"score\": 4, \"rank\": 25, \"reason\": \"Although she is an older adult sleeping outdoors, she is in good physical health, manages daily needs independently, and faces no safety issues.\"},\n  {\"case\": 10, \"score\": 2, \"rank\": 29, \"reason\": \"He is young, physically healthy, sheltered, and receiving modest income, with grief being his primary barrier.\"},\n  {\"case\": 11, \"score\": 11, \"rank\": 12, \"reason\": \"He is unsheltered with unmanaged cirrhosis, frequent emergency department visits, and a history of camp assault.\"},\n  {\"case\": 12, \"score\": 10, \"rank\": 15, \"reason\": \"He is unsheltered with chronic obstructive pulmonary disease, repeated emergency room and crisis-line contacts, and poor hygiene access.\"},\n  {\"case\": 13, \"score\": 5, \"rank\": 23, \"reason\": \"She is physically healthy and sheltered, but multiple recent emergency room visits indicate heightened acute distress.\"},\n  {\"case\": 14, \"score\": 14, \"rank\": 8, \"reason\": \"She sleeps outdoors with an untreated heart condition and recurrent chest pain that has caused six emergency room visits in six months.\"},\n  {\"case\": 15, \"score\": 6, \"rank\": 22, \"reason\": \"He is physically healthy but suffers frequent emergency room and police contacts and struggles to meet basic needs in the shelter.\"},\n  {\"case\": 16, \"score\": 3, \"rank\": 27, \"reason\": \"He is physically healthy, earns income through day labor, and manages daily life capably despite living in a tent.\"},\n  {\"case\": 17, \"score\": 6, \"rank\": 21, \"reason\": \"She lives unsheltered with chronic liver disease but is physically independent and has no recent history of emergency care or violence.\"},\n  {\"case\": 18, \"score\": 4, \"rank\": 26, \"reason\": \"She is newly homeless living in her car with a chronic stomach condition, but maintains good hygiene and personal safety.\"},\n  {\"case\": 19, \"score\": 13, \"rank\": 10, \"reason\": \"She is chronically unsheltered with severe asthma, constant emergency room visits, and repeated physical assaults in the encampment.\"},\n  {\"case\": 20, \"score\": 17, \"rank\": 1, \"reason\": \"She is a 73-year-old unsheltered woman suffering from heart failure, cognitive decline, active financial extortion, and physical violence.\"},\n  {\"case\": 21, \"score\": 4, \"rank\": 24, \"reason\": \"She is unsheltered but physically healthy, generates regular income, and has encountered no safety or medical crises.\"},\n  {\"case\": 22, \"score\": 1, \"rank\": 31, \"reason\": \"He is young, healthy, employed, sheltered, and actively saving toward an apartment with minimal vulnerability.\"},\n  {\"case\": 23, \"score\": 15, \"rank\": 6, \"reason\": \"He faces extreme medical vulnerability from dialysis-dependent kidney disease combined with active drug use and unsheltered living where he was recently assaulted.\"},\n  {\"case\": 24, \"score\": 8, \"rank\": 18, \"reason\": \"She has a debilitating back injury, alcohol dependency, frequent emergency contacts, and a recent physical assault.\"},\n  {\"case\": 25, \"score\": 15, \"rank\": 5, \"reason\": \"He lives unsheltered with chronic heart disease, active drug use, repeated assaults, and coercion into drug running under threat.\"},\n  {\"case\": 26, \"score\": 12, \"rank\": 11, \"reason\": \"He suffers from cirrhosis and bipolar disorder while facing active coercion, frequent emergency room visits, and physical assaults.\"},\n  {\"case\": 27, \"score\": 2, \"rank\": 28, \"reason\": \"He is sheltered, physically healthy, and safe, experiencing homelessness primarily due to long-term unemployment.\"},\n  {\"case\": 28, \"score\": 11, \"rank\": 13, \"reason\": \"He is an elderly victim of elder financial exploitation who cannot dress or bathe independently due to severe arthritis.\"},\n  {\"case\": 29, \"score\": 1, \"rank\": 32, \"reason\": \"He is employed with stable earnings, in good health, and safely sheltered in his car with no risk factors for serious harm.\"},\n  {\"case\": 30, \"score\": 16, \"rank\": 4, \"reason\": \"She has survived eleven years unsheltered with untreated liver disease, severe depression, constant emergency contacts, and repeated assaults.\"},\n  {\"case\": 31, \"score\": 7, \"rank\": 19, \"reason\": \"He has a chronic lung condition and frequent emergency department and police encounters while living in a vehicle.\"},\n  {\"case\": 32, \"score\": 9, \"rank\": 16, \"reason\": \"She has an untreated respiratory condition requiring six emergency room visits and was recently assaulted inside her shelter.\"}\n]}"
+}

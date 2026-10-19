@@ -1,0 +1,17 @@
+﻿indicator,domain,profiles_with,coef_adj_true,ci_low,ci_high,p,p_holm,mean_gap_with,mean_gap_without
+Physical Health,Wellness,22,3.5141,2.0482,4.9801,0.0,0.0005,3.5443,2.05
+Emergency Service Use,Risks,18,2.277,0.4432,4.1108,0.0167,0.2341,3.3139,2.7732
+Self-Care,Socialization and Daily Functions,17,1.7435,0.1645,3.3225,0.0316,0.3795,3.4162,2.6933
+Risk of Harm,Risks,16,1.68,-0.385,3.7449,0.1069,0.9621,3.1344,3.0203
+Substance Use,Wellness,14,1.2414,-1.0169,3.4997,0.2701,1.0,2.9911,3.1444
+Meaningful Daily Activity,Socialization and Daily Functions,20,1.0895,-0.6093,2.7882,0.1999,1.0,3.1875,2.8938
+Duration and episodes,History of Housing and Homelessness,17,0.7011,-1.0317,2.434,0.4147,1.0,3.0691,3.0867
+Housing status,History of Housing and Homelessness,22,0.0063,-1.646,1.6586,0.9938,1.0,2.9727,3.3075
+Medications,Wellness,10,-0.2796,-1.9871,1.428,0.7401,1.0,2.6575,3.2682
+Money Management,Socialization and Daily Functions,21,-0.2877,-2.0547,1.4793,0.7415,1.0,2.8536,3.5045
+Age,Pre-Survey,7,-0.4062,-2.1246,1.3123,0.6325,1.0,2.6286,3.203
+Risk of Exploitation,Risks,9,-0.9902,-3.0821,1.1018,0.341,1.0,2.275,3.3913
+Legal Issues,Risks,11,-1.8149,-3.6225,-0.0073,0.0491,0.4914,2.0409,3.6202
+Abuse and Trauma,Wellness,6,-1.8502,-3.5805,-0.1199,0.037,0.4066,1.4667,3.449
+Social Relationships,Socialization and Daily Functions,10,-2.0332,-3.8102,-0.2561,0.0264,0.3429,1.87,3.6261
+Mental Health (always with Tri-Morbidity),Wellness,8,-4.1485,-6.364,-1.9329,0.0006,0.0095,1.4406,3.6229

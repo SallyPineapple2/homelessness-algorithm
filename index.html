@@ -24,10 +24,11 @@
     <nav class="side-nav" aria-label="Dashboard views">
       <div class="nav-group">
         <span class="nav-label">Results</span>
-        <a href="#overview" data-view-link="overview" data-sub="Principal findings across all four scoring runs">Overview</a>
+        <a href="#overview" data-view-link="overview" data-sub="Principal findings across all five scoring runs">Overview</a>
         <a href="#bias" data-view-link="bias" data-sub="Does a score change with race, gender, city, or disclosure?">Bias</a>
         <a href="#accuracy" data-view-link="accuracy" data-sub="Agreement with true vulnerability">Accuracy</a>
         <a href="#triage" data-view-link="triage" data-sub="Who each tool refers to housing, and who it misses">Triage</a>
+        <a href="#compare" data-view-link="compare" data-sub="Which AI run is least biased on each measure">Model comparison</a>
         <a href="#quality" data-view-link="quality" data-sub="Whether each AI answer describes the case it is labeled with">Data quality</a>
       </div>
       <div class="nav-group">
@@ -39,6 +40,7 @@
       <div class="nav-group">
         <span class="nav-label">Files</span>
         <a href="#downloads" data-view-link="downloads" data-sub="Data files behind every figure">Downloads</a>
+        <a href="pilot/" style="color: var(--series-1)">Pilot study: 100 people &rarr;</a>
       </div>
     </nav>
     <div class="side-foot">Paired t&#8209;tests, &alpha; = 0.05, Holm&#8209;adjusted.<br>Synthetic population: 32 profiles, 1,600 clones.</div>
@@ -59,23 +61,37 @@
 
     <main id="main">
       <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
+        <div class="rq-block">
+          <p class="rq-kicker">Research question</p>
+          <p class="rq-text">Given the same client records, how do AI&#8209;based models compare with the VI&#8209;SPDAT in accuracy and demographic bias?</p>
+          <dl class="rq-meta">
+            <div><dt>Hypothesis</dt><dd>The AI&#8209;based model will outperform the VI&#8209;SPDAT in accuracy but remain slightly skewed against people of color.</dd></div>
+            <div><dt>Result</dt><dd>Not supported. Every AI run was less accurate than the VI&#8209;SPDAT, and none showed a significant race effect. <a href="#question">Details</a></dd></div>
+          </dl>
+        </div>
         <div class="intro-band">
-          <p class="intro-lede">The published VI&#8209;SPDAT and three AI runs (ChatGPT at two reasoning settings, and Claude) scored the same 640 synthetic intake records. Versions of each record differ only in stated race, gender, city, and disclosure, so any difference in score is attributable to those attributes.</p>
+          <p class="intro-lede">The published VI&#8209;SPDAT and four AI runs (ChatGPT at two reasoning settings, Claude, and Gemini) scored the same 640 synthetic intake records. Versions of each record differ only in stated race, gender, city, and disclosure, so any difference in score is attributable to those attributes.</p>
         </div>
         <h2 class="block-title">Main findings</h2>
         <div class="findings" id="findings"></div>
 
         <div class="chart-card">
           <p class="chart-title">Underdisclosure penalty in every city, every tool</p>
-          <p class="chart-sub">Underdisclosure minus full disclosure for the same profile, within each city (points, 0&ndash;17 scale). Ring: significant after Holm adjustment.</p>
+          <p class="chart-sub">Underdisclosure minus full disclosure for the same profile, within each city (points, 0&ndash;17 scale). Heavy outline: significant after Holm adjustment.</p>
           <div id="overview-map"></div>
           <div class="legend grad-legend-wrap" id="legend-overview-map"></div>
         </div>
 
         <div class="chart-card">
           <p class="chart-title">Key results</p>
-          <p class="chart-sub">All runs scored the same 640 instances. Bold: significant after Holm adjustment (&alpha;&nbsp;=&nbsp;0.05).</p>
-          <div class="results-scroll"><table class="results compact" id="summary-table"></table></div>
+          <p class="chart-sub">All runs scored the same 640 instances. The best AI run on each accuracy and triage measure is marked in bold.</p>
+          <div class="legend" id="legend-key-charts"></div>
+          <div id="key-charts"></div>
+          <details class="kc-table">
+            <summary>Show key results as a table</summary>
+            <p class="chart-sub">Bold: significant after Holm adjustment (&alpha;&nbsp;=&nbsp;0.05).</p>
+            <div class="results-scroll"><table class="results compact" id="summary-table"></table></div>
+          </details>
         </div>
       </section>
 
@@ -115,7 +131,7 @@
           <div class="chip-row" id="map-metrics"></div>
           <div id="map"></div>
           <div class="legend grad-legend-wrap" id="legend-map"></div>
-          <p class="chart-foot">Points on the 0&ndash;17 scale; all maps share one color scale. Ring: significant after Holm adjustment. Hover or focus a city for its 95% confidence interval.</p>
+          <p class="chart-foot">Points on the 0&ndash;17 scale; all maps share one color scale. Dot: city location. Heavy outline: significant after Holm adjustment. Hover or focus a city for its 95% confidence interval.</p>
         </div>
         <div class="chart-card">
           <p class="chart-title" id="city-table-title">City effect by city, every tool</p>
@@ -197,6 +213,25 @@
         </div>
       </div>
 
+      </section>
+
+      <section class="view" id="view-compare" data-view="compare" aria-label="Model comparison" hidden>
+        <div class="intro-band" id="compare-summary"></div>
+        <div class="chart-card">
+          <p class="chart-title">Least&#8209;biased AI run for each measure</p>
+          <p class="chart-sub">Mean paired difference in points [95% confidence interval]; for &ldquo;largest&rdquo; measures, the group with the largest gap is named. The run closest to zero is highlighted. A lead is reliable only if its 95% interval of distance from zero does not overlap any other run's. Bold: significant after Holm adjustment.</p>
+          <div class="results-scroll"><table class="results compact" id="compare-bias"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Effects with 95% confidence intervals</p>
+          <p class="chart-sub">Each row is one AI run; the dashed line is no difference. Filled dot: significant after Holm adjustment. The highlighted row is closest to zero.</p>
+          <div class="chart-scroll" id="compare-plot"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Accuracy and triage, for context</p>
+          <p class="chart-sub">The least&#8209;biased run is not necessarily the most accurate. Highlighted: best AI run on each measure.</p>
+          <div class="results-scroll"><table class="results compact" id="compare-accuracy"></table></div>
+        </div>
       </section>
 
       <section class="view" id="view-quality" data-view="quality" aria-label="Data quality" hidden>
@@ -358,13 +393,21 @@
         <p>
           Each model runs through its developer's command&#8209;line tool on a personal subscription:
           ChatGPT through the Codex CLI on a free ChatGPT account, and Claude through Claude Code on
-          a Claude Pro account. Every session is a new process started in an empty folder, with the
-          tool's own instructions replaced by one line, all tools disabled, and nothing saved between
-          sessions. The model therefore has no memory, chat history, or files. Beyond the session
-          text it receives only the folder path and the date (and, for Claude, the account email),
-          which are identical for every case. Codex's record of each ChatGPT request is archived.
+          a Claude Pro account. Every session is a new process started in an empty folder with
+          nothing saved between sessions, so the model has no memory, chat history, or files. Each
+          tool's coding&#8209;assistant instructions are replaced with the same single line,
+          &ldquo;You are a helpful assistant.&rdquo; (Codex does not accept empty instructions), so
+          both models receive identical instructions. Claude has no tools.
+          ChatGPT's code execution, shell, browser, and web search are disabled; across its 40
+          sessions it attempted one tool call, which was refused. Beyond the
+          session text, each model receives only fixed technical context (the empty folder's path,
+          the date, the operating environment, and for Claude the account email), identical for
+          every case. Codex's record of each ChatGPT request is archived.
           ChatGPT was run twice, identically except for Codex's reasoning effort: the default, under
-          which the model answered without a reasoning step, and high.
+          which the model answered without a reasoning step, and high. Gemini (gemini&#8209;3.8&#8209;flash)
+          runs through Google's Gemini API on a free key: each session is a new API chat with no
+          memory, sent with no system instruction and Google's default settings. The API receives
+          only the text the script sends; no leak test was run for it.
         </p>
         <p>
           Models are <strong>never shown the VI&#8209;SPDAT</strong>: not its questions,
@@ -409,7 +452,7 @@
       </div>
       <div class="table-note">
         <span>Every reply is kept exactly as returned</span>
-        <span>Session 1 prompt: <a href="paste/prompts/session-01/part-1.txt">part 1</a> &middot; <a href="paste/prompts/session-01/part-2.txt">part 2</a> (sent as one message)</span>
+        <span><a href="paste/prompts/session-01/single-message.txt">Session 1 prompt, exactly as sent</a></span>
       </div>
         </div>
       </details>
@@ -632,7 +675,7 @@
         <span class="kicker">Result</span>
         <p>
           Not supported on either count. Every AI run was less accurate than the VI&#8209;SPDAT
-          (mean absolute error 2.32&ndash;3.66 points against 0.97), and no run showed a significant
+          (mean absolute error 2.08&ndash;3.66 points against 0.97), and no run showed a significant
           race effect. The AI runs did catch nearly every truly high&#8209;need person the
           VI&#8209;SPDAT missed through underdisclosure, at the cost of flagging many who were not.
         </p>
@@ -717,8 +760,9 @@
         <li>
           <strong>One model per developer, one run per session.</strong> Each tool runs at its
           default settings (ChatGPT as gpt&#8209;6&#8209;luna through Codex; Claude as
-          claude&#8209;sonnet&#8209;5 through Claude Code), which may differ from the consumer chat
-          apps. Run&#8209;to&#8209;run variation is not measured. The two ChatGPT runs show that a
+          claude&#8209;sonnet&#8209;5 through Claude Code), except that the second ChatGPT run
+          raises reasoning effort to high. Gemini receives no system instruction, while ChatGPT and
+          Claude receive the same single line. These settings may differ from the consumer chat apps. Run&#8209;to&#8209;run variation is not measured. The two ChatGPT runs show that a
           single setting (reasoning effort) can change both accuracy and the gender result.
         </li>
         <li>
@@ -730,10 +774,6 @@
           <strong>Location is stated, not lived.</strong> Narratives read plausibly in all five
           cities, so the study measures response to the city label, not to local conditions such as
           rent or climate. Race&nbsp;&times;&nbsp;city interactions are not estimable.
-        </li>
-        <li>
-          <strong>Gemini is not yet included.</strong> Its run is incomplete because of the free API
-          tier's daily request limit.
         </li>
       </ul>
     </div>
