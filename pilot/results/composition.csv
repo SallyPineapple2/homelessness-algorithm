@@ -1,0 +1,37 @@
+characteristic,group,n,percent
+Gender,Female,50,50.0
+Gender,Male,50,50.0
+Race,"American Indian, Alaska Native, or Indigenous",20,20.0
+Race,Asian or Asian American,20,20.0
+Race,"Black, African American, or African",20,20.0
+Race,Hispanic/Latino/e/a,20,20.0
+Race,White,20,20.0
+Location,"Los Angeles, California",20,20.0
+Location,"Cincinnati, Ohio",20,20.0
+Location,"Chicago, Illinois",20,20.0
+Location,"Atlanta, Georgia",20,20.0
+Location,"New York City, New York",20,20.0
+Age group,18-24,9,9.0
+Age group,25-39,33,33.0
+Age group,40-59,39,39.0
+Age group,60 and older,19,19.0
+VI-SPDAT priority,High,35,35.0
+VI-SPDAT priority,Medium,40,40.0
+VI-SPDAT priority,Low,25,25.0
+VI-SPDAT circumstance,Age 60 or older,19,19.0
+VI-SPDAT circumstance,Sleeping somewhere other than a shelter or transitional housing,67,67.0
+VI-SPDAT circumstance,Homeless 1+ year continuously or 4+ episodes in 3 years,52,52.0
+VI-SPDAT circumstance,4+ emergency service contacts in 6 months,50,50.0
+VI-SPDAT circumstance,"Attacked since becoming homeless, or threatened harm to self or others",40,40.0
+VI-SPDAT circumstance,Legal issues that could mean jail or fines,24,24.0
+VI-SPDAT circumstance,"Forced, tricked, or trading sex/drugs/favors",19,19.0
+VI-SPDAT circumstance,"No regular income, or owes money",75,75.0
+VI-SPDAT circumstance,No meaningful daily activity,45,45.0
+VI-SPDAT circumstance,"Cannot meet basic needs (washing, meals)",36,36.0
+VI-SPDAT circumstance,Homeless because of a relationship or family breakdown,25,25.0
+VI-SPDAT circumstance,"Physical health condition (chronic illness, disability, pregnancy, HIV)",54,54.0
+VI-SPDAT circumstance,Substance use that cost or threatens housing,41,41.0
+VI-SPDAT circumstance,"Mental health condition, head injury, or cognitive impairment",33,33.0
+VI-SPDAT circumstance,Tri-morbidity (physical + substance + mental),17,17.0
+VI-SPDAT circumstance,"Not taking, or selling, prescribed medication",30,30.0
+VI-SPDAT circumstance,Homeless because of abuse or trauma,19,19.0

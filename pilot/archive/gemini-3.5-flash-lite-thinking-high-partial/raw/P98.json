@@ -1,0 +1,17 @@
+{
+ "id": "P98",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:33:24+00:00",
+ "seconds": 2.4,
+ "prompt_sha256": "f6c7b53786254be18b7b15765a15c584344fcac8d7ed3c4b129c3ad70f128acc",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "13",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 40. Gender: Female. Race: Hispanic/Latino/e/a. Location: Atlanta, Georgia.\n\nWork and education: Restaurant server for fifteen years.\nPath into homelessness: Left a partner who was abusive. The abusive relationship and the abuse are the cause of this homelessness.\nCurrent housing: Sleeping outdoors in a park for three years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: HIV positive and wants to join an HIV program. Uses methamphetamine daily. Depression. No prescriptions. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: four emergency room visits and one police contact. Was assaulted in the park. No legal issues. Trades sex for money.\nFamily and social ties: No family contact. No children.\nA typical day: Wanders. Has no planned activities and nothing brings satisfaction.\nGoals: Housing and treatment.\nService history: Known to outreach.\nPresentation in the interview: Exhausted and withdrawn.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"High\",\n  \"explanation\": \"She has experienced chronic homelessness for three years while facing severe vulnerabilities, including untreated HIV, daily methamphetamine use, depression, and high safety risks. These complex challenges indicate a critical need for permanent housing and intensive, ongoing support services.\"\n}",
+ "priority": "High",
+ "explanation": "She has experienced chronic homelessness for three years while facing severe vulnerabilities, including untreated HIV, daily methamphetamine use, depression, and high safety risks. These complex challenges indicate a critical need for permanent housing and intensive, ongoing support services.",
+ "problems": []
+}

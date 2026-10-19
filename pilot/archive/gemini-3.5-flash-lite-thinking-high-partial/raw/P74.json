@@ -1,0 +1,17 @@
+{
+ "id": "P74",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:35:27+00:00",
+ "seconds": 6.7,
+ "prompt_sha256": "75b6134c7d1d958e184d9590138202afe89441f84c2b713b2dc531d39068f630",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 63. Gender: Male. Race: Black, African American, or African. Location: Los Angeles, California.\n\nWork and education: Postal carrier for twenty-five years.\nPath into homelessness: Kidney failure from diabetes forced retirement, savings ran out, and the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a doorway for fifteen months. This is the first time without housing.\nFinances: A small pension every month. Owes $6,000 in medical bills.\nHealth: Kidney disease from diabetes, on dialysis three times a week. Often skips the prescribed insulin because it cannot be kept cold. Does not drink or use drugs. No mental health condition. Keeps up with washing at the dialysis center and with laundry and meals.\nSafety: In the past six months: four emergency room visits for high blood sugar and two ambulance rides. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A former coworker who drives to dialysis. No dependents.\nA typical day: Does crossword puzzles during dialysis and enjoys them.\nGoals: A senior apartment with a refrigerator.\nService history: A dialysis social worker is searching for housing.\nPresentation in the interview: Calm and polite; very tired.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"High\",\n  \"explanation\": \"He has been unsheltered for fifteen months with severe, life-threatening medical conditions that cause frequent emergency room visits and cannot be safely managed outdoors without refrigeration for his insulin. His extreme medical vulnerability makes him a top priority for permanent housing placement.\"\n}",
+ "priority": "High",
+ "explanation": "He has been unsheltered for fifteen months with severe, life-threatening medical conditions that cause frequent emergency room visits and cannot be safely managed outdoors without refrigeration for his insulin. His extreme medical vulnerability makes him a top priority for permanent housing placement.",
+ "problems": []
+}

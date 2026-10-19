@@ -1,0 +1,843 @@
+{
+ "profiles": [
+  {
+   "id": "P33",
+   "label": "Barista and part-time student",
+   "age": 26,
+   "indicators": [],
+   "narrative": {
+    "background": "Barista for four years while taking evening classes toward an accounting degree. Halfway through the program.",
+    "path": "The building was condemned after an inspection found structural damage, and every tenant had to leave within a week. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for three weeks. This is the first time without housing.",
+    "finances": "Works 30 hours a week at the cafe with a steady paycheck. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks only occasionally. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened since losing housing and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money or a place to stay.",
+    "ties": "Close with two former roommates who meet for dinner every week. No children.",
+    "routine": "Morning shift at the cafe, an evening class three nights a week, and study time at the library. Says the classes are the best part of the week.",
+    "goals": "A shared apartment near campus before the next term starts. Has already applied for two.",
+    "services": "First stay in any shelter. Has a relocation payment from the city pending.",
+    "demeanor": "Calm and practical. Brought a folder with the condemnation notice and pay stubs."
+   }
+  },
+  {
+   "id": "P34",
+   "label": "Accountant after a layoff",
+   "age": 58,
+   "indicators": [],
+   "narrative": {
+    "background": "Staff accountant at a regional insurance office for twenty-two years.",
+    "path": "Laid off in a merger. Severance ran out before a new job came through, and the landlord would not renew a lease without proof of employment. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for two months. This is the first time without housing.",
+    "finances": "Receives unemployment benefits every two weeks. No debts.",
+    "health": "No chronic health conditions or disabilities. Takes a cholesterol medication as prescribed. Does not use drugs and drinks rarely. Manages washing, laundry, and meals without trouble. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "An adult child who calls weekly and two old colleagues who send job leads. No one at home depends on this person.",
+    "routine": "Applies for jobs every morning at the library, volunteers as a tax-preparation helper two afternoons a week, and walks in the evenings. Enjoys the volunteering.",
+    "goals": "A bookkeeping job and a one-bedroom apartment. Has a second interview next week.",
+    "services": "First stay in any shelter. Working with a job counselor.",
+    "demeanor": "Reserved and precise. Embarrassed to be at the shelter but answers every question fully."
+   }
+  },
+  {
+   "id": "P35",
+   "label": "Grocery stocker after a building sale",
+   "age": 22,
+   "indicators": [],
+   "narrative": {
+    "background": "Finished high school and has stocked shelves at a grocery store for three years.",
+    "path": "The landlord sold the house that three roommates rented, and the new owner moved in. Could not find a room fast enough. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Living in a transitional housing program for young adults for one month. This is the first time without housing.",
+    "finances": "Full-time job at the grocery store with a regular paycheck. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not drink or use drugs. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Keeps in touch with the old roommates and a cousin nearby. No children.",
+    "routine": "Day shifts at the store, then pickup basketball at a community center most evenings, which is the favorite part of the day.",
+    "goals": "A room in a shared apartment within three months, saved for through the program's matched savings plan.",
+    "services": "The transitional program helps with budgeting and housing searches.",
+    "demeanor": "Easygoing and a little shy; answers briefly but clearly."
+   }
+  },
+  {
+   "id": "P36",
+   "label": "Warehouse temp sleeping in a car",
+   "age": 33,
+   "indicators": [
+    "a1_sleep"
+   ],
+   "narrative": {
+    "background": "Forklift-certified warehouse worker who has taken temp assignments for six years.",
+    "path": "A rent increase of $400 a month could not be covered on temp wages. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in a car in a store parking lot for three months. This is the first time without housing.",
+    "finances": "Steady temp assignment at a distribution center, paid weekly. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks occasionally. Showers at a gym and keeps up with laundry and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Talks with a parent and a best friend every few days. No children.",
+    "routine": "Day shift at the warehouse, the gym afterward, and a weekend softball league that is the highlight of the week.",
+    "goals": "An apartment with a lower rent, ideally near the distribution center.",
+    "services": "Has not used shelters or services before. Came in to ask about deposit help.",
+    "demeanor": "Matter-of-fact and polite. Wants to know how quickly deposit help can come through."
+   }
+  },
+  {
+   "id": "P37",
+   "label": "Office cleaner with medical debt",
+   "age": 45,
+   "indicators": [
+    "c1_money"
+   ],
+   "narrative": {
+    "background": "Commercial cleaning supervisor for a building-services company for nine years.",
+    "path": "An emergency appendix surgery left a large hospital bill. Paying it down meant falling behind on rent, and the lease was not renewed. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for five weeks. This is the first time without housing.",
+    "finances": "Full-time job with a regular paycheck. Owes about $9,000 on the hospital bill and a month of back rent to the former landlord.",
+    "health": "Fully recovered from the surgery. No chronic health conditions or disabilities and no prescriptions. Does not drink or use drugs. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No court cases or fines. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Two close friends from work and a sibling who checks in. No children.",
+    "routine": "Night shifts supervising a cleaning crew and a weekly community choir rehearsal that is the part of the week most looked forward to.",
+    "goals": "Set up a payment plan on the hospital bill and rent a studio.",
+    "services": "First stay in any shelter. Has an appointment with a financial counselor.",
+    "demeanor": "Tired but organized. Brought the hospital bill and pay stubs."
+   }
+  },
+  {
+   "id": "P38",
+   "label": "Retired librarian after a rent increase",
+   "age": 67,
+   "indicators": [
+    "pre_age"
+   ],
+   "narrative": {
+    "background": "Public librarian for thirty years before retiring.",
+    "path": "The apartment building was renovated and rents nearly doubled. The pension did not stretch to any vacancy found. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for six weeks. This is the first time without housing.",
+    "finances": "A monthly pension and Social Security. No debts.",
+    "health": "No chronic health conditions or disabilities. Takes a thyroid medication as prescribed. Does not drink or use drugs. Manages washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Several former coworkers who visit and a former neighbor who helps with apartment listings. No dependents.",
+    "routine": "Volunteers at a literacy program two mornings a week and reads in the library every afternoon. Describes the tutoring as deeply rewarding.",
+    "goals": "A unit in a senior apartment building. Is on two waiting lists.",
+    "services": "First stay in any shelter. A senior-services caseworker is helping with the waiting lists.",
+    "demeanor": "Gracious and articulate. Apologizes for taking up a bed."
+   }
+  },
+  {
+   "id": "P39",
+   "label": "Bank teller after a breakup",
+   "age": 30,
+   "indicators": [
+    "c4_relationships"
+   ],
+   "narrative": {
+    "background": "Bank teller for five years, recently promoted to head teller.",
+    "path": "A long-term partner ended the relationship and kept the apartment, which was in the partner's name. Lost housing because the relationship broke down. The breakup was not abusive, and abuse or trauma played no part.",
+    "housing": "Staying in an emergency shelter for one month. This is the first time without housing.",
+    "finances": "Full-time salary paid twice a month. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks socially. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Close friends from college and a parent who calls daily. No children.",
+    "routine": "Works weekdays at the bank, runs with a club on weekends, and enjoys both.",
+    "goals": "A one-bedroom apartment as soon as first and last month's rent is saved, which should take about six weeks.",
+    "services": "First stay in any shelter.",
+    "demeanor": "Composed and a little embarrassed. Keeps the conversation brief and practical."
+   }
+  },
+  {
+   "id": "P40",
+   "label": "Laid-off retail associate on a friend's couch",
+   "age": 24,
+   "indicators": [
+    "a1_sleep",
+    "c1_money"
+   ],
+   "narrative": {
+    "background": "Retail sales associate since finishing high school.",
+    "path": "The store closed and the job went with it. Without income, could not keep up with rent on a shared apartment. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping on a friend's couch for three months. This is the first time without housing.",
+    "finances": "No income since the store closed. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and the friend asks for nothing in return.",
+    "ties": "The friend hosting, a group of high-school friends, and a parent who calls weekly. No children.",
+    "routine": "Applies for jobs in the morning, plays guitar with friends in the evenings, and takes a free coding class online, which is the most enjoyable part of the week.",
+    "goals": "Any steady job, then a room of their own.",
+    "services": "Has not used shelters or services before.",
+    "demeanor": "Friendly and upbeat; a little anxious about overstaying at the friend's place."
+   }
+  },
+  {
+   "id": "P41",
+   "label": "Pregnant dental hygienist after a breakup",
+   "age": 27,
+   "gender": "Female",
+   "indicators": [
+    "c4_relationships",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Licensed dental hygienist at a family practice for four years.",
+    "path": "Moved out when a relationship ended; the lease was in the partner's name. Lost housing because the relationship broke down. The relationship was not abusive, and abuse or trauma played no part.",
+    "housing": "Staying in an emergency shelter for three weeks. This is the first time without housing.",
+    "finances": "Full-time salary. No debts.",
+    "health": "Currently pregnant, five months along, with regular prenatal care. No other health conditions or disabilities. Takes prenatal vitamins and no prescription medications. Does not drink or use drugs. Manages washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Parents live a few hours away and visit often. Friends from work are helping look for apartments.",
+    "routine": "Works at the dental practice four days a week and goes to a prenatal yoga class that is the favorite part of the week.",
+    "goals": "A two-bedroom apartment before the baby is due.",
+    "services": "First stay in any shelter. A shelter caseworker has referred the case to a family housing program.",
+    "demeanor": "Organized and hopeful; asks practical questions about move-in timelines."
+   }
+  },
+  {
+   "id": "P42",
+   "label": "Night-shift security guard, repeated stays",
+   "age": 39,
+   "indicators": [
+    "a2_duration",
+    "c2_activity"
+   ],
+   "narrative": {
+    "background": "Security guard on night shifts for a series of contract companies over ten years.",
+    "path": "Contracts end every year or so, and each gap has meant losing a room. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for two months. This is the fourth time without housing in the past three years.",
+    "finances": "Current guard contract pays every two weeks. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Talks with a cousin now and then. No close friends nearby and no children.",
+    "routine": "Works nights, sleeps in the shelter's day room, and otherwise waits. Has no planned activities and says nothing in the week brings any satisfaction.",
+    "goals": "A permanent position with one company so the cycle stops.",
+    "services": "Knows the shelter staff from the previous three stays.",
+    "demeanor": "Quiet and tired; answers in few words."
+   }
+  },
+  {
+   "id": "P43",
+   "label": "Retired machinist with lung disease",
+   "age": 63,
+   "indicators": [
+    "pre_age",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Machinist in a metal-parts shop for thirty-five years.",
+    "path": "Retired early when breathing got worse, and the fixed income could not keep up after a rent increase. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for five weeks. This is the first time without housing.",
+    "finances": "Social Security and a small pension every month. No debts.",
+    "health": "Chronic obstructive lung disease. Uses inhalers exactly as prescribed. Does not drink or use drugs. Manages washing, laundry, and meals, though slowly. No mental health condition.",
+    "safety": "One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "An adult child in another state who calls weekly and a former coworker who visits. No dependents.",
+    "routine": "Builds model engines at the shelter's activity table and attends a weekly veterans-and-retirees coffee group. Enjoys both.",
+    "goals": "A ground-floor senior apartment.",
+    "services": "First stay in any shelter. A clinic nurse follows the lung condition.",
+    "demeanor": "Patient and dry-humored; pauses to catch breath during longer answers."
+   }
+  },
+  {
+   "id": "P44",
+   "label": "Line mechanic with a pending charge",
+   "age": 35,
+   "indicators": [
+    "b3_legal",
+    "c1_money"
+   ],
+   "narrative": {
+    "background": "Auto mechanic at a tire-and-brake shop for eight years.",
+    "path": "Spent savings on a lawyer after an arrest for driving on a suspended license, then could not make rent. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for six weeks. This is the first time without housing.",
+    "finances": "Still employed full time with a weekly paycheck. Owes $2,500 to the lawyer and $800 in court fees.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "One police contact at the arrest and no emergency room visits, ambulance rides, hospital stays, or crisis calls in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. A pending charge could lead to fines or jail time. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A close friend from the shop and a parent who helps when possible. No children.",
+    "routine": "Works at the shop all day and restores an old motorcycle with a friend on weekends, which is the best part of the week.",
+    "goals": "Resolve the case, pay off the lawyer, and rent a studio.",
+    "services": "First stay in any shelter.",
+    "demeanor": "Frank and a little frustrated; owns the mistake and wants to move on."
+   }
+  },
+  {
+   "id": "P45",
+   "label": "Painter living in a car for over a year",
+   "age": 50,
+   "indicators": [
+    "a1_sleep",
+    "a2_duration",
+    "c1_money"
+   ],
+   "narrative": {
+    "background": "House painter, self-employed for most of twenty years.",
+    "path": "Work dried up and the landlord would not accept late rent. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in a car for fourteen months straight. This is the first time without housing.",
+    "finances": "No regular income; takes occasional cash painting jobs when they come up. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks a beer now and then. Keeps up with washing at a community center and with laundry and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, or crisis calls in the past six months, and one conversation with police about parking. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "An in-law who offers painting jobs and a couple of old friends. No children.",
+    "routine": "Looks for painting work in the morning and sketches in a park in the afternoons, which is the most satisfying part of the day.",
+    "goals": "A small apartment and a steady painting contract.",
+    "services": "Has used a car-parking program but no shelters.",
+    "demeanor": "Relaxed and talkative; jokes about the car."
+   }
+  },
+  {
+   "id": "P46",
+   "label": "Young adult with psychosis off medication",
+   "age": 23,
+   "indicators": [
+    "c2_activity",
+    "d3_mental",
+    "d5_medications"
+   ],
+   "narrative": {
+    "background": "Finished high school and one semester of community college.",
+    "path": "Psychotic symptoms led to arguments with neighbors and an eviction from a supported apartment. Lost housing because of mental health. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for two months. This is the first time without housing.",
+    "finances": "Monthly disability benefits, managed with help from a caseworker. No debts.",
+    "health": "Diagnosed with schizophrenia. Stopped taking the prescribed antipsychotic two months ago because of side effects. No physical health conditions or disabilities. Does not drink or use drugs. Keeps up with washing, laundry, and meals with reminders from shelter staff.",
+    "safety": "One clinic appointment and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A parent who visits on Sundays. No children.",
+    "routine": "Sits in the shelter day room most of the day. Has no planned activities and does not describe anything as enjoyable.",
+    "goals": "Unsure; says the parent's house would be fine.",
+    "services": "Has a mental health caseworker who visits monthly.",
+    "demeanor": "Quiet, with long pauses; sometimes answers a different question than the one asked."
+   }
+  },
+  {
+   "id": "P47",
+   "label": "Paralegal who fled an abusive partner",
+   "age": 31,
+   "indicators": [
+    "b1_emergency",
+    "c4_relationships",
+    "d6_trauma"
+   ],
+   "narrative": {
+    "background": "Paralegal at a small law firm for six years.",
+    "path": "Left the apartment to escape a partner who was physically abusive. Lost housing because of an abusive relationship, and the abuse is the cause of this homelessness.",
+    "housing": "Staying in an emergency shelter for one month. This is the first time without housing.",
+    "finances": "Still employed full time with a regular paycheck. No debts.",
+    "health": "No chronic health conditions or disabilities and no prescriptions. Does not drink or use drugs. Keeps up with washing, laundry, and meals. No mental health condition.",
+    "safety": "In the past six months: two emergency room visits for injuries from the partner, one call to a crisis line, and two conversations with police to report the abuse. Has not been attacked or threatened since leaving and has not threatened to harm anyone, including self. No legal issues of their own. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A close friend who drives to work some days and a supportive manager. No children.",
+    "routine": "Works full time and attends a support group twice a week, which is described as the most helpful thing in the week.",
+    "goals": "A safe apartment at an address the former partner does not know.",
+    "services": "A domestic-violence advocate is helping with a protective order.",
+    "demeanor": "Composed and careful; asks about how private the records are."
+   }
+  },
+  {
+   "id": "P48",
+   "label": "Retired trucker with heart disease in a car",
+   "age": 61,
+   "indicators": [
+    "pre_age",
+    "a1_sleep",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Long-haul truck driver for thirty years before a heart attack ended the commercial license.",
+    "path": "Medical retirement cut income in half, and the rented house became unaffordable. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in a car for four months. This is the first time without housing.",
+    "finances": "Social Security disability every month. No debts.",
+    "health": "Heart disease after a heart attack last year. Takes heart medications exactly as prescribed. Does not drink or use drugs. Washes at a truck stop and manages laundry and meals. No mental health condition.",
+    "safety": "Two cardiology appointments and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Old trucking friends who call regularly and a sibling who visits. No dependents.",
+    "routine": "Drives to a community garden most mornings and tends a plot there, which is the favorite part of the day.",
+    "goals": "A small apartment, ideally with parking.",
+    "services": "Has not used shelters. A heart clinic social worker made the referral.",
+    "demeanor": "Gruff but cooperative; wants straight answers."
+   }
+  },
+  {
+   "id": "P49",
+   "label": "Sales rep whose drinking cost the rent",
+   "age": 55,
+   "indicators": [
+    "c1_money",
+    "c2_activity",
+    "d2_substance"
+   ],
+   "narrative": {
+    "background": "Sales representative for a building-supply company for fifteen years.",
+    "path": "Heavy drinking led to missed sales targets and a lost commission check, and spending on alcohol meant the rent went unpaid. Drinking made it hard to afford housing. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for two months. This is the first time without housing.",
+    "finances": "Still employed on a reduced base salary. Owes $3,000 on a credit card and two months of rent to the former landlord.",
+    "health": "No physical health conditions or disabilities and no prescriptions. Drinks most evenings. No mental health diagnosis. Keeps up with washing, laundry, and meals.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "An adult child who has stopped calling and an ex-colleague who checks in. No dependents.",
+    "routine": "Goes to work, then to a bar until the shelter opens. Has no planned activities that bring any satisfaction.",
+    "goals": "Says housing first, then maybe cutting back on drinking.",
+    "services": "First stay in any shelter. Has not tried alcohol treatment.",
+    "demeanor": "Polished and talkative at first, then defensive when asked about drinking."
+   }
+  },
+  {
+   "id": "P50",
+   "label": "Day laborer outdoors for two years",
+   "age": 47,
+   "indicators": [
+    "a1_sleep",
+    "a2_duration",
+    "c1_money",
+    "c2_activity"
+   ],
+   "narrative": {
+    "background": "Construction day laborer for most of a working life.",
+    "path": "Work became scarce and rent went unpaid until an eviction. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping outdoors under a highway overpass for two years. This is the first time without housing.",
+    "finances": "No regular income; picks up day labor a few times a month. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Washes at a drop-in center and keeps up with laundry and meals. No mental health condition.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, or crisis calls, and two brief conversations with police in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A few acquaintances at the overpass. No family contact and no children.",
+    "routine": "Waits at a day-labor corner most mornings, then walks. Has no planned activities and nothing that brings satisfaction.",
+    "goals": "Indoors with a steady job.",
+    "services": "Known to one outreach worker.",
+    "demeanor": "Polite and reserved; keeps answers short."
+   }
+  },
+  {
+   "id": "P51",
+   "label": "Florist with kidney disease in a car",
+   "age": 52,
+   "indicators": [
+    "a1_sleep",
+    "c1_money",
+    "d1_physical",
+    "d5_medications"
+   ],
+   "narrative": {
+    "background": "Florist and shop owner for twelve years until the shop closed.",
+    "path": "Kidney disease made full days impossible, the shop closed, and the apartment followed. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in a car for five months. This is the first time without housing.",
+    "finances": "No income while a disability application is pending. No debts.",
+    "health": "Chronic kidney disease. Has stopped taking two prescribed medications because the copays are unaffordable. Does not drink or use drugs. No mental health condition. Manages washing at a gym and keeps up with laundry and meals.",
+    "safety": "Two clinic visits and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A sibling who helps with gas money and a few former customers who stay in touch. No children.",
+    "routine": "Arranges flowers for a community center's weekly lunch as a volunteer and enjoys it.",
+    "goals": "Get disability approved, restart medications, and rent a small apartment.",
+    "services": "A kidney clinic social worker is helping with the application.",
+    "demeanor": "Gentle and organized; worries aloud about the medication."
+   }
+  },
+  {
+   "id": "P52",
+   "label": "Bartender in fights while drinking",
+   "age": 28,
+   "indicators": [
+    "b1_emergency",
+    "b2_harm",
+    "c1_money",
+    "d2_substance"
+   ],
+   "narrative": {
+    "background": "Bartender at several clubs over six years.",
+    "path": "Drinking on and off shift led to firings and then to an eviction for unpaid rent. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for three months. This is the first time without housing.",
+    "finances": "No income since the last firing. No debts.",
+    "health": "No physical health conditions or disabilities and no prescriptions. Drinks heavily most days. No mental health diagnosis. Keeps up with washing, laundry, and meals.",
+    "safety": "In the past six months: two emergency room visits after fights, one ambulance ride, and three conversations with police. Was punched and hurt in a fight outside the shelter last month. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Old coworkers who still meet for drinks. A parent who calls now and then. No children.",
+    "routine": "Plays in a weekly pool league that is the best part of the week, and otherwise drinks with friends.",
+    "goals": "Back to bartending and an apartment with a friend.",
+    "services": "First stay in any shelter. Declined a referral to alcohol treatment.",
+    "demeanor": "Charming and loud; laughs off the fights."
+   }
+  },
+  {
+   "id": "P53",
+   "label": "Retired nurse's aide with heart failure",
+   "age": 69,
+   "indicators": [
+    "pre_age",
+    "a2_duration",
+    "c1_money",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Nurse's aide in nursing homes for thirty years.",
+    "path": "Heart failure led to a long hospital stay, rent fell behind, and the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for eighteen months straight. This is the first time without housing.",
+    "finances": "Social Security every month. Owes the former landlord three months of back rent.",
+    "health": "Congestive heart failure. Takes all heart medications as prescribed, set up by the shelter nurse. Does not drink or use drugs. No mental health condition. Manages washing, laundry, and meals, slowly.",
+    "safety": "One cardiology appointment and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Two grandchildren who visit on weekends. No dependents.",
+    "routine": "Knits blankets for a hospital nursery and plays cards with other residents, which are the favorite parts of the day.",
+    "goals": "A senior apartment with an elevator.",
+    "services": "On a waiting list for senior housing for over a year.",
+    "demeanor": "Warm and chatty; calls the caseworker 'honey.'"
+   }
+  },
+  {
+   "id": "P54",
+   "label": "Young adult put out by family after years of abuse",
+   "age": 20,
+   "indicators": [
+    "c1_money",
+    "c4_relationships",
+    "d3_mental",
+    "d6_trauma"
+   ],
+   "narrative": {
+    "background": "Finished high school last year. Worked briefly at a fast-food restaurant.",
+    "path": "Family forced the move-out after a conflict. Years of emotional and physical abuse at home are what led to this homelessness.",
+    "housing": "Staying in a youth emergency shelter for six weeks. This is the first time without housing.",
+    "finances": "No income since the restaurant job ended. No debts.",
+    "health": "No physical health conditions or disabilities and no prescriptions. Does not drink or use drugs. Diagnosed with an anxiety disorder that made it hard to keep a job or stay at friends' places. Keeps up with washing, laundry, and meals.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened since leaving home and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A teacher from high school who checks in and two friends. No children.",
+    "routine": "Draws comics every afternoon and goes to an art drop-in at the library, which is the best part of the week.",
+    "goals": "Finish a job-training program and get a room.",
+    "services": "The youth shelter connected the case to a counselor.",
+    "demeanor": "Soft-spoken and watchful; relaxes when talking about drawing."
+   }
+  },
+  {
+   "id": "P55",
+   "label": "Youth sleeping in a stairwell, carrying packages",
+   "age": 25,
+   "indicators": [
+    "a1_sleep",
+    "b3_legal",
+    "b4_exploitation",
+    "c1_money"
+   ],
+   "narrative": {
+    "background": "Left school at 17 and worked short jobs in fast food and car washes.",
+    "path": "Lost a room when a roommate arrangement ended over unpaid rent. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in the stairwell of a parking garage for three months. This is the first time without housing.",
+    "finances": "No income. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not drink or use drugs. No mental health condition. Keeps up with washing at a drop-in center and with laundry and meals.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, or crisis calls, and two brief police contacts in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. Has a pending trespassing charge that could bring a fine. An older acquaintance pays small amounts to carry packages across town without saying what is in them.",
+    "ties": "Talks to a grandparent by phone. No children.",
+    "routine": "Plays basketball at a rec center every afternoon and calls it the best part of the day.",
+    "goals": "A job at a warehouse and a room in a shared house.",
+    "services": "Has used a youth drop-in center for meals.",
+    "demeanor": "Guarded at first, then open; avoids questions about the packages."
+   }
+  },
+  {
+   "id": "P56",
+   "label": "Pregnant teenager put out by family",
+   "age": 19,
+   "gender": "Female",
+   "indicators": [
+    "a1_sleep",
+    "c1_money",
+    "c4_relationships",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Finished high school this spring.",
+    "path": "Family forced the move-out after learning about the pregnancy. Lost housing because of this family conflict. The family was not abusive, and abuse or trauma played no part.",
+    "housing": "Sleeping on different friends' couches for two months. This is the first time without housing.",
+    "finances": "No income. No debts.",
+    "health": "Currently pregnant, four months along, and attending prenatal appointments. No other health conditions or disabilities and no prescriptions. Does not drink or use drugs. No mental health condition. Keeps up with washing, laundry, and meals.",
+    "safety": "Two prenatal clinic visits and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and the friends ask for nothing in return.",
+    "ties": "Several close friends and an older cousin who helps with rides. The baby's other parent is not involved.",
+    "routine": "Takes a free childbirth class and spends afternoons with friends, which are the favorite parts of the week.",
+    "goals": "A place to live before the baby arrives and enrollment in community college.",
+    "services": "A clinic social worker made the referral.",
+    "demeanor": "Shy and nervous; answers carefully."
+   }
+  },
+  {
+   "id": "P57",
+   "label": "Former bus driver with an amputation, outdoors",
+   "age": 58,
+   "indicators": [
+    "a1_sleep",
+    "a2_duration",
+    "c3_selfcare",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "City bus driver for twenty years.",
+    "path": "A foot infection led to a below-knee amputation and the end of driving. The apartment was on a third floor with no elevator, and the landlord ended the lease. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping outdoors in a park for fourteen months. This is the first time without housing.",
+    "finances": "Monthly disability benefits. No debts.",
+    "health": "A below-knee amputation that limits walking and makes it impossible to climb stairs or work. Takes a pain medication as prescribed. Does not drink or use drugs. No mental health condition. Cannot reliably wash, change clothes, or get regular meals without help.",
+    "safety": "One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A former coworker who brings groceries every week. No children.",
+    "routine": "Listens to baseball on a radio and keeps score in a notebook every game day, which is the highlight of the week.",
+    "goals": "An accessible apartment on the ground floor.",
+    "services": "An outreach team has brought a wheelchair and is looking for accessible units.",
+    "demeanor": "Steady and good-humored; frustrated by the stairs everywhere."
+   }
+  },
+  {
+   "id": "P58",
+   "label": "Roofer outdoors whose drinking ended a lease",
+   "age": 41,
+   "indicators": [
+    "a1_sleep",
+    "a2_duration",
+    "b1_emergency",
+    "c1_money",
+    "d2_substance"
+   ],
+   "narrative": {
+    "background": "Roofer for fifteen years.",
+    "path": "Drinking got worse after a work injury, rent money went to alcohol, and the landlord evicted. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping outdoors behind a strip mall for sixteen months. This is the first time without housing.",
+    "finances": "No income. No debts.",
+    "health": "No chronic physical health conditions or disabilities; the old injury has healed. No prescriptions. Drinks daily. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.",
+    "safety": "In the past six months: two emergency room visits for falls while drunk, one ambulance ride, and two police contacts for being intoxicated in public. Has not been attacked or threatened and has not threatened to harm anyone, including self. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A few drinking friends. No family contact. No children.",
+    "routine": "Fishes off a pier most mornings, which is the one thing described as enjoyable.",
+    "goals": "Back to roofing and a room somewhere.",
+    "services": "Has been offered detox twice and declined.",
+    "demeanor": "Friendly, slightly slurred speech; insists the drinking is under control."
+   }
+  },
+  {
+   "id": "P59",
+   "label": "Bookkeeper with lupus and bipolar disorder",
+   "age": 37,
+   "indicators": [
+    "c1_money",
+    "c2_activity",
+    "d1_physical",
+    "d3_mental",
+    "d5_medications"
+   ],
+   "narrative": {
+    "background": "Bookkeeper for a property management company for eight years.",
+    "path": "A manic episode led to a job loss and an eviction after conflicts with the building manager. Lost housing because of mental health. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for four months. This is the first time without housing.",
+    "finances": "No income. Owes two months of rent to the former landlord.",
+    "health": "Lupus with kidney involvement. Bipolar disorder. Stopped taking the prescribed mood stabilizer three months ago and skips the lupus medication when feeling well. Does not drink or use drugs. Keeps up with washing, laundry, and meals.",
+    "safety": "One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A sibling who visits monthly. No children.",
+    "routine": "Spends days in the shelter's common room. Has no planned activities and nothing brings satisfaction lately.",
+    "goals": "Back to bookkeeping eventually; right now, just rest.",
+    "services": "Has a psychiatrist appointment next month.",
+    "demeanor": "Flat and slow to answer; apologizes for losing track."
+   }
+  },
+  {
+   "id": "P60",
+   "label": "Retired seamstress with a walker in a car",
+   "age": 72,
+   "indicators": [
+    "pre_age",
+    "a1_sleep",
+    "c1_money",
+    "c3_selfcare",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Seamstress and alterations shop owner for forty years.",
+    "path": "Closed the shop at 70 and could not cover rent on a fixed income after a rent increase. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in a car for three months. This is the first time without housing.",
+    "finances": "Social Security every month. Owes $4,000 on a credit card used for rent.",
+    "health": "Severe arthritis in both hips; walks with a walker and cannot work. Takes arthritis medications as prescribed. Does not drink or use drugs. No mental health condition. Cannot reliably wash, change clothes, or prepare meals while living in the car.",
+    "safety": "One doctor's visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A former apprentice who visits weekly and brings food. No dependents.",
+    "routine": "Mends clothes for neighbors at a community lunch program and enjoys it very much.",
+    "goals": "A senior apartment with an elevator.",
+    "services": "Senior services referral; first time asking for help.",
+    "demeanor": "Dignified and soft-spoken; does not like to complain."
+   }
+  },
+  {
+   "id": "P61",
+   "label": "Cashier facing charges after abuse",
+   "age": 34,
+   "indicators": [
+    "b2_harm",
+    "b3_legal",
+    "c1_money",
+    "c4_relationships",
+    "d6_trauma"
+   ],
+   "narrative": {
+    "background": "Supermarket cashier for nine years.",
+    "path": "Left a partner who was abusive. Lost housing because of the abusive relationship, and the abuse is the cause of this homelessness.",
+    "housing": "Staying in a domestic-violence emergency shelter for two months. This is the first time without housing.",
+    "finances": "Part-time cashier job with a regular paycheck. Owes $1,200 to a payday lender.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not drink or use drugs. No mental health diagnosis. Keeps up with washing, laundry, and meals.",
+    "safety": "One emergency room visit and two police contacts in the past six months. Was attacked by the former partner in a parking lot after leaving. Faces an assault charge filed by the former partner that could mean jail time. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A coworker who is a close friend and a parent who lives across the country. No children.",
+    "routine": "Works four shifts a week and attends a weekend art class that is the best part of the week.",
+    "goals": "Clear the charge and find an apartment in a safe building.",
+    "services": "A legal aid attorney is handling the charge.",
+    "demeanor": "Tense and guarded; speaks quickly when the charge comes up."
+   }
+  },
+  {
+   "id": "P62",
+   "label": "Former janitor outdoors for three years",
+   "age": 49,
+   "indicators": [
+    "a1_sleep",
+    "a2_duration",
+    "c1_money",
+    "c2_activity",
+    "c3_selfcare"
+   ],
+   "narrative": {
+    "background": "School janitor for twelve years.",
+    "path": "The janitorial contract was outsourced, and without work the rent fell behind until an eviction. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping outdoors in a vacant lot for three years. This is the first time without housing.",
+    "finances": "No income. No debts.",
+    "health": "No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, or crisis calls, and one police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "No family contact. A neighbor at the lot shares food. No children.",
+    "routine": "Collects cans most days. Has no planned activities and nothing described as satisfying.",
+    "goals": "A room and steady work.",
+    "services": "Known to outreach; has turned down shelter beds because of crowding.",
+    "demeanor": "Quiet and tired; answers slowly."
+   }
+  },
+  {
+   "id": "P63",
+   "label": "Delivery driver with asthma in a car",
+   "age": 44,
+   "indicators": [
+    "a1_sleep",
+    "b1_emergency",
+    "c1_money",
+    "d1_physical",
+    "d5_medications"
+   ],
+   "narrative": {
+    "background": "Package delivery driver for ten years.",
+    "path": "Asthma attacks caused missed shifts and a firing, then the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping in a car for five months. This is the first time without housing.",
+    "finances": "No income. No debts.",
+    "health": "Severe chronic asthma. Has not filled the prescribed controller inhaler in two months because of cost. Does not drink or use drugs. No mental health condition. Keeps up with washing at a gym and with laundry and meals.",
+    "safety": "In the past six months: four emergency room visits for asthma attacks and one ambulance ride. Has not been attacked or threatened and has not threatened to harm anyone, including self. No police contact and no legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A parent and two siblings nearby who help with food. No children.",
+    "routine": "Coaches a youth soccer team on weekends, which is the most enjoyable part of the week.",
+    "goals": "Get the inhaler covered, a new driving job, and an apartment.",
+    "services": "An emergency room social worker made the referral.",
+    "demeanor": "Friendly and cooperative; coughs through parts of the interview."
+   }
+  },
+  {
+   "id": "P64",
+   "label": "Cook with depression and repeated episodes",
+   "age": 26,
+   "indicators": [
+    "a2_duration",
+    "c1_money",
+    "c2_activity",
+    "d2_substance",
+    "d3_mental"
+   ],
+   "narrative": {
+    "background": "Prep cook in several restaurants since 18.",
+    "path": "Depression and cocaine use have cost one room after another. Both made it hard to keep or afford housing. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for two months. This is the fifth time without housing in the past three years.",
+    "finances": "No income. No debts.",
+    "health": "Major depression, untreated. Uses cocaine on weekends. No physical health conditions or disabilities and no prescriptions. Keeps up with washing, laundry, and meals.",
+    "safety": "No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A grandparent who calls on birthdays. No children.",
+    "routine": "Sleeps late and wanders until the shelter opens. Has no planned activities and nothing that brings satisfaction.",
+    "goals": "Not sure; maybe culinary school someday.",
+    "services": "Known to shelter staff from earlier stays.",
+    "demeanor": "Low energy, avoids eye contact, gives short answers."
+   }
+  },
+  {
+   "id": "P65",
+   "label": "Pregnant hairdresser in a car after abuse",
+   "age": 33,
+   "gender": "Female",
+   "indicators": [
+    "a1_sleep",
+    "b2_harm",
+    "c4_relationships",
+    "d1_physical",
+    "d6_trauma"
+   ],
+   "narrative": {
+    "background": "Hairdresser at a salon for ten years.",
+    "path": "Left a partner who became violent during the pregnancy. Lost housing because of the abusive relationship, and the abuse is the cause of this homelessness.",
+    "housing": "Sleeping in a car for one month. This is the first time without housing.",
+    "finances": "Rents a salon chair and earns steady weekly income. No debts.",
+    "health": "Currently pregnant, six months along, with regular prenatal care. No other health conditions or disabilities. Takes prenatal vitamins and no prescription medications. Does not drink or use drugs. No mental health diagnosis. Keeps up with washing at the salon and with laundry and meals.",
+    "safety": "Two prenatal visits and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. The former partner tracked down the car and hit this person two weeks ago. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "Salon coworkers and a close cousin. No other children.",
+    "routine": "Works five days a week and enjoys the regular clients.",
+    "goals": "A safe apartment before the baby is born.",
+    "services": "Just contacted a domestic-violence hotline.",
+    "demeanor": "Anxious and alert; keeps checking the window."
+   }
+  },
+  {
+   "id": "P66",
+   "label": "Mover outdoors after fights while drinking",
+   "age": 36,
+   "indicators": [
+    "a1_sleep",
+    "a2_duration",
+    "b1_emergency",
+    "b2_harm",
+    "c1_money",
+    "d2_substance"
+   ],
+   "narrative": {
+    "background": "Furniture mover for a decade.",
+    "path": "Drinking led to missing work, losing the job, and eviction. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping outdoors near a rail yard for two years. This is the first time without housing.",
+    "finances": "No income. No debts.",
+    "health": "No physical health conditions or disabilities and no prescriptions. Drinks daily. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.",
+    "safety": "In the past six months: three emergency room visits after fights and falls and two police contacts. Was beaten and robbed while sleeping a month ago. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A sibling who sends texts. No children.",
+    "routine": "Plays chess with an outreach volunteer twice a week and looks forward to it.",
+    "goals": "A room and work on a moving crew.",
+    "services": "Known to outreach.",
+    "demeanor": "Friendly but restless; jokes about the robbery."
+   }
+  },
+  {
+   "id": "P67",
+   "label": "Retired welder outdoors with lung disease",
+   "age": 65,
+   "indicators": [
+    "pre_age",
+    "a1_sleep",
+    "a2_duration",
+    "c1_money",
+    "c2_activity",
+    "d1_physical"
+   ],
+   "narrative": {
+    "background": "Welder for forty years.",
+    "path": "Lung disease ended work, savings ran out, and the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Sleeping outdoors in a park for two years. This is the first time without housing.",
+    "finances": "No income; has never applied for Social Security. No debts.",
+    "health": "Chronic lung disease from welding fumes. Uses an inhaler as prescribed. Does not drink or use drugs. No mental health condition. Keeps up with washing at a drop-in center and with laundry and meals.",
+    "safety": "One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "No family contact. No children.",
+    "routine": "Sits on the same park bench all day. Has no planned activities and nothing that brings satisfaction.",
+    "goals": "Indoors somewhere quiet.",
+    "services": "An outreach worker is helping apply for Social Security.",
+    "demeanor": "Slow-spoken and wary; stops to catch breath."
+   }
+  },
+  {
+   "id": "P68",
+   "label": "Former carpenter with a brain injury",
+   "age": 54,
+   "indicators": [
+    "c1_money",
+    "c2_activity",
+    "c3_selfcare",
+    "d1_physical",
+    "d3_mental",
+    "d5_medications"
+   ],
+   "narrative": {
+    "background": "Finish carpenter for twenty years until a fall from a ladder.",
+    "path": "A traumatic brain injury from the fall caused memory problems and the loss of the apartment after unpaid bills. Lost housing because of the head injury. Not caused by a relationship breakdown, abuse, or trauma.",
+    "housing": "Staying in an emergency shelter for five months. This is the first time without housing.",
+    "finances": "No income; a disability claim was denied. Owes $2,000 in unpaid utility bills.",
+    "health": "Traumatic brain injury with memory loss. A back injury from the same fall limits lifting and walking. Forgets to take the prescribed seizure medication most days. Does not drink or use drugs. Cannot keep up with washing, clean clothes, or meals without reminders.",
+    "safety": "One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.",
+    "ties": "A former employer checks in now and then. No children.",
+    "routine": "Spends days in the shelter's lounge. Has no planned activities and nothing that brings satisfaction.",
+    "goals": "Says going back to carpentry, though unsure how.",
+    "services": "A legal aid group is appealing the disability denial.",
+    "demeanor": "Friendly but repeats questions; loses the thread mid-answer."
+   }
+  }
+ ]
+}

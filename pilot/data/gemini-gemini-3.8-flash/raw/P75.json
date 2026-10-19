@@ -1,0 +1,23 @@
+{
+ "id": "P75",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T15:16:39+00:00",
+ "seconds": 4.8,
+ "prompt_sha256": "a202207cad40170f839fc00639d1e4299c9c0fb5b90841b998d0c1cf9573162a",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 27. Gender: Female. Race: Black, African American, or African. Location: Cincinnati, Ohio.\n\nWork and education: Worked in retail and as a server since 18.\nPath into homelessness: A sexual assault two years ago led to leaving an apartment shared with the attacker's friends. The assault and the trauma it caused are the cause of this homelessness. Not caused by a relationship breakdown.\nCurrent housing: Sleeping wherever a place is offered, usually at strangers' apartments, for eight months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Uses opioids daily, which has made it impossible to keep a job or rent. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two emergency room visits, one overdose with an ambulance ride, and one police contact. Was hit by someone offering a place to stay. No legal issues. Trades sex for a place to sleep.\nFamily and social ties: A friend who sometimes brings food. No children.\nA typical day: Goes to a weekly art therapy group, which is the best part of the week.\nGoals: A place of their own and treatment.\nService history: A harm-reduction program made the referral.\nPresentation in the interview: Guarded and tired; talks quietly.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\n  \"priority\": \"High\",\n  \"explanation\": \"She faces severe, life-threatening vulnerabilities including daily opioid use with a recent overdose, ongoing physical violence, and trading sex for shelter. These factors, combined with trauma and lack of income, require immediate, intensive support and stable housing to ensure her safety and recovery.\"\n}\n```",
+ "priority": "High",
+ "explanation": "She faces severe, life-threatening vulnerabilities including daily opioid use with a recent overdose, ongoing physical violence, and trading sex for shelter. These factors, combined with trauma and lack of income, require immediate, intensive support and stable housing to ensure her safety and recovery.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 487,
+  "thoughts_token_count": 299,
+  "candidates_token_count": 75,
+  "total_token_count": 861
+ }
+}

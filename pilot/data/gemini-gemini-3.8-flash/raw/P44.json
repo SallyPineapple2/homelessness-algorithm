@@ -1,0 +1,17 @@
+{
+ "id": "P44",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T02:43:43+00:00",
+ "seconds": 6.5,
+ "prompt_sha256": "5b575da7e6ff139041d2d92a7e24bddf6810a5a7fdecc60a18692c03aaef7981",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "2",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 35. Gender: Female. Race: White. Location: Los Angeles, California.\n\nWork and education: Auto mechanic at a tire-and-brake shop for eight years.\nPath into homelessness: Spent savings on a lawyer after an arrest for driving on a suspended license, then could not make rent. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for six weeks. This is the first time without housing.\nFinances: Still employed full time with a weekly paycheck. Owes $2,500 to the lawyer and $800 in court fees.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Keeps up with washing, laundry, and meals. No mental health condition.\nSafety: One police contact at the arrest and no emergency room visits, ambulance rides, hospital stays, or crisis calls in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. A pending charge could lead to fines or jail time. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A close friend from the shop and a parent who helps when possible. No children.\nA typical day: Works at the shop all day and restores an old motorcycle with a friend on weekends, which is the best part of the week.\nGoals: Resolve the case, pay off the lawyer, and rent a studio.\nService history: First stay in any shelter.\nPresentation in the interview: Frank and a little frustrated; owns the mistake and wants to move on.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\n  \"priority\": \"Low\",\n  \"explanation\": \"She maintains steady full-time employment, has no physical or behavioral health needs, and possesses the income and support network necessary to self-resolve her homelessness with little or no agency assistance.\"\n}\n```",
+ "priority": "Low",
+ "explanation": "She maintains steady full-time employment, has no physical or behavioral health needs, and possesses the income and support network necessary to self-resolve her homelessness with little or no agency assistance.",
+ "problems": []
+}

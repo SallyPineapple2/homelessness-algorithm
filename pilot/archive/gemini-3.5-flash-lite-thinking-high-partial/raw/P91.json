@@ -1,0 +1,17 @@
+{
+ "id": "P91",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:34:33+00:00",
+ "seconds": 2.7,
+ "prompt_sha256": "94d3d71835856c85478fe32860ea96b5d30dd8459dfb02657e31eac59c06905d",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "10",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 64. Gender: Female. Race: Black, African American, or African. Location: Chicago, Illinois.\n\nWork and education: Machinist for thirty-five years.\nPath into homelessness: A stroke ended work, and the apartment was lost when savings ran out. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a doorway for one year and six months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Weakness on one side after a stroke; walks with a cane and cannot work. Has stopped the prescribed blood-thinner because the pharmacy is too far. Does not drink or use drugs. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: three emergency room visits after falls and one ambulance ride. Was attacked, robbed, and pushed down by teenagers. No police contact and no legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. No dependents.\nA typical day: Sits in the doorway. Has no planned activities and nothing brings satisfaction.\nGoals: A place with an elevator.\nService history: Known to outreach.\nPresentation in the interview: Slurred speech; frustrated but patient.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"High\",\n  \"explanation\": \"She is a high priority due to her severe physical disabilities from a stroke, complete lack of income, prolonged homelessness, and ongoing safety and health risks on the street.\"\n}",
+ "priority": "High",
+ "explanation": "She is a high priority due to her severe physical disabilities from a stroke, complete lack of income, prolonged homelessness, and ongoing safety and health risks on the street.",
+ "problems": []
+}

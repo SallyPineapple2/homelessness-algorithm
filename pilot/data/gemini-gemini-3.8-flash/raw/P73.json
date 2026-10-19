@@ -1,0 +1,23 @@
+{
+ "id": "P73",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T15:14:50+00:00",
+ "seconds": 23.0,
+ "prompt_sha256": "1d9bb2c58ae9fd818acb15476769c874ebf3e8dfcd83ceffabe32cca683029b4",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 33. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: Los Angeles, California.\n\nWork and education: Line cook in diners for twelve years.\nPath into homelessness: Drinking cost a cooking job and then the apartment. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a park for eighteen months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks heavily every day. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: three emergency room visits after injuries and two police contacts. Was attacked by a stranger in the park two months ago. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. No children.\nA typical day: Drinks with others in the park from late morning on. Has no planned activities and nothing brings satisfaction.\nGoals: A room and a cooking job, someday.\nService history: Known to outreach.\nPresentation in the interview: Friendly but foggy; smells of alcohol.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\"priority\": \"High\", \"explanation\": \"She has been unsheltered for 18 months and faces severe safety vulnerabilities, including multiple emergency room visits from injuries and a recent assault. Her chronic daily alcohol dependence and lack of income indicate a need for intensive, ongoing supportive services to achieve and maintain housing stability.\"}\n```",
+ "priority": "High",
+ "explanation": "She has been unsheltered for 18 months and faces severe safety vulnerabilities, including multiple emergency room visits from injuries and a recent assault. Her chronic daily alcohol dependence and lack of income indicate a need for intensive, ongoing supportive services to achieve and maintain housing stability.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 463,
+  "thoughts_token_count": 877,
+  "candidates_token_count": 70,
+  "total_token_count": 1410
+ }
+}

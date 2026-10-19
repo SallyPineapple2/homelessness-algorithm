@@ -1,0 +1,32 @@
+[
+ {
+  "id": "P01",
+  "model": "gemini-3.5-flash-lite",
+  "config": "study default (no system instruction, no thinking setting)",
+  "requested_at": "2026-10-18T05:45:03+00:00",
+  "prompt_tokens": 615,
+  "thinking_tokens": null,
+  "answer_tokens": 41,
+  "total_tokens": 656
+ },
+ {
+  "id": "P02",
+  "model": "gemini-3.5-flash-lite",
+  "config": "study default (no system instruction, no thinking setting)",
+  "requested_at": "2026-10-18T05:50:12+00:00",
+  "prompt_tokens": 622,
+  "thinking_tokens": null,
+  "answer_tokens": 64,
+  "total_tokens": 686
+ },
+ {
+  "id": "P03",
+  "model": "gemini-3.5-flash-lite",
+  "config": "study default (no system instruction, no thinking setting)",
+  "requested_at": "2026-10-18T05:55:18+00:00",
+  "prompt_tokens": 589,
+  "thinking_tokens": null,
+  "answer_tokens": 46,
+  "total_tokens": 635
+ }
+]

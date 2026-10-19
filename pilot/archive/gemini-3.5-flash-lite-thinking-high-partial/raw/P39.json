@@ -1,0 +1,17 @@
+{
+ "id": "P39",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:33:50+00:00",
+ "seconds": 3.0,
+ "prompt_sha256": "e1cb1572455292d7f149205d5ff95f91206cf7d86c35fc2bac07ce715062dd41",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 30. Gender: Female. Race: Hispanic/Latino/e/a. Location: Cincinnati, Ohio.\n\nWork and education: Bank teller for five years, recently promoted to head teller.\nPath into homelessness: A long-term partner ended the relationship and kept the apartment, which was in the partner's name. Lost housing because the relationship broke down. The breakup was not abusive, and abuse or trauma played no part.\nCurrent housing: Staying in an emergency shelter for one month. This is the first time without housing.\nFinances: Full-time salary paid twice a month. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks socially. Keeps up with washing, laundry, and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Close friends from college and a parent who calls daily. No children.\nA typical day: Works weekdays at the bank, runs with a club on weekends, and enjoys both.\nGoals: A one-bedroom apartment as soon as first and last month's rent is saved, which should take about six weeks.\nService history: First stay in any shelter.\nPresentation in the interview: Composed and a little embarrassed. Keeps the conversation brief and practical.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"explanation\": \"This individual is employed full-time with no debt, good health, and a clear plan to independently save for an apartment within six weeks, indicating she is likely to resolve her homelessness with little or no agency assistance.\"}",
+ "priority": "Low",
+ "explanation": "This individual is employed full-time with no debt, good health, and a clear plan to independently save for an apartment within six weeks, indicating she is likely to resolve her homelessness with little or no agency assistance.",
+ "problems": []
+}

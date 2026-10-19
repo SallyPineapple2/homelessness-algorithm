@@ -1,0 +1,79 @@
+[2026-10-15 17:35:52] 8 of 100 profiles already have a valid reply; 92 to go
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-10-15 17:35:52] daily quota reached; sleeping 9.5 h until the reset
+[2026-10-16 03:22:05]   waiting 15s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:22:20]   waiting 30s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:22:50]   waiting 45s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:23:37]   waiting 60s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:24:38]   waiting 75s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:25:58] P03: Gemini Medium, VI-SPDAT Low (score 1) (9/100 done)
+[2026-10-16 03:26:02] P42: Gemini Medium, VI-SPDAT Low (score 2) (10/100 done)
+[2026-10-16 03:26:03]   waiting 15s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:26:24] P98: Gemini High, VI-SPDAT High (score 13) (11/100 done)
+[2026-10-16 03:26:28] P05: Gemini Medium, VI-SPDAT Low (score 2) (12/100 done)
+[2026-10-16 03:26:28]   waiting 15s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:26:47] P80: Gemini High, VI-SPDAT High (score 8) (13/100 done)
+[2026-10-16 03:26:48]   waiting 15s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:27:14] P79: Gemini High, VI-SPDAT Medium (score 7) (14/100 done)
+[2026-10-16 03:27:14]   waiting 15s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:27:30]   waiting 30s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:28:00]   waiting 45s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:28:47]   waiting 60s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:29:47]   waiting 75s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:31:02]   waiting 90s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:32:34]   waiting 105s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 03:34:23] P95: Gemini High, VI-SPDAT High (score 12) (15/100 done)
+[2026-10-16 03:34:23] daily quota reached; sleeping 23.5 h until the reset
+--- restarted with longer overload backoff Fri Oct 16 13:24:28 EDT 2026
+[2026-10-16 13:24:30] 15 of 100 profiles already have a valid reply; 85 to go
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-10-16 13:24:31]   waiting 300s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 13:29:31]   waiting 600s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-16 13:40:35] daily quota reached; sleeping 13.4 h until the reset
+--- resumed after session restart Sat Oct 17 22:42:25 EDT 2026
+[2026-10-17 22:42:32] 15 of 100 profiles already have a valid reply; 85 to go
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-10-17 22:42:51] P11: Gemini Medium, VI-SPDAT Medium (score 4) (16/100 done)
+[2026-10-17 22:42:55] P86: Gemini High, VI-SPDAT High (score 9) (17/100 done)
+[2026-10-17 22:42:59] P39: Gemini Low, VI-SPDAT Low (score 1) (18/100 done)
+[2026-10-17 22:43:05] P21: Gemini High, VI-SPDAT High (score 8) (19/100 done)
+[2026-10-17 22:43:19] P07: Gemini Medium, VI-SPDAT Low (score 3) (20/100 done)
+[2026-10-17 22:43:23] P54: Gemini Medium, VI-SPDAT Medium (score 4) (21/100 done)
+[2026-10-17 22:43:28] P16: Gemini High, VI-SPDAT Medium (score 7) (22/100 done)
+[2026-10-17 22:43:32] P83: Gemini High, VI-SPDAT High (score 8) (23/100 done)
+[2026-10-17 22:43:39] P30: Gemini High, VI-SPDAT High (score 16) (24/100 done)
+[2026-10-17 22:43:43] P27: Gemini High, VI-SPDAT High (score 13) (25/100 done)
+[2026-10-17 22:43:49] P44: Gemini Low, VI-SPDAT Low (score 2) (26/100 done)
+[2026-10-17 22:43:59] P38: Gemini Medium, VI-SPDAT Low (score 1) (27/100 done)
+[2026-10-17 22:44:03]   waiting 300s after: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing 
+[2026-10-17 22:49:08] P12: Gemini Medium, VI-SPDAT Medium (score 5) (28/100 done)
+[2026-10-17 22:49:12] P91: Gemini High, VI-SPDAT High (score 10) (29/100 done)
+[2026-10-17 22:49:16] P88: Gemini High, VI-SPDAT High (score 9) (30/100 done)
+[2026-10-17 22:49:17] daily quota reached; sleeping 4.3 h until the reset
+--- restarted to record token usage Sun Oct 18 01:57:17 EDT 2026
+[2026-10-18 01:57:18] 30 of 100 profiles already have a valid reply; 70 to go
+Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+[2026-10-18 01:57:23] P33: Gemini Low, VI-SPDAT Low (score 0) (31/100 done)
+[2026-10-18 01:57:53] P32: Gemini High, VI-SPDAT High (score 17) (32/100 done)
+[2026-10-18 01:57:54] daily quota reached; sleeping 1.1 h until the reset
+[2026-10-18 11:14:16] P45: Gemini Medium, VI-SPDAT Low (score 3) (33/100 done)
+[2026-10-18 11:14:28] P53: Gemini Medium, VI-SPDAT Medium (score 4) (34/100 done)
+[2026-10-18 11:14:43] P48: Gemini Medium, VI-SPDAT Low (score 3) (35/100 done)
+[2026-10-18 11:14:50] P37: Gemini Medium, VI-SPDAT Low (score 1) (36/100 done)
+[2026-10-18 11:15:13] P73: Gemini High, VI-SPDAT Medium (score 7) (37/100 done)
+[2026-10-18 11:15:35] P36: Gemini Medium, VI-SPDAT Low (score 1) (38/100 done)
+[2026-10-18 11:15:39] P72: Gemini High, VI-SPDAT Medium (score 6) (39/100 done)
+[2026-10-18 11:15:42] P19: Gemini High, VI-SPDAT High (score 8) (40/100 done)
+[2026-10-18 11:15:46] P63: Gemini Medium, VI-SPDAT Medium (score 5) (41/100 done)
+[2026-10-18 11:16:06] P14: Gemini High, VI-SPDAT Medium (score 6) (42/100 done)
+[2026-10-18 11:16:12] P97: Gemini High, VI-SPDAT High (score 13) (43/100 done)
+[2026-10-18 11:16:15] P74: Gemini High, VI-SPDAT Medium (score 7) (44/100 done)
+[2026-10-18 11:16:19] P50: Gemini Medium, VI-SPDAT Medium (score 4) (45/100 done)
+[2026-10-18 11:16:25] P60: Gemini High, VI-SPDAT Medium (score 5) (46/100 done)
+[2026-10-18 11:16:33] P59: Gemini Medium, VI-SPDAT Medium (score 5) (47/100 done)
+[2026-10-18 11:16:39] P77: Gemini Medium, VI-SPDAT Medium (score 7) (48/100 done)
+[2026-10-18 11:16:43] P75: Gemini High, VI-SPDAT Medium (score 7) (49/100 done)
+[2026-10-18 11:16:49] P61: Gemini Medium, VI-SPDAT Medium (score 5) (50/100 done)
+[2026-10-18 11:17:03] P69: Gemini Medium, VI-SPDAT Medium (score 6) (51/100 done)
+[2026-10-18 11:17:03]   rate limited; waiting 61s
+[2026-10-18 11:18:04] daily quota reached; sleeping 15.8 h until the reset

@@ -1,0 +1,16 @@
+{
+ "id": "P80",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:32:27+00:00",
+ "seconds": 2.8,
+ "prompt_sha256": "e23f4cabfd8e8430a7f26263130b40f34e0ae5673161e54200e839079b231808",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 30. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: New York City, New York.\n\nWork and education: Served four years in the army, then worked in a warehouse.\nPath into homelessness: Combat trauma led to heavy drinking, a job loss, and eviction. The trauma is the cause of this homelessness, and drinking made it impossible to afford rent. Not caused by a relationship breakdown.\nCurrent housing: Sleeping outdoors under a bridge for one year and three months. This is the first time without housing.\nFinances: No income; has not applied for veterans' benefits. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks heavily every day. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: three emergency room visits after falls and fights and two police contacts. Was assaulted under the bridge last month. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A parent who calls. No children.\nA typical day: Drinks from morning on. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: A veterans' outreach worker has made contact.\nPresentation in the interview: Tense and watchful; startles at loud noises.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client has been unsheltered for over a year, suffers from untreated combat trauma and severe daily alcohol dependence, and faces ongoing physical danger including recent assaults and emergency room visits.\"}",
+ "priority": "High",
+ "explanation": "The client has been unsheltered for over a year, suffers from untreated combat trauma and severe daily alcohol dependence, and faces ongoing physical danger including recent assaults and emergency room visits.",
+ "problems": []
+}

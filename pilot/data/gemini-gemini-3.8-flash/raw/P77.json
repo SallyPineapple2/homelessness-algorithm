@@ -1,0 +1,23 @@
+{
+ "id": "P77",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T15:16:33+00:00",
+ "seconds": 5.9,
+ "prompt_sha256": "e8fbc6989b9cb672bc51e7aced34eef2c4c48bef4540a8cfe445f5f84d4edef6",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 40. Gender: Female. Race: White. Location: New York City, New York.\n\nWork and education: Landscaper running a small crew for ten years.\nPath into homelessness: A divorce ended access to the family home. Drinking and depression since then have made it hard to keep any rental. Lost housing because the relationship broke down. Abuse or trauma played no part.\nCurrent housing: Sleeping in a truck for one year and two months. This is the first time without housing.\nFinances: No regular income; occasional cash jobs. Owes $5,000 in child support.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks heavily most nights. Major depression, untreated. Keeps up with washing at a gym and with laundry and meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, or crisis calls, and one police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. Has a pending court date for unpaid child support that could mean jail time. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Two children who live with the former spouse; sees them every other weekend.\nA typical day: Takes the children fishing on visiting weekends, which is the best part of life right now.\nGoals: A two-bedroom apartment so the children can stay over.\nService history: First time asking for help.\nPresentation in the interview: Proud and frustrated; tears up when talking about the children.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\n  \"priority\": \"Medium\",\n  \"explanation\": \"She has strong work history and independent living skills, but untreated depression and heavy drinking following a divorce require time-limited rental assistance and supportive service linkages to regain stable housing.\"\n}\n```",
+ "priority": "Medium",
+ "explanation": "She has strong work history and independent living skills, but untreated depression and heavy drinking following a divorce require time-limited rental assistance and supportive service linkages to regain stable housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 521,
+  "thoughts_token_count": 398,
+  "candidates_token_count": 56,
+  "total_token_count": 975
+ }
+}

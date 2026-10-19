@@ -1,0 +1,17 @@
+{
+ "id": "P64",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:33:08+00:00",
+ "seconds": 4.5,
+ "prompt_sha256": "cb8d414c31b05154229ef5df635d6bd2d6f893c2e70b31844ccbd180a9e51c21",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 26. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: Los Angeles, California.\n\nWork and education: Prep cook in several restaurants since 18.\nPath into homelessness: Depression and cocaine use have cost one room after another. Both made it hard to keep or afford housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for two months. This is the fifth time without housing in the past three years.\nFinances: No income. No debts.\nHealth: Major depression, untreated. Uses cocaine on weekends. No physical health conditions or disabilities and no prescriptions. Keeps up with washing, laundry, and meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A grandparent who calls on birthdays. No children.\nA typical day: Sleeps late and wanders until the shelter opens. Has no planned activities and nothing that brings satisfaction.\nGoals: Not sure; maybe culinary school someday.\nService history: Known to shelter staff from earlier stays.\nPresentation in the interview: Low energy, avoids eye contact, gives short answers.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"High\",\n  \"explanation\": \"She should be a high priority due to her pattern of recurring homelessness, untreated major depression, and substance use that consistently undermine her ability to maintain housing. Providing permanent housing with ongoing support services is necessary to address these barriers and break her cycle of housing instability.\"\n}",
+ "priority": "High",
+ "explanation": "She should be a high priority due to her pattern of recurring homelessness, untreated major depression, and substance use that consistently undermine her ability to maintain housing. Providing permanent housing with ongoing support services is necessary to address these barriers and break her cycle of housing instability.",
+ "problems": []
+}

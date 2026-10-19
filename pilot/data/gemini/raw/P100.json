@@ -1,0 +1,16 @@
+{
+ "id": "P100",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:38:09+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "b23f668c859bf4a0715e84b5240110a63ccc5f098ecf91e5bc019d8ed828c213",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "15",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 60. Gender: Male. Race: Asian or Asian American. Location: Cincinnati, Ohio.\n\nWork and education: Dock worker for thirty years.\nPath into homelessness: Drinking and depression after an injury led to eviction. Both made it impossible to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors under a pier for four years. This is the first time without housing.\nFinances: No income. Owes money to people on the street.\nHealth: Chronic back injury that limits walking. Liver disease. Drinks daily. Major depression. Does not take the prescribed antidepressant. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: five emergency room visits, two ambulance rides, and two police contacts. Was beaten and robbed. Has a pending trespassing charge. People on the street force this person to hold drugs for them.\nFamily and social ties: No family contact. No dependents.\nA typical day: Drinks under the pier. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: Known to outreach.\nPresentation in the interview: Slow and weary.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"This individual has been unsheltered for four years with severe chronic health, mobility, and mental health conditions, compounded by active substance use, lack of income, and extreme street-level safety vulnerabilities.\"}",
+ "priority": "High",
+ "explanation": "This individual has been unsheltered for four years with severe chronic health, mobility, and mental health conditions, compounded by active substance use, lack of income, and extreme street-level safety vulnerabilities.",
+ "problems": []
+}

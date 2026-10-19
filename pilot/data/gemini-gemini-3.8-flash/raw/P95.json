@@ -1,0 +1,17 @@
+{
+ "id": "P95",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-16T07:27:14+00:00",
+ "seconds": 428.8,
+ "prompt_sha256": "be6dbb157a428a1d2b628555a9464003b2d0984bdfdc503abe2cab1ffea61346",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "12",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 48. Gender: Female. Race: Asian or Asian American. Location: Los Angeles, California.\n\nWork and education: Plumber for twenty years.\nPath into homelessness: Drinking and post-traumatic stress after a car crash led to job loss and eviction. Both made it impossible to keep housing. Abuse played no part, and the crash is not identified as the cause of homelessness. Not caused by a relationship breakdown.\nCurrent housing: Sleeping outdoors behind a store for two years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Heart disease. Drinks daily. Post-traumatic stress disorder. No prescriptions. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: four emergency room visits and two police contacts. Was attacked by a stranger last month. Has a pending trespassing charge. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. No children.\nA typical day: Drinks all day. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: Known to outreach.\nPresentation in the interview: Irritable and distracted.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"She meets chronic homelessness criteria with two years unsheltered, no income, and co-occurring physical and behavioral health conditions that severely impair her activities of daily living. Her frequent emergency room visits, recent victimization, and lack of support systems indicate an urgent need for permanent supportive housing with intensive wrap-around services.\"}",
+ "priority": "High",
+ "explanation": "She meets chronic homelessness criteria with two years unsheltered, no income, and co-occurring physical and behavioral health conditions that severely impair her activities of daily living. Her frequent emergency room visits, recent victimization, and lack of support systems indicate an urgent need for permanent supportive housing with intensive wrap-around services.",
+ "problems": []
+}

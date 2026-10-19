@@ -1,0 +1,16 @@
+{
+ "id": "P84",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:38:16+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "d5d160d5f58b3b8b6df439a975ffed301433b0560e2adcf0f6091ee5c987f6d1",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 38. Gender: Female. Race: Hispanic/Latino/e/a. Location: Los Angeles, California.\n\nWork and education: Data entry clerk for several offices over twelve years.\nPath into homelessness: Manic episodes have led to evictions four times. Lost housing because of mental health. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for two months. This is the fourth time without housing in the past three years.\nFinances: No income. No debts.\nHealth: Bipolar disorder. Stopped taking the prescribed mood stabilizer three months ago. No physical health conditions or disabilities. Does not drink or use drugs. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: no emergency room visits, but two crisis-line calls, one psychiatric hospital stay, and two police contacts. Has not been attacked or threatened and has not threatened to harm anyone, including self. Has a pending disorderly-conduct charge that could mean a fine. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A parent who visits sometimes. No children.\nA typical day: Paces the shelter halls. Has no planned activities and nothing brings satisfaction.\nGoals: Back to work, eventually.\nService history: A mental health caseworker visits monthly.\nPresentation in the interview: Talks fast and jumps between topics.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client experiences chronic housing instability due to severe, unmanaged bipolar disorder resulting in frequent evictions, and she currently struggles with basic daily self-care and lacks income.\"}",
+ "priority": "High",
+ "explanation": "The client experiences chronic housing instability due to severe, unmanaged bipolar disorder resulting in frequent evictions, and she currently struggles with basic daily self-care and lacks income.",
+ "problems": []
+}

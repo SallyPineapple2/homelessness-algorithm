@@ -1,0 +1,16 @@
+{
+ "id": "P78",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:36:27+00:00",
+ "seconds": 2.7,
+ "prompt_sha256": "75e22e0cb0717c0ecfa1f80c1a8551a317f7c978d3b175a8e7b6cad48e41b7ab",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 52. Gender: Female. Race: Asian or Asian American. Location: Cincinnati, Ohio.\n\nWork and education: Grocery stocker for twenty years.\nPath into homelessness: Drinking caused a job loss and the apartment followed. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors near a river for six months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Emphysema. No prescriptions. Drinks daily. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: three emergency room visits for breathing trouble and one ambulance ride. No police contact. Was kicked and robbed by a group of strangers a month ago. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. No children.\nA typical day: Feeds the ducks at the river every morning and calls it the one good part of the day.\nGoals: A room indoors.\nService history: Known to one outreach worker.\nPresentation in the interview: Short of breath and quiet; cooperative.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client has chronic health issues (emphysema with frequent ER visits), active daily drinking, zero income, and has been sleeping outdoors for six months following a violent assault, indicating a severe need for permanent housing with ongoing support.\"}",
+ "priority": "High",
+ "explanation": "The client has chronic health issues (emphysema with frequent ER visits), active daily drinking, zero income, and has been sleeping outdoors for six months following a violent assault, indicating a severe need for permanent housing with ongoing support.",
+ "problems": []
+}

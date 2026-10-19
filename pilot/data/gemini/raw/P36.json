@@ -1,0 +1,16 @@
+{
+ "id": "P36",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:34:24+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "1241d83a02850934209d45e0d89bfe30cd2a1f13fccc2a00c25b9689881eecab",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 33. Gender: Female. Race: Asian or Asian American. Location: Cincinnati, Ohio.\n\nWork and education: Forklift-certified warehouse worker who has taken temp assignments for six years.\nPath into homelessness: A rent increase of $400 a month could not be covered on temp wages. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping in a car in a store parking lot for three months. This is the first time without housing.\nFinances: Steady temp assignment at a distribution center, paid weekly. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks occasionally. Showers at a gym and keeps up with laundry and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Talks with a parent and a best friend every few days. No children.\nA typical day: Day shift at the warehouse, the gym afterward, and a weekend softball league that is the highlight of the week.\nGoals: An apartment with a lower rent, ideally near the distribution center.\nService history: Has not used shelters or services before. Came in to ask about deposit help.\nPresentation in the interview: Matter-of-fact and polite. Wants to know how quickly deposit help can come through.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"explanation\": \"The client has a steady income, no health or behavioral issues, strong social ties, and is primarily seeking assistance with a security deposit to transition back into permanent housing.\"}",
+ "priority": "Low",
+ "explanation": "The client has a steady income, no health or behavioral issues, strong social ties, and is primarily seeking assistance with a security deposit to transition back into permanent housing.",
+ "problems": []
+}

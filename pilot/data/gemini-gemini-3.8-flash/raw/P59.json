@@ -1,0 +1,23 @@
+{
+ "id": "P59",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T15:16:25+00:00",
+ "seconds": 7.3,
+ "prompt_sha256": "6e28259fac5060b9ce2d34b4748260f5466ea4e335d8edced09dfd4880a70d24",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 37. Gender: Female. Race: Asian or Asian American. Location: Chicago, Illinois.\n\nWork and education: Bookkeeper for a property management company for eight years.\nPath into homelessness: A manic episode led to a job loss and an eviction after conflicts with the building manager. Lost housing because of mental health. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for four months. This is the first time without housing.\nFinances: No income. Owes two months of rent to the former landlord.\nHealth: Lupus with kidney involvement. Bipolar disorder. Stopped taking the prescribed mood stabilizer three months ago and skips the lupus medication when feeling well. Does not drink or use drugs. Keeps up with washing, laundry, and meals.\nSafety: One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A sibling who visits monthly. No children.\nA typical day: Spends days in the shelter's common room. Has no planned activities and nothing brings satisfaction lately.\nGoals: Back to bookkeeping eventually; right now, just rest.\nService history: Has a psychiatrist appointment next month.\nPresentation in the interview: Flat and slow to answer; apologizes for losing track.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\n  \"priority\": \"Medium\",\n  \"explanation\": \"With an eight-year stable work history and this being her first episode of homelessness, time-limited rental assistance combined with case management to re-engage with her medical and psychiatric care can help her regain self-sufficiency.\"\n}\n```",
+ "priority": "Medium",
+ "explanation": "With an eight-year stable work history and this being her first episode of homelessness, time-limited rental assistance combined with case management to re-engage with her medical and psychiatric care can help her regain self-sufficiency.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 511,
+  "thoughts_token_count": 651,
+  "candidates_token_count": 66,
+  "total_token_count": 1228
+ }
+}

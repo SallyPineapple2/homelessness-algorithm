@@ -1,0 +1,16 @@
+{
+ "id": "P61",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:36:15+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "e7d69d991a0d72d30fc1edfa02b61ba89da64610c922c0b4acf367fb70adc23c",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 34. Gender: Female. Race: Black, African American, or African. Location: New York City, New York.\n\nWork and education: Supermarket cashier for nine years.\nPath into homelessness: Left a partner who was abusive. Lost housing because of the abusive relationship, and the abuse is the cause of this homelessness.\nCurrent housing: Staying in a domestic-violence emergency shelter for two months. This is the first time without housing.\nFinances: Part-time cashier job with a regular paycheck. Owes $1,200 to a payday lender.\nHealth: No health conditions or disabilities and no prescriptions. Does not drink or use drugs. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: One emergency room visit and two police contacts in the past six months. Was attacked by the former partner in a parking lot after leaving. Faces an assault charge filed by the former partner that could mean jail time. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A coworker who is a close friend and a parent who lives across the country. No children.\nA typical day: Works four shifts a week and attends a weekend art class that is the best part of the week.\nGoals: Clear the charge and find an apartment in a safe building.\nService history: A legal aid attorney is handling the charge.\nPresentation in the interview: Tense and guarded; speaks quickly when the charge comes up.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"explanation\": \"The client is stably employed, has no health or substance use issues, and only requires time-limited assistance such as help securing a safe apartment to regain permanent housing.\"}",
+ "priority": "Medium",
+ "explanation": "The client is stably employed, has no health or substance use issues, and only requires time-limited assistance such as help securing a safe apartment to regain permanent housing.",
+ "problems": []
+}

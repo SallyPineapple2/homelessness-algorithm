@@ -1,0 +1,16 @@
+{
+ "id": "P81",
+ "model": "gemini-3.8-flash",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-15T13:07:48+00:00",
+ "seconds": 6.5,
+ "prompt_sha256": "4e0b8ea930081444c49ab5e10157c9143a89054da8621afe2733a115a4e0035d",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 70. Gender: Male. Race: White. Location: Atlanta, Georgia.\n\nWork and education: Cook in school cafeterias for thirty years.\nPath into homelessness: The apartment building was sold and rents rose beyond the fixed income. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a bus shelter for one year and two months. This is the first time without housing.\nFinances: No income; Social Security payments stopped when mail could no longer be received. No debts.\nHealth: Heart failure. Has not taken the prescribed heart medications for months after losing them. Does not drink or use drugs. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: three emergency room visits and two ambulance rides for shortness of breath. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A relative by marriage who visits occasionally. No dependents.\nA typical day: Sings along to a small radio every afternoon and enjoys it.\nGoals: A warm bed and a kitchen.\nService history: An outreach worker is restoring the Social Security payments.\nPresentation in the interview: Sweet and easily tired; drifts off mid-sentence.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"At age 70 with untreated heart failure, frequent emergency room visits, and an inability to manage basic self-care or medications, this individual is medically vulnerable and requires permanent housing with ongoing supportive services.\"}",
+ "priority": "High",
+ "explanation": "At age 70 with untreated heart failure, frequent emergency room visits, and an inability to manage basic self-care or medications, this individual is medically vulnerable and requires permanent housing with ongoing supportive services.",
+ "problems": []
+}

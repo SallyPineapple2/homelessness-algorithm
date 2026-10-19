@@ -1,0 +1,17 @@
+{
+ "id": "P83",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:34:11+00:00",
+ "seconds": 3.1,
+ "prompt_sha256": "ce088521b432aa8840e4850c2bc9688bc99569ad6a666bf31e3f7cabe27539ee",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 24. Gender: Female. Race: Asian or Asian American. Location: Atlanta, Georgia.\n\nWork and education: Worked as a server in diners.\nPath into homelessness: A partner ended the relationship and the lease was in the partner's name. Lost housing because the relationship broke down. The partner was not abusive, and abuse or trauma played no part.\nCurrent housing: Sleeping in different strangers' apartments for three months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Currently pregnant, three months along, with no prenatal care yet. No prescriptions. Uses methamphetamine, which has made it hard to stay anywhere. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two emergency room visits and two police contacts. Was slapped and threatened by someone offering a place to stay. No legal issues. Trades sex for a place to sleep.\nFamily and social ties: A grandparent who calls. No other children.\nA typical day: Spends afternoons at a drop-in center art group and likes it.\nGoals: A safe place before the baby is born.\nService history: A harm-reduction outreach worker made the referral.\nPresentation in the interview: Anxious and fidgety; wants to know if anyone will be told.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"High\",\n  \"explanation\": \"She is a high priority due to her pregnancy, active methamphetamine use, and survival sex work, which place her at severe risk and indicate an urgent need for intensive, wraparound support.\"\n}",
+ "priority": "High",
+ "explanation": "She is a high priority due to her pregnancy, active methamphetamine use, and survival sex work, which place her at severe risk and indicate an urgent need for intensive, wraparound support.",
+ "problems": []
+}

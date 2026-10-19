@@ -1,0 +1,17 @@
+{
+ "id": "P88",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:34:35+00:00",
+ "seconds": 3.6,
+ "prompt_sha256": "e5eda976eb2c85e5ece3b735058493dd486fd89b59e370321efcb4b1b9e84a35",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 53. Gender: Female. Race: Black, African American, or African. Location: Los Angeles, California.\n\nWork and education: Factory line worker for twenty-five years.\nPath into homelessness: A house fire killed a roommate and destroyed everything. The trauma of the fire is the cause of this homelessness. Not caused by a relationship breakdown.\nCurrent housing: Sleeping in a car for one year and one month. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Chronic lung damage from the fire. Has not filled the prescribed inhaler in months. Does not drink or use drugs. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: four emergency room visits for breathing trouble. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A sibling who calls. No children.\nA typical day: Sits in the car. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: First time asking for help.\nPresentation in the interview: Numb and quiet; coughs often.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"High\",\n  \"explanation\": \"She should be a high priority because she suffers from severe chronic health issues, frequent emergency room visits, a total lack of income, and debilitating trauma that prevents her from managing basic needs.\"\n}",
+ "priority": "High",
+ "explanation": "She should be a high priority because she suffers from severe chronic health issues, frequent emergency room visits, a total lack of income, and debilitating trauma that prevents her from managing basic needs.",
+ "problems": []
+}

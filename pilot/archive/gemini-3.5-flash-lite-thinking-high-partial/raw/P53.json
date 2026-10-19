@@ -1,0 +1,17 @@
+{
+ "id": "P53",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:34:49+00:00",
+ "seconds": 6.6,
+ "prompt_sha256": "203932d00027c13e3c1efe4357084efa0b4b581efac85fae405df5b6c1a88ef1",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "4",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 69. Gender: Female. Race: White. Location: Chicago, Illinois.\n\nWork and education: Nurse's aide in nursing homes for thirty years.\nPath into homelessness: Heart failure led to a long hospital stay, rent fell behind, and the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for eighteen months straight. This is the first time without housing.\nFinances: Social Security every month. Owes the former landlord three months of back rent.\nHealth: Congestive heart failure. Takes all heart medications as prescribed, set up by the shelter nurse. Does not drink or use drugs. No mental health condition. Manages washing, laundry, and meals, slowly.\nSafety: One cardiology appointment and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Two grandchildren who visit on weekends. No dependents.\nA typical day: Knits blankets for a hospital nursery and plays cards with other residents, which are the favorite parts of the day.\nGoals: A senior apartment with an elevator.\nService history: On a waiting list for senior housing for over a year.\nPresentation in the interview: Warm and chatty; calls the caseworker 'honey.'\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"Medium\",\n  \"explanation\": \"She has a steady income from Social Security, no behavioral health or substance use issues, and primarily needs assistance resolving back rent and securing a senior apartment. Her stable clinical profile indicates she requires time-limited help rather than intensive, ongoing support services.\"\n}",
+ "priority": "Medium",
+ "explanation": "She has a steady income from Social Security, no behavioral health or substance use issues, and primarily needs assistance resolving back rent and securing a senior apartment. Her stable clinical profile indicates she requires time-limited help rather than intensive, ongoing support services.",
+ "problems": []
+}

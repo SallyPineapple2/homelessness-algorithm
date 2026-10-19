@@ -1,0 +1,17 @@
+{
+ "id": "P63",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:35:17+00:00",
+ "seconds": 3.5,
+ "prompt_sha256": "fb46d27e9b7cc992959e2ff3f40c14f4f1fb2d3621305f9fecbd73eb60dad62e",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 44. Gender: Male. Race: White. Location: Los Angeles, California.\n\nWork and education: Package delivery driver for ten years.\nPath into homelessness: Asthma attacks caused missed shifts and a firing, then the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping in a car for five months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Severe chronic asthma. Has not filled the prescribed controller inhaler in two months because of cost. Does not drink or use drugs. No mental health condition. Keeps up with washing at a gym and with laundry and meals.\nSafety: In the past six months: four emergency room visits for asthma attacks and one ambulance ride. Has not been attacked or threatened and has not threatened to harm anyone, including self. No police contact and no legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A parent and two siblings nearby who help with food. No children.\nA typical day: Coaches a youth soccer team on weekends, which is the most enjoyable part of the week.\nGoals: Get the inhaler covered, a new driving job, and an apartment.\nService history: An emergency room social worker made the referral.\nPresentation in the interview: Friendly and cooperative; coughs through parts of the interview.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"explanation\": \"He possesses a strong work history, good functional independence, and supportive family ties, but currently lacks income and has unmanaged medical needs requiring time-limited assistance to stabilize and regain housing.\"}",
+ "priority": "Medium",
+ "explanation": "He possesses a strong work history, good functional independence, and supportive family ties, but currently lacks income and has unmanaged medical needs requiring time-limited assistance to stabilize and regain housing.",
+ "problems": []
+}

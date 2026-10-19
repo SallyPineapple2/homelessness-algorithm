@@ -1,0 +1,17 @@
+{
+ "id": "P86",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T02:42:51+00:00",
+ "seconds": 3.9,
+ "prompt_sha256": "a7fdca6ec65f784b172ea1b95032be85c3150240a7827a56de4a35afdf992f9a",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 66. Gender: Male. Race: Asian or Asian American. Location: Atlanta, Georgia.\n\nWork and education: Accountant for thirty years.\nPath into homelessness: Memory problems led to unpaid rent and an eviction. Lost housing because of cognitive decline. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a park for one year and three months. This is the first time without housing.\nFinances: No income; pension checks go undeposited. Owes back rent to the former landlord.\nHealth: Early dementia. Heart disease. Does not take prescribed heart medications because of forgetting. Does not drink or use drugs. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: four emergency room visits after falls and one ambulance ride. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No known family. No dependents.\nA typical day: Feeds pigeons in the park every afternoon and smiles talking about it.\nGoals: Not sure.\nService history: An outreach worker is trying to find relatives.\nPresentation in the interview: Pleasant but confused; repeats questions.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\"priority\": \"High\", \"explanation\": \"This individual is chronically unsheltered with early dementia, unmanaged heart disease, and frequent falls resulting in emergency room visits. He is unable to manage daily living activities, finances, or medications independently, requiring intensive, permanent housing with ongoing supportive services.\"}\n```",
+ "priority": "High",
+ "explanation": "This individual is chronically unsheltered with early dementia, unmanaged heart disease, and frequent falls resulting in emergency room visits. He is unable to manage daily living activities, finances, or medications independently, requiring intensive, permanent housing with ongoing supportive services.",
+ "problems": []
+}

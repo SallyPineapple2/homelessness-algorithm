@@ -1,0 +1,131 @@
+{
+ "note": "Fields of the original base profiles rewritten for the pilot. Each is the original text plus explicit statements for VI-SPDAT items it did not address, so no item has to be guessed.",
+ "patches": {
+  "P01": {
+   "safety": "No emergency room visits or police contact. Has not been threatened or hurt since losing housing, and has no court cases or fines. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "The restaurant closed with two days' notice. Savings covered a motel for two weeks, then a coworker's couch, then the shelter. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "No health conditions and no prescriptions. Does not use drugs and rarely drinks. Keeps up with showers, laundry, and meals without trouble. No mental health condition, head injury, or learning disability."
+  },
+  "P02": {
+   "safety": "No emergency room visits, police contact, or legal issues. Has not been threatened or attacked. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "A $400 rent increase on a one-bedroom apartment. Gave notice rather than fall behind, expecting to find something cheaper within the month; nothing has come up in eight weeks. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "In good health with no ongoing conditions or prescriptions. Does not use drugs and drinks rarely. No mental health condition, head injury, or learning disability."
+  },
+  "P03": {
+   "safety": "No emergency room visits, police contact, or legal issues. Has not been threatened or hurt since losing housing. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "Lost the parent and the job within four months of each other. The lease was in the parent's name and could not be transferred. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "No health conditions and no prescriptions. Does not drink or use drugs. Keeps up with showers, laundry, and meals without difficulty. No mental health condition, head injury, or learning disability."
+  },
+  "P04": {
+   "safety": "No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "Housing has always followed the work: a rented room during build months, a tent between contracts. This stretch has run longer because the last contractor folded mid-project. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "No ongoing health conditions or prescriptions. Does not use drugs and drinks little. Showers and does laundry at a drop-in center. No mental health condition, head injury, or learning disability."
+  },
+  "P05": {
+   "safety": "No emergency room visits, police contact, or legal issues. Has not been threatened or hurt at the shelter. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "Unemployment benefits ran out at fourteen months, and the apartment went three months later, after a decade in the same unit. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "No ongoing health conditions or prescriptions. Does not drink or use drugs. Keeps clean and fed without difficulty. No mental health condition, head injury, or learning disability."
+  },
+  "P06": {
+   "safety": "No emergency room visits and has not been attacked or threatened. Has a court date over the unpaid fines, which a landlord's background check would show. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "The car was rear-ended and the insurance lapsed during the dispute. Without coverage the rideshare work stopped, and the rent followed within three months. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "In good health with no conditions or prescriptions. Does not drink or use drugs. Washes and changes at a relative's place. No mental health condition, head injury, or learning disability."
+  },
+  "P07": {
+   "safety": "No emergency room visits or police contact in the past six months, no legal issues, and has not been threatened or hurt. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "Cut to two shifts a week when the hotel changed cleaning contractors. The reduced hours could not cover rent, and a shared apartment ended. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "A chronic heart condition. Stopped taking a prescribed blood-pressure medication when the last bottle ran out a month ago. Shortness of breath and shared bathrooms make bathing and changing clothes difficult on bad days. Does not drink or use drugs. No mental health condition, head injury, or learning disability."
+  },
+  "P08": {
+   "safety": "No emergency room visits, police contact, or legal issues. Has not been threatened or attacked. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "No health conditions or prescriptions. Does not drink or use drugs. Showers and eats at a drop-in center and manages daily needs independently. No mental health condition, head injury, or learning disability.",
+   "path": "The building was sold and the new owner did not renew a long tenancy. Forty years in the trade did not leave savings after a divorce settlement. Abuse or trauma did not cause this homelessness."
+  },
+  "P09": {
+   "safety": "Four emergency room contacts in six months: two after a bicycle collision, one for the dental abscess, and one ambulance ride after fainting in a line. No police contact or legal issues, and has not been threatened or attacked. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "No chronic health conditions. An antibiotic prescribed after a dental abscess was never filled. Does not drink or use drugs, and keeps clean and fed without difficulty. No mental health condition, head injury, or learning disability.",
+   "path": "Six months of applications after the closure, then eviction. Moved between friends' couches until the invitations stopped. Abuse or trauma did not cause this homelessness."
+  },
+  "P10": {
+   "safety": "Has not been attacked or threatened since becoming homeless. No emergency room visits or police contact in the past six months, and no legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "A violent robbery outside a bus depot on the way home from a shift. Six weeks off with the injuries, the shop lost its lease in the same period, and the rent went unpaid. Names the robbery as what started this period of homelessness. No relationship breakdown or family conflict played a part.",
+   "health": "The robbery injuries have healed and there are no ongoing conditions or prescriptions. Does not drink or use drugs. Washes at a drop-in center. No mental health condition, head injury, or learning disability."
+  },
+  "P11": {
+   "safety": "No emergency room visits, police contact, or legal issues. Has not been threatened or attacked. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "Arthritis ended the work. The workshop lease and the apartment went together, and Social Security did not cover the rent that followed. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "Advanced arthritis in both hands and a hip injury from a fall limit what can be done in a day. Bathing, laundry, and dressing are difficult, and the vehicle has no facilities. Takes prescribed pain medication as directed. Does not drink or use drugs. No mental health condition, head injury, or learning disability."
+  },
+  "P12": {
+   "safety": "Has not been attacked or threatened since leaving. No emergency room visits, police contact, or legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "A chronic stomach condition that worsened over the past year. No prescriptions. Does not drink or use drugs, and keeps clean using a gym pass. No mental health condition, head injury, or learning disability."
+  },
+  "P13": {
+   "safety": "Six emergency room visits in six months, mostly for breathing trouble. Was assaulted in a shelter hallway two months ago. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "A landlord sold the building and the deposit was never returned. Gig income proved too irregular to pass a credit check anywhere else. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "An untreated chronic respiratory condition makes stairs hard. Crowding and shared facilities have made regular bathing and clean clothes difficult. No prescriptions. Does not drink or use drugs. No mental health condition, head injury, or learning disability."
+  },
+  "P14": {
+   "safety": "No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "The company folded owing two paychecks. A rented room went, then a series of short stays, and eventually a patch of brush near the river. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "Chronic liver disease, not alcohol-related, diagnosed two years ago. The prescribed medication frequently goes untaken. Does not drink or use drugs. Washes at a drop-in center. No mental health condition, head injury, or learning disability."
+  },
+  "P15": {
+   "safety": "Frequent emergency room visits and police contact over the past six months. Was assaulted outside a bar after becoming homeless, and has a pending charge that could make renting harder. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "A back injury from the roofing fall limits standing and lifting. Drinking got them asked to leave a residential program and has cost a room share. Hangovers, back pain, and shared bathrooms make consistent hygiene difficult. No prescriptions. No mental health condition, head injury, or learning disability.",
+   "path": "Cash work dried up over a slow season. The rented room went, and drinking that had been weekend-only filled the gap. Abuse or trauma did not cause this homelessness."
+  },
+  "P16": {
+   "safety": "Six emergency room visits in the past six months for chest pain. No police contact or legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "An untreated heart condition with recurring chest pain. No current prescriptions, because follow-up appointments were never made. Does not drink or use drugs. Keeping clean has become harder without reliable access to facilities. No mental health condition, head injury, or learning disability.",
+   "path": "The closure took the pension with it. A heart attack a year later ended the job search, and the medical bills ended the housing. Abuse or trauma did not cause this homelessness."
+  },
+  "P17": {
+   "safety": "No emergency room visits, police contact, or legal issues. Has not been attacked or threatened at the shelter. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "Arthritis limits walking and independent living. Needs help to bathe and dress. Takes prescribed medication as directed. Does not drink or use drugs. No mental health condition, head injury, or learning disability."
+  },
+  "P18": {
+   "health": "A chronic lung condition. Drinking cost a place on a friend's couch and makes it hard to hold onto any housing. No prescriptions. Keeps clean at a gym. No mental health condition, head injury, or learning disability."
+  },
+  "P19": {
+   "safety": "Repeated emergency room visits in the past six months. Was assaulted during an encampment sweep. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "health": "Chronic kidney disease on dialysis, with appointments kept and medication taken. Stimulant use got them removed from a transitional program and makes housing hard to keep. Washes at a drop-in center. No mental health condition, head injury, or learning disability.",
+   "path": "A back injury ended the landscaping work, the kidney diagnosis followed, the children went into kinship care, and the apartment went with the income. Abuse or trauma did not cause this homelessness."
+  },
+  "P20": {
+   "health": "No health conditions of any kind, no prescriptions, no drinking or drug use. Crowded bathrooms and stolen belongings leave no reliable way to wash, change clothes, or eat regularly. No mental health condition, head injury, or learning disability.",
+   "path": "A family dispute ended with a locked door at nineteen, and again at thirty. Relatives forcing the move-out is what caused this period of homelessness. Abuse or trauma did not cause this homelessness."
+  },
+  "P21": {
+   "safety": "No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "A change-of-address form was never processed and the Social Security payments stopped. The room was lost within two months, and restoring the benefit now requires an address. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "Congestive heart failure. The prescribed heart medications went untaken once the benefits lapsed. Swelling and fatigue make washing and changing clothes hard. Does not drink or use drugs. No mental health condition, head injury, or learning disability."
+  },
+  "P22": {
+   "safety": "Frequent emergency room visits over the past six months. Has been assaulted repeatedly at camps. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "Missed jobs cost the union card, the card cost the income, and the income cost the apartment inside a year. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "Chronic liver disease. Drinks daily from waking, and the drinking has cost every place they have tried to keep. No prescriptions. Has no consistent way to bathe or wash clothes. No mental health condition, head injury, or learning disability."
+  },
+  "P23": {
+   "health": "Cirrhosis. Long-term drinking has cost two apartments. Bipolar disorder, and an episode got them evicted once before. Keeps up with hygiene and does laundry every Thursday. Keeps up with washing, laundry, and meals. No prescriptions.",
+   "path": "A long decline in bar work, then a hospital admission for the liver, and a landlord who would not renew after the arrears. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness."
+  },
+  "P24": {
+   "safety": "Repeated emergency room and crisis-line contact over the past six months. Has been assaulted at camp. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.",
+   "path": "The injury, the prescription, a switch to street supply, and an eviction inside eighteen months. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.",
+   "health": "COPD. Stimulant use has cost housing more than once. Sells the prescribed pain medication rather than taking it. No reliable way to wash or change clothes. No mental health condition, head injury, or learning disability."
+  },
+  "P25": {
+   "health": "Chronic heart disease. Stimulant use has caused evictions from the few places they have stayed. No prescriptions. No way to keep clean. No mental health condition, head injury, or learning disability."
+  },
+  "P26": {
+   "safety": "Frequent emergency room visits over the past six months. Was assaulted at a camp. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay."
+  },
+  "P27": {
+   "safety": "Frequent emergency room visits and police contact over the past six months. Was assaulted after becoming homeless. Has a pending charge that could make renting harder. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay."
+  },
+  "P29": {
+   "path": "The firm collapsed when the supervising attorney was disbarred. No reference could be obtained, the applications stopped, and the partner they lived with asked them to leave once the income was gone. Nine years have followed. Abuse or trauma did not cause this homelessness."
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "id": "P45",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:34:45+00:00",
+ "seconds": 3.7,
+ "prompt_sha256": "9f809502451102bbdcea5533b91fde6906de760c2c12993df2669cea1e02a3b6",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 50. Gender: Male. Race: Hispanic/Latino/e/a. Location: Atlanta, Georgia.\n\nWork and education: House painter, self-employed for most of twenty years.\nPath into homelessness: Work dried up and the landlord would not accept late rent. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping in a car for fourteen months straight. This is the first time without housing.\nFinances: No regular income; takes occasional cash painting jobs when they come up. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks a beer now and then. Keeps up with washing at a community center and with laundry and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, or crisis calls in the past six months, and one conversation with police about parking. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: An in-law who offers painting jobs and a couple of old friends. No children.\nA typical day: Looks for painting work in the morning and sketches in a park in the afternoons, which is the most satisfying part of the day.\nGoals: A small apartment and a steady painting contract.\nService history: Has used a car-parking program but no shelters.\nPresentation in the interview: Relaxed and talkative; jokes about the car.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"Medium\",\n  \"explanation\": \"He has been unhoused for 14 months without regular income and requires time-limited assistance to secure housing, despite having no health, mental health, or behavioral barriers.\"\n}",
+ "priority": "Medium",
+ "explanation": "He has been unhoused for 14 months without regular income and requires time-limited assistance to secure housing, despite having no health, mental health, or behavioral barriers.",
+ "problems": []
+}

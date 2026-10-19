@@ -1,0 +1,16 @@
+{
+ "id": "P71",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:36:37+00:00",
+ "seconds": 2.0,
+ "prompt_sha256": "3178c349b31ccad99f8f5921aed50e94171d92406a5cd12d4965dd39e7c2b4a1",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 46. Gender: Male. Race: Asian or Asian American. Location: Los Angeles, California.\n\nWork and education: Diesel mechanic for eighteen years.\nPath into homelessness: Drinking cost a job and then an apartment, and has since cost three more rooms. Drinking made it hard to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for one month. This is the fourth time without housing in the past three years.\nFinances: No income. No debts.\nHealth: Liver disease. Drinks daily. Stopped taking the prescribed liver medication because it is hard to keep track of. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: three emergency room visits for stomach bleeding and one hospital stay. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: An adult child who calls monthly. No dependents.\nA typical day: Fixes bikes for other residents and enjoys it.\nGoals: An apartment and a mechanic's job.\nService history: Known to shelter staff; a nurse is following the liver disease.\nPresentation in the interview: Friendly and straightforward; yellowish skin.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client has recurring chronic homelessness, severe active liver disease with recent hospitalizations, daily alcohol use, and no current income, indicating a critical need for permanent housing with ongoing supportive services.\"}",
+ "priority": "High",
+ "explanation": "The client has recurring chronic homelessness, severe active liver disease with recent hospitalizations, daily alcohol use, and no current income, indicating a critical need for permanent housing with ongoing supportive services.",
+ "problems": []
+}

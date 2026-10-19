@@ -1,0 +1,42 @@
+/* Pilot dashboard: small additions on top of the original dashboard's stylesheet */
+
+.nav-external { color: var(--series-1) !important; }
+.pilot-prose { max-width: 78ch; margin-bottom: 1.5rem; }
+.pilot-prose p { color: var(--ink-2); line-height: 1.65; margin: 0 0 0.9rem; }
+.prompt-block {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  background: var(--surface-sunk);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font: 400 0.82rem/1.55 ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color: var(--ink);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.pri { display: inline-block; min-width: 4.4em; padding: 0.1rem 0.45rem; border-radius: 4px; font-size: 0.78rem;
+  font-weight: 600; text-align: center; }
+.pri-High { background: color-mix(in srgb, var(--series-2) 22%, transparent); color: var(--ink); }
+.pri-Medium { background: color-mix(in srgb, var(--series-4) 26%, transparent); color: var(--ink); }
+.pri-Low { background: color-mix(in srgb, var(--series-3) 22%, transparent); color: var(--ink); }
+.dir-higher { color: var(--series-2); font-weight: 600; }
+.dir-lower { color: var(--series-1); font-weight: 600; }
+.profile-table tbody tr.prow { cursor: pointer; }
+.profile-table tbody tr.prow:hover td { background: var(--surface-sunk); }
+.profile-table tbody tr.pdetail td { background: var(--surface); padding: 1rem 1.1rem 1.25rem; }
+.pdetail-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .pdetail-grid { grid-template-columns: 1fr; } }
+.pdetail-grid dl { margin: 0; }
+.pdetail-grid dt { font-weight: 600; font-size: 0.8rem; color: var(--ink); margin-top: 0.55rem; }
+.pdetail-grid dd { margin: 0.1rem 0 0; font-size: 0.85rem; line-height: 1.5; color: var(--ink-2); }
+.pdetail-side h4 { margin: 0 0 0.35rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); }
+.pdetail-side p, .pdetail-side li { font-size: 0.85rem; line-height: 1.5; color: var(--ink-2); }
+.pdetail-side ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+.demo-line { font-style: italic; color: var(--ink-2); font-size: 0.85rem; margin: 0 0 0.4rem; }
+.xt-cell text { font-variant-numeric: tabular-nums; }
+.cut-line { stroke: var(--ink-muted); stroke-width: 1.2; stroke-dasharray: 4 4; }
+.cut-label { font: 500 11px var(--font-ui); fill: var(--ink-muted); }
+.bar-value { font: 500 11px var(--font-ui); fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+.group-label { font: 400 12px var(--font-ui); fill: var(--ink-2); }
+.group-n { font: 400 11px var(--font-ui); fill: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.run-pending { color: var(--ink-muted); }

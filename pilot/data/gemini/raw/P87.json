@@ -1,0 +1,16 @@
+{
+ "id": "P87",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:38:29+00:00",
+ "seconds": 96.5,
+ "prompt_sha256": "f8dadc546a876673da54eeb74117d5fed86f3e54f19ec5b4db50506c3cf7e4fb",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 22. Gender: Female. Race: White. Location: Atlanta, Georgia.\n\nWork and education: Left high school in the last year.\nPath into homelessness: Family forced the move-out after years of abuse at home. The abuse and family conflict are the cause of this homelessness.\nCurrent housing: Sleeping in abandoned buildings for six months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Uses opioids daily. Diagnosed with depression that has made it impossible to keep a place. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two overdoses with ambulance rides and two emergency room visits. No police contact. Was beaten by someone in an abandoned building. No legal issues. Trades sex for drugs and money.\nFamily and social ties: A friend from school who texts. No children.\nA typical day: Writes poetry at a youth drop-in center and likes it.\nGoals: A safe room and help with the drug use.\nService history: A harm-reduction worker made the referral.\nPresentation in the interview: Quiet and guarded; avoids eye contact.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client faces severe vulnerability due to daily opioid use, recent overdoses, physical assault while sleeping in abandoned buildings, and survival sex work. These compounding safety risks and mental health challenges indicate an urgent need for permanent housing with ongoing support services.\"}",
+ "priority": "High",
+ "explanation": "The client faces severe vulnerability due to daily opioid use, recent overdoses, physical assault while sleeping in abandoned buildings, and survival sex work. These compounding safety risks and mental health challenges indicate an urgent need for permanent housing with ongoing support services.",
+ "problems": []
+}

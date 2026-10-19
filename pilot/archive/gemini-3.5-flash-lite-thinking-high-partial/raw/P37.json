@@ -1,0 +1,17 @@
+{
+ "id": "P37",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "high",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T21:35:00+00:00",
+ "seconds": 4.6,
+ "prompt_sha256": "2f636763ea5ee3a814ea56c486b145e8d1324a8976c82286b3f2d8dab3dffd6f",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 45. Gender: Female. Race: White. Location: New York City, New York.\n\nWork and education: Commercial cleaning supervisor for a building-services company for nine years.\nPath into homelessness: An emergency appendix surgery left a large hospital bill. Paying it down meant falling behind on rent, and the lease was not renewed. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for five weeks. This is the first time without housing.\nFinances: Full-time job with a regular paycheck. Owes about $9,000 on the hospital bill and a month of back rent to the former landlord.\nHealth: Fully recovered from the surgery. No chronic health conditions or disabilities and no prescriptions. Does not drink or use drugs. Keeps up with washing, laundry, and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No court cases or fines. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Two close friends from work and a sibling who checks in. No children.\nA typical day: Night shifts supervising a cleaning crew and a weekly community choir rehearsal that is the part of the week most looked forward to.\nGoals: Set up a payment plan on the hospital bill and rent a studio.\nService history: First stay in any shelter. Has an appointment with a financial counselor.\nPresentation in the interview: Tired but organized. Brought the hospital bill and pay stubs.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\n  \"priority\": \"Medium\",\n  \"explanation\": \"She has a stable full-time job and no complex health, mental health, or substance use needs, but requires time-limited financial assistance to clear her back rent and secure a new apartment.\"\n}",
+ "priority": "Medium",
+ "explanation": "She has a stable full-time job and no complex health, mental health, or substance use needs, but requires time-limited financial assistance to clear her back rent and secure a new apartment.",
+ "problems": []
+}

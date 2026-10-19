@@ -1,0 +1,23 @@
+{
+ "id": "P72",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T15:15:35+00:00",
+ "seconds": 4.1,
+ "prompt_sha256": "907eba4cde247ff6cc2bc132abff995e96c395cf32d05eef3e3e6027dac9c16e",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 57. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Cincinnati, Ohio.\n\nWork and education: Teacher's aide in elementary schools for ten years.\nPath into homelessness: Schizophrenia began in the late thirties. Paranoid symptoms led to leaving an apartment and several rooms since. Lost housing because of mental health. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a ravine for four years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Schizophrenia, untreated; has never been prescribed medication. No physical health conditions or disabilities. Does not drink or use drugs. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, or crisis calls, and one police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact for years. No children.\nA typical day: Walks the same route every day. Has no planned activities and describes nothing as satisfying.\nGoals: Says housing is not needed.\nService history: An outreach team has visited for a year.\nPresentation in the interview: Suspicious and distracted; answers some questions with unrelated statements.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\n  \"priority\": \"High\",\n  \"explanation\": \"This individual has been unsheltered for four years, has untreated schizophrenia, lacks income, and is unable to manage basic daily self-care, indicating an urgent need for permanent supportive housing with ongoing services.\"\n}\n```",
+ "priority": "High",
+ "explanation": "This individual has been unsheltered for four years, has untreated schizophrenia, lacks income, and is unable to manage basic daily self-care, indicating an urgent need for permanent supportive housing with ongoing services.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 497,
+  "thoughts_token_count": 269,
+  "candidates_token_count": 63,
+  "total_token_count": 829
+ }
+}

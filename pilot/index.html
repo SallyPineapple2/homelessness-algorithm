@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilot · VI-SPDAT and Gemini Housing Priority</title>
+<meta name="description" content="Pilot study: VI-SPDAT and Gemini assign housing priority to the same 100 distinct synthetic people. Where they agree, where they differ, and how that varies by gender, race, city, age, and circumstances.">
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M9 22V14M16 22V9M23 22V17' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/pilot.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#overview">VI&#8209;SPDAT &amp; Gemini<small>Pilot study dashboard</small></a>
+    <nav class="side-nav" aria-label="Dashboard views">
+      <div class="nav-group">
+        <span class="nav-label">Results</span>
+        <a href="#overview" data-view-link="overview" data-sub="How VI-SPDAT and Gemini prioritize the same 100 people">Overview</a>
+        <a href="#groups" data-view-link="groups" data-sub="Priority within each gender, race, city, age group, and circumstance">By group</a>
+        <a href="#agreement" data-view-link="agreement" data-sub="Where the two approaches agree and where they differ">Agreement</a>
+        <a href="#cities" data-view-link="cities" data-sub="Share rated high priority in each study city">Cities</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Study</span>
+        <a href="#profiles" data-view-link="profiles" data-sub="All 100 people, each tool's priority, and Gemini's explanation">Profiles</a>
+        <a href="#design" data-view-link="design" data-sub="Population, VI-SPDAT scoring, and the Gemini prompt">Study design</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Files</span>
+        <a href="#downloads" data-view-link="downloads" data-sub="Data files behind every figure">Downloads</a>
+        <a href="../index.html" class="nav-external">Original 640-record study &rarr;</a>
+      </div>
+    </nav>
+    <div class="side-foot">Descriptive pilot: counts and within-group percentages.<br>Synthetic population: 100 distinct people.</div>
+  </aside>
+
+  <div class="app-main">
+    <header class="app-header">
+      <div>
+        <h1 class="app-title" id="view-title">Overview</h1>
+        <p class="app-sub" id="view-sub">VI-SPDAT and Gemini Housing Priority</p>
+      </div>
+      <div class="model-switch" role="group" aria-label="Gemini run">
+        <span class="control-label">Gemini run</span>
+        <div class="filters" id="model-chips"></div>
+        <span class="table-note-inline" id="run-status"></span>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
+        <div class="rq-block">
+          <p class="rq-kicker">Pilot question</p>
+          <p class="rq-text">Given the same 100 people, how does Gemini's own judgment of housing priority compare with the VI&#8209;SPDAT's?</p>
+          <dl class="rq-meta">
+            <div><dt>Approach</dt><dd>VI&#8209;SPDAT is a comparison benchmark, not ground truth. Both approaches place each person in High, Medium, or Low priority, so they are compared category to category.</dd></div>
+            <div><dt>Caution</dt><dd>A difference between groups does not by itself show bias: groups can differ in circumstances. Controlling for circumstances is the next step.</dd></div>
+          </dl>
+        </div>
+        <div class="intro-band">
+          <p class="intro-lede" id="overview-lede"></p>
+        </div>
+        <h2 class="block-title">Main findings</h2>
+        <div class="findings" id="findings"></div>
+
+        <div class="chart-card">
+          <p class="chart-title">Priority assigned to the same 100 people</p>
+          <p class="chart-sub">Number of people in each priority category.</p>
+          <div class="legend" id="legend-dist"></div>
+          <div class="chart-scroll" id="chart-dist"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">VI&#8209;SPDAT priority against Gemini priority</p>
+          <p class="chart-sub">Each cell counts the people VI&#8209;SPDAT placed in the row and Gemini placed in the column. The diagonal is agreement.</p>
+          <div class="chart-scroll" id="chart-crosstab"></div>
+          <p class="chart-foot" id="crosstab-foot"></p>
+        </div>
+      </section>
+
+      <section class="view" id="view-groups" data-view="groups" aria-label="By group" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Share rated <strong>High</strong> priority, by <span id="group-name">gender</span></p>
+          <p class="chart-sub">Within-group percentage; the number of people in each group is shown on the left.</p>
+          <div class="chip-row" id="group-tabs"></div>
+          <div class="legend" id="legend-groups"></div>
+          <div class="chart-scroll" id="chart-groups"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">All three categories, by <span id="group-name-2">gender</span></p>
+          <p class="chart-sub">n (%) within each group. Same / higher / lower compare Gemini's category with VI&#8209;SPDAT's for each person.</p>
+          <div class="results-scroll"><table class="results compact" id="group-table"></table></div>
+          <p class="chart-foot">Group differences describe the two approaches. They do not by themselves establish bias, since groups can differ in circumstances.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-agreement" data-view="agreement" aria-label="Agreement" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Gemini's priority at each VI&#8209;SPDAT score</p>
+          <p class="chart-sub">People grouped by VI&#8209;SPDAT score (0&ndash;17); each bar shows how Gemini placed them. Dashed lines mark the VI&#8209;SPDAT cut-offs between Low, Medium, and High.</p>
+          <div class="legend" id="legend-byscore"></div>
+          <div class="chart-scroll" id="chart-byscore"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Agreement summary</p>
+          <div class="results-scroll"><table class="results compact" id="agreement-table"></table></div>
+          <p class="chart-foot" id="agreement-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">People the two approaches place differently</p>
+          <p class="chart-sub">Every disagreement, with Gemini's explanation.</p>
+          <div class="results-scroll"><table class="results compact" id="disagree-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-cities" data-view="cities" aria-label="Cities" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Share rated High priority in each city</p>
+          <p class="chart-sub">20 people per city. Colors run from 0% (light) to 100% (dark).</p>
+          <div id="city-maps"></div>
+          <div class="legend grad-legend-wrap" id="legend-cities"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">City table</p>
+          <div class="results-scroll"><table class="results compact" id="city-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-profiles" data-view="profiles" aria-label="Profiles" hidden>
+        <div class="chart-card">
+          <p class="chart-title">All 100 people</p>
+          <p class="chart-sub">Select a row to read the case summary exactly as Gemini received it, the VI&#8209;SPDAT items met, and Gemini's explanation. Titles and IDs are for reference only; Gemini never saw them.</p>
+          <div class="chip-row" id="profile-filter"></div>
+          <div class="results-scroll"><table class="results compact profile-table" id="profile-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-design" data-view="design" aria-label="Study design" hidden>
+        <div class="prose pilot-prose">
+          <h2 class="block-title">Design</h2>
+          <p><strong>Population.</strong> 100 distinct synthetic adults. 32 are the original study's base profiles, adapted to one person each; 68 are new. Every case summary states each VI&#8209;SPDAT item outright, yes or no, so neither approach has to guess.</p>
+          <p><strong>Demographics.</strong> The original study's 2 genders, 5 races, and 5 cities. Age comes with each person's story. Gender, race, and city were assigned by a seeded draw stratified on VI&#8209;SPDAT score: every race and every city has 20 people (10 women, 10 men), and every race &times; city pair has 2 women and 2 men, so each group gets a similar mix of need. Pregnant profiles are women.</p>
+          <p><strong>VI&#8209;SPDAT.</strong> Version 2.0 for single adults: 17 items, one point each. Scores 0&ndash;3 recommend no housing intervention (Low), 4&ndash;7 Rapid Re&#8209;Housing (Medium), and 8&ndash;17 Permanent Supportive Housing (High).</p>
+          <p><strong>Gemini.</strong> Gemini's own judgment, not a VI&#8209;SPDAT calculation. Each person is one independent API request containing only the instructions and that person's case summary, so earlier cases cannot influence later ones. No system instruction; default settings. Gemini never saw the VI&#8209;SPDAT questions, items, rules, or scores, or the titles and IDs used on this page.</p>
+          <p id="design-runs"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Prompt sent for every person</p>
+          <p class="chart-sub">Identical for all 100 requests; only the case summary changes.</p>
+          <pre class="prompt-block" id="prompt-text"></pre>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Composition of the population</p>
+          <div class="results-scroll"><table class="results compact" id="composition-table"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">VI&#8209;SPDAT items and how many people meet each</p>
+          <div class="results-scroll"><table class="results compact" id="items-table"></table></div>
+          <p class="chart-foot" id="items-foot"></p>
+        </div>
+      </section>
+
+      <section class="view" id="view-downloads" data-view="downloads" aria-label="Downloads" hidden>
+        <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
+      </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <h3>Primary source</h3>
+      <p>
+        OrgCode Consulting (2015). <em>VI&#8209;SPDAT for Single Adults, American Version 2.0.</em>
+        Accessed via the Georgia Department of Community Affairs.
+      </p>
+    </div>
+    <div>
+      <h3>This study</h3>
+      <ul>
+        <li><a href="../index.html">Original 640-record study dashboard</a></li>
+        <li><a href="README.md">Pilot README</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Repository</h3>
+      <ul>
+        <li><a href="https://github.com/SallyPineapple2/homelessness-algorithm">github.com/SallyPineapple2/homelessness-algorithm</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script src="assets/pilot.js"></script>
+</body>
+</html>

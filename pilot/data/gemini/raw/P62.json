@@ -1,0 +1,16 @@
+{
+ "id": "P62",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:38:28+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "d3da9308fad9dfdfd653c9589411e47d45c82e5f430d2b8ce75801f7ad36de6d",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 49. Gender: Male. Race: Asian or Asian American. Location: New York City, New York.\n\nWork and education: School janitor for twelve years.\nPath into homelessness: The janitorial contract was outsourced, and without work the rent fell behind until an eviction. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a vacant lot for three years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, or crisis calls, and one police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. A neighbor at the lot shares food. No children.\nA typical day: Collects cans most days. Has no planned activities and nothing described as satisfying.\nGoals: A room and steady work.\nService history: Known to outreach; has turned down shelter beds because of crowding.\nPresentation in the interview: Quiet and tired; answers slowly.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client has experienced chronic homelessness for three years with no income and declining daily self-care, indicating a need for intensive, long-term support to successfully transition indoors.\"}",
+ "priority": "High",
+ "explanation": "The client has experienced chronic homelessness for three years with no income and declining daily self-care, indicating a need for intensive, long-term support to successfully transition indoors.",
+ "problems": []
+}

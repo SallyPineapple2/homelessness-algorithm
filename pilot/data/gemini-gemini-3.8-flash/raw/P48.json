@@ -1,0 +1,23 @@
+{
+ "id": "P48",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-18T15:14:28+00:00",
+ "seconds": 15.7,
+ "prompt_sha256": "a66727c4a604d2f2bac5d98c35978b147ccccc8b774937e47f4494679318ed3d",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 61. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Cincinnati, Ohio.\n\nWork and education: Long-haul truck driver for thirty years before a heart attack ended the commercial license.\nPath into homelessness: Medical retirement cut income in half, and the rented house became unaffordable. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping in a car for four months. This is the first time without housing.\nFinances: Social Security disability every month. No debts.\nHealth: Heart disease after a heart attack last year. Takes heart medications exactly as prescribed. Does not drink or use drugs. Washes at a truck stop and manages laundry and meals. No mental health condition.\nSafety: Two cardiology appointments and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Old trucking friends who call regularly and a sibling who visits. No dependents.\nA typical day: Drives to a community garden most mornings and tends a plot there, which is the favorite part of the day.\nGoals: A small apartment, ideally with parking.\nService history: Has not used shelters. A heart clinic social worker made the referral.\nPresentation in the interview: Gruff but cooperative; wants straight answers.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\"priority\": \"Medium\", \"explanation\": \"He has a stable disability income, independent living skills, and no behavioral health needs, but requires time-limited assistance to locate and transition into an apartment affordable on his reduced income.\"}\n```",
+ "priority": "Medium",
+ "explanation": "He has a stable disability income, independent living skills, and no behavioral health needs, but requires time-limited assistance to locate and transition into an apartment affordable on his reduced income.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 509,
+  "thoughts_token_count": 463,
+  "candidates_token_count": 52,
+  "total_token_count": 1024
+ }
+}

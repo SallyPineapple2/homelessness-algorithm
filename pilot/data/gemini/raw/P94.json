@@ -1,0 +1,16 @@
+{
+ "id": "P94",
+ "model": "gemini-3.5-flash-lite",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-15T20:40:08+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "083eab78359df7d841b0e04377d3ac0265b3869dc5d79bbdc6f33b7e79cad48b",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "11",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 26. Gender: Male. Race: Black, African American, or African. Location: Cincinnati, Ohio.\n\nWork and education: Worked in retail and as a server.\nPath into homelessness: Family forced the move-out after years of abuse at home. The abuse and family conflict are the cause of this homelessness.\nCurrent housing: Sleeping in strangers' apartments and on the street for eight months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: HIV positive and interested in an HIV program. Uses opioids daily. Post-traumatic stress disorder. No prescriptions. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: three emergency room visits and two police contacts. Was assaulted by a client. No legal issues. Trades sex for money and a place to stay.\nFamily and social ties: A friend from school who calls. No children.\nA typical day: Volunteers at a pet shelter and loves it.\nGoals: Housing and HIV treatment.\nService history: An HIV outreach worker made the referral.\nPresentation in the interview: Anxious and guarded.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The client has been homeless for eight months while dealing with significant vulnerabilities, including untreated HIV, daily opioid use, PTSD, and survival sex work, indicating a need for intensive, long-term support.\"}",
+ "priority": "High",
+ "explanation": "The client has been homeless for eight months while dealing with significant vulnerabilities, including untreated HIV, daily opioid use, PTSD, and survival sex work, indicating a need for intensive, long-term support.",
+ "problems": []
+}

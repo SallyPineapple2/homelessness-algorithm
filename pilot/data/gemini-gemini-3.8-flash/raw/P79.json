@@ -1,0 +1,17 @@
+{
+ "id": "P79",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-10-16T07:26:47+00:00",
+ "seconds": 26.5,
+ "prompt_sha256": "cba67bf469d26ea6ec322d2205b2086640e66417e9621f0d428cd3241f743d2d",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 59. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Atlanta, Georgia.\n\nWork and education: Office manager at a dental practice for sixteen years.\nPath into homelessness: A heart attack and severe anxiety afterward made work impossible, and the apartment was lost. Lost housing because of physical and mental health. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping in a car for one year and four months. This is the first time without housing.\nFinances: No income. Owes $3,000 in medical bills.\nHealth: Heart disease. Panic disorder that has made it hard to keep housing. Does not take the prescribed heart medications regularly because they cause dizziness. Does not drink or use drugs. Keeps up with washing at a gym and with laundry and meals.\nSafety: One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A sibling who calls monthly. No children.\nA typical day: Sits in the car most of the day. Has no planned activities and nothing brings satisfaction.\nGoals: A quiet apartment.\nService history: First time asking for help.\nPresentation in the interview: Nervous and breathless; asks for breaks.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"explanation\": \"The individual meets the criteria for chronic homelessness, having lived unsheltered for over a year with disabling physical and psychiatric conditions that prevent employment. Given his unmanaged heart disease, severe panic disorder, and complete lack of income, he requires long-term supportive housing.\"}",
+ "priority": "High",
+ "explanation": "The individual meets the criteria for chronic homelessness, having lived unsheltered for over a year with disabling physical and psychiatric conditions that prevent employment. Given his unmanaged heart disease, severe panic disorder, and complete lack of income, he requires long-term supportive housing.",
+ "problems": []
+}
