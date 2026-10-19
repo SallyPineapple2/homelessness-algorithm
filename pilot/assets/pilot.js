@@ -189,7 +189,7 @@ function renderOverview() {
       body: `Linear‑weighted Cohen's kappa = ${kappa(P).toFixed(2)}. ${t.n - t.same} people are placed differently.` },
     { kicker: "Direction", stat: `${t.higher} up · ${t.lower} down`,
       note: "people Gemini places above / below VI‑SPDAT",
-      body: t.lower === 0 ? "Whenever the two disagree, Gemini assigns the higher priority. It never ranks anyone below VI‑SPDAT."
+      body: t.lower === 0 ? `Whenever the two disagree, Gemini assigns the higher priority; it never ranks anyone below VI‑SPDAT${RUN.stats ? ` (sign test p ${fmtP(RUN.stats.direction.p_sign)})` : ""}.`
         : `Gemini is higher for ${t.higher} people and lower for ${t.lower}.` },
     { kicker: "High priority", stat: `${t.v.High} → ${t.g.High}`, note: "people rated High: VI‑SPDAT → Gemini",
       body: `Gemini moves ${P.filter((p) => p.vispdat === "Medium" && gem(p) === "High").length} of VI‑SPDAT's ${t.v.Medium} Medium people up to High.` },
@@ -297,7 +297,7 @@ function renderGroups() {
       const sel = svg.append("g").datum({ tool, k, g });
       sel.append("rect").attr("x", x(0)).attr("y", y).attr("height", bar).attr("width", Math.max(0, x(share) - x(0))).attr("rx", 3)
         .attr("fill", css(TOOL_COLOR[tool]));
-      sel.append("text").attr("class", "bar-value").attr("text-anchor", "start").attr("x", x(share) + 6).attr("y", y + bar / 2).attr("dy", "0.35em")
+      sel.append("text").attr("class", "bar-value").style("text-anchor", "start").attr("x", x(share) + 6).attr("y", y + bar / 2).attr("dy", "0.35em")
         .text(`${pct0(k, g.t.n)} (${k})`);
       hover(sel, (d) => `<span class="tt-title">${d.g.name}</span><span class="tt-row">${d.tool === "vispdat" ? "VI‑SPDAT" : RUN.label}: ${d.k} of ${d.g.t.n} rated High (${pct(d.k, d.g.t.n)})</span>`);
     });
@@ -366,6 +366,172 @@ function renderAgreement() {
   table("#disagree-table", ["ID", "Person", "Score", "VI‑SPDAT", "Gemini", "Gemini's explanation"],
     dis.map((p) => ({ cells: [p.id, `${esc(p.label)}<br><span class="group-n">${p.age}, ${p.gender}, ${esc(RACE_SHORT[p.race])}, ${CITY_CALLOUT[p.location].short}</span>`,
       p.score, priTag(p.vispdat), priTag(gem(p)), esc(RUN.answers[p.id].explanation)] })));
+}
+
+/* ============================================================
+   Overview: dumbbell across every group
+   ============================================================ */
+
+function renderDumbbell() {
+  legend("#legend-dumbbell", [{ name: "VI‑SPDAT", color: css(TOOL_COLOR.vispdat) }, { name: RUN.label, color: css(TOOL_COLOR.gemini) }]);
+  const rows = [];
+  ["gender", "race", "city", "age"].forEach((fk) => {
+    const f = FACTORS.find((x) => x.key === fk);
+    rows.push({ head: f.label });
+    groupsOf(fk).forEach((g) => { const t = tally(g.people); rows.push({ name: g.name, t }); });
+  });
+  const W = widthOf("#chart-dumbbell", 560, 960), lw = 200, rh = 24, H = rows.length * rh + 40, mr = 60;
+  const x = d3.scaleLinear().domain([0, 1]).range([lw, W - mr]);
+  const svg = d3.select("#chart-dumbbell").html("").append("svg").attr("width", W).attr("height", H).attr("role", "img")
+    .attr("aria-label", "Share rated High in each group, VI-SPDAT and Gemini.");
+  [0, 0.25, 0.5, 0.75, 1].forEach((v) => {
+    svg.append("line").attr("class", "gridline").attr("x1", x(v)).attr("x2", x(v)).attr("y1", 4).attr("y2", H - 26);
+    svg.append("text").attr("class", "tick-text").attr("x", x(v)).attr("y", H - 10).attr("text-anchor", "middle").text(`${v * 100}%`);
+  });
+  rows.forEach((r, i) => {
+    const cy = 14 + i * rh;
+    if (r.head) {
+      svg.append("text").attr("class", "axis-title").attr("x", 0).attr("y", cy + 4).text(r.head.toUpperCase());
+      return;
+    }
+    const a = r.t.v.High / r.t.n, b = r.t.g.High / r.t.n;
+    svg.append("text").attr("class", "group-label").attr("x", lw - 12).attr("y", cy).attr("dy", "0.35em").attr("text-anchor", "end").text(r.name);
+    const g = svg.append("g");
+    g.append("line").attr("x1", x(a)).attr("x2", x(b)).attr("y1", cy).attr("y2", cy).attr("stroke", css("--rule-strong")).attr("stroke-width", 3);
+    g.append("circle").attr("cx", x(a)).attr("cy", cy).attr("r", 6).attr("fill", css(TOOL_COLOR.vispdat));
+    g.append("circle").attr("cx", x(b)).attr("cy", cy).attr("r", 6).attr("fill", css(TOOL_COLOR.gemini));
+    g.append("text").attr("class", "bar-value").style("text-anchor", "start").attr("x", x(Math.max(a, b)) + 10).attr("y", cy).attr("dy", "0.35em")
+      .text(`${pct0(r.t.v.High, r.t.n)} → ${pct0(r.t.g.High, r.t.n)}`);
+    hover(g, () => `<span class="tt-title">${r.name} (n = ${r.t.n})</span><span class="tt-row">VI‑SPDAT High: ${r.t.v.High} (${pct(r.t.v.High, r.t.n)})</span><span class="tt-row">${RUN.label} High: ${r.t.g.High} (${pct(r.t.g.High, r.t.n)})</span>`);
+  });
+}
+
+/* ============================================================
+   By group: 100% stacked bars, all three categories
+   ============================================================ */
+
+function renderStacked() {
+  legend("#legend-stacked", CATS.map((c) => ({ name: c, color: css(CAT_COLOR[c]) })));
+  const groups = groupsOf(FACTOR).map((g) => ({ ...g, t: tally(g.people) }));
+  const W = widthOf("#chart-stacked", 560, 960), lw = 220, bar = 15, gap = 3, row = bar * 2 + gap + 20, mr = 16;
+  const H = groups.length * row + 36;
+  const x = d3.scaleLinear().domain([0, 1]).range([lw, W - mr]);
+  const svg = d3.select("#chart-stacked").html("").append("svg").attr("width", W).attr("height", H).attr("role", "img")
+    .attr("aria-label", "High, Medium, and Low shares within each group for VI-SPDAT and Gemini.");
+  [0, 0.25, 0.5, 0.75, 1].forEach((v) =>
+    svg.append("text").attr("class", "tick-text").attr("x", x(v)).attr("y", H - 8).attr("text-anchor", "middle").text(`${v * 100}%`));
+  groups.forEach((g, i) => {
+    const y0 = 8 + i * row;
+    svg.append("text").attr("class", "group-label").attr("x", lw - 12).attr("y", y0 + bar).attr("text-anchor", "end").text(g.name);
+    svg.append("text").attr("class", "group-n").attr("x", lw - 12).attr("y", y0 + bar + 14).attr("text-anchor", "end").text(`n = ${g.t.n}`);
+    [["VI‑SPDAT", g.t.v], [RUN.label, g.t.g]].forEach(([tool, counts], j) => {
+      let acc = 0;
+      const y = y0 + j * (bar + gap);
+      CATS.forEach((c) => {
+        const share = counts[c] / g.t.n;
+        if (!share) return;
+        const sel = svg.append("g");
+        sel.append("rect").attr("x", x(acc)).attr("y", y).attr("width", Math.max(0, x(acc + share) - x(acc) - 1)).attr("height", bar)
+          .attr("fill", css(CAT_COLOR[c]));
+        if (share >= 0.08) sel.append("text").attr("class", "bar-value").attr("text-anchor", "middle")
+          .attr("x", (x(acc) + x(acc + share)) / 2).attr("y", y + bar / 2).attr("dy", "0.35em").style("fill", "#0b0b0b").text(pct0(counts[c], g.t.n));
+        hover(sel, () => `<span class="tt-title">${g.name} · ${tool}</span><span class="tt-row">${c}: ${counts[c]} of ${g.t.n} (${pct(counts[c], g.t.n)})</span>`);
+        acc += share;
+      });
+    });
+  });
+}
+
+/* ============================================================
+   Significance
+   ============================================================ */
+
+const fmtP = (p) => (p === null || p === undefined ? "—" : p < 0.001 ? "< .001" : p.toFixed(3).replace(/^0/, ""));
+
+function renderSignificance() {
+  const S = RUN.stats;
+  if (!S) { d3.select("#sig-lede").text("Significance tests are not available for this run yet."); return; }
+  const sigItems = S.items.filter((i) => i.p_holm < 0.05);
+  const rawItems = S.items.filter((i) => i.p < 0.05);
+  const sigDemo = S.demographics.filter((d) => d.p_holm < 0.05);
+  d3.select("#sig-lede").text(
+    `Of the ${S.eligible} people VI‑SPDAT rated Low or Medium, ${RUN.label} placed ${S.upgraded} higher. These exploratory tests ask whether a ` +
+    `group or circumstance changes that judgment once the VI‑SPDAT score is held fixed. With 100 people, small differences cannot be detected.`);
+  const cards = [
+    { kicker: "Direction", stat: `p ${fmtP(S.direction.p_sign)}`, note: `${S.direction.higher} placed higher vs ${S.direction.lower} lower (exact sign test)`,
+      body: "Gemini assigns higher priority than VI‑SPDAT far more often than chance would predict. This is the clearest result of the pilot." },
+    { kicker: "VI-SPDAT score", stat: "Main driver", note: "of who Gemini moves up",
+      body: "Upgrades follow the VI‑SPDAT score: none at scores 0–1, most at the top of each band (score 3, and 5–7). Gemini rates everyone scoring 6 or more High (VI‑SPDAT starts at 8)." },
+    { kicker: "Demographics", stat: `${sigDemo.length} of ${S.demographics.length}`, note: "gender, race, city, age: significant after Holm",
+      body: sigDemo.length ? sigDemo.map((d) => d.factor).join(", ") : "No demographic group changes Gemini's judgment once the VI‑SPDAT score is held fixed." },
+    { kicker: "Circumstances", stat: `${sigItems.length} of ${S.items.length}`, note: "significant after Holm correction",
+      body: rawItems.length ? `Before correction: ${rawItems.map((i) => `${i.name.toLowerCase()} (p ${fmtP(i.p)})`).join("; ")}. None survives correction.` : "None." }
+  ];
+  const el = d3.select("#sig-cards").html("");
+  cards.forEach((c) => {
+    const a = el.append("article").attr("class", "fcard");
+    a.append("p").attr("class", "fcard-kicker").text(c.kicker);
+    a.append("p").attr("class", "fcard-stat").text(c.stat);
+    a.append("p").attr("class", "fcard-note").text(c.note);
+    a.append("p").attr("class", "fcard-body").text(c.body);
+  });
+
+  // upgrade rate by score
+  const elig = DATA.profiles.filter((p) => p.vispdat !== "High");
+  const scores = d3.range(0, 8);
+  const pts = scores.map((s) => {
+    const at = elig.filter((p) => p.score === s);
+    const k = at.filter((p) => RANK[gem(p)] > RANK[p.vispdat]).length;
+    return { s, n: at.length, k, r: at.length ? k / at.length : 0 };
+  });
+  const W = widthOf("#chart-upgrade-score", 520, 860), H = 260, m = { t: 20, r: 16, b: 46, l: 46 };
+  const x = d3.scaleBand().domain(scores).range([m.l, W - m.r]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, 1]).range([H - m.b, m.t]);
+  const svg = d3.select("#chart-upgrade-score").html("").append("svg").attr("width", W).attr("height", H).attr("role", "img")
+    .attr("aria-label", "Share placed higher by Gemini at each VI-SPDAT score: " + pts.map((d) => `score ${d.s}: ${d.k} of ${d.n}`).join(", "));
+  [0, 0.25, 0.5, 0.75, 1].forEach((v) => {
+    svg.append("line").attr("class", "gridline").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(v)).attr("y2", y(v));
+    svg.append("text").attr("class", "tick-text").attr("x", m.l - 8).attr("y", y(v)).attr("dy", "0.32em").attr("text-anchor", "end").text(`${v * 100}%`);
+  });
+  pts.forEach((d) => {
+    const g = svg.append("g");
+    g.append("rect").attr("x", x(d.s)).attr("width", x.bandwidth()).attr("y", y(d.r)).attr("height", y(0) - y(d.r)).attr("rx", 3)
+      .attr("fill", css(d.s >= 4 ? "--series-4" : "--series-3"));
+    g.append("text").attr("class", "bar-value").attr("text-anchor", "middle").attr("x", x(d.s) + x.bandwidth() / 2).attr("y", y(d.r) - 5).text(`${d.k}/${d.n}`);
+    svg.append("text").attr("class", "axis-label").attr("x", x(d.s) + x.bandwidth() / 2).attr("y", H - m.b + 16).attr("text-anchor", "middle").text(d.s);
+    hover(g, () => `<span class="tt-title">VI‑SPDAT score ${d.s} (${d.s >= 4 ? "Medium" : "Low"})</span><span class="tt-row">Placed higher by Gemini: ${d.k} of ${d.n} (${pct(d.k, d.n)})</span>`);
+  });
+  svg.append("text").attr("class", "axis-title").attr("x", (m.l + W - m.r) / 2).attr("y", H - 8).attr("text-anchor", "middle").text("VI‑SPDAT SCORE (LOW 0–3 · MEDIUM 4–7)");
+
+  // dumbbell per circumstance
+  legend("#legend-items", [{ name: "With the circumstance", color: css("--series-2") }, { name: "Without", color: css("--ink-muted") }]);
+  const items = S.items.slice().sort((a, b) => a.p - b.p);
+  const W2 = widthOf("#chart-items", 600, 960), lw = 280, rh = 28, rw = 150, H2 = items.length * rh + 44;
+  const x2 = d3.scaleLinear().domain([0, 1]).range([lw, W2 - rw - 24]);
+  const s2 = d3.select("#chart-items").html("").append("svg").attr("width", W2).attr("height", H2).attr("role", "img")
+    .attr("aria-label", "Share placed higher with and without each circumstance, with p-values.");
+  [0, 0.25, 0.5, 0.75, 1].forEach((v) => {
+    s2.append("line").attr("class", "gridline").attr("x1", x2(v)).attr("x2", x2(v)).attr("y1", 10).attr("y2", H2 - 28);
+    s2.append("text").attr("class", "tick-text").attr("x", x2(v)).attr("y", H2 - 12).attr("text-anchor", "middle").text(`${v * 100}%`);
+  });
+  s2.append("text").attr("class", "axis-title").attr("x", W2 - rw + 30).attr("y", 8).text("p (HOLM p)");
+  items.forEach((it, i) => {
+    const cy = 24 + i * rh, a = it.with.rate, b = it.without.rate;
+    s2.append("text").attr("class", "group-label").attr("x", lw - 12).attr("y", cy).attr("dy", "0.35em").attr("text-anchor", "end").text(it.name);
+    const g = s2.append("g");
+    g.append("line").attr("x1", x2(a)).attr("x2", x2(b)).attr("y1", cy).attr("y2", cy).attr("stroke", css("--rule-strong")).attr("stroke-width", 3);
+    g.append("circle").attr("cx", x2(b)).attr("cy", cy).attr("r", 5.5).attr("fill", css("--surface")).attr("stroke", css("--ink-muted")).attr("stroke-width", 2);
+    g.append("circle").attr("cx", x2(a)).attr("cy", cy).attr("r", 6).attr("fill", css("--series-2"));
+    s2.append("text").attr("class", "bar-value").attr("x", W2 - rw + 30).attr("y", cy).attr("dy", "0.35em").style("text-anchor", "start")
+      .attr("font-weight", it.p_holm < 0.05 ? 700 : 500).text(`${fmtP(it.p)} (${fmtP(it.p_holm)})`);
+    hover(g, () => `<span class="tt-title">${it.name}</span><span class="tt-row">With: ${it.with.upgraded} of ${it.with.n} placed higher (${pct(it.with.upgraded, it.with.n)})</span><span class="tt-row">Without: ${it.without.upgraded} of ${it.without.n} (${pct(it.without.upgraded, it.without.n)})</span><span class="tt-row">p = ${fmtP(it.p)}, Holm p = ${fmtP(it.p_holm)}</span>`);
+  });
+
+  table("#sig-demo-table", ["Factor", "Placed higher in each group", "p", "Holm p"],
+    S.demographics.map((d) => ({ cells: [d.factor,
+      d.groups.map((g) => `${esc(RACE_SHORT[g.group] || (CITY_CALLOUT[g.group] ? CITY_CALLOUT[g.group].short : g.group))}: ${g.upgraded}/${g.n} (${pct0(g.upgraded, g.n)})`).join("<br>"),
+      fmtP(d.p), fmtP(d.p_holm)] })));
+  d3.select("#sig-method").text(S.method + " Exploratory: the pilot was not designed with the power to detect small differences.");
 }
 
 /* ============================================================
@@ -515,6 +681,7 @@ function renderDownloads() {
     ["Results by person", "results/by_profile.csv", "VI‑SPDAT and Gemini priority side by side, with Gemini's explanation."],
     ["Comparison by group", "results/comparison_by_group.csv", "Counts and within-group percentages for every group."],
     ["Composition", "results/composition.csv", "Counts and percentages for every group and VI‑SPDAT item."],
+    ["Significance tests", "results/significance_gemini.csv", "Stratified permutation tests by group and circumstance (Flash-Lite run)."],
     ["Reasoning-token check", "results/thinking_check_gemini-3.8-flash.json", "Token use per request for Gemini 3.8 Flash under the study settings."],
     ["Results tables (Word)", "exports/pilot_results.docx", "APA tables: composition, cross-tab, and comparison by group."],
     ["Appendix (Word)", "exports/pilot_appendix.docx", "VI‑SPDAT items and rules, the Gemini prompt, and all 100 profiles."]
@@ -535,7 +702,10 @@ function renderAll() {
   d3.select("#run-status").attr("class", "table-note-inline run-pending")
     .text(pending.length ? `${pending.map((r) => r.label).join(", ")} in progress; shown when all 100 are done` : "");
   renderOverview();
+  renderDumbbell();
   renderGroups();
+  renderStacked();
+  renderSignificance();
   renderAgreement();
   renderCities();
   renderProfiles();

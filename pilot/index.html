@@ -25,6 +25,7 @@
         <a href="#overview" data-view-link="overview" data-sub="How VI-SPDAT and Gemini prioritize the same 100 people">Overview</a>
         <a href="#groups" data-view-link="groups" data-sub="Priority within each gender, race, city, age group, and circumstance">By group</a>
         <a href="#agreement" data-view-link="agreement" data-sub="Where the two approaches agree and where they differ">Agreement</a>
+        <a href="#significance" data-view-link="significance" data-sub="Which groups and circumstances change Gemini's judgment beyond the VI-SPDAT score">Significance</a>
         <a href="#cities" data-view-link="cities" data-sub="Share rated high priority in each study city">Cities</a>
       </div>
       <div class="nav-group">
@@ -77,6 +78,12 @@
           <div class="chart-scroll" id="chart-dist"></div>
         </div>
         <div class="chart-card">
+          <p class="chart-title">Share rated High in every group</p>
+          <p class="chart-sub">Each row is one group; the dot on the left is VI&#8209;SPDAT, the dot on the right is Gemini. Gemini rates more people High in every group.</p>
+          <div class="legend" id="legend-dumbbell"></div>
+          <div class="chart-scroll" id="chart-dumbbell"></div>
+        </div>
+        <div class="chart-card">
           <p class="chart-title">VI&#8209;SPDAT priority against Gemini priority</p>
           <p class="chart-sub">Each cell counts the people VI&#8209;SPDAT placed in the row and Gemini placed in the column. The diagonal is agreement.</p>
           <div class="chart-scroll" id="chart-crosstab"></div>
@@ -91,6 +98,12 @@
           <div class="chip-row" id="group-tabs"></div>
           <div class="legend" id="legend-groups"></div>
           <div class="chart-scroll" id="chart-groups"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">High, Medium, and Low within each group</p>
+          <p class="chart-sub">100% of each group. Top bar of each pair: VI&#8209;SPDAT; bottom bar: Gemini.</p>
+          <div class="legend" id="legend-stacked"></div>
+          <div class="chart-scroll" id="chart-stacked"></div>
         </div>
         <div class="chart-card">
           <p class="chart-title">All three categories, by <span id="group-name-2">gender</span></p>
@@ -116,6 +129,28 @@
           <p class="chart-title">People the two approaches place differently</p>
           <p class="chart-sub">Every disagreement, with Gemini's explanation.</p>
           <div class="results-scroll"><table class="results compact" id="disagree-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-significance" data-view="significance" aria-label="Significance" hidden>
+        <div class="intro-band"><p class="intro-lede" id="sig-lede"></p></div>
+        <div class="findings" id="sig-cards"></div>
+        <div class="chart-card">
+          <p class="chart-title">Share Gemini placed higher, at each VI&#8209;SPDAT score</p>
+          <p class="chart-sub">People VI&#8209;SPDAT rated Low or Medium (scores 0&ndash;7), the only ones Gemini could place higher. Gemini almost never moves people at scores 0&ndash;1, but moves most people at the top of each VI&#8209;SPDAT band: score 3 (top of Low) and scores 5&ndash;7 (top of Medium).</p>
+          <div class="chart-scroll" id="chart-upgrade-score"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Does a circumstance change Gemini's judgment beyond the VI&#8209;SPDAT score?</p>
+          <p class="chart-sub">Share placed higher among people with (filled) and without (open) each circumstance. p: stratified permutation test that holds the VI&#8209;SPDAT score fixed; Holm-corrected across the 16 circumstances.</p>
+          <div class="legend" id="legend-items"></div>
+          <div class="chart-scroll" id="chart-items"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Demographic tests</p>
+          <p class="chart-sub">Share placed higher in each group, and whether the group changes Gemini's judgment once the VI&#8209;SPDAT score is held fixed.</p>
+          <div class="results-scroll"><table class="results compact" id="sig-demo-table"></table></div>
+          <p class="chart-foot" id="sig-method"></p>
         </div>
       </section>
 

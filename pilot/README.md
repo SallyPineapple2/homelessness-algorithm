@@ -31,6 +31,8 @@ python pilot/scripts/build_profiles.py     # 100 profiles + checks -> data/profi
 python pilot/scripts/score_vispdat.py      # -> data/vispdat_scores.csv
 python pilot/scripts/run_gemini.py --wait  # -> data/gemini/raw/<id>.json (free tier: ~20/day)
 python pilot/scripts/analyze.py            # -> results/*.csv, exports/*.docx
+python pilot/scripts/pilot_stats.py        # -> results/significance_gemini.* (exploratory tests)
+python pilot/scripts/build_dashboard_data.py  # -> data/dashboard.json for pilot/index.html
 ```
 
 ## Outputs

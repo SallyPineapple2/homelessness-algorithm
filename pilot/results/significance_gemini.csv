@@ -1,0 +1,49 @@
+family,test,group,n,upgraded,rate,p,p_holm
+demographic,Gender,Female,32,19,0.59375,1.0,1.0
+demographic,Gender,Male,33,21,0.6363636363636364,1.0,1.0
+demographic,Race,"American Indian, Alaska Native, or Indigenous",13,8,0.6153846153846154,0.8515074246287686,1.0
+demographic,Race,Asian or Asian American,13,9,0.6923076923076923,0.8515074246287686,1.0
+demographic,Race,"Black, African American, or African",13,8,0.6153846153846154,0.8515074246287686,1.0
+demographic,Race,Hispanic/Latino/e/a,13,7,0.5384615384615384,0.8515074246287686,1.0
+demographic,Race,White,13,8,0.6153846153846154,0.8515074246287686,1.0
+demographic,City,"Atlanta, Georgia",12,8,0.6666666666666666,0.21023948802559872,0.8409579521023949
+demographic,City,"Chicago, Illinois",14,10,0.7142857142857143,0.21023948802559872,0.8409579521023949
+demographic,City,"Cincinnati, Ohio",13,9,0.6923076923076923,0.21023948802559872,0.8409579521023949
+demographic,City,"Los Angeles, California",14,8,0.5714285714285714,0.21023948802559872,0.8409579521023949
+demographic,City,"New York City, New York",12,5,0.4166666666666667,0.21023948802559872,0.8409579521023949
+demographic,Age group,18-24,7,3,0.42857142857142855,0.27018649067546624,0.8409579521023949
+demographic,Age group,25-39,23,11,0.4782608695652174,0.27018649067546624,0.8409579521023949
+demographic,Age group,40-59,25,18,0.72,0.27018649067546624,0.8409579521023949
+demographic,Age group,60 and older,10,8,0.8,0.27018649067546624,0.8409579521023949
+circumstance,Homeless due to relationship breakdown,Yes,12,5,0.4166666666666667,0.0063996800159992,0.1023948802559872
+circumstance,Homeless due to relationship breakdown,No,53,35,0.660377358490566,0.0063996800159992,0.1023948802559872
+circumstance,Homeless 1+ year or 4+ times,Yes,22,20,0.9090909090909091,0.05339733013349333,0.8009599520023999
+circumstance,Homeless 1+ year or 4+ times,No,43,20,0.46511627906976744,0.05339733013349333,0.8009599520023999
+circumstance,Homeless due to abuse or trauma,Yes,9,5,0.5555555555555556,0.13624318784060796,1.0
+circumstance,Homeless due to abuse or trauma,No,56,35,0.625,0.13624318784060796,1.0
+circumstance,No meaningful daily activity,Yes,20,17,0.85,0.22838858057097144,1.0
+circumstance,No meaningful daily activity,No,45,23,0.5111111111111111,0.22838858057097144,1.0
+circumstance,Substance use,Yes,13,13,1.0,0.231988400579971,1.0
+circumstance,Substance use,No,52,27,0.5192307692307693,0.231988400579971,1.0
+circumstance,Legal issues,Yes,7,4,0.5714285714285714,0.25733713314334283,1.0
+circumstance,Legal issues,No,58,36,0.6206896551724138,0.25733713314334283,1.0
+circumstance,Cannot meet basic needs,Yes,13,12,0.9230769230769231,0.3213339333033348,1.0
+circumstance,Cannot meet basic needs,No,52,28,0.5384615384615384,0.3213339333033348,1.0
+circumstance,Age 60 or older,Yes,10,8,0.8,0.33323333833308333,1.0
+circumstance,Age 60 or older,No,55,32,0.5818181818181818,0.33323333833308333,1.0
+circumstance,Unsheltered (not in a shelter),Yes,35,24,0.6857142857142857,0.47817609119544024,1.0
+circumstance,Unsheltered (not in a shelter),No,30,16,0.5333333333333333,0.47817609119544024,1.0
+circumstance,Risk of harm,Yes,11,10,0.9090909090909091,0.5927703614819259,1.0
+circumstance,Risk of harm,No,54,30,0.5555555555555556,0.5927703614819259,1.0
+circumstance,Medication problems,Yes,12,9,0.75,0.6090195490225488,1.0
+circumstance,Medication problems,No,53,31,0.5849056603773585,0.6090195490225488,1.0
+circumstance,4+ emergency service contacts,Yes,16,13,0.8125,0.6215189240537973,1.0
+circumstance,4+ emergency service contacts,No,49,27,0.5510204081632653,0.6215189240537973,1.0
+circumstance,No income or owes money,Yes,41,29,0.7073170731707317,0.6855157242137893,1.0
+circumstance,No income or owes money,No,24,11,0.4583333333333333,0.6855157242137893,1.0
+circumstance,Risk of exploitation,Yes,4,3,0.75,1.0,1.0
+circumstance,Risk of exploitation,No,61,37,0.6065573770491803,1.0,1.0
+circumstance,Physical health condition,Yes,27,21,0.7777777777777778,1.0,1.0
+circumstance,Physical health condition,No,38,19,0.5,1.0,1.0
+circumstance,Mental health condition,Yes,10,9,0.9,1.0,1.0
+circumstance,Mental health condition,No,55,31,0.5636363636363636,1.0,1.0

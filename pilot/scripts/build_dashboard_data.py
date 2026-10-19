@@ -20,9 +20,10 @@ ROOT = Path(__file__).resolve().parents[2]
 PILOT = ROOT / "pilot"
 
 RUNS = [
-    {"key": "flash-lite", "label": "Gemini 3.5 Flash-Lite", "dir": PILOT / "data" / "gemini" / "raw",
+    {"key": "flash-lite", "label": "Gemini 3.5 Flash-Lite", "dir": PILOT / "data" / "gemini" / "raw", "stats": "gemini",
      "note": "Lighter, faster model; no reasoning step by default."},
     {"key": "flash", "label": "Gemini 3.8 Flash", "dir": PILOT / "data" / "gemini-gemini-3.8-flash" / "raw",
+     "stats": "gemini-3.8-flash",
      "note": "Stronger model; reasons before answering. Limited to about 20 requests a day."},
 ]
 
@@ -42,8 +43,11 @@ def main():
                 answers[rec["id"]] = {"priority": rec["priority"], "explanation": rec.get("explanation"),
                                       "model_version": rec.get("model_version")}
         complete = len(answers) == len(profiles)
+        stats_path = PILOT / "results" / f"significance_{run['stats']}.json"
+        stats = json.loads(stats_path.read_text(encoding="utf-8")) if complete and stats_path.exists() else None
         runs.append({"key": run["key"], "label": run["label"], "note": run["note"], "done": len(answers),
-                     "total": len(profiles), "complete": complete, "answers": answers if complete else {}})
+                     "total": len(profiles), "complete": complete, "answers": answers if complete else {},
+                     "stats": stats})
 
     items = [{"id": i["id"], "name": i["name"], "domain": d["name"], "letter": d["letter"], "questions": i["questions"],
               "rule": i["rule"]} for d in inst["domains"] for i in d["indicators"]]

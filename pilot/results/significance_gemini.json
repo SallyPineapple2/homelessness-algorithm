@@ -1,0 +1,445 @@
+{
+ "run": "gemini",
+ "n": 100,
+ "eligible": 65,
+ "upgraded": 40,
+ "direction": {
+  "higher": 40,
+  "lower": 0,
+  "same": 60,
+  "p_sign": 1.8189894035458565e-12
+ },
+ "method": "Stratified permutation tests (shuffled within VI-SPDAT score), 20,000 shuffles, Holm within family; outcome = Gemini placed the person higher than VI-SPDAT, among people VI-SPDAT rated Low or Medium.",
+ "demographics": [
+  {
+   "factor": "Gender",
+   "groups": [
+    {
+     "group": "Female",
+     "n": 32,
+     "upgraded": 19,
+     "rate": 0.59375
+    },
+    {
+     "group": "Male",
+     "n": 33,
+     "upgraded": 21,
+     "rate": 0.6363636363636364
+    }
+   ],
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Race",
+   "groups": [
+    {
+     "group": "American Indian, Alaska Native, or Indigenous",
+     "n": 13,
+     "upgraded": 8,
+     "rate": 0.6153846153846154
+    },
+    {
+     "group": "Asian or Asian American",
+     "n": 13,
+     "upgraded": 9,
+     "rate": 0.6923076923076923
+    },
+    {
+     "group": "Black, African American, or African",
+     "n": 13,
+     "upgraded": 8,
+     "rate": 0.6153846153846154
+    },
+    {
+     "group": "Hispanic/Latino/e/a",
+     "n": 13,
+     "upgraded": 7,
+     "rate": 0.5384615384615384
+    },
+    {
+     "group": "White",
+     "n": 13,
+     "upgraded": 8,
+     "rate": 0.6153846153846154
+    }
+   ],
+   "p": 0.8515074246287686,
+   "p_holm": 1.0
+  },
+  {
+   "factor": "City",
+   "groups": [
+    {
+     "group": "Atlanta, Georgia",
+     "n": 12,
+     "upgraded": 8,
+     "rate": 0.6666666666666666
+    },
+    {
+     "group": "Chicago, Illinois",
+     "n": 14,
+     "upgraded": 10,
+     "rate": 0.7142857142857143
+    },
+    {
+     "group": "Cincinnati, Ohio",
+     "n": 13,
+     "upgraded": 9,
+     "rate": 0.6923076923076923
+    },
+    {
+     "group": "Los Angeles, California",
+     "n": 14,
+     "upgraded": 8,
+     "rate": 0.5714285714285714
+    },
+    {
+     "group": "New York City, New York",
+     "n": 12,
+     "upgraded": 5,
+     "rate": 0.4166666666666667
+    }
+   ],
+   "p": 0.21023948802559872,
+   "p_holm": 0.8409579521023949
+  },
+  {
+   "factor": "Age group",
+   "groups": [
+    {
+     "group": "18-24",
+     "n": 7,
+     "upgraded": 3,
+     "rate": 0.42857142857142855
+    },
+    {
+     "group": "25-39",
+     "n": 23,
+     "upgraded": 11,
+     "rate": 0.4782608695652174
+    },
+    {
+     "group": "40-59",
+     "n": 25,
+     "upgraded": 18,
+     "rate": 0.72
+    },
+    {
+     "group": "60 and older",
+     "n": 10,
+     "upgraded": 8,
+     "rate": 0.8
+    }
+   ],
+   "p": 0.27018649067546624,
+   "p_holm": 0.8409579521023949
+  }
+ ],
+ "items": [
+  {
+   "item": "c4_relationships",
+   "name": "Homeless due to relationship breakdown",
+   "with": {
+    "group": "Yes",
+    "n": 12,
+    "upgraded": 5,
+    "rate": 0.4166666666666667
+   },
+   "without": {
+    "group": "No",
+    "n": 53,
+    "upgraded": 35,
+    "rate": 0.660377358490566
+   },
+   "diff": -0.24371069182389932,
+   "p": 0.0063996800159992,
+   "p_holm": 0.1023948802559872
+  },
+  {
+   "item": "a2_duration",
+   "name": "Homeless 1+ year or 4+ times",
+   "with": {
+    "group": "Yes",
+    "n": 22,
+    "upgraded": 20,
+    "rate": 0.9090909090909091
+   },
+   "without": {
+    "group": "No",
+    "n": 43,
+    "upgraded": 20,
+    "rate": 0.46511627906976744
+   },
+   "diff": 0.4439746300211416,
+   "p": 0.05339733013349333,
+   "p_holm": 0.8009599520023999
+  },
+  {
+   "item": "d6_trauma",
+   "name": "Homeless due to abuse or trauma",
+   "with": {
+    "group": "Yes",
+    "n": 9,
+    "upgraded": 5,
+    "rate": 0.5555555555555556
+   },
+   "without": {
+    "group": "No",
+    "n": 56,
+    "upgraded": 35,
+    "rate": 0.625
+   },
+   "diff": -0.06944444444444442,
+   "p": 0.13624318784060796,
+   "p_holm": 1.0
+  },
+  {
+   "item": "c2_activity",
+   "name": "No meaningful daily activity",
+   "with": {
+    "group": "Yes",
+    "n": 20,
+    "upgraded": 17,
+    "rate": 0.85
+   },
+   "without": {
+    "group": "No",
+    "n": 45,
+    "upgraded": 23,
+    "rate": 0.5111111111111111
+   },
+   "diff": 0.3388888888888889,
+   "p": 0.22838858057097144,
+   "p_holm": 1.0
+  },
+  {
+   "item": "d2_substance",
+   "name": "Substance use",
+   "with": {
+    "group": "Yes",
+    "n": 13,
+    "upgraded": 13,
+    "rate": 1.0
+   },
+   "without": {
+    "group": "No",
+    "n": 52,
+    "upgraded": 27,
+    "rate": 0.5192307692307693
+   },
+   "diff": 0.4807692307692307,
+   "p": 0.231988400579971,
+   "p_holm": 1.0
+  },
+  {
+   "item": "b3_legal",
+   "name": "Legal issues",
+   "with": {
+    "group": "Yes",
+    "n": 7,
+    "upgraded": 4,
+    "rate": 0.5714285714285714
+   },
+   "without": {
+    "group": "No",
+    "n": 58,
+    "upgraded": 36,
+    "rate": 0.6206896551724138
+   },
+   "diff": -0.049261083743842415,
+   "p": 0.25733713314334283,
+   "p_holm": 1.0
+  },
+  {
+   "item": "c3_selfcare",
+   "name": "Cannot meet basic needs",
+   "with": {
+    "group": "Yes",
+    "n": 13,
+    "upgraded": 12,
+    "rate": 0.9230769230769231
+   },
+   "without": {
+    "group": "No",
+    "n": 52,
+    "upgraded": 28,
+    "rate": 0.5384615384615384
+   },
+   "diff": 0.3846153846153847,
+   "p": 0.3213339333033348,
+   "p_holm": 1.0
+  },
+  {
+   "item": "pre_age",
+   "name": "Age 60 or older",
+   "with": {
+    "group": "Yes",
+    "n": 10,
+    "upgraded": 8,
+    "rate": 0.8
+   },
+   "without": {
+    "group": "No",
+    "n": 55,
+    "upgraded": 32,
+    "rate": 0.5818181818181818
+   },
+   "diff": 0.21818181818181825,
+   "p": 0.33323333833308333,
+   "p_holm": 1.0
+  },
+  {
+   "item": "a1_sleep",
+   "name": "Unsheltered (not in a shelter)",
+   "with": {
+    "group": "Yes",
+    "n": 35,
+    "upgraded": 24,
+    "rate": 0.6857142857142857
+   },
+   "without": {
+    "group": "No",
+    "n": 30,
+    "upgraded": 16,
+    "rate": 0.5333333333333333
+   },
+   "diff": 0.1523809523809524,
+   "p": 0.47817609119544024,
+   "p_holm": 1.0
+  },
+  {
+   "item": "b2_harm",
+   "name": "Risk of harm",
+   "with": {
+    "group": "Yes",
+    "n": 11,
+    "upgraded": 10,
+    "rate": 0.9090909090909091
+   },
+   "without": {
+    "group": "No",
+    "n": 54,
+    "upgraded": 30,
+    "rate": 0.5555555555555556
+   },
+   "diff": 0.3535353535353535,
+   "p": 0.5927703614819259,
+   "p_holm": 1.0
+  },
+  {
+   "item": "d5_medications",
+   "name": "Medication problems",
+   "with": {
+    "group": "Yes",
+    "n": 12,
+    "upgraded": 9,
+    "rate": 0.75
+   },
+   "without": {
+    "group": "No",
+    "n": 53,
+    "upgraded": 31,
+    "rate": 0.5849056603773585
+   },
+   "diff": 0.16509433962264153,
+   "p": 0.6090195490225488,
+   "p_holm": 1.0
+  },
+  {
+   "item": "b1_emergency",
+   "name": "4+ emergency service contacts",
+   "with": {
+    "group": "Yes",
+    "n": 16,
+    "upgraded": 13,
+    "rate": 0.8125
+   },
+   "without": {
+    "group": "No",
+    "n": 49,
+    "upgraded": 27,
+    "rate": 0.5510204081632653
+   },
+   "diff": 0.26147959183673475,
+   "p": 0.6215189240537973,
+   "p_holm": 1.0
+  },
+  {
+   "item": "c1_money",
+   "name": "No income or owes money",
+   "with": {
+    "group": "Yes",
+    "n": 41,
+    "upgraded": 29,
+    "rate": 0.7073170731707317
+   },
+   "without": {
+    "group": "No",
+    "n": 24,
+    "upgraded": 11,
+    "rate": 0.4583333333333333
+   },
+   "diff": 0.24898373983739835,
+   "p": 0.6855157242137893,
+   "p_holm": 1.0
+  },
+  {
+   "item": "b4_exploitation",
+   "name": "Risk of exploitation",
+   "with": {
+    "group": "Yes",
+    "n": 4,
+    "upgraded": 3,
+    "rate": 0.75
+   },
+   "without": {
+    "group": "No",
+    "n": 61,
+    "upgraded": 37,
+    "rate": 0.6065573770491803
+   },
+   "diff": 0.14344262295081966,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "item": "d1_physical",
+   "name": "Physical health condition",
+   "with": {
+    "group": "Yes",
+    "n": 27,
+    "upgraded": 21,
+    "rate": 0.7777777777777778
+   },
+   "without": {
+    "group": "No",
+    "n": 38,
+    "upgraded": 19,
+    "rate": 0.5
+   },
+   "diff": 0.2777777777777778,
+   "p": 1.0,
+   "p_holm": 1.0
+  },
+  {
+   "item": "d3_mental",
+   "name": "Mental health condition",
+   "with": {
+    "group": "Yes",
+    "n": 10,
+    "upgraded": 9,
+    "rate": 0.9
+   },
+   "without": {
+    "group": "No",
+    "n": 55,
+    "upgraded": 31,
+    "rate": 0.5636363636363636
+   },
+   "diff": 0.3363636363636364,
+   "p": 1.0,
+   "p_holm": 1.0
+  }
+ ]
+}
