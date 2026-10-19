@@ -1,0 +1,1578 @@
+{
+ "summary": {
+  "places": {
+   "High": 35,
+   "Medium": 40
+  },
+  "high_places_to_vispdat_high": {
+   "tie_break": 28.6,
+   "lottery": 18.6
+  },
+  "high_places_to_vispdat_medium": {
+   "tie_break": 6.4,
+   "lottery": 15.9
+  },
+  "high_places_to_vispdat_low": {
+   "tie_break": 0.0,
+   "lottery": 0.5
+  },
+  "scored_vs_main_same_category": 95,
+  "scored_high": 62,
+  "urgency_spearman_with_vispdat": 0.915
+ },
+ "groups": [
+  {
+   "factor": "Gender",
+   "group": "Female",
+   "n": 50,
+   "vispdat_high": 18.0,
+   "gemini_high": 17.82,
+   "lottery_high": 16.97,
+   "vispdat_medium": 16.0,
+   "gemini_medium": 18.18,
+   "lottery_medium": 18.35
+  },
+  {
+   "factor": "Gender",
+   "group": "Male",
+   "n": 50,
+   "vispdat_high": 17.0,
+   "gemini_high": 17.18,
+   "lottery_high": 18.03,
+   "vispdat_medium": 24.0,
+   "gemini_medium": 21.82,
+   "lottery_medium": 21.65
+  },
+  {
+   "factor": "Race",
+   "group": "American Indian, Alaska Native, or Indigenous",
+   "n": 20,
+   "vispdat_high": 7.0,
+   "gemini_high": 5.65,
+   "lottery_high": 6.89,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 7.35,
+   "lottery_medium": 8.0
+  },
+  {
+   "factor": "Race",
+   "group": "Asian or Asian American",
+   "n": 20,
+   "vispdat_high": 7.0,
+   "gemini_high": 5.76,
+   "lottery_high": 6.89,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 10.24,
+   "lottery_medium": 8.47
+  },
+  {
+   "factor": "Race",
+   "group": "Black, African American, or African",
+   "n": 20,
+   "vispdat_high": 7.0,
+   "gemini_high": 8.41,
+   "lottery_high": 6.89,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 6.59,
+   "lottery_medium": 8.0
+  },
+  {
+   "factor": "Race",
+   "group": "Hispanic/Latino/e/a",
+   "n": 20,
+   "vispdat_high": 7.0,
+   "gemini_high": 7.41,
+   "lottery_high": 6.36,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 7.59,
+   "lottery_medium": 8.0
+  },
+  {
+   "factor": "Race",
+   "group": "White",
+   "n": 20,
+   "vispdat_high": 7.0,
+   "gemini_high": 7.76,
+   "lottery_high": 7.95,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 8.24,
+   "lottery_medium": 7.52
+  },
+  {
+   "factor": "City",
+   "group": "Atlanta, Georgia",
+   "n": 20,
+   "vispdat_high": 8.0,
+   "gemini_high": 8.41,
+   "lottery_high": 7.42,
+   "vispdat_medium": 7.0,
+   "gemini_medium": 8.59,
+   "lottery_medium": 8.47
+  },
+  {
+   "factor": "City",
+   "group": "Chicago, Illinois",
+   "n": 20,
+   "vispdat_high": 6.0,
+   "gemini_high": 6.88,
+   "lottery_high": 7.42,
+   "vispdat_medium": 9.0,
+   "gemini_medium": 7.12,
+   "lottery_medium": 8.0
+  },
+  {
+   "factor": "City",
+   "group": "Cincinnati, Ohio",
+   "n": 20,
+   "vispdat_high": 7.0,
+   "gemini_high": 8.41,
+   "lottery_high": 7.42,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 7.59,
+   "lottery_medium": 8.0
+  },
+  {
+   "factor": "City",
+   "group": "Los Angeles, California",
+   "n": 20,
+   "vispdat_high": 6.0,
+   "gemini_high": 4.65,
+   "lottery_high": 5.83,
+   "vispdat_medium": 9.0,
+   "gemini_medium": 9.35,
+   "lottery_medium": 8.48
+  },
+  {
+   "factor": "City",
+   "group": "New York City, New York",
+   "n": 20,
+   "vispdat_high": 8.0,
+   "gemini_high": 6.65,
+   "lottery_high": 6.89,
+   "vispdat_medium": 7.0,
+   "gemini_medium": 7.35,
+   "lottery_medium": 7.05
+  },
+  {
+   "factor": "Age group",
+   "group": "18-24",
+   "n": 9,
+   "vispdat_high": 2.0,
+   "gemini_high": 1.76,
+   "lottery_high": 2.65,
+   "vispdat_medium": 4.0,
+   "gemini_medium": 5.24,
+   "lottery_medium": 3.3
+  },
+  {
+   "factor": "Age group",
+   "group": "25-39",
+   "n": 33,
+   "vispdat_high": 10.0,
+   "gemini_high": 9.41,
+   "lottery_high": 10.08,
+   "vispdat_medium": 13.0,
+   "gemini_medium": 11.59,
+   "lottery_medium": 11.77
+  },
+  {
+   "factor": "Age group",
+   "group": "40-59",
+   "n": 39,
+   "vispdat_high": 14.0,
+   "gemini_high": 13.18,
+   "lottery_high": 14.85,
+   "vispdat_medium": 17.0,
+   "gemini_medium": 18.82,
+   "lottery_medium": 16.47
+  },
+  {
+   "factor": "Age group",
+   "group": "60 and older",
+   "n": 19,
+   "vispdat_high": 9.0,
+   "gemini_high": 10.65,
+   "lottery_high": 7.42,
+   "vispdat_medium": 6.0,
+   "gemini_medium": 4.35,
+   "lottery_medium": 8.47
+  },
+  {
+   "factor": "Unsheltered",
+   "group": "No",
+   "n": 33,
+   "vispdat_high": 3.0,
+   "gemini_high": 0.88,
+   "lottery_high": 7.42,
+   "vispdat_medium": 13.0,
+   "gemini_medium": 16.12,
+   "lottery_medium": 10.37
+  },
+  {
+   "factor": "Unsheltered",
+   "group": "Yes",
+   "n": 67,
+   "vispdat_high": 32.0,
+   "gemini_high": 34.12,
+   "lottery_high": 27.58,
+   "vispdat_medium": 27.0,
+   "gemini_medium": 23.88,
+   "lottery_medium": 29.63
+  },
+  {
+   "factor": "Homeless 1+ year or 4+ times",
+   "group": "No",
+   "n": 48,
+   "vispdat_high": 5.0,
+   "gemini_high": 6.18,
+   "lottery_high": 10.08,
+   "vispdat_medium": 22.0,
+   "gemini_medium": 21.82,
+   "lottery_medium": 16.03
+  },
+  {
+   "factor": "Homeless 1+ year or 4+ times",
+   "group": "Yes",
+   "n": 52,
+   "vispdat_high": 30.0,
+   "gemini_high": 28.82,
+   "lottery_high": 24.92,
+   "vispdat_medium": 18.0,
+   "gemini_medium": 18.18,
+   "lottery_medium": 23.97
+  },
+  {
+   "factor": "4+ emergency contacts",
+   "group": "No",
+   "n": 50,
+   "vispdat_high": 1.0,
+   "gemini_high": 4.53,
+   "lottery_high": 10.08,
+   "vispdat_medium": 25.0,
+   "gemini_medium": 23.47,
+   "lottery_medium": 16.98
+  },
+  {
+   "factor": "4+ emergency contacts",
+   "group": "Yes",
+   "n": 50,
+   "vispdat_high": 34.0,
+   "gemini_high": 30.47,
+   "lottery_high": 24.92,
+   "vispdat_medium": 15.0,
+   "gemini_medium": 16.53,
+   "lottery_medium": 23.02
+  },
+  {
+   "factor": "Risk of harm",
+   "group": "No",
+   "n": 60,
+   "vispdat_high": 6.0,
+   "gemini_high": 7.65,
+   "lottery_high": 14.32,
+   "vispdat_medium": 29.0,
+   "gemini_medium": 28.35,
+   "lottery_medium": 21.21
+  },
+  {
+   "factor": "Risk of harm",
+   "group": "Yes",
+   "n": 40,
+   "vispdat_high": 29.0,
+   "gemini_high": 27.35,
+   "lottery_high": 20.68,
+   "vispdat_medium": 11.0,
+   "gemini_medium": 11.65,
+   "lottery_medium": 18.79
+  },
+  {
+   "factor": "Legal issues",
+   "group": "No",
+   "n": 76,
+   "vispdat_high": 18.0,
+   "gemini_high": 21.24,
+   "lottery_high": 24.39,
+   "vispdat_medium": 35.0,
+   "gemini_medium": 31.76,
+   "lottery_medium": 29.19
+  },
+  {
+   "factor": "Legal issues",
+   "group": "Yes",
+   "n": 24,
+   "vispdat_high": 17.0,
+   "gemini_high": 13.76,
+   "lottery_high": 10.61,
+   "vispdat_medium": 5.0,
+   "gemini_medium": 8.24,
+   "lottery_medium": 10.81
+  },
+  {
+   "factor": "Risk of exploitation",
+   "group": "No",
+   "n": 81,
+   "vispdat_high": 20.0,
+   "gemini_high": 21.47,
+   "lottery_high": 25.45,
+   "vispdat_medium": 36.0,
+   "gemini_medium": 35.53,
+   "lottery_medium": 31.07
+  },
+  {
+   "factor": "Risk of exploitation",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 15.0,
+   "gemini_high": 13.53,
+   "lottery_high": 9.55,
+   "vispdat_medium": 4.0,
+   "gemini_medium": 4.47,
+   "lottery_medium": 8.93
+  },
+  {
+   "factor": "No income or owes money",
+   "group": "No",
+   "n": 25,
+   "vispdat_high": 1.0,
+   "gemini_high": 1.76,
+   "lottery_high": 3.71,
+   "vispdat_medium": 6.0,
+   "gemini_medium": 8.24,
+   "lottery_medium": 6.13
+  },
+  {
+   "factor": "No income or owes money",
+   "group": "Yes",
+   "n": 75,
+   "vispdat_high": 34.0,
+   "gemini_high": 33.24,
+   "lottery_high": 31.29,
+   "vispdat_medium": 34.0,
+   "gemini_medium": 31.76,
+   "lottery_medium": 33.87
+  },
+  {
+   "factor": "No meaningful daily activity",
+   "group": "No",
+   "n": 55,
+   "vispdat_high": 10.0,
+   "gemini_high": 11.94,
+   "lottery_high": 14.32,
+   "vispdat_medium": 25.0,
+   "gemini_medium": 23.06,
+   "lottery_medium": 19.31
+  },
+  {
+   "factor": "No meaningful daily activity",
+   "group": "Yes",
+   "n": 45,
+   "vispdat_high": 25.0,
+   "gemini_high": 23.06,
+   "lottery_high": 20.68,
+   "vispdat_medium": 15.0,
+   "gemini_medium": 16.94,
+   "lottery_medium": 20.69
+  },
+  {
+   "factor": "Cannot meet basic needs",
+   "group": "No",
+   "n": 64,
+   "vispdat_high": 12.0,
+   "gemini_high": 11.94,
+   "lottery_high": 16.97,
+   "vispdat_medium": 28.0,
+   "gemini_medium": 27.06,
+   "lottery_medium": 23.08
+  },
+  {
+   "factor": "Cannot meet basic needs",
+   "group": "Yes",
+   "n": 36,
+   "vispdat_high": 23.0,
+   "gemini_high": 23.06,
+   "lottery_high": 18.03,
+   "vispdat_medium": 12.0,
+   "gemini_medium": 12.94,
+   "lottery_medium": 16.92
+  },
+  {
+   "factor": "Homeless due to relationship breakdown",
+   "group": "No",
+   "n": 75,
+   "vispdat_high": 22.0,
+   "gemini_high": 21.59,
+   "lottery_high": 25.45,
+   "vispdat_medium": 31.0,
+   "gemini_medium": 31.41,
+   "lottery_medium": 29.65
+  },
+  {
+   "factor": "Homeless due to relationship breakdown",
+   "group": "Yes",
+   "n": 25,
+   "vispdat_high": 13.0,
+   "gemini_high": 13.41,
+   "lottery_high": 9.55,
+   "vispdat_medium": 9.0,
+   "gemini_medium": 8.59,
+   "lottery_medium": 10.35
+  },
+  {
+   "factor": "Physical health condition",
+   "group": "No",
+   "n": 46,
+   "vispdat_high": 8.0,
+   "gemini_high": 6.53,
+   "lottery_high": 11.14,
+   "vispdat_medium": 17.0,
+   "gemini_medium": 17.47,
+   "lottery_medium": 15.07
+  },
+  {
+   "factor": "Physical health condition",
+   "group": "Yes",
+   "n": 54,
+   "vispdat_high": 27.0,
+   "gemini_high": 28.47,
+   "lottery_high": 23.86,
+   "vispdat_medium": 23.0,
+   "gemini_medium": 22.53,
+   "lottery_medium": 24.93
+  },
+  {
+   "factor": "Substance use",
+   "group": "No",
+   "n": 59,
+   "vispdat_high": 7.0,
+   "gemini_high": 9.53,
+   "lottery_high": 13.79,
+   "vispdat_medium": 28.0,
+   "gemini_medium": 27.47,
+   "lottery_medium": 20.74
+  },
+  {
+   "factor": "Substance use",
+   "group": "Yes",
+   "n": 41,
+   "vispdat_high": 28.0,
+   "gemini_high": 25.47,
+   "lottery_high": 21.21,
+   "vispdat_medium": 12.0,
+   "gemini_medium": 12.53,
+   "lottery_medium": 19.26
+  },
+  {
+   "factor": "Mental health condition",
+   "group": "No",
+   "n": 67,
+   "vispdat_high": 12.0,
+   "gemini_high": 15.82,
+   "lottery_high": 18.03,
+   "vispdat_medium": 31.0,
+   "gemini_medium": 27.18,
+   "lottery_medium": 24.5
+  },
+  {
+   "factor": "Mental health condition",
+   "group": "Yes",
+   "n": 33,
+   "vispdat_high": 23.0,
+   "gemini_high": 19.18,
+   "lottery_high": 16.97,
+   "vispdat_medium": 9.0,
+   "gemini_medium": 12.82,
+   "lottery_medium": 15.5
+  },
+  {
+   "factor": "Medication problems",
+   "group": "No",
+   "n": 70,
+   "vispdat_high": 17.0,
+   "gemini_high": 18.35,
+   "lottery_high": 21.21,
+   "vispdat_medium": 30.0,
+   "gemini_medium": 27.65,
+   "lottery_medium": 25.89
+  },
+  {
+   "factor": "Medication problems",
+   "group": "Yes",
+   "n": 30,
+   "vispdat_high": 18.0,
+   "gemini_high": 16.65,
+   "lottery_high": 13.79,
+   "vispdat_medium": 10.0,
+   "gemini_medium": 12.35,
+   "lottery_medium": 14.11
+  },
+  {
+   "factor": "Homeless due to abuse or trauma",
+   "group": "No",
+   "n": 81,
+   "vispdat_high": 25.0,
+   "gemini_high": 23.71,
+   "lottery_high": 27.05,
+   "vispdat_medium": 32.0,
+   "gemini_medium": 33.29,
+   "lottery_medium": 31.53
+  },
+  {
+   "factor": "Homeless due to abuse or trauma",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 10.0,
+   "gemini_high": 11.29,
+   "lottery_high": 7.95,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 6.71,
+   "lottery_medium": 8.47
+  },
+  {
+   "factor": "Age 60 or older",
+   "group": "No",
+   "n": 81,
+   "vispdat_high": 26.0,
+   "gemini_high": 24.35,
+   "lottery_high": 27.58,
+   "vispdat_medium": 34.0,
+   "gemini_medium": 35.65,
+   "lottery_medium": 31.53
+  },
+  {
+   "factor": "Age 60 or older",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 9.0,
+   "gemini_high": 10.65,
+   "lottery_high": 7.42,
+   "vispdat_medium": 6.0,
+   "gemini_medium": 4.35,
+   "lottery_medium": 8.47
+  }
+ ],
+ "tests": [
+  {
+   "factor": "Gender",
+   "p": 0.9163541822908855,
+   "family": "demographic",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Race",
+   "p": 0.35573221338933053,
+   "family": "demographic",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "City",
+   "p": 0.3272836358182091,
+   "family": "demographic",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Age group",
+   "p": 0.2696365181740913,
+   "family": "demographic",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Unsheltered",
+   "p": 0.0375981200939953,
+   "family": "circumstance",
+   "p_holm": 0.5639718014099295
+  },
+  {
+   "factor": "Homeless 1+ year or 4+ times",
+   "p": 0.7318634068296586,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "4+ emergency contacts",
+   "p": 0.7336133193340333,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Risk of harm",
+   "p": 0.9978501074946252,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Legal issues",
+   "p": 0.061946902654867256,
+   "family": "circumstance",
+   "p_holm": 0.8053097345132744
+  },
+  {
+   "factor": "Risk of exploitation",
+   "p": 0.6207189640517974,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "No income or owes money",
+   "p": 1.0,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "No meaningful daily activity",
+   "p": 0.49852507374631266,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Cannot meet basic needs",
+   "p": 0.35408229588520573,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Homeless due to relationship breakdown",
+   "p": 0.8954052297385131,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Physical health condition",
+   "p": 0.24818759062046897,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Substance use",
+   "p": 0.4656267186640668,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Mental health condition",
+   "p": 0.03184840757962102,
+   "family": "circumstance",
+   "p_holm": 0.5095745212739363
+  },
+  {
+   "factor": "Medication problems",
+   "p": 0.7124643767811609,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Homeless due to abuse or trauma",
+   "p": 0.37803109844507776,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Age 60 or older",
+   "p": 0.03874806259687016,
+   "family": "circumstance",
+   "p_holm": 0.5639718014099295
+  }
+ ],
+ "people": [
+  {
+   "id": "P01",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P02",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P03",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P04",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P05",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P06",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P07",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P08",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P09",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 52,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P10",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P11",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P12",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 65,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P13",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P14",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P15",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 82,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P16",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P17",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P18",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P19",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P20",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P21",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P22",
+   "vispdat_score": 9,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P23",
+   "vispdat_score": 9,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P24",
+   "vispdat_score": 10,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P25",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P26",
+   "vispdat_score": 12,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P27",
+   "vispdat_score": 13,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P28",
+   "vispdat_score": 14,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P29",
+   "vispdat_score": 15,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P30",
+   "vispdat_score": 16,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 98,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P31",
+   "vispdat_score": 16,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 98,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P32",
+   "vispdat_score": 17,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P33",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P34",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P35",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P36",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 25,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P37",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P38",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P39",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 10,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P40",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 25,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P41",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P42",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P43",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P44",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 15,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P45",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P46",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P47",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Low",
+   "urgency": 25,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P48",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P49",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P50",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 50,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P51",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P52",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 50,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P53",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P54",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P55",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P56",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 65,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P57",
+   "vispdat_score": 4,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P58",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P59",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P60",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P61",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P62",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 75,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P63",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P64",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 45,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P65",
+   "vispdat_score": 5,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P66",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P67",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P68",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P69",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P70",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P71",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P72",
+   "vispdat_score": 6,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P73",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P74",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P75",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P76",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P77",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "Medium",
+   "urgency": 55,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P78",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P79",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P80",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P81",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P82",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P83",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P84",
+   "vispdat_score": 8,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P85",
+   "vispdat_score": 9,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P86",
+   "vispdat_score": 9,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P87",
+   "vispdat_score": 9,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P88",
+   "vispdat_score": 9,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 85,
+   "gemini_high_place": 0.0,
+   "gemini_medium_place": 1.0
+  },
+  {
+   "id": "P89",
+   "vispdat_score": 10,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P90",
+   "vispdat_score": 10,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P91",
+   "vispdat_score": 10,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P92",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P93",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P94",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P95",
+   "vispdat_score": 12,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P96",
+   "vispdat_score": 12,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 90,
+   "gemini_high_place": 0.882,
+   "gemini_medium_place": 0.118
+  },
+  {
+   "id": "P97",
+   "vispdat_score": 13,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P98",
+   "vispdat_score": 13,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 92,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P99",
+   "vispdat_score": 14,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  },
+  {
+   "id": "P100",
+   "vispdat_score": 15,
+   "vispdat": "High",
+   "gemini": "High",
+   "urgency": 95,
+   "gemini_high_place": 1.0,
+   "gemini_medium_place": 0.0
+  }
+ ],
+ "method": "Places fixed at VI-SPDAT's 35 High and 40 Medium. Gemini fills them in order of category, then 1-100 urgency (tie-break run); ties at a cut-off share places evenly. Tests: stratified permutation (shuffled within VI-SPDAT score), 20,000 shuffles, Holm within family."
+}

@@ -1,0 +1,25 @@
+{
+ "id": "P88",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:16+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "3c298c264aaf93b02a739ed01128fcbfedff3c0599086aff6a245e6a5fa67d8e",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 53. Gender: Female. Race: Black, African American, or African. Location: Los Angeles, California.\n\nWork and education: Factory line worker for twenty-five years.\nPath into homelessness: A house fire killed a roommate and destroyed everything. The trauma of the fire is the cause of this homelessness. Not caused by a relationship breakdown.\nCurrent housing: Sleeping in a car for one year and one month. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Chronic lung damage from the fire. Has not filled the prescribed inhaler in months. Does not drink or use drugs. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: four emergency room visits for breathing trouble. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A sibling who calls. No children.\nA typical day: Sits in the car. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: First time asking for help.\nPresentation in the interview: Numb and quiet; coughs often.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"The client is experiencing severe trauma, chronic untreated medical issues with multiple recent ER visits, and complete functional impairment following a life-threatening fire. These complex needs require intensive, long-term support and rapid intervention.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "The client is experiencing severe trauma, chronic untreated medical issues with multiple recent ER visits, and complete functional impairment following a life-threatening fire. These complex needs require intensive, long-term support and rapid intervention.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 517,
+  "thoughts_token_count": null,
+  "candidates_token_count": 61,
+  "total_token_count": 578
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "id": "P47",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:12+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "a4ad5eca2ccfe9ac5c36b849bd97be4e735b2b03e098e0ace893e0b3e0572bec",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 31. Gender: Male. Race: Black, African American, or African. Location: Atlanta, Georgia.\n\nWork and education: Paralegal at a small law firm for six years.\nPath into homelessness: Left the apartment to escape a partner who was physically abusive. Lost housing because of an abusive relationship, and the abuse is the cause of this homelessness.\nCurrent housing: Staying in an emergency shelter for one month. This is the first time without housing.\nFinances: Still employed full time with a regular paycheck. No debts.\nHealth: No chronic health conditions or disabilities and no prescriptions. Does not drink or use drugs. Keeps up with washing, laundry, and meals. No mental health condition.\nSafety: In the past six months: two emergency room visits for injuries from the partner, one call to a crisis line, and two conversations with police to report the abuse. Has not been attacked or threatened since leaving and has not threatened to harm anyone, including self. No legal issues of their own. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A close friend who drives to work some days and a supportive manager. No children.\nA typical day: Works full time and attends a support group twice a week, which is described as the most helpful thing in the week.\nGoals: A safe apartment at an address the former partner does not know.\nService history: A domestic-violence advocate is helping with a protective order.\nPresentation in the interview: Composed and careful; asks about how private the records are.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 25, \"explanation\": \"This individual is stably employed with regular income, has no debt, no substance abuse, and no physical or mental health conditions, making them well-positioned to regain housing quickly with minimal assistance such as help finding a secure apartment.\"}",
+ "priority": "Low",
+ "urgency": 25,
+ "explanation": "This individual is stably employed with regular income, has no debt, no substance abuse, and no physical or mental health conditions, making them well-positioned to regain housing quickly with minimal assistance such as help finding a secure apartment.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 570,
+  "thoughts_token_count": null,
+  "candidates_token_count": 64,
+  "total_token_count": 634
+ }
+}

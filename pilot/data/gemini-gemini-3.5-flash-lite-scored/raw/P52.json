@@ -1,0 +1,25 @@
+{
+ "id": "P52",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:12+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "48e60fa0df26345710d7ff37cfe637750b691d7fb1200a29f51ffbfd2c643ba7",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "4",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 28. Gender: Male. Race: Black, African American, or African. Location: Chicago, Illinois.\n\nWork and education: Bartender at several clubs over six years.\nPath into homelessness: Drinking on and off shift led to firings and then to an eviction for unpaid rent. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for three months. This is the first time without housing.\nFinances: No income since the last firing. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks heavily most days. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two emergency room visits after fights, one ambulance ride, and three conversations with police. Was punched and hurt in a fight outside the shelter last month. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Old coworkers who still meet for drinks. A parent who calls now and then. No children.\nA typical day: Plays in a weekly pool league that is the best part of the week, and otherwise drinks with friends.\nGoals: Back to bartending and an apartment with a friend.\nService history: First stay in any shelter. Declined a referral to alcohol treatment.\nPresentation in the interview: Charming and loud; laughs off the fights.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 50, \"explanation\": \"While he faces physical safety risks from heavy drinking and fights, he has no chronic health conditions, debt, or prior homelessness, and his primary need is short-term stability and employment rather than intensive long-term support.\"}",
+ "priority": "Medium",
+ "urgency": 50,
+ "explanation": "While he faces physical safety risks from heavy drinking and fights, he has no chronic health conditions, debt, or prior homelessness, and his primary need is short-term stability and employment rather than intensive long-term support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 547,
+  "thoughts_token_count": null,
+  "candidates_token_count": 63,
+  "total_token_count": 610
+ }
+}

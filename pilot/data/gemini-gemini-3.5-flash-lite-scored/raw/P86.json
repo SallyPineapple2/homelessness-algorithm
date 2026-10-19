@@ -1,0 +1,25 @@
+{
+ "id": "P86",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:56:07+00:00",
+ "seconds": 57.9,
+ "prompt_sha256": "f7fd0d1af4cc6a4a7f571915faa005b2416d6bf4601b11a579d2285752e37b6e",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 66. Gender: Male. Race: Asian or Asian American. Location: Atlanta, Georgia.\n\nWork and education: Accountant for thirty years.\nPath into homelessness: Memory problems led to unpaid rent and an eviction. Lost housing because of cognitive decline. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a park for one year and three months. This is the first time without housing.\nFinances: No income; pension checks go undeposited. Owes back rent to the former landlord.\nHealth: Early dementia. Heart disease. Does not take prescribed heart medications because of forgetting. Does not drink or use drugs. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: four emergency room visits after falls and one ambulance ride. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No known family. No dependents.\nA typical day: Feeds pigeons in the park every afternoon and smiles talking about it.\nGoals: Not sure.\nService history: An outreach worker is trying to find relatives.\nPresentation in the interview: Pleasant but confused; repeats questions.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 95, \"explanation\": \"Given his early dementia, heart disease with unmanaged medication, recurring falls, and inability to manage basic self-care while sleeping outdoors for over a year, he requires permanent housing with ongoing supportive services to ensure his survival and safety.\"}",
+ "priority": "High",
+ "urgency": 95,
+ "explanation": "Given his early dementia, heart disease with unmanaged medication, recurring falls, and inability to manage basic self-care while sleeping outdoors for over a year, he requires permanent housing with ongoing supportive services to ensure his survival and safety.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 519,
+  "thoughts_token_count": null,
+  "candidates_token_count": 65,
+  "total_token_count": 584
+ }
+}

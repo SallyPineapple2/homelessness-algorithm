@@ -49,6 +49,20 @@ REPLY_FORMAT = (
 )
 
 
+# Tie-break variant (a separate run): the same instructions and categories, plus an urgency
+# rating used only to order people within a category when places are limited.
+SCORED_EXTRA = (
+    "Also rate how urgently this person should be offered housing, on a scale from 1 (least urgent) "
+    "to 100 (most urgent)."
+)
+
+REPLY_FORMAT_SCORED = (
+    "Reply with JSON only, and no other text, in exactly this format:\n"
+    '{"priority": "High" or "Medium" or "Low", "urgency": <whole number from 1 to 100>, '
+    '"explanation": "<one or two sentences>"}'
+)
+
+
 def case_text(profile):
     lines = ["Case summary", profile["demographic_line"], ""]
     for key, title in SECTION_TITLES:
@@ -56,8 +70,21 @@ def case_text(profile):
     return "\n".join(lines)
 
 
-def prompt(profile):
+def prompt(profile, variant="category"):
+    if variant == "scored":
+        return "\n\n".join([INSTRUCTIONS + "\n\n" + SCORED_EXTRA, case_text(profile), REPLY_FORMAT_SCORED]) + "\n"
     return "\n\n".join([INSTRUCTIONS, case_text(profile), REPLY_FORMAT]) + "\n"
+
+
+def parse_urgency(text):
+    """The 1-100 urgency rating from a scored-variant reply, or None."""
+    text = (text or "").strip()
+    try:
+        data = json.loads(text[text.find("{"):text.rfind("}") + 1])
+    except ValueError:
+        return None
+    u = data.get("urgency") if isinstance(data, dict) else None
+    return u if isinstance(u, int) and not isinstance(u, bool) and 1 <= u <= 100 else None
 
 
 def parse_reply(text):

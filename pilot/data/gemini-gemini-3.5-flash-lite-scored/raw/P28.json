@@ -1,0 +1,25 @@
+{
+ "id": "P28",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:06+00:00",
+ "seconds": 0.6,
+ "prompt_sha256": "39e5dcf0ccf2f02ed875821e4b8d0536063e21072271189622902599ae327094",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "14",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 36. Gender: Female. Race: Black, African American, or African. Location: New York City, New York.\n\nWork and education: Left school at 15. A decade of short-term kitchen jobs, never longer than eight months at one place.\nPath into homelessness: Forced out by relatives at nineteen after a family dispute. The pattern since has been eight months of work, a falling-out, and a return to the street. Does not identify abuse or trauma as a cause.\nCurrent housing: Sleeping outdoors in an encampment, homeless for eight years across ten episodes.\nFinances: No income. Owes several people at the encampment and has unpaid transit citations.\nHealth: Chronic asthma. Heroin use has cost every placement. A depressive disorder that has made keeping housing impossible. Takes all medication as prescribed because a drop-in nurse dispenses it in person. No way to meet basic needs like washing and regular meals.\nSafety: Constant emergency room and police contact over the past six months. Has been assaulted repeatedly, has a pending charge, and is forced to hold and deliver items for others at the camp.\nFamily and social ties: Relatives forced the move-out at 19. Two siblings whose whereabouts are unknown.\nA typical day: Lines up at the drop-in center for the nurse each morning, uses through the day, and returns to the encampment at dusk. Nothing in the week is described as fulfilling.\nGoals: Answers with whatever the question seems to want, and the answer changes between interviews.\nService history: Known to every outreach team in the district and has never held a housing placement.\nPresentation in the interview: Guarded and transactional, asking what each answer will get them. Flat and withdrawn when not negotiating.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 95, \"explanation\": \"The client has chronic homelessness, untreated depressive disorder, active heroin use, severe safety risks including frequent assaults and police contact, and is entirely unable to meet basic needs independently.\"}",
+ "priority": "High",
+ "urgency": 95,
+ "explanation": "The client has chronic homelessness, untreated depressive disorder, active heroin use, severe safety risks including frequent assaults and police contact, and is entirely unable to meet basic needs independently.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 610,
+  "thoughts_token_count": null,
+  "candidates_token_count": 53,
+  "total_token_count": 663
+ }
+}

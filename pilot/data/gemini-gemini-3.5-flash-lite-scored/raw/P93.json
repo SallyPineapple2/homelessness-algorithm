@@ -1,0 +1,25 @@
+{
+ "id": "P93",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:46+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "f1ce5f5b2f81b04c6c2f1e05f45f8ac8c8cb97ad999fa94a4604f79e65f2afd1",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "11",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 56. Gender: Male. Race: Hispanic/Latino/e/a. Location: Los Angeles, California.\n\nWork and education: Delivery truck driver for twenty years.\nPath into homelessness: Drinking and depression led to losing a license, a job, and the apartment. Both made it impossible to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a parking garage for two years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Cirrhosis of the liver. Drinks daily. Major depression. Does not take the prescribed antidepressant. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: four emergency room visits and two ambulance rides. No police contact. Was beaten by strangers in the garage. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: An adult child who has not called in years. No dependents.\nA typical day: Listens to old music on a phone every evening and finds it comforting.\nGoals: A room and to stop drinking.\nService history: Known to outreach and the emergency room.\nPresentation in the interview: Sad and apologetic.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"This individual suffers from severe untreated health conditions including cirrhosis and major depression, experiences chronic homelessness with physical vulnerability, and requires intensive, long-term support to achieve stability.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "This individual suffers from severe untreated health conditions including cirrhosis and major depression, experiences chronic homelessness with physical vulnerability, and requires intensive, long-term support to achieve stability.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 511,
+  "thoughts_token_count": null,
+  "candidates_token_count": 52,
+  "total_token_count": 563
+ }
+}

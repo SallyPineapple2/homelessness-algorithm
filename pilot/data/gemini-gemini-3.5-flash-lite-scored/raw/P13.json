@@ -1,0 +1,25 @@
+{
+ "id": "P13",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:15+00:00",
+ "seconds": 49.9,
+ "prompt_sha256": "b9e4b5815b599a2144aebb68119273fe6061e1f1e4716db8719d1b1b2a56be20",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 29. Gender: Male. Race: White. Location: New York City, New York.\n\nWork and education: Warehouse and rideshare work. Left school at 16 and later earned a GED through an adult education program.\nPath into homelessness: A landlord sold the building and the deposit was never returned. Gig income proved too irregular to pass a credit check anywhere else. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for seven months. This is the first time without housing.\nFinances: Occasional gig-app shifts, roughly $500 a month. No debts anyone is chasing.\nHealth: An untreated chronic respiratory condition makes stairs hard. Crowding and shared facilities have made regular bathing and clean clothes difficult. No prescriptions. Does not drink or use drugs. No mental health condition, head injury, or learning disability.\nSafety: Six emergency room visits in six months, mostly for breathing trouble. Was assaulted in a shelter hallway two months ago. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: A younger sibling in foster care, visited monthly without fail. No children.\nA typical day: Takes early delivery shifts, avoids the shelter's common areas since the assault, and sits outside with headphones until lights out. Describes nothing in the week beyond the shifts as fulfilling.\nGoals: A room with a door that locks. Says this more than once, unprompted.\nService history: Reported the assault to shelter staff, who moved the bunk but filed nothing further.\nPresentation in the interview: Jumpy and quick to apologize. Scans the room repeatedly and struggles to sit through the full interview.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"This individual has experienced prolonged homelessness, significant trauma within the shelter system, repeated medical emergencies due to an untreated condition, and severe psychological distress, requiring permanent housing with supportive services.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "This individual has experienced prolonged homelessness, significant trauma within the shelter system, repeated medical emergencies due to an untreated condition, and severe psychological distress, requiring permanent housing with supportive services.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 620,
+  "thoughts_token_count": null,
+  "candidates_token_count": 54,
+  "total_token_count": 674
+ }
+}

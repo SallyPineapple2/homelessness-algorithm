@@ -1,0 +1,25 @@
+{
+ "id": "P42",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:49+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "1cfa69527ce809951849257b8a9d00397e29599b33f50da0b02e42878f2fe8df",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "2",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 39. Gender: Female. Race: Black, African American, or African. Location: Cincinnati, Ohio.\n\nWork and education: Security guard on night shifts for a series of contract companies over ten years.\nPath into homelessness: Contracts end every year or so, and each gap has meant losing a room. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for two months. This is the fourth time without housing in the past three years.\nFinances: Current guard contract pays every two weeks. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Keeps up with washing, laundry, and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Talks with a cousin now and then. No close friends nearby and no children.\nA typical day: Works nights, sleeps in the shelter's day room, and otherwise waits. Has no planned activities and says nothing in the week brings any satisfaction.\nGoals: A permanent position with one company so the cycle stops.\nService history: Knows the shelter staff from the previous three stays.\nPresentation in the interview: Quiet and tired; answers in few words.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 55, \"explanation\": \"The client has a steady employment history and no complex medical, mental health, or substance use issues, but experiences chronic housing instability due to temporary contracts, indicating a need for time-limited assistance to secure stable permanent housing.\"}",
+ "priority": "Medium",
+ "urgency": 55,
+ "explanation": "The client has a steady employment history and no complex medical, mental health, or substance use issues, but experiences chronic housing instability due to temporary contracts, indicating a need for time-limited assistance to secure stable permanent housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 558,
+  "thoughts_token_count": null,
+  "candidates_token_count": 63,
+  "total_token_count": 621
+ }
+}

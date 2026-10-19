@@ -1,0 +1,25 @@
+{
+ "id": "P34",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:11+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "f5d00d5dfea5f2eca587000f60077a7faa03eb7ed117a4e55b447698828714a0",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "0",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 58. Gender: Male. Race: Black, African American, or African. Location: New York City, New York.\n\nWork and education: Staff accountant at a regional insurance office for twenty-two years.\nPath into homelessness: Laid off in a merger. Severance ran out before a new job came through, and the landlord would not renew a lease without proof of employment. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for two months. This is the first time without housing.\nFinances: Receives unemployment benefits every two weeks. No debts.\nHealth: No chronic health conditions or disabilities. Takes a cholesterol medication as prescribed. Does not use drugs and drinks rarely. Manages washing, laundry, and meals without trouble. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: An adult child who calls weekly and two old colleagues who send job leads. No one at home depends on this person.\nA typical day: Applies for jobs every morning at the library, volunteers as a tax-preparation helper two afternoons a week, and walks in the evenings. Enjoys the volunteering.\nGoals: A bookkeeping job and a one-bedroom apartment. Has a second interview next week.\nService history: First stay in any shelter. Working with a job counselor.\nPresentation in the interview: Reserved and precise. Embarrassed to be at the shelter but answers every question fully.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 15, \"explanation\": \"This individual is stably employed-seeking, financially solvent with unemployment benefits, in good health, and possesses strong routine management skills and social support, making them well-positioned to regain housing independently with minimal assistance.\"}",
+ "priority": "Low",
+ "urgency": 15,
+ "explanation": "This individual is stably employed-seeking, financially solvent with unemployment benefits, in good health, and possesses strong routine management skills and social support, making them well-positioned to regain housing independently with minimal assistance.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 602,
+  "thoughts_token_count": null,
+  "candidates_token_count": 60,
+  "total_token_count": 662
+ }
+}

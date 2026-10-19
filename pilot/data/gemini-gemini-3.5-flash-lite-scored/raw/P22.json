@@ -1,0 +1,25 @@
+{
+ "id": "P22",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:42+00:00",
+ "seconds": 2.0,
+ "prompt_sha256": "98372a47b496c50bab03893995d2ae458a74fa2bcb41534700f6305cb1243efd",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 49. Gender: Female. Race: Black, African American, or African. Location: Atlanta, Georgia.\n\nWork and education: Fifteen years as a union pipefitter with a good rate and steady referrals.\nPath into homelessness: Missed jobs cost the union card, the card cost the income, and the income cost the apartment inside a year. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping outdoors in a camp under a bridge, homeless for five years across seven episodes.\nFinances: No income. Owes a former landlord and a vehicle repossession balance.\nHealth: Chronic liver disease. Drinks daily from waking, and the drinking has cost every place they have tried to keep. No prescriptions. Has no consistent way to bathe or wash clothes. No mental health condition, head injury, or learning disability.\nSafety: Frequent emergency room visits over the past six months. Has been assaulted repeatedly at camps. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: Two teenage children living with their other parent. Contact ended four years ago.\nA typical day: Drinks from waking, collects cans in the afternoon, and returns to a camp that has been cleared twice this year. Nothing in the week is described as fulfilling.\nGoals: Talks about a hearing to get the card reinstated and has never scheduled one.\nService history: Detox four times in five years, each following an emergency admission.\nPresentation in the interview: Alternates between elaborate plans for getting the card back and long silences. Deeply ashamed of having stopped sending money for the children.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"The client has experienced chronic homelessness for five years, suffers from severe untreated alcohol dependence and chronic liver disease, and faces ongoing physical danger with frequent emergency room visits and assaults at camps.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "The client has experienced chronic homelessness for five years, suffers from severe untreated alcohol dependence and chronic liver disease, and faces ongoing physical danger with frequent emergency room visits and assaults at camps.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 601,
+  "thoughts_token_count": null,
+  "candidates_token_count": 55,
+  "total_token_count": 656
+ }
+}

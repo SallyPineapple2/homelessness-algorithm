@@ -1,0 +1,25 @@
+{
+ "id": "P19",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:10+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "6001b5539b1f901d280399c7bbb3d90468d1554e48b0af06439c34ca4667cb1c",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 43. Gender: Male. Race: Black, African American, or African. Location: New York City, New York.\n\nWork and education: Restaurant dishwashing and then landscaping for a decade. Left school in the tenth grade.\nPath into homelessness: A back injury ended the landscaping work, the kidney diagnosis followed, the children went into kinship care, and the apartment went with the income. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping outdoors in an encampment, homeless for four years across six episodes.\nFinances: No income. Owes a hospital and a former landlord, with a phone bill in collections.\nHealth: Chronic kidney disease on dialysis, with appointments kept and medication taken. Stimulant use got them removed from a transitional program and makes housing hard to keep. Washes at a drop-in center. No mental health condition, head injury, or learning disability.\nSafety: Repeated emergency room visits in the past six months. Was assaulted during an encampment sweep. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: Three children in kinship care with a relative; visits stopped two years ago. A camp partner who watches belongings.\nA typical day: Wakes early with pain, lines up for a meal, and spends the day at camp watching belongings while the camp partner collects cans. Nothing in the week is described as fulfilling.\nGoals: Wants dialysis to be manageable and the visits restarted, in that order.\nService history: Was enrolled in a transitional program and removed after a positive drug test. Has not reapplied.\nPresentation in the interview: Blunt and impatient with paperwork. Quick to anger at questions that sound like judgment, and protective of the camp partner.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"This individual suffers from a severe, life-threatening medical condition (chronic kidney disease on dialysis) while sleeping outdoors in an encampment, combined with long-term chronic homelessness and recent physical assault. Successfully managing their health and achieving stability clearly requires intensive, long-term supportive housing.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "This individual suffers from a severe, life-threatening medical condition (chronic kidney disease on dialysis) while sleeping outdoors in an encampment, combined with long-term chronic homelessness and recent physical assault. Successfully managing their health and achieving stability clearly requires intensive, long-term supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 618,
+  "thoughts_token_count": null,
+  "candidates_token_count": 75,
+  "total_token_count": 693
+ }
+}

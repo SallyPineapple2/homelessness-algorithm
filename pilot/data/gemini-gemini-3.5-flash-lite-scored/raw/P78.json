@@ -1,0 +1,25 @@
+{
+ "id": "P78",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:08+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "6fe1a2ea7300c32d866bc6cc1a77898499a23f9fc4147bbb99bd6993cd0dfbc0",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 52. Gender: Female. Race: Asian or Asian American. Location: Cincinnati, Ohio.\n\nWork and education: Grocery stocker for twenty years.\nPath into homelessness: Drinking caused a job loss and the apartment followed. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors near a river for six months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Emphysema. No prescriptions. Drinks daily. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: three emergency room visits for breathing trouble and one ambulance ride. No police contact. Was kicked and robbed by a group of strangers a month ago. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. No children.\nA typical day: Feeds the ducks at the river every morning and calls it the one good part of the day.\nGoals: A room indoors.\nService history: Known to one outreach worker.\nPresentation in the interview: Short of breath and quiet; cooperative.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"The client has severe, untreated health conditions like emphysema, lacks income, has been sleeping outdoors for six months, and recently experienced violent victimization, indicating a critical need for permanent supportive housing.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "The client has severe, untreated health conditions like emphysema, lacks income, has been sleeping outdoors for six months, and recently experienced violent victimization, indicating a critical need for permanent supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 497,
+  "thoughts_token_count": null,
+  "candidates_token_count": 57,
+  "total_token_count": 554
+ }
+}

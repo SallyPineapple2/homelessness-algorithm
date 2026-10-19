@@ -1,0 +1,25 @@
+{
+ "id": "P25",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:07+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "9dfd85edbc9662f73cdab948f397b799cbd4a9c2da4e90c8655d63d6541bf29b",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "11",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 39. Gender: Female. Race: White. Location: Los Angeles, California.\n\nWork and education: Grew up in foster care across eleven placements and aged out at 18. Sporadic warehouse and car-wash work since.\nPath into homelessness: Aged out with no placement and has never held a lease. Every stretch of housing since has been someone else's. Does not describe any abuse or trauma as the cause.\nCurrent housing: Sleeping outdoors, homeless for six years across eight episodes.\nFinances: No income. Outstanding fines from citations for sleeping in public, and money owed to people who front drugs.\nHealth: Chronic heart disease. Stimulant use has caused evictions from the few places they have stayed. No prescriptions. No way to keep clean. No mental health condition, head injury, or learning disability.\nSafety: Constant emergency room and police contact over the past six months. Has been assaulted repeatedly. Has pending charges from the public-sleeping citations, and is being pressured to move packages to clear a debt.\nFamily and social ties: No known family. A partner at the camp, and a long-running conflict with another group.\nA typical day: Moves camp constantly because of the conflict, runs packages to clear the debt, and sleeps in short stretches. Nothing in the week is described as fulfilling.\nGoals: Wants the debt cleared and the other group to leave them alone. Does not mention housing at all.\nService history: Was in the child-welfare system for eleven years and refuses anything that resembles it.\nPresentation in the interview: Hypervigilant and fast-talking, testing the interviewer with questions before answering. Unwilling to name who the debts are owed to.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 95, \"explanation\": \"The individual faces extreme vulnerability due to chronic homelessness, severe untreated medical and substance use issues, constant physical assaults, and acute safety threats related to drug debts and pending criminal charges.\"}",
+ "priority": "High",
+ "urgency": 95,
+ "explanation": "The individual faces extreme vulnerability due to chronic homelessness, severe untreated medical and substance use issues, constant physical assaults, and acute safety threats related to drug debts and pending criminal charges.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 597,
+  "thoughts_token_count": null,
+  "candidates_token_count": 54,
+  "total_token_count": 651
+ }
+}

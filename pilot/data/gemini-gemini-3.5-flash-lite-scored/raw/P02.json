@@ -1,0 +1,25 @@
+{
+ "id": "P02",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:48+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "5fb82e023766a53989fce7e8a0f92bc1e37ec93e67cbf765bfd3deff0e8c5792",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 41. Gender: Male. Race: White. Location: Chicago, Illinois.\n\nWork and education: A decade of long-haul trucking, then local delivery work closer to home so alternating weekends with the children could happen.\nPath into homelessness: A $400 rent increase on a one-bedroom apartment. Gave notice rather than fall behind, expecting to find something cheaper within the month; nothing has come up in eight weeks. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping in their own car in a 24-hour parking lot for the past two months. Has never been homeless before.\nFinances: Steady take-home pay of about $2,100 a month, outpaced by local rents. No debts. Keeps a prepaid phone and a gym membership for the showers.\nHealth: In good health with no ongoing conditions or prescriptions. Does not use drugs and drinks rarely. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits, police contact, or legal issues. Has not been threatened or attacked. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: Two children, ages 9 and 12, who live with their other parent nearby. Alternating weekends together; the children have not been told about the car.\nA typical day: Gym at 5 a.m. for a shower, a delivery shift until six, then a fast-food restaurant with free wifi until the lot goes quiet. The weekends with the children are what the week is built around.\nGoals: An apartment with a second bedroom, so the weekends can happen at home instead of at a movie theater.\nService history: Has not contacted any agency. Looked up eligibility online once and closed the tab.\nPresentation in the interview: Proud and self-reliant. Volunteers little, steers questions toward practical solutions, and is visibly uncomfortable being interviewed at all.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 45, \"explanation\": \"This individual is stably employed with steady income and no health or behavioral issues, meaning they primarily need short-term financial or search assistance to bridge the gap caused by a rent increase rather than intensive long-term support.\"}",
+ "priority": "Medium",
+ "urgency": 45,
+ "explanation": "This individual is stably employed with steady income and no health or behavioral issues, meaning they primarily need short-term financial or search assistance to bridge the gap caused by a rent increase rather than intensive long-term support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 669,
+  "thoughts_token_count": null,
+  "candidates_token_count": 62,
+  "total_token_count": 731
+ }
+}

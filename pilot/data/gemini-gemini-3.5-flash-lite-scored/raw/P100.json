@@ -1,0 +1,25 @@
+{
+ "id": "P100",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:11+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "533ee4f66e6fd3446f4c311281f0d713d317f5ca1a71b84817ad8b038c950927",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "15",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 60. Gender: Male. Race: Asian or Asian American. Location: Cincinnati, Ohio.\n\nWork and education: Dock worker for thirty years.\nPath into homelessness: Drinking and depression after an injury led to eviction. Both made it impossible to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors under a pier for four years. This is the first time without housing.\nFinances: No income. Owes money to people on the street.\nHealth: Chronic back injury that limits walking. Liver disease. Drinks daily. Major depression. Does not take the prescribed antidepressant. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: five emergency room visits, two ambulance rides, and two police contacts. Was beaten and robbed. Has a pending trespassing charge. People on the street force this person to hold drugs for them.\nFamily and social ties: No family contact. No dependents.\nA typical day: Drinks under the pier. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: Known to outreach.\nPresentation in the interview: Slow and weary.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 95, \"explanation\": \"This individual has severe, unmanaged medical and psychiatric conditions, is unsheltered for four years, and faces extreme vulnerability including physical violence and criminal exploitation on the street.\"}",
+ "priority": "High",
+ "urgency": 95,
+ "explanation": "This individual has severe, unmanaged medical and psychiatric conditions, is unsheltered for four years, and faces extreme vulnerability including physical violence and criminal exploitation on the street.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 488,
+  "thoughts_token_count": null,
+  "candidates_token_count": 53,
+  "total_token_count": 541
+ }
+}

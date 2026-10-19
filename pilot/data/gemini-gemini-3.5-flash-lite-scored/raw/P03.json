@@ -1,0 +1,25 @@
+{
+ "id": "P03",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:48+00:00",
+ "seconds": 0.9,
+ "prompt_sha256": "0ec765d990f1bfd5b931cdc1c2f69c6d9e63fd06bc89a37df45f4751d97d1321",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 28. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: Atlanta, Georgia.\n\nWork and education: Two years into a nursing program before withdrawing to care for an ill parent, then worked as a home health aide for three years.\nPath into homelessness: Lost the parent and the job within four months of each other. The lease was in the parent's name and could not be transferred. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for three months. This is the first time without housing.\nFinances: An inheritance paid out in monthly installments of about $650 covers the basics. No debts.\nHealth: No health conditions and no prescriptions. Does not drink or use drugs. Keeps up with showers, laundry, and meals without difficulty. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits, police contact, or legal issues. Has not been threatened or hurt since losing housing. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: A former roommate who visits most weeks. No children.\nA typical day: Sleeps late, walks the same loop to a coffee shop, and sits with a phone until the shelter reopens. A weekly class at a recreation center stopped after the parent died and nothing has replaced it; says there is nothing in the week to look forward to.\nGoals: Would like to finish the nursing program eventually, but has not looked at the re-entry requirements or set a date.\nService history: A grief counselor was offered at intake. Attended once and did not go back.\nPresentation in the interview: Tired and quiet. Answers fully but without elaboration, and describes the days as 'just getting through.'\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 15, \"explanation\": \"The client has a stable monthly income, no health or substance use issues, and simple situational homelessness primarily driven by recent grief, indicating she is likely to regain housing with minimal intervention.\"}",
+ "priority": "Low",
+ "urgency": 15,
+ "explanation": "The client has a stable monthly income, no health or substance use issues, and simple situational homelessness primarily driven by recent grief, indicating she is likely to regain housing with minimal intervention.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 636,
+  "thoughts_token_count": null,
+  "candidates_token_count": 55,
+  "total_token_count": 691
+ }
+}

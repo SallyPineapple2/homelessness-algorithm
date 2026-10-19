@@ -1,0 +1,25 @@
+{
+ "id": "P21",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:06+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "be7df6123ef56035837497407c04868e5f098b6f4fd07109b1653d65cc431b69",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 68. Gender: Male. Race: Hispanic/Latino/e/a. Location: Cincinnati, Ohio.\n\nWork and education: Merchant mariner in youth, then twenty-eight years as a night security guard at the same industrial site.\nPath into homelessness: A change-of-address form was never processed and the Social Security payments stopped. The room was lost within two months, and restoring the benefit now requires an address. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping outdoors, homeless continuously for two years.\nFinances: No income since the suspension. A hospital bill outstanding.\nHealth: Congestive heart failure. The prescribed heart medications went untaken once the benefits lapsed. Swelling and fatigue make washing and changing clothes hard. Does not drink or use drugs. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: No children. A younger relative who has not been located since a move.\nA typical day: Sleeps sitting up because of the swelling, walks to a coffee stand at opening, and spends the day on a bench near the old workplace. Nothing in the week is described as meaningful.\nGoals: Wants the benefit restored and says nothing about housing beyond that.\nService history: An appointment with a benefits advocate has been rescheduled three times.\nPresentation in the interview: Quiet and stoic, giving brief answers. Repeatedly says the paperwork 'sorted itself out before', resigned rather than hopeful.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 92, \"explanation\": \"This individual is 68 years old, has been unhoused for two years with untreated congestive heart failure, and faces severe administrative barriers to income without a permanent address. His critical medical vulnerability and lack of housing make him a top priority for permanent supportive housing.\"}",
+ "priority": "High",
+ "urgency": 92,
+ "explanation": "This individual is 68 years old, has been unhoused for two years with untreated congestive heart failure, and faces severe administrative barriers to income without a permanent address. His critical medical vulnerability and lack of housing make him a top priority for permanent supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 610,
+  "thoughts_token_count": null,
+  "candidates_token_count": 73,
+  "total_token_count": 683
+ }
+}

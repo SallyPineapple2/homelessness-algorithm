@@ -1,0 +1,25 @@
+{
+ "id": "P26",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:08+00:00",
+ "seconds": 1.4,
+ "prompt_sha256": "a3069c55f0131512e3a97719633358c46ba50b499b7f4822e73fc653b05703ae",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "12",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 50. Gender: Male. Race: White. Location: New York City, New York.\n\nWork and education: Emergency medical technician for twelve years and a field training officer, until a mass-casualty call. Never returned to work.\nPath into homelessness: Left the service after the call and could not go back, drank through the savings, and the house went. Names the trauma of that call as the cause of this period of homelessness.\nCurrent housing: Sleeping outdoors, homeless for four years across five episodes.\nFinances: No income. A disability claim denied twice on appeal, and medical debt in collections.\nHealth: Cirrhosis. Alcohol dependence that has ended every housing arrangement since. PTSD, diagnosed after the call. The prescribed medications routinely go untaken. Washes at a drop-in center most mornings.\nSafety: Frequent emergency room visits over the past six months. Was assaulted at a camp. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: Divorced. Two adult children who send money occasionally and do not visit.\nA typical day: Drinks from morning, avoids sirens, and camps far from any road with traffic. Nothing in the week is described as fulfilling.\nGoals: Says there is no plan and does not expect one.\nService history: Two denied disability appeals. Has a lawyer's card and has not called.\nPresentation in the interview: Articulate about clinical details and detached about their own case, describing symptoms almost in the third person.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 92, \"explanation\": \"This individual has severe, unmanaged medical and behavioral health conditions including cirrhosis, untreated PTSD, and active alcohol dependence, compounded by chronic unsheltered homelessness and frequent emergency room use. They require permanent supportive housing to address their complex, long-term needs.\"}",
+ "priority": "High",
+ "urgency": 92,
+ "explanation": "This individual has severe, unmanaged medical and behavioral health conditions including cirrhosis, untreated PTSD, and active alcohol dependence, compounded by chronic unsheltered homelessness and frequent emergency room use. They require permanent supportive housing to address their complex, long-term needs.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 575,
+  "thoughts_token_count": null,
+  "candidates_token_count": 70,
+  "total_token_count": 645
+ }
+}

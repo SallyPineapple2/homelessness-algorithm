@@ -1,0 +1,25 @@
+{
+ "id": "P04",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:11+00:00",
+ "seconds": 0.9,
+ "prompt_sha256": "a1f9552b48bdd00c2b0bfc9f80c2c28e3737150fc8c487b2f99bba28d575c9f3",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "2",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 47. Gender: Male. Race: Hispanic/Latino/e/a. Location: New York City, New York.\n\nWork and education: Seasonal farm and construction work since leaving school at 17. Skilled at framing and well known among day-labor crews.\nPath into homelessness: Housing has always followed the work: a rented room during build months, a tent between contracts. This stretch has run longer because the last contractor folded mid-project. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping in a tent in an encampment. Homeless on and off for four years, across five separate episodes.\nFinances: Cash day labor two or three days a week, roughly $400 a month, kept on a prepaid card. No debts.\nHealth: No ongoing health conditions or prescriptions. Does not use drugs and drinks little. Showers and does laundry at a drop-in center. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: A grown child, 26, who lives in another state and is in touch once or twice a year. Travels with a dog.\nA typical day: Up before dawn for the pick-up corner, works if there is work, then back to camp to cook. Repairs other people's gear in the evenings and takes pride in being sought out for it.\nGoals: A room for the slow season and a lockup for the tools. Is not looking for a lease and says so plainly.\nService history: Knows the drop-in center staff by name and uses the showers and mail service. Has declined case management twice.\nPresentation in the interview: Talkative and wry, with a long memory for job sites and crew bosses. Describes homelessness as a rhythm rather than a crisis.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 15, \"explanation\": \"The individual is physically healthy, self-sufficient through day labor, views his housing situation as a seasonal rhythm rather than a crisis, and explicitly states he is not looking for a lease.\"}",
+ "priority": "Low",
+ "urgency": 15,
+ "explanation": "The individual is physically healthy, self-sufficient through day labor, views his housing situation as a seasonal rhythm rather than a crisis, and explicitly states he is not looking for a lease.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 678,
+  "thoughts_token_count": null,
+  "candidates_token_count": 56,
+  "total_token_count": 734
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "id": "P29",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:35+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "6c14550cb8ec552aaf1c268f9a3d8c22e2dfef04565bd540a97940989113e8f3",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "15",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 44. Gender: Male. Race: Hispanic/Latino/e/a. Location: Chicago, Illinois.\n\nWork and education: Trained as a paralegal and worked eight years in litigation support, with a reputation for thoroughness.\nPath into homelessness: The firm collapsed when the supervising attorney was disbarred. No reference could be obtained, the applications stopped, and the partner they lived with asked them to leave once the income was gone. Nine years have followed. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping outdoors, moving between three underpasses. Homeless for nine years across twelve episodes.\nFinances: No income; sells prescribed medication to cover camp debts. Judgments from two creditors.\nHealth: Emphysema. Alcohol and stimulant use that has ended every housing placement. Bipolar disorder, with episodes that have led to evictions. Sells the prescribed medication rather than taking it. No reliable way to wash or change clothes.\nSafety: Constant emergency room and police contact over the past six months. Has been assaulted repeatedly, has pending charges, and is made to run errands for a camp lender to work off debts.\nFamily and social ties: One adult child in another state who has blocked contact. The former partner does not answer. No local ties.\nA typical day: Sells the month's prescription in the first week, drinks the rest of the time, and moves between the underpasses. Nothing in the week is described as fulfilling.\nGoals: Describes the housing system's failures in detail and declines to name anything wanted.\nService history: Has been assessed eleven times by six agencies and can quote the score from each.\nPresentation in the interview: Precise with dates and documents, openly cynical about services, and swings between rapid, pressured speech and long silences.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 95, \"explanation\": \"The client has chronic homelessness lasting nine years, severe untreated mental illness and substance use disorders, physical health issues, and ongoing extreme safety risks including repeated assaults.\"}",
+ "priority": "High",
+ "urgency": 95,
+ "explanation": "The client has chronic homelessness lasting nine years, severe untreated mental illness and substance use disorders, physical health issues, and ongoing extreme safety risks including repeated assaults.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 613,
+  "thoughts_token_count": null,
+  "candidates_token_count": 50,
+  "total_token_count": 663
+ }
+}

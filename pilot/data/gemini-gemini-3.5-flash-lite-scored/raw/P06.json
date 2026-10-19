@@ -1,0 +1,25 @@
+{
+ "id": "P06",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:06+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "2e5002c915e5086cd6674f42556b4d77635c30ac0840c057b1b592d7a8d5a79c",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 38. Gender: Female. Race: Asian or Asian American. Location: Atlanta, Georgia.\n\nWork and education: Rideshare driving and a brief stint managing a phone-repair kiosk. Some community college credits in business, never finished.\nPath into homelessness: The car was rear-ended and the insurance lapsed during the dispute. Without coverage the rideshare work stopped, and the rent followed within three months. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping in their car for seven months. This is the first time without housing.\nFinances: No steady income since the collision. About $2,400 owed across unpaid court fines, tolls, and a loan from a relative.\nHealth: In good health with no conditions or prescriptions. Does not drink or use drugs. Washes and changes at a relative's place. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits and has not been attacked or threatened. Has a court date over the unpaid fines, which a landlord's background check would show. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: One child, age 6, living with grandparents, with supervised visits twice a month. A close cousin nearby who lends a driveway.\nA typical day: Moves the car three times a day to avoid tickets and charges the phone at a laundromat. The supervised visits are the high point of the month, and the car is always parked and presentable before the visit window.\nGoals: Get the car repaired and insured, clear the fines, and move from supervised to unsupervised visits. Can name the order of the steps.\nService history: Applied for emergency rental assistance and was denied for missing paperwork. An appeal is pending.\nPresentation in the interview: Restless and quick-talking. Jumps between plans and worries aloud that the court date will affect the visits.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 55, \"explanation\": \"This individual is experiencing homelessness for the first time due to a specific vehicle accident and financial cascade, but possesses strong daily functioning, good health, clear goals, and family support, making them well-suited for time-limited assistance to resolve their barriers.\"}",
+ "priority": "Medium",
+ "urgency": 55,
+ "explanation": "This individual is experiencing homelessness for the first time due to a specific vehicle accident and financial cascade, but possesses strong daily functioning, good health, clear goals, and family support, making them well-suited for time-limited assistance to resolve their barriers.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 663,
+  "thoughts_token_count": null,
+  "candidates_token_count": 69,
+  "total_token_count": 732
+ }
+}

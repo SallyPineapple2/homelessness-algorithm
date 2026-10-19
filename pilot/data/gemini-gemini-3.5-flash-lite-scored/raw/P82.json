@@ -1,0 +1,25 @@
+{
+ "id": "P82",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:01:12+00:00",
+ "seconds": 0.9,
+ "prompt_sha256": "8ea424d93e5e6adc825c113a2ed679c8fc1a507c8a3e4d7b87eba221a7ea18a9",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 45. Gender: Male. Race: White. Location: Cincinnati, Ohio.\n\nWork and education: Roofer for twenty years.\nPath into homelessness: Depression and drinking after a parent's death led to missed work and eviction. Drinking and depression both made it hard to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors behind a warehouse for two years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: Severe chronic asthma. Drinks daily. Major depression. No prescriptions. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: four emergency room visits for asthma attacks. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A cousin who checks in. No children.\nA typical day: Volunteers at a soup kitchen and enjoys helping.\nGoals: An apartment and treatment for the depression.\nService history: An emergency room social worker made the referral.\nPresentation in the interview: Sad and quiet; wheezes when talking.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"The client has been sleeping outdoors for two years with severe untreated chronic asthma, major depression, and daily alcohol use, leading to frequent emergency room visits. This combination of chronic homelessness, untreated medical and mental health conditions, and high vulnerability warrants top-tier prioritization and intensive, long-term support.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "The client has been sleeping outdoors for two years with severe untreated chronic asthma, major depression, and daily alcohol use, leading to frequent emergency room visits. This combination of chronic homelessness, untreated medical and mental health conditions, and high vulnerability warrants top-tier prioritization and intensive, long-term support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 505,
+  "thoughts_token_count": null,
+  "candidates_token_count": 78,
+  "total_token_count": 583
+ }
+}

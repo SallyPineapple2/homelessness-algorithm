@@ -38,7 +38,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gemini_prompt import INSTRUCTIONS, REPLY_FORMAT, case_text, parse_reply, prompt  # noqa: E402
+from gemini_prompt import (INSTRUCTIONS, REPLY_FORMAT, REPLY_FORMAT_SCORED, SCORED_EXTRA,  # noqa: E402
+                           case_text, parse_reply, parse_urgency, prompt)
 
 ROOT = Path(__file__).resolve().parents[2]
 PILOT = ROOT / "pilot"
@@ -71,6 +72,7 @@ class DailyQuotaReached(Exception):
 
 
 THINKING = None  # None = the model's default; "high" = high reasoning (--thinking high)
+VARIANT = "category"  # "scored" also asks for a 1-100 urgency rating (--variant scored)
 
 
 OVERLOAD_WAITS = [300, 600, 1200]  # seconds; then every 20 minutes
@@ -110,12 +112,13 @@ def seconds_until_reset():
     return (reset - now).total_seconds()
 
 
-def set_model(model, thinking=None):
-    """Point the run at one model and reasoning level. Each keeps its own folder, so runs never mix."""
-    global MODEL, RAW, FAILED, THINKING
-    if model != MODEL or thinking:
-        base = PILOT / "data" / (f"gemini-{model}" + (f"-thinking-{thinking}" if thinking else ""))
-        MODEL, RAW, FAILED, THINKING = model, base / "raw", base / "failed", thinking
+def set_model(model, thinking=None, variant="category"):
+    """Point the run at one model, reasoning level, and prompt variant. Each keeps its own folder."""
+    global MODEL, RAW, FAILED, THINKING, VARIANT
+    if model != MODEL or thinking or variant != "category":
+        base = PILOT / "data" / (f"gemini-{model}" + (f"-thinking-{thinking}" if thinking else "")
+                                 + ("-scored" if variant == "scored" else ""))
+        MODEL, RAW, FAILED, THINKING, VARIANT = model, base / "raw", base / "failed", thinking, variant
 
 
 def is_valid(pid):
@@ -132,8 +135,10 @@ def main():
                          "pilot/data/gemini/)")
     ap.add_argument("--thinking", choices=["low", "medium", "high"],
                     help="reasoning level; the run goes to its own folder, e.g. gemini-<model>-thinking-high/")
+    ap.add_argument("--variant", choices=["category", "scored"], default="category",
+                    help="'scored' also asks for a 1-100 urgency rating, for tie-breaks when places are limited")
     args = ap.parse_args()
-    set_model(args.model, args.thinking)
+    set_model(args.model, args.thinking, args.variant)
 
     from google import genai
     from google.genai import types
@@ -152,9 +157,11 @@ def main():
     for p in todo:
         if args.limit is not None and sent >= args.limit:
             break
-        text = prompt(p)
+        text = prompt(p, VARIANT)
         # Every request carries the identical instructions and reply format; only the case differs.
-        if text != "\n\n".join([INSTRUCTIONS, case_text(p), REPLY_FORMAT]) + "\n":
+        expected = ("\n\n".join([INSTRUCTIONS + "\n\n" + SCORED_EXTRA, case_text(p), REPLY_FORMAT_SCORED]) + "\n"
+                    if VARIANT == "scored" else "\n\n".join([INSTRUCTIONS, case_text(p), REPLY_FORMAT]) + "\n")
+        if text != expected:
             sys.exit(f"{p['id']}: prompt does not match the fixed template")
         while True:
             try:
@@ -171,20 +178,26 @@ def main():
         sent += 1
         reply = (response.text or "").strip()
         priority, explanation, problems = parse_reply(reply)
+        urgency = parse_urgency(reply) if VARIANT == "scored" else None
+        if VARIANT == "scored" and urgency is None:
+            problems = problems + ["urgency is not a whole number from 1 to 100"]
+            priority = None
         record = {
             "id": p["id"],
             "model": MODEL,
             "thinking_level": THINKING or "model default",
+            "variant": VARIANT,
             "model_version": getattr(response, "model_version", None) or MODEL,
             "requested_at": datetime.fromtimestamp(started, timezone.utc).isoformat(timespec="seconds"),
             "seconds": round(time.time() - started, 1),
             "prompt_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
-            "instructions_sha256": INSTRUCTIONS_SHA,
+            "instructions_sha256": hashlib.sha256(text.replace(case_text(p), "").encode("utf-8")).hexdigest() if VARIANT == "scored" else INSTRUCTIONS_SHA,
             "vispdat_score": vispdat[p["id"]]["score"],
             "vispdat_priority": vispdat[p["id"]]["priority"],
             "prompt": text,
             "reply": reply,
             "priority": priority,
+            "urgency": urgency,
             "explanation": explanation,
             "problems": problems,
             "usage": {k: getattr(response.usage_metadata, k, None) for k in

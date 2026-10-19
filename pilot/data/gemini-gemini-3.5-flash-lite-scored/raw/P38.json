@@ -1,0 +1,25 @@
+{
+ "id": "P38",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:12+00:00",
+ "seconds": 2.3,
+ "prompt_sha256": "80f49f4aac1d2a6b28b7f36a9f656db7a50e566240dcca2b06ca2292ff164a8a",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 67. Gender: Female. Race: Black, African American, or African. Location: Los Angeles, California.\n\nWork and education: Public librarian for thirty years before retiring.\nPath into homelessness: The apartment building was renovated and rents nearly doubled. The pension did not stretch to any vacancy found. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for six weeks. This is the first time without housing.\nFinances: A monthly pension and Social Security. No debts.\nHealth: No chronic health conditions or disabilities. Takes a thyroid medication as prescribed. Does not drink or use drugs. Manages washing, laundry, and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Several former coworkers who visit and a former neighbor who helps with apartment listings. No dependents.\nA typical day: Volunteers at a literacy program two mornings a week and reads in the library every afternoon. Describes the tutoring as deeply rewarding.\nGoals: A unit in a senior apartment building. Is on two waiting lists.\nService history: First stay in any shelter. A senior-services caseworker is helping with the waiting lists.\nPresentation in the interview: Gracious and articulate. Apologizes for taking up a bed.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 15, \"explanation\": \"This individual has stable income, good health, strong social support, and is already actively managing her own housing search through senior waiting lists and a caseworker. She is likely to secure housing with minimal intervention compared to clients with high-acuity needs.\"}",
+ "priority": "Low",
+ "urgency": 15,
+ "explanation": "This individual has stable income, good health, strong social support, and is already actively managing her own housing search through senior waiting lists and a caseworker. She is likely to secure housing with minimal intervention compared to clients with high-acuity needs.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 565,
+  "thoughts_token_count": null,
+  "candidates_token_count": 68,
+  "total_token_count": 633
+ }
+}

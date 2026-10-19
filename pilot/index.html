@@ -30,6 +30,7 @@
       </div>
       <div class="nav-group">
         <span class="nav-label">Study</span>
+        <a href="#factors" data-view-link="factors" data-sub="The 17 VI-SPDAT items every profile was built on">The 17 factors</a>
         <a href="#profiles" data-view-link="profiles" data-sub="All 100 people, each tool's priority, and Gemini's explanation">Profiles</a>
         <a href="#design" data-view-link="design" data-sub="Population, VI-SPDAT scoring, and the Gemini prompt">Study design</a>
       </div>
@@ -164,6 +165,25 @@
         <div class="chart-card">
           <p class="chart-title">City table</p>
           <div class="results-scroll"><table class="results compact" id="city-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-factors" data-view="factors" aria-label="The 17 factors" hidden>
+        <div class="intro-band">
+          <p class="intro-lede">Every profile was built on the 17 scored items of the VI&#8209;SPDAT 2.0 for single adults. Each item is worth one point (maximum 17), and every case summary states plainly whether each one applies, so neither approach has to guess. The stories also include details VI&#8209;SPDAT does not score, such as work history, family, and goals.</p>
+        </div>
+        <div class="findings" id="factor-bands"></div>
+        <div class="chart-card">
+          <p class="chart-title">How many of the 100 people meet each factor</p>
+          <p class="chart-sub">Colored by VI&#8209;SPDAT section. One person usually meets several factors.</p>
+          <div class="legend" id="legend-factors"></div>
+          <div class="chart-scroll" id="chart-factors"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">The 17 factors</p>
+          <p class="chart-sub">Plain-language definition, the VI&#8209;SPDAT questions it comes from, and the published scoring rule.</p>
+          <div class="results-scroll"><table class="results compact factor-table" id="factor-table"></table></div>
+          <p class="chart-foot" id="factor-foot"></p>
         </div>
       </section>
 

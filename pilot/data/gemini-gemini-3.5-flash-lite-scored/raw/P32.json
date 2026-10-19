@@ -1,0 +1,25 @@
+{
+ "id": "P32",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:17+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "6c290e1a450d1742ff379f9e01e20b8d55c3fcfab2bc8c48abe0eae0d23cc73f",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "17",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 66. Gender: Male. Race: Black, African American, or African. Location: Atlanta, Georgia.\n\nWork and education: Career carpenter and union steward, respected enough to be sent to settle other sites' disputes.\nPath into homelessness: Was beaten on a job site. A long recovery followed, then a foreclosure during it, and the spouse left with what the sale recovered. Names the assault at work as the cause of this period of homelessness.\nCurrent housing: Sleeping outdoors within the same three blocks, homeless continuously for fourteen years.\nFinances: No income since benefits lapsed. Debts to hospitals, lenders, and a former landlord.\nHealth: A head injury, arthritis, and heart disease. Drinks daily, which has ended every placement. Memory loss and disorientation that make keeping housing impossible. Prescribed medications go untaken. Cannot keep clean or change clothes.\nSafety: Constant emergency room and police contact over the past six months. Has been assaulted at camp, has a warrant for missed court dates, and people at the camp take whatever cash comes in and make them hold drugs.\nFamily and social ties: Estranged from three adult children and the former spouse. No contact with anyone outside the camp.\nA typical day: Cannot give a consistent account of a day beyond drinking. Is found within the same three blocks and does not always recognize the outreach worker. Nothing in the week is described as fulfilling.\nGoals: Answers with a job that ended in the 1990s.\nService history: Assessed many times over fourteen years; the records do not agree with one another.\nPresentation in the interview: Disoriented about sequence and dates but vivid about the distant past, and goes quiet at any mention of job sites. Agrees with most questions, which makes verification difficult.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 95, \"explanation\": \"The client has experienced chronic homelessness for 14 years coupled with severe untreated medical, cognitive, and substance use issues, making him completely unable to maintain housing without intensive, long-term support.\"}",
+ "priority": "High",
+ "urgency": 95,
+ "explanation": "The client has experienced chronic homelessness for 14 years coupled with severe untreated medical, cognitive, and substance use issues, making him completely unable to maintain housing without intensive, long-term support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 611,
+  "thoughts_token_count": null,
+  "candidates_token_count": 58,
+  "total_token_count": 669
+ }
+}

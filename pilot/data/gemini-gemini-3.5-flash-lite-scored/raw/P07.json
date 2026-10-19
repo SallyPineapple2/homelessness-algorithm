@@ -1,0 +1,25 @@
+{
+ "id": "P07",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:06+00:00",
+ "seconds": 0.9,
+ "prompt_sha256": "9f92688d23688ea75a1e616ccf8d24a0d67899619ee707d110cb28ffb6fc75b1",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 44. Gender: Female. Race: Hispanic/Latino/e/a. Location: Los Angeles, California.\n\nWork and education: Fifteen years in hotel housekeeping and laundry. Trained as a certified nursing assistant but let the license lapse during an earlier illness.\nPath into homelessness: Cut to two shifts a week when the hotel changed cleaning contractors. The reduced hours could not cover rent, and a shared apartment ended. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for two months. This is the first time without housing.\nFinances: Two housekeeping shifts a week, about $360 a month, with a disability application pending. No debts after a hospital charity program cleared a bill.\nHealth: A chronic heart condition. Stopped taking a prescribed blood-pressure medication when the last bottle ran out a month ago. Shortness of breath and shared bathrooms make bathing and changing clothes difficult on bad days. Does not drink or use drugs. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits or police contact in the past six months, no legal issues, and has not been threatened or hurt. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: A sibling who helps with paperwork and drives to appointments. No children.\nA typical day: Two early shifts a week, then long recovery days. Sits with other residents in the afternoons and helps them fill in forms, which is the part of the week described as good.\nGoals: Get the disability decision, renew the nursing-assistant license, and stop needing the shelter, in that order.\nService history: A shelter nurse checks blood pressure weekly and has been trying for a month to get the prescription refilled.\nPresentation in the interview: Warm and chatty about other people, deflecting when asked about their own health. Minimizes symptoms with 'it's manageable.'\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 55, \"explanation\": \"The client has steady employment history, stable social support, and no history of trauma or substance use, suggesting they need time-limited assistance and stability rather than intensive long-term intervention.\"}",
+ "priority": "Medium",
+ "urgency": 55,
+ "explanation": "The client has steady employment history, stable social support, and no history of trauma or substance use, suggesting they need time-limited assistance and stability rather than intensive long-term intervention.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 665,
+  "thoughts_token_count": null,
+  "candidates_token_count": 56,
+  "total_token_count": 721
+ }
+}

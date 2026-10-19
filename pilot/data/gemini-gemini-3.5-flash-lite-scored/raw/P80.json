@@ -1,0 +1,25 @@
+{
+ "id": "P80",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:51+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "d5fc8656d0560313eaa6f45294bed431b3eb4e627bfe05ec2e513b7dce6eef63",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 30. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: New York City, New York.\n\nWork and education: Served four years in the army, then worked in a warehouse.\nPath into homelessness: Combat trauma led to heavy drinking, a job loss, and eviction. The trauma is the cause of this homelessness, and drinking made it impossible to afford rent. Not caused by a relationship breakdown.\nCurrent housing: Sleeping outdoors under a bridge for one year and three months. This is the first time without housing.\nFinances: No income; has not applied for veterans' benefits. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks heavily every day. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: three emergency room visits after falls and fights and two police contacts. Was assaulted under the bridge last month. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A parent who calls. No children.\nA typical day: Drinks from morning on. Has no planned activities and nothing brings satisfaction.\nGoals: Does not know.\nService history: A veterans' outreach worker has made contact.\nPresentation in the interview: Tense and watchful; startles at loud noises.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"The client is sleeping outdoors under a bridge with severe untreated combat trauma, daily heavy drinking, and recent physical assaults and ER visits, indicating a critical need for permanent supportive housing.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "The client is sleeping outdoors under a bridge with severe untreated combat trauma, daily heavy drinking, and recent physical assaults and ER visits, indicating a critical need for permanent supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 533,
+  "thoughts_token_count": null,
+  "candidates_token_count": 54,
+  "total_token_count": 587
+ }
+}

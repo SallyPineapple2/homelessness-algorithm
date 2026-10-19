@@ -1,0 +1,25 @@
+{
+ "id": "P62",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:01:15+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "6b1e185749d36006674e31f8718c35a770501493e2e528a76d3650053ed7689d",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 49. Gender: Male. Race: Asian or Asian American. Location: New York City, New York.\n\nWork and education: School janitor for twelve years.\nPath into homelessness: The janitorial contract was outsourced, and without work the rent fell behind until an eviction. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors in a vacant lot for three years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. No mental health diagnosis. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, or crisis calls, and one police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. A neighbor at the lot shares food. No children.\nA typical day: Collects cans most days. Has no planned activities and nothing described as satisfying.\nGoals: A room and steady work.\nService history: Known to outreach; has turned down shelter beds because of crowding.\nPresentation in the interview: Quiet and tired; answers slowly.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 75, \"explanation\": \"Despite the lack of substance use or health conditions, this individual has been sleeping outdoors for three years, has no income, and struggles with basic self-care, indicating a need for permanent supportive housing.\"}",
+ "priority": "High",
+ "urgency": 75,
+ "explanation": "Despite the lack of substance use or health conditions, this individual has been sleeping outdoors for three years, has no income, and struggles with basic self-care, indicating a need for permanent supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 529,
+  "thoughts_token_count": null,
+  "candidates_token_count": 59,
+  "total_token_count": 588
+ }
+}

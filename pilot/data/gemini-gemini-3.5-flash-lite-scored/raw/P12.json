@@ -1,0 +1,25 @@
+{
+ "id": "P12",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:14+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "35e094fb79d81b2e740bd1f910c0ae1e0abb646043489cbc148f2cf10152ebfd",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 33. Gender: Male. Race: Hispanic/Latino/e/a. Location: Los Angeles, California.\n\nWork and education: Dental assistant; completed a certificate program, then five years at the same practice with a good record.\nPath into homelessness: Left an abusive partner in the middle of the night after an escalation, drove four hours, and has not gone back for belongings or the job. Names the abuse as the cause of this period of homelessness.\nCurrent housing: Sleeping in their car for two months. This is the first time without housing.\nFinances: No current income and no access to the joint account. About $6,800 owed on a shared credit card the former partner continues to use.\nHealth: A chronic stomach condition that worsened over the past year. No prescriptions. Does not drink or use drugs, and keeps clean using a gym pass. No mental health condition, head injury, or learning disability.\nSafety: Has not been attacked or threatened since leaving. No emergency room visits, police contact, or legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: No children. A college friend two hours away is the only person who knows the situation.\nA typical day: Rotates the car between three lots, checks a prepaid phone for messages from the friend, and runs most mornings, the one routine kept from before and the thing that keeps them steady.\nGoals: A license in a new state and a practice that does not appear in any shared record. Is afraid of being located.\nService history: Has avoided domestic-violence services for fear the record could be traced, and has not filed a police report.\nPresentation in the interview: Composed and careful, rehearsing answers before giving them. Watches the door and asks who will be able to see the file.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 65, \"explanation\": \"This individual has a stable employment history and no chronic vulnerabilities, but requires time-limited assistance and safety planning due to fleeing a severe domestic violence situation.\"}",
+ "priority": "Medium",
+ "urgency": 65,
+ "explanation": "This individual has a stable employment history and no chronic vulnerabilities, but requires time-limited assistance and safety planning due to fleeing a severe domestic violence situation.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 639,
+  "thoughts_token_count": null,
+  "candidates_token_count": 49,
+  "total_token_count": 688
+ }
+}

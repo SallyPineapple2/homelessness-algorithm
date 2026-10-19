@@ -1,0 +1,25 @@
+{
+ "id": "P98",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:55:50+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "17dd4ed32d9929fc93577e4884e776f477b7f42f6b7c36003676287bfe4869ea",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "13",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 40. Gender: Female. Race: Hispanic/Latino/e/a. Location: Atlanta, Georgia.\n\nWork and education: Restaurant server for fifteen years.\nPath into homelessness: Left a partner who was abusive. The abusive relationship and the abuse are the cause of this homelessness.\nCurrent housing: Sleeping outdoors in a park for three years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: HIV positive and wants to join an HIV program. Uses methamphetamine daily. Depression. No prescriptions. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: four emergency room visits and one police contact. Was assaulted in the park. No legal issues. Trades sex for money.\nFamily and social ties: No family contact. No children.\nA typical day: Wanders. Has no planned activities and nothing brings satisfaction.\nGoals: Housing and treatment.\nService history: Known to outreach.\nPresentation in the interview: Exhausted and withdrawn.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 92, \"explanation\": \"This individual has been sleeping outdoors for three years following domestic abuse, struggles with untreated depression and daily methamphetamine use, and faces severe safety risks including recent assaults and emergency room visits.\"}",
+ "priority": "High",
+ "urgency": 92,
+ "explanation": "This individual has been sleeping outdoors for three years following domestic abuse, struggles with untreated depression and daily methamphetamine use, and faces severe safety risks including recent assaults and emergency room visits.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 454,
+  "thoughts_token_count": null,
+  "candidates_token_count": 54,
+  "total_token_count": 508
+ }
+}

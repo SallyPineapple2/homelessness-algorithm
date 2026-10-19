@@ -1,0 +1,25 @@
+{
+ "id": "P92",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:07+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "85685749817911551e0e50096e3de9c03d77cee22ae83e23449c11f80d3b79a9",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "11",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 37. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Chicago, Illinois.\n\nWork and education: Sous chef in restaurants for twelve years.\nPath into homelessness: Methamphetamine use and psychotic episodes led to eviction. Both made it impossible to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors near a freeway for one year and eight months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities. Uses methamphetamine daily. Schizoaffective disorder. Stopped taking the prescribed antipsychotic. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: In the past six months: two psychiatric hospital stays, three emergency room visits, and two police contacts. Threatened people on the street during an episode. Has a pending vandalism charge. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: No family contact. No children.\nA typical day: Walks all day. Has no planned activities and nothing brings satisfaction.\nGoals: Does not say.\nService history: Known to outreach and mental health teams.\nPresentation in the interview: Disorganized and suspicious.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 92, \"explanation\": \"This individual has untreated schizoaffective disorder, daily methamphetamine use, no income, and has been unsheltered for nearly two years while experiencing frequent psychiatric hospitalizations and legal issues. They require intensive, long-term permanent supportive housing to address their severe, unmanaged health and behavioral needs.\"}",
+ "priority": "High",
+ "urgency": 92,
+ "explanation": "This individual has untreated schizoaffective disorder, daily methamphetamine use, no income, and has been unsheltered for nearly two years while experiencing frequent psychiatric hospitalizations and legal issues. They require intensive, long-term permanent supportive housing to address their severe, unmanaged health and behavioral needs.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 505,
+  "thoughts_token_count": null,
+  "candidates_token_count": 78,
+  "total_token_count": 583
+ }
+}

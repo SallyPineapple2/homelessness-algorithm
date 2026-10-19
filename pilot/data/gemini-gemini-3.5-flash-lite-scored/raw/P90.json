@@ -1,0 +1,25 @@
+{
+ "id": "P90",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:01:09+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "2979d699b35db490222a0a24637e50a1c6d46b428c156ff6d5130131043ded35",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "10",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 29. Gender: Female. Race: Asian or Asian American. Location: New York City, New York.\n\nWork and education: Worked in fast food and warehouses.\nPath into homelessness: Left a partner who was violent. The abusive relationship and the abuse are the cause of this homelessness.\nCurrent housing: Sleeping outdoors in an encampment for two years. This is the first time without housing.\nFinances: No income. Owes money to a dealer.\nHealth: No physical health conditions or disabilities and no prescriptions. Uses crack cocaine daily, which has made it impossible to keep housing. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two emergency room visits, two nights in jail, and two police contacts. Was stabbed in the camp. Has a pending drug-possession charge. A dealer forces this person to sell drugs to pay off the debt.\nFamily and social ties: No family contact. No children.\nA typical day: Plays cards with friends in the camp and enjoys it.\nGoals: Getting away from the dealer.\nService history: Known to outreach.\nPresentation in the interview: Jumpy and scared; keeps voice low.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 92, \"explanation\": \"This individual faces severe safety risks, including an encampment stabbing, active trafficking by a drug dealer, and daily crack cocaine use, compounded by two years of unsheltered homelessness and trauma from domestic violence.\"}",
+ "priority": "High",
+ "urgency": 92,
+ "explanation": "This individual faces severe safety risks, including an encampment stabbing, active trafficking by a drug dealer, and daily crack cocaine use, compounded by two years of unsheltered homelessness and trauma from domestic violence.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 494,
+  "thoughts_token_count": null,
+  "candidates_token_count": 60,
+  "total_token_count": 554
+ }
+}

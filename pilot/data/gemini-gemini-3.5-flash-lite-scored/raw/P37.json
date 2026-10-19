@@ -1,0 +1,25 @@
+{
+ "id": "P37",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:06+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "a0ace38a26ea8455ea963a4f9d99f7136d7bd0a98e58d7060d7d5b49c8d476f0",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "1",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 45. Gender: Female. Race: White. Location: New York City, New York.\n\nWork and education: Commercial cleaning supervisor for a building-services company for nine years.\nPath into homelessness: An emergency appendix surgery left a large hospital bill. Paying it down meant falling behind on rent, and the lease was not renewed. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for five weeks. This is the first time without housing.\nFinances: Full-time job with a regular paycheck. Owes about $9,000 on the hospital bill and a month of back rent to the former landlord.\nHealth: Fully recovered from the surgery. No chronic health conditions or disabilities and no prescriptions. Does not drink or use drugs. Keeps up with washing, laundry, and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No court cases or fines. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Two close friends from work and a sibling who checks in. No children.\nA typical day: Night shifts supervising a cleaning crew and a weekly community choir rehearsal that is the part of the week most looked forward to.\nGoals: Set up a payment plan on the hospital bill and rent a studio.\nService history: First stay in any shelter. Has an appointment with a financial counselor.\nPresentation in the interview: Tired but organized. Brought the hospital bill and pay stubs.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 15, \"explanation\": \"This individual is stably employed, fully healthy, has strong social ties, and only requires minor financial restructuring to overcome a temporary setback.\"}",
+ "priority": "Low",
+ "urgency": 15,
+ "explanation": "This individual is stably employed, fully healthy, has strong social ties, and only requires minor financial restructuring to overcome a temporary setback.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 592,
+  "thoughts_token_count": null,
+  "candidates_token_count": 45,
+  "total_token_count": 637
+ }
+}

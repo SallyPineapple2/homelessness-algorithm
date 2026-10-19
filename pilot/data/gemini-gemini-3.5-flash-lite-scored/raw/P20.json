@@ -1,0 +1,25 @@
+{
+ "id": "P20",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:01:16+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "4e60d648ecaa5395a16dea0f62feb704be6bfa5b848c6e3d5be953efe42109d8",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "8",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 31. Gender: Male. Race: Asian or Asian American. Location: New York City, New York.\n\nWork and education: Two years of college on a scholarship lost after a semester away, then five years in retail management.\nPath into homelessness: A family dispute ended with a locked door at nineteen, and again at thirty. Relatives forcing the move-out is what caused this period of homelessness. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for eight months. This is the first time without housing.\nFinances: No income. A defaulted student loan and money owed to people at the shelter.\nHealth: No health conditions of any kind, no prescriptions, no drinking or drug use. Crowded bathrooms and stolen belongings leave no reliable way to wash, change clothes, or eat regularly. No mental health condition, head injury, or learning disability.\nSafety: Frequent emergency room visits and police contact over the past six months. Was assaulted at the shelter, has a pending charge, and is being pressured to carry packages for someone there.\nFamily and social ties: Relatives forced the move-out. A younger sibling still texts.\nA typical day: Uses the shelter's computers to job-hunt in the morning, avoids the person applying pressure in the afternoon, and sleeps badly. Nothing in the week is described as fulfilling.\nGoals: A retail management role, and enough distance from the shelter to stop being asked for favors.\nService history: Has filed two incident reports with shelter staff about the pressure, with no result.\nPresentation in the interview: Sharp and analytical, describing the situation almost clinically. Frustrated at being read as unwell when the problems are practical.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"Despite being healthy and employable, he faces imminent physical danger, frequent assaults, and severe safety pressures within the shelter system that require immediate removal to permanent housing.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "Despite being healthy and employable, he faces imminent physical danger, frequent assaults, and severe safety pressures within the shelter system that require immediate removal to permanent housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 596,
+  "thoughts_token_count": null,
+  "candidates_token_count": 51,
+  "total_token_count": 647
+ }
+}

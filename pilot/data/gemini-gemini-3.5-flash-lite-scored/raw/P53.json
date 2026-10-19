@@ -1,0 +1,25 @@
+{
+ "id": "P53",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:05+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "d8d85748407947dfb9f6224c0cfad6faac2e61e25c36a29fa0a120ed16c6894a",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "4",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 69. Gender: Female. Race: White. Location: Chicago, Illinois.\n\nWork and education: Nurse's aide in nursing homes for thirty years.\nPath into homelessness: Heart failure led to a long hospital stay, rent fell behind, and the apartment was lost. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for eighteen months straight. This is the first time without housing.\nFinances: Social Security every month. Owes the former landlord three months of back rent.\nHealth: Congestive heart failure. Takes all heart medications as prescribed, set up by the shelter nurse. Does not drink or use drugs. No mental health condition. Manages washing, laundry, and meals, slowly.\nSafety: One cardiology appointment and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: Two grandchildren who visit on weekends. No dependents.\nA typical day: Knits blankets for a hospital nursery and plays cards with other residents, which are the favorite parts of the day.\nGoals: A senior apartment with an elevator.\nService history: On a waiting list for senior housing for over a year.\nPresentation in the interview: Warm and chatty; calls the caseworker 'honey.'\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"At 69 years old with congestive heart failure and an 18-month stay in an emergency shelter, this client requires permanent senior housing to manage her vulnerable health condition safely.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "At 69 years old with congestive heart failure and an 18-month stay in an emergency shelter, this client requires permanent senior housing to manage her vulnerable health condition safely.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 554,
+  "thoughts_token_count": null,
+  "candidates_token_count": 57,
+  "total_token_count": 611
+ }
+}

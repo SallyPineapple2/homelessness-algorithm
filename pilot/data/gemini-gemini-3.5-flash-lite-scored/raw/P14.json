@@ -1,0 +1,25 @@
+{
+ "id": "P14",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:11+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "96709cb39fbdb3c6e228692ef522a173e61674f35ffea66b2a38bb439a26d18f",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 51. Gender: Female. Race: Black, African American, or African. Location: Atlanta, Georgia.\n\nWork and education: Commercial fishing and then dock work: twenty years on the water, latterly as a deck boss.\nPath into homelessness: The company folded owing two paychecks. A rented room went, then a series of short stays, and eventually a patch of brush near the river. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping outdoors near the river, homeless for three years across four episodes.\nFinances: No income. Owes a marina for storage on a boat long since sold, plus a hospital bill.\nHealth: Chronic liver disease, not alcohol-related, diagnosed two years ago. The prescribed medication frequently goes untaken. Does not drink or use drugs. Washes at a drop-in center. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits or police contact in the past six months, no legal issues, and has not been attacked or threatened. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: Two adult children who do not know where their parent is staying. A former crewmate who shares food.\nA typical day: Walks along the water each morning out of habit, sits alone with coffee near a diner where crews used to gather, and returns to the same patch each night. Nothing in the week is described as fulfilling.\nGoals: Talks about getting back on a boat and has not asked about work in three years.\nService history: A street-outreach worker checks in every two weeks. Accepts the food and declines the housing paperwork.\nPresentation in the interview: A storyteller: expansive about the past and vague about the present. Deflects health questions with 'the doctors always say that.'\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"This individual has been chronically homeless for three years, sleeps outdoors, has no income, and suffers from untreated chronic liver disease while repeatedly declining housing paperwork.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "This individual has been chronically homeless for three years, sleeps outdoors, has no income, and suffers from untreated chronic liver disease while repeatedly declining housing paperwork.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 645,
+  "thoughts_token_count": null,
+  "candidates_token_count": 49,
+  "total_token_count": 694
+ }
+}

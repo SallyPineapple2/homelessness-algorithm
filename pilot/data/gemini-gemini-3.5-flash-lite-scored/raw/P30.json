@@ -1,0 +1,25 @@
+{
+ "id": "P30",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:10+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "1eb8925f5cf5d02ec54381681b10634a2e5b6314925b86c47cb316069a3acec3",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "16",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 47. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: New York City, New York.\n\nWork and education: Merchant mariner from nineteen until a shipboard injury at thirty. No shore trade to fall back on.\nPath into homelessness: A shipboard fire killed a crewmate and left them badly hurt. The injury ended the career, the partner left during the recovery and kept the apartment, and there was no transferable qualification. Names the fire as the cause of this period of homelessness.\nCurrent housing: Sleeping outdoors under the same underpass, homeless continuously for eleven years. Has not slept indoors in four years.\nFinances: No income. Debts to hospitals, camp lenders, and a former landlord.\nHealth: The old back injury limits walking and lifting, and there is a chronic liver condition. Drinks heavily every day, which has ended every short stay indoors. Depression that has led to losing housing. Prescribed medication goes untaken. Cannot keep clean.\nSafety: Constant emergency room and police contact over the past six months. Has been assaulted repeatedly, has unpaid citations and a pending charge, and is made to hold drugs for a camp lender.\nFamily and social ties: No known living family. A dog that has been a constant for six years.\nA typical day: Wakes with the dog, drinks through the morning, walks a fixed route for bottles and food, and returns to the underpass. Startles at alarms and avoids any open flame. Nothing in the week is described as fulfilling.\nGoals: Wants somewhere the dog is allowed, and has been told repeatedly that this is not possible.\nService history: Offered congregate shelter many times and refuses it because of the dog.\nPresentation in the interview: Exhausted and matter-of-fact. Answers every question without hesitation and expects nothing to come of it.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 98, \"explanation\": \"The client has experienced continuous street homelessness for eleven years with severe, untreated medical, mental health, and substance use conditions, combined with acute physical danger and trauma.\"}",
+ "priority": "High",
+ "urgency": 98,
+ "explanation": "The client has experienced continuous street homelessness for eleven years with severe, untreated medical, mental health, and substance use conditions, combined with acute physical danger and trauma.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 626,
+  "thoughts_token_count": null,
+  "candidates_token_count": 51,
+  "total_token_count": 677
+ }
+}

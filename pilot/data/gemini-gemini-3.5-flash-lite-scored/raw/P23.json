@@ -1,0 +1,25 @@
+{
+ "id": "P23",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:02:05+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "435a1195aded487c9481ee889125103bb568295ee6b064ac4a2e92f73dc31fff",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 61. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: Chicago, Illinois.\n\nWork and education: Four decades of session and bar work; toured regionally when young and still reads music.\nPath into homelessness: A long decline in bar work, then a hospital admission for the liver, and a landlord who would not renew after the arrears. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for ten months. This is the first time without housing.\nFinances: About $980 a month in Social Security, paid on time, plus occasional gig money. No debts.\nHealth: Cirrhosis. Long-term drinking has cost two apartments. Bipolar disorder, and an episode got them evicted once before. Keeps up with hygiene and does laundry every Thursday. Keeps up with washing, laundry, and meals. No prescriptions.\nSafety: Frequent emergency room visits and police contact over the past six months. Has been assaulted more than once, has a pending charge, and is being pressured to carry items for someone at the shelter.\nFamily and social ties: A wide circle of musicians who check in. One adult child who visits the shelter monthly.\nA typical day: Plays a weekly set at the drop-in center, keeps to the shelter's schedule, and drinks in the evenings. The weekly set is the highlight of the week.\nGoals: A single room where an instrument can be kept. Expects it to happen and is not anxious about it.\nService history: Sees a psychiatrist at a community clinic and attends most appointments.\nPresentation in the interview: Gregarious and rehearsed, offering the same three stories readily. Understates both the drinking and the mental-health history.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"The client is a 61-year-old with untreated bipolar disorder, cirrhosis, active alcohol use, and significant safety risks including physical assaults and police contact, indicating a need for permanent supportive housing.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "The client is a 61-year-old with untreated bipolar disorder, cirrhosis, active alcohol use, and significant safety risks including physical assaults and police contact, indicating a need for permanent supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 615,
+  "thoughts_token_count": null,
+  "candidates_token_count": 60,
+  "total_token_count": 675
+ }
+}

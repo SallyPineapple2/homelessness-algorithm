@@ -1,0 +1,25 @@
+{
+ "id": "P87",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:01:17+00:00",
+ "seconds": 47.9,
+ "prompt_sha256": "d807bfcef6d941c06bce2afeb11624815880d91266ed00e95b86993614d80297",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "9",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 22. Gender: Female. Race: White. Location: Atlanta, Georgia.\n\nWork and education: Left high school in the last year.\nPath into homelessness: Family forced the move-out after years of abuse at home. The abuse and family conflict are the cause of this homelessness.\nCurrent housing: Sleeping in abandoned buildings for six months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Uses opioids daily. Diagnosed with depression that has made it impossible to keep a place. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two overdoses with ambulance rides and two emergency room visits. No police contact. Was beaten by someone in an abandoned building. No legal issues. Trades sex for drugs and money.\nFamily and social ties: A friend from school who texts. No children.\nA typical day: Writes poetry at a youth drop-in center and likes it.\nGoals: A safe room and help with the drug use.\nService history: A harm-reduction worker made the referral.\nPresentation in the interview: Quiet and guarded; avoids eye contact.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"The client is extremely vulnerable due to daily opioid use, recent overdoses, physical assault while sleeping in abandoned buildings, and trading sex for drugs. She requires intensive, long-term support including permanent housing and substance use treatment to address her safety risks and trauma.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "The client is extremely vulnerable due to daily opioid use, recent overdoses, physical assault while sleeping in abandoned buildings, and trading sex for drugs. She requires intensive, long-term support including permanent housing and substance use treatment to address her safety risks and trauma.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 492,
+  "thoughts_token_count": null,
+  "candidates_token_count": 71,
+  "total_token_count": 563
+ }
+}

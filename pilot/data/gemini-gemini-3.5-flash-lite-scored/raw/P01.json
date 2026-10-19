@@ -1,0 +1,25 @@
+{
+ "id": "P01",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:14+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "afad6fe4df0880f3b4ef5a09cfbcfa99737775fbb3a742d22b2f8f83903beefb",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "0",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 34. Gender: Female. Race: Hispanic/Latino/e/a. Location: Chicago, Illinois.\n\nWork and education: Line cook for eleven years, most recently on the hot line of a mid-size restaurant. Completed a culinary certificate at a community college and still keeps a knife roll.\nPath into homelessness: The restaurant closed with two days' notice. Savings covered a motel for two weeks, then a coworker's couch, then the shelter. No relationship breakdown or family conflict played a part. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for the past six weeks. This is the first time without housing.\nFinances: Working 25 hours a week at a catering kitchen. About $600 in savings, no debts, and a final paycheck from the closed restaurant still owed.\nHealth: No health conditions and no prescriptions. Does not use drugs and rarely drinks. Keeps up with showers, laundry, and meals without trouble. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits or police contact. Has not been threatened or hurt since losing housing, and has no court cases or fines. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: One adult sibling who lives some distance away and calls most weekends. No children.\nA typical day: Up at 5:30 for the shelter's exit time, a prep shift at the catering kitchen, then the public library until the evening line. Cooks for the other residents on days off and enjoys it.\nGoals: A studio within a bus ride of the catering job. Has priced deposits and is waiting on the owed paycheck to cover one.\nService history: First stay in any shelter. Found intake confusing but keeps every document in a labeled folder.\nPresentation in the interview: Organized and businesslike; asks precise questions about timelines and wants to know exactly what happens next.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Low\", \"urgency\": 15, \"explanation\": \"This individual is stably employed, has savings and no debt, experiences no health or behavioral issues, and is already actively pursuing housing independently.\"}",
+ "priority": "Low",
+ "urgency": 15,
+ "explanation": "This individual is stably employed, has savings and no debt, experiences no health or behavioral issues, and is already actively pursuing housing independently.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 662,
+  "thoughts_token_count": null,
+  "candidates_token_count": 46,
+  "total_token_count": 708
+ }
+}

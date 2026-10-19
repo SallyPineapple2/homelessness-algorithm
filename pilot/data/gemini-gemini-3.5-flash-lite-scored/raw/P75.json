@@ -1,0 +1,25 @@
+{
+ "id": "P75",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:17+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "f36fc7ed7565b0a14c1915c042e6530aacb8bd6afdab298c7f39e1c7622db128",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 27. Gender: Female. Race: Black, African American, or African. Location: Cincinnati, Ohio.\n\nWork and education: Worked in retail and as a server since 18.\nPath into homelessness: A sexual assault two years ago led to leaving an apartment shared with the attacker's friends. The assault and the trauma it caused are the cause of this homelessness. Not caused by a relationship breakdown.\nCurrent housing: Sleeping wherever a place is offered, usually at strangers' apartments, for eight months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Uses opioids daily, which has made it impossible to keep a job or rent. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: two emergency room visits, one overdose with an ambulance ride, and one police contact. Was hit by someone offering a place to stay. No legal issues. Trades sex for a place to sleep.\nFamily and social ties: A friend who sometimes brings food. No children.\nA typical day: Goes to a weekly art therapy group, which is the best part of the week.\nGoals: A place of their own and treatment.\nService history: A harm-reduction program made the referral.\nPresentation in the interview: Guarded and tired; talks quietly.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"The client faces severe daily safety risks, including active opioid use, survival sex for housing, physical assault, and recent emergency room visits and overdose, requiring intensive permanent supportive housing.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "The client faces severe daily safety risks, including active opioid use, survival sex for housing, physical assault, and recent emergency room visits and overdose, requiring intensive permanent supportive housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 534,
+  "thoughts_token_count": null,
+  "candidates_token_count": 54,
+  "total_token_count": 588
+ }
+}

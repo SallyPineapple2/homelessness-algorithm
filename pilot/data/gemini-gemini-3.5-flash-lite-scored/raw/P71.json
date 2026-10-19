@@ -1,0 +1,25 @@
+{
+ "id": "P71",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:13+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "da6b60e35730cb63963e9fde741455593858b13635721ca2241fc3125e23115a",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 46. Gender: Male. Race: Asian or Asian American. Location: Los Angeles, California.\n\nWork and education: Diesel mechanic for eighteen years.\nPath into homelessness: Drinking cost a job and then an apartment, and has since cost three more rooms. Drinking made it hard to keep housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for one month. This is the fourth time without housing in the past three years.\nFinances: No income. No debts.\nHealth: Liver disease. Drinks daily. Stopped taking the prescribed liver medication because it is hard to keep track of. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: three emergency room visits for stomach bleeding and one hospital stay. No police contact. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: An adult child who calls monthly. No dependents.\nA typical day: Fixes bikes for other residents and enjoys it.\nGoals: An apartment and a mechanic's job.\nService history: Known to shelter staff; a nurse is following the liver disease.\nPresentation in the interview: Friendly and straightforward; yellowish skin.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"This individual suffers from severe, untreated liver disease with frequent hospitalizations for stomach bleeding and lacks income, making permanent supportive housing essential for his survival and stability.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "This individual suffers from severe, untreated liver disease with frequent hospitalizations for stomach bleeding and lacks income, making permanent supportive housing essential for his survival and stability.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 527,
+  "thoughts_token_count": null,
+  "candidates_token_count": 50,
+  "total_token_count": 577
+ }
+}

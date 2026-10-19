@@ -1,0 +1,25 @@
+{
+ "id": "P76",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:01:14+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "8e7bffc0196219379c10abc8082403599668c7964fbb667149a15c5871bdafee",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 48. Gender: Male. Race: Hispanic/Latino/e/a. Location: Atlanta, Georgia.\n\nWork and education: Registered nurse for twenty years until multiple sclerosis made shifts impossible.\nPath into homelessness: Disability and depression led to an eviction, and the pattern has repeated in four rooms since. Lost housing because of physical and mental health. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for three months. This is the fifth time without housing in the past three years.\nFinances: No income; a disability application is pending. No debts.\nHealth: Multiple sclerosis that limits walking and makes work impossible. Major depression. Stopped taking the prescribed antidepressant two months ago. Does not drink or use drugs. Cannot keep up with washing, clean clothes, or regular meals.\nSafety: One clinic visit and no emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A former colleague who calls. No children.\nA typical day: Lies on the shelter cot most of the day. Has no planned activities and nothing brings satisfaction.\nGoals: An accessible apartment.\nService history: A shelter case manager is helping with the disability application.\nPresentation in the interview: Flat and exhausted; answers carefully but slowly.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"The client has chronic homelessness, severe physical disability from multiple sclerosis, and untreated major depression that prevents independent daily functioning. Given his total lack of income and inability to work, he requires long-term permanent supportive housing to achieve stability.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "The client has chronic homelessness, severe physical disability from multiple sclerosis, and untreated major depression that prevents independent daily functioning. Given his total lack of income and inability to work, he requires long-term permanent supportive housing to achieve stability.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 558,
+  "thoughts_token_count": null,
+  "candidates_token_count": 65,
+  "total_token_count": 623
+ }
+}

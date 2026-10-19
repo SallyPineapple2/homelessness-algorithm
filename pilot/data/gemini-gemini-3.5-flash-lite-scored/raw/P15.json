@@ -1,0 +1,25 @@
+{
+ "id": "P15",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:05+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "967ce11b89bb65d3d83851b9eed523f7a0cb8011f7d48f0dcdcca563b61cf890",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 40. Gender: Male. Race: Asian or Asian American. Location: Atlanta, Georgia.\n\nWork and education: Roofing for fifteen years and then bartending after a fall made heights a problem. Trade-school credits but no certificate.\nPath into homelessness: Cash work dried up over a slow season. The rented room went, and drinking that had been weekend-only filled the gap. Abuse or trauma did not cause this homelessness.\nCurrent housing: Staying in an emergency shelter for nine months. This is the first time without housing.\nFinances: Cash work when hired, roughly $300 a month. No debts being pursued.\nHealth: A back injury from the roofing fall limits standing and lifting. Drinking got them asked to leave a residential program and has cost a room share. Hangovers, back pain, and shared bathrooms make consistent hygiene difficult. No prescriptions. No mental health condition, head injury, or learning disability.\nSafety: Frequent emergency room visits and police contact over the past six months. Was assaulted outside a bar after becoming homeless, and has a pending charge that could make renting harder. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: A large extended family in the area, most of whom have stopped taking calls. No children.\nA typical day: Looks for work in the morning, drinks in the afternoon if there is money, and plays in a weekly pool league that is the one fixture in the week.\nGoals: Says the plan is to get back on a crew next season, and has said this for three seasons.\nService history: Completed a detox program two years ago and left a residential program after nine days.\nPresentation in the interview: Affable and quick to make the room laugh. Minimizes the drinking as 'social' and grows curt when pressed.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 82, \"explanation\": \"This individual has been stuck in a shelter for nine months with escalating medical and legal vulnerabilities, including frequent ER visits, police contact, an untreated alcohol issue, and a physical disability that hinders employment.\"}",
+ "priority": "High",
+ "urgency": 82,
+ "explanation": "This individual has been stuck in a shelter for nine months with escalating medical and legal vulnerabilities, including frequent ER visits, police contact, an untreated alcohol issue, and a physical disability that hinders employment.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 634,
+  "thoughts_token_count": null,
+  "candidates_token_count": 58,
+  "total_token_count": 692
+ }
+}

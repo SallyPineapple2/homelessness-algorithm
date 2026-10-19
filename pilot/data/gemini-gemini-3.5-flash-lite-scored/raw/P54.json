@@ -1,0 +1,25 @@
+{
+ "id": "P54",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:57:07+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "0d63192c9bddf6c5acf632e86e7a2c1b9fffabbe3df79ec9b63c049abc2faf80",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "4",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 20. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Atlanta, Georgia.\n\nWork and education: Finished high school last year. Worked briefly at a fast-food restaurant.\nPath into homelessness: Family forced the move-out after a conflict. Years of emotional and physical abuse at home are what led to this homelessness.\nCurrent housing: Staying in a youth emergency shelter for six weeks. This is the first time without housing.\nFinances: No income since the restaurant job ended. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Does not drink or use drugs. Diagnosed with an anxiety disorder that made it hard to keep a job or stay at friends' places. Keeps up with washing, laundry, and meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened since leaving home and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A teacher from high school who checks in and two friends. No children.\nA typical day: Draws comics every afternoon and goes to an art drop-in at the library, which is the best part of the week.\nGoals: Finish a job-training program and get a room.\nService history: The youth shelter connected the case to a counselor.\nPresentation in the interview: Soft-spoken and watchful; relaxes when talking about drawing.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 55, \"explanation\": \"This individual is young, has no severe health or safety risks, and needs time-limited help such as short-term assistance and job training support to secure housing.\"}",
+ "priority": "Medium",
+ "urgency": 55,
+ "explanation": "This individual is young, has no severe health or safety risks, and needs time-limited help such as short-term assistance and job training support to secure housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 568,
+  "thoughts_token_count": null,
+  "candidates_token_count": 52,
+  "total_token_count": 620
+ }
+}

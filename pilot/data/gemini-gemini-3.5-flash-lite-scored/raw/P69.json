@@ -1,0 +1,25 @@
+{
+ "id": "P69",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:18+00:00",
+ "seconds": 47.1,
+ "prompt_sha256": "74bb67e4235bf4962ce983b5c535919776f22cb51b0b6148243477813977c631",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 23. Gender: Female. Race: Hispanic/Latino/e/a. Location: New York City, New York.\n\nWork and education: Left high school in the last year and worked at a car wash.\nPath into homelessness: Methamphetamine use led to losing the car-wash job and a room in a shared house. Drug use caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping in a bus station for five months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Uses methamphetamine several times a week. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: two emergency room visits after fights, one night in jail, and three police contacts. Was jumped and beaten at the station last month. Has a pending charge for theft that could mean jail time. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A younger sibling who messages sometimes. No children.\nA typical day: Skateboards with friends every afternoon, which is the favorite part of the day.\nGoals: Not sure; maybe a job at a skate shop.\nService history: Known to a youth outreach worker.\nPresentation in the interview: Restless and fidgety; answers fast and changes topics.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"The client is young, unsheltered for five months, has no income, and is experiencing active methamphetamine use combined with escalating physical violence and legal jeopardy at a bus station. These compounding vulnerabilities indicate a need for intensive, long-term housing support.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "The client is young, unsheltered for five months, has no income, and is experiencing active methamphetamine use combined with escalating physical violence and legal jeopardy at a bus station. These compounding vulnerabilities indicate a need for intensive, long-term housing support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 549,
+  "thoughts_token_count": null,
+  "candidates_token_count": 69,
+  "total_token_count": 618
+ }
+}

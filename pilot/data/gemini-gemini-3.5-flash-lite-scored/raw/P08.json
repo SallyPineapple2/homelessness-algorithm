@@ -1,0 +1,25 @@
+{
+ "id": "P08",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:15+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "2506b5fc658acabef66efd890188a5eb701d005a8c8ff2f06b1cafcc3635d984",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 62. Gender: Female. Race: Black, African American, or African. Location: Chicago, Illinois.\n\nWork and education: Forty years as a long-distance bus mechanic, the last fifteen as a shift lead. Keeps a framed union card in a bag.\nPath into homelessness: The building was sold and the new owner did not renew a long tenancy. Forty years in the trade did not leave savings after a divorce settlement. Abuse or trauma did not cause this homelessness.\nCurrent housing: Sleeping outdoors under a highway overpass, continuously for fourteen months. First time without housing.\nFinances: About $1,040 a month in pension and Social Security, which does not cover local rents. No debt; saves methodically in cash.\nHealth: No health conditions or prescriptions. Does not drink or use drugs. Showers and eats at a drop-in center and manages daily needs independently. No mental health condition, head injury, or learning disability.\nSafety: No emergency room visits, police contact, or legal issues. Has not been threatened or attacked. Nobody pressures or tricks this person into anything, and there have been no risky exchanges for money, drugs, or a place to stay.\nFamily and social ties: Three grown children, in touch by phone at holidays. A grandchild who mails letters to a general-delivery address, and the letters are answered the same day.\nA typical day: Breaks camp at first light so the site is not noticed, reads at the library until noon, then the drop-in center for a meal and a shower. Keeps to a strict schedule and looks forward to the library hours.\nGoals: Senior housing. Is on two waiting lists and calls monthly to confirm the place on each.\nService history: Registered with the coordinated entry system fourteen months ago and has not been contacted since.\nPresentation in the interview: Courteous and precise, with a mechanic's habit of explaining systems. Declines offers of help more than once before accepting.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 45, \"explanation\": \"She has a steady income, no health or behavioral issues, and strong self-management skills, meaning she primarily needs financial gap assistance and housing placement rather than intensive support services.\"}",
+ "priority": "Medium",
+ "urgency": 45,
+ "explanation": "She has a steady income, no health or behavioral issues, and strong self-management skills, meaning she primarily needs financial gap assistance and housing placement rather than intensive support services.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 652,
+  "thoughts_token_count": null,
+  "candidates_token_count": 54,
+  "total_token_count": 706
+ }
+}

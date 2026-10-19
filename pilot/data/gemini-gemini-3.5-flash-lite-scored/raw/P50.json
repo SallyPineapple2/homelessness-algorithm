@@ -1,0 +1,25 @@
+{
+ "id": "P50",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:58:14+00:00",
+ "seconds": 0.9,
+ "prompt_sha256": "0b31d0e22734c96d7d1e16092b6b83f15c0e645a3bf0f8c8ebb7e774edd9d4d7",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "4",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 47. Gender: Male. Race: Hispanic/Latino/e/a. Location: Chicago, Illinois.\n\nWork and education: Construction day laborer for most of a working life.\nPath into homelessness: Work became scarce and rent went unpaid until an eviction. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors under a highway overpass for two years. This is the first time without housing.\nFinances: No regular income; picks up day labor a few times a month. No debts.\nHealth: No health conditions or disabilities and no prescriptions. Does not use drugs and drinks rarely. Washes at a drop-in center and keeps up with laundry and meals. No mental health condition.\nSafety: No emergency room visits, ambulance rides, hospital stays, or crisis calls, and two brief conversations with police in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A few acquaintances at the overpass. No family contact and no children.\nA typical day: Waits at a day-labor corner most mornings, then walks. Has no planned activities and nothing that brings satisfaction.\nGoals: Indoors with a steady job.\nService history: Known to one outreach worker.\nPresentation in the interview: Polite and reserved; keeps answers short.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 50, \"explanation\": \"While this individual has been unhoused for two years and lacks regular income, his lack of severe health, mental health, or substance use issues suggests he can achieve stability with time-limited rental assistance and employment support.\"}",
+ "priority": "Medium",
+ "urgency": 50,
+ "explanation": "While this individual has been unhoused for two years and lacks regular income, his lack of severe health, mental health, or substance use issues suggests he can achieve stability with time-limited rental assistance and employment support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 545,
+  "thoughts_token_count": null,
+  "candidates_token_count": 63,
+  "total_token_count": 608
+ }
+}

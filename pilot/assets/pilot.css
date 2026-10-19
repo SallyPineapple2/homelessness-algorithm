@@ -40,3 +40,11 @@
 .group-label { font: 400 12px var(--font-ui); fill: var(--ink-2); }
 .group-n { font: 400 11px var(--font-ui); fill: var(--ink-muted); font-variant-numeric: tabular-nums; }
 .run-pending { color: var(--ink-muted); }
+.factor-table { table-layout: fixed; width: 100%; }
+.factor-table th, .factor-table td { white-space: normal !important; text-align: left !important; vertical-align: top; line-height: 1.45; }
+.factor-table th:nth-child(1), .factor-table td:nth-child(1) { width: 2.5rem; }
+.factor-table th:nth-child(2), .factor-table td:nth-child(2) { width: 15rem; }
+.factor-table th:nth-child(4), .factor-table td:nth-child(4) { width: 7rem; }
+.factor-table th:nth-child(6), .factor-table td:nth-child(6) { width: 4.5rem; text-align: right !important; }
+.factor-table td:nth-child(5) { color: var(--ink-2); font-size: 0.82rem; }
+.domain-swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 0.45rem; vertical-align: baseline; }

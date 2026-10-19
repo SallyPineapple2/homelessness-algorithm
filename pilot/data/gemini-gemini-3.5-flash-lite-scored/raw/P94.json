@@ -1,0 +1,25 @@
+{
+ "id": "P94",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:02:06+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "2204720abd1939b5e57ca8a5f48320217f15d262b64a28bccbf2c6ca636a5216",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "11",
+ "vispdat_priority": "High",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 26. Gender: Male. Race: Black, African American, or African. Location: Cincinnati, Ohio.\n\nWork and education: Worked in retail and as a server.\nPath into homelessness: Family forced the move-out after years of abuse at home. The abuse and family conflict are the cause of this homelessness.\nCurrent housing: Sleeping in strangers' apartments and on the street for eight months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: HIV positive and interested in an HIV program. Uses opioids daily. Post-traumatic stress disorder. No prescriptions. Keeps up with washing, laundry, and meals.\nSafety: In the past six months: three emergency room visits and two police contacts. Was assaulted by a client. No legal issues. Trades sex for money and a place to stay.\nFamily and social ties: A friend from school who calls. No children.\nA typical day: Volunteers at a pet shelter and loves it.\nGoals: Housing and HIV treatment.\nService history: An HIV outreach worker made the referral.\nPresentation in the interview: Anxious and guarded.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 90, \"explanation\": \"This individual faces multiple severe vulnerabilities, including untreated HIV, daily opioid use, PTSD, recent trauma, and survival sex, requiring intensive and immediate support.\"}",
+ "priority": "High",
+ "urgency": 90,
+ "explanation": "This individual faces multiple severe vulnerabilities, including untreated HIV, daily opioid use, PTSD, recent trauma, and survival sex, requiring intensive and immediate support.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 477,
+  "thoughts_token_count": null,
+  "candidates_token_count": 49,
+  "total_token_count": 526
+ }
+}

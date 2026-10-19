@@ -601,6 +601,80 @@ function renderCities() {
 }
 
 /* ============================================================
+   The 17 factors
+   ============================================================ */
+
+const FACTOR_PLAIN = {
+  pre_age: "Is 60 or older",
+  a1_sleep: "Sleeps anywhere other than a shelter, transitional housing, or a safe haven (car, outdoors, a couch)",
+  a2_duration: "Homeless 1 year or more without a break, or 4 or more times in 3 years",
+  b1_emergency: "4 or more emergency contacts in 6 months: ER visits, ambulance rides, hospital stays, crisis calls, police, or jail",
+  b2_harm: "Attacked since becoming homeless, or threatened or tried to harm self or others",
+  b3_legal: "Legal trouble that could lead to jail or fines",
+  b4_exploitation: "Forced or tricked into things, or trades sex, drugs, or favors",
+  c1_money: "No regular income, or owes money",
+  c2_activity: "No planned activities that bring happiness or fulfillment",
+  c3_selfcare: "Cannot take care of basic needs such as washing, clean clothes, and meals",
+  c4_relationships: "Became homeless because of a relationship breakdown or family or friends",
+  d1_physical: "Chronic illness, physical disability, pregnancy, or HIV",
+  d2_substance: "Drinking or drug use that cost housing or makes it hard to keep",
+  d3_mental: "Mental illness, head injury, or learning or cognitive impairment that affects housing",
+  d4_trimorbidity: "Meets physical health, substance use, and mental health together (scored automatically)",
+  d5_medications: "Not taking, or selling, prescribed medication",
+  d6_trauma: "Became homeless because of abuse or trauma"
+};
+const DOMAIN_TOKEN = { "—": "--ink-muted", A: "--series-1", B: "--series-2", C: "--series-3", D: "--series-4" };
+
+function renderFactors() {
+  const P = DATA.profiles, n = P.length, items = DATA.instrument.items;
+  const bandName = { 1: "Low", 2: "Medium", 3: "High" };
+  const bands = d3.select("#factor-bands").html("");
+  DATA.instrument.bands.forEach((b) => {
+    const k = P.filter((p) => p.score >= b.min && p.score <= b.max).length;
+    const a = bands.append("article").attr("class", "fcard");
+    a.append("p").attr("class", "fcard-kicker").text(`Score ${b.min}–${b.max}`);
+    a.append("p").attr("class", "fcard-stat").text(bandName[b.id]);
+    a.append("p").attr("class", "fcard-note").text(b.name);
+    a.append("p").attr("class", "fcard-body").text(`${k} of ${n} people in the pilot.`);
+  });
+  const mean = d3.mean(P, (p) => p.score);
+  const a = bands.append("article").attr("class", "fcard");
+  a.append("p").attr("class", "fcard-kicker").text("Factors per person");
+  a.append("p").attr("class", "fcard-stat").text(mean.toFixed(1));
+  a.append("p").attr("class", "fcard-note").text("average VI‑SPDAT score of the 100 people");
+  a.append("p").attr("class", "fcard-body").text(`Scores range from ${d3.min(P, (p) => p.score)} to ${d3.max(P, (p) => p.score)}.`);
+
+  const domains = [...new Map(items.map((i) => [i.letter, i.domain])).entries()];
+  legend("#legend-factors", domains.map(([l, d]) => ({ name: l === "—" ? d : `${l}. ${d}`, color: css(DOMAIN_TOKEN[l]) })));
+  const W = widthOf("#chart-factors", 600, 960), lw = 300, rh = 26, H = items.length * rh + 34, mr = 70;
+  const x = d3.scaleLinear().domain([0, n]).range([lw, W - mr]);
+  const svg = d3.select("#chart-factors").html("").append("svg").attr("width", W).attr("height", H).attr("role", "img")
+    .attr("aria-label", "Number of people meeting each VI-SPDAT factor: " + items.map((i) => `${i.name} ${P.filter((p) => p.indicators.includes(i.id)).length}`).join(", "));
+  [0, 25, 50, 75, 100].forEach((v) => {
+    svg.append("line").attr("class", "gridline").attr("x1", x(v)).attr("x2", x(v)).attr("y1", 4).attr("y2", H - 24);
+    svg.append("text").attr("class", "tick-text").attr("x", x(v)).attr("y", H - 8).attr("text-anchor", "middle").text(v);
+  });
+  items.forEach((it, i) => {
+    const k = P.filter((p) => p.indicators.includes(it.id)).length, y = 8 + i * rh;
+    svg.append("text").attr("class", "group-label").attr("x", lw - 12).attr("y", y + 9).attr("dy", "0.35em").attr("text-anchor", "end")
+      .text(`${i + 1}. ${it.name}`);
+    const g = svg.append("g");
+    g.append("rect").attr("x", x(0)).attr("y", y).attr("height", 18).attr("width", x(k) - x(0)).attr("rx", 3).attr("fill", css(DOMAIN_TOKEN[it.letter]));
+    g.append("text").attr("class", "bar-value").style("text-anchor", "start").attr("x", x(k) + 6).attr("y", y + 9).attr("dy", "0.35em").text(`${k}`);
+    hover(g, () => `<span class="tt-title">${it.name}</span><span class="tt-row">${FACTOR_PLAIN[it.id]}</span><span class="tt-row">${k} of ${n} people</span>`);
+  });
+
+  table("#factor-table", ["#", "Factor", "Counts as yes when the person…", "VI‑SPDAT questions", "Published scoring rule", "People"],
+    items.map((it, i) => ({ cells: [
+      i + 1,
+      `<span class="domain-swatch" style="background:${css(DOMAIN_TOKEN[it.letter])}"></span>${esc(it.name)}<br><span class="group-n">${it.letter === "—" ? "" : it.letter + ". "}${esc(it.domain)}</span>`,
+      esc(FACTOR_PLAIN[it.id]), esc(it.questions), esc(it.rule),
+      `${P.filter((p) => p.indicators.includes(it.id)).length}`
+    ] })));
+  d3.select("#factor-foot").text(`Rules quoted from VI‑SPDAT ${DATA.instrument.version}, ${DATA.instrument.population}. ${DATA.instrument.copyright}`);
+}
+
+/* ============================================================
    Profiles
    ============================================================ */
 
@@ -708,6 +782,7 @@ function renderAll() {
   renderSignificance();
   renderAgreement();
   renderCities();
+  renderFactors();
   renderProfiles();
   renderDesign();
   renderDownloads();

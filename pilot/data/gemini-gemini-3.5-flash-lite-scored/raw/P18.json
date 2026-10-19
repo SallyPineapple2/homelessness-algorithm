@@ -1,0 +1,25 @@
+{
+ "id": "P18",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T01:59:10+00:00",
+ "seconds": 0.8,
+ "prompt_sha256": "378e277b82711a517fe86863929f7967230b68a267b2cc653930f25208aeb9db",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "7",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 37. Gender: Male. Race: Asian or Asian American. Location: Chicago, Illinois.\n\nWork and education: Hair stylist with a steady chair rental and a regular clientele built over eight years.\nPath into homelessness: The relationship ended and the apartment was in the partner's name. The chair rental could not be paid without the housing behind it, and the clients drifted. Names the breakup as the cause of this period of homelessness.\nCurrent housing: Sleeping in a vehicle for eleven months. This is the first time without housing.\nFinances: Irregular cash from cutting hair in parking lots and shelters, about $200 a month. No debts on record.\nHealth: A chronic lung condition. Drinking cost a place on a friend's couch and makes it hard to hold onto any housing. No prescriptions. Keeps clean at a gym. No mental health condition, head injury, or learning disability.\nSafety: Frequent emergency room visits and police contact over the past six months. Was assaulted after becoming homeless. Trades sex for a place to stay on bad-weather nights. No legal issues.\nFamily and social ties: No children. A network of acquaintances who trade rides and phone charging.\nA typical day: Cuts hair for cash during the day, sleeps in the vehicle, and takes an arrangement for a bed on the worst nights. Does other residents' hair for free on Sundays, which is described as the good part of the week.\nGoals: A chair in a salon again, and a license renewal that requires a fixed address.\nService history: Uses a mobile health van for checkups and has never been referred to housing.\nPresentation in the interview: Charismatic and performative, steering toward humor. Becomes flat and factual when describing the exchanges for a bed.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"High\", \"urgency\": 85, \"explanation\": \"Despite his employment history and resourcefulness, he faces severe vulnerabilities including chronic health issues, regular police contact, physical assault, and survival sex. These factors, combined with nearly a year of sleeping in a vehicle and alcohol-related housing instability, necessitate intensive support to achieve long-term housing.\"}",
+ "priority": "High",
+ "urgency": 85,
+ "explanation": "Despite his employment history and resourcefulness, he faces severe vulnerabilities including chronic health issues, regular police contact, physical assault, and survival sex. These factors, combined with nearly a year of sleeping in a vehicle and alcohol-related housing instability, necessitate intensive support to achieve long-term housing.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 609,
+  "thoughts_token_count": null,
+  "candidates_token_count": 77,
+  "total_token_count": 686
+ }
+}

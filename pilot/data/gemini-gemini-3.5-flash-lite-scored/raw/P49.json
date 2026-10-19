@@ -1,0 +1,25 @@
+{
+ "id": "P49",
+ "model": "gemini-3.5-flash-lite",
+ "thinking_level": "model default",
+ "variant": "scored",
+ "model_version": "gemini-3.5-flash-lite",
+ "requested_at": "2026-10-19T02:00:04+00:00",
+ "seconds": 0.7,
+ "prompt_sha256": "0bcaf01370da24309c65fa6fb81594523c833493297213bf7910dc0de9ab9914",
+ "instructions_sha256": "34fc2e39376f2f4b1b9079fa9117a0b39028551b593e648581479b45e56a862e",
+ "vispdat_score": "3",
+ "vispdat_priority": "Low",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nAlso rate how urgently this person should be offered housing, on a scale from 1 (least urgent) to 100 (most urgent).\n\nCase summary\nAge 55. Gender: Female. Race: Asian or Asian American. Location: Los Angeles, California.\n\nWork and education: Sales representative for a building-supply company for fifteen years.\nPath into homelessness: Heavy drinking led to missed sales targets and a lost commission check, and spending on alcohol meant the rent went unpaid. Drinking made it hard to afford housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Staying in an emergency shelter for two months. This is the first time without housing.\nFinances: Still employed on a reduced base salary. Owes $3,000 on a credit card and two months of rent to the former landlord.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks most evenings. No mental health diagnosis. Keeps up with washing, laundry, and meals.\nSafety: No emergency room visits, ambulance rides, hospital stays, crisis calls, or police contact in the past six months. Has not been attacked or threatened and has not threatened to harm anyone, including self. No legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: An adult child who has stopped calling and an ex-colleague who checks in. No dependents.\nA typical day: Goes to work, then to a bar until the shelter opens. Has no planned activities that bring any satisfaction.\nGoals: Says housing first, then maybe cutting back on drinking.\nService history: First stay in any shelter. Has not tried alcohol treatment.\nPresentation in the interview: Polished and talkative at first, then defensive when asked about drinking.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"urgency\": <whole number from 1 to 100>, \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"urgency\": 45, \"explanation\": \"The client is still employed and has stable daily functioning, meaning she likely needs time-limited assistance and support addressing her alcohol use rather than intensive, long-term intervention.\"}",
+ "priority": "Medium",
+ "urgency": 45,
+ "explanation": "The client is still employed and has stable daily functioning, meaning she likely needs time-limited assistance and support addressing her alcohol use rather than intensive, long-term intervention.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 583,
+  "thoughts_token_count": null,
+  "candidates_token_count": 53,
+  "total_token_count": 636
+ }
+}
