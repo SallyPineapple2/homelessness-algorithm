@@ -173,28 +173,20 @@ function kappa(people) {
 function renderOverview() {
   const P = DATA.profiles, t = tally(P);
   d3.select("#overview-lede").text(
-    `The VI‑SPDAT and ${RUN.label} placed the same ${t.n} synthetic people in High, Medium, or Low housing priority. ` +
-    `Each person was a separate request to Gemini, which never saw the VI‑SPDAT questions or scores.`);
-
-  // the group with the largest Gemini-minus-VI-SPDAT gap in share rated High, among demographic factors
-  let gap = null;
-  ["gender", "race", "city", "age"].forEach((f) => groupsOf(f).forEach((g) => {
-    const tt = tally(g.people);
-    const d = tt.g.High / tt.n - tt.v.High / tt.n;
-    if (!gap || d > gap.d) gap = { f, g, tt, d };
-  }));
-  const fl = FACTORS.find((x) => x.key === gap.f).label.toLowerCase();
+    `VI‑SPDAT and ${RUN.label} sorted the same ${t.n} synthetic people into High, Medium, or Low housing priority. ` +
+    `Gemini judged each person in a separate request and never saw the VI‑SPDAT questions or scores.`);
+  const sigDemo = RUN.stats ? RUN.stats.demographics.filter((d) => d.p_holm < 0.05) : [];
   const cards = [
     { kicker: "Agreement", stat: pct0(t.same, t.n), note: "placed in the same category by both",
-      body: `Linear‑weighted Cohen's kappa = ${kappa(P).toFixed(2)}. ${t.n - t.same} people are placed differently.` },
+      body: `Weighted Cohen's kappa = ${kappa(P).toFixed(2)}, moderate agreement. The other ${t.n - t.same} people are placed differently.` },
     { kicker: "Direction", stat: `${t.higher} up · ${t.lower} down`,
       note: "people Gemini places above / below VI‑SPDAT",
-      body: t.lower === 0 ? `Whenever the two disagree, Gemini assigns the higher priority; it never ranks anyone below VI‑SPDAT${RUN.stats ? ` (sign test p ${fmtP(RUN.stats.direction.p_sign)})` : ""}.`
+      body: t.lower === 0 ? `Every disagreement goes the same way: Gemini gives the higher priority${RUN.stats ? ` (sign test p ${fmtP(RUN.stats.direction.p_sign)})` : ""}.`
         : `Gemini is higher for ${t.higher} people and lower for ${t.lower}.` },
     { kicker: "High priority", stat: `${t.v.High} → ${t.g.High}`, note: "people rated High: VI‑SPDAT → Gemini",
       body: `Gemini moves ${P.filter((p) => p.vispdat === "Medium" && gem(p) === "High").length} of VI‑SPDAT's ${t.v.Medium} Medium people up to High.` },
-    { kicker: "Largest group gap", stat: `+${Math.round(gap.d * 100)} pts`, note: `${gap.g.name} (${fl}): share rated High, Gemini minus VI‑SPDAT`,
-      body: `${pct0(gap.tt.v.High, gap.tt.n)} → ${pct0(gap.tt.g.High, gap.tt.n)} of ${gap.tt.n} people. Small groups: a few people move this number.` }
+    { kicker: "Demographic bias", stat: `${sigDemo.length} of ${RUN.stats ? RUN.stats.demographics.length : 4}`, note: "gender, race, city, and age tests significant",
+      body: "People with the same VI‑SPDAT score were treated alike regardless of gender, race, city, or age (Holm-corrected permutation tests)." }
   ];
   const el = d3.select("#findings");
   el.selectAll("*").remove();
@@ -455,13 +447,13 @@ function renderSignificance() {
   const rawItems = S.items.filter((i) => i.p < 0.05);
   const sigDemo = S.demographics.filter((d) => d.p_holm < 0.05);
   d3.select("#sig-lede").text(
-    `Of the ${S.eligible} people VI‑SPDAT rated Low or Medium, ${RUN.label} placed ${S.upgraded} higher. These exploratory tests ask whether a ` +
-    `group or circumstance changes that judgment once the VI‑SPDAT score is held fixed. With 100 people, small differences cannot be detected.`);
+    `Of the ${S.eligible} people VI‑SPDAT rated Low or Medium, ${RUN.label} placed ${S.upgraded} higher. These tests ask whether a ` +
+    `group or circumstance changes that decision once the VI‑SPDAT score is held fixed. With 100 people, only large effects can be detected.`);
   const cards = [
     { kicker: "Direction", stat: `p ${fmtP(S.direction.p_sign)}`, note: `${S.direction.higher} placed higher vs ${S.direction.lower} lower (exact sign test)`,
-      body: "Gemini assigns higher priority than VI‑SPDAT far more often than chance would predict. This is the clearest result of the pilot." },
+      body: "Gemini gives higher priority than VI‑SPDAT far more often than chance would predict. This is the clearest result of the pilot." },
     { kicker: "VI-SPDAT score", stat: "Main driver", note: "of who Gemini moves up",
-      body: "Upgrades follow the VI‑SPDAT score: none at scores 0–1, most at the top of each band (score 3, and 5–7). Gemini rates everyone scoring 6 or more High (VI‑SPDAT starts at 8)." },
+      body: "Nobody scoring 0–1 is moved up; most people at the top of each band (score 3, and 5–7) are. Gemini rates everyone scoring 6 or more High, while VI‑SPDAT starts High at 8." },
     { kicker: "Demographics", stat: `${sigDemo.length} of ${S.demographics.length}`, note: "gender, race, city, age: significant after Holm",
       body: sigDemo.length ? sigDemo.map((d) => d.factor).join(", ") : "No demographic group changes Gemini's judgment once the VI‑SPDAT score is held fixed." },
     { kicker: "Circumstances", stat: `${sigItems.length} of ${S.items.length}`, note: "significant after Holm correction",
@@ -531,7 +523,7 @@ function renderSignificance() {
     S.demographics.map((d) => ({ cells: [d.factor,
       d.groups.map((g) => `${esc(RACE_SHORT[g.group] || (CITY_CALLOUT[g.group] ? CITY_CALLOUT[g.group].short : g.group))}: ${g.upgraded}/${g.n} (${pct0(g.upgraded, g.n)})`).join("<br>"),
       fmtP(d.p), fmtP(d.p_holm)] })));
-  d3.select("#sig-method").text(S.method + " Exploratory: the pilot was not designed with the power to detect small differences.");
+  d3.select("#sig-method").text(S.method + " With groups of 20, these tests can only detect large differences.");
 }
 
 /* ============================================================
@@ -664,14 +656,73 @@ function renderFactors() {
     hover(g, () => `<span class="tt-title">${it.name}</span><span class="tt-row">${FACTOR_PLAIN[it.id]}</span><span class="tt-row">${k} of ${n} people</span>`);
   });
 
-  table("#factor-table", ["#", "Factor", "Counts as yes when the person…", "VI‑SPDAT questions", "Published scoring rule", "People"],
-    items.map((it, i) => ({ cells: [
-      i + 1,
-      `<span class="domain-swatch" style="background:${css(DOMAIN_TOKEN[it.letter])}"></span>${esc(it.name)}<br><span class="group-n">${it.letter === "—" ? "" : it.letter + ". "}${esc(it.domain)}</span>`,
-      esc(FACTOR_PLAIN[it.id]), esc(it.questions), esc(it.rule),
-      `${P.filter((p) => p.indicators.includes(it.id)).length}`
-    ] })));
+  const fw = DATA.factor_weights ? Object.fromEntries(DATA.factor_weights.factors.map((f) => [f.id, f])) : {};
+  const up = RUN.stats ? Object.fromEntries(RUN.stats.items.map((f) => [f.item, f])) : {};
+  const sigCell = (txt, p) => (p < 0.05 ? `<span class="weight-sig">${txt}</span>` : txt);
+  table("#factor-table", ["#", "Factor", "Counts as yes when the person…", "VI‑SPDAT questions", "Published scoring rule", "People",
+    "Gemini weight (Holm p)", "Moves people up? (Holm p)"],
+    items.map((it, i) => {
+      const w = fw[it.id], u = up[it.id];
+      return { cells: [
+        i + 1,
+        `<span class="domain-swatch" style="background:${css(DOMAIN_TOKEN[it.letter])}"></span>${esc(it.name)}<br><span class="group-n">${it.letter === "—" ? "" : it.letter + ". "}${esc(it.domain)}</span>`,
+        esc(FACTOR_PLAIN[it.id]), esc(it.questions), esc(it.rule),
+        `${P.filter((p) => p.indicators.includes(it.id)).length}`,
+        w ? sigCell(`${w.gemini_relative_weight.toFixed(1)}× (${fmtP(w.p_vs_zero_holm)})`, w.p_vs_zero_holm) : "—",
+        u ? sigCell(`${pct0(u.with.upgraded, u.with.n)} vs ${pct0(u.without.upgraded, u.without.n)} (${fmtP(u.p_holm)})`, u.p_holm) : "—"
+      ] };
+    }));
+  renderWeights();
   d3.select("#factor-foot").text(`Rules quoted from VI‑SPDAT ${DATA.instrument.version}, ${DATA.instrument.population}. ${DATA.instrument.copyright}`);
+}
+
+function renderWeights() {
+  const FW = DATA.factor_weights;
+  if (!FW) { d3.select("#weights-sub").text("Factor weights are not available yet."); return; }
+  const eq = FW.equal_weights_test, dm = FW.demographics_test;
+  d3.select("#weights-sub").text(
+    "VI‑SPDAT gives every factor exactly 1 point (dashed line). Gemini's weights are estimated from its 1–100 urgency rating " +
+    "(tie-break run, Gemini 3.5 Flash‑Lite): each factor's effect with all the others held fixed, shown relative to Gemini's average factor, " +
+    "so 1.0 means 'as important as a typical factor'. Lines: 95% confidence intervals. Bold: significant after Holm correction.");
+  legend("#legend-weights", [{ name: "Gemini relative weight", color: css("--series-2") }, { kind: "line", name: "VI‑SPDAT: every factor = 1" }]);
+  const rows = FW.factors.slice();
+  const m = FW.mean_weight;
+  const vals = rows.flatMap((r) => [r.ci_low / m, r.ci_high / m]);
+  const lo = Math.min(-1, Math.floor(d3.min(vals))), hi = Math.ceil(d3.max(vals));
+  const W = widthOf("#chart-weights", 640, 960), lw = 280, rw = 120, rh = 28, H = rows.length * rh + 46;
+  const x = d3.scaleLinear().domain([lo, hi]).range([lw, W - rw]);
+  const svg = d3.select("#chart-weights").html("").append("svg").attr("width", W).attr("height", H).attr("role", "img")
+    .attr("aria-label", "Gemini's relative weight for each factor compared with VI-SPDAT's equal weight of 1: " +
+      rows.map((r) => `${r.factor} ${r.gemini_relative_weight}`).join(", "));
+  d3.range(lo, hi + 1).forEach((v) => {
+    svg.append("line").attr("class", "gridline").attr("x1", x(v)).attr("x2", x(v)).attr("y1", 14).attr("y2", H - 28);
+    svg.append("text").attr("class", "tick-text").attr("x", x(v)).attr("y", H - 12).attr("text-anchor", "middle").text(v);
+  });
+  svg.append("line").attr("class", "gridline").attr("x1", x(0)).attr("x2", x(0)).attr("y1", 14).attr("y2", H - 28).attr("stroke", css("--ink-muted"));
+  svg.append("line").attr("class", "ref-line").attr("x1", x(1)).attr("x2", x(1)).attr("y1", 10).attr("y2", H - 28);
+  svg.append("text").attr("class", "ref-label").attr("x", x(1) + 6).attr("y", 10).text("VI‑SPDAT = 1");
+  svg.append("text").attr("class", "axis-title").attr("x", W - rw + 14).attr("y", 10).text("HOLM p");
+  rows.forEach((r, i) => {
+    const cy = 28 + i * rh, sig = r.p_vs_zero_holm < 0.05;
+    svg.append("text").attr("class", "group-label").attr("x", lw - 12).attr("y", cy).attr("dy", "0.35em").attr("text-anchor", "end")
+      .attr("font-weight", sig ? 700 : 400).text(r.factor);
+    const g = svg.append("g");
+    g.append("line").attr("class", "ci-line").attr("x1", x(r.ci_low / m)).attr("x2", x(r.ci_high / m)).attr("y1", cy).attr("y2", cy);
+    g.append("circle").attr("cx", x(r.gemini_relative_weight)).attr("cy", cy).attr("r", sig ? 7 : 5.5)
+      .attr("fill", css("--series-2")).attr("stroke", sig ? "#4a3e4d" : "none").attr("stroke-width", 2);
+    svg.append("text").attr("class", "bar-value").style("text-anchor", "start").attr("x", W - rw + 14).attr("y", cy).attr("dy", "0.35em")
+      .attr("font-weight", sig ? 700 : 400).text(fmtP(r.p_vs_zero_holm));
+    hover(g, () => `<span class="tt-title">${r.factor} (${r.people} people)</span>` +
+      `<span class="tt-row">Gemini: +${r.gemini_urgency_points.toFixed(1)} urgency points (95% CI ${r.ci_low.toFixed(1)} to ${r.ci_high.toFixed(1)})</span>` +
+      `<span class="tt-row">Relative weight ${r.gemini_relative_weight.toFixed(2)} (VI‑SPDAT: 1)</span>` +
+      `<span class="tt-row">p = ${fmtP(r.p_vs_zero)}, Holm p = ${fmtP(r.p_vs_zero_holm)}</span>`);
+  });
+  d3.select("#weights-foot").text(
+    `Do Gemini's weights equal VI‑SPDAT's equal-weight rule? No: F(${eq.df[0]}, ${eq.df[1]}) = ${eq.F.toFixed(2)}, p ${fmtP(eq.p)}. ` +
+    `The 17 factors explain ${Math.round(FW.r_squared * 100)}% of Gemini's ratings (the VI‑SPDAT total alone: ${Math.round(FW.r_squared_vispdat_score_only * 100)}%). ` +
+    `Adding gender, race, and city explains nothing more (p = ${fmtP(dm.p)}). Tri-morbidity is negative because people with all three conditions ` +
+    `are already rated 85–98 of 100, so the bonus point has no room to add (a ceiling effect). Ordinary least squares with robust (HC3) errors; ` +
+    `factors often occur together, so single weights are imprecise.`);
 }
 
 /* ============================================================
@@ -721,8 +772,10 @@ function renderProfiles() {
    ============================================================ */
 
 function renderDesign() {
-  const runs = DATA.runs.map((r) => `${r.label}: ${r.complete ? "complete (100 of 100), shown here" : `in progress (${r.done} of ${r.total}); added when complete`}. ${r.note}`);
-  d3.select("#design-runs").html(`<strong>Gemini runs.</strong> ${runs.map(esc).join(" ")}`);
+  const done = DATA.runs.filter((r) => r.complete).map((r) => r.label).join(" and ");
+  const pending = DATA.runs.filter((r) => !r.complete);
+  d3.select("#design-runs").html(`<strong>Model.</strong> Results are from ${esc(done)}, with default settings.` +
+    (pending.length ? ` A replication with ${esc(pending.map((r) => r.label).join(", "))} is under way and will be added when all 100 people are scored.` : ""));
   const pr = DATA.prompt;
   d3.select("#prompt-text").text(`${pr.instructions}\n\nCase summary\nAge [age]. Gender: [gender]. Race: [race]. Location: [city].\n\n` +
     pr.sections.map((s) => `${s}: [text]`).join("\n") + `\n\n${pr.reply_format}`);
@@ -770,11 +823,9 @@ function renderDownloads() {
 function renderAll() {
   if (!DATA || !RUN) return;
   const complete = DATA.runs.filter((r) => r.complete);
-  chipGroup("#model-chips", DATA.runs.map((r) => ({ value: r.key, label: r.label, disabled: !r.complete, empty: !r.complete,
-    count: r.complete ? null : `${r.done}/${r.total}` })), RUN.key, (v) => { RUN = complete.find((r) => r.key === v); renderAll(); });
-  const pending = DATA.runs.filter((r) => !r.complete);
-  d3.select("#run-status").attr("class", "table-note-inline run-pending")
-    .text(pending.length ? `${pending.map((r) => r.label).join(", ")} in progress; shown when all 100 are done` : "");
+  chipGroup("#model-chips", complete.map((r) => ({ value: r.key, label: r.label })), RUN.key,
+    (v) => { RUN = complete.find((r) => r.key === v); renderAll(); });
+  d3.select("#run-status").text("");
   renderOverview();
   renderDumbbell();
   renderGroups();

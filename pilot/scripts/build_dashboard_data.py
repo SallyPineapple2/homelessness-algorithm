@@ -57,6 +57,8 @@ def main():
         "prompt": {"instructions": INSTRUCTIONS, "reply_format": REPLY_FORMAT,
                    "sections": [t for _, t in SECTION_TITLES]},
         "runs": runs,
+        "factor_weights": (json.loads((PILOT / "results" / "factor_weights.json").read_text(encoding="utf-8"))
+                           if (PILOT / "results" / "factor_weights.json").exists() else None),
         "profiles": [{
             "id": p["id"], "label": p["label"], "source": p["source"], "age": p["age"], "gender": p["gender"],
             "race": p["race"], "location": p["location"], "demographic_line": p["demographic_line"],

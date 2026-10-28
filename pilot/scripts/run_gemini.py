@@ -78,7 +78,7 @@ VARIANT = "category"  # "scored" also asks for a 1-100 urgency rating (--variant
 OVERLOAD_WAITS = [300, 600, 1200]  # seconds; then every 20 minutes
 
 
-def send(client, text, tries=30):
+def send(client, text, tries=200):
     """One stateless request, waiting out per-minute limits and overloads."""
     for attempt in range(1, tries + 1):
         try:
@@ -98,7 +98,7 @@ def send(client, text, tries=30):
                 time.sleep(wait)
                 continue
             if attempt == tries or not any(c in message.upper() for c in
-                                            ("500", "503", "UNAVAILABLE", "DEADLINE", "TIMEOUT", "TIMED OUT")):
+                                            ("500", "503", "UNAVAILABLE", "DEADLINE", "TIMEOUT", "TIMED OUT", "GETADDRINFO", "CONNECT", "NETWORK", "RESET")):
                 raise
             # Overload retries count against the free daily quota, so back off in minutes, not seconds.
             wait = OVERLOAD_WAITS[min(attempt, len(OVERLOAD_WAITS)) - 1]

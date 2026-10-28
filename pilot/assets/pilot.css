@@ -1,5 +1,49 @@
 /* Pilot dashboard: small additions on top of the original dashboard's stylesheet */
 
+/* Theme: warm paper and muted pastels (palette in the spirit of the UW HGIS lab site:
+   paper background, plum, rose, gold, and sage accents; Fraunces headings, Inter text).
+   Overrides the original tokens in light and dark mode alike, so the page always reads as paper. */
+:root {
+  color-scheme: light;
+  --plane:        #f4efe5;
+  --surface:      #fbf8f2;
+  --surface-sunk: #ede6d9;
+  --ink:          #2c2823;
+  --ink-2:        #5f574d;
+  --ink-muted:    #8f8676;
+  --rule:         #e6dfd1;
+  --rule-strong:  #d3c9b8;
+  --ring:         rgba(44, 40, 35, 0.10);
+  --series-1: #7a6890;  /* plum: VI-SPDAT */
+  --series-2: #c08872;  /* rose: Gemini */
+  --series-3: #8fa58b;  /* sage */
+  --series-4: #c9ae7c;  /* gold */
+  --series-5: #a8b1b3;  /* mist */
+  --band-1: #cfc6db;
+  --band-2: #9d8db3;
+  --band-3: #6a5a6e;
+  --div-neg: #8fa58b;
+  --div-mid: #f1ebe0;
+  --div-pos: #8c6a86;
+  --font-display: "Fraunces", "Source Serif Pro", Georgia, serif;
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+body { background: var(--plane); color: var(--ink); }
+.sidebar { background: #efe8db; border-right: 1px solid var(--rule); }
+.side-nav a[aria-current="page"] { background: #6a5a6e; color: #fbf8f2; }
+.brand { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; }
+.app-header { background: color-mix(in srgb, var(--plane) 92%, transparent); }
+.app-title, .block-title, .rq-text { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.015em; }
+.rq-kicker, .fcard-kicker { color: #6a5a6e; letter-spacing: 0.12em; }
+.chart-card, .fcard { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px;
+  box-shadow: 0 1px 0 rgba(44, 40, 35, 0.03), 0 8px 24px -18px rgba(44, 40, 35, 0.25); }
+.fcard-stat { font-family: var(--font-display); font-weight: 400; color: #4a3e4d; }
+.intro-band { background: #f7f1e6; border-left: 3px solid #c9ae7c; border-radius: 10px; }
+.chart-title { font-family: var(--font-display); font-weight: 500; font-size: 1.08rem; letter-spacing: -0.005em; }
+.chip[aria-pressed="true"] { background: #6a5a6e; border-color: #6a5a6e; color: #fbf8f2; }
+.site-footer { background: #ede6d9; border-top: 1px solid var(--rule); }
+a { color: #6a5a6e; }
+
 .nav-external { color: var(--series-1) !important; }
 .pilot-prose { max-width: 78ch; margin-bottom: 1.5rem; }
 .pilot-prose p { color: var(--ink-2); line-height: 1.65; margin: 0 0 0.9rem; }
@@ -16,9 +60,9 @@
 }
 .pri { display: inline-block; min-width: 4.4em; padding: 0.1rem 0.45rem; border-radius: 4px; font-size: 0.78rem;
   font-weight: 600; text-align: center; }
-.pri-High { background: color-mix(in srgb, var(--series-2) 22%, transparent); color: var(--ink); }
-.pri-Medium { background: color-mix(in srgb, var(--series-4) 26%, transparent); color: var(--ink); }
-.pri-Low { background: color-mix(in srgb, var(--series-3) 22%, transparent); color: var(--ink); }
+.pri-High { background: #ecd6cb; color: #5a3b30; }
+.pri-Medium { background: #efe3c8; color: #5b4a2a; }
+.pri-Low { background: #dbe4d6; color: #34452f; }
 .dir-higher { color: var(--series-2); font-weight: 600; }
 .dir-lower { color: var(--series-1); font-weight: 600; }
 .profile-table tbody tr.prow { cursor: pointer; }
@@ -46,5 +90,11 @@
 .factor-table th:nth-child(2), .factor-table td:nth-child(2) { width: 15rem; }
 .factor-table th:nth-child(4), .factor-table td:nth-child(4) { width: 7rem; }
 .factor-table th:nth-child(6), .factor-table td:nth-child(6) { width: 4.5rem; text-align: right !important; }
+.factor-table th:nth-child(7), .factor-table td:nth-child(7) { width: 8rem; }
+.factor-table th:nth-child(8), .factor-table td:nth-child(8) { width: 9rem; }
 .factor-table td:nth-child(5) { color: var(--ink-2); font-size: 0.82rem; }
 .domain-swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 0.45rem; vertical-align: baseline; }
+.weight-sig { font-weight: 700; color: #4a3e4d; }
+.ref-line { stroke: #6a5a6e; stroke-width: 1.5; stroke-dasharray: 5 4; }
+.ref-label { font: 500 11px var(--font-ui); fill: #6a5a6e; }
+.ci-line { stroke: #c08872; stroke-width: 2; stroke-opacity: 0.55; }
