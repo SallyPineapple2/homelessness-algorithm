@@ -1,0 +1,25 @@
+{
+ "id": "P66",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "variant": "category",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-11-02T00:34:30+00:00",
+ "seconds": 10.3,
+ "prompt_sha256": "4cebb9a9f42bd6823b7e2e1bc6a343ee4bf6e5db5c4331a0ecdfea845f7480cc",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "6",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 36. Gender: Female. Race: American Indian, Alaska Native, or Indigenous. Location: Cincinnati, Ohio.\n\nWork and education: Furniture mover for a decade.\nPath into homelessness: Drinking led to missing work, losing the job, and eviction. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors near a rail yard for two years. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No physical health conditions or disabilities and no prescriptions. Drinks daily. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: three emergency room visits after fights and falls and two police contacts. Was beaten and robbed while sleeping a month ago. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A sibling who sends texts. No children.\nA typical day: Plays chess with an outreach volunteer twice a week and looks forward to it.\nGoals: A room and work on a moving crew.\nService history: Known to outreach.\nPresentation in the interview: Friendly but restless; jokes about the robbery.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "{\"priority\": \"Medium\", \"explanation\": \"Although she faces safety risks from living outdoors and daily drinking, her decade of steady employment history and capability with daily living tasks suggest she can regain stability through time-limited rental assistance and support reconnecting to work.\"}",
+ "priority": "Medium",
+ "urgency": null,
+ "explanation": "Although she faces safety risks from living outdoors and daily drinking, her decade of steady employment history and capability with daily living tasks suggest she can regain stability through time-limited rental assistance and support reconnecting to work.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 460,
+  "thoughts_token_count": 985,
+  "candidates_token_count": 53,
+  "total_token_count": 1498
+ }
+}

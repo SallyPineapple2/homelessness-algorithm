@@ -28,6 +28,18 @@ RUNS = [
 ]
 
 
+def limited_scenarios():
+    """Limited-places results (analyze_pool.py): the main scenario first, then the check."""
+    out = []
+    for key, label, role, tag in [("main", "35 High / 40 Medium / 25 Low", "Main scenario", ""),
+                                  ("strict", "15 High / 25 Medium / 60 Low", "Check: scarcer places", "-h15m25")]:
+        path = PILOT / "results" / f"pool_gemini-3.8-flash{tag}.json"
+        if path.exists():
+            d = json.loads(path.read_text(encoding="utf-8"))
+            out.append({"key": key, "label": label, "role": role, **d})
+    return out
+
+
 def main():
     inst = json.loads((ROOT / "data" / "vispdat_instrument.json").read_text(encoding="utf-8"))
     profiles = json.loads((PILOT / "data" / "profiles.json").read_text(encoding="utf-8"))["profiles"]
@@ -57,6 +69,7 @@ def main():
         "prompt": {"instructions": INSTRUCTIONS, "reply_format": REPLY_FORMAT,
                    "sections": [t for _, t in SECTION_TITLES]},
         "runs": runs,
+        "limited": limited_scenarios(),
         "factor_weights": (json.loads((PILOT / "results" / "factor_weights.json").read_text(encoding="utf-8"))
                            if (PILOT / "results" / "factor_weights.json").exists() else None),
         "profiles": [{

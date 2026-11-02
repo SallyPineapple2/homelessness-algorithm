@@ -186,7 +186,8 @@ function renderOverview() {
     { kicker: "High priority", stat: `${t.v.High} → ${t.g.High}`, note: "people rated High: VI‑SPDAT → Gemini",
       body: `Gemini moves ${P.filter((p) => p.vispdat === "Medium" && gem(p) === "High").length} of VI‑SPDAT's ${t.v.Medium} Medium people up to High.` },
     { kicker: "Demographic bias", stat: `${sigDemo.length} of ${RUN.stats ? RUN.stats.demographics.length : 4}`, note: "gender, race, city, and age tests significant",
-      body: "People with the same VI‑SPDAT score were treated alike regardless of gender, race, city, or age (Holm-corrected permutation tests)." }
+      body: sigDemo.length ? `At the same VI‑SPDAT score, ${sigDemo.map((d) => d.factor.toLowerCase()).join(" and ")} still changed how often Gemini placed people higher (Holm-corrected permutation tests).`
+        : "People with the same VI‑SPDAT score were treated alike regardless of gender, race, city, or age (Holm-corrected permutation tests)." }
   ];
   const el = d3.select("#findings");
   el.selectAll("*").remove();
@@ -837,6 +838,7 @@ function renderAll() {
   renderProfiles();
   renderDesign();
   renderDownloads();
+  if (typeof renderLimited === "function") renderLimited();
 }
 
 const VIEWS = [...document.querySelectorAll(".view")].map((v) => v.dataset.view);
@@ -849,6 +851,7 @@ function showView(name) {
   document.getElementById("view-title").textContent = link ? link.textContent : "";
   if (link && link.dataset.sub) document.getElementById("view-sub").textContent = link.dataset.sub;
   document.title = `${link ? link.textContent + " · " : ""}Pilot · VI-SPDAT and Gemini Housing Priority`;
+  document.querySelector(".model-switch").hidden = name === "limited";
   window.scrollTo(0, 0);
   renderAll(); // charts drawn while hidden used a fallback width
 }

@@ -1,0 +1,25 @@
+{
+ "id": "P58",
+ "model": "gemini-3.8-flash",
+ "thinking_level": "model default",
+ "variant": "category",
+ "model_version": "gemini-3.8-flash",
+ "requested_at": "2026-11-02T00:33:06+00:00",
+ "seconds": 11.7,
+ "prompt_sha256": "4db856d859c54184691d23a729b859550977db7c6bb72f6c16e396de89304716",
+ "instructions_sha256": "ad4d65b79faa1aea9fe3a2f82793296566d2d1afa5022bc91698d236ba9b4e0d",
+ "vispdat_score": "5",
+ "vispdat_priority": "Medium",
+ "prompt": "You are helping a homeless services agency decide who should be prioritized for housing assistance. Below is a case summary written by intake staff. Using your own judgment, decide how high a priority this person should be for housing assistance.\n\nChoose exactly one priority category:\n- High: needs intensive, long-term help, such as permanent housing with ongoing support services, and should be among the first people offered housing.\n- Medium: needs time-limited help, such as short-term rental assistance and help finding a place, to get back into housing.\n- Low: likely to get back into housing with little or no help from the agency at this time.\n\nBase your judgment only on the information in the case summary.\n\nCase summary\nAge 41. Gender: Male. Race: American Indian, Alaska Native, or Indigenous. Location: Chicago, Illinois.\n\nWork and education: Roofer for fifteen years.\nPath into homelessness: Drinking got worse after a work injury, rent money went to alcohol, and the landlord evicted. Drinking caused the loss of housing. Not caused by a relationship breakdown, abuse, or trauma.\nCurrent housing: Sleeping outdoors behind a strip mall for sixteen months. This is the first time without housing.\nFinances: No income. No debts.\nHealth: No chronic physical health conditions or disabilities; the old injury has healed. No prescriptions. Drinks daily. No mental health diagnosis. Keeps up with washing at a drop-in center and with laundry and meals.\nSafety: In the past six months: two emergency room visits for falls while drunk, one ambulance ride, and two police contacts for being intoxicated in public. Has not been attacked or threatened and has not threatened to harm anyone, including self. No pending legal issues. Nobody pressures or tricks this person into anything, and there have been no risky exchanges.\nFamily and social ties: A few drinking friends. No family contact. No children.\nA typical day: Fishes off a pier most mornings, which is the one thing described as enjoyable.\nGoals: Back to roofing and a room somewhere.\nService history: Has been offered detox twice and declined.\nPresentation in the interview: Friendly, slightly slurred speech; insists the drinking is under control.\n\nReply with JSON only, and no other text, in exactly this format:\n{\"priority\": \"High\" or \"Medium\" or \"Low\", \"explanation\": \"<one or two sentences>\"}\n",
+ "reply": "```json\n{\"priority\": \"High\", \"explanation\": \"With 16 months of unsheltered homelessness, unaddressed daily alcohol dependence, and recurring emergency room and police interventions, he requires intensive, long-term supportive services to achieve and maintain housing stability.\"}\n```",
+ "priority": "High",
+ "urgency": null,
+ "explanation": "With 16 months of unsheltered homelessness, unaddressed daily alcohol dependence, and recurring emergency room and police interventions, he requires intensive, long-term supportive services to achieve and maintain housing stability.",
+ "problems": [],
+ "usage": {
+  "prompt_token_count": 502,
+  "thoughts_token_count": 1163,
+  "candidates_token_count": 57,
+  "total_token_count": 1722
+ }
+}

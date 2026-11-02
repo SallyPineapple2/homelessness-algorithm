@@ -1,0 +1,1968 @@
+{
+ "model": "gemini-3.8-flash",
+ "rounds": 5,
+ "model_versions": [
+  "gemini-3.8-flash"
+ ],
+ "places": {
+  "High": 15,
+  "Medium": 25,
+  "Low": 60
+ },
+ "per_round": [
+  {
+   "round": 1,
+   "same": 80.0,
+   "higher": 10.0,
+   "lower": 10.0,
+   "kappa": 0.728,
+   "crosstab": {
+    "High->High": 12.0,
+    "High->Medium": 3.0,
+    "High->Low": 0.0,
+    "Medium->High": 3.0,
+    "Medium->Medium": 15.0,
+    "Medium->Low": 7.0,
+    "Low->High": 0.0,
+    "Low->Medium": 7.0,
+    "Low->Low": 53.0
+   },
+   "high_to_vispdat_high": 12.0
+  },
+  {
+   "round": 2,
+   "same": 75.5,
+   "higher": 12.0,
+   "lower": 12.5,
+   "kappa": 0.66,
+   "crosstab": {
+    "High->High": 10.5,
+    "High->Medium": 4.5,
+    "High->Low": 0.0,
+    "Medium->High": 4.0,
+    "Medium->Medium": 13.0,
+    "Medium->Low": 8.0,
+    "Low->High": 0.5,
+    "Low->Medium": 7.5,
+    "Low->Low": 52.0
+   },
+   "high_to_vispdat_high": 10.5
+  },
+  {
+   "round": 3,
+   "same": 69.0,
+   "higher": 15.5,
+   "lower": 15.5,
+   "kappa": 0.551,
+   "crosstab": {
+    "High->High": 10.0,
+    "High->Medium": 4.0,
+    "High->Low": 1.0,
+    "Medium->High": 4.0,
+    "Medium->Medium": 10.5,
+    "Medium->Low": 10.5,
+    "Low->High": 1.0,
+    "Low->Medium": 10.5,
+    "Low->Low": 48.5
+   },
+   "high_to_vispdat_high": 10.0
+  },
+  {
+   "round": 4,
+   "same": 76.0,
+   "higher": 12.0,
+   "lower": 12.0,
+   "kappa": 0.673,
+   "crosstab": {
+    "High->High": 10.0,
+    "High->Medium": 5.0,
+    "High->Low": 0.0,
+    "Medium->High": 5.0,
+    "Medium->Medium": 13.0,
+    "Medium->Low": 7.0,
+    "Low->High": 0.0,
+    "Low->Medium": 7.0,
+    "Low->Low": 53.0
+   },
+   "high_to_vispdat_high": 10.0
+  },
+  {
+   "round": 5,
+   "same": 75.0,
+   "higher": 12.5,
+   "lower": 12.5,
+   "kappa": 0.66,
+   "crosstab": {
+    "High->High": 10.0,
+    "High->Medium": 5.0,
+    "High->Low": 0.0,
+    "Medium->High": 5.0,
+    "Medium->Medium": 12.5,
+    "Medium->Low": 7.5,
+    "Low->High": 0.0,
+    "Low->Medium": 7.5,
+    "Low->Low": 52.5
+   },
+   "high_to_vispdat_high": 10.0
+  }
+ ],
+ "round_to_round_same_category": {
+  "mean": 85.9,
+  "min": 79,
+  "max": 92
+ },
+ "same_category_in_every_round": 72,
+ "high_in_every_round": 10,
+ "consensus_crosstab_vispdat_to_gemini": {
+  "High->High": 11.5,
+  "High->Medium": 3.5,
+  "High->Low": 0.0,
+  "Medium->High": 3.5,
+  "Medium->Medium": 13.0,
+  "Medium->Low": 8.5,
+  "Low->High": 0.0,
+  "Low->Medium": 8.5,
+  "Low->Low": 51.5
+ },
+ "tokens_per_round": {
+  "prompt_token_count": 33670,
+  "thoughts_token_count": 30932,
+  "candidates_token_count": 3336
+ },
+ "tests": [
+  {
+   "factor": "Gender",
+   "p": 0.2112894355282236,
+   "family": "demographic",
+   "p_holm": 0.7989600519974002
+  },
+  {
+   "factor": "Race",
+   "p": 0.6135693215339233,
+   "family": "demographic",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "City",
+   "p": 0.823658817059147,
+   "family": "demographic",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Age group",
+   "p": 0.19974001299935004,
+   "family": "demographic",
+   "p_holm": 0.7989600519974002
+  },
+  {
+   "factor": "Unsheltered",
+   "p": 0.38033098345082744,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Homeless 1+ year or 4+ times",
+   "p": 0.0327983600819959,
+   "family": "circumstance",
+   "p_holm": 0.4591770411479426
+  },
+  {
+   "factor": "4+ emergency contacts",
+   "p": 1.0,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Risk of harm",
+   "p": 0.39068046597670114,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Legal issues",
+   "p": 0.9157042147892606,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Risk of exploitation",
+   "p": 0.18779061046947654,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "No income or owes money",
+   "p": 0.7314634268286586,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "No meaningful daily activity",
+   "p": 0.9125043747812609,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Cannot meet basic needs",
+   "p": 0.009499525023748812,
+   "family": "circumstance",
+   "p_holm": 0.151992400379981
+  },
+  {
+   "factor": "Homeless due to relationship breakdown",
+   "p": 0.06019699015049248,
+   "family": "circumstance",
+   "p_holm": 0.6621668916554173
+  },
+  {
+   "factor": "Physical health condition",
+   "p": 0.575821208939553,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Substance use",
+   "p": 0.050047497625118745,
+   "family": "circumstance",
+   "p_holm": 0.6454177291135443
+  },
+  {
+   "factor": "Mental health condition",
+   "p": 0.36423178841057946,
+   "family": "circumstance",
+   "p_holm": 1.0
+  },
+  {
+   "factor": "Medication problems",
+   "p": 0.07449627518624069,
+   "family": "circumstance",
+   "p_holm": 0.7449627518624069
+  },
+  {
+   "factor": "Homeless due to abuse or trauma",
+   "p": 0.049647517624118793,
+   "family": "circumstance",
+   "p_holm": 0.6454177291135443
+  },
+  {
+   "factor": "Age 60 or older",
+   "p": 0.015699215039248038,
+   "family": "circumstance",
+   "p_holm": 0.23548822558872057
+  }
+ ],
+ "circumstances": {
+  "Unsheltered": {
+   "id": "a1_sleep",
+   "n": 67,
+   "observed": 0.224,
+   "expected": 0.217
+  },
+  "Homeless 1+ year or 4+ times": {
+   "id": "a2_duration",
+   "n": 52,
+   "observed": 0.288,
+   "expected": 0.263
+  },
+  "4+ emergency contacts": {
+   "id": "b1_emergency",
+   "n": 50,
+   "observed": 0.296,
+   "expected": 0.295
+  },
+  "Risk of harm": {
+   "id": "b2_harm",
+   "n": 40,
+   "observed": 0.335,
+   "expected": 0.35
+  },
+  "Legal issues": {
+   "id": "b3_legal",
+   "n": 24,
+   "observed": 0.425,
+   "expected": 0.432
+  },
+  "Risk of exploitation": {
+   "id": "b4_exploitation",
+   "n": 19,
+   "observed": 0.411,
+   "expected": 0.479
+  },
+  "No income or owes money": {
+   "id": "c1_money",
+   "n": 75,
+   "observed": 0.2,
+   "expected": 0.196
+  },
+  "No meaningful daily activity": {
+   "id": "c2_activity",
+   "n": 45,
+   "observed": 0.276,
+   "expected": 0.272
+  },
+  "Cannot meet basic needs": {
+   "id": "c3_selfcare",
+   "n": 36,
+   "observed": 0.394,
+   "expected": 0.33
+  },
+  "Homeless due to relationship breakdown": {
+   "id": "c4_relationships",
+   "n": 25,
+   "observed": 0.272,
+   "expected": 0.333
+  },
+  "Physical health condition": {
+   "id": "d1_physical",
+   "n": 54,
+   "observed": 0.248,
+   "expected": 0.238
+  },
+  "Substance use": {
+   "id": "d2_substance",
+   "n": 41,
+   "observed": 0.302,
+   "expected": 0.336
+  },
+  "Mental health condition": {
+   "id": "d3_mental",
+   "n": 33,
+   "observed": 0.358,
+   "expected": 0.379
+  },
+  "Medication problems": {
+   "id": "d5_medications",
+   "n": 30,
+   "observed": 0.373,
+   "expected": 0.316
+  },
+  "Homeless due to abuse or trauma": {
+   "id": "d6_trauma",
+   "n": 19,
+   "observed": 0.158,
+   "expected": 0.249
+  },
+  "Age 60 or older": {
+   "id": "pre_age",
+   "n": 19,
+   "observed": 0.316,
+   "expected": 0.221
+  }
+ },
+ "factor_effects": [
+  {
+   "id": "a1_sleep",
+   "name": "Unsheltered",
+   "people": 67,
+   "effect": 0.069,
+   "ci_low": -0.035,
+   "ci_high": 0.173,
+   "p": 0.19361406843457263,
+   "p_holm": 1.0
+  },
+  {
+   "id": "a2_duration",
+   "name": "Homeless 1+ year or 4+ times",
+   "people": 52,
+   "effect": 0.095,
+   "ci_low": -0.012,
+   "ci_high": 0.203,
+   "p": 0.08214509833472981,
+   "p_holm": 1.0
+  },
+  {
+   "id": "b1_emergency",
+   "name": "4+ emergency contacts",
+   "people": 50,
+   "effect": -0.031,
+   "ci_low": -0.229,
+   "ci_high": 0.168,
+   "p": 0.7636093504915873,
+   "p_holm": 1.0
+  },
+  {
+   "id": "b2_harm",
+   "name": "Risk of harm",
+   "people": 40,
+   "effect": 0.112,
+   "ci_low": -0.083,
+   "ci_high": 0.307,
+   "p": 0.2601191398664029,
+   "p_holm": 1.0
+  },
+  {
+   "id": "b3_legal",
+   "name": "Legal issues",
+   "people": 24,
+   "effect": 0.083,
+   "ci_low": -0.077,
+   "ci_high": 0.242,
+   "p": 0.31032111071872115,
+   "p_holm": 1.0
+  },
+  {
+   "id": "b4_exploitation",
+   "name": "Risk of exploitation",
+   "people": 19,
+   "effect": 0.087,
+   "ci_low": -0.132,
+   "ci_high": 0.307,
+   "p": 0.4350249711480507,
+   "p_holm": 1.0
+  },
+  {
+   "id": "c1_money",
+   "name": "No income or owes money",
+   "people": 75,
+   "effect": -0.026,
+   "ci_low": -0.128,
+   "ci_high": 0.075,
+   "p": 0.6123471952321502,
+   "p_holm": 1.0
+  },
+  {
+   "id": "c2_activity",
+   "name": "No meaningful daily activity",
+   "people": 45,
+   "effect": 0.02,
+   "ci_low": -0.094,
+   "ci_high": 0.134,
+   "p": 0.7332280484899655,
+   "p_holm": 1.0
+  },
+  {
+   "id": "c3_selfcare",
+   "name": "Cannot meet basic needs",
+   "people": 36,
+   "effect": 0.177,
+   "ci_low": 0.059,
+   "ci_high": 0.296,
+   "p": 0.003267200104134902,
+   "p_holm": 0.055542401770293334
+  },
+  {
+   "id": "c4_relationships",
+   "name": "Homeless due to relationship breakdown",
+   "people": 25,
+   "effect": 0.144,
+   "ci_low": -0.028,
+   "ci_high": 0.315,
+   "p": 0.0999463862502953,
+   "p_holm": 1.0
+  },
+  {
+   "id": "d1_physical",
+   "name": "Physical health condition",
+   "people": 54,
+   "effect": -0.1,
+   "ci_low": -0.246,
+   "ci_high": 0.046,
+   "p": 0.179692447497526,
+   "p_holm": 1.0
+  },
+  {
+   "id": "d2_substance",
+   "name": "Substance use",
+   "people": 41,
+   "effect": 0.01,
+   "ci_low": -0.238,
+   "ci_high": 0.257,
+   "p": 0.9399848754376967,
+   "p_holm": 1.0
+  },
+  {
+   "id": "d3_mental",
+   "name": "Mental health condition",
+   "people": 33,
+   "effect": -0.028,
+   "ci_low": -0.236,
+   "ci_high": 0.18,
+   "p": 0.7932642767306773,
+   "p_holm": 1.0
+  },
+  {
+   "id": "d5_medications",
+   "name": "Medication problems",
+   "people": 30,
+   "effect": 0.207,
+   "ci_low": 0.054,
+   "ci_high": 0.36,
+   "p": 0.007889150753796934,
+   "p_holm": 0.12622641206075094
+  },
+  {
+   "id": "d6_trauma",
+   "name": "Homeless due to abuse or trauma",
+   "people": 19,
+   "effect": -0.108,
+   "ci_low": -0.258,
+   "ci_high": 0.042,
+   "p": 0.15901233187567942,
+   "p_holm": 1.0
+  },
+  {
+   "id": "pre_age",
+   "name": "Age 60 or older",
+   "people": 19,
+   "effect": 0.134,
+   "ci_low": -0.016,
+   "ci_high": 0.284,
+   "p": 0.08076828885447628,
+   "p_holm": 1.0
+  },
+  {
+   "id": "d4_trimorbidity",
+   "name": "Tri-morbidity",
+   "people": 17,
+   "effect": 0.183,
+   "ci_low": -0.067,
+   "ci_high": 0.433,
+   "p": 0.15223349430076,
+   "p_holm": 1.0
+  }
+ ],
+ "r2_factors": 0.659,
+ "r2_score_only": 0.517,
+ "by_score": [
+  {
+   "score": 0,
+   "n": 4,
+   "high": 0.0,
+   "medium": 0.0
+  },
+  {
+   "score": 1,
+   "n": 6,
+   "high": 0.0,
+   "medium": 0.0
+  },
+  {
+   "score": 2,
+   "n": 7,
+   "high": 0.0,
+   "medium": 0.0
+  },
+  {
+   "score": 3,
+   "n": 8,
+   "high": 0.0,
+   "medium": 0.0
+  },
+  {
+   "score": 4,
+   "n": 11,
+   "high": 0.0,
+   "medium": 0.109
+  },
+  {
+   "score": 5,
+   "n": 10,
+   "high": 0.0,
+   "medium": 0.12
+  },
+  {
+   "score": 6,
+   "n": 9,
+   "high": 0.022,
+   "medium": 0.289
+  },
+  {
+   "score": 7,
+   "n": 10,
+   "high": 0.02,
+   "medium": 0.58
+  },
+  {
+   "score": 8,
+   "n": 8,
+   "high": 0.075,
+   "medium": 0.425
+  },
+  {
+   "score": 9,
+   "n": 6,
+   "high": 0.233,
+   "medium": 0.467
+  },
+  {
+   "score": 10,
+   "n": 4,
+   "high": 0.25,
+   "medium": 0.7
+  },
+  {
+   "score": 11,
+   "n": 4,
+   "high": 0.55,
+   "medium": 0.45
+  },
+  {
+   "score": 12,
+   "n": 3,
+   "high": 0.267,
+   "medium": 0.667
+  },
+  {
+   "score": 13,
+   "n": 3,
+   "high": 0.533,
+   "medium": 0.467
+  },
+  {
+   "score": 14,
+   "n": 2,
+   "high": 1.0,
+   "medium": 0.0
+  },
+  {
+   "score": 15,
+   "n": 2,
+   "high": 1.0,
+   "medium": 0.0
+  },
+  {
+   "score": 16,
+   "n": 2,
+   "high": 1.0,
+   "medium": 0.0
+  },
+  {
+   "score": 17,
+   "n": 1,
+   "high": 1.0,
+   "medium": 0.0
+  }
+ ],
+ "groups": [
+  {
+   "factor": "Gender",
+   "group": "Female",
+   "n": 50,
+   "vispdat_high": 6.5,
+   "gemini_high": 6.2,
+   "vispdat_medium": 14.5,
+   "gemini_medium": 13.0,
+   "vispdat_low": 29.0,
+   "gemini_low": 30.8
+  },
+  {
+   "factor": "Gender",
+   "group": "Male",
+   "n": 50,
+   "vispdat_high": 8.5,
+   "gemini_high": 8.8,
+   "vispdat_medium": 10.5,
+   "gemini_medium": 12.0,
+   "vispdat_low": 31.0,
+   "gemini_low": 29.2
+  },
+  {
+   "factor": "Race",
+   "group": "American Indian, Alaska Native, or Indigenous",
+   "n": 20,
+   "vispdat_high": 3.5,
+   "gemini_high": 3.2,
+   "vispdat_medium": 4.5,
+   "gemini_medium": 2.6,
+   "vispdat_low": 12.0,
+   "gemini_low": 14.2
+  },
+  {
+   "factor": "Race",
+   "group": "Asian or Asian American",
+   "n": 20,
+   "vispdat_high": 3.0,
+   "gemini_high": 3.0,
+   "vispdat_medium": 5.0,
+   "gemini_medium": 4.8,
+   "vispdat_low": 12.0,
+   "gemini_low": 12.2
+  },
+  {
+   "factor": "Race",
+   "group": "Black, African American, or African",
+   "n": 20,
+   "vispdat_high": 2.5,
+   "gemini_high": 4.0,
+   "vispdat_medium": 5.5,
+   "gemini_medium": 6.6,
+   "vispdat_low": 12.0,
+   "gemini_low": 9.4
+  },
+  {
+   "factor": "Race",
+   "group": "Hispanic/Latino/e/a",
+   "n": 20,
+   "vispdat_high": 2.5,
+   "gemini_high": 1.6,
+   "vispdat_medium": 5.5,
+   "gemini_medium": 5.6,
+   "vispdat_low": 12.0,
+   "gemini_low": 12.8
+  },
+  {
+   "factor": "Race",
+   "group": "White",
+   "n": 20,
+   "vispdat_high": 3.5,
+   "gemini_high": 3.2,
+   "vispdat_medium": 4.5,
+   "gemini_medium": 5.4,
+   "vispdat_low": 12.0,
+   "gemini_low": 11.4
+  },
+  {
+   "factor": "City",
+   "group": "Atlanta, Georgia",
+   "n": 20,
+   "vispdat_high": 2.0,
+   "gemini_high": 2.6,
+   "vispdat_medium": 7.0,
+   "gemini_medium": 6.8,
+   "vispdat_low": 11.0,
+   "gemini_low": 10.6
+  },
+  {
+   "factor": "City",
+   "group": "Chicago, Illinois",
+   "n": 20,
+   "vispdat_high": 3.5,
+   "gemini_high": 4.4,
+   "vispdat_medium": 4.0,
+   "gemini_medium": 4.2,
+   "vispdat_low": 12.5,
+   "gemini_low": 11.4
+  },
+  {
+   "factor": "City",
+   "group": "Cincinnati, Ohio",
+   "n": 20,
+   "vispdat_high": 3.5,
+   "gemini_high": 3.0,
+   "vispdat_medium": 4.5,
+   "gemini_medium": 5.8,
+   "vispdat_low": 12.0,
+   "gemini_low": 11.2
+  },
+  {
+   "factor": "City",
+   "group": "Los Angeles, California",
+   "n": 20,
+   "vispdat_high": 3.0,
+   "gemini_high": 2.4,
+   "vispdat_medium": 4.0,
+   "gemini_medium": 4.8,
+   "vispdat_low": 13.0,
+   "gemini_low": 12.8
+  },
+  {
+   "factor": "City",
+   "group": "New York City, New York",
+   "n": 20,
+   "vispdat_high": 3.0,
+   "gemini_high": 2.6,
+   "vispdat_medium": 5.5,
+   "gemini_medium": 3.4,
+   "vispdat_low": 11.5,
+   "gemini_low": 14.0
+  },
+  {
+   "factor": "Age group",
+   "group": "18-24",
+   "n": 9,
+   "vispdat_high": 0.0,
+   "gemini_high": 0.0,
+   "vispdat_medium": 2.0,
+   "gemini_medium": 3.2,
+   "vispdat_low": 7.0,
+   "gemini_low": 5.8
+  },
+  {
+   "factor": "Age group",
+   "group": "25-39",
+   "n": 33,
+   "vispdat_high": 3.5,
+   "gemini_high": 3.4,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 6.6,
+   "vispdat_low": 21.5,
+   "gemini_low": 23.0
+  },
+  {
+   "factor": "Age group",
+   "group": "40-59",
+   "n": 39,
+   "vispdat_high": 7.5,
+   "gemini_high": 5.6,
+   "vispdat_medium": 9.0,
+   "gemini_medium": 12.0,
+   "vispdat_low": 22.5,
+   "gemini_low": 21.4
+  },
+  {
+   "factor": "Age group",
+   "group": "60 and older",
+   "n": 19,
+   "vispdat_high": 4.0,
+   "gemini_high": 6.0,
+   "vispdat_medium": 6.0,
+   "gemini_medium": 3.2,
+   "vispdat_low": 9.0,
+   "gemini_low": 9.8
+  },
+  {
+   "factor": "Unsheltered",
+   "group": "No",
+   "n": 33,
+   "vispdat_high": 0.0,
+   "gemini_high": 0.0,
+   "vispdat_medium": 4.0,
+   "gemini_medium": 4.0,
+   "vispdat_low": 29.0,
+   "gemini_low": 29.0
+  },
+  {
+   "factor": "Unsheltered",
+   "group": "Yes",
+   "n": 67,
+   "vispdat_high": 15.0,
+   "gemini_high": 15.0,
+   "vispdat_medium": 21.0,
+   "gemini_medium": 21.0,
+   "vispdat_low": 31.0,
+   "gemini_low": 31.0
+  },
+  {
+   "factor": "Homeless 1+ year or 4+ times",
+   "group": "No",
+   "n": 48,
+   "vispdat_high": 0.5,
+   "gemini_high": 0.0,
+   "vispdat_medium": 6.5,
+   "gemini_medium": 10.2,
+   "vispdat_low": 41.0,
+   "gemini_low": 37.8
+  },
+  {
+   "factor": "Homeless 1+ year or 4+ times",
+   "group": "Yes",
+   "n": 52,
+   "vispdat_high": 14.5,
+   "gemini_high": 15.0,
+   "vispdat_medium": 18.5,
+   "gemini_medium": 14.8,
+   "vispdat_low": 19.0,
+   "gemini_low": 22.2
+  },
+  {
+   "factor": "4+ emergency contacts",
+   "group": "No",
+   "n": 50,
+   "vispdat_high": 0.0,
+   "gemini_high": 0.2,
+   "vispdat_medium": 3.0,
+   "gemini_medium": 6.6,
+   "vispdat_low": 47.0,
+   "gemini_low": 43.2
+  },
+  {
+   "factor": "4+ emergency contacts",
+   "group": "Yes",
+   "n": 50,
+   "vispdat_high": 15.0,
+   "gemini_high": 14.8,
+   "vispdat_medium": 22.0,
+   "gemini_medium": 18.4,
+   "vispdat_low": 13.0,
+   "gemini_low": 16.8
+  },
+  {
+   "factor": "Risk of harm",
+   "group": "No",
+   "n": 60,
+   "vispdat_high": 0.0,
+   "gemini_high": 1.6,
+   "vispdat_medium": 9.0,
+   "gemini_medium": 9.4,
+   "vispdat_low": 51.0,
+   "gemini_low": 49.0
+  },
+  {
+   "factor": "Risk of harm",
+   "group": "Yes",
+   "n": 40,
+   "vispdat_high": 15.0,
+   "gemini_high": 13.4,
+   "vispdat_medium": 16.0,
+   "gemini_medium": 15.6,
+   "vispdat_low": 9.0,
+   "gemini_low": 11.0
+  },
+  {
+   "factor": "Legal issues",
+   "group": "No",
+   "n": 76,
+   "vispdat_high": 4.0,
+   "gemini_high": 4.8,
+   "vispdat_medium": 18.5,
+   "gemini_medium": 21.2,
+   "vispdat_low": 53.5,
+   "gemini_low": 50.0
+  },
+  {
+   "factor": "Legal issues",
+   "group": "Yes",
+   "n": 24,
+   "vispdat_high": 11.0,
+   "gemini_high": 10.2,
+   "vispdat_medium": 6.5,
+   "gemini_medium": 3.8,
+   "vispdat_low": 6.5,
+   "gemini_low": 10.0
+  },
+  {
+   "factor": "Risk of exploitation",
+   "group": "No",
+   "n": 81,
+   "vispdat_high": 6.0,
+   "gemini_high": 7.2,
+   "vispdat_medium": 18.0,
+   "gemini_medium": 16.6,
+   "vispdat_low": 57.0,
+   "gemini_low": 57.2
+  },
+  {
+   "factor": "Risk of exploitation",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 9.0,
+   "gemini_high": 7.8,
+   "vispdat_medium": 7.0,
+   "gemini_medium": 8.4,
+   "vispdat_low": 3.0,
+   "gemini_low": 2.8
+  },
+  {
+   "factor": "No income or owes money",
+   "group": "No",
+   "n": 25,
+   "vispdat_high": 0.0,
+   "gemini_high": 0.0,
+   "vispdat_medium": 1.5,
+   "gemini_medium": 3.0,
+   "vispdat_low": 23.5,
+   "gemini_low": 22.0
+  },
+  {
+   "factor": "No income or owes money",
+   "group": "Yes",
+   "n": 75,
+   "vispdat_high": 15.0,
+   "gemini_high": 15.0,
+   "vispdat_medium": 23.5,
+   "gemini_medium": 22.0,
+   "vispdat_low": 36.5,
+   "gemini_low": 38.0
+  },
+  {
+   "factor": "No meaningful daily activity",
+   "group": "No",
+   "n": 55,
+   "vispdat_high": 2.0,
+   "gemini_high": 2.6,
+   "vispdat_medium": 10.5,
+   "gemini_medium": 12.6,
+   "vispdat_low": 42.5,
+   "gemini_low": 39.8
+  },
+  {
+   "factor": "No meaningful daily activity",
+   "group": "Yes",
+   "n": 45,
+   "vispdat_high": 13.0,
+   "gemini_high": 12.4,
+   "vispdat_medium": 14.5,
+   "gemini_medium": 12.4,
+   "vispdat_low": 17.5,
+   "gemini_low": 20.2
+  },
+  {
+   "factor": "Cannot meet basic needs",
+   "group": "No",
+   "n": 64,
+   "vispdat_high": 2.5,
+   "gemini_high": 0.8,
+   "vispdat_medium": 12.5,
+   "gemini_medium": 13.2,
+   "vispdat_low": 49.0,
+   "gemini_low": 50.0
+  },
+  {
+   "factor": "Cannot meet basic needs",
+   "group": "Yes",
+   "n": 36,
+   "vispdat_high": 12.5,
+   "gemini_high": 14.2,
+   "vispdat_medium": 12.5,
+   "gemini_medium": 11.8,
+   "vispdat_low": 11.0,
+   "gemini_low": 10.0
+  },
+  {
+   "factor": "Homeless due to relationship breakdown",
+   "group": "No",
+   "n": 75,
+   "vispdat_high": 6.5,
+   "gemini_high": 8.2,
+   "vispdat_medium": 19.0,
+   "gemini_medium": 16.0,
+   "vispdat_low": 49.5,
+   "gemini_low": 50.8
+  },
+  {
+   "factor": "Homeless due to relationship breakdown",
+   "group": "Yes",
+   "n": 25,
+   "vispdat_high": 8.5,
+   "gemini_high": 6.8,
+   "vispdat_medium": 6.0,
+   "gemini_medium": 9.0,
+   "vispdat_low": 10.5,
+   "gemini_low": 9.2
+  },
+  {
+   "factor": "Physical health condition",
+   "group": "No",
+   "n": 46,
+   "vispdat_high": 1.5,
+   "gemini_high": 1.6,
+   "vispdat_medium": 8.0,
+   "gemini_medium": 6.2,
+   "vispdat_low": 36.5,
+   "gemini_low": 38.2
+  },
+  {
+   "factor": "Physical health condition",
+   "group": "Yes",
+   "n": 54,
+   "vispdat_high": 13.5,
+   "gemini_high": 13.4,
+   "vispdat_medium": 17.0,
+   "gemini_medium": 18.8,
+   "vispdat_low": 23.5,
+   "gemini_low": 21.8
+  },
+  {
+   "factor": "Substance use",
+   "group": "No",
+   "n": 59,
+   "vispdat_high": 0.0,
+   "gemini_high": 2.6,
+   "vispdat_medium": 9.5,
+   "gemini_medium": 10.2,
+   "vispdat_low": 49.5,
+   "gemini_low": 46.2
+  },
+  {
+   "factor": "Substance use",
+   "group": "Yes",
+   "n": 41,
+   "vispdat_high": 15.0,
+   "gemini_high": 12.4,
+   "vispdat_medium": 15.5,
+   "gemini_medium": 14.8,
+   "vispdat_low": 10.5,
+   "gemini_low": 13.8
+  },
+  {
+   "factor": "Mental health condition",
+   "group": "No",
+   "n": 67,
+   "vispdat_high": 0.5,
+   "gemini_high": 3.2,
+   "vispdat_medium": 15.0,
+   "gemini_medium": 13.4,
+   "vispdat_low": 51.5,
+   "gemini_low": 50.4
+  },
+  {
+   "factor": "Mental health condition",
+   "group": "Yes",
+   "n": 33,
+   "vispdat_high": 14.5,
+   "gemini_high": 11.8,
+   "vispdat_medium": 10.0,
+   "gemini_medium": 11.6,
+   "vispdat_low": 8.5,
+   "gemini_low": 9.6
+  },
+  {
+   "factor": "Medication problems",
+   "group": "No",
+   "n": 70,
+   "vispdat_high": 5.0,
+   "gemini_high": 3.8,
+   "vispdat_medium": 15.5,
+   "gemini_medium": 16.6,
+   "vispdat_low": 49.5,
+   "gemini_low": 49.6
+  },
+  {
+   "factor": "Medication problems",
+   "group": "Yes",
+   "n": 30,
+   "vispdat_high": 10.0,
+   "gemini_high": 11.2,
+   "vispdat_medium": 9.5,
+   "gemini_medium": 8.4,
+   "vispdat_low": 10.5,
+   "gemini_low": 10.4
+  },
+  {
+   "factor": "Homeless due to abuse or trauma",
+   "group": "No",
+   "n": 81,
+   "vispdat_high": 9.5,
+   "gemini_high": 12.0,
+   "vispdat_medium": 19.5,
+   "gemini_medium": 15.4,
+   "vispdat_low": 52.0,
+   "gemini_low": 53.6
+  },
+  {
+   "factor": "Homeless due to abuse or trauma",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 5.5,
+   "gemini_high": 3.0,
+   "vispdat_medium": 5.5,
+   "gemini_medium": 9.6,
+   "vispdat_low": 8.0,
+   "gemini_low": 6.4
+  },
+  {
+   "factor": "Age 60 or older",
+   "group": "No",
+   "n": 81,
+   "vispdat_high": 11.0,
+   "gemini_high": 9.0,
+   "vispdat_medium": 19.0,
+   "gemini_medium": 21.8,
+   "vispdat_low": 51.0,
+   "gemini_low": 50.2
+  },
+  {
+   "factor": "Age 60 or older",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 4.0,
+   "gemini_high": 6.0,
+   "vispdat_medium": 6.0,
+   "gemini_medium": 3.2,
+   "vispdat_low": 9.0,
+   "gemini_low": 9.8
+  }
+ ],
+ "people": [
+  {
+   "id": "P01",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P02",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P03",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P04",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P05",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P06",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P07",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P08",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P09",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P10",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P11",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P12",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P13",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P14",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P15",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P16",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 3,
+   "low_rounds": 2
+  },
+  {
+   "id": "P17",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 4,
+   "low_rounds": 1
+  },
+  {
+   "id": "P18",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P19",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 2,
+   "medium_rounds": 3,
+   "low_rounds": 0
+  },
+  {
+   "id": "P20",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P21",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 2,
+   "low_rounds": 3
+  },
+  {
+   "id": "P22",
+   "vispdat_score": 9,
+   "vispdat": "Medium",
+   "high_rounds": 2,
+   "medium_rounds": 2,
+   "low_rounds": 1
+  },
+  {
+   "id": "P23",
+   "vispdat_score": 9,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P24",
+   "vispdat_score": 10,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 4,
+   "low_rounds": 1
+  },
+  {
+   "id": "P25",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P26",
+   "vispdat_score": 12,
+   "vispdat": "High",
+   "high_rounds": 1,
+   "medium_rounds": 4,
+   "low_rounds": 0
+  },
+  {
+   "id": "P27",
+   "vispdat_score": 13,
+   "vispdat": "High",
+   "high_rounds": 4,
+   "medium_rounds": 1,
+   "low_rounds": 0
+  },
+  {
+   "id": "P28",
+   "vispdat_score": 14,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P29",
+   "vispdat_score": 15,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P30",
+   "vispdat_score": 16,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P31",
+   "vispdat_score": 16,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P32",
+   "vispdat_score": 17,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P33",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P34",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P35",
+   "vispdat_score": 0,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P36",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P37",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P38",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P39",
+   "vispdat_score": 1,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P40",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P41",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P42",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P43",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P44",
+   "vispdat_score": 2,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P45",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P46",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P47",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P48",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P49",
+   "vispdat_score": 3,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P50",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P51",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P52",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P53",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P54",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P55",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P56",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P57",
+   "vispdat_score": 4,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P58",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P59",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P60",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P61",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P62",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P63",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P64",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P65",
+   "vispdat_score": 5,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 3,
+   "low_rounds": 2
+  },
+  {
+   "id": "P66",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P67",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P68",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P69",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P70",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P71",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P72",
+   "vispdat_score": 6,
+   "vispdat": "Low",
+   "high_rounds": 1,
+   "medium_rounds": 2,
+   "low_rounds": 2
+  },
+  {
+   "id": "P73",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P74",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 1,
+   "medium_rounds": 3,
+   "low_rounds": 1
+  },
+  {
+   "id": "P75",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P76",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P77",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P78",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 4,
+   "low_rounds": 1
+  },
+  {
+   "id": "P79",
+   "vispdat_score": 7,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P80",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 1,
+   "low_rounds": 4
+  },
+  {
+   "id": "P81",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 1,
+   "medium_rounds": 4,
+   "low_rounds": 0
+  },
+  {
+   "id": "P82",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 0,
+   "low_rounds": 5
+  },
+  {
+   "id": "P83",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P84",
+   "vispdat_score": 8,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 2,
+   "low_rounds": 3
+  },
+  {
+   "id": "P85",
+   "vispdat_score": 9,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 2,
+   "low_rounds": 3
+  },
+  {
+   "id": "P86",
+   "vispdat_score": 9,
+   "vispdat": "Medium",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P87",
+   "vispdat_score": 9,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P88",
+   "vispdat_score": 9,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 4,
+   "low_rounds": 1
+  },
+  {
+   "id": "P89",
+   "vispdat_score": 10,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P90",
+   "vispdat_score": 10,
+   "vispdat": "Medium",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P91",
+   "vispdat_score": 10,
+   "vispdat": "Medium",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P92",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "high_rounds": 3,
+   "medium_rounds": 2,
+   "low_rounds": 0
+  },
+  {
+   "id": "P93",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "high_rounds": 3,
+   "medium_rounds": 2,
+   "low_rounds": 0
+  },
+  {
+   "id": "P94",
+   "vispdat_score": 11,
+   "vispdat": "High",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P95",
+   "vispdat_score": 12,
+   "vispdat": "High",
+   "high_rounds": 0,
+   "medium_rounds": 4,
+   "low_rounds": 1
+  },
+  {
+   "id": "P96",
+   "vispdat_score": 12,
+   "vispdat": "High",
+   "high_rounds": 3,
+   "medium_rounds": 2,
+   "low_rounds": 0
+  },
+  {
+   "id": "P97",
+   "vispdat_score": 13,
+   "vispdat": "High",
+   "high_rounds": 4,
+   "medium_rounds": 1,
+   "low_rounds": 0
+  },
+  {
+   "id": "P98",
+   "vispdat_score": 13,
+   "vispdat": "High",
+   "high_rounds": 0,
+   "medium_rounds": 5,
+   "low_rounds": 0
+  },
+  {
+   "id": "P99",
+   "vispdat_score": 14,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  },
+  {
+   "id": "P100",
+   "vispdat_score": 15,
+   "vispdat": "High",
+   "high_rounds": 5,
+   "medium_rounds": 0,
+   "low_rounds": 0
+  }
+ ]
+}
