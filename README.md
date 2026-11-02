@@ -3,8 +3,10 @@
 **Dashboards**
 
 - Original study (640 records, four AI runs): https://sallypineapple2.github.io/homelessness-algorithm/
-- Pilot study (100 distinct people, VI-SPDAT vs Gemini): https://sallypineapple2.github.io/homelessness-algorithm/pilot/
+- Pilot study, unlimited places (100 distinct people, VI-SPDAT vs Gemini): https://sallypineapple2.github.io/homelessness-algorithm/pilot/
   — design, data, and scripts in [`pilot/`](pilot/README.md)
+- Limited places study (the same 100 people, 35 High and 40 Medium places): https://sallypineapple2.github.io/homelessness-algorithm/limited/
+  — built by [`pilot/scripts/build_limited_study.py`](pilot/scripts/build_limited_study.py) from the analysis in `pilot/scripts/analyze_pool.py`
 
 A research dashboard for an individual project on algorithmic bias in the
 Coordinated Entry System (CES).

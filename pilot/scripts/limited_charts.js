@@ -1,70 +1,11 @@
-/* ============================================================
-   Limited places view
+/* ---------- charts for the limited-places analysis (data: RUN.pool) ---------- */
 
-   Gemini sees all 100 applicants at once and must fill a fixed number of
-   High and Medium places. VI-SPDAT fills the same places by score.
-   Data: DATA.limited, built by scripts/analyze_pool.py.
-   ============================================================ */
-
-let LIMITED_KEY = "main";
 const mean = (a) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : 0);
 const fmt1 = (x) => (Math.abs(x - Math.round(x)) < 0.05 ? String(Math.round(x)) : x.toFixed(1));
 const GROUP_SHORT = (g) => RACE_SHORT[g] || (CITY_CALLOUT[g] ? CITY_CALLOUT[g].short : g);
 
-function renderLimited() {
-  if (!DATA || !DATA.limited || !DATA.limited.length) return;
-  const all = DATA.limited;
-  const sc = all.find((s) => s.key === LIMITED_KEY) || all[0];
-  const R = sc.rounds, pl = sc.places;
-  chipGroup("#lim-scenarios", all.map((s) => ({ value: s.key, label: `${s.role}: ${s.label}`, count: `${s.rounds} rounds` })),
-    sc.key, (v) => { LIMITED_KEY = v; renderLimited(); });
-
-  d3.select("#lim-lede").text(
-    `Housing is limited: only ${pl.High} High and ${pl.Medium} Medium places for ${pl.High + pl.Medium + pl.Low} applicants. ` +
-    `VI‑SPDAT fills them by score. Gemini sees all applicants together and assigns each one, ${R} times, ` +
-    `with the applicants in a different order each time.`);
-
-  /* ---------- finding cards ---------- */
-  const same = mean(sc.per_round.map((r) => r.same)), up = mean(sc.per_round.map((r) => r.higher)), down = mean(sc.per_round.map((r) => r.lower));
-  const kap = sc.per_round.map((r) => r.kappa);
-  const circ = sc.tests.filter((t) => t.family === "circumstance"), demo = sc.tests.filter((t) => t.family === "demographic");
-  const sigC = circ.filter((t) => t.p_holm < 0.05), sigD = demo.filter((t) => t.p_holm < 0.05);
-  const cards = [
-    { kicker: "Agreement", stat: `${fmt1(same)} of 100`, note: `people placed in the same category as VI‑SPDAT (average of ${R} rounds)`,
-      body: `Weighted Cohen's kappa ${d3.min(kap).toFixed(2)}–${d3.max(kap).toFixed(2)}. Gemini follows VI‑SPDAT closely once places are limited.` },
-    { kicker: "Direction", stat: `${fmt1(up)} up · ${fmt1(down)} down`, note: "people Gemini places above / below VI‑SPDAT",
-      body: "With a limit, Gemini has to rank people, so it moves about as many down as up." },
-    { kicker: "Stability", stat: `${sc.same_category_in_every_round} of 100`, note: `people given the same category in all ${R} rounds`,
-      body: `Two rounds agree on ${fmt1(sc.round_to_round_same_category.mean)} people on average. Gemini's choices near the cut-offs vary with list order.` },
-    { kicker: "What stood out", stat: `${sigC.length} of ${circ.length}`, note: "circumstances significant (Holm-corrected)",
-      body: (sigC.length ? `${sigC.map((t) => t.factor).join(", ")}. ` : "No circumstance clearly changed who got a High place. ") +
-        `Demographics: ${sigD.length} of ${demo.length} significant.` }
-  ];
-  const el = d3.select("#lim-findings");
-  el.selectAll("*").remove();
-  cards.forEach((c) => {
-    const a = el.append("article").attr("class", "fcard");
-    a.append("p").attr("class", "fcard-kicker").text(c.kicker);
-    a.append("p").attr("class", "fcard-stat").text(c.stat);
-    a.append("p").attr("class", "fcard-note").text(c.note);
-    a.append("p").attr("class", "fcard-body").text(c.body);
-  });
-
-  limitedRounds(sc);
-  limitedCrosstab(sc);
-  limitedByScore(sc);
-  limitedCircumstances(sc, circ);
-  limitedEffects(sc);
-  limitedDemographics(sc, demo);
-  d3.select("#lim-method").text(
-    `Gemini 3.8 Flash, default settings. Each round is one request with all 100 case summaries in a new random order and new anonymous ` +
-    `applicant numbers; Gemini never saw VI‑SPDAT questions or scores. A round counts only if every applicant is assigned and the split is exactly ` +
-    `${pl.High} / ${pl.Medium} / ${pl.Low}. Tests compare people with the same VI‑SPDAT score (stratified permutation, 20,000 shuffles, Holm within each family).`);
-}
-
-/* ---------- agreement in each round ---------- */
-
-function limitedRounds(sc) {
+function renderRounds(sc) {
+  if (!sc) return;
   const rounds = sc.per_round, W = widthOf("#lim-rounds", 560, 960), H = 250, m = { t: 22, r: 84, b: 40, l: 44 };
   const x = d3.scaleBand().domain(rounds.map((r) => r.round)).range([m.l, W - m.r]).padding(0.28);
   const lo = Math.max(0, Math.floor((d3.min(rounds, (r) => r.same) - 12) / 10) * 10);
@@ -86,64 +27,8 @@ function limitedRounds(sc) {
   svg.append("line").attr("class", "ref-line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(avg)).attr("y2", y(avg));
   svg.append("text").attr("class", "ref-label").attr("x", W - m.r + 8).attr("y", y(avg)).attr("dy", "0.35em").attr("text-anchor", "start").text(`average ${fmt1(avg)}`);
   svg.append("text").attr("class", "axis-title").attr("x", (m.l + W - m.r) / 2).attr("y", H - 6).attr("text-anchor", "middle").text("ROUND");
+  d3.select("#lim-rounds-foot").text(`Gemini's placement varies a little from round to round: ${sc.same_category_in_every_round} of 100 people got the same category in all ${sc.rounds} rounds, and two rounds agree on ${fmt1(sc.round_to_round_same_category.mean)} people on average.`);
 }
-
-/* ---------- consensus crosstab ---------- */
-
-function limitedCrosstab(sc) {
-  const ct = sc.consensus_crosstab_vispdat_to_gemini;
-  table("#lim-crosstab", ["", "Gemini High", "Gemini Medium", "Gemini Low", "Total"],
-    CATS.map((a) => ({ cells: [`VI‑SPDAT ${a}`, ...CATS.map((b) => {
-      const v = ct[`${a}->${b}`];
-      return a === b ? `<strong>${fmt1(v)}</strong>` : fmt1(v);
-    }), fmt1(d3.sum(CATS, (b) => ct[`${a}->${b}`]))] })));
-  d3.select("#lim-crosstab-foot").text(
-    `Gemini's rounds are combined by ranking people on how often they were placed in a higher category, then filling the same places. ` +
-    `Counts can be fractions where people tie at a cut-off.`);
-}
-
-/* ---------- how often each VI-SPDAT score gets a place ---------- */
-
-function limitedByScore(sc) {
-  legend("#lim-legend-score", [{ name: "Gemini High", color: css(CAT_COLOR.High) }, { name: "Gemini Medium", color: css(CAT_COLOR.Medium) },
-    { name: "Gemini Low", color: css(CAT_COLOR.Low) }, { kind: "line", name: "VI‑SPDAT cut-off" }]);
-  const rows = sc.by_score, scores = d3.range(0, 18);
-  const W = widthOf("#lim-byscore", 560, 960), H = 300, m = { t: 34, r: 12, b: 44, l: 44 };
-  const x = d3.scaleBand().domain(scores).range([m.l, W - m.r]).padding(0.18);
-  const y = d3.scaleLinear().domain([0, 1]).range([H - m.b, m.t]);
-  const svg = d3.select("#lim-byscore").html("").append("svg").attr("width", W).attr("height", H).attr("role", "img")
-    .attr("aria-label", "Share of rounds in which people at each VI-SPDAT score were placed High, Medium, or Low.");
-  svg.append("g").selectAll("line").data(y.ticks(5)).join("line").attr("class", "gridline").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-  svg.append("g").selectAll("text").data(y.ticks(5)).join("text").attr("class", "tick-text").attr("x", m.l - 8).attr("y", y)
-    .attr("dy", "0.32em").attr("text-anchor", "end").text((d) => `${Math.round(d * 100)}%`);
-  scores.forEach((s) => {
-    const r = rows.find((q) => q.score === s);
-    svg.append("text").attr("class", "axis-label").attr("x", x(s) + x.bandwidth() / 2).attr("y", H - m.b + 16).attr("text-anchor", "middle").text(s);
-    if (!r) return;
-    let acc = 0;
-    [["Low", 1 - r.high - r.medium], ["Medium", r.medium], ["High", r.high]].forEach(([c, v]) => {
-      if (v <= 0.001) return;
-      const sel = svg.append("rect").attr("x", x(s)).attr("width", x.bandwidth()).attr("y", y(acc + v)).attr("height", y(acc) - y(acc + v) - 1)
-        .attr("fill", css(CAT_COLOR[c])).attr("rx", 2);
-      hover(sel, () => `<span class="tt-title">VI‑SPDAT score ${s} (${r.n} ${r.n === 1 ? "person" : "people"})</span><span class="tt-row">Gemini ${c}: ${Math.round(v * 100)}% of rounds</span>`);
-      acc += v;
-    });
-  });
-  // VI-SPDAT cut-offs: where its High and Medium places run out when people are taken from the top score down
-  let cum = 0;
-  [[sc.places.High, "Medium | High"], [sc.places.High + sc.places.Medium, "Low | Medium"]].forEach(([cap, label]) => {
-    cum = 0;
-    let at = null;
-    [...rows].sort((a, b) => b.score - a.score).forEach((r) => { if (at === null) { cum += r.n; if (cum >= cap) at = r.score; } });
-    if (at === null) return;
-    const xx = x(at) - (x.step() - x.bandwidth()) / 2;
-    svg.append("line").attr("class", "cut-line").attr("x1", xx).attr("x2", xx).attr("y1", m.t - 10).attr("y2", H - m.b);
-    svg.append("text").attr("class", "cut-label").attr("x", xx).attr("y", m.t - 14).attr("text-anchor", "middle").text(label);
-  });
-  svg.append("text").attr("class", "axis-title").attr("x", (m.l + W - m.r) / 2).attr("y", H - 6).attr("text-anchor", "middle").text("VI‑SPDAT SCORE");
-}
-
-/* ---------- circumstances: observed against expected High share ---------- */
 
 function limitedCircumstances(sc, circ) {
   legend("#lim-legend-items", [{ name: "Expected from VI‑SPDAT score", color: css("--rule-strong") }, { name: "Gemini: share of rounds placed High", color: css("--series-2") }]);
@@ -171,8 +56,6 @@ function limitedCircumstances(sc, circ) {
     hover(g, () => `<span class="tt-title">${esc(t.factor)}</span><span class="tt-row">${d.n} people; placed High in ${Math.round(d.observed * 100)}% of rounds</span><span class="tt-row">expected from VI‑SPDAT score: ${Math.round(d.expected * 100)}%</span><span class="tt-row">p = ${fmtP(t.p)}, Holm p = ${fmtP(t.p_holm)}</span>`);
   });
 }
-
-/* ---------- factor effects (regression) ---------- */
 
 function limitedEffects(sc) {
   const rows = sc.factor_effects.slice().sort((a, b) => b.effect - a.effect);
@@ -203,8 +86,6 @@ function limitedEffects(sc) {
     `The factors explain ${Math.round(sc.r2_factors * 100)}% of the variation, against ${Math.round(sc.r2_score_only * 100)}% for the VI‑SPDAT score alone. ` +
     `Exploratory: with ${rows.length} factors and 100 people, only large effects can be detected.`);
 }
-
-/* ---------- demographics ---------- */
 
 function limitedDemographics(sc, demo) {
   const rows = [];

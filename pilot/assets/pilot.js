@@ -838,7 +838,6 @@ function renderAll() {
   renderProfiles();
   renderDesign();
   renderDownloads();
-  if (typeof renderLimited === "function") renderLimited();
 }
 
 const VIEWS = [...document.querySelectorAll(".view")].map((v) => v.dataset.view);
@@ -851,7 +850,6 @@ function showView(name) {
   document.getElementById("view-title").textContent = link ? link.textContent : "";
   if (link && link.dataset.sub) document.getElementById("view-sub").textContent = link.dataset.sub;
   document.title = `${link ? link.textContent + " · " : ""}Pilot · VI-SPDAT and Gemini Housing Priority`;
-  document.querySelector(".model-switch").hidden = name === "limited";
   window.scrollTo(0, 0);
   renderAll(); // charts drawn while hidden used a fallback width
 }

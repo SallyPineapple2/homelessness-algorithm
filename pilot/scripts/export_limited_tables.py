@@ -32,7 +32,7 @@ def f1(x):
 
 
 def pc(x):
-    return f"{100 * x:.0f}"
+    return str(int(100 * x + 0.5))
 
 
 def load(tag):

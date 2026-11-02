@@ -20,11 +20,7 @@
     <a class="brand" href="#overview">VI&#8209;SPDAT &amp; Gemini<small>Pilot study dashboard</small></a>
     <nav class="side-nav" aria-label="Dashboard views">
       <div class="nav-group">
-        <span class="nav-label">Limited places</span>
-        <a href="#limited" data-view-link="limited" data-sub="Who gets housing when only a fixed number of places are available">Limited places</a>
-      </div>
-      <div class="nav-group">
-        <span class="nav-label">Unlimited places</span>
+        <span class="nav-label">Results</span>
         <a href="#overview" data-view-link="overview" data-sub="How VI-SPDAT and Gemini prioritize the same 100 people">Overview</a>
         <a href="#groups" data-view-link="groups" data-sub="Priority within each gender, race, city, age group, and circumstance">By group</a>
         <a href="#agreement" data-view-link="agreement" data-sub="Where the two approaches agree and where they differ">Agreement</a>
@@ -40,6 +36,7 @@
       <div class="nav-group">
         <span class="nav-label">Files</span>
         <a href="#downloads" data-view-link="downloads" data-sub="Data files behind every figure">Downloads</a>
+        <a href="../limited/" class="nav-external">Limited places study &rarr;</a>
         <a href="../index.html" class="nav-external">Original 640-record study &rarr;</a>
       </div>
     </nav>
@@ -60,58 +57,6 @@
     </header>
 
     <main id="main">
-      <section class="view" id="view-limited" data-view="limited" aria-label="Limited places" hidden>
-        <div class="rq-block">
-          <p class="rq-kicker">Main study</p>
-          <p class="rq-text">When housing is limited, who gets it, and does Gemini fill the places the way VI&#8209;SPDAT does?</p>
-          <dl class="rq-meta">
-            <div><dt>Approach</dt><dd>The same 100 applicants and the same number of places go to both. VI&#8209;SPDAT fills High places with its highest scores, then Medium places with the next. Gemini sees every applicant together and assigns each one High, Medium, or Low, using exactly the places available.</dd></div>
-            <div><dt>Caution</dt><dd>VI&#8209;SPDAT is a benchmark, not ground truth. A difference between groups is not proof of bias, so the tests compare people with the same VI&#8209;SPDAT score.</dd></div>
-          </dl>
-        </div>
-        <div class="chip-row" id="lim-scenarios"></div>
-        <div class="intro-band"><p class="intro-lede" id="lim-lede"></p></div>
-        <h2 class="block-title">Main findings</h2>
-        <div class="findings" id="lim-findings"></div>
-
-        <div class="chart-card">
-          <p class="chart-title">Agreement with VI&#8209;SPDAT in each round</p>
-          <p class="chart-sub">People placed in the same category by both, out of 100. Each round is a separate request with the applicants in a new order.</p>
-          <div class="chart-scroll" id="lim-rounds"></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">VI&#8209;SPDAT priority against Gemini priority</p>
-          <p class="chart-sub">Each cell counts the people VI&#8209;SPDAT placed in the row and Gemini placed in the column. The diagonal is agreement.</p>
-          <div class="results-scroll"><table class="results compact" id="lim-crosstab"></table></div>
-          <p class="chart-foot" id="lim-crosstab-foot"></p>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">How Gemini placed people at each VI&#8209;SPDAT score</p>
-          <p class="chart-sub">Share of rounds in which people at each score were placed High, Medium, or Low. Dashed lines show where VI&#8209;SPDAT's places run out.</p>
-          <div class="legend" id="lim-legend-score"></div>
-          <div class="chart-scroll" id="lim-byscore"></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Which circumstances change who gets a High place?</p>
-          <p class="chart-sub">Open dot: how often those people would be placed High given their VI&#8209;SPDAT scores. Filled dot: how often Gemini placed them High. Sorted by p; Holm-corrected across 16 circumstances.</p>
-          <div class="legend" id="lim-legend-items"></div>
-          <div class="chart-scroll" id="lim-items"></div>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">How much each factor weighs in Gemini's choice</p>
-          <p class="chart-sub">Change in the chance of a High place for people with each factor, holding the other factors fixed. Bars show 95% confidence intervals. VI&#8209;SPDAT counts every factor equally.</p>
-          <div class="chart-scroll" id="lim-effects"></div>
-          <p class="chart-foot" id="lim-effects-foot"></p>
-        </div>
-        <div class="chart-card">
-          <p class="chart-title">Who gets the places, by group</p>
-          <p class="chart-sub">High and Medium places going to each group under VI&#8209;SPDAT and under Gemini.</p>
-          <div class="results-scroll"><table class="results compact" id="lim-demo-table"></table></div>
-          <p class="chart-foot" id="lim-demo-foot"></p>
-        </div>
-        <p class="chart-foot" id="lim-method"></p>
-      </section>
-
       <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
         <div class="rq-block">
           <p class="rq-kicker">Pilot question</p>
@@ -318,6 +263,5 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="assets/vendor/topojson-client.min.js"></script>
 <script src="assets/pilot.js"></script>
-<script src="assets/limited.js"></script>
 </body>
 </html>

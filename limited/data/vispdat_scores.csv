@@ -1,0 +1,101 @@
+id,age,gender,race,location,score,pre,a_history,b_risks,c_daily,d_wellness,recommendation,priority,pre_age,a1_sleep,a2_duration,b1_emergency,b2_harm,b3_legal,b4_exploitation,c1_money,c2_activity,c3_selfcare,c4_relationships,d1_physical,d2_substance,d3_mental,d4_trimorbidity,d5_medications,d6_trauma
+P01,34,Female,Hispanic/Latino/e/a,"Chicago, Illinois",0,0,0,0,0,0,No housing intervention,Low,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P02,41,Male,White,"Chicago, Illinois",1,0,1,0,0,0,No housing intervention,Low,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P03,28,Female,"American Indian, Alaska Native, or Indigenous","Atlanta, Georgia",1,0,0,0,1,0,No housing intervention,Low,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+P04,47,Male,Hispanic/Latino/e/a,"New York City, New York",2,0,2,0,0,0,No housing intervention,Low,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P05,52,Male,Asian or Asian American,"Chicago, Illinois",2,0,0,0,2,0,No housing intervention,Low,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+P06,38,Female,Asian or Asian American,"Atlanta, Georgia",3,0,1,1,1,0,No housing intervention,Low,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0
+P07,44,Female,Hispanic/Latino/e/a,"Los Angeles, California",3,0,0,0,1,2,No housing intervention,Low,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0
+P08,62,Female,"Black, African American, or African","Chicago, Illinois",3,1,2,0,0,0,No housing intervention,Low,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P09,36,Male,"American Indian, Alaska Native, or Indigenous","New York City, New York",4,0,0,1,2,1,Rapid Re-Housing,Medium,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,1,0
+P10,45,Male,White,"Cincinnati, Ohio",4,0,2,0,1,1,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1
+P11,64,Male,Asian or Asian American,"Cincinnati, Ohio",4,1,1,0,1,1,Rapid Re-Housing,Medium,1,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+P12,33,Male,Hispanic/Latino/e/a,"Los Angeles, California",5,0,1,0,2,2,Rapid Re-Housing,Medium,0,1,0,0,0,0,0,1,0,0,1,1,0,0,0,0,1
+P13,29,Male,White,"New York City, New York",5,0,0,2,2,1,Rapid Re-Housing,Medium,0,0,0,1,1,0,0,0,1,1,0,1,0,0,0,0,0
+P14,51,Female,"Black, African American, or African","Atlanta, Georgia",6,0,2,0,2,2,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,1,1,0,0,1,0,0,0,1,0
+P15,40,Male,Asian or Asian American,"Atlanta, Georgia",6,0,0,3,1,2,Rapid Re-Housing,Medium,0,0,0,1,1,1,0,0,0,1,0,1,1,0,0,0,0
+P16,55,Female,White,"Chicago, Illinois",7,0,2,1,3,1,Rapid Re-Housing,Medium,0,1,1,1,0,0,0,1,1,1,0,1,0,0,0,0,0
+P17,71,Female,Hispanic/Latino/e/a,"Chicago, Illinois",7,1,0,0,4,2,Rapid Re-Housing,Medium,1,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,1
+P18,37,Male,Asian or Asian American,"Chicago, Illinois",7,0,1,3,1,2,Rapid Re-Housing,Medium,0,1,0,1,1,0,1,0,0,0,1,1,1,0,0,0,0
+P19,43,Male,"Black, African American, or African","New York City, New York",8,0,2,2,2,2,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,1,0,0,1,1,0,0,0,0
+P20,31,Male,Asian or Asian American,"New York City, New York",8,0,0,4,4,0,Permanent Supportive Housing,High,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0
+P21,68,Male,Hispanic/Latino/e/a,"Cincinnati, Ohio",8,1,2,0,3,2,Permanent Supportive Housing,High,1,1,1,0,0,0,0,1,1,1,0,1,0,0,0,1,0
+P22,49,Female,"Black, African American, or African","Atlanta, Georgia",9,0,2,2,3,2,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,1,1,0,1,1,0,0,0,0
+P23,61,Female,"American Indian, Alaska Native, or Indigenous","Chicago, Illinois",9,1,0,4,0,4,Permanent Supportive Housing,High,1,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0
+P24,46,Female,"American Indian, Alaska Native, or Indigenous","Atlanta, Georgia",10,0,2,2,3,3,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,1,1,0,1,1,0,0,1,0
+P25,39,Female,White,"Los Angeles, California",11,0,2,4,3,2,Permanent Supportive Housing,High,0,1,1,1,1,1,1,1,1,1,0,1,1,0,0,0,0
+P26,50,Male,White,"New York City, New York",12,0,2,2,2,6,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,1,0,0,1,1,1,1,1,1
+P27,42,Male,White,"Chicago, Illinois",13,0,2,3,4,4,Permanent Supportive Housing,High,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,0,0
+P28,36,Female,"Black, African American, or African","New York City, New York",14,0,2,4,4,4,Permanent Supportive Housing,High,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0
+P29,44,Male,Hispanic/Latino/e/a,"Chicago, Illinois",15,0,2,4,4,5,Permanent Supportive Housing,High,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+P30,47,Male,"American Indian, Alaska Native, or Indigenous","New York City, New York",16,0,2,4,4,6,Permanent Supportive Housing,High,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+P31,73,Female,White,"Cincinnati, Ohio",16,1,2,4,4,5,Permanent Supportive Housing,High,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0
+P32,66,Male,"Black, African American, or African","Atlanta, Georgia",17,1,2,4,4,6,Permanent Supportive Housing,High,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+P33,26,Female,"American Indian, Alaska Native, or Indigenous","New York City, New York",0,0,0,0,0,0,No housing intervention,Low,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P34,58,Male,"Black, African American, or African","New York City, New York",0,0,0,0,0,0,No housing intervention,Low,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P35,22,Female,Asian or Asian American,"New York City, New York",0,0,0,0,0,0,No housing intervention,Low,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P36,33,Female,Asian or Asian American,"Cincinnati, Ohio",1,0,1,0,0,0,No housing intervention,Low,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P37,45,Female,White,"New York City, New York",1,0,0,0,1,0,No housing intervention,Low,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+P38,67,Female,"Black, African American, or African","Los Angeles, California",1,1,0,0,0,0,No housing intervention,Low,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+P39,30,Female,Hispanic/Latino/e/a,"Cincinnati, Ohio",1,0,0,0,1,0,No housing intervention,Low,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+P40,24,Female,"American Indian, Alaska Native, or Indigenous","Chicago, Illinois",2,0,1,0,1,0,No housing intervention,Low,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+P41,27,Female,White,"Cincinnati, Ohio",2,0,0,0,1,1,No housing intervention,Low,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0
+P42,39,Female,"Black, African American, or African","Cincinnati, Ohio",2,0,1,0,1,0,No housing intervention,Low,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+P43,63,Male,"American Indian, Alaska Native, or Indigenous","Los Angeles, California",2,1,0,0,0,1,No housing intervention,Low,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+P44,35,Female,White,"Los Angeles, California",2,0,0,1,1,0,No housing intervention,Low,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0
+P45,50,Male,Hispanic/Latino/e/a,"Atlanta, Georgia",3,0,2,0,1,0,No housing intervention,Low,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+P46,23,Male,White,"Atlanta, Georgia",3,0,0,0,1,2,No housing intervention,Low,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,0
+P47,31,Male,"Black, African American, or African","Atlanta, Georgia",3,0,0,1,1,1,No housing intervention,Low,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,1
+P48,61,Male,"American Indian, Alaska Native, or Indigenous","Cincinnati, Ohio",3,1,1,0,0,1,No housing intervention,Low,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+P49,55,Female,Asian or Asian American,"Los Angeles, California",3,0,0,0,2,1,No housing intervention,Low,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0
+P50,47,Male,Hispanic/Latino/e/a,"Chicago, Illinois",4,0,2,0,2,0,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0
+P51,52,Male,"Black, African American, or African","Los Angeles, California",4,0,1,0,1,2,Rapid Re-Housing,Medium,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,1,0
+P52,28,Male,"Black, African American, or African","Chicago, Illinois",4,0,0,2,1,1,Rapid Re-Housing,Medium,0,0,0,1,1,0,0,1,0,0,0,0,1,0,0,0,0
+P53,69,Female,White,"Chicago, Illinois",4,1,1,0,1,1,Rapid Re-Housing,Medium,1,0,1,0,0,0,0,1,0,0,0,1,0,0,0,0,0
+P54,20,Male,"American Indian, Alaska Native, or Indigenous","Atlanta, Georgia",4,0,0,0,2,2,Rapid Re-Housing,Medium,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,1
+P55,25,Male,Asian or Asian American,"Los Angeles, California",4,0,1,2,1,0,Rapid Re-Housing,Medium,0,1,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0
+P56,19,Female,Hispanic/Latino/e/a,"Atlanta, Georgia",4,0,1,0,2,1,Rapid Re-Housing,Medium,0,1,0,0,0,0,0,1,0,0,1,1,0,0,0,0,0
+P57,58,Male,"Black, African American, or African","Cincinnati, Ohio",4,0,2,0,1,1,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0
+P58,41,Male,"American Indian, Alaska Native, or Indigenous","Chicago, Illinois",5,0,2,1,1,1,Rapid Re-Housing,Medium,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0
+P59,37,Female,Asian or Asian American,"Chicago, Illinois",5,0,0,0,2,3,Rapid Re-Housing,Medium,0,0,0,0,0,0,0,1,1,0,0,1,0,1,0,1,0
+P60,72,Male,Hispanic/Latino/e/a,"Cincinnati, Ohio",5,1,1,0,2,1,Rapid Re-Housing,Medium,1,1,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0
+P61,34,Female,"Black, African American, or African","New York City, New York",5,0,0,2,2,1,Rapid Re-Housing,Medium,0,0,0,0,1,1,0,1,0,0,1,0,0,0,0,0,1
+P62,49,Male,Asian or Asian American,"New York City, New York",5,0,2,0,3,0,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0
+P63,44,Male,White,"Los Angeles, California",5,0,1,1,1,2,Rapid Re-Housing,Medium,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0
+P64,26,Female,"American Indian, Alaska Native, or Indigenous","Los Angeles, California",5,0,1,0,2,2,Rapid Re-Housing,Medium,0,0,1,0,0,0,0,1,1,0,0,0,1,1,0,0,0
+P65,33,Female,White,"Atlanta, Georgia",5,0,1,1,1,2,Rapid Re-Housing,Medium,0,1,0,0,1,0,0,0,0,0,1,1,0,0,0,0,1
+P66,36,Female,"American Indian, Alaska Native, or Indigenous","Cincinnati, Ohio",6,0,2,2,1,1,Rapid Re-Housing,Medium,0,1,1,1,1,0,0,1,0,0,0,0,1,0,0,0,0
+P67,65,Female,Hispanic/Latino/e/a,"New York City, New York",6,1,2,0,2,1,Rapid Re-Housing,Medium,1,1,1,0,0,0,0,1,1,0,0,1,0,0,0,0,0
+P68,54,Male,"Black, African American, or African","Chicago, Illinois",6,0,0,0,3,3,Rapid Re-Housing,Medium,0,0,0,0,0,0,0,1,1,1,0,1,0,1,0,1,0
+P69,23,Female,Hispanic/Latino/e/a,"New York City, New York",6,0,1,3,1,1,Rapid Re-Housing,Medium,0,1,0,1,1,1,0,1,0,0,0,0,1,0,0,0,0
+P70,21,Male,White,"Los Angeles, California",6,0,1,1,2,2,Rapid Re-Housing,Medium,0,1,0,0,0,0,1,1,0,0,1,0,0,1,0,0,1
+P71,46,Male,Asian or Asian American,"Los Angeles, California",6,0,1,1,1,3,Rapid Re-Housing,Medium,0,0,1,1,0,0,0,1,0,0,0,1,1,0,0,1,0
+P72,57,Male,"American Indian, Alaska Native, or Indigenous","Cincinnati, Ohio",6,0,2,0,3,1,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,1,1,1,0,0,0,1,0,0,0
+P73,33,Female,"American Indian, Alaska Native, or Indigenous","Los Angeles, California",7,0,2,2,2,1,Rapid Re-Housing,Medium,0,1,1,1,1,0,0,1,1,0,0,0,1,0,0,0,0
+P74,63,Male,"Black, African American, or African","Los Angeles, California",7,1,2,1,1,2,Rapid Re-Housing,Medium,1,1,1,1,0,0,0,1,0,0,0,1,0,0,0,1,0
+P75,27,Female,"Black, African American, or African","Cincinnati, Ohio",7,0,1,3,1,2,Rapid Re-Housing,Medium,0,1,0,1,1,0,1,1,0,0,0,0,1,0,0,0,1
+P76,48,Male,Hispanic/Latino/e/a,"Atlanta, Georgia",7,0,1,0,3,3,Rapid Re-Housing,Medium,0,0,1,0,0,0,0,1,1,1,0,1,0,1,0,1,0
+P77,40,Female,White,"New York City, New York",7,0,2,1,2,2,Rapid Re-Housing,Medium,0,1,1,0,0,1,0,1,0,0,1,0,1,1,0,0,0
+P78,52,Female,Asian or Asian American,"Cincinnati, Ohio",7,0,1,2,2,2,Rapid Re-Housing,Medium,0,1,0,1,1,0,0,1,0,1,0,1,1,0,0,0,0
+P79,59,Male,"American Indian, Alaska Native, or Indigenous","Atlanta, Georgia",7,0,2,0,2,3,Rapid Re-Housing,Medium,0,1,1,0,0,0,0,1,1,0,0,1,0,1,0,1,0
+P80,30,Female,"American Indian, Alaska Native, or Indigenous","New York City, New York",8,0,2,2,2,2,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,1,0,0,0,1,0,0,0,1
+P81,70,Male,White,"Atlanta, Georgia",8,1,2,1,2,2,Permanent Supportive Housing,High,1,1,1,1,0,0,0,1,0,1,0,1,0,0,0,1,0
+P82,45,Male,White,"Cincinnati, Ohio",8,0,2,1,1,4,Permanent Supportive Housing,High,0,1,1,1,0,0,0,1,0,0,0,1,1,1,1,0,0
+P83,24,Female,Asian or Asian American,"Atlanta, Georgia",8,0,1,3,2,2,Permanent Supportive Housing,High,0,1,0,1,1,0,1,1,0,0,1,1,1,0,0,0,0
+P84,38,Female,Hispanic/Latino/e/a,"Los Angeles, California",8,0,1,2,3,2,Permanent Supportive Housing,High,0,0,1,1,0,1,0,1,1,1,0,0,0,1,0,1,0
+P85,35,Male,Hispanic/Latino/e/a,"New York City, New York",9,0,2,3,2,2,Permanent Supportive Housing,High,0,1,1,1,1,1,0,1,1,0,0,0,1,1,0,0,0
+P86,66,Male,Asian or Asian American,"Atlanta, Georgia",9,1,2,1,2,3,Permanent Supportive Housing,High,1,1,1,1,0,0,0,1,0,1,0,1,0,1,0,1,0
+P87,22,Female,White,"Atlanta, Georgia",9,0,1,3,2,3,Permanent Supportive Housing,High,0,1,0,1,1,0,1,1,0,0,1,0,1,1,0,0,1
+P88,53,Female,"Black, African American, or African","Los Angeles, California",9,0,2,1,3,3,Permanent Supportive Housing,High,0,1,1,1,0,0,0,1,1,1,0,1,0,0,0,1,1
+P89,43,Female,Hispanic/Latino/e/a,"Cincinnati, Ohio",10,0,2,2,2,4,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,1,0,0,1,1,1,1,0,0
+P90,29,Female,Asian or Asian American,"New York City, New York",10,0,2,4,2,2,Permanent Supportive Housing,High,0,1,1,1,1,1,1,1,0,0,1,0,1,0,0,0,1
+P91,64,Female,"Black, African American, or African","Chicago, Illinois",10,1,2,2,3,2,Permanent Supportive Housing,High,1,1,1,1,1,0,0,1,1,1,0,1,0,0,0,1,0
+P92,37,Male,"American Indian, Alaska Native, or Indigenous","Chicago, Illinois",11,0,2,3,3,3,Permanent Supportive Housing,High,0,1,1,1,1,1,0,1,1,1,0,0,1,1,0,1,0
+P93,56,Male,Hispanic/Latino/e/a,"Los Angeles, California",11,0,2,2,2,5,Permanent Supportive Housing,High,0,1,1,1,1,0,0,1,0,1,0,1,1,1,1,1,0
+P94,26,Male,"Black, African American, or African","Cincinnati, Ohio",11,0,1,3,2,5,Permanent Supportive Housing,High,0,1,0,1,1,0,1,1,0,0,1,1,1,1,1,0,1
+P95,48,Female,Asian or Asian American,"Los Angeles, California",12,0,2,3,3,4,Permanent Supportive Housing,High,0,1,1,1,1,1,0,1,1,1,0,1,1,1,1,0,0
+P96,62,Male,"American Indian, Alaska Native, or Indigenous","Los Angeles, California",12,1,2,2,2,5,Permanent Supportive Housing,High,1,1,1,1,1,0,0,1,0,1,0,1,1,1,1,1,0
+P97,34,Female,"American Indian, Alaska Native, or Indigenous","Cincinnati, Ohio",13,0,2,4,3,4,Permanent Supportive Housing,High,0,1,1,1,1,1,1,1,1,1,0,0,1,1,0,1,1
+P98,40,Female,Hispanic/Latino/e/a,"Atlanta, Georgia",13,0,2,3,3,5,Permanent Supportive Housing,High,0,1,1,1,1,0,1,1,1,0,1,1,1,1,1,0,1
+P99,51,Female,Asian or Asian American,"Chicago, Illinois",14,0,2,3,4,5,Permanent Supportive Housing,High,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0
+P100,60,Male,Asian or Asian American,"Cincinnati, Ohio",15,1,2,4,3,5,Permanent Supportive Housing,High,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0

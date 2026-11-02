@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limited places · VI-SPDAT and Gemini Housing Priority</title>
+<meta name="description" content="Pilot study: VI-SPDAT and Gemini assign housing priority to the same 100 distinct synthetic people. Where they agree, where they differ, and how that varies by gender, race, city, age, and circumstances.">
+<meta name="theme-color" content="#f4efe5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M9 22V14M16 22V9M23 22V17' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/study.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#overview">VI&#8209;SPDAT &amp; Gemini<small>Limited places study</small></a>
+    <nav class="side-nav" aria-label="Dashboard views">
+      <div class="nav-group">
+        <span class="nav-label">Results</span>
+        <a href="#overview" data-view-link="overview" data-sub="Who gets the places under VI-SPDAT and under Gemini">Overview</a>
+        <a href="#groups" data-view-link="groups" data-sub="Priority within each gender, race, city, age group, and circumstance">By group</a>
+        <a href="#agreement" data-view-link="agreement" data-sub="Where the two approaches agree and where they differ">Agreement</a>
+        <a href="#significance" data-view-link="significance" data-sub="Which groups and circumstances change who gets a High place beyond the VI-SPDAT score">Significance</a>
+        <a href="#cities" data-view-link="cities" data-sub="Share given a High place in each study city">Cities</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Study</span>
+        <a href="#factors" data-view-link="factors" data-sub="The 17 VI-SPDAT items every profile was built on">The 17 factors</a>
+        <a href="#profiles" data-view-link="profiles" data-sub="All 100 people, each approach's priority, and Gemini's reason">Profiles</a>
+        <a href="#design" data-view-link="design" data-sub="Population, places, VI-SPDAT scoring, and the Gemini prompt">Study design</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Files</span>
+        <a href="#downloads" data-view-link="downloads" data-sub="Data files behind every figure">Downloads</a>
+        <a href="../pilot/" class="nav-external">Unlimited places pilot &rarr;</a>
+        <a href="../index.html" class="nav-external">Original 640-record study &rarr;</a>
+      </div>
+    </nav>
+    <div class="side-foot">35 High, 40 Medium, 25 Low places.<br>Synthetic population: 100 distinct people.</div>
+  </aside>
+
+  <div class="app-main">
+    <header class="app-header">
+      <div>
+        <h1 class="app-title" id="view-title">Overview</h1>
+        <p class="app-sub" id="view-sub">VI-SPDAT and Gemini Housing Priority</p>
+      </div>
+      <div class="model-switch" role="group" aria-label="Model">
+        <span class="control-label">Model</span>
+        <span class="chip" aria-pressed="true">Gemini 3.8 Flash</span>
+        <span class="table-note-inline">10 rounds</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
+        <div class="rq-block">
+          <p class="rq-kicker">Limited places study</p>
+          <p class="rq-text">When there are only 35 High and 40 Medium places for 100 people, who gets them under VI&#8209;SPDAT and under Gemini?</p>
+          <dl class="rq-meta">
+            <div><dt>Approach</dt><dd>VI&#8209;SPDAT fills the places with its highest scores. Gemini sees all 100 people together and assigns each one High, Medium, or Low, using exactly the places available. This is repeated 10 times with the people in a different order each time. VI&#8209;SPDAT is a benchmark, not ground truth.</dd></div>
+            <div><dt>Caution</dt><dd>A raw difference between groups is not proof of bias, because groups can differ in circumstances. The significance tests compare people with the same VI&#8209;SPDAT score.</dd></div>
+          </dl>
+        </div>
+        <div class="intro-band">
+          <p class="intro-lede" id="overview-lede"></p>
+        </div>
+        <h2 class="block-title">Main findings</h2>
+        <div class="findings" id="findings"></div>
+
+        <div class="chart-card">
+          <p class="chart-title">Places filled</p>
+          <p class="chart-sub">Both approaches fill exactly 35 High, 40 Medium, and 25 Low places. The question is which people get them.</p>
+          <div class="legend" id="legend-dist"></div>
+          <div class="chart-scroll" id="chart-dist"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Share given a High place, in every group</p>
+          <p class="chart-sub">Plum dot: VI&#8209;SPDAT. Rose dot: Gemini. Both approaches fill the same 35 High places, so groups gain or lose only where they differ.</p>
+          <div class="legend" id="legend-dumbbell"></div>
+          <div class="chart-scroll" id="chart-dumbbell"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">VI&#8209;SPDAT priority against Gemini priority</p>
+          <p class="chart-sub">Each cell counts the people VI&#8209;SPDAT placed in the row and Gemini placed in the column. The diagonal is agreement.</p>
+          <div class="chart-scroll" id="chart-crosstab"></div>
+          <p class="chart-foot" id="crosstab-foot"></p>
+        </div>
+      </section>
+
+      <section class="view" id="view-groups" data-view="groups" aria-label="By group" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Share given a <strong>High</strong> place, by <span id="group-name">gender</span></p>
+          <p class="chart-sub">Within-group percentage; the number of people in each group is shown on the left.</p>
+          <div class="chip-row" id="group-tabs"></div>
+          <div class="legend" id="legend-groups"></div>
+          <div class="chart-scroll" id="chart-groups"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">High, Medium, and Low within each group</p>
+          <p class="chart-sub">100% of each group. Top bar of each pair: VI&#8209;SPDAT; bottom bar: Gemini.</p>
+          <div class="legend" id="legend-stacked"></div>
+          <div class="chart-scroll" id="chart-stacked"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">All three categories, by <span id="group-name-2">gender</span></p>
+          <p class="chart-sub">n (%) within each group. Same / higher / lower compare Gemini's category with VI&#8209;SPDAT's for each person.</p>
+          <div class="results-scroll"><table class="results compact" id="group-table"></table></div>
+          <p class="chart-foot">Group differences describe the two approaches. They do not by themselves establish bias, since groups can differ in circumstances.</p>
+        </div>
+      </section>
+
+      <section class="view" id="view-agreement" data-view="agreement" aria-label="Agreement" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Gemini's priority at each VI&#8209;SPDAT score</p>
+          <p class="chart-sub">People grouped by VI&#8209;SPDAT score (0&ndash;17); each bar shows how Gemini placed them. Dashed lines mark where VI&#8209;SPDAT's Low, Medium, and High places divide.</p>
+          <div class="legend" id="legend-byscore"></div>
+          <div class="chart-scroll" id="chart-byscore"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Agreement with VI&#8209;SPDAT in each round</p>
+          <p class="chart-sub">People placed in the same category by both, out of 100. Each round is a separate request with the people in a new order.</p>
+          <div class="chart-scroll" id="lim-rounds"></div>
+          <p class="chart-foot" id="lim-rounds-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Agreement summary</p>
+          <div class="results-scroll"><table class="results compact" id="agreement-table"></table></div>
+          <p class="chart-foot" id="agreement-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">People the two approaches place differently</p>
+          <p class="chart-sub">Each person placed in a different category, with the reason Gemini gave in a round that matches its final placement.</p>
+          <div class="results-scroll"><table class="results compact" id="disagree-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-significance" data-view="significance" aria-label="Significance" hidden>
+        <div class="intro-band"><p class="intro-lede" id="sig-lede"></p></div>
+        <div class="findings" id="sig-cards"></div>
+        <div class="chart-card">
+          <p class="chart-title">Which circumstances change who gets a High place?</p>
+          <p class="chart-sub">Open dot: how often those people would be placed High given their VI&#8209;SPDAT scores. Filled dot: how often Gemini placed them High. Sorted by p; Holm-corrected across the 16 circumstances.</p>
+          <div class="legend" id="lim-legend-items"></div>
+          <div class="chart-scroll" id="lim-items"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Demographic tests</p>
+          <p class="chart-sub">High and Medium places going to each group under VI&#8209;SPDAT and under Gemini, and whether the group's High places differ from what its VI&#8209;SPDAT scores predict.</p>
+          <div class="results-scroll"><table class="results compact" id="lim-demo-table"></table></div>
+          <p class="chart-foot" id="lim-demo-foot"></p>
+        </div>
+        <p class="chart-foot" id="sig-method"></p>
+      </section>
+
+      <section class="view" id="view-cities" data-view="cities" aria-label="Cities" hidden>
+        <div class="chart-card">
+          <p class="chart-title">Share given a High place in each city</p>
+          <p class="chart-sub">20 people per city. Colors run from 0% (light) to 100% (dark).</p>
+          <div id="city-maps"></div>
+          <div class="legend grad-legend-wrap" id="legend-cities"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">City table</p>
+          <div class="results-scroll"><table class="results compact" id="city-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-factors" data-view="factors" aria-label="The 17 factors" hidden>
+        <div class="intro-band">
+          <p class="intro-lede">Every profile was built on the 17 scored items of the VI&#8209;SPDAT 2.0 for single adults. Each item is worth one point, up to 17. Every case summary says whether each item applies, and also includes details VI&#8209;SPDAT does not score, such as work history, family, and goals.</p>
+        </div>
+        <div class="findings" id="factor-bands"></div>
+        <div class="chart-card">
+          <p class="chart-title">How many of the 100 people meet each factor</p>
+          <p class="chart-sub">Colored by VI&#8209;SPDAT section. One person usually meets several factors.</p>
+          <div class="legend" id="legend-factors"></div>
+          <div class="chart-scroll" id="chart-factors"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">How much each factor weighs in Gemini's choice</p>
+          <p class="chart-sub">Change in the chance of a High place for people with each factor, holding the other factors fixed. Lines show 95% confidence intervals. VI&#8209;SPDAT counts every factor equally.</p>
+          <div class="chart-scroll" id="lim-effects"></div>
+          <p class="chart-foot" id="lim-effects-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">The 17 factors</p>
+          <p class="chart-sub">Plain-language definition, the VI&#8209;SPDAT questions it comes from, the published scoring rule, and two results for Gemini: how much the factor changes the chance of a High place, and whether people with the factor get High places more or less often than their VI&#8209;SPDAT scores predict.</p>
+          <div class="results-scroll"><table class="results compact factor-table" id="factor-table"></table></div>
+          <p class="chart-foot" id="factor-foot"></p>
+        </div>
+      </section>
+
+      <section class="view" id="view-profiles" data-view="profiles" aria-label="Profiles" hidden>
+        <div class="chart-card">
+          <p class="chart-title">All 100 people</p>
+          <p class="chart-sub">Select a row to read the case summary exactly as Gemini received it, the VI&#8209;SPDAT items met, and Gemini's explanation. Titles and IDs are for reference only; Gemini never saw them.</p>
+          <div class="chip-row" id="profile-filter"></div>
+          <div class="results-scroll"><table class="results compact profile-table" id="profile-table"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-design" data-view="design" aria-label="Study design" hidden>
+        <div class="prose pilot-prose">
+          <h2 class="block-title">Design</h2>
+          <p><strong>Population.</strong> 100 distinct synthetic adults: 32 adapted from the original study's base profiles and 68 new. Every case summary states each VI&#8209;SPDAT item outright, so neither approach has to guess.</p>
+          <p><strong>Demographics.</strong> The original study's 2 genders, 5 races, and 5 cities. Age comes with each person's story. Gender, race, and city were assigned by a seeded draw balanced on VI&#8209;SPDAT score. Every race and every city has 20 people (10 women, 10 men), and every race &times; city pair has 2 women and 2 men, so each group has a similar mix of need. Pregnant profiles are women.</p>
+          <p><strong>VI&#8209;SPDAT.</strong> Version 2.0 for single adults: 17 items, one point each. Scores 0&ndash;3 recommend no housing intervention (Low), 4&ndash;7 Rapid Re&#8209;Housing (Medium), and 8&ndash;17 Permanent Supportive Housing (High).</p>
+          <p><strong>Places.</strong> 35 High places (permanent supportive housing), 40 Medium places (rapid re&#8209;housing), and 25 people who receive neither. These are the numbers VI&#8209;SPDAT assigns to these 100 people, so both approaches fill the same places. VI&#8209;SPDAT fills High places with the highest scores, then Medium places with the next highest.</p>
+          <p><strong>Gemini.</strong> Gemini gives its own judgment, not a VI&#8209;SPDAT calculation. It sees all 100 case summaries in one request and must assign every person High, Medium, or Low, using exactly 35, 40, and 25. A round is accepted only if every person is assigned once and the split is exact. The request is repeated for 10 rounds; each round lists the people in a new random order under new anonymous numbers, and no round can see another. Gemini never saw the VI&#8209;SPDAT questions, items, rules, or scores, or the titles and IDs used on this page.</p>
+          <p><strong>Final placement.</strong> Each person's placement on this site is their consensus over the rounds: people are ordered by their average category (High 2, Medium 1, Low 0), the top 35 are High, the next 40 Medium, and the rest Low. No tie falls on a cut-off.</p>
+          <p id="design-runs"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Prompt sent in every round</p>
+          <p class="chart-sub">Identical in all 10 rounds; only the order and numbering of the 100 case summaries changes.</p>
+          <pre class="prompt-block" id="prompt-text"></pre>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Composition of the population</p>
+          <div class="results-scroll"><table class="results compact" id="composition-table"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">VI&#8209;SPDAT items and how many people meet each</p>
+          <div class="results-scroll"><table class="results compact" id="items-table"></table></div>
+          <p class="chart-foot" id="items-foot"></p>
+        </div>
+      </section>
+
+      <section class="view" id="view-downloads" data-view="downloads" aria-label="Downloads" hidden>
+        <div class="table-wrap"><table class="data" id="downloads-table"></table></div>
+      </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <h3>Primary source</h3>
+      <p>
+        OrgCode Consulting (2015). <em>VI&#8209;SPDAT for Single Adults, American Version 2.0.</em>
+        Accessed via the Georgia Department of Community Affairs.
+      </p>
+    </div>
+    <div>
+      <h3>This study</h3>
+      <ul>
+        <li><a href="../pilot/">Unlimited places pilot dashboard</a></li>
+        <li><a href="../index.html">Original 640-record study dashboard</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Repository</h3>
+      <ul>
+        <li><a href="https://github.com/SallyPineapple2/homelessness-algorithm">github.com/SallyPineapple2/homelessness-algorithm</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="assets/vendor/topojson-client.min.js"></script>
+<script src="assets/study.js"></script>
+</body>
+</html>
