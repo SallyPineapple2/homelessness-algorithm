@@ -47,6 +47,38 @@ def between(text, start, end, new, where):
 
 # ------------------------------------------------------------------ data
 
+def null_distributions(profiles, ids, rounds, pool, shuffles=5000, seed=20261102):
+    """
+    For each circumstance: how often its people are placed High (share of rounds), against what
+    shuffling the circumstance among people with the same VI-SPDAT score would give.
+    """
+    import numpy as np
+    P = {p["id"]: p for p in profiles}
+    gh = np.array([sum(r["assignments"][i]["priority"] == "High" for r in rounds) / len(rounds) for i in ids])
+    score = np.array([len(P[i]["indicators"]) for i in ids])
+    strata = [np.where(score == s)[0] for s in np.unique(score)]
+    tests = {t["factor"]: t for t in pool["tests"] if t["family"] == "circumstance"}
+    rng = np.random.default_rng(seed)
+    out = {}
+    for name, c in pool["circumstances"].items():
+        has = np.array([c["id"] in P[i]["indicators"] for i in ids])
+        k = int(has.sum())
+        observed = float(gh[has].mean())
+        lab = has.copy()
+        sims = np.empty(shuffles)
+        for s in range(shuffles):
+            for idx in strata:
+                lab[idx] = rng.permutation(has[idx])
+            sims[s] = gh[lab].mean()
+        mean = float(sims.mean())
+        extreme = int((np.abs(sims - mean) >= abs(observed - mean) - 1e-12).sum())
+        lo, hi = min(sims.min(), observed), max(sims.max(), observed)
+        counts, edges = np.histogram(sims, bins=24, range=(float(min(sims.min(), lo)), float(max(sims.max(), hi))))
+        out[name] = {"n": k, "observed": round(observed, 4), "mean": round(mean, 4), "shuffles": shuffles, "extreme": extreme,
+                     "p": tests[name]["p"], "edges": [round(float(e), 4) for e in edges], "counts": [int(x) for x in counts]}
+    return out
+
+
 def build_data():
     inst = json.loads((ROOT / "data" / "vispdat_instrument.json").read_text(encoding="utf-8"))
     profiles = json.loads((PILOT / "data" / "profiles.json").read_text(encoding="utf-8"))["profiles"]
@@ -67,7 +99,12 @@ def build_data():
         counts = {c: sum(r["assignments"][i]["priority"] == c for r in rounds) for c in RANK}
         reason = next((r["assignments"][i]["reason"] for r in rounds if r["assignments"][i]["priority"] == cat[i]), None)
         answers[i] = {"priority": cat[i], "explanation": reason, "high_rounds": counts["High"],
-                      "medium_rounds": counts["Medium"], "low_rounds": counts["Low"]}
+                      "medium_rounds": counts["Medium"], "low_rounds": counts["Low"],
+                      "rounds": "".join(r["assignments"][i]["priority"][0] for r in rounds)}
+    pool["round_details"] = [{"round": r["round"], "seconds": r["seconds"], "prompt_tokens": (r["usage"] or {}).get("prompt_token_count"),
+                              "thought_tokens": (r["usage"] or {}).get("thoughts_token_count"),
+                              "output_tokens": (r["usage"] or {}).get("candidates_token_count")} for r in rounds]
+    pool["null"] = null_distributions(profiles, ids, rounds, pool)
     items = [{"id": i["id"], "name": i["name"], "domain": d["name"], "letter": d["letter"], "questions": i["questions"],
               "rule": i["rule"]} for d in inst["domains"] for i in d["indicators"]]
     for k in ("per_round", "round_to_round_same_category", "same_category_in_every_round", "high_in_every_round",
@@ -134,6 +171,11 @@ OVERVIEW = '''      <section class="view" id="view-overview" data-view="overview
           <div class="chart-scroll" id="chart-dist"></div>
         </div>
         <div class="chart-card">
+          <p class="chart-title">Where each VI&#8209;SPDAT category goes</p>
+          <p class="chart-sub">Each band is a group of people VI&#8209;SPDAT placed on the left and Gemini placed on the right. Wider bands are more people; bands that stay level are agreement.</p>
+          <div class="chart-scroll" id="chart-flow"></div>
+        </div>
+        <div class="chart-card">
           <p class="chart-title">Share given a High place, in every group</p>
           <p class="chart-sub">Plum dot: VI&#8209;SPDAT. Rose dot: Gemini. Both approaches fill the same 35 High places, so groups gain or lose only where they differ.</p>
           <div class="legend" id="legend-dumbbell"></div>
@@ -149,10 +191,48 @@ OVERVIEW = '''      <section class="view" id="view-overview" data-view="overview
 '''
 
 AGREEMENT_EXTRA = '''        <div class="chart-card">
+          <p class="chart-title">People Gemini places higher or lower, at each VI&#8209;SPDAT score</p>
+          <p class="chart-sub">Above the line: people Gemini places in a higher category than VI&#8209;SPDAT. Below: lower. Movement concentrates next to the cut-offs.</p>
+          <div class="legend" id="legend-movement"></div>
+          <div class="chart-scroll" id="chart-movement"></div>
+          <p class="chart-foot" id="movement-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Gemini's ranking of all 100 people</p>
+          <p class="chart-sub">Each bar is one person, ordered by how highly Gemini placed them on average across the rounds (High = 2, Medium = 1, Low = 0) and colored by their VI&#8209;SPDAT priority. Dashed lines show where Gemini's High and Medium places run out.</p>
+          <div class="legend" id="legend-rank"></div>
+          <div class="chart-scroll" id="chart-rank"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Every person in every round</p>
+          <p class="chart-sub">Rows are people grouped by VI&#8209;SPDAT score; columns are rounds. Solid rows are people Gemini always places the same way; patchy rows are people near a cut-off.</p>
+          <div class="legend" id="legend-grid"></div>
+          <div class="chart-scroll" id="chart-grid"></div>
+          <p class="chart-foot" id="grid-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">How many rounds each person was placed High</p>
+          <p class="chart-sub">Most people are placed High in all rounds or none; the people in between change with the order of the list.</p>
+          <div class="legend" id="legend-hist"></div>
+          <div class="chart-scroll" id="chart-hist"></div>
+          <p class="chart-foot" id="hist-foot"></p>
+        </div>
+        <div class="chart-card">
           <p class="chart-title">Agreement with VI&#8209;SPDAT in each round</p>
           <p class="chart-sub">People placed in the same category by both, out of 100. Each round is a separate request with the people in a new order.</p>
           <div class="chart-scroll" id="lim-rounds"></div>
           <p class="chart-foot" id="lim-rounds-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Agreement between rounds</p>
+          <p class="chart-sub">For every pair of rounds, the number of people given the same category in both.</p>
+          <div class="chart-scroll" id="chart-matrix"></div>
+          <p class="chart-foot" id="matrix-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Round details</p>
+          <p class="chart-sub">Agreement with VI&#8209;SPDAT, time taken, and tokens used. Reasoning tokens are Gemini's internal thinking before it answers.</p>
+          <div class="results-scroll"><table class="results compact" id="round-table"></table></div>
         </div>
 '''
 
@@ -166,6 +246,18 @@ SIGNIFICANCE = '''      <section class="view" id="view-significance" data-view="
           <div class="chart-scroll" id="lim-items"></div>
         </div>
         <div class="chart-card">
+          <p class="chart-title">How unusual is the largest difference?</p>
+          <p class="chart-sub">Bars show how often the people with the circumstance would be placed High if it made no difference, found by shuffling it among people with the same VI&#8209;SPDAT score. The line is what Gemini did.</p>
+          <div class="chip-row" id="null-chips"></div>
+          <div class="chart-scroll" id="chart-null"></div>
+          <p class="chart-foot" id="null-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">All 16 circumstances</p>
+          <p class="chart-sub">How often Gemini placed people with each circumstance High, against what their VI&#8209;SPDAT scores predict. Bold: significant after Holm correction.</p>
+          <div class="results-scroll"><table class="results compact" id="lim-circ-table"></table></div>
+        </div>
+        <div class="chart-card">
           <p class="chart-title">Demographic tests</p>
           <p class="chart-sub">High and Medium places going to each group under VI&#8209;SPDAT and under Gemini, and whether the group's High places differ from what its VI&#8209;SPDAT scores predict.</p>
           <div class="results-scroll"><table class="results compact" id="lim-demo-table"></table></div>
@@ -173,6 +265,14 @@ SIGNIFICANCE = '''      <section class="view" id="view-significance" data-view="
         </div>
         <p class="chart-foot" id="sig-method"></p>
       </section>
+'''
+
+FACTOR_RATES_CARD = '''        <div class="chart-card">
+          <p class="chart-title">Placed High, with and without each factor</p>
+          <p class="chart-sub">Share of rounds in which people with (filled dot) and without (open dot) each factor were placed High, sorted by the size of the gap. Factors often occur together, so this is not each factor's own effect; the next chart separates them.</p>
+          <div class="legend" id="legend-rates"></div>
+          <div class="chart-scroll" id="chart-rates"></div>
+        </div>
 '''
 
 FACTOR_WEIGHTS_CARD = '''        <div class="chart-card">
@@ -223,10 +323,12 @@ def build_html():
         ('<p class="chart-sub">People grouped by VI&#8209;SPDAT score (0&ndash;17); each bar shows how Gemini placed them. Dashed lines mark the VI&#8209;SPDAT cut-offs between Low, Medium, and High.</p>',
          '<p class="chart-sub">People grouped by VI&#8209;SPDAT score (0&ndash;17); each bar shows how Gemini placed them. Dashed lines mark where VI&#8209;SPDAT\'s Low, Medium, and High places divide.</p>'),
         ('<p class="chart-title">Share rated High priority in each city</p>', '<p class="chart-title">Share given a High place in each city</p>'),
+        ('        <div class="chart-card">\n          <p class="chart-title">High, Medium, and Low within each group</p>',
+         '        <div class="chart-card">\n          <p class="chart-title">Places gained or lost under Gemini, by <span id="group-name-3">gender</span></p>\n          <p class="chart-sub">Gemini\'s High and Medium places minus VI&#8209;SPDAT\'s, in people. Bars to the right mean the group gets more places under Gemini; to the left, fewer.</p>\n          <div class="legend" id="legend-gain"></div>\n          <div class="chart-scroll" id="chart-gain"></div>\n        </div>\n        <div class="chart-card">\n          <p class="chart-title">High, Medium, and Low within each group</p>'),
     ], "views")
     # factors: replace the weights card
     s = re.sub(r'        <div class="chart-card">\n          <p class="chart-title">How much each approach weighs each factor</p>.*?id="weights-foot"></p>\n        </div>\n',
-               lambda m: FACTOR_WEIGHTS_CARD, s, count=1, flags=re.S)
+               lambda m: FACTOR_RATES_CARD + FACTOR_WEIGHTS_CARD, s, count=1, flags=re.S)
     s = re.sub(r'<p class="chart-sub">Plain-language definition, the VI&#8209;SPDAT questions it comes from.*?</p>',
                '<p class="chart-sub">Plain-language definition, the VI&#8209;SPDAT questions it comes from, the published scoring rule, and two results for Gemini: how much the factor changes the chance of a High place, and whether people with the factor get High places more or less often than their VI&#8209;SPDAT scores predict.</p>',
                s, count=1, flags=re.S)
@@ -321,6 +423,7 @@ FACTOR_TABLE = r'''  const eff = Object.fromEntries(POOL.factor_effects.map((f) 
 def build_js():
     s = (PILOT / "assets" / "pilot.js").read_text(encoding="utf-8")
     lim = (ROOT / "pilot" / "scripts" / "limited_charts.js").read_text(encoding="utf-8")
+    lim += "\n" + (ROOT / "pilot" / "scripts" / "limited_extra.js").read_text(encoding="utf-8")
     s = edit(s, [
         ("   Pilot dashboard: VI-SPDAT and Gemini priority for 100 people", "   Limited places study: VI-SPDAT and Gemini with 35 High and 40 Medium places"),
         ("let RUN = null;        // active complete run", "let RUN = null;        // the run\nlet POOL = null;       // analysis of its rounds"),
@@ -332,13 +435,21 @@ def build_js():
     (v) => { RUN = complete.find((r) => r.key === v); renderAll(); });
   d3.select("#run-status").text("");
 ''', ""),
-        ('  renderDownloads();\n}', '  renderDownloads();\n  renderRounds(POOL);\n}'),
+        ('  renderDownloads();\n}', '  renderDownloads();\n  renderRounds(POOL);\n  renderExtras();\n}'),
         ('`${k} of ${n} people in the pilot.`', '`${k} of ${n} people in the study.`'),
         ('d3.select("#crosstab-foot").text(`Same category: ${t.same} of ${t.n}. Gemini higher: ${t.higher}. Gemini lower: ${t.lower}.`);',
          'd3.select("#crosstab-foot").text(`Same category: ${t.same} of ${t.n}. Gemini higher: ${t.higher}. Gemini lower: ${t.lower}. Gemini\'s placement is its consensus over ${POOL.rounds} rounds.`);'),
         ('side.append("p").text(RUN.answers[p.id].explanation || "—");',
          'side.append("p").text(RUN.answers[p.id].explanation || "—");\n    side.append("p").attr("class", "group-n").text(`Placed High in ${RUN.answers[p.id].high_rounds}, Medium in ${RUN.answers[p.id].medium_rounds}, Low in ${RUN.answers[p.id].low_rounds} of ${POOL.rounds} rounds.`);'),
-        ("d3.select(\"#view-sub\")", "d3.select(\"#view-sub\")") if False else ("  window.scrollTo(0, 0);", "  window.scrollTo(0, 0);"),
+        ('    { value: "differ", label: "Placed differently", count: P.filter((p) => gem(p) !== p.vispdat).length }\n  ];',
+         '    { value: "differ", label: "Placed differently", count: P.filter((p) => gem(p) !== p.vispdat).length },\n    { value: "varies", label: "Changes between rounds", count: P.filter((p) => new Set(RUN.answers[p.id].rounds).size > 1).length }\n  ];'),
+        ('const rows = P.filter((p) => PROFILE_FILTER === "all" || (PROFILE_FILTER === "same") === (gem(p) === p.vispdat));',
+         'const rows = P.filter((p) => PROFILE_FILTER === "all" || (PROFILE_FILTER === "varies" ? new Set(RUN.answers[p.id].rounds).size > 1 : (PROFILE_FILTER === "same") === (gem(p) === p.vispdat)));'),
+        ('["ID", "Person", "Age", "Gender", "Race", "City", "VI‑SPDAT score", "VI‑SPDAT", "Gemini"].forEach',
+         '["ID", "Person", "Age", "Gender", "Race", "City", "VI‑SPDAT score", "VI‑SPDAT", "Gemini", "Rounds High"].forEach'),
+        ('p.score, priTag(p.vispdat), priTag(gem(p))]\n      .forEach',
+         'p.score, priTag(p.vispdat), priTag(gem(p)), `${RUN.answers[p.id].high_rounds} / ${POOL.rounds}`]\n      .forEach'),
+        ('.attr("colspan", 9)', '.attr("colspan", 10)'),
     ], "js simple")
     s = between(s, '  d3.select("#overview-lede").text(', '  const el = d3.select("#findings");', CARDS, "cards")
     s = between(s, "function renderSignificance() {", "/* ============================================================\n   Cities", SIG + "\n", "sig")

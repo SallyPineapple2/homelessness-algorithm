@@ -79,6 +79,11 @@
           <div class="chart-scroll" id="chart-dist"></div>
         </div>
         <div class="chart-card">
+          <p class="chart-title">Where each VI&#8209;SPDAT category goes</p>
+          <p class="chart-sub">Each band is a group of people VI&#8209;SPDAT placed on the left and Gemini placed on the right. Wider bands are more people; bands that stay level are agreement.</p>
+          <div class="chart-scroll" id="chart-flow"></div>
+        </div>
+        <div class="chart-card">
           <p class="chart-title">Share given a High place, in every group</p>
           <p class="chart-sub">Plum dot: VI&#8209;SPDAT. Rose dot: Gemini. Both approaches fill the same 35 High places, so groups gain or lose only where they differ.</p>
           <div class="legend" id="legend-dumbbell"></div>
@@ -99,6 +104,12 @@
           <div class="chip-row" id="group-tabs"></div>
           <div class="legend" id="legend-groups"></div>
           <div class="chart-scroll" id="chart-groups"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Places gained or lost under Gemini, by <span id="group-name-3">gender</span></p>
+          <p class="chart-sub">Gemini's High and Medium places minus VI&#8209;SPDAT's, in people. Bars to the right mean the group gets more places under Gemini; to the left, fewer.</p>
+          <div class="legend" id="legend-gain"></div>
+          <div class="chart-scroll" id="chart-gain"></div>
         </div>
         <div class="chart-card">
           <p class="chart-title">High, Medium, and Low within each group</p>
@@ -122,10 +133,48 @@
           <div class="chart-scroll" id="chart-byscore"></div>
         </div>
         <div class="chart-card">
+          <p class="chart-title">People Gemini places higher or lower, at each VI&#8209;SPDAT score</p>
+          <p class="chart-sub">Above the line: people Gemini places in a higher category than VI&#8209;SPDAT. Below: lower. Movement concentrates next to the cut-offs.</p>
+          <div class="legend" id="legend-movement"></div>
+          <div class="chart-scroll" id="chart-movement"></div>
+          <p class="chart-foot" id="movement-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Gemini's ranking of all 100 people</p>
+          <p class="chart-sub">Each bar is one person, ordered by how highly Gemini placed them on average across the rounds (High = 2, Medium = 1, Low = 0) and colored by their VI&#8209;SPDAT priority. Dashed lines show where Gemini's High and Medium places run out.</p>
+          <div class="legend" id="legend-rank"></div>
+          <div class="chart-scroll" id="chart-rank"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Every person in every round</p>
+          <p class="chart-sub">Rows are people grouped by VI&#8209;SPDAT score; columns are rounds. Solid rows are people Gemini always places the same way; patchy rows are people near a cut-off.</p>
+          <div class="legend" id="legend-grid"></div>
+          <div class="chart-scroll" id="chart-grid"></div>
+          <p class="chart-foot" id="grid-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">How many rounds each person was placed High</p>
+          <p class="chart-sub">Most people are placed High in all rounds or none; the people in between change with the order of the list.</p>
+          <div class="legend" id="legend-hist"></div>
+          <div class="chart-scroll" id="chart-hist"></div>
+          <p class="chart-foot" id="hist-foot"></p>
+        </div>
+        <div class="chart-card">
           <p class="chart-title">Agreement with VI&#8209;SPDAT in each round</p>
           <p class="chart-sub">People placed in the same category by both, out of 100. Each round is a separate request with the people in a new order.</p>
           <div class="chart-scroll" id="lim-rounds"></div>
           <p class="chart-foot" id="lim-rounds-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Agreement between rounds</p>
+          <p class="chart-sub">For every pair of rounds, the number of people given the same category in both.</p>
+          <div class="chart-scroll" id="chart-matrix"></div>
+          <p class="chart-foot" id="matrix-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Round details</p>
+          <p class="chart-sub">Agreement with VI&#8209;SPDAT, time taken, and tokens used. Reasoning tokens are Gemini's internal thinking before it answers.</p>
+          <div class="results-scroll"><table class="results compact" id="round-table"></table></div>
         </div>
         <div class="chart-card">
           <p class="chart-title">Agreement summary</p>
@@ -147,6 +196,18 @@
           <p class="chart-sub">Open dot: how often those people would be placed High given their VI&#8209;SPDAT scores. Filled dot: how often Gemini placed them High. Sorted by p; Holm-corrected across the 16 circumstances.</p>
           <div class="legend" id="lim-legend-items"></div>
           <div class="chart-scroll" id="lim-items"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">How unusual is the largest difference?</p>
+          <p class="chart-sub">Bars show how often the people with the circumstance would be placed High if it made no difference, found by shuffling it among people with the same VI&#8209;SPDAT score. The line is what Gemini did.</p>
+          <div class="chip-row" id="null-chips"></div>
+          <div class="chart-scroll" id="chart-null"></div>
+          <p class="chart-foot" id="null-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">All 16 circumstances</p>
+          <p class="chart-sub">How often Gemini placed people with each circumstance High, against what their VI&#8209;SPDAT scores predict. Bold: significant after Holm correction.</p>
+          <div class="results-scroll"><table class="results compact" id="lim-circ-table"></table></div>
         </div>
         <div class="chart-card">
           <p class="chart-title">Demographic tests</p>
@@ -180,6 +241,12 @@
           <p class="chart-sub">Colored by VI&#8209;SPDAT section. One person usually meets several factors.</p>
           <div class="legend" id="legend-factors"></div>
           <div class="chart-scroll" id="chart-factors"></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Placed High, with and without each factor</p>
+          <p class="chart-sub">Share of rounds in which people with (filled dot) and without (open dot) each factor were placed High, sorted by the size of the gap. Factors often occur together, so this is not each factor's own effect; the next chart separates them.</p>
+          <div class="legend" id="legend-rates"></div>
+          <div class="chart-scroll" id="chart-rates"></div>
         </div>
         <div class="chart-card">
           <p class="chart-title">How much each factor weighs in Gemini's choice</p>
