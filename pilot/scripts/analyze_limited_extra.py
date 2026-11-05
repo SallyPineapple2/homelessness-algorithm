@@ -22,6 +22,7 @@ Run:  python pilot/scripts/analyze_limited_extra.py
 
 import csv
 import glob
+import re
 import json
 import sys
 from pathlib import Path
@@ -89,7 +90,7 @@ def main():
     meta = json.loads((ROOT / "limited" / "data" / "dashboard.json").read_text(encoding="utf-8"))
     ans = meta["runs"][0]["answers"]
     ccat = np.array([RANK[ans[i]["priority"]] for i in ids])
-    rounds = [json.loads(Path(f).read_text(encoding="utf-8")) for f in sorted(glob.glob(str(PILOT / "data" / "gemini-pool-gemini-3.8-flash" / "raw" / "round*.json")))]
+    rounds = [json.loads(Path(f).read_text(encoding="utf-8")) for f in sorted(glob.glob(str(PILOT / "data" / "gemini-pool-gemini-3.8-flash" / "raw" / "round*.json")), key=lambda f: int(re.search(r"round(\d+)", f).group(1)))]
     R = len(rounds)
     G = np.array([[RANK[r["assignments"][i]["priority"]] for i in ids] for r in rounds])  # rounds x people
     H = (G == 2).astype(float)

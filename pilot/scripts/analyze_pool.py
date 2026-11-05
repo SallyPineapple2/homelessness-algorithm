@@ -13,6 +13,7 @@ Writes: pilot/results/pool_<model>.json, pilot/results/pool_<model>_groups.csv
 """
 
 import argparse
+import re
 import csv
 import itertools
 import json
@@ -56,7 +57,7 @@ def main():
     vp = {i: {"High": v_high[i], "Medium": v_med[i], "Low": 1 - v_high[i] - v_med[i]} for i in ids}
     vis = {i: max(CATS, key=lambda c: vp[i][c]) for i in ids}
     rounds = [json.loads(f.read_text(encoding="utf-8"))
-              for f in sorted((PILOT / "data" / f"gemini-pool-{args.model}{tag}" / "raw").glob("round*.json"))]
+              for f in sorted((PILOT / "data" / f"gemini-pool-{args.model}{tag}" / "raw").glob("round*.json"), key=lambda f: int(re.search(r"(\d+)", f.stem).group(1)))]
     R = len(rounds)
     gem = [{i: r["assignments"][i]["priority"] for i in ids} for r in rounds]
 

@@ -20,6 +20,10 @@
     <a class="brand" href="#overview">VI&#8209;SPDAT &amp; Gemini<small>Limited places study</small></a>
     <nav class="side-nav" aria-label="Dashboard views">
       <div class="nav-group">
+        <span class="nav-label">Summary</span>
+        <a href="#summary" data-view-link="summary" data-sub="Research question, key results, and caveats">Summary</a>
+      </div>
+      <div class="nav-group">
         <span class="nav-label">Results</span>
         <a href="#overview" data-view-link="overview" data-sub="Who gets the places under VI-SPDAT and under Gemini">Overview</a>
         <a href="#groups" data-view-link="groups" data-sub="Priority within each gender, race, city, age group, and circumstance">By group</a>
@@ -32,6 +36,13 @@
         <a href="#factors" data-view-link="factors" data-sub="The 17 VI-SPDAT items every profile was built on">The 17 factors</a>
         <a href="#profiles" data-view-link="profiles" data-sub="All 100 people, each approach's priority, and Gemini's reason">Profiles</a>
         <a href="#design" data-view-link="design" data-sub="Population, places, VI-SPDAT scoring, and the Gemini prompt">Study design</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Methods and checks</span>
+        <a href="#methods" data-view-link="methods" data-sub="How the study was run and analyzed">Methods</a>
+        <a href="#robustness" data-view-link="robustness" data-sub="Reliability, confidence intervals, consistency across rounds, and power">Robustness</a>
+        <a href="#limitations" data-view-link="limitations" data-sub="What the study can and cannot show">Limitations</a>
+        <a href="#glossary" data-view-link="glossary" data-sub="Terms and statistics used on this site">Glossary</a>
       </div>
       <div class="nav-group">
         <span class="nav-label">Files</span>
@@ -57,6 +68,38 @@
     </header>
 
     <main id="main">
+      <section class="view" id="view-summary" data-view="summary" aria-label="Summary" hidden>
+        <div class="rq-block">
+          <p class="rq-kicker">Research question</p>
+          <p class="rq-text">Given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how does Gemini's housing priority assignment compare with the VI&#8209;SPDAT's assignments?</p>
+          <dl class="rq-meta">
+            <div><dt>Short answer</dt><dd id="sum-answer"></dd></div>
+            <div><dt>Evidence base</dt><dd>100 synthetic people with complete VI&#8209;SPDAT 2.0 profiles. Gemini 3.8 Flash assigned all 100 at once in 10 independent rounds, with the people in a new random order each round. VI&#8209;SPDAT filled the same 35 High and 40 Medium places by score. VI&#8209;SPDAT is the benchmark, not ground truth.</dd></div>
+          </dl>
+        </div>
+        <h2 class="block-title">Key results</h2>
+        <div class="chart-card">
+          <p class="chart-title">Results at a glance</p>
+          <p class="chart-sub">Estimates with 95% confidence intervals (Wilson interval for proportions; bootstrap over people for the rest, 2,000 resamples).</p>
+          <div class="results-scroll"><table class="results compact" id="sum-table"></table></div>
+          <p class="chart-foot" id="sum-foot"></p>
+        </div>
+        <h2 class="block-title">Findings</h2>
+        <div class="chart-card"><div class="prose pilot-prose" id="sum-findings"></div></div>
+        <h2 class="block-title">Read with care</h2>
+        <div class="chart-card">
+          <div class="prose pilot-prose">
+            <ul>
+              <li>The people are synthetic. The study measures how two approaches treat written case summaries, not outcomes for real applicants.</li>
+              <li>VI&#8209;SPDAT is the comparison benchmark. A difference from it is not an error by Gemini, and agreement with it is not evidence that either is right.</li>
+              <li>With 100 people and groups of about 9 to 50, only large differences can be detected. A non-significant result means no evidence of a difference, not evidence of none. The Robustness page shows how large a difference has to be.</li>
+              <li>Sixteen circumstances and four demographic factors were tested. Reported significance uses Holm correction within each family; results significant only before correction are described as suggestive.</li>
+              <li>Gemini's allocation varies a little with the order of the list. The final placement is a consensus over 10 rounds, and the results are shown both ways.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
         <div class="rq-block">
           <p class="rq-kicker">Limited places study</p>
@@ -296,6 +339,142 @@
           <div class="results-scroll"><table class="results compact" id="items-table"></table></div>
           <p class="chart-foot" id="items-foot"></p>
         </div>
+      </section>
+
+      <section class="view" id="view-methods" data-view="methods" aria-label="Methods" hidden>
+        <div class="chart-card"><div class="prose pilot-prose">
+          <h2 class="block-title">1. Design</h2>
+          <p>A within-subjects comparison of two ways of assigning the same 100 people to housing priority categories when places are limited. Each person receives one VI&#8209;SPDAT assignment and ten Gemini assignments. The outcome is the category (High, Medium, or Low) each approach gives each person, compared category to category, overall and within groups. VI&#8209;SPDAT is treated as a benchmark, not as ground truth.</p>
+
+          <h2 class="block-title">2. Population</h2>
+          <p>100 distinct synthetic adults (32 adapted from the original 640-record study's base profiles and 68 written for this study). Each has an age, a gender, a race, a city, and an eleven-section case summary (work and education, path into homelessness, current housing, finances, health, safety, family and social ties, a typical day, goals, service history, and presentation in the interview). Every VI&#8209;SPDAT item is stated outright, yes or no, so neither approach has to infer it.</p>
+          <p>Gender (2), race (5), and city (5) come from the original study. Every race and every city has 20 people (10 women, 10 men), and every race by city pair has 2 women and 2 men. The assignment was a seeded draw balanced on VI&#8209;SPDAT score, so each group has a similar mix of need. Pregnancy appears only in women. Generation was checked automatically for leakage of scores or categories and for explicit coverage of every item.</p>
+
+          <h2 class="block-title">3. VI&#8209;SPDAT benchmark</h2>
+          <p>VI&#8209;SPDAT 2.0 for single adults: 17 items scored one point each, total 0 to 17. The published bands are Low (0 to 3, no housing intervention), Medium (4 to 7, rapid re-housing), and High (8 to 17, permanent supportive housing). Scores were computed from each profile's coded items with no judgment involved. These bands place 35 people in High, 40 in Medium, and 25 in Low.</p>
+
+          <h2 class="block-title">4. Limited places</h2>
+          <p>There are 35 High places and 40 Medium places; the other 25 people receive neither. These are the numbers VI&#8209;SPDAT's own bands assign to these 100 people, so both approaches fill identical places and differences come from who gets them. VI&#8209;SPDAT fills the High places with the highest scores and the Medium places with the next highest; no tie falls on a cut-off. A stricter scenario with scarcer places was run separately and is not part of this study.</p>
+
+          <h2 class="block-title">5. Gemini procedure</h2>
+          <p><strong>Model.</strong> Gemini 3.8 Flash through the Gemini API (<code>generate_content</code>), default settings (default reasoning, no system instruction, default sampling). Each request is stateless: it contains the instructions, all 100 case summaries, and the reply format, and nothing else.</p>
+          <p><strong>Prompt.</strong> Housing resources are limited. The model is told the three categories and how many places each has, and must assign every applicant to exactly one category using exactly 35 High, 40 Medium, and 25 Low. The categories are defined by the kind of help (intensive long-term, time-limited, or little or no help), the same way as VI&#8209;SPDAT's recommendations. The model never sees VI&#8209;SPDAT questions, items, rules, or scores, or the case titles and profile IDs. It does see each person's age, gender, race, and city, which is what makes demographic comparisons meaningful. The full prompt is on the Study design page.</p>
+          <p><strong>Rounds.</strong> The request was repeated 10 times. In each round the 100 people appear in a new random order under new anonymous applicant numbers (seeded shuffle), so a person's result cannot depend on a fixed position and no round can see another. A reply is accepted only if it is valid JSON, assigns every applicant exactly once, and uses exactly 35, 40, and 25; otherwise it is saved separately and the round is asked again. All 10 main-scenario rounds were accepted on the first attempt.</p>
+          <p><strong>Final placement.</strong> To report one placement per person, people are ranked by their average category over the 10 rounds (High 2, Medium 1, Low 0); the top 35 are High, the next 40 Medium, and the rest Low. No tie falls on a cut-off. Results are also shown per round, and the Robustness page compares alternative ways of combining rounds.</p>
+
+          <h2 class="block-title">6. Statistical analysis</h2>
+          <p><strong>Agreement.</strong> The proportion of people placed in the same category, with a Wilson 95% interval; linear-weighted Cohen's kappa between the two sets of ordered categories, with a bootstrap interval (2,000 resamples of people); Spearman's rho and Kendall's tau between the VI&#8209;SPDAT score and Gemini's average category. People placed higher or lower than VI&#8209;SPDAT are counted separately.</p>
+          <p><strong>Reliability across rounds.</strong> Fleiss' kappa treating the 10 rounds as 10 raters of 100 people, and the number of people given the same category in every pair of rounds.</p>
+          <p><strong>Who gets High places.</strong> For each circumstance and demographic factor, the outcome is each person's share of rounds placed High. The test asks whether the group's High-place rate differs from what people with the same VI&#8209;SPDAT score would have: labels are shuffled within VI&#8209;SPDAT score (stratified permutation test, 20,000 shuffles). Holm correction is applied within each family (16 circumstances; 4 demographic factors). Because VI&#8209;SPDAT score is held fixed, a significant result means the factor changes Gemini's choice beyond what VI&#8209;SPDAT's score already says.</p>
+          <p><strong>Factor weights.</strong> Ordinary least squares of each person's High-place share on the 17 VI&#8209;SPDAT factors, with HC3 heteroskedasticity-robust standard errors and Holm-adjusted p-values. VI&#8209;SPDAT gives every factor one point; the regression shows how Gemini weighs them. Exploratory, because factors co-occur and 100 people limit precision.</p>
+          <p><strong>Uncertainty and robustness.</strong> Group differences carry bootstrap 95% intervals (resampling people within the group). Each permutation test was repeated on each round alone to see how consistent significance is. Minimum detectable differences were computed for the group sizes in this study.</p>
+
+          <h2 class="block-title">7. Reproducibility</h2>
+          <p>Every round is saved with its exact prompt, the order and numbering of the people, the reply, the model version, token counts, and a SHA-256 hash of the prompt. The scripts that build the profiles, score VI&#8209;SPDAT, run the rounds, and produce every figure are in the repository (<code>pilot/scripts/</code>), and the data files are linked on the Downloads page. Random seeds are fixed in the scripts.</p>
+        </div></div>
+        <div class="chart-card">
+          <p class="chart-title">The 10 rounds</p>
+          <p class="chart-sub">Time of each request, how long it took, and a hash of the exact prompt sent. Each prompt differs only in the order and numbering of the 100 case summaries.</p>
+          <div class="results-scroll"><table class="results compact" id="meth-rounds"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Analysis settings</p>
+          <div class="results-scroll"><table class="results compact" id="meth-params"></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-robustness" data-view="robustness" aria-label="Robustness" hidden>
+        <div class="intro-band"><p class="intro-lede" id="rob-lede"></p></div>
+        <div class="findings" id="rob-cards"></div>
+        <div class="chart-card">
+          <p class="chart-title">Group differences with confidence intervals</p>
+          <p class="chart-sub">Gemini's High-place share minus VI&#8209;SPDAT's, in percentage points, with a 95% bootstrap interval. Intervals that cross zero are consistent with no difference. Wide intervals reflect small groups.</p>
+          <div class="chip-row" id="forest-chips"></div>
+          <div class="chart-scroll" id="chart-forest"></div>
+          <p class="chart-foot" id="forest-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Is each circumstance's result consistent across rounds?</p>
+          <p class="chart-sub">The same permutation test run on each round alone. Shaded cells have p below .05 in that round; rose means those people were placed High more often than their VI&#8209;SPDAT scores predict, plum less often. A real effect should recur; a chance result should not.</p>
+          <div class="chart-scroll" id="chart-heat"></div>
+          <p class="chart-foot" id="heat-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">VI&#8209;SPDAT score and Gemini's average category</p>
+          <p class="chart-sub">Each dot is a person; the line joins the average at each score. Gemini's ranking rises steadily with the VI&#8209;SPDAT score, with the most spread around the cut-offs.</p>
+          <div class="legend" id="legend-score"></div>
+          <div class="chart-scroll" id="chart-score"></div>
+          <p class="chart-foot" id="score-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">How large a difference could this study detect?</p>
+          <p class="chart-sub">The solid curve is the smallest difference in High-place rate that a group of a given size would need to be detected 80% of the time; the dashed curve, about half the time. Dots are the circumstances actually tested. Differences below the dashed curve would rarely be detected with this sample.</p>
+          <div class="chart-scroll" id="chart-power"></div>
+          <p class="chart-foot" id="power-foot"></p>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Does the way rounds are combined matter?</p>
+          <p class="chart-sub">Agreement with VI&#8209;SPDAT under three ways of turning 10 rounds into one placement.</p>
+          <div class="results-scroll"><table class="results compact" id="rob-consensus"></table></div>
+        </div>
+        <div class="chart-card">
+          <p class="chart-title">Does position in the list matter?</p>
+          <p class="chart-sub">Each round lists the people in a new random order. If Gemini favored people listed earlier or later, its placement would correlate with list position after accounting for VI&#8209;SPDAT score.</p>
+          <div class="results-scroll"><table class="results compact" id="rob-position"></table></div>
+          <p class="chart-foot" id="position-foot"></p>
+        </div>
+      </section>
+
+      <section class="view" id="view-limitations" data-view="limitations" aria-label="Limitations" hidden>
+        <div class="chart-card"><div class="prose pilot-prose">
+          <h2 class="block-title">Measurement and design</h2>
+          <ul>
+            <li><strong>Synthetic people.</strong> The case summaries are written, not observed. They state every VI&#8209;SPDAT item outright, which removes the ambiguity real intake interviews have. Results show how each approach treats this kind of description and should not be read as outcomes for real applicants.</li>
+            <li><strong>VI&#8209;SPDAT is a benchmark, not ground truth.</strong> The study compares Gemini with VI&#8209;SPDAT. It cannot say which allocation leads to better outcomes for real people; no housing outcomes are observed.</li>
+            <li><strong>Capacity was chosen to match VI&#8209;SPDAT.</strong> The 35 and 40 places equal the numbers VI&#8209;SPDAT's bands give these people. This guarantees comparable allocations but means VI&#8209;SPDAT fills the places exactly. A stricter, more realistic shortage was run separately and is not part of this study.</li>
+            <li><strong>Demographics were assigned to stories.</strong> Gender, race, and city were assigned by a balanced draw, so they are independent of need by design. This supports demographic comparisons but cannot show how the approaches behave where need and demographics are correlated in real populations. Gender has two categories only, and intersectional groups (for example race by gender) are too small to analyze.</li>
+            <li><strong>Gemini sees demographics.</strong> This is intended, since the question is whether they change its choices, but it means any demographic effect could come from the model's learned associations.</li>
+          </ul>
+          <h2 class="block-title">Statistics</h2>
+          <ul>
+            <li><strong>Small groups.</strong> Groups range from 9 to 50 people (races and cities have 20). Only large differences can be detected; the Robustness page shows the smallest detectable difference for each group size.</li>
+            <li><strong>Multiple tests.</strong> Sixteen circumstances and four demographic factors were tested. Holm correction was applied within each family, and results significant only before correction (for example, risk of exploitation and substance use) are suggestive, not established.</li>
+            <li><strong>Repeated rounds are not independent samples of people.</strong> The 10 rounds measure Gemini's variability on the same 100 people, not new people. Intervals describe uncertainty about these people's placements; generalizing to other people requires a larger sample.</li>
+            <li><strong>Consensus placement.</strong> One placement per person comes from averaging the rounds. Other rules give similar agreement, and per-round results are reported, but the consensus is a summary choice.</li>
+            <li><strong>Regression is exploratory.</strong> The 17 factors often occur together (for example, tri-morbidity combines three of them), so single factor weights are imprecise. The permutation tests, which hold the VI&#8209;SPDAT score fixed, are the primary evidence.</li>
+          </ul>
+          <h2 class="block-title">Model</h2>
+          <ul>
+            <li><strong>One model and one prompt.</strong> Results are for Gemini 3.8 Flash with a single prompt wording. Other models, versions, or wordings may behave differently, and Gemini versions change over time.</li>
+            <li><strong>Default sampling and reasoning.</strong> Settings were left at the model's defaults, so answers vary between rounds. This is reported (Fleiss' kappa 0.83 across rounds) rather than hidden by fixing a seed, which the API does not guarantee.</li>
+            <li><strong>One long request.</strong> All 100 people are assigned in one request, which is what makes the allocation a real trade-off but means long-context effects, such as attention to list position, are possible. The position check on the Robustness page addresses this.</li>
+          </ul>
+        </div></div>
+      </section>
+
+      <section class="view" id="view-glossary" data-view="glossary" aria-label="Glossary" hidden>
+        <div class="chart-card"><div class="prose pilot-prose">
+          <dl class="glossary">
+            <dt>VI&#8209;SPDAT</dt><dd>The Vulnerability Index and Service Prioritization Decision Assistance Tool, a 17-item survey scored 0 to 17 that many US homeless services use to prioritize housing. Here, version 2.0 for single adults.</dd>
+            <dt>Priority category</dt><dd>High (permanent supportive housing, intensive long-term help), Medium (rapid re-housing, time-limited help), or Low (little or no help). VI&#8209;SPDAT's bands are 8 to 17, 4 to 7, and 0 to 3.</dd>
+            <dt>Places</dt><dd>The fixed number of High (35) and Medium (40) slots available. The other 25 people receive neither.</dd>
+            <dt>Round</dt><dd>One request to Gemini containing all 100 people in a new random order. Ten rounds were run.</dd>
+            <dt>Consensus placement</dt><dd>A person's single placement after combining the rounds: people are ranked by their average category, the top 35 are High, the next 40 Medium, and the rest Low.</dd>
+            <dt>Percentage points</dt><dd>The difference between two percentages. Going from 50% to 60% is a difference of 10 percentage points.</dd>
+            <dt>Weighted Cohen's kappa</dt><dd>Agreement between two sets of ordered categories beyond what chance would give; 0 is chance, 1 is perfect. Disagreeing by two categories counts more than by one. Roughly, 0.61 to 0.80 is substantial and above 0.80 almost perfect.</dd>
+            <dt>Fleiss' kappa</dt><dd>The same idea for more than two raters. Here the 10 rounds are 10 raters, so it measures how consistently Gemini places the same people.</dd>
+            <dt>Spearman's rho, Kendall's tau</dt><dd>Rank correlations between the VI&#8209;SPDAT score and Gemini's average category. 1 means the two rank people identically; 0 means unrelated.</dd>
+            <dt>Permutation test</dt><dd>Shuffle a label (for example, who has a circumstance) many times to see how large a difference chance alone produces, then ask how unusual the real difference is.</dd>
+            <dt>Stratified</dt><dd>Shuffling only among people with the same VI&#8209;SPDAT score, so the test asks whether a factor matters beyond the score.</dd>
+            <dt>p-value</dt><dd>How often a difference at least this large would occur by chance if the factor made no difference. Small values suggest a real difference.</dd>
+            <dt>Holm correction</dt><dd>An adjustment for running many tests at once, so the chance of any false alarm stays at 5%. Sort the p-values from smallest; multiply the smallest by the number of tests, the next by one fewer, and so on.</dd>
+            <dt>Bootstrap confidence interval</dt><dd>A range found by resampling the people many times; the true value is plausibly inside it. A 95% interval that includes zero is consistent with no difference.</dd>
+            <dt>Wilson interval</dt><dd>A confidence interval for a proportion, such as 78 of 100.</dd>
+            <dt>HC3 standard errors</dt><dd>Standard errors for a regression that stay valid when the spread of the data is uneven, which suits small samples.</dd>
+            <dt>Minimum detectable difference</dt><dd>The smallest difference a study of this size would detect 80% of the time. Smaller differences cannot be told from chance.</dd>
+            <dt>Sankey (alluvial) diagram</dt><dd>A chart where bands connect the groups people start in to the groups they end in; band width is the number of people.</dd>
+          </dl>
+        </div></div>
       </section>
 
       <section class="view" id="view-downloads" data-view="downloads" aria-label="Downloads" hidden>

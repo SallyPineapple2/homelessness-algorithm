@@ -1,0 +1,864 @@
+{
+ "seed": 20261105,
+ "bootstrap": 2000,
+ "permutations": 2000,
+ "agreement": {
+  "consensus_same": 78,
+  "n": 100,
+  "consensus_ci": [
+   0.6893,
+   0.85
+  ],
+  "per_round_mean": 79.1,
+  "per_round_sd": 2.33,
+  "per_round_min": 75,
+  "per_round_max": 82,
+  "kappa_consensus": 0.7349,
+  "kappa_ci": [
+   0.6285,
+   0.8358
+  ],
+  "kappa_per_round_mean": 0.747
+ },
+ "correlation": {
+  "spearman": 0.897,
+  "spearman_ci": [
+   0.8347,
+   0.9402
+  ],
+  "kendall": 0.7878,
+  "kendall_ci": [
+   0.724,
+   0.8448
+  ]
+ },
+ "reliability": {
+  "fleiss_kappa": 0.8338,
+  "fleiss_ci": [
+   0.7703,
+   0.8873
+  ],
+  "pairwise_mean": 89.11,
+  "pairwise_min": 82,
+  "pairwise_max": 96
+ },
+ "consensus": {
+  "mean_rank_allocation": {
+   "same": 78,
+   "note": "top 35 by average category High, next 40 Medium, rest Low (used on the dashboard)"
+  },
+  "single_round_mean": {
+   "same": 79.1,
+   "note": "average over the 10 rounds"
+  },
+  "most_common_category": {
+   "same": 78,
+   "note": "each person's most common category; counts not held to 35/40/25",
+   "counts": {
+    "High": 34,
+    "Medium": 40,
+    "Low": 26
+   }
+  }
+ },
+ "forest": [
+  {
+   "family": "demographic",
+   "factor": "Gender",
+   "group": "Female",
+   "n": 50,
+   "vispdat_high": 0.36,
+   "gemini_high": 0.312,
+   "diff": -0.048,
+   "ci": [
+    -0.126,
+    0.03
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Gender",
+   "group": "Male",
+   "n": 50,
+   "vispdat_high": 0.34,
+   "gemini_high": 0.388,
+   "diff": 0.048,
+   "ci": [
+    -0.06,
+    0.154
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Race",
+   "group": "American Indian, Alaska Native, or Indigenous",
+   "n": 20,
+   "vispdat_high": 0.35,
+   "gemini_high": 0.315,
+   "diff": -0.035,
+   "ci": [
+    -0.18,
+    0.11
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Race",
+   "group": "Asian or Asian American",
+   "n": 20,
+   "vispdat_high": 0.35,
+   "gemini_high": 0.255,
+   "diff": -0.095,
+   "ci": [
+    -0.24,
+    0.01
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Race",
+   "group": "Black, African American, or African",
+   "n": 20,
+   "vispdat_high": 0.35,
+   "gemini_high": 0.46,
+   "diff": 0.11,
+   "ci": [
+    -0.0601,
+    0.305
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Race",
+   "group": "Hispanic/Latino/e/a",
+   "n": 20,
+   "vispdat_high": 0.35,
+   "gemini_high": 0.415,
+   "diff": 0.065,
+   "ci": [
+    -0.05,
+    0.215
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Race",
+   "group": "White",
+   "n": 20,
+   "vispdat_high": 0.35,
+   "gemini_high": 0.305,
+   "diff": -0.045,
+   "ci": [
+    -0.165,
+    0.06
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "City",
+   "group": "Atlanta, Georgia",
+   "n": 20,
+   "vispdat_high": 0.4,
+   "gemini_high": 0.38,
+   "diff": -0.02,
+   "ci": [
+    -0.16,
+    0.12
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "City",
+   "group": "Chicago, Illinois",
+   "n": 20,
+   "vispdat_high": 0.3,
+   "gemini_high": 0.38,
+   "diff": 0.08,
+   "ci": [
+    -0.08,
+    0.2302
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "City",
+   "group": "Cincinnati, Ohio",
+   "n": 20,
+   "vispdat_high": 0.35,
+   "gemini_high": 0.4,
+   "diff": 0.05,
+   "ci": [
+    -0.1251,
+    0.24
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "City",
+   "group": "Los Angeles, California",
+   "n": 20,
+   "vispdat_high": 0.3,
+   "gemini_high": 0.305,
+   "diff": 0.005,
+   "ci": [
+    -0.095,
+    0.13
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "City",
+   "group": "New York City, New York",
+   "n": 20,
+   "vispdat_high": 0.4,
+   "gemini_high": 0.285,
+   "diff": -0.115,
+   "ci": [
+    -0.25,
+    -0.005
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Age group",
+   "group": "18-24",
+   "n": 9,
+   "vispdat_high": 0.2222,
+   "gemini_high": 0.0667,
+   "diff": -0.1556,
+   "ci": [
+    -0.3561,
+    0.0
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Age group",
+   "group": "25-39",
+   "n": 33,
+   "vispdat_high": 0.303,
+   "gemini_high": 0.2121,
+   "diff": -0.0909,
+   "ci": [
+    -0.1879,
+    -0.0152
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Age group",
+   "group": "40-59",
+   "n": 39,
+   "vispdat_high": 0.359,
+   "gemini_high": 0.4462,
+   "diff": 0.0872,
+   "ci": [
+    -0.0256,
+    0.2052
+   ]
+  },
+  {
+   "family": "demographic",
+   "factor": "Age group",
+   "group": "60 and older",
+   "n": 19,
+   "vispdat_high": 0.4737,
+   "gemini_high": 0.5263,
+   "diff": 0.0526,
+   "ci": [
+    -0.1053,
+    0.2211
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Unsheltered",
+   "group": "Yes",
+   "n": 67,
+   "vispdat_high": 0.4776,
+   "gemini_high": 0.4687,
+   "diff": -0.009,
+   "ci": [
+    -0.0806,
+    0.0687
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Homeless 1+ year or 4+ times",
+   "group": "Yes",
+   "n": 52,
+   "vispdat_high": 0.5769,
+   "gemini_high": 0.6019,
+   "diff": 0.025,
+   "ci": [
+    -0.0654,
+    0.1212
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "4+ emergency contacts",
+   "group": "Yes",
+   "n": 50,
+   "vispdat_high": 0.68,
+   "gemini_high": 0.584,
+   "diff": -0.096,
+   "ci": [
+    -0.194,
+    -0.002
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Risk of harm",
+   "group": "Yes",
+   "n": 40,
+   "vispdat_high": 0.725,
+   "gemini_high": 0.61,
+   "diff": -0.115,
+   "ci": [
+    -0.2125,
+    -0.0275
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Legal issues",
+   "group": "Yes",
+   "n": 24,
+   "vispdat_high": 0.7083,
+   "gemini_high": 0.6,
+   "diff": -0.1083,
+   "ci": [
+    -0.2333,
+    -0.0208
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Risk of exploitation",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 0.7895,
+   "gemini_high": 0.5895,
+   "diff": -0.2,
+   "ci": [
+    -0.3684,
+    -0.0474
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "No income or owes money",
+   "group": "Yes",
+   "n": 75,
+   "vispdat_high": 0.4533,
+   "gemini_high": 0.4507,
+   "diff": -0.0027,
+   "ci": [
+    -0.0813,
+    0.0787
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "No meaningful daily activity",
+   "group": "Yes",
+   "n": 45,
+   "vispdat_high": 0.5556,
+   "gemini_high": 0.5844,
+   "diff": 0.0289,
+   "ci": [
+    -0.0733,
+    0.1378
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Cannot meet basic needs",
+   "group": "Yes",
+   "n": 36,
+   "vispdat_high": 0.6389,
+   "gemini_high": 0.7417,
+   "diff": 0.1028,
+   "ci": [
+    -0.0333,
+    0.2444
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Homeless due to relationship breakdown",
+   "group": "Yes",
+   "n": 25,
+   "vispdat_high": 0.52,
+   "gemini_high": 0.42,
+   "diff": -0.1,
+   "ci": [
+    -0.236,
+    0.028
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Physical health condition",
+   "group": "Yes",
+   "n": 54,
+   "vispdat_high": 0.5,
+   "gemini_high": 0.537,
+   "diff": 0.037,
+   "ci": [
+    -0.0593,
+    0.1352
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Substance use",
+   "group": "Yes",
+   "n": 41,
+   "vispdat_high": 0.6829,
+   "gemini_high": 0.5732,
+   "diff": -0.1098,
+   "ci": [
+    -0.1952,
+    -0.0317
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Mental health condition",
+   "group": "Yes",
+   "n": 33,
+   "vispdat_high": 0.697,
+   "gemini_high": 0.6848,
+   "diff": -0.0121,
+   "ci": [
+    -0.1394,
+    0.1394
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Medication problems",
+   "group": "Yes",
+   "n": 30,
+   "vispdat_high": 0.6,
+   "gemini_high": 0.6633,
+   "diff": 0.0633,
+   "ci": [
+    -0.0467,
+    0.1867
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Homeless due to abuse or trauma",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 0.5263,
+   "gemini_high": 0.4316,
+   "diff": -0.0947,
+   "ci": [
+    -0.2633,
+    0.0526
+   ]
+  },
+  {
+   "family": "circumstance",
+   "factor": "Age 60 or older",
+   "group": "Yes",
+   "n": 19,
+   "vispdat_high": 0.4737,
+   "gemini_high": 0.5263,
+   "diff": 0.0526,
+   "ci": [
+    -0.0947,
+    0.2211
+   ]
+  }
+ ],
+ "per_round": {
+  "Unsheltered": {
+   "p": [
+    1.0,
+    1.0,
+    1.0,
+    0.4408,
+    0.6987,
+    0.2744,
+    1.0,
+    1.0,
+    1.0,
+    0.2824
+   ],
+   "rounds_p05": 0,
+   "median_p": 1.0
+  },
+  "Homeless 1+ year or 4+ times": {
+   "p": [
+    0.4878,
+    0.0685,
+    0.037,
+    0.4873,
+    0.0005,
+    0.0485,
+    0.1154,
+    0.038,
+    1.0,
+    0.0485
+   ],
+   "rounds_p05": 5,
+   "median_p": 0.0585
+  },
+  "4+ emergency contacts": {
+   "p": [
+    0.1079,
+    0.2594,
+    0.1029,
+    1.0,
+    0.4038,
+    0.2019,
+    0.1199,
+    0.2129,
+    0.4423,
+    0.2074
+   ],
+   "rounds_p05": 0,
+   "median_p": 0.2102
+  },
+  "Risk of harm": {
+   "p": [
+    0.3118,
+    0.0065,
+    0.028,
+    0.7061,
+    0.0355,
+    0.0755,
+    0.0415,
+    0.0135,
+    1.0,
+    0.0735
+   ],
+   "rounds_p05": 5,
+   "median_p": 0.0575
+  },
+  "Legal issues": {
+   "p": [
+    0.1099,
+    0.1434,
+    0.2304,
+    0.064,
+    0.6907,
+    1.0,
+    0.2859,
+    0.2449,
+    0.1844,
+    1.0
+   ],
+   "rounds_p05": 0,
+   "median_p": 0.2377
+  },
+  "Risk of exploitation": {
+   "p": [
+    0.4358,
+    0.001,
+    0.014,
+    1.0,
+    0.0015,
+    0.0435,
+    0.0005,
+    0.0035,
+    1.0,
+    0.04
+   ],
+   "rounds_p05": 7,
+   "median_p": 0.027
+  },
+  "No income or owes money": {
+   "p": [
+    1.0,
+    0.6527,
+    0.5892,
+    0.6277,
+    1.0,
+    0.5972,
+    0.6357,
+    1.0,
+    1.0,
+    0.6142
+   ],
+   "rounds_p05": 0,
+   "median_p": 0.6442
+  },
+  "No meaningful daily activity": {
+   "p": [
+    0.5247,
+    0.0755,
+    0.054,
+    1.0,
+    0.017,
+    0.1099,
+    0.069,
+    0.1094,
+    1.0,
+    0.0955
+   ],
+   "rounds_p05": 1,
+   "median_p": 0.1024
+  },
+  "Cannot meet basic needs": {
+   "p": [
+    0.0535,
+    0.0005,
+    0.0005,
+    0.2784,
+    0.001,
+    0.0025,
+    0.0005,
+    0.0025,
+    0.1824,
+    0.001
+   ],
+   "rounds_p05": 7,
+   "median_p": 0.0018
+  },
+  "Homeless due to relationship breakdown": {
+   "p": [
+    0.4598,
+    0.0065,
+    0.2449,
+    0.6562,
+    0.0035,
+    0.0235,
+    0.006,
+    0.0235,
+    1.0,
+    0.0475
+   ],
+   "rounds_p05": 6,
+   "median_p": 0.0355
+  },
+  "Physical health condition": {
+   "p": [
+    0.5022,
+    0.0195,
+    0.1594,
+    0.4948,
+    0.4928,
+    0.1964,
+    0.0685,
+    0.0385,
+    0.5002,
+    0.1834
+   ],
+   "rounds_p05": 2,
+   "median_p": 0.1899
+  },
+  "Substance use": {
+   "p": [
+    0.1829,
+    0.0035,
+    0.008,
+    0.4888,
+    0.017,
+    0.02,
+    0.012,
+    0.0205,
+    0.5142,
+    0.019
+   ],
+   "rounds_p05": 7,
+   "median_p": 0.0195
+  },
+  "Mental health condition": {
+   "p": [
+    0.6982,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.4848,
+    1.0,
+    0.1689,
+    0.7051,
+    0.4888
+   ],
+   "rounds_p05": 0,
+   "median_p": 0.8525
+  },
+  "Medication problems": {
+   "p": [
+    0.3013,
+    0.032,
+    0.0895,
+    0.4248,
+    0.0205,
+    0.1004,
+    0.0285,
+    0.095,
+    1.0,
+    0.098
+   ],
+   "rounds_p05": 3,
+   "median_p": 0.0965
+  },
+  "Homeless due to abuse or trauma": {
+   "p": [
+    1.0,
+    0.0945,
+    0.4208,
+    1.0,
+    0.2299,
+    0.047,
+    0.08,
+    0.0575,
+    1.0,
+    0.0325
+   ],
+   "rounds_p05": 2,
+   "median_p": 0.1622
+  },
+  "Age 60 or older": {
+   "p": [
+    0.2279,
+    0.0645,
+    0.3708,
+    1.0,
+    1.0,
+    0.081,
+    0.0755,
+    0.2419,
+    0.6597,
+    0.094
+   ],
+   "rounds_p05": 0,
+   "median_p": 0.2349
+  }
+ },
+ "power": {
+  "residual_sd": 0.2771,
+  "mde": [
+   {
+    "n": 10,
+    "points": 25.9
+   },
+   {
+    "n": 15,
+    "points": 21.7
+   },
+   {
+    "n": 20,
+    "points": 19.4
+   },
+   {
+    "n": 25,
+    "points": 17.9
+   },
+   {
+    "n": 30,
+    "points": 16.9
+   },
+   {
+    "n": 40,
+    "points": 15.8
+   },
+   {
+    "n": 50,
+    "points": 15.5
+   }
+  ],
+  "note": "Difference in High-place rate (percentage points) a group of n people would need, against everyone else with the same VI-SPDAT score, for 80% power at alpha = .05 (normal approximation)."
+ },
+ "cost": {
+  "rounds": 10,
+  "input_tokens": 336700,
+  "reasoning_tokens": 310884,
+  "output_tokens": 35174,
+  "usd": 1.55,
+  "prices": "USD per million tokens: input 0.75, output (including reasoning) 3.75; Gemini 3.8 Flash, introductory pricing"
+ },
+ "rounds_meta": [
+  {
+   "round": 1,
+   "requested_at": "2026-11-01T22:11:29+00:00",
+   "seconds": 249.0,
+   "attempt": 1,
+   "prompt_sha256": "0f260f8007977b7a164775bf9172b14c3c66d6a0ffcafdef712905405824c664",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 2,
+   "requested_at": "2026-11-01T22:15:38+00:00",
+   "seconds": 229.5,
+   "attempt": 1,
+   "prompt_sha256": "84e9d287b0e007d269189d222bfd925837433690656dfd79bb92778e634793ab",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 3,
+   "requested_at": "2026-11-01T22:19:28+00:00",
+   "seconds": 201.9,
+   "attempt": 1,
+   "prompt_sha256": "1e089fce9fd7f917e7b6e97305dd192769892d6f93d06211ef928474611cb9e0",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 4,
+   "requested_at": "2026-11-01T22:22:50+00:00",
+   "seconds": 185.2,
+   "attempt": 1,
+   "prompt_sha256": "184ce76bdfc47dbb281552201a663f1b632d3789988adceb0a223b0ce3d83a21",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 5,
+   "requested_at": "2026-11-01T22:25:55+00:00",
+   "seconds": 756.8,
+   "attempt": 1,
+   "prompt_sha256": "7dc07faa2ac80e882376196632db285ddb131a8ee0aa4d70016d61778772d176",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 6,
+   "requested_at": "2026-11-02T00:44:19+00:00",
+   "seconds": 264.8,
+   "attempt": 1,
+   "prompt_sha256": "50c7a192e4edffc9094aaf370ccc6a57e7959e1860d2ae45f158f1bab1f2e51a",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 7,
+   "requested_at": "2026-11-02T00:48:44+00:00",
+   "seconds": 1033.2,
+   "attempt": 1,
+   "prompt_sha256": "87355eff101756202cdab9311d79fc0a024cd0b306fa47c09c1056a4b7bb6355",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 8,
+   "requested_at": "2026-11-02T01:05:57+00:00",
+   "seconds": 136.1,
+   "attempt": 1,
+   "prompt_sha256": "c48c41e3895cd3094f842822c7956f6482c110b4ecd55f2c19b29fbe8a4f9a9b",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 9,
+   "requested_at": "2026-11-02T01:08:13+00:00",
+   "seconds": 266.8,
+   "attempt": 1,
+   "prompt_sha256": "de21b0d4bfa1e6536f4d25b47a1c20e2811964656e0fe8875006097b101df949",
+   "model_version": "gemini-3.8-flash"
+  },
+  {
+   "round": 10,
+   "requested_at": "2026-11-02T01:12:40+00:00",
+   "seconds": 232.0,
+   "attempt": 1,
+   "prompt_sha256": "08b790c9843fdc5f355b68942ec5148f27eb61c78ec08afce55c49be7dfdf528",
+   "model_version": "gemini-3.8-flash"
+  }
+ ]
+}

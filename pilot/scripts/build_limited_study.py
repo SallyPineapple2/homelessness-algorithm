@@ -29,6 +29,8 @@ ROOT = Path(__file__).resolve().parents[2]
 PILOT = ROOT / "pilot"
 OUT = ROOT / "limited"
 PLACES = {"High": 35, "Medium": 40, "Low": 25}
+RQ = ("Given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how does "
+      "Gemini's housing priority assignment compare with the VI&#8209;SPDAT's assignments?")
 RANK = {"High": 2, "Medium": 1, "Low": 0}
 
 
@@ -79,13 +81,37 @@ def null_distributions(profiles, ids, rounds, pool, shuffles=5000, seed=20261102
     return out
 
 
+def position_effect(profiles, ids, rounds):
+    """Does the position of a person in the list change their category, after accounting for VI-SPDAT score?"""
+    import numpy as np
+    from scipy import stats
+    P = {p["id"]: p for p in profiles}
+    score = {i: len(P[i]["indicators"]) for i in ids}
+    rho, sig, first, second = [], 0, [], []
+    for r in rounds:
+        order = r["order"]
+        g = {i: {"High": 2, "Medium": 1, "Low": 0}[r["assignments"][i]["priority"]] for i in ids}
+        by = {}
+        for i in ids:
+            by.setdefault(score[i], []).append(g[i])
+        resid = [g[i] - float(np.mean(by[score[i]])) for i in order]
+        res = stats.spearmanr(range(len(order)), resid)
+        rho.append(float(res[0]))
+        sig += int(res[1] < 0.05)
+        half = len(order) // 2
+        first.append(float(np.mean([g[i] == 2 for i in order[:half]])))
+        second.append(float(np.mean([g[i] == 2 for i in order[half:]])))
+    return {"spearman_mean": float(np.mean(rho)), "spearman_min": min(rho), "spearman_max": max(rho), "rounds_sig": sig,
+            "first_half_high": float(np.mean(first)), "second_half_high": float(np.mean(second))}
+
+
 def build_data():
     inst = json.loads((ROOT / "data" / "vispdat_instrument.json").read_text(encoding="utf-8"))
     profiles = json.loads((PILOT / "data" / "profiles.json").read_text(encoding="utf-8"))["profiles"]
     with (PILOT / "data" / "vispdat_scores.csv").open(encoding="utf-8") as fh:
         vis = {r["id"]: r for r in csv.DictReader(fh)}
     rounds = [json.loads(f.read_text(encoding="utf-8")) for f in
-              map(Path, sorted(glob.glob(str(PILOT / "data" / "gemini-pool-gemini-3.8-flash" / "raw" / "round*.json"))))]
+              map(Path, sorted(glob.glob(str(PILOT / "data" / "gemini-pool-gemini-3.8-flash" / "raw" / "round*.json")), key=lambda f: int(re.search(r"round(\d+)", f).group(1))))]
     pool = json.loads((PILOT / "results" / "pool_gemini-3.8-flash.json").read_text(encoding="utf-8"))
     ids = [p["id"] for p in profiles]
     R = len(rounds)
@@ -105,6 +131,10 @@ def build_data():
                               "thought_tokens": (r["usage"] or {}).get("thoughts_token_count"),
                               "output_tokens": (r["usage"] or {}).get("candidates_token_count")} for r in rounds]
     pool["null"] = null_distributions(profiles, ids, rounds, pool)
+    pool["position"] = position_effect(profiles, ids, rounds)
+    extra_path = PILOT / "results" / "pool_extra.json"
+    if extra_path.exists():
+        pool["extra"] = json.loads(extra_path.read_text(encoding="utf-8"))
     items = [{"id": i["id"], "name": i["name"], "domain": d["name"], "letter": d["letter"], "questions": i["questions"],
               "rule": i["rule"]} for d in inst["domains"] for i in d["indicators"]]
     for k in ("per_round", "round_to_round_same_category", "same_category_in_every_round", "high_in_every_round",
@@ -339,6 +369,31 @@ def build_html():
         ('<p class="chart-title">Prompt sent for every person</p>\n          <p class="chart-sub">Identical for all 100 requests; only the case summary changes.</p>',
          '<p class="chart-title">Prompt sent in every round</p>\n          <p class="chart-sub">Identical in all 10 rounds; only the order and numbering of the 100 case summaries changes.</p>'),
     ], "design")
+    views = {}
+    cur = None
+    for line in (PILOT / "scripts" / "limited_views.html").read_text(encoding="utf-8").split("\n"):
+        if line.startswith("<!--VIEW:"):
+            cur = line[9:-3]
+            views[cur] = []
+        elif cur:
+            views[cur].append(line)
+    views = {k: "\n".join(v).replace("@@RQ@@", RQ).replace("VI-SPDAT", "VI&#8209;SPDAT") + "\n" for k, v in views.items()}
+    # restore plain text inside tags that must not contain entities
+    s = s.replace('    <main id="main">\n', '    <main id="main">\n' + views["summary"], 1)
+    s = s.replace('      <section class="view" id="view-downloads"', views["methods"] + views["robustness"] + views["limitations"] + views["glossary"] +
+                  '      <section class="view" id="view-downloads"', 1)
+    s = s.replace('      <div class="nav-group">\n        <span class="nav-label">Results</span>',
+                  '      <div class="nav-group">\n        <span class="nav-label">Summary</span>\n'
+                  '        <a href="#summary" data-view-link="summary" data-sub="Research question, key results, and caveats">Summary</a>\n      </div>\n'
+                  '      <div class="nav-group">\n        <span class="nav-label">Results</span>', 1)
+    s = s.replace('      <div class="nav-group">\n        <span class="nav-label">Files</span>',
+                  '      <div class="nav-group">\n        <span class="nav-label">Methods and checks</span>\n'
+                  '        <a href="#methods" data-view-link="methods" data-sub="How the study was run and analyzed">Methods</a>\n'
+                  '        <a href="#robustness" data-view-link="robustness" data-sub="Reliability, confidence intervals, consistency across rounds, and power">Robustness</a>\n'
+                  '        <a href="#limitations" data-view-link="limitations" data-sub="What the study can and cannot show">Limitations</a>\n'
+                  '        <a href="#glossary" data-view-link="glossary" data-sub="Terms and statistics used on this site">Glossary</a>\n      </div>\n'
+                  '      <div class="nav-group">\n        <span class="nav-label">Files</span>', 1)
+    assert 'id="view-summary"' in s and 'id="view-glossary"' in s and 'data-view-link="methods"' in s
     OUT.mkdir(exist_ok=True)
     (OUT / "index.html").write_text(s, encoding="utf-8")
 
@@ -424,6 +479,7 @@ def build_js():
     s = (PILOT / "assets" / "pilot.js").read_text(encoding="utf-8")
     lim = (ROOT / "pilot" / "scripts" / "limited_charts.js").read_text(encoding="utf-8")
     lim += "\n" + (ROOT / "pilot" / "scripts" / "limited_extra.js").read_text(encoding="utf-8")
+    lim += "\n" + (ROOT / "pilot" / "scripts" / "limited_pages.js").read_text(encoding="utf-8")
     s = edit(s, [
         ("   Pilot dashboard: VI-SPDAT and Gemini priority for 100 people", "   Limited places study: VI-SPDAT and Gemini with 35 High and 40 Medium places"),
         ("let RUN = null;        // active complete run", "let RUN = null;        // the run\nlet POOL = null;       // analysis of its rounds"),
@@ -435,7 +491,7 @@ def build_js():
     (v) => { RUN = complete.find((r) => r.key === v); renderAll(); });
   d3.select("#run-status").text("");
 ''', ""),
-        ('  renderDownloads();\n}', '  renderDownloads();\n  renderRounds(POOL);\n  renderExtras();\n}'),
+        ('  renderDownloads();\n}', '  renderDownloads();\n  renderRounds(POOL);\n  renderExtras();\n  renderPages();\n}'),
         ('`${k} of ${n} people in the pilot.`', '`${k} of ${n} people in the study.`'),
         ('d3.select("#crosstab-foot").text(`Same category: ${t.same} of ${t.n}. Gemini higher: ${t.higher}. Gemini lower: ${t.lower}.`);',
          'd3.select("#crosstab-foot").text(`Same category: ${t.same} of ${t.n}. Gemini higher: ${t.higher}. Gemini lower: ${t.lower}. Gemini\'s placement is its consensus over ${POOL.rounds} rounds.`);'),
