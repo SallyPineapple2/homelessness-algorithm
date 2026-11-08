@@ -1,11 +1,10 @@
 {
- "note": "100 distinct synthetic people for the Gemini pilot. P01-P32 adapted from the original study's base profiles (full-disclosure narrative); P33-P100 new. Gender and race assigned by a seeded draw stratified on VI-SPDAT total, except pregnant profiles, which are Female. Location assigned the same way within each race; each race x city cell has 2 women and 2 men.",
+ "note": "100 distinct synthetic people for the limited places study, each with demographics, VI-SPDAT items, and an 11-section case summary. Gender, race, and city were assigned by a seeded draw balanced on VI-SPDAT score; pregnant profiles are female; each race x city cell has 2 women and 2 men.",
  "seed": 20261014,
  "profiles": [
   {
    "id": "P01",
    "label": "Line cook, temporary gap",
-   "source": "original study",
    "age": 34,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -29,7 +28,6 @@
   {
    "id": "P02",
    "label": "Delivery driver living in a car",
-   "source": "original study",
    "age": 41,
    "gender": "Male",
    "race": "White",
@@ -55,7 +53,6 @@
   {
    "id": "P03",
    "label": "Former home health aide",
-   "source": "original study",
    "age": 28,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -81,7 +78,6 @@
   {
    "id": "P04",
    "label": "Seasonal construction worker",
-   "source": "original study",
    "age": 47,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -108,7 +104,6 @@
   {
    "id": "P05",
    "label": "Warehouse picker after automation",
-   "source": "original study",
    "age": 52,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -135,7 +130,6 @@
   {
    "id": "P06",
    "label": "Rideshare driver, unpaid fines",
-   "source": "original study",
    "age": 38,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -163,7 +157,6 @@
   {
    "id": "P07",
    "label": "Hotel housekeeper, heart condition",
-   "source": "original study",
    "age": 44,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -191,7 +184,6 @@
   {
    "id": "P08",
    "label": "Retired bus mechanic",
-   "source": "original study",
    "age": 62,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -219,7 +211,6 @@
   {
    "id": "P09",
    "label": "Laid-off call-center supervisor",
-   "source": "original study",
    "age": 36,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -248,7 +239,6 @@
   {
    "id": "P10",
    "label": "Auto-body painter, robbed",
-   "source": "original study",
    "age": 45,
    "gender": "Male",
    "race": "White",
@@ -277,7 +267,6 @@
   {
    "id": "P11",
    "label": "Upholsterer with arthritis",
-   "source": "original study",
    "age": 64,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -306,7 +295,6 @@
   {
    "id": "P12",
    "label": "Dental assistant who left a partner",
-   "source": "original study",
    "age": 33,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -336,7 +324,6 @@
   {
    "id": "P13",
    "label": "Gig worker assaulted in a shelter",
-   "source": "original study",
    "age": 29,
    "gender": "Male",
    "race": "White",
@@ -366,7 +353,6 @@
   {
    "id": "P14",
    "label": "Dockhand with liver disease",
-   "source": "original study",
    "age": 51,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -397,7 +383,6 @@
   {
    "id": "P15",
    "label": "Roofer with a pending charge",
-   "source": "original study",
    "age": 40,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -428,7 +413,6 @@
   {
    "id": "P16",
    "label": "Machinist after a plant closure",
-   "source": "original study",
    "age": 55,
    "gender": "Female",
    "race": "White",
@@ -460,7 +444,6 @@
   {
    "id": "P17",
    "label": "School custodian displaced by a relative",
-   "source": "original study",
    "age": 71,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -492,7 +475,6 @@
   {
    "id": "P18",
    "label": "Stylist trading sex for shelter",
-   "source": "original study",
    "age": 37,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -524,7 +506,6 @@
   {
    "id": "P19",
    "label": "Landscaper with kidney disease",
-   "source": "original study",
    "age": 43,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -557,7 +538,6 @@
   {
    "id": "P20",
    "label": "Former retail manager, no health issues",
-   "source": "original study",
    "age": 31,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -590,7 +570,6 @@
   {
    "id": "P21",
    "label": "Night guard with suspended benefits",
-   "source": "original study",
    "age": 68,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -623,7 +602,6 @@
   {
    "id": "P22",
    "label": "Pipefitter who lost the union card",
-   "source": "original study",
    "age": 49,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -657,7 +635,6 @@
   {
    "id": "P23",
    "label": "Career musician, benefits intact",
-   "source": "original study",
    "age": 61,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -691,7 +668,6 @@
   {
    "id": "P24",
    "label": "Drywall finisher selling medication",
-   "source": "original study",
    "age": 46,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -726,7 +702,6 @@
   {
    "id": "P25",
    "label": "Aged out of foster care",
-   "source": "original study",
    "age": 39,
    "gender": "Female",
    "race": "White",
@@ -762,7 +737,6 @@
   {
    "id": "P26",
    "label": "Former EMT after a mass-casualty call",
-   "source": "original study",
    "age": 50,
    "gender": "Male",
    "race": "White",
@@ -799,7 +773,6 @@
   {
    "id": "P27",
    "label": "Welder whose relationship broke down",
-   "source": "original study",
    "age": 42,
    "gender": "Male",
    "race": "White",
@@ -837,7 +810,6 @@
   {
    "id": "P28",
    "label": "Kitchen worker, medication supervised",
-   "source": "original study",
    "age": 36,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -876,7 +848,6 @@
   {
    "id": "P29",
    "label": "Former paralegal, cynical about services",
-   "source": "original study",
    "age": 44,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -916,7 +887,6 @@
   {
    "id": "P30",
    "label": "Merchant mariner, eleven years outdoors",
-   "source": "original study",
    "age": 47,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -957,7 +927,6 @@
   {
    "id": "P31",
    "label": "Grocer whose building was sold",
-   "source": "original study",
    "age": 73,
    "gender": "Female",
    "race": "White",
@@ -998,7 +967,6 @@
   {
    "id": "P32",
    "label": "Carpenter and union steward",
-   "source": "original study",
    "age": 66,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -1040,7 +1008,6 @@
   {
    "id": "P33",
    "label": "Barista and part-time student",
-   "source": "new",
    "age": 26,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1064,7 +1031,6 @@
   {
    "id": "P34",
    "label": "Accountant after a layoff",
-   "source": "new",
    "age": 58,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -1088,7 +1054,6 @@
   {
    "id": "P35",
    "label": "Grocery stocker after a building sale",
-   "source": "new",
    "age": 22,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -1112,7 +1077,6 @@
   {
    "id": "P36",
    "label": "Warehouse temp sleeping in a car",
-   "source": "new",
    "age": 33,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -1138,7 +1102,6 @@
   {
    "id": "P37",
    "label": "Office cleaner with medical debt",
-   "source": "new",
    "age": 45,
    "gender": "Female",
    "race": "White",
@@ -1164,7 +1127,6 @@
   {
    "id": "P38",
    "label": "Retired librarian after a rent increase",
-   "source": "new",
    "age": 67,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -1190,7 +1152,6 @@
   {
    "id": "P39",
    "label": "Bank teller after a breakup",
-   "source": "new",
    "age": 30,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -1216,7 +1177,6 @@
   {
    "id": "P40",
    "label": "Laid-off retail associate on a friend's couch",
-   "source": "new",
    "age": 24,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1243,7 +1203,6 @@
   {
    "id": "P41",
    "label": "Pregnant dental hygienist after a breakup",
-   "source": "new",
    "age": 27,
    "gender": "Female",
    "race": "White",
@@ -1270,7 +1229,6 @@
   {
    "id": "P42",
    "label": "Night-shift security guard, repeated stays",
-   "source": "new",
    "age": 39,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -1297,7 +1255,6 @@
   {
    "id": "P43",
    "label": "Retired machinist with lung disease",
-   "source": "new",
    "age": 63,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1324,7 +1281,6 @@
   {
    "id": "P44",
    "label": "Line mechanic with a pending charge",
-   "source": "new",
    "age": 35,
    "gender": "Female",
    "race": "White",
@@ -1351,7 +1307,6 @@
   {
    "id": "P45",
    "label": "Painter living in a car for over a year",
-   "source": "new",
    "age": 50,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -1379,7 +1334,6 @@
   {
    "id": "P46",
    "label": "Young adult with psychosis off medication",
-   "source": "new",
    "age": 23,
    "gender": "Male",
    "race": "White",
@@ -1407,7 +1361,6 @@
   {
    "id": "P47",
    "label": "Paralegal who fled an abusive partner",
-   "source": "new",
    "age": 31,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -1435,7 +1388,6 @@
   {
    "id": "P48",
    "label": "Retired trucker with heart disease in a car",
-   "source": "new",
    "age": 61,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1463,7 +1415,6 @@
   {
    "id": "P49",
    "label": "Sales rep whose drinking cost the rent",
-   "source": "new",
    "age": 55,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -1491,7 +1442,6 @@
   {
    "id": "P50",
    "label": "Day laborer outdoors for two years",
-   "source": "new",
    "age": 47,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -1520,7 +1470,6 @@
   {
    "id": "P51",
    "label": "Florist with kidney disease in a car",
-   "source": "new",
    "age": 52,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -1549,7 +1498,6 @@
   {
    "id": "P52",
    "label": "Bartender in fights while drinking",
-   "source": "new",
    "age": 28,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -1578,7 +1526,6 @@
   {
    "id": "P53",
    "label": "Retired nurse's aide with heart failure",
-   "source": "new",
    "age": 69,
    "gender": "Female",
    "race": "White",
@@ -1607,7 +1554,6 @@
   {
    "id": "P54",
    "label": "Young adult put out by family after years of abuse",
-   "source": "new",
    "age": 20,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1636,7 +1582,6 @@
   {
    "id": "P55",
    "label": "Youth sleeping in a stairwell, carrying packages",
-   "source": "new",
    "age": 25,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -1665,7 +1610,6 @@
   {
    "id": "P56",
    "label": "Pregnant teenager put out by family",
-   "source": "new",
    "age": 19,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -1694,7 +1638,6 @@
   {
    "id": "P57",
    "label": "Former bus driver with an amputation, outdoors",
-   "source": "new",
    "age": 58,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -1723,7 +1666,6 @@
   {
    "id": "P58",
    "label": "Roofer outdoors whose drinking ended a lease",
-   "source": "new",
    "age": 41,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1753,7 +1695,6 @@
   {
    "id": "P59",
    "label": "Bookkeeper with lupus and bipolar disorder",
-   "source": "new",
    "age": 37,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -1783,7 +1724,6 @@
   {
    "id": "P60",
    "label": "Retired seamstress with a walker in a car",
-   "source": "new",
    "age": 72,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -1813,7 +1753,6 @@
   {
    "id": "P61",
    "label": "Cashier facing charges after abuse",
-   "source": "new",
    "age": 34,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -1843,7 +1782,6 @@
   {
    "id": "P62",
    "label": "Former janitor outdoors for three years",
-   "source": "new",
    "age": 49,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -1873,7 +1811,6 @@
   {
    "id": "P63",
    "label": "Delivery driver with asthma in a car",
-   "source": "new",
    "age": 44,
    "gender": "Male",
    "race": "White",
@@ -1903,7 +1840,6 @@
   {
    "id": "P64",
    "label": "Cook with depression and repeated episodes",
-   "source": "new",
    "age": 26,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1933,7 +1869,6 @@
   {
    "id": "P65",
    "label": "Pregnant hairdresser in a car after abuse",
-   "source": "new",
    "age": 33,
    "gender": "Female",
    "race": "White",
@@ -1963,7 +1898,6 @@
   {
    "id": "P66",
    "label": "Mover outdoors after fights while drinking",
-   "source": "new",
    "age": 36,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -1994,7 +1928,6 @@
   {
    "id": "P67",
    "label": "Retired welder outdoors with lung disease",
-   "source": "new",
    "age": 65,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -2025,7 +1958,6 @@
   {
    "id": "P68",
    "label": "Former carpenter with a brain injury",
-   "source": "new",
    "age": 54,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -2056,7 +1988,6 @@
   {
    "id": "P69",
    "label": "Young adult at a transit station after fights",
-   "source": "new",
    "age": 23,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -2087,7 +2018,6 @@
   {
    "id": "P70",
    "label": "Young adult staying with someone who demands favors",
-   "source": "new",
    "age": 21,
    "gender": "Male",
    "race": "White",
@@ -2118,7 +2048,6 @@
   {
    "id": "P71",
    "label": "Mechanic with liver disease, repeated stays",
-   "source": "new",
    "age": 46,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -2149,7 +2078,6 @@
   {
    "id": "P72",
    "label": "Former teacher's aide with schizophrenia outdoors",
-   "source": "new",
    "age": 57,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -2180,7 +2108,6 @@
   {
    "id": "P73",
    "label": "Line cook outdoors, drinking and assaulted",
-   "source": "new",
    "age": 33,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -2212,7 +2139,6 @@
   {
    "id": "P74",
    "label": "Retired postal worker with diabetes complications outdoors",
-   "source": "new",
    "age": 63,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -2244,7 +2170,6 @@
   {
    "id": "P75",
    "label": "Young adult exchanging sex for shelter, drug use",
-   "source": "new",
    "age": 27,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -2276,7 +2201,6 @@
   {
    "id": "P76",
    "label": "Former nurse with multiple sclerosis and depression",
-   "source": "new",
    "age": 48,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -2308,7 +2232,6 @@
   {
    "id": "P77",
    "label": "Landscaper in a car after a divorce",
-   "source": "new",
    "age": 40,
    "gender": "Female",
    "race": "White",
@@ -2340,7 +2263,6 @@
   {
    "id": "P78",
    "label": "Stocker outdoors with emphysema and drinking",
-   "source": "new",
    "age": 52,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -2372,7 +2294,6 @@
   {
    "id": "P79",
    "label": "Office manager with heart disease and anxiety in a car",
-   "source": "new",
    "age": 59,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -2404,7 +2325,6 @@
   {
    "id": "P80",
    "label": "Former soldier outdoors with drinking and trauma",
-   "source": "new",
    "age": 30,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -2437,7 +2357,6 @@
   {
    "id": "P81",
    "label": "Retired cook with heart failure and memory problems",
-   "source": "new",
    "age": 70,
    "gender": "Male",
    "race": "White",
@@ -2470,7 +2389,6 @@
   {
    "id": "P82",
    "label": "Roofer with asthma, drinking, and depression",
-   "source": "new",
    "age": 45,
    "gender": "Male",
    "race": "White",
@@ -2503,7 +2421,6 @@
   {
    "id": "P83",
    "label": "Pregnant young adult exchanging sex for shelter",
-   "source": "new",
    "age": 24,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -2536,7 +2453,6 @@
   {
    "id": "P84",
    "label": "Data entry clerk with bipolar disorder and a charge",
-   "source": "new",
    "age": 38,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -2569,7 +2485,6 @@
   {
    "id": "P85",
    "label": "Construction worker outdoors with drinking and psychosis",
-   "source": "new",
    "age": 35,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -2603,7 +2518,6 @@
   {
    "id": "P86",
    "label": "Retired accountant with dementia symptoms outdoors",
-   "source": "new",
    "age": 66,
    "gender": "Male",
    "race": "Asian or Asian American",
@@ -2637,7 +2551,6 @@
   {
    "id": "P87",
    "label": "Young adult trading sex, using opioids, after abuse",
-   "source": "new",
    "age": 22,
    "gender": "Female",
    "race": "White",
@@ -2671,7 +2584,6 @@
   {
    "id": "P88",
    "label": "Former factory worker with lung disease, after a fire",
-   "source": "new",
    "age": 53,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -2705,7 +2617,6 @@
   {
    "id": "P89",
    "label": "Painter with diabetes, drinking, and depression outdoors",
-   "source": "new",
    "age": 43,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -2740,7 +2651,6 @@
   {
    "id": "P90",
    "label": "Young adult in an encampment running drugs",
-   "source": "new",
    "age": 29,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -2775,7 +2685,6 @@
   {
    "id": "P91",
    "label": "Retired machinist with stroke damage outdoors",
-   "source": "new",
    "age": 64,
    "gender": "Female",
    "race": "Black, African American, or African",
@@ -2810,7 +2719,6 @@
   {
    "id": "P92",
    "label": "Former chef with psychosis and drug use",
-   "source": "new",
    "age": 37,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -2846,7 +2754,6 @@
   {
    "id": "P93",
    "label": "Former driver with liver disease, drinking, and depression",
-   "source": "new",
    "age": 56,
    "gender": "Male",
    "race": "Hispanic/Latino/e/a",
@@ -2882,7 +2789,6 @@
   {
    "id": "P94",
    "label": "Young adult trading sex, with HIV and PTSD",
-   "source": "new",
    "age": 26,
    "gender": "Male",
    "race": "Black, African American, or African",
@@ -2918,7 +2824,6 @@
   {
    "id": "P95",
    "label": "Plumber outdoors with heart disease, drinking, and PTSD",
-   "source": "new",
    "age": 48,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -2955,7 +2860,6 @@
   {
    "id": "P96",
    "label": "Retired seamstress with COPD, drinking, and depression",
-   "source": "new",
    "age": 62,
    "gender": "Male",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -2992,7 +2896,6 @@
   {
    "id": "P97",
    "label": "Mechanic outdoors, carrying drugs, after abuse",
-   "source": "new",
    "age": 34,
    "gender": "Female",
    "race": "American Indian, Alaska Native, or Indigenous",
@@ -3030,7 +2933,6 @@
   {
    "id": "P98",
    "label": "Server outdoors with HIV, drug use, and abuse",
-   "source": "new",
    "age": 40,
    "gender": "Female",
    "race": "Hispanic/Latino/e/a",
@@ -3068,7 +2970,6 @@
   {
    "id": "P99",
    "label": "Former contractor with heart disease, drinking, and psychosis",
-   "source": "new",
    "age": 51,
    "gender": "Female",
    "race": "Asian or Asian American",
@@ -3107,7 +3008,6 @@
   {
    "id": "P100",
    "label": "Retired dock worker with every risk",
-   "source": "new",
    "age": 60,
    "gender": "Male",
    "race": "Asian or Asian American",

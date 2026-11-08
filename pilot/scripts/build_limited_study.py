@@ -149,7 +149,7 @@ def build_data():
         "runs": [{"key": "main", "label": "Gemini 3.8 Flash", "complete": True, "done": 100, "total": 100,
                   "answers": answers, "pool": {k: v for k, v in pool.items() if k != "people"}}],
         "profiles": [{
-            "id": p["id"], "label": p["label"], "source": p["source"], "age": p["age"], "gender": p["gender"],
+            "id": p["id"], "label": p["label"], "age": p["age"], "gender": p["gender"],
             "race": p["race"], "location": p["location"], "demographic_line": p["demographic_line"],
             "indicators": p["indicators"], "score": int(vis[p["id"]]["score"]), "vispdat": vis[p["id"]]["priority"],
             "narrative": [[t, p["narrative"][k]] for k, t in SECTION_TITLES],
@@ -159,7 +159,13 @@ def build_data():
     (OUT / "data" / "dashboard.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     # downloads
     (OUT / "results").mkdir(exist_ok=True)
-    shutil.copy(PILOT / "data" / "profiles.json", OUT / "data" / "profiles.json")
+    standalone = json.loads((PILOT / "data" / "profiles.json").read_text(encoding="utf-8"))
+    for p in standalone["profiles"]:
+        p.pop("source", None)
+    standalone["note"] = ("100 distinct synthetic people for the limited places study, each with demographics, VI-SPDAT items, "
+                          "and an 11-section case summary. Gender, race, and city were assigned by a seeded draw balanced on "
+                          "VI-SPDAT score; pregnant profiles are female; each race x city cell has 2 women and 2 men.")
+    (OUT / "data" / "profiles.json").write_text(json.dumps(standalone, ensure_ascii=False, indent=1), encoding="utf-8")
     shutil.copy(PILOT / "data" / "vispdat_scores.csv", OUT / "data" / "vispdat_scores.csv")
     shutil.copy(PILOT / "results" / "pool_gemini-3.8-flash.json", OUT / "results" / "limited_results.json")
     shutil.copy(PILOT / "results" / "pool_gemini-3.8-flash_groups.csv", OUT / "results" / "limited_groups.csv")
@@ -324,10 +330,11 @@ def build_html():
          '<a class="brand" href="#overview">VI&#8209;SPDAT &amp; Gemini<small>Limited places study</small></a>'),
         ('<div class="side-foot">Descriptive pilot: counts and within-group percentages.<br>Synthetic population: 100 distinct people.</div>',
          '<div class="side-foot">35 High, 40 Medium, 25 Low places.<br>Synthetic population: 100 distinct people.</div>'),
-        ('<a href="../limited/" class="nav-external">Limited places study &rarr;</a>',
-         '<a href="../pilot/" class="nav-external">Unlimited places pilot &rarr;</a>'),
-        ('<li><a href="../index.html">Original 640-record study dashboard</a></li>\n        <li><a href="README.md">Pilot README</a></li>',
-         '<li><a href="../pilot/">Unlimited places pilot dashboard</a></li>\n        <li><a href="../index.html">Original 640-record study dashboard</a></li>'),
+        ('        <a href="../limited/" class="nav-external">Limited places study &rarr;</a>\n        <a href="../index.html" class="nav-external">Original 640-record study &rarr;</a>\n', ''),
+        ('      <h3>This study</h3>\n      <ul>\n        <li><a href="../index.html">Original 640-record study dashboard</a></li>\n        <li><a href="README.md">Pilot README</a></li>\n      </ul>',
+         '      <h3>This study</h3>\n      <ul>\n        <li><a href="#methods">Methods</a></li>\n        <li><a href="#downloads">Data files</a></li>\n      </ul>\n    </div>\n'
+         '    <div>\n      <h3>Related work</h3>\n      <ul>\n        <li><a href="../pilot/">Pilot study: unlimited places</a></li>\n'
+         '        <li><a href="../index.html">Original 640-record study</a></li>\n      </ul>'),
         ('<div class="model-switch" role="group" aria-label="Gemini run">\n        <span class="control-label">Gemini run</span>\n        <div class="filters" id="model-chips"></div>\n        <span class="table-note-inline" id="run-status"></span>\n      </div>',
          '<div class="model-switch" role="group" aria-label="Model">\n        <span class="control-label">Model</span>\n        <span class="chip" aria-pressed="true">Gemini 3.8 Flash</span>\n        <span class="table-note-inline">10 rounds</span>\n      </div>'),
         ('data-sub="How VI-SPDAT and Gemini prioritize the same 100 people">Overview',
@@ -364,6 +371,10 @@ def build_html():
                s, count=1, flags=re.S)
     # design
     s = edit(s, [
+        ('<p><strong>Population.</strong> 100 distinct synthetic adults: 32 adapted from the original study\'s base profiles and 68 new. Every case summary states each VI&#8209;SPDAT item outright, so neither approach has to guess.</p>',
+         '<p><strong>Population.</strong> 100 distinct synthetic adults, written for this study with AI assistance and reviewed by the researcher. Every case summary states each VI&#8209;SPDAT item outright, so neither approach has to guess.</p>'),
+        ('<p><strong>Demographics.</strong> The original study\'s 2 genders, 5 races, and 5 cities. Age comes',
+         '<p><strong>Demographics.</strong> Two genders, five races, and five cities. Age comes'),
         ('<p><strong>Gemini.</strong> Gemini gives its own judgment, not a VI&#8209;SPDAT calculation. Each person is a separate API request with only the instructions and that person\'s case summary, so one case cannot influence another. Gemini never saw the VI&#8209;SPDAT questions, items, rules, or scores, or the titles and IDs used on this page.</p>',
          '<p><strong>Places.</strong> 35 High places (permanent supportive housing), 40 Medium places (rapid re&#8209;housing), and 25 people who receive neither. These are the numbers VI&#8209;SPDAT assigns to these 100 people, so both approaches fill the same places. VI&#8209;SPDAT fills High places with the highest scores, then Medium places with the next highest.</p>\n          <p><strong>Gemini.</strong> Gemini gives its own judgment, not a VI&#8209;SPDAT calculation. It sees all 100 case summaries in one request and must assign every person High, Medium, or Low, using exactly 35, 40, and 25. A round is accepted only if every person is assigned once and the split is exact. The request is repeated for 10 rounds; each round lists the people in a new random order under new anonymous numbers, and no round can see another. Gemini never saw the VI&#8209;SPDAT questions, items, rules, or scores, or the titles and IDs used on this page.</p>\n          <p><strong>Final placement.</strong> Each person\'s placement on this site is their consensus over the rounds: people are ordered by their average category (High 2, Medium 1, Low 0), the top 35 are High, the next 40 Medium, and the rest Low. No tie falls on a cut-off.</p>'),
         ('<p class="chart-title">Prompt sent for every person</p>\n          <p class="chart-sub">Identical for all 100 requests; only the case summary changes.</p>',
