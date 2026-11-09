@@ -6,7 +6,7 @@
 - Pilot study, unlimited places (100 distinct people, VI-SPDAT vs Gemini): https://sallypineapple2.github.io/homelessness-algorithm/pilot/
   — design, data, and scripts in [`pilot/`](pilot/README.md)
 - Limited places study (the same 100 people, 35 High and 40 Medium places): https://sallypineapple2.github.io/homelessness-algorithm/limited/
-  — research question: given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how does Gemini's housing priority assignment compare with the VI-SPDAT's assignments?
+  — research question: given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how do Gemini's housing priority assignments compare with the VI-SPDAT's assignments?
   — built by [`pilot/scripts/build_limited_study.py`](pilot/scripts/build_limited_study.py) from the analysis in `pilot/scripts/analyze_pool.py`
 
 A research dashboard for an individual project on algorithmic bias in the

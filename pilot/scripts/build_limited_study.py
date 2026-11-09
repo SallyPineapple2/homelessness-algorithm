@@ -29,8 +29,8 @@ ROOT = Path(__file__).resolve().parents[2]
 PILOT = ROOT / "pilot"
 OUT = ROOT / "limited"
 PLACES = {"High": 35, "Medium": 40, "Low": 25}
-RQ = ("Given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how does "
-      "Gemini's housing priority assignment compare with the VI&#8209;SPDAT's assignments?")
+RQ = ("Given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how do "
+      "Gemini's housing priority assignments compare with the VI&#8209;SPDAT's assignments?")
 RANK = {"High": 2, "Medium": 1, "Low": 0}
 
 
@@ -188,7 +188,7 @@ def build_data():
 OVERVIEW = '''      <section class="view" id="view-overview" data-view="overview" aria-label="Overview" hidden>
         <div class="rq-block">
           <p class="rq-kicker">Limited places study</p>
-          <p class="rq-text">Given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how does Gemini's housing priority assignment compare with the VI&#8209;SPDAT's assignments?</p>
+          <p class="rq-text">Given only 35 high-priority and 40 medium-priority housing places for 100 homeless individuals, how do Gemini's housing priority assignments compare with the VI&#8209;SPDAT's assignments?</p>
           <dl class="rq-meta">
             <div><dt>Approach</dt><dd>VI&#8209;SPDAT fills the places with its highest scores. Gemini sees all 100 people together and assigns each one High, Medium, or Low, using exactly the places available. This is repeated 10 times with the people in a different order each time. VI&#8209;SPDAT is a benchmark, not ground truth.</dd></div>
             <div><dt>Caution</dt><dd>A raw difference between groups is not proof of bias, because groups can differ in circumstances. The significance tests compare people with the same VI&#8209;SPDAT score.</dd></div>
